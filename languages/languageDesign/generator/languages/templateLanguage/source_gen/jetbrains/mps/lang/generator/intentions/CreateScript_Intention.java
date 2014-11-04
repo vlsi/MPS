@@ -71,7 +71,7 @@ public class CreateScript_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode script = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingScript", null);
       SPropertyOperations.set(script, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "script");
-      if (SNodeOperations.hasRole(node, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "preMappingScript")) {
+      if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1195502100749l, "preMappingScript"))) {
         SPropertyOperations.set(script, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "pre_processing");
       }
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript"), script);

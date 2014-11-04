@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.doubleDispatch.generator.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -18,8 +20,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -31,7 +31,7 @@ public class DispatchGenUtil {
   public static Iterable<SNode> getMatchingMethods(SNode dispatchMethod) {
 
     int paramIndex = 0;
-    SNode parentClass = SNodeOperations.getAncestor(dispatchMethod, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode parentClass = SNodeOperations.getNodeAncestor(dispatchMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     SNode origParamClass = DispatchUtil.getParamClass(dispatchMethod);
 
     final Map<SNode, SNode> classesToMethods = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -39,21 +39,21 @@ public class DispatchGenUtil {
     Iterable<SNode> classesToConsider;
     _FunctionTypes._return_P1_E0<? extends Iterable<SNode>, ? super SNode> methods;
 
-    if (SNodeOperations.isInstanceOf(dispatchMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(dispatchMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
       // if it's a static method declaration then we don't look into ancestors 
       // otherwise we scan all the way up 
       classesToConsider = Sequence.<SNode>singleton(parentClass);
       methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
         public Iterable<SNode> invoke(SNode cls) {
-          return ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+          return ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         }
       };
 
     } else {
-      classesToConsider = DispatchUtil.ancestors(SNodeOperations.cast(parentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true);
+      classesToConsider = DispatchUtil.ancestors(SNodeOperations.cast(parentClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), true);
       methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
         public Iterable<SNode> invoke(SNode cls) {
-          return Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+          return Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         }
       };
     }
@@ -79,7 +79,7 @@ public class DispatchGenUtil {
           continue;
         }
         // not an ancenstor of our param class, (thus, must be a super class) 
-        if (!(DispatchUtil.isParent(SNodeOperations.cast(origParamClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(paramClass, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
+        if (!(DispatchUtil.isParent(SNodeOperations.cast(origParamClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SNodeOperations.cast(paramClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))))) {
           continue;
         }
         // not overridden in classes down the hierarchy 
@@ -92,14 +92,14 @@ public class DispatchGenUtil {
 
     for (SNode clas : SetSequence.fromSet(MapSequence.fromMap(classesToMethods).keySet())) {
       SNode cls = clas;
-      SNode superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+      SNode superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       while (superCls != origParamClass && (superCls != null)) {
         if (MapSequence.fromMap(classesToMethods).containsKey(superCls)) {
           // we only take the nearest ancestors 
           SetSequence.fromSet(toRemove).addElement(cls);
           cls = superCls;
         }
-        superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(superCls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+        superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(superCls, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       }
     }
     SetSequence.fromSet(toRemove).visitAll(new IVisitor<SNode>() {

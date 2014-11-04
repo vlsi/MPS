@@ -21,13 +21,13 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "weaveManyToSingularChild", "none");
   }
   public static boolean baseMappingRule_Condition_1218738876108(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "weaveManyToSingularChild", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "weaveManyToSingularChild", "none");
   }
   public static Object propertyMacro_GetPropertyValue_1218740165112(final PropertyMacroContext _context) {
     return "weaved form input: '" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "'";
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1218738863685(final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "generated_root");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), "generated_root");
   }
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);

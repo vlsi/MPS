@@ -30,7 +30,7 @@ public class LocalBehaviorMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1qnt20_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_1qnt20_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1qnt20_b0(editorContext, node));
@@ -77,7 +77,7 @@ public class LocalBehaviorMethodCall_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -93,7 +93,7 @@ public class LocalBehaviorMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_1qnt20_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

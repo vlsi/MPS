@@ -32,11 +32,11 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     if (variablesScope != null) {
       variablesInScope = Sequence.fromIterable(variablesScope.getAvailableElements(SPropertyOperations.getString(localVariableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -46,16 +46,16 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     } else {
       variablesInScope = Collections.emptyList();
     }
-    final SNode nearestMethod = SNodeOperations.getAncestor(localVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    final SNode nearestMethod = SNodeOperations.getNodeAncestor(localVariableDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
     Iterable<SNode> variablesFromCurrentMethod = Sequence.fromIterable(variablesInScope).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false) == nearestMethod;
+        return SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false) == nearestMethod;
       }
     });
 
     if (Sequence.fromIterable(variablesFromCurrentMethod).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
       }
     })) {
       {

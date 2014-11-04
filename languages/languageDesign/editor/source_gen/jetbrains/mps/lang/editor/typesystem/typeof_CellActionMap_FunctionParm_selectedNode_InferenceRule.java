@@ -21,9 +21,9 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule extend
   public typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule() {
   }
   public void applyRule(final SNode cellActionMap_FunctionParm_selectedNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139535219966l, 1139535219968l, "applicableConcept"));
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(cellActionMap_FunctionParm_selectedNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139535219966l, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139535219966l, 1139535219968l, "applicableConcept"));
     if (applicableConcept == null) {
-      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNodeAncestor(cellActionMap_FunctionParm_selectedNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
     }
     {
       SNode _nodeToCheck_1029348928467 = cellActionMap_FunctionParm_selectedNode;

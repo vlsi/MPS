@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.search;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -17,16 +17,16 @@ public class MpsScopesUtil {
   public MpsScopesUtil() {
   }
   public static String getSignature(SNode classifierMember, SNode classifier) {
-    String classifierPrefix = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(classifierMember), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Object[]{}) + ":";
-    if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String classifierPrefix = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(classifierMember), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_getFqName_1213877404258", new Object[]{}) + ":";
+    if (SNodeOperations.isInstanceOf(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
+      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
 
-    if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    if (SNodeOperations.isInstanceOf(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
-    if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      SNode method = SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if (SNodeOperations.isInstanceOf(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      SNode method = SNodeOperations.cast(classifierMember, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       return classifierPrefix + SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "<" + ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count() + ">" + "(" + ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count() + ")";
     }
     return "No signature for " + classifierMember;
@@ -34,10 +34,10 @@ public class MpsScopesUtil {
   public static List<String> getMembersSignatures(SNode classifier) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (SNode member : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})) {
-      if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      if (!(SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
         ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
       } else {
-        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{}) ? "static " : "")) + getSignature(member, classifier));
+        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_isStatic_8986964027630462944", new Object[]{}) ? "static " : "")) + getSignature(member, classifier));
       }
     }
     return result;

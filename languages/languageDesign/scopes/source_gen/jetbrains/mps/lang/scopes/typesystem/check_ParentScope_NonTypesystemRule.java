@@ -21,7 +21,7 @@ public class check_ParentScope_NonTypesystemRule extends AbstractNonTypesystemRu
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // todo: do right stuff! =( 
-    if (!(SPropertyOperations.getString(SNodeOperations.getAncestor(expr, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("getScope"))) {
+    if (!(SPropertyOperations.getString(SNodeOperations.getNodeAncestor(expr, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("getScope"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expr, "Should be in getScope method", "r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)", "8077936094962911290", null, errorTarget);

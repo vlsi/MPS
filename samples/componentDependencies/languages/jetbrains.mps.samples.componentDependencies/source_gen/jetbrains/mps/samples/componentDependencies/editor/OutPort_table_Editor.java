@@ -29,7 +29,7 @@ public class OutPort_table_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_hlx83r_a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+        return SPropertyOperations.getString(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, "jetbrains.mps.samples.componentDependencies.structure.Component"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
       public void setText(String text) {
       }

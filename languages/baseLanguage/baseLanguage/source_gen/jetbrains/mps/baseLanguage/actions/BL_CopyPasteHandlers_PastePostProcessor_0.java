@@ -23,7 +23,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
       Scope surroundingScope = Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       if (surroundingScope != null && surroundingScope.contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}))) {
         SNode variableReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.VariableReference");
-        SLinkOperations.setTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+        SLinkOperations.setTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")));
       }
     }
   }

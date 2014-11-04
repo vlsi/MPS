@@ -13,9 +13,9 @@ public class MakeClassAbstract_QuickFix extends QuickFix_Runtime {
   public MakeClassAbstract_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Make " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " abstract";
+    return "Make " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " abstract";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"), "" + (true));
+    SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"), "" + (true));
   }
 }

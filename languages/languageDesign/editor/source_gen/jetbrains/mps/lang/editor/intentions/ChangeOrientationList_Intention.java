@@ -48,7 +48,7 @@ public class ChangeOrientationList_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1106270549637l, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1106270571710l, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1227111401175");

@@ -23,6 +23,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -112,8 +113,8 @@ public class Type_Behavior {
     return false;
   }
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
-    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      t = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), "jetbrains.mps.baseLanguage.structure.Type");
+    if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      t = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
       if (t == null) {
         return false;
       }
@@ -129,7 +130,7 @@ public class Type_Behavior {
   }
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(thisNode);
-    for (SNode varRef : SNodeOperations.getDescendants(looseType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
+    for (SNode varRef : SNodeOperations.getNodeDescendants(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{})) {
       SNodeOperations.replaceWithAnother(varRef, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varRef, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return looseType;

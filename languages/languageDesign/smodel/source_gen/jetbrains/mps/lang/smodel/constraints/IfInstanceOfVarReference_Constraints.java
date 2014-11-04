@@ -17,10 +17,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -42,7 +42,7 @@ public class IfInstanceOfVarReference_Constraints extends BaseConstraintsDescrip
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement", false)).select(new ISelector<SNode, SNode>() {
+            return ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1883223317721008708l, "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), false)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1883223317721008708l, 1883223317721008711l, "variable"));
               }

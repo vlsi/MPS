@@ -102,7 +102,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LogicalExpression_7446293342517448132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not"));
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, "jetbrains.mps.samples.Kaja.structure.Not")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_7446293342517448131(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

@@ -8,9 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.util.Condition;
@@ -85,8 +85,8 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     if (myTopClassifier == null) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(myTopClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      SNode enumClass = SNodeOperations.cast(myTopClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass");
+    if (SNodeOperations.isInstanceOf(myTopClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+      SNode enumClass = SNodeOperations.cast(myTopClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"));
       for (SNode ec : SLinkOperations.getChildren(enumClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant"))) {
         if (EqualUtil.equals(SPropertyOperations.getString(ec, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name)) {
           return ec;
@@ -99,8 +99,8 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> list = super.getNodes(condition);
-    if (SNodeOperations.isInstanceOf(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && (this.myOriginalConstraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR) {
-      for (SNode constructor : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(myTopClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && (this.myOriginalConstraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR) {
+      for (SNode constructor : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(myTopClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})) {
         if (condition.met(constructor)) {
           list.add(constructor);
         }
@@ -109,14 +109,14 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     if ((this.myOriginalConstraint & (IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD)) != 0) {
       List<SNode> methods = this.getMethods();
       for (SNode method : methods) {
-        if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+        if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.INSTANCE_METHOD) == IClassifiersSearchScope.INSTANCE_METHOD) {
             if (condition.met(method)) {
               list.add(method);
             }
           }
         } else
-        if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+        if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.STATIC_METHOD) == IClassifiersSearchScope.STATIC_METHOD) {
             if (condition.met(method)) {
               list.add(method);
@@ -128,14 +128,14 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     if ((this.myOriginalConstraint & (IClassifiersSearchScope.INSTANCE_FIELD | IClassifiersSearchScope.STATIC_FIELD)) != 0) {
       List<SNode> fields = this.getFields();
       for (SNode field : fields) {
-        if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+        if (SNodeOperations.isInstanceOf(field, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.INSTANCE_FIELD) == IClassifiersSearchScope.INSTANCE_FIELD) {
             if (condition.met(field)) {
               list.add(field);
             }
           }
         } else
-        if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+        if (SNodeOperations.isInstanceOf(field, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
           if ((this.myOriginalConstraint & IClassifiersSearchScope.STATIC_FIELD) == IClassifiersSearchScope.STATIC_FIELD) {
             if (condition.met(field)) {
               list.add(field);

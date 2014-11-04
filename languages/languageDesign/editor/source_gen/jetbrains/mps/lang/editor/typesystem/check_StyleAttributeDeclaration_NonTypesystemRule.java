@@ -26,7 +26,7 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
   public check_StyleAttributeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode declaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3982520150113085419l, 3982520150113092206l, "valueType")), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3982520150113085419l, 3982520150113092206l, "valueType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       if (!((SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3982520150113085419l, 3982520150113147643l, "defaultValue")) != null))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(declaration, "Attribute of primitive type should have default value", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "8307535009119141639", null, errorTarget);
@@ -36,7 +36,7 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402211651l, 1186402402630l, "styleClass"));
       }
-    }), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).all(new IWhereFilter<SNode>() {
+    }), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 3982520150113085419l, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return neq_6ch539_a0a0a0a0a0a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) || it == declaration;
       }

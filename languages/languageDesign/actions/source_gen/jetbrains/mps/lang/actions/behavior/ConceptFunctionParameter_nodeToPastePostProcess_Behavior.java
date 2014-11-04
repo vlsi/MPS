@@ -4,13 +4,15 @@ package jetbrains.mps.lang.actions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_nodeToPastePostProcess_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPostProcessor_6026743057587447970(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.PastePostProcessor", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), false, false);
   }
   public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;

@@ -21,6 +21,7 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -268,7 +269,7 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            List<SNode> descendants = SNodeOperations.getDescendants(_context.getParentNode(), "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", false, new String[]{});
+            List<SNode> descendants = SNodeOperations.getNodeDescendants(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), false, new SConcept[]{});
             ListSequence.fromList(descendants).removeElement(_context.getCurrentTargetNode());
             return ListSequence.fromList(descendants).isEmpty();
           }
@@ -295,7 +296,7 @@ public class QueriesGenerated {
           return substitute(newChild, lastPattern[0], editorContext);
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNode element = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+          SNode element = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"));
           int index = ListSequence.fromList(SLinkOperations.getChildren(element, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"))).indexOf(_context.getSourceNode());
           return ListSequence.fromList(SLinkOperations.getChildren(element, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"))).insertElement(index + 1, result);
         }
@@ -313,7 +314,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlBaseAttribute_6666499814681619369(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_XmlElement_6666499814681529662(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -373,7 +374,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+        SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"));
         ListSequence.fromList(SLinkOperations.getChildren(elem, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content"))).clear();
         SPropertyOperations.set(elem, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6999033275467544021l, "shortEmptyNotation"), "" + (true));
         return elem;
@@ -398,10 +399,10 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlBaseAttribute_6999033275467568952(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement")) || (SNodeOperations.getNextSibling(_context.getSourceNode()) != null)) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"))) || (SNodeOperations.getNextSibling(_context.getSourceNode()) != null)) {
       return false;
     }
-    SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+    SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"));
     return !(SPropertyOperations.getBoolean(elem, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6999033275467544021l, "shortEmptyNotation")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_XmlContent_6999033275467483657(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {

@@ -12,7 +12,7 @@
   <root nodeRef="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)/3100399657864694362">
     <file name="QueriesGenerated.java">
       <node id="3524394717035465458" at="33,112,34,583" concept="2" />
-      <node id="3524394717035465476" at="34,583,35,250" concept="3" />
+      <node id="3524394717035465476" at="34,583,35,357" concept="3" />
       <node id="2673276898228775833" at="37,112,38,583" concept="2" />
       <node id="3524394717035465519" at="38,583,39,90" concept="3" />
       <node id="7363434029342758760" at="53,108,54,572" concept="0" />
@@ -25,7 +25,7 @@
       <node id="2673276898228776003" at="61,572,64,5" concept="1" />
       <scope id="2673276898228775947" at="55,67,56,204" />
       <scope id="2673276898228776004" at="62,67,63,203" />
-      <scope id="3524394717035465438" at="33,112,35,250">
+      <scope id="3524394717035465438" at="33,112,35,357">
         <var name="op" id="3524394717035465459" />
       </scope>
       <scope id="3524394717035465441" at="37,112,39,90">

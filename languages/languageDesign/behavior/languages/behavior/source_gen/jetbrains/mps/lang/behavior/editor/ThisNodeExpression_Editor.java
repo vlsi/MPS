@@ -29,7 +29,7 @@ public class ThisNodeExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6mv7u_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

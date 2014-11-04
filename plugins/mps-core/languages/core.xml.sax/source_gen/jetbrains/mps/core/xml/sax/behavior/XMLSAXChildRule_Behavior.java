@@ -31,7 +31,7 @@ public class XMLSAXChildRule_Behavior {
         return new EmptyScope();
       }
       if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-        return SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+        return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
       }
     }
     return null;

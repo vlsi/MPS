@@ -113,18 +113,18 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1217892542812">
     <file name="GenerationContextOp_UserObjectAccessBase_Behavior.java">
       <node id="1217892577742" at="14,81,15,91" concept="3" />
-      <node id="1217892577754" at="17,313,18,20" concept="4" />
+      <node id="1217892577754" at="17,415,18,20" concept="4" />
       <node id="1217892577768" at="20,5,21,17" concept="4" />
       <node id="1217892542812" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1217892577752" at="16,117,19,7" concept="2" />
+      <node id="1217892577752" at="16,219,19,7" concept="2" />
       <node id="1217892577750" at="15,91,20,5" concept="2" />
       <node id="1217892542812" at="14,0,23,0" concept="5" trace="call_isLValueInAssignment_1217892546644#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1217892542814" at="12,43,12,43" />
-      <scope id="1217892577753" at="17,313,18,20" />
+      <scope id="1217892577753" at="17,415,18,20" />
       <scope id="1217892542812" at="12,0,14,0">
         <var name="thisNode" id="1217892542812" />
       </scope>
-      <scope id="1217892577751" at="16,117,19,7" />
+      <scope id="1217892577751" at="16,219,19,7" />
       <scope id="1217892546646" at="14,81,21,17">
         <var name="mayBeAssignment" id="1217892577743" />
       </scope>

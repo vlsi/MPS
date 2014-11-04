@@ -39,7 +39,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqa5bf_a0a(editorContext, node));
     return editorCell;
@@ -57,7 +57,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqa5bf_b1a(editorContext, node));
@@ -71,7 +71,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqa5bf_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqa5bf_b1b0(editorContext, node));
@@ -101,7 +101,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_b1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b1b1a(editorContext, node));
@@ -143,7 +143,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_d1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a3b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b3b1a(editorContext, node));
@@ -176,7 +176,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_cqa5bf_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqa5bf_b4b1a(editorContext, node));
@@ -189,7 +189,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_a4b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqa5bf_a0e1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cqa5bf_b0e1b0(editorContext, node));
@@ -199,7 +199,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deprecated");
     editorCell.setCellId("Constant_cqa5bf_a0e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -217,7 +217,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_b4b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a1e1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b1e1b0(editorContext, node));
@@ -259,7 +259,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_g1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a6b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b6b1a(editorContext, node));
@@ -301,7 +301,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_i1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a8b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b8b1a(editorContext, node));
@@ -343,7 +343,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_k1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_cqa5bf_a01b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cqa5bf_b01b1a(editorContext, node));

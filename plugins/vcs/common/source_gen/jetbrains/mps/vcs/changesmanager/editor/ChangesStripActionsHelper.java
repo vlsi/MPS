@@ -133,7 +133,7 @@ public class ChangesStripActionsHelper {
     });
     List<List<SNode>> paths = Sequence.fromIterable(baseNodes).select(new ISelector<SNode, List<SNode>>() {
       public List<SNode> select(SNode n) {
-        return (List<SNode>) ListSequence.fromList(SNodeOperations.getAncestors(n, null, true)).reversedList();
+        return (List<SNode>) ListSequence.fromList(SNodeOperations.getNodeAncestors(n, null, true)).reversedList();
       }
     }).toListSequence();
 

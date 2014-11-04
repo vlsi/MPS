@@ -23,8 +23,8 @@ import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -49,12 +49,12 @@ public class SimpleBuilderPropertyBuilder_Constraints extends BaseConstraintsDes
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode contextBuilder = SNodeOperations.as(Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), _context.getEnclosingNode()), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
+            SNode contextBuilder = SNodeOperations.as(Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), _context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"));
             for (SNode dcl = SLinkOperations.getTarget(contextBuilder, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, 7288041816793071803l, "declaration")); (dcl != null); dcl = SLinkOperations.getTarget(dcl, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390363701l, "extends"))) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(dcl, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 5389689214217081351l, "property"))));
               for (SNode builders : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
                 for (SNode basedecl : ListSequence.fromList(SLinkOperations.getChildren(builders, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder")))) {
-                  SNode extdecl = SNodeOperations.as(basedecl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration");
+                  SNode extdecl = SNodeOperations.as(basedecl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
                   if (dcl == SLinkOperations.getTarget(extdecl, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, 6254726786820459254l, "extended"))) {
                     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(extdecl, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, 6254726786820459253l, "property"))));
                   }

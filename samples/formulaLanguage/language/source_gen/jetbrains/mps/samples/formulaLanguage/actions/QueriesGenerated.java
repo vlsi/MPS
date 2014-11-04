@@ -5,9 +5,9 @@ package jetbrains.mps.samples.formulaLanguage.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -31,9 +31,9 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Operation_1162840292119(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand")));
-      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784647019l, "rightOperand"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784647019l, "rightOperand")));
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand")));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784647019l, "rightOperand"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784647019l, "rightOperand")));
     }
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1113331454611(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

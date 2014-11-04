@@ -51,7 +51,7 @@ public class Migration_Queries {
     mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
   }
   public static SNode execute_ret(SNode point) {
-    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getAncestor(point, "jetbrains.mps.lang.migration.structure.MigrationScript", false, false));
+    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
     return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0g() : _quotation_createNode_9iwezb_a0b0a0g_0(typeNode));
   }
   private static SNode _quotation_createNode_9iwezb_a0b0a0g() {

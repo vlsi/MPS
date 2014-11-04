@@ -21,6 +21,7 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescriptor {
@@ -48,7 +49,7 @@ public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescri
             return new FilteringScope(Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator");
+                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
               }
             };
           }

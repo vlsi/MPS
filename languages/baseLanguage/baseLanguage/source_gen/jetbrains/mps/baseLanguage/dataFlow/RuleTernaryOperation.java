@@ -24,8 +24,8 @@ public class RuleTernaryOperation extends DataFlowConstructor {
   }
   public void performActions(Program o, SNode node) {
     SNode condition = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"));
-    if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression") || SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-      SNode other = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+    if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) || SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+      SNode other = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
       if (other == null) {
         return;
       }
@@ -40,7 +40,7 @@ public class RuleTernaryOperation extends DataFlowConstructor {
           ((Program) (o)).insert(instruction, position, true, before);
         }
       }
-      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+      if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
         {
           Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"));
           if (((Program) o).contains(object)) {

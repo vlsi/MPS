@@ -10,6 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -53,7 +56,7 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SConcept[]{})).isNotEmpty();
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "1753793013241722025");
@@ -80,11 +83,11 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
       PathConverter pathConverter = new PathConverter(node);
 
       {
-        Iterator<SNode> module_it = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).iterator();
+        Iterator<SNode> module_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SConcept[]{})).iterator();
         SNode module_var;
         while (module_it.hasNext()) {
           module_var = module_it.next();
-          if (SNodeOperations.isInstanceOf(module_var, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+          if (SNodeOperations.isInstanceOf(module_var, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
             continue;
           }
           try {

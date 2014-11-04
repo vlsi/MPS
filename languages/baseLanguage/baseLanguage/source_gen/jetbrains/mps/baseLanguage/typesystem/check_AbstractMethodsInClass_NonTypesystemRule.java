@@ -21,8 +21,8 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
   }
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"))) {
-      SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+      SNode classifier = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+      if (!(SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
         {
           SNode matchedNode_qfxa59_a0b0a0 = classifier;
           {
@@ -44,7 +44,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
           }
         }
       } else {
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract methods not allowed in enum constants", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1962660292854020345", null, errorTarget);

@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
@@ -42,12 +42,12 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
       // anything in generator 
       return true;
     }
-    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parentNode, "jetbrains.mps.build.structure.BuildProject"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).any(new IWhereFilter<SNode>() {
+    if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(3891333323013573211l, -7392620776726838882l), 4005526075820600484l, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin"));
       }
     })) {
-      SNode project = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildProject", true, false);
+      SNode project = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
       if (project == null) {
         return false;
       }

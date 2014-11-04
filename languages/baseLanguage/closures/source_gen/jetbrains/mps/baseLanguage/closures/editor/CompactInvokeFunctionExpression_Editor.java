@@ -40,7 +40,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1dey68_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new CompactInvokeFunctionExpression_parameters());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new CompactInvokeFunctionExpression_parameters());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_1dey68_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1dey68_b0(editorContext, node));
@@ -138,8 +138,8 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1dey68_a2a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

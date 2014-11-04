@@ -9,13 +9,13 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class typeof_NodeFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NodeFunctionParameter_InferenceRule() {
@@ -23,11 +23,11 @@ public class typeof_NodeFunctionParameter_InferenceRule extends AbstractInferenc
   public void applyRule(final SNode nodeFunctionParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode conceptFunction = ConceptFunctionParameter_Behavior.call_findConceptFunction_1213877522934(nodeFunctionParameter);
 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(conceptFunction), "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(conceptFunction), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"))) {
       {
         SNode _nodeToCheck_1029348928467 = nodeFunctionParameter;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "2154068179222500515", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "2154068179222500520", true), (SNode) _quotation_createNode_tw12cr_a0a0c0b(AbstractDiagramCreation_Behavior.call_getConceptForCreation_2154068179222282129(SNodeOperations.cast(SNodeOperations.getParent(conceptFunction), "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"))), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "2154068179222500520", true), (SNode) _quotation_createNode_tw12cr_a0a0c0b(AbstractDiagramCreation_Behavior.call_getConceptForCreation_2154068179222282129(SNodeOperations.cast(SNodeOperations.getParent(conceptFunction), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation")))), _info_12389875345);
       }
     } else {
       {

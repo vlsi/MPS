@@ -29,7 +29,7 @@ public class ClassLikeMemberPlaceholder_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     Placeholder2RealObject.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

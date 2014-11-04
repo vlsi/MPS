@@ -23,7 +23,7 @@ public class typeof_OptionExpression_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = oe;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "505095865854557938", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "505095865854557935", true), (SNode) _quotation_createNode_2d0o4o_a0a0b(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(oe, MetaAdapterFactory.getReferenceLink(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384050l, 505095865854384051l, "option"))), "jetbrains.mps.make.script.structure.ExpectedOption")), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "505095865854557935", true), (SNode) _quotation_createNode_2d0o4o_a0a0b(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(oe, MetaAdapterFactory.getReferenceLink(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384050l, 505095865854384051l, "option"))), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption"))), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

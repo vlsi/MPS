@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescriptor {
@@ -71,7 +72,7 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456856030");
   private static SNodePointer breakingNode_58jyk7_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456853031");

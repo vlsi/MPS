@@ -8,9 +8,9 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
@@ -31,16 +31,16 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"))) {
+        if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 3316739663067157299l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression")))) {
           return false;
         }
         SNode declaration = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
-        SNode classifier = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", false, false));
+        SNode classifier = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false, false));
         if (classifier == null) {
           return false;
         }
-        SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        if (!((classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier)))) {
+        SNode declarationClassifier = SNodeOperations.getNodeAncestor(declaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+        if (!((classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getNodeAncestors(classifier, null, false)).contains(declarationClassifier)))) {
           return false;
         }
         while (classifier != declarationClassifier) {
@@ -49,7 +49,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
               return false;
             }
           }
-          classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+          classifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         }
         return true;
       }

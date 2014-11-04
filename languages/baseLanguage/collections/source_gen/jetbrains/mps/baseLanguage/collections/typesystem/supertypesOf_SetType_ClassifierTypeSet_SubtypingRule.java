@@ -22,7 +22,7 @@ public class supertypesOf_SetType_ClassifierTypeSet_SubtypingRule extends Subtyp
   }
   public SNode getSubOrSuperType(SNode setType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode et = SLinkOperations.getTarget(setType, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226511727824l, 1226511765987l, "elementType"));
-    if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(et, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getBoxedType_1213877337320", new Object[]{});
     }
     return _quotation_createNode_m5bzh3_a2a1(et);

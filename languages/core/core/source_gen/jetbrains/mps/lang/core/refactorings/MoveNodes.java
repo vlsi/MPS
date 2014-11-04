@@ -78,7 +78,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
           result.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
-              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
+              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
             }
           });
         }

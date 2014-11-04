@@ -22,8 +22,8 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode) additionalVar);
     }
     _context.getBuilder().emitLabel("start");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-      SNode constant = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
+      SNode constant = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
       if (!(SPropertyOperations.getBoolean(constant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")))) {
         _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3337377470784677523");
       }

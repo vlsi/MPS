@@ -15,10 +15,10 @@ public class ClassLikeMember_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isRequired_3402736933911994098(SNode thisNode) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), "jetbrains.mps.lang.classLike.structure.RequiredModifier")).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3402736933911578134l, "jetbrains.mps.lang.classLike.structure.RequiredModifier"))).isNotEmpty();
   }
   public static SNode call_getPlaceholder_9097849371503188814(SNode thisNode) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).first();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010669353l, "jetbrains.mps.lang.classLike.structure.PlaceholderModifier"))).first();
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(thisNode)) {

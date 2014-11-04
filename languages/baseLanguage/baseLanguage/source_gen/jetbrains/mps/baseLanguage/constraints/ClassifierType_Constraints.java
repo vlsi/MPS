@@ -18,6 +18,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -45,7 +46,7 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               // TEMP doing it not through ScopeProvider for now 
-              boolean resolvingSuperClass = SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface");
+              boolean resolvingSuperClass = SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) || SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")) || SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"));
 
               return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass));
             }

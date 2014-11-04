@@ -9,13 +9,13 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -48,7 +48,7 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638198293l, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 1192794744107l, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)", "4203998840477564642");
@@ -66,7 +66,7 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638198293l, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"))) {
         return "Make Plain Intention";
       } else {
         return "Make a Surround with Intention";
@@ -74,7 +74,7 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode sd;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638198293l, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"))) {
         sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", null);
       } else {
         sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", null);

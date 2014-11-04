@@ -70,7 +70,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_yq81ip_a0a0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_yq81ip_b0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -104,7 +104,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       editorCell.setRole("start");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
+    style.set(StyleAttributes.NULL_TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -120,7 +120,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_yq81ip_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,8 +135,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       editorCell.setRole("end");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, false);
+    style.set(StyleAttributes.NULL_TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -213,7 +213,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_startIncluded");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -239,7 +239,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_endIncluded");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

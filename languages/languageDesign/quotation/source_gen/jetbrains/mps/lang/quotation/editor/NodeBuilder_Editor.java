@@ -46,10 +46,10 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_x54h4p_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(7644360)));
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(7644360)));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -64,7 +64,7 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
       editorCell.setRole("quotedNode");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -81,9 +81,9 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_x54h4p_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(7644360)));
-    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(7644360)));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new _Quotation_createModel());
     editorCell.setDefaultText("");
@@ -93,7 +93,7 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x54h4p_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_x54h4p_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x54h4p_b3a(editorContext, node));

@@ -39,7 +39,7 @@ public class VariableDeclaration_Behavior {
   }
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
-    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))) {
       type = SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
     }
     return type;

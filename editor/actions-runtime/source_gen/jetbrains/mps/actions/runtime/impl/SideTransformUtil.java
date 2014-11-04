@@ -29,6 +29,7 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -79,7 +80,7 @@ public class SideTransformUtil {
     List<SubstituteAction> result = ListSequence.fromList(new LinkedList<SubstituteAction>());
 
     for (SNode actionBuilder : Sequence.fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
-      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemovePart", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, "jetbrains.mps.lang.actions.structure.RemovePart"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove")) != null);
         }
@@ -88,7 +89,7 @@ public class SideTransformUtil {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove"));
         }
       }));
-      ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", false, new String[]{})));
+      ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1197454626277l, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), false, new SConcept[]{})));
       ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, cellSide, context)));
     }
 
@@ -100,7 +101,7 @@ public class SideTransformUtil {
     // remove with remove concept 
     for (Iterator<SubstituteAction> it = ListSequence.fromList(result).iterator(); it.hasNext();) {
       SubstituteAction action = it.next();
-      SNode concept = SNodeOperations.cast(action.getOutputConcept(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+      SNode concept = SNodeOperations.cast(action.getOutputConcept(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
       if (SetSequence.fromSet(conceptsToRemove).contains(concept)) {
         it.remove();
       }

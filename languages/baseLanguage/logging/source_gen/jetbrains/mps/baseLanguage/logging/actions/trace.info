@@ -22,7 +22,7 @@
       <node id="1178200464538" at="40,98,41,148" concept="5" />
       <node id="1178200470855" at="41,148,42,229" concept="1" />
       <node id="1178200541336" at="42,229,43,262" concept="1" />
-      <node id="1178200598476" at="43,262,44,155" concept="5" />
+      <node id="1178200598476" at="43,262,44,261" concept="5" />
       <node id="1178200673830" at="45,235,46,204" concept="1" />
       <node id="1178200707049" at="46,204,47,269" concept="5" />
       <node id="1178200710476" at="47,269,48,375" concept="1" />
@@ -36,7 +36,7 @@
       <node id="1167245930434" at="55,0,58,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1167245930434" at="58,0,61,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1167245930434" at="31,98,36,20" concept="5" />
-      <node id="1178200633194" at="44,155,49,17" concept="3" />
+      <node id="1178200633194" at="44,261,49,17" concept="3" />
       <node id="1167245930434" at="40,0,52,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1167245930434" at="38,48,61,15" concept="1" />
       <node id="1167245930434" at="37,34,62,11" concept="2" />

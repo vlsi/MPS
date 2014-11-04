@@ -38,7 +38,7 @@ public class InterfaceConceptDeclaration_Behavior {
       return;
     }
     SetSequence.fromSet(concepts).addElement(thisNode);
-    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))));
     for (SNode extendsInterface : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")) != null);

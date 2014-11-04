@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @Deprecated
 public class MemberScopes {
@@ -23,7 +23,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Object[]{});
+        return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), "virtual_isAbstract_1232982539764", new Object[]{});
       }
     };
   }
@@ -33,7 +33,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode}));
+        return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode}));
       }
     };
   }

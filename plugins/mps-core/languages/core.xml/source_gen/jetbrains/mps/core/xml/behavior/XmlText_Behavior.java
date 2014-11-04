@@ -29,8 +29,8 @@ public class XmlText_Behavior {
   }
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
-      SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299051l, "jetbrains.mps.core.xml.structure.XmlContent"))) {
+      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299051l, "jetbrains.mps.core.xml.structure.XmlContent"));
       return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(leftContent))), "virtual_textLike_1262430001741498277", new Object[]{}) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, 1622293396948953704l, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;

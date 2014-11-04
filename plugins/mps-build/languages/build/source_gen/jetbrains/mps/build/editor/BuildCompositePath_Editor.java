@@ -25,9 +25,9 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -63,7 +63,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_head");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_n78otj_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -89,14 +89,14 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
     }
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
+      return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
     }
   }
   private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n78otj_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_n78otj_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_n78otj_b1a(editorContext, node));
@@ -109,10 +109,10 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_n78otj_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     BuildCompositePath_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -128,7 +128,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
       editorCell.setRole("tail");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);

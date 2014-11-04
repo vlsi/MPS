@@ -4,9 +4,9 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,8 +16,8 @@ public class ConceptFunctionParameter_node_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
-    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false) != null)) {
-      SNode editorTab = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false);
+    if ((SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 3743831881070611759l, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false) != null)) {
+      SNode editorTab = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 3743831881070611759l, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false);
       return _quotation_createNode_luv170_a1a0a0(SLinkOperations.getTarget(editorTab, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 3743831881070611759l, 3743831881070611760l, "baseNodeConcept")));
     } else {
       return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "virtual_getType_2443692612523876968", new Object[]{});

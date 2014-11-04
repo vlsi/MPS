@@ -21,7 +21,7 @@ public class AbandonInput_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_msmwtj_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -39,13 +39,13 @@ public class typeof_ArithmSymbol_InferenceRule extends AbstractInferenceRule_Run
                 typeCheckingContext.createLessThanInequality((SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629042133323", true), true, true, _info_12389875345);
               }
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, "jetbrains.mps.baseLanguage.math.structure.MatrixType")) || SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, "jetbrains.mps.baseLanguage.math.structure.VectorType"))) {
           } else {
             String s = "";
-            if (SNodeOperations.isInstanceOf(symbol, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression")) {
+            if (SNodeOperations.isInstanceOf(symbol, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236428466848l, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression"))) {
               s = "Multiplicand's ";
             }
-            if (SNodeOperations.isInstanceOf(symbol, "jetbrains.mps.baseLanguage.math.structure.BigSumExpression")) {
+            if (SNodeOperations.isInstanceOf(symbol, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236439460603l, "jetbrains.mps.baseLanguage.math.structure.BigSumExpression"))) {
               s = "Summand's ";
             }
             {

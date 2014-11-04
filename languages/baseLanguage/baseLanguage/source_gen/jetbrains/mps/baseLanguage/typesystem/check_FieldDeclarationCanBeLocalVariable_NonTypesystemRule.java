@@ -8,10 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -29,19 +30,19 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
   public check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule() {
   }
   public void applyRule(final SNode variableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && !(SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(variableDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) && !(SNodeOperations.isInstanceOf(variableDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
       return;
     }
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")))) {
       return;
     }
-    Iterable<SNode> refs = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(variableDeclaration), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> refs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(variableDeclaration), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == variableDeclaration;
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false, false) == null);
+        return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false, false) == null);
       }
     });
     if (Sequence.fromIterable(refs).isEmpty()) {
@@ -49,14 +50,14 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
     }
     if (Sequence.fromIterable(refs).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == null);
+        return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false) == null);
       }
     })) {
       return;
     }
     final Iterable<SNode> methods = Sequence.fromIterable(refs).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+        return SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
       }
     });
 

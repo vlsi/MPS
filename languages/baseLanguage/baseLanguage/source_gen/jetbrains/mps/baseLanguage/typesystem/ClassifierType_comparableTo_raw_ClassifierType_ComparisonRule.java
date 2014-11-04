@@ -21,11 +21,11 @@ public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule exten
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if ((ListSequence.fromList(SLinkOperations.getChildren(node1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty() ^ ListSequence.fromList(SLinkOperations.getChildren(node2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty()) || ListSequence.fromList(SLinkOperations.getChildren(node1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       }
     }) || ListSequence.fromList(SLinkOperations.getChildren(node2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       }
     })) {
       // formatting 

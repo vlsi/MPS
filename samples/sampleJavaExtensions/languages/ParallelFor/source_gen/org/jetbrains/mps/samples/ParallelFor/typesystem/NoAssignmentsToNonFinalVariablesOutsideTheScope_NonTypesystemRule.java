@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -22,11 +22,11 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
   public NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule() {
   }
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode directAncestor = SNodeOperations.getAncestor(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
-    if (directAncestor != null && !(SNodeOperations.hasRole(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "threadPool"))) {
+    SNode directAncestor = SNodeOperations.getNodeAncestor(variableReference, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), false, false);
+    if (directAncestor != null && !(SNodeOperations.hasRole(variableReference, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")))) {
       SNode variableDeclaration = SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
 
-      SNode declarationsAncestor = SNodeOperations.getAncestor(variableDeclaration, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
+      SNode declarationsAncestor = SNodeOperations.getNodeAncestor(variableDeclaration, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), false, false);
       if (directAncestor != declarationsAncestor) {
         if (!(SPropertyOperations.getBoolean(variableDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")))) {
           {

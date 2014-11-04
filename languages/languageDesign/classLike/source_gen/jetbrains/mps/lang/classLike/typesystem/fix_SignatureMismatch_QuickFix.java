@@ -6,9 +6,9 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class fix_SignatureMismatch_QuickFix extends QuickFix_Runtime {
   public fix_SignatureMismatch_QuickFix() {
@@ -17,9 +17,9 @@ public class fix_SignatureMismatch_QuickFix extends QuickFix_Runtime {
     return "Copy signature from descriptor";
   }
   public void execute(SNode node) {
-    SNode nodeToReplace = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"), "virtual_getDeclaration_9097849371503884215", new Object[]{}), "virtual_create_8260330507834998478", new Object[]{}), "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance");
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod") && SNodeOperations.isInstanceOf(nodeToReplace, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")) {
-      SLinkOperations.setTarget(SNodeOperations.cast(nodeToReplace, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
+    SNode nodeToReplace = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308708729l, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance")), "virtual_getDeclaration_9097849371503884215", new Object[]{}), "virtual_create_8260330507834998478", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308708729l, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")) && SNodeOperations.isInstanceOf(nodeToReplace, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"))) {
+      SLinkOperations.setTarget(SNodeOperations.cast(nodeToReplace, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
     }
     SNodeOperations.replaceWithAnother(node, nodeToReplace);
   }

@@ -86,7 +86,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
       myParameter = parameter;
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((myParameter == null) ? "Remove @export() Annotation" : "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + " Annotation");
+      return ((myParameter == null) ? "Remove @export() Annotation" : "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5425021671150136555l, "jetbrains.mps.lang.core.structure.ExportScope")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + " Annotation");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope")));

@@ -47,9 +47,9 @@ public class Dependency_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ListScope(SLinkOperations.getChildren(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", true, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))) {
+            return new ListScope(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), true, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))) {
               public String getName(SNode child) {
-                return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.samples.componentDependencies.structure.Component"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+                return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, "jetbrains.mps.samples.componentDependencies.structure.Component")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
             };
           }

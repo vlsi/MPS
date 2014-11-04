@@ -49,7 +49,7 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
             SNode editorType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.SettingsEditorType"), false);
             if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066618l, 946964771156066619l, "configuration")) == null)) {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
@@ -57,7 +57,7 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
             List<SNode> operations = SettingsEditor_Behavior.call_getDeclaredOperations_946964771156067031(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066618l, 946964771156066619l, "configuration")), MetaAdapterFactory.getContainmentLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, 946964771156066337l, "editor")));
             return ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
+                return ((SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066621l, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
               }
             });
           }

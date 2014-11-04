@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,7 +23,7 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
   public check_EnumConstantHasConstructorDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode enumClass = SNodeOperations.getAncestor(enumConstant, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
+    SNode enumClass = SNodeOperations.getNodeAncestor(enumConstant, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
     if ((enumClass == null)) {
       return;
     }

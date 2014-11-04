@@ -89,7 +89,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6g738i_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_6g738i_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6g738i_b1a(editorContext, node));

@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_DependentComputationNode_InferenceR
   public typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode dependentComputationItem = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", false, false);
+    SNode dependentComputationItem = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 8058965347377019242l, "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), false, false);
     if ((dependentComputationItem != null)) {
       {
         SNode _nodeToCheck_1029348928467 = node;

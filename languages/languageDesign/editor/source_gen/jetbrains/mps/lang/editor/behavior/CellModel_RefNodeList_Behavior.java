@@ -17,13 +17,13 @@ public class CellModel_RefNodeList_Behavior {
     return CellIdManager.createRefNodeListId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
   }
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       return "(-";
     }
     return "(>";
   }
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       return "-)";
     }
     return "<)";

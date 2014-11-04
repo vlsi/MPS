@@ -5,9 +5,9 @@ package jetbrains.mps.make.facet.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ResourceClassifierType_replaceWith_ClassifierType_QuickFix extends QuickFix_Runtime {
   public ResourceClassifierType_replaceWith_ClassifierType_QuickFix() {
@@ -16,8 +16,8 @@ public class ResourceClassifierType_replaceWith_ClassifierType_QuickFix extends 
     return "Replace with ClassifierType";
   }
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.make.facet.structure.ResourceClassifierType") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"))) {
-      SNode resource = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.make.facet.structure.ResourceClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571402207412l, "jetbrains.mps.make.facet.structure.ResourceClassifierType")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")))) {
+      SNode resource = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571402207412l, "jetbrains.mps.make.facet.structure.ResourceClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       SNode replmnt = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       SLinkOperations.setTarget(replmnt, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), resource);
     }

@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -18,20 +18,20 @@ public class AddCast_QuickFix extends QuickFix_Runtime {
   }
   public String getDescription(SNode node) {
     String text = "expression";
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"))) {
       text = "right side of assignment";
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+    } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       text = "initializer";
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation") || SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "actualArgument")) {
+    } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068499141036l, "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) || SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))) {
       text = "parameter";
     }
-    return "Cast " + text + " to " + ((SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), "jetbrains.mps.baseLanguage.structure.Type") ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])), "virtual_getPresentation_1213877396640", new Object[]{})));
+    return "Cast " + text + " to " + ((SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")) ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])), "virtual_getPresentation_1213877396640", new Object[]{})));
   }
   public void execute(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.Expression"))) {
+    if (!(SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("expression")[0]), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")))) {
       return;
     }
-    SNode actualType = (SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), "jetbrains.mps.baseLanguage.structure.Type") ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])));
+    SNode actualType = (SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")) ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])));
 
     SNode cast = SNodeOperations.replaceWithNewChild(((SNode) AddCast_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.CastExpression");
     SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), ((SNode) AddCast_QuickFix.this.getField("expression")[0]));

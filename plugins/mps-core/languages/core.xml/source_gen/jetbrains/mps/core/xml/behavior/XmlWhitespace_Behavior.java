@@ -4,9 +4,9 @@ package jetbrains.mps.core.xml.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlWhitespace_Behavior {
@@ -14,9 +14,9 @@ public class XmlWhitespace_Behavior {
   }
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPrologElement")) {
-      SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPrologElement");
-      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlWhitespace") || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
+      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
+      return SNodeOperations.isInstanceOf(leftContent, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace")) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.actions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -15,10 +17,10 @@ public class QueryFunction_SideTransform_Handler_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern")) {
+    if (SNodeOperations.isInstanceOf(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177327274449l, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"))) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext")) {
+    if (SNodeOperations.isInstanceOf(parameter, MetaAdapterFactory.getConcept(new UUID(1401823809184416330l, -7197931390967525754l), 1194033889146l, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"))) {
       return false;
     }
     return true;

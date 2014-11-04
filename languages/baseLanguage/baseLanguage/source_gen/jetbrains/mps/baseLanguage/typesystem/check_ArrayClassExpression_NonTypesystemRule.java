@@ -21,7 +21,7 @@ public class check_ArrayClassExpression_NonTypesystemRule extends AbstractNonTyp
   public check_ArrayClassExpression_NonTypesystemRule() {
   }
   public void applyRule(final SNode arrayClassExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayClassExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1251851371723515367l, 1251851371723515368l, "arrayType")), "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayClassExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1251851371723515367l, 1251851371723515368l, "arrayType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arrayClassExpression, "Array type expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1587149463194054693", null, errorTarget);

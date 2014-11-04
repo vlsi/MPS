@@ -6,11 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ContextUtil {
@@ -20,18 +20,18 @@ public class ContextUtil {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(node, "exprUsage");
     if ((usage != null)) {
       if (topmost) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).last();
       } else {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
     } else {
-      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
       if ((outclass != null)) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(outclass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true)).last();
       }
     }
     return null;
@@ -40,18 +40,18 @@ public class ContextUtil {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3585982959253588676l, 3585982959253588677l, "inner")), "methUsageExpr");
     if ((usage != null)) {
       if (topmost) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).last();
       } else {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
     } else {
-      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
       if ((outclass != null)) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(outclass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true)).last();
       }
     }
     return null;
@@ -60,21 +60,21 @@ public class ContextUtil {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 7738261905749582030l, "inner")), "classUsageExpr");
     if ((usage != null)) {
       if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 4106700815269135333l, "nonStatic"))) {
-        return SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        return SNodeOperations.getNodeAncestor(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
       }
       if (topmost) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).last();
       } else {
-        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
     } else {
-      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
       if ((outclass != null)) {
-        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+        return ListSequence.fromList(SNodeOperations.getNodeAncestors(outclass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true)).last();
       }
     }
     return null;

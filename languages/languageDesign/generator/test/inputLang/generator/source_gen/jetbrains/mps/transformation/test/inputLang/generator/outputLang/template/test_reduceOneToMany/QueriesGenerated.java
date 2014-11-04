@@ -19,7 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_3893401255414132234(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceOneToMany", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceOneToMany", "none");
   }
   public static boolean baseMappingRule_Condition_3893401255414129777(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceOneToMany", "none");

@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
@@ -48,7 +49,7 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
             String target = null;
             if ((contextProject != null)) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleArtifactsScope(contextProject, true);
@@ -68,12 +69,12 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
               if ((contextProject != null)) {
                 return new FilteringScope(ScopeUtil.getVisibleArtifactsScope(contextProject, true)) {
                   @Override
                   public boolean isExcluded(SNode node) {
-                    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Container"));
+                    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")));
                   }
                 };
               }

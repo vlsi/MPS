@@ -23,8 +23,8 @@ public class ForLoopNotNull extends DataFlowConstructor {
     return "jetbrains.mps.baseLanguage.structure.ForStatement";
   }
   public void performActions(Program o, SNode node) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-      SNode notEquals = SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+      SNode notEquals = SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"));
       SNode notNull = NullableUtil.getOtherThanNull(notEquals);
       if (notNull != null) {
         {

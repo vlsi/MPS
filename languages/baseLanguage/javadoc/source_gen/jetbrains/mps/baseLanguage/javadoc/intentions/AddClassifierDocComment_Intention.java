@@ -9,14 +9,14 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -53,7 +53,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     return true;
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false) == null) && (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration", true, false) == null) && (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", true, false) == null) && SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) == node;
+    return (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), true, false) == null) && (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), true, false) == null) && (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), true, false) == null) && SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false) == node;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "2068944020170372970");

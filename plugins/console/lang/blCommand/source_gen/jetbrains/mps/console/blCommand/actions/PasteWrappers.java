@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -27,7 +27,7 @@ public class PasteWrappers {
         return "jetbrains.mps.console.base.structure.Command";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        return createBLExpression_sma98h_a0a0a(SNodeOperations.cast(HUtil.copyIfNecessary(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Expression"));
+        return createBLExpression_sma98h_a0a0a(SNodeOperations.cast(HUtil.copyIfNecessary(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
@@ -49,7 +49,7 @@ public class PasteWrappers {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        return createExpressionStatement_sma98h_a0a0c(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"))), "jetbrains.mps.baseLanguage.structure.Expression"));
+        return createExpressionStatement_sma98h_a0a0c(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
     });
     return result;

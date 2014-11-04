@@ -7,14 +7,14 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -38,7 +38,7 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   @Nullable
   public Icon getIcon() {
@@ -48,8 +48,8 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
     List<SNode> rules = GoToRulesHelper.getRules(node, true);
     return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
-        boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
-        boolean bConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(b, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
+        boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference"));
+        boolean bConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(b, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference"));
 
         // rules with concept references go first 
         if (aConceptRef && !(bConceptRef)) {
@@ -61,8 +61,8 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
 
         // rules with concept references - more specific goes first 
         if (aConceptRef && bConceptRef) {
-          SNode aConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(a, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
-          SNode bConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(b, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
+          SNode aConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(a, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
+          SNode bConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(b, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
           if (SConceptOperations.isSubConceptOf(aConcept, NameUtil.nodeFQName(bConcept))) {
             return 1;
           }

@@ -48,7 +48,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
       }
       SNode current = node;
       while (current != null) {
-        current = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(current, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        current = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(current, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         if (current != null) {
           ListSequence.fromList(_results).addElement(current);
         }

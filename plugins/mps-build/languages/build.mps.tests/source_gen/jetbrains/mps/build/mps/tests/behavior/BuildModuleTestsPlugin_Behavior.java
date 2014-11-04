@@ -30,10 +30,10 @@ public class BuildModuleTestsPlugin_Behavior {
 
     // find mps-test.jar 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
-    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), "jetbrains.mps.build.structure.BuildProject");
-    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
+    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((mpsTestModule != null)) {
-      SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), "jetbrains.mps.build.structure.BuildLayout_Node");
+      SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {
         // specify explicitly what we need maybe? 
         helper.artifacts().put("mps-test-folder", SNodeOperations.getParent(mpsTestJar));

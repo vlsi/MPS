@@ -21,8 +21,8 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

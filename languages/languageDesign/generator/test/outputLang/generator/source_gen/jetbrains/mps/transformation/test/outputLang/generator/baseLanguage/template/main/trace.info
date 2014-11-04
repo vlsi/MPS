@@ -990,8 +990,8 @@
       <unit id="1209603916390" at="45,0,751,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="3571912445009978243" at="37,110,38,152" concept="9" />
-      <node id="2681305894288179563" at="40,110,41,1385" concept="9" />
+      <node id="3571912445009978243" at="37,110,38,264" concept="9" />
+      <node id="2681305894288179563" at="40,110,41,1895" concept="9" />
       <node id="8900764248744322641" at="43,110,44,17" concept="9" />
       <node id="2163819695913945869" at="52,112,53,226" concept="9" />
       <node id="6010543442198681253" at="55,112,56,201" concept="9" />
@@ -1004,7 +1004,7 @@
       <node id="1473665232107485242" at="103,108,104,16" concept="9" />
       <node id="2581715795166750426" at="118,103,119,189" concept="9" />
       <node id="3571912445009934868" at="121,120,122,365" concept="9" />
-      <node id="3571912445009924807" at="127,122,128,206" concept="9" />
+      <node id="3571912445009924807" at="127,122,128,318" concept="9" />
       <node id="4146564171992608884" at="197,0,198,0" concept="4" trace="patternVar_right" />
       <node id="4146564171992608884" at="198,0,199,0" concept="4" trace="patternVar_xx" />
       <node id="4146564171992608884" at="199,0,200,0" concept="4" trace="patternVar_yy" />
@@ -1343,8 +1343,8 @@
       <scope id="933643154465852760" at="581,42,581,42" />
       <scope id="8371596541809088645" at="586,37,586,37" />
       <scope id="8371596541809088645" at="615,42,615,42" />
-      <scope id="3571912445009978242" at="37,110,38,152" />
-      <scope id="4112907264514778045" at="40,110,41,1385" />
+      <scope id="3571912445009978242" at="37,110,38,264" />
+      <scope id="4112907264514778045" at="40,110,41,1895" />
       <scope id="8900764248744322640" at="43,110,44,17" />
       <scope id="2163819695913945868" at="52,112,53,226" />
       <scope id="6010543442198681252" at="55,112,56,201" />
@@ -1357,7 +1357,7 @@
       <scope id="1473665232107485241" at="103,108,104,16" />
       <scope id="4816349095291000369" at="118,103,119,189" />
       <scope id="3571912445009918070" at="121,120,122,365" />
-      <scope id="3571912445009918067" at="127,122,128,206" />
+      <scope id="3571912445009918067" at="127,122,128,318" />
       <scope id="4146564171992608884" at="205,143,206,23" />
       <scope id="4146564171992608884" at="210,94,211,25" />
       <scope id="4146564171992608884" at="217,151,218,29" />
@@ -2664,11 +2664,11 @@
       <node id="3571912445009937379" at="76,112,77,62" concept="9" />
       <node id="3571912445009934896" at="79,112,80,67" concept="9" />
       <node id="3571912445009937430" at="82,112,83,66" concept="9" />
-      <node id="3571912445009937457" at="124,117,125,369" concept="9" />
+      <node id="3571912445009937457" at="124,117,125,471" concept="9" />
       <scope id="3571912445009937378" at="76,112,77,62" />
       <scope id="3571912445009934895" at="79,112,80,67" />
       <scope id="3571912445009937428" at="82,112,83,66" />
-      <scope id="3571912445009937448" at="124,117,125,369" />
+      <scope id="3571912445009937448" at="124,117,125,471" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/4146564171992412775">
@@ -3341,10 +3341,10 @@
       <unit id="8371596541809088655" at="24,0,84,0" name="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.SwitchcustomStatement" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="8371596541809088661" at="46,110,47,289" concept="9" />
-      <node id="8371596541809090607" at="49,110,50,289" concept="9" />
-      <scope id="8371596541809088660" at="46,110,47,289" />
-      <scope id="8371596541809090606" at="49,110,50,289" />
+      <node id="8371596541809088661" at="46,110,47,391" concept="9" />
+      <node id="8371596541809090607" at="49,110,50,391" concept="9" />
+      <scope id="8371596541809088660" at="46,110,47,391" />
+      <scope id="8371596541809090606" at="49,110,50,391" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)/933643154466320524">

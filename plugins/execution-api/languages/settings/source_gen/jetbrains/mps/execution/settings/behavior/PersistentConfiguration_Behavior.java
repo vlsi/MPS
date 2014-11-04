@@ -56,19 +56,19 @@ public class PersistentConfiguration_Behavior {
   }
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> allMemebers = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "virtual_getMembers_1213877528020", new Object[]{contextNode});
-    if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
+    if ((SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066621l, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+          return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066331l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"))) || !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getVisiblity_1213877352965", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
         }
       }).toListSequence();
     }
     return allMemebers;
   }
   public static SNode call_getContextPersistentConfigurationType_946964771156066389(SAbstractConcept thisConcept, SNode node) {
-    SNode configuration = SNodeOperations.getAncestor(node, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", false, false);
+    SNode configuration = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), false, false);
     if (configuration == null) {
-      SNode executor = SNodeOperations.getAncestor(node, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", false, false);
+      SNode executor = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"), false, false);
       if (executor != null) {
         configuration = SLinkOperations.getTarget(executor, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration"));
       }

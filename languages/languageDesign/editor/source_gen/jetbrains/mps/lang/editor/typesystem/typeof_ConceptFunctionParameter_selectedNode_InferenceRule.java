@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_selectedNode_InferenceRule extends 
   public typeof_ConceptFunctionParameter_selectedNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, 4203201205843994215l, "applicableConcept"));
+    SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, 4203201205843994215l, "applicableConcept"));
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "8546225179494125840", 0, null);

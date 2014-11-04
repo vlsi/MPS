@@ -35,7 +35,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_ysso2m_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_ysso2m_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ysso2m_b0a(editorContext, node));
@@ -70,7 +70,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
       editorCell.setRole("exponent");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUPERSCRIPT);
     editorCell.getStyle().putAll(style);
     delete_exponent.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -89,7 +89,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ysso2m_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

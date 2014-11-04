@@ -40,14 +40,14 @@ public abstract class ElementCreator {
     }
     boolean first = true;
     for (SNode part : SLinkOperations.getChildren(element, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603387l, "content"))) {
-      if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Text")) {
+      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, "jetbrains.mps.sampleXML.structure.Text"))) {
         if (!(first)) {
           result.addContent("\n");
         }
-        result.addContent(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Text"), MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, 1225239603394l, "text")));
+        result.addContent(SPropertyOperations.getString(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, "jetbrains.mps.sampleXML.structure.Text")), MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, 1225239603394l, "text")));
       }
-      if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Element")) {
-        result.addContent(ElementCreator.createElement(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Element"), textGen));
+      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element"))) {
+        result.addContent(ElementCreator.createElement(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element")), textGen));
       }
       first = false;
     }

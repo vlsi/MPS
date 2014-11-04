@@ -17,13 +17,13 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class JUnitTests_Producer {
@@ -107,7 +107,7 @@ public class JUnitTests_Producer {
       super(configurationType, factoryName);
     }
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
@@ -135,7 +135,7 @@ public class JUnitTests_Producer {
       super(configurationType, factoryName);
     }
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
@@ -147,7 +147,7 @@ public class JUnitTests_Producer {
           return null;
         }
       }
-      SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), "jetbrains.mps.lang.core.structure.INamedConcept");
+      SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"));
       if (testNode == null) {
         return null;
       }
@@ -181,7 +181,7 @@ public class JUnitTests_Producer {
         return false;
       }
       for (Object obj : (List) source) {
-        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
+        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))))) {
           return false;
         }
       }
@@ -200,7 +200,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setRunType(JUnitRunTypes.NODE);
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodesToCloneableList(source));
       return configuration;
@@ -219,7 +219,7 @@ public class JUnitTests_Producer {
         return false;
       }
       for (Object obj : (List) source) {
-        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")))) {
+        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))))) {
           return false;
         }
       }

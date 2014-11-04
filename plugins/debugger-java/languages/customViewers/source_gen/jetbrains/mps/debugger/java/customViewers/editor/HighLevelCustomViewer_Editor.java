@@ -43,7 +43,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5jxfrn_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5jxfrn_b0a(editorContext, node));
@@ -77,7 +77,7 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_c0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5jxfrn_a2a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5jxfrn_b2a0(editorContext, node));

@@ -333,8 +333,8 @@
       <unit id="400642802550420129" at="27,0,188,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="3708576844065084050" at="24,111,25,196" concept="8" />
-      <node id="3708576844065084085" at="25,196,26,460" concept="9" />
+      <node id="3708576844065084050" at="24,111,25,304" concept="8" />
+      <node id="3708576844065084085" at="25,304,26,562" concept="9" />
       <node id="400642802550422234" at="28,107,29,191" concept="9" />
       <node id="8297320321098371695" at="31,108,32,199" concept="9" />
       <node id="3708576844065051194" at="34,108,35,197" concept="9" />
@@ -345,7 +345,7 @@
       <scope id="3708576844065051191" at="34,108,35,197" />
       <scope id="400642802550422241" at="37,119,38,193" />
       <scope id="3708576844065083882" at="40,120,41,54" />
-      <scope id="400642802550422215" at="24,111,26,460">
+      <scope id="400642802550422215" at="24,111,26,562">
         <var name="m" id="3708576844065084051" />
       </scope>
     </file>

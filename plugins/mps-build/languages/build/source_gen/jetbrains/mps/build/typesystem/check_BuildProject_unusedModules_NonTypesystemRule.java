@@ -31,11 +31,11 @@ public class check_BuildProject_unusedModules_NonTypesystemRule extends Abstract
     Set<SNode> modules = new HashSet<SNode>();
     for (SNode jm : ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaModule");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaModule");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
       }
     })) {
       modules.add(jm);

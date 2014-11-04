@@ -4,9 +4,9 @@ package jetbrains.mps.lang.actions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -19,13 +19,13 @@ public class QueryFunction_ParameterizedSubstitute_Handler_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
+    if (SNodeOperations.isInstanceOf(parameter, MetaAdapterFactory.getConcept(new UUID(1401823809184416330l, -7197931390967525754l), 1161622665029l, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"))) {
       return false;
     }
     return true;
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.ConceptPart", false, false);
+    SNode ancestor = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177333529597l, "jetbrains.mps.lang.actions.structure.ConceptPart"), false, false);
     SNode conceptOfNodeReturnedByHandler = SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177333529597l, 1177333551023l, "concept"));
     return _quotation_createNode_494qzt_a2a1(conceptOfNodeReturnedByHandler);
   }

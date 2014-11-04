@@ -34,13 +34,13 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
         SNode returnType = SLinkOperations.getTarget(overridenMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
-        SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         SNode overridingMethodParent = SNodeOperations.getParent(overridingMethod);
         SNode resolvedReturnType;
-        if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier"), returnType, ancestor, overridingMethod, overridenMethod);
-        } else if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-          SNode enumClass = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), "jetbrains.mps.baseLanguage.structure.EnumClass");
+        if (SNodeOperations.isInstanceOf(overridingMethodParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+          resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(overridingMethodParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), returnType, ancestor, overridingMethod, overridenMethod);
+        } else if (SNodeOperations.isInstanceOf(overridingMethodParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
+          SNode enumClass = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"));
           SNode dummy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
           SLinkOperations.setTarget(dummy, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier"), enumClass);
           resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(dummy, returnType, ancestor, overridingMethod, overridenMethod);

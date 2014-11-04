@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.refactorings;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SafeDeleteConceptMethod_Target implements IRefactoringTarget {
   public SafeDeleteConceptMethod_Target() {
@@ -16,7 +18,7 @@ public class SafeDeleteConceptMethod_Target implements IRefactoringTarget {
     return false;
   }
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
   }
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {

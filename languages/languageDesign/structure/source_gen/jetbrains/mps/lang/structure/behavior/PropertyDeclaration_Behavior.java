@@ -21,6 +21,6 @@ public class PropertyDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1082983657063");
   }
   public static SNode call_getConceptDeclaration_3254710223377139385(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
   }
 }

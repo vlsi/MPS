@@ -54,7 +54,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xk0l2m_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xk0l2m_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_xk0l2m_a1a(editorContext, node));
     return editorCell;
@@ -80,8 +80,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Label(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     BreakStatement_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BreakStatement_Editor.BreakStatement_generic_cellMenu_xk0l2m_a0a1a()}));
@@ -98,7 +98,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     public BreakStatement_generic_cellMenu_xk0l2m_a0a1a() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -155,7 +155,7 @@ __switch__:
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xk0l2m_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_xk0l2m_a2a(editorContext, node));
     return editorCell;

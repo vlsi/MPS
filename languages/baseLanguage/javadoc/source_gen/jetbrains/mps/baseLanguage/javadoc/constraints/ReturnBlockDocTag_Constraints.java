@@ -33,8 +33,8 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode returnType = SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
-    return !(((returnType != null) && SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType")));
+    SNode returnType = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
+    return !(((returnType != null) && SNodeOperations.isInstanceOf(returnType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "8970989240998521777");
 }

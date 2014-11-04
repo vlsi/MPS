@@ -88,7 +88,7 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ulfewq_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ulfewq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ulfewq_b1a(editorContext, node));
@@ -104,7 +104,7 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ulfewq_a1a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -175,7 +175,7 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ulfewq_d1a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

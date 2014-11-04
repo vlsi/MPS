@@ -40,7 +40,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_arlg9k_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_arlg9k_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_arlg9k_b0(editorContext, node));
@@ -52,7 +52,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     editorCell.setCellId("Constant_arlg9k_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -62,7 +62,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("IMCA_refNodeList_actualArgument");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);
     if (renderingCondition_arlg9k_a1a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -121,9 +121,9 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_arlg9k_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -137,9 +137,9 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     editorCell.setCellId("Constant_arlg9k_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_arlg9k_a2a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

@@ -42,7 +42,7 @@ public class ActionDeclaration_Behavior {
       SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         }
       });
       return Scopes.forMethods(kind, new MethodsScope(baseActionType, methods), ScopeUtils.lazyParentScope(thisNode, kind));

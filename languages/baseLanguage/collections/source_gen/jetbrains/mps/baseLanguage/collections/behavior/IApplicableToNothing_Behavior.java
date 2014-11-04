@@ -9,10 +9,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -27,7 +27,7 @@ public class IApplicableToNothing_Behavior {
   public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
-    if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));

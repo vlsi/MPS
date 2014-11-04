@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -23,26 +24,26 @@ public class SNodeOperation_Behavior {
   }
   public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
     SNode parent = SNodeOperations.getParent(thisNode);
-    return SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
   }
   public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
-    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
   }
   public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
-    if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
-    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
   }
   public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(parameterConcept));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parameterConcept));
       }
     }).first();
   }

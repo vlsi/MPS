@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -23,11 +23,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     super(parameters);
     List<SNode> output = this.myAnalyzer.getOutputVariables();
     if (ListSequence.fromList(output).isNotEmpty()) {
-      this.myOutputVariable = SNodeOperations.cast(ListSequence.fromList(output).first(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+      this.myOutputVariable = SNodeOperations.cast(ListSequence.fromList(output).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     }
     for (SNode statement : ListSequence.fromList(this.myStatements)) {
-      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        SNode tmp = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))) {
+        SNode tmp = SNodeOperations.cast(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
         if (SLinkOperations.getTarget(tmp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")) == this.myOutputVariable) {
           this.myDeclarationStatement = tmp;
         }

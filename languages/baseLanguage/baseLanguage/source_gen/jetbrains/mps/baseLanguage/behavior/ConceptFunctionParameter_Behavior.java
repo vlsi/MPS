@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_Behavior {
@@ -28,7 +28,7 @@ public class ConceptFunctionParameter_Behavior {
     return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
   }
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
-    List<SNode> functions = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
+    List<SNode> functions = SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

@@ -5,11 +5,11 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -29,7 +29,7 @@ public class CellReference {
   private Map<SNode, SNode> myMap;
   public CellReference(SNode node, SNode annotation, Map<SNode, SNode> map) {
     this.myNode = node;
-    this.myAnnotation = SNodeOperations.cast(annotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation");
+    this.myAnnotation = SNodeOperations.cast(annotation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
     this.myMap = map;
   }
   public SNode getNode() {

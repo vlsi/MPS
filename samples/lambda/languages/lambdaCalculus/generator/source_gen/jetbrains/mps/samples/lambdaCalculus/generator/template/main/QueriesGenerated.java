@@ -46,10 +46,10 @@ public class QueriesGenerated {
     return LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(_context.getNode()) == null || !(LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(_context.getNode())));
   }
   public static boolean baseMappingRule_Condition_1745225562807772209(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType");
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
   }
   public static boolean baseMappingRule_Condition_1745225562807772232(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
+    return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType")));
   }
   public static Object propertyMacro_GetPropertyValue_391739495267627152(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, 4022026349914762710l, "value"));
@@ -82,13 +82,13 @@ public class QueriesGenerated {
     return ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(_context.getNode())).count();
   }
   public static Object propertyMacro_GetPropertyValue_2985097847315916808(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
   public static Object propertyMacro_GetPropertyValue_2167053794906731221(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_199058371937604760(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
   public static Object propertyMacro_GetPropertyValue_2167053794906731228(final PropertyMacroContext _context) {
     return "Function_" + _context.getNode().getNodeId().toString();
@@ -167,7 +167,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_199058371937625985(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a74();
     } else {
       return type;
@@ -184,7 +184,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_7347119454575546785(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, 4939219901991602081l, "expression")));
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a15();
     } else {
       return type;
@@ -195,7 +195,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_2985097847315908623(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a35();
     } else {
       return type;
@@ -203,7 +203,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_2985097847315908664(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a45();
     } else {
       return type;
@@ -211,7 +211,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_2985097847315916634(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a55();
     } else {
       return type;
@@ -219,7 +219,7 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_2985097847315916658(final SourceSubstituteMacroNodeContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(_context.getNode());
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"))) {
       return _quotation_createNode_x583g4_a0a1a65();
     } else {
       return type;

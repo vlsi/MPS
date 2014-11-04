@@ -39,7 +39,7 @@ public class check_ClassifierOverridingFinalMethods_NonTypesystemRule extends Ab
           break;
         }
         SNode overridenClassifier = next._1();
-        if (SNodeOperations.isInstanceOf(overridenClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(overridenClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
+        if (SNodeOperations.isInstanceOf(overridenClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(overridenClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(overridingMethod, "method can not override a method in a final class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "543866787100759840", null, errorTarget);

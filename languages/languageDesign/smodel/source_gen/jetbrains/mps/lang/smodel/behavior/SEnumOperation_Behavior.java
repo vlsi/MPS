@@ -12,6 +12,6 @@ public class SEnumOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getEnum_1240931322043(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, 1240930118028l, "enumDeclaration"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, 1240930118028l, "enumDeclaration"));
   }
 }

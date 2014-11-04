@@ -18,9 +18,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -43,7 +43,7 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> whenConcreteStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false);
+            List<SNode> whenConcreteStatements = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), false);
             List<SNode> declarations = new ArrayList<SNode>();
             for (SNode whenConcreteStatement : whenConcreteStatements) {
               SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, 1205761991995l, "argumentRepresentator"));

@@ -53,7 +53,7 @@ public class LanguageRuntimeGeneratorUtils {
     });
   }
   private static SModel getAspectModel(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext) {
-    SNode language = SNodeOperations.cast(SNodeOperations.getParent(modelReference), "jetbrains.mps.lang.project.structure.Language");
+    SNode language = SNodeOperations.cast(SNodeOperations.getParent(modelReference), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"));
     if (language == null) {
       genContext.showErrorMessage(modelReference, "Parent of ModelReference is not a Language: " + SPropertyOperations.getString(modelReference, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName")));
       return null;

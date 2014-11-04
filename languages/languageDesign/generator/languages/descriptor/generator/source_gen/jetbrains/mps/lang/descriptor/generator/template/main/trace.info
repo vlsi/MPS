@@ -2630,8 +2630,8 @@
       <unit id="1698302279987270980" at="27,0,2189,0" name="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1698302279987411174" at="148,112,149,231" concept="8" />
-      <node id="1698302279987411187" at="149,231,150,496" concept="9" />
+      <node id="1698302279987411174" at="148,112,149,340" concept="8" />
+      <node id="1698302279987411187" at="149,340,150,496" concept="9" />
       <node id="7633657384060768612" at="152,112,153,144" concept="9" />
       <node id="3829836699771299944" at="155,112,156,233" concept="9" />
       <node id="1250389701475344521" at="158,112,159,252" concept="8" />
@@ -2640,8 +2640,8 @@
       <node id="1250389701475344548" at="163,12,164,116" concept="3" />
       <node id="1250389701475344605" at="164,116,165,20" concept="9" />
       <node id="1250389701475432578" at="168,112,169,200" concept="9" />
-      <node id="5102832340571646538" at="171,112,172,231" concept="8" />
-      <node id="5102832340571646766" at="172,231,173,588" concept="9" />
+      <node id="5102832340571646538" at="171,112,172,340" concept="8" />
+      <node id="5102832340571646766" at="172,340,173,588" concept="9" />
       <node id="1820665478710807085" at="205,94,206,251" concept="9" />
       <node id="6655394244919403422" at="208,94,209,243" concept="9" />
       <node id="1250389701475281193" at="211,94,212,251" concept="9" />
@@ -2803,8 +2803,8 @@
       <unit id="1698302279987411125" at="18,0,45,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1509962061695074414" at="329,107,330,197" concept="9" />
-      <scope id="1509962061695074413" at="329,107,330,197" />
+      <node id="1509962061695074414" at="329,107,330,306" concept="9" />
+      <scope id="1509962061695074413" at="329,107,330,306" />
     </file>
   </root>
   <root nodeRef="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)/8131497994927289969">

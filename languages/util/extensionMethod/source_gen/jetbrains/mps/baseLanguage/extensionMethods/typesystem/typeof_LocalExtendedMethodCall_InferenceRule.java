@@ -34,19 +34,19 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
     if (imdecl == null) {
       return;
     }
-    final SNode mclass = SNodeOperations.getAncestor(imdecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    final SNode mclass = SNodeOperations.getNodeAncestor(imdecl, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     if (mclass == null) {
       return;
     }
 
-    SNode exmdecl = SNodeOperations.getAncestor(lexmcall, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", false, false);
+    SNode exmdecl = SNodeOperations.getNodeAncestor(lexmcall, MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false, false);
     if (exmdecl == null) {
       return;
     }
 
     SNode exclass = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(exmdecl);
     if (exclass == null) {
-      exclass = SNodeOperations.getAncestor(lexmcall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      exclass = SNodeOperations.getNodeAncestor(lexmcall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     }
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exclass, "virtual_isDescendant_7165541881557222913", new Object[]{mclass}))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -58,8 +58,8 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
 
     SNode thisType = ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(exmdecl);
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    if (SNodeOperations.isInstanceOf(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(thisType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+    if (SNodeOperations.isInstanceOf(thisType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(thisType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
     }
 
     final List<SNode> argTypes = new ArrayList<SNode>();
@@ -69,15 +69,15 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
 
     List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), imdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(SLinkOperations.getChildren(lexmcall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).count()});
     for (SNode type : ListSequence.fromList(typel)) {
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+      if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
       }
     }
 
     SNode retType = SLinkOperations.getTarget(imdecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
-    if (SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(retType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-      retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(retType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+    if (SNodeOperations.isInstanceOf(retType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(retType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+      retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(retType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
     }
     {
       SNode _nodeToCheck_1029348928467 = lexmcall;
@@ -94,7 +94,7 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
         type_var = type_it.next();
         argt_var = argt_it.next();
         final SNode _type = type_var;
-        if (SNodeOperations.isInstanceOf(_type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        if (SNodeOperations.isInstanceOf(_type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
           {
             final SNode A = argt_var;
             typeCheckingContext.whenConcrete(A, new Runnable() {
@@ -102,7 +102,7 @@ public class typeof_LocalExtendedMethodCall_InferenceRule extends AbstractInfere
                 {
                   SNode _nodeToCheck_1029348928467 = lexmcall;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "9033423951287571569", 0, null);
-                  typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
+                  typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                 }
               }
             }, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "9033423951287571567", true, false);

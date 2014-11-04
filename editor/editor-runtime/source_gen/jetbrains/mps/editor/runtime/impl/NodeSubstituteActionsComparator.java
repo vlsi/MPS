@@ -6,6 +6,8 @@ import java.util.Comparator;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class NodeSubstituteActionsComparator implements Comparator<SubstituteAction> {
@@ -25,9 +27,9 @@ public class NodeSubstituteActionsComparator implements Comparator<SubstituteAct
     }
   }
   private int compare(SNode node1, SNode node2) {
-    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      return (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ? 0 : 1);
-    } else if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      return (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) ? 0 : 1);
+    } else if (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return -1;
     }
 
@@ -44,13 +46,13 @@ public class NodeSubstituteActionsComparator implements Comparator<SubstituteAct
       return -1;
     }
 
-    SNode container1 = SNodeOperations.getAncestor(node1, "jetbrains.mps.lang.core.structure.IContainer", true, false);
-    SNode container2 = SNodeOperations.getAncestor(node2, "jetbrains.mps.lang.core.structure.IContainer", true, false);
+    SNode container1 = SNodeOperations.getNodeAncestor(node1, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
+    SNode container2 = SNodeOperations.getNodeAncestor(node2, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
     if (container1 == container2) {
       return 0;
     }
     while (container1 != null) {
-      container1 = SNodeOperations.getAncestor(container1, "jetbrains.mps.lang.core.structure.IContainer", false, false);
+      container1 = SNodeOperations.getNodeAncestor(container1, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), false, false);
       if (container1 == container2) {
         return -1;
       }

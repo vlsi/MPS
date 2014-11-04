@@ -29,7 +29,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_kosqrl_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_kosqrl_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_kosqrl_b0(editorContext, node));
@@ -75,7 +75,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -91,7 +91,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_kosqrl_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

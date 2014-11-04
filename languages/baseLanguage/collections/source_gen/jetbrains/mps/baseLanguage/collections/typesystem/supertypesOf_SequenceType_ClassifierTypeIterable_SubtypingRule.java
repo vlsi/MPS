@@ -22,7 +22,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
   }
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode elemType = SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"));
-    if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(elemType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getBoxedType_1213877337320", new Object[]{});
     }
     return _quotation_createNode_gxg199_a2a1(elemType);

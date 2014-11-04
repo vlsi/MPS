@@ -4,9 +4,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -15,9 +15,9 @@ public class NodesOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_createType_7012097027058652452(SNode thisNode) {
-    SNode refactoringNode = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(refactoringNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {
-      return _quotation_createNode_b95jz1_a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(refactoringNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, 6895093993902310806l, "concept")));
+    SNode refactoringNode = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, "jetbrains.mps.lang.refactoring.structure.Refactoring"), false, false);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(refactoringNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget"))) {
+      return _quotation_createNode_b95jz1_a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(refactoringNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget")), MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, 6895093993902310806l, "concept")));
     }
     return _quotation_createNode_b95jz1_a2a0();
   }

@@ -72,13 +72,13 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode args = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", false, false), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 5379647004618201111l, "arguments"));
-            if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")) {
+            SNode args = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 5379647004618201111l, "arguments"));
+            if (SNodeOperations.isInstanceOf(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176185l, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"))) {
               List<SNode> result = new ArrayList<SNode>();
-              ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176185l, 4739047193854398652l, "list")));
+              ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176185l, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176185l, 4739047193854398652l, "list")));
               return result;
-            } else if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
-              return SLinkOperations.getChildren(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"));
+            } else if (SNodeOperations.isInstanceOf(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"))) {
+              return SLinkOperations.getChildren(SNodeOperations.cast(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"));
             } else {
               return null;
             }

@@ -5,34 +5,35 @@ package jetbrains.mps.baseLanguage.scopes;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenericTypesUtil {
   private GenericTypesUtil() {
   }
   public static SNode getTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return GenericTypesUtil.getTypeByTypeVariable(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), typeByTypeVar);
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      return GenericTypesUtil.getTypeByTypeVariable(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), typeByTypeVar);
     } else
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      return GenericTypesUtil.createClassifierTypeWithResolvedTypeVars(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), typeByTypeVar);
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      return GenericTypesUtil.createClassifierTypeWithResolvedTypeVars(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), typeByTypeVar);
     }
     return type;
   }
   public static SNode methodParamTypeWoutTypeVars(SNode type, Set<SNode> typeParams) {
     SNode typeCopy = SNodeOperations.copyNode(type);
-    for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getDescendants(typeCopy, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
+    for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getNodeDescendants(typeCopy, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{}))) {
       if (!(SetSequence.fromSet(typeParams).contains(SLinkOperations.getTarget(typeVariableRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))))) {
         // not from our type params, skipping 
         continue;
       }
       // let's see if it's inside ? extends E or ? super E, we want to avoid invalid types like ? extends ? 
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), "jetbrains.mps.baseLanguage.structure.UpperBoundType") && SNodeOperations.hasRole(typeVariableRef, "jetbrains.mps.baseLanguage.structure.UpperBoundType", "bound") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), "jetbrains.mps.baseLanguage.structure.LowerBoundType") && SNodeOperations.hasRole(typeVariableRef, "jetbrains.mps.baseLanguage.structure.LowerBoundType", "bound")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) && SNodeOperations.hasRole(typeVariableRef, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(typeVariableRef), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) && SNodeOperations.hasRole(typeVariableRef, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound"))) {
         SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(typeVariableRef), "jetbrains.mps.baseLanguage.structure.WildCardType");
       } else {
         SNodeOperations.replaceWithNewChild(typeVariableRef, "jetbrains.mps.baseLanguage.structure.WildCardType");
@@ -49,8 +50,8 @@ public class GenericTypesUtil {
         break;
       }
       result = typeVarValue;
-      if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
+      if (SNodeOperations.isInstanceOf(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+        SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
         if (typeVar == newTypeVar) {
           break;
         }
@@ -67,7 +68,7 @@ public class GenericTypesUtil {
     }
 
     SNode typeCopy = SNodeOperations.copyNode(type);
-    for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getDescendants(typeCopy, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
+    for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getNodeDescendants(typeCopy, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{}))) {
       SNode resolvedType = GenericTypesUtil.getTypeByTypeVariable(typeVariableRef, typeByTypeVar);
       if (resolvedType != typeVariableRef) {
         SNodeOperations.replaceWithAnother(typeVariableRef, SNodeOperations.copyNode(resolvedType));

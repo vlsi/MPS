@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -36,7 +36,7 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", true, false)), _quotation_createNode_z543ji_b0a0a0());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), true, false)), _quotation_createNode_z543ji_b0a0a0());
   }
   private static SNode _quotation_createNode_z543ji_b0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

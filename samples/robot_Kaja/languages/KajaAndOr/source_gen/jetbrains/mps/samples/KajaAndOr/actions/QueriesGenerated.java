@@ -5,10 +5,10 @@ package jetbrains.mps.samples.KajaAndOr.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -30,8 +30,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_LogicalOperator_642541832606605390(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator")) {
-      SNode oldNode = SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"))) {
+      SNode oldNode = SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"));
       SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"), SLinkOperations.getTarget(oldNode, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left")));
       SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"), SLinkOperations.getTarget(oldNode, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right")));
     }

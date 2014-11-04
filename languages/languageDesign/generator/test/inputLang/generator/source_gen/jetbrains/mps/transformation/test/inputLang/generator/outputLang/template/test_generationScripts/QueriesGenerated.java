@@ -29,13 +29,13 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195171011194l, 1195171080307l, "option"), "option_1", "option_default");
   }
   public static boolean baseMappingRule_Condition_1202780919451(final BaseMappingRuleContext _context) {
-    if (!(SPropertyOperations.hasValue(SNodeOperations.as(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "test1", "none"))) {
+    if (!(SPropertyOperations.hasValue(SNodeOperations.as(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "test1", "none"))) {
       return false;
     }
     return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195171011194l, 1195171080307l, "option"), "drop_it", "option_default"));
   }
   public static boolean baseMappingRule_Condition_1202780894871(final BaseMappingRuleContext _context) {
-    if (!(SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "test1", "none"))) {
+    if (!(SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "test1", "none"))) {
       return false;
     }
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195171011194l, 1195171080307l, "option"), "drop_it", "option_default");

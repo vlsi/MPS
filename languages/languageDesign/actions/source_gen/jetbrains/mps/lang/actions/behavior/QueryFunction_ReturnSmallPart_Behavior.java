@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -25,7 +27,7 @@ public class QueryFunction_ReturnSmallPart_Behavior {
     return result;
   }
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap")) {
+    if (SNodeOperations.isInstanceOf(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177402641904l, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"))) {
       return false;
     }
     return true;

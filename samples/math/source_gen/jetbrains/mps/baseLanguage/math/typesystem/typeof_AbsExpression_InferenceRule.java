@@ -35,13 +35,13 @@ public class typeof_AbsExpression_InferenceRule extends AbstractInferenceRule_Ru
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331671776", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331668445", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238331597992), "jetbrains.mps.baseLanguage.math.structure.BigComplexType")) {
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238331597992), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237108887116l, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"))) {
             {
               SNode _nodeToCheck_1029348928467 = expression;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331721191", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331705890", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qBigDecimal), _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238331597992), "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238331597992), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237107700024l, "jetbrains.mps.baseLanguage.math.structure.ComplexType"))) {
             {
               SNode _nodeToCheck_1029348928467 = expression;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331758288", 0, null);

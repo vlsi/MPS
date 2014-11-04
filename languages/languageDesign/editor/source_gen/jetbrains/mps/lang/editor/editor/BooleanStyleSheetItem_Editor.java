@@ -80,7 +80,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_flag");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();

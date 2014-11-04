@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class GetHighLevelWatchablesBlock_ConceptFunction_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +32,7 @@ public class GetHighLevelWatchablesBlock_ConceptFunction_Constraints extends Bas
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 680105146889009728l, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128276361");
 }

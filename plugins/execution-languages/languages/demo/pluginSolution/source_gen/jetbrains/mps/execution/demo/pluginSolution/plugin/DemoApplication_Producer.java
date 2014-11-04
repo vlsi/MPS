@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
 
 public class DemoApplication_Producer {
@@ -30,7 +30,7 @@ public class DemoApplication_Producer {
       super(configurationType, factoryName);
     }
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.demo.structure.SomeConcept");
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, "jetbrains.mps.execution.demo.structure.SomeConcept"));
     }
     protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));

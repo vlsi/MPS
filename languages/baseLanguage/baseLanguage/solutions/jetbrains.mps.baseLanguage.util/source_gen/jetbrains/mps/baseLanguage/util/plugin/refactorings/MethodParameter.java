@@ -8,6 +8,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
@@ -15,8 +17,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MethodParameter extends MethodParameterModel {
   private SNode myDeclaration;
@@ -34,7 +34,7 @@ public class MethodParameter extends MethodParameterModel {
       this.setTypeName("null");
     }
     this.setName(name);
-    this.myVariableReference = SNodeOperations.cast(reference, "jetbrains.mps.baseLanguage.structure.Expression");
+    this.myVariableReference = SNodeOperations.cast(reference, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
     this.myAvailableTypes = this.createAvailableTypes();
   }
   public List<String> createAvailableTypes() {
@@ -91,8 +91,8 @@ public class MethodParameter extends MethodParameterModel {
     return SNodeOperations.copyNode(this.myVariableReference);
   }
   public boolean isFinal() {
-    if (SNodeOperations.isInstanceOf(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
+    if (SNodeOperations.isInstanceOf(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
     }
     return false;
   }

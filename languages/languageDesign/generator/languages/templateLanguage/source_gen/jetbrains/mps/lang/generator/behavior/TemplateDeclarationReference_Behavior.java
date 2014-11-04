@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TemplateDeclarationReference_Behavior {
@@ -16,7 +17,7 @@ public class TemplateDeclarationReference_Behavior {
   public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
     SNode contentNode = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode"));
     if ((contentNode != null)) {
-      List<SNode> fragments = SNodeOperations.getDescendants(contentNode, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
+      List<SNode> fragments = SNodeOperations.getNodeDescendants(contentNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SConcept[]{});
       if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
         return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(ListSequence.fromList(fragments).first()));
       }
@@ -24,6 +25,6 @@ public class TemplateDeclarationReference_Behavior {
     return null;
   }
   public static SNode call_getTemplate_982871510068196871(SNode thisNode) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
   }
 }

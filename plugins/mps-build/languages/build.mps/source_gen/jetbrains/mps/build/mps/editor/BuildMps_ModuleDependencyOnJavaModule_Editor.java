@@ -76,7 +76,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+      style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

@@ -85,7 +85,7 @@ public class StaticFieldDeclaration_Behavior {
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
   }
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return _quotation_createNode_ge0l0h_a0a11(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
+    return _quotation_createNode_ge0l0h_a0a11(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), thisNode);
   }
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});

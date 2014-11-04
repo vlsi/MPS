@@ -7,6 +7,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -56,14 +59,14 @@ public final class EditingUtil {
   }
   public static boolean isAnyMacroApplicable(SNode node) {
     // not inside 'root template annotation' 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", true, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), true, false) != null) {
       return false;
     }
     //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself 
-    SNode ancestorTemplateElement = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.TemplateFragment"}, true, false);
+    SNode ancestorTemplateElement = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, "jetbrains.mps.lang.generator.structure.NodeMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833241328l, "jetbrains.mps.lang.generator.structure.PropertyMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment")}, true, false);
     if (ancestorTemplateElement != null) {
       //  exception: can be inside 'alternativeConsequence' in IF-macro 
-      if (SNodeOperations.isInstanceOf(ancestorTemplateElement, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(ancestorTemplateElement, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+      if (SNodeOperations.isInstanceOf(ancestorTemplateElement, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) || SNodeOperations.isInstanceOf(ancestorTemplateElement, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
         return true;
       }
       return false;
@@ -73,26 +76,26 @@ public final class EditingUtil {
       return true;
     }
     //  inside template declaration  
-    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
       return true;
     }
     return false;
   }
   public static SNode addNodeMacro(SNode node) {
     // do not hang $$ on other attributes 
-    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
+    SNode applyToNode = ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
     }).first();
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestorWhereConceptInList(applyToNode, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getNodeAncestorWhereConceptInList(applyToNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
       if (!(EditingUtil.isInsideTemplateFragment(applyToNode))) {
         EditingUtil.createTemplateFragment(applyToNode);
       }
     }
     SNode nodeMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.NodeMacro", null);
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, "jetbrains.mps.lang.generator.structure.NodeMacro")) && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
     } else {
       ListSequence.fromList(AttributeOperations.getAttributeList(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"))).addElement(nodeMacro);
@@ -101,7 +104,7 @@ public final class EditingUtil {
   }
   public static SNode addPropertyMacro(SNode node, EditorCell cell) {
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
       if (!(EditingUtil.isInsideTemplateFragment(node))) {
         EditingUtil.createTemplateFragment(node);
       }
@@ -114,7 +117,7 @@ public final class EditingUtil {
     String linkRole = EditingUtil.getEditedLinkRole(cell);
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
     // surround with <TF> if necessary 
-    if (SNodeOperations.getAncestorWhereConceptInList(referentNode, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
+    if (SNodeOperations.getNodeAncestorWhereConceptInList(referentNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
       if (!(EditingUtil.isInsideTemplateFragment(referentNode))) {
         EditingUtil.createTemplateFragment(referentNode);
       }
@@ -123,7 +126,7 @@ public final class EditingUtil {
     return referenceMacro;
   }
   public static boolean isInsideTemplateFragment(SNode node) {
-    Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
@@ -139,7 +142,7 @@ public final class EditingUtil {
       }
     });
     for (SNode child : Sequence.fromIterable(children)) {
-      ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SNodeOperations.getNodeDescendants(child, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SConcept[]{})).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.deleteNode(it);
         }

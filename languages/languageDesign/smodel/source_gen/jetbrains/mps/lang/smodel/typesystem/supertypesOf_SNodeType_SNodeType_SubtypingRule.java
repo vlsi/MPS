@@ -26,7 +26,7 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     List<SNode> list = new ArrayList<SNode>();
     SNode concept = SLinkOperations.getTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE 
-    if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+    if (concept != null && SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
         ListSequence.fromList(list).addElement(_quotation_createNode_c3i5bo_a0a0a1a3a1(superConcept));

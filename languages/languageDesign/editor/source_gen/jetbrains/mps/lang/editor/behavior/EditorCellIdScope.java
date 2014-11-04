@@ -63,15 +63,15 @@ public class EditorCellIdScope extends FilteringScope {
     if (isExcluded(node)) {
       return null;
     }
-    return SPropertyOperations.getString(SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4323500428121233431l, "jetbrains.mps.lang.editor.structure.EditorCellId")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @Override
   public boolean isExcluded(SNode node) {
-    SNode editorCellId = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId");
+    SNode editorCellId = SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4323500428121233431l, "jetbrains.mps.lang.editor.structure.EditorCellId"));
     if (editorCellId == null) {
       return true;
     }
-    SNode conceptAspect = SNodeOperations.getAncestor(editorCellId, "jetbrains.mps.lang.structure.structure.IConceptAspect", false, false);
+    SNode conceptAspect = SNodeOperations.getNodeAncestor(editorCellId, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"), false, false);
     return conceptAspect == null || !(SConceptOperations.isSubConceptOf(myConceptDeclaration, NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
   }
 }

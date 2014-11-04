@@ -25,7 +25,7 @@ public class DefaultConstructorUtils {
     if ((SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), clazz, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == null)) {
       return false;
     }
-    return containsVisibleNoArgumentsConstructor(SNodeOperations.cast(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), clazz, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept"), clazz);
+    return containsVisibleNoArgumentsConstructor(SNodeOperations.cast(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), clazz, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), clazz);
   }
   private static boolean containsVisibleNoArgumentsConstructor(SNode currentClass, SNode startClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), currentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isNotEmpty()) {
@@ -42,7 +42,7 @@ public class DefaultConstructorUtils {
       if ((SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), currentClass, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == null)) {
         return false;
       }
-      return containsVisibleNoArgumentsConstructor(SNodeOperations.cast(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), currentClass, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept"), startClass);
+      return containsVisibleNoArgumentsConstructor(SNodeOperations.cast(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), currentClass, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), startClass);
     }
   }
 }

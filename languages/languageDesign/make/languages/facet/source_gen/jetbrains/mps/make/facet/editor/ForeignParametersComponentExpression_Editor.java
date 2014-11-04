@@ -87,7 +87,7 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4od8my_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_4od8my_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4od8my_b3a(editorContext, node));
@@ -101,8 +101,8 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     editorCell.setCellId("Constant_4od8my_a3a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

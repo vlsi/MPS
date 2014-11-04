@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_method_InferenceRule extends Abstra
   public typeof_ConceptFunctionParameter_method_InferenceRule() {
   }
   public void applyRule(final SNode parameterObject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode expectedType = SLinkOperations.getTarget(SNodeOperations.getAncestor(parameterObject, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", false, false), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, 8178273524755058633l, "type"));
+    SNode expectedType = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parameterObject, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, 8178273524755058633l, "type"));
     if (expectedType == null) {
       {
         SNode _nodeToCheck_1029348928467 = parameterObject;

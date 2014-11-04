@@ -19,9 +19,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +44,7 @@ public class QuickFixArgumentReference_Constraints extends BaseConstraintsDescri
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> nodes = new ArrayList<SNode>();
-            SNode quickFix = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", false, false);
+            SNode quickFix = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1216383170661l, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"), false, false);
             if ((quickFix != null)) {
               ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getChildren(quickFix, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1216383170661l, 1216383476350l, "quickFixArgument"))));
             }

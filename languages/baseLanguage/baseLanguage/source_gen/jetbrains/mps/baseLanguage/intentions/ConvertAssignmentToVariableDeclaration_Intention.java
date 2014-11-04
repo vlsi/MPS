@@ -49,13 +49,13 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
       return false;
     }
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")))) {
       return false;
     }
-    SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+    SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
     return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")) == node;
   }
   public SNodeReference getIntentionNodeReference() {
@@ -77,7 +77,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
       return "Convert to Variable Declaration";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+      SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
       EditorCell selectedCell = editorContext.getSelectedCell();
       String suggestedName = null;
       if (selectedCell instanceof EditorCell_Label) {

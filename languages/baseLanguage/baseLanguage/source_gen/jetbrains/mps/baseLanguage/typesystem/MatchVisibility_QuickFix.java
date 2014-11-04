@@ -16,6 +16,6 @@ public class MatchVisibility_QuickFix extends QuickFix_Runtime {
     return "Set visibility to " + (((((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0]) == null) ? "Paclage-local" : ((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
   }
   public void execute(SNode node) {
-    SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SNodeOperations.copyNode(((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
+    SLinkOperations.setTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SNodeOperations.copyNode(((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
   }
 }

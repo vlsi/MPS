@@ -196,7 +196,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     EditorComponent mainEditorComponent = null;
     boolean inspector = editorComponent instanceof InspectorEditorComponent;
     if (inspector) {
-      List<SNode> editedNodeAncestors = SNodeOperations.getAncestors(editedNode, null, true);
+      List<SNode> editedNodeAncestors = SNodeOperations.getNodeAncestors(editedNode, null, true);
       for (EditorComponent candidate : MapSequence.fromMap(myEditorComponentToErrorMap).keySet()) {
         if (ListSequence.fromList(editedNodeAncestors).contains(candidate.getEditedNode())) {
           mainEditorComponent = candidate;
@@ -255,7 +255,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
       SNode nodeWithError = errorReporter.getSNode();
-      if (!(ListSequence.fromList(SNodeOperations.getAncestors(nodeWithError, null, true)).contains(editedNode))) {
+      if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeWithError, null, true)).contains(editedNode))) {
         // in inspector skipping all messages for invisible nodes 
         continue;
       }

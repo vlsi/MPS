@@ -100,7 +100,7 @@ public class MethodMatch {
       if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
         ListSequence.fromList(callActualParams).addElement(_quotation_createNode_5zfyci_a0a0a0a1a71());
       } else {
-        ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
+        ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
     }
     return callActualParams;

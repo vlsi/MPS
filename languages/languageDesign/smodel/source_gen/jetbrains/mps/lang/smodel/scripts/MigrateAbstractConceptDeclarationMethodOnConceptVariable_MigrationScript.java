@@ -41,12 +41,12 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
             return TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(node));
           }
         });
-        return SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType");
+        return SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, "jetbrains.mps.lang.smodel.structure.SConceptType"));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
         SNode newOperand = _quotation_createNode_dt2z82_a0b0a0(operand);
-        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_dt2z82_a0a2a0a(newOperand, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"))));
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_dt2z82_a0a2a0a(newOperand, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"))));
       }
       public boolean isShowAsIntention() {
         return false;

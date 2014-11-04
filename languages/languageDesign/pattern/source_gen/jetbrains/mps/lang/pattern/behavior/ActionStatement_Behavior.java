@@ -4,13 +4,15 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ActionStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getActionPattern_111677556049506425(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.ActionAsPattern")) {
-      return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4413230749907733332l, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"))) {
+      return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4413230749907733332l, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"));
     }
     return null;
   }

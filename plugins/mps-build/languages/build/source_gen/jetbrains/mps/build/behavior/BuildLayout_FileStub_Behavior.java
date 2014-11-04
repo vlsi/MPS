@@ -21,7 +21,7 @@ public class BuildLayout_FileStub_Behavior {
     return true;
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Container")) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
     sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683370806l, 7181125477683370900l, "fileName")), null));

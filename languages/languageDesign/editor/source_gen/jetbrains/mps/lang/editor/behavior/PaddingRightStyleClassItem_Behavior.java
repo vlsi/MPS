@@ -4,11 +4,13 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PaddingRightStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel");
+    return SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1079353555532l, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel"));
   }
 }

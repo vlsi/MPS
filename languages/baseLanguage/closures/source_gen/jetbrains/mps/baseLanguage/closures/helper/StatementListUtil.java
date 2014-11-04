@@ -37,38 +37,38 @@ public class StatementListUtil {
     return res;
   }
   public static SNode nextSibling(SNode stmt) {
-    SNode nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(stmt), "jetbrains.mps.baseLanguage.structure.Statement");
+    SNode nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(stmt), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
     while ((nextSibling != null) && isIgnoredStatement(nextSibling)) {
-      nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(nextSibling), "jetbrains.mps.baseLanguage.structure.Statement");
+      nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(nextSibling), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
     }
     return nextSibling;
   }
   public static boolean isControlStatement(SNode stmt) {
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, "jetbrains.mps.baseLanguage.structure.WhileStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1177666668936l, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144226303539l, "jetbrains.mps.baseLanguage.structure.ForeachStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1200830824066l, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"))) {
       return true;
     }
     return false;
   }
   public static boolean isIgnoredStatement(SNode stmt) {
-    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+    if (SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"))) {
       return true;
     }
     return false;

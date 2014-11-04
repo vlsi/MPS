@@ -143,6 +143,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.CustomActionsHandler" file="CustomActionsHandler.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.ReadOnlyUtil" />
@@ -152,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap" file="DeprecatedNodeAnnotation_ActionMap.java">

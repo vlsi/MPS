@@ -28,7 +28,7 @@ public class TypeVariableReference_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode decl = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
-    if (ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(decl)) {
+    if (ListSequence.fromList(SNodeOperations.getNodeAncestors(thisNode, null, false)).contains(decl)) {
       return SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     if (decl != null) {
@@ -59,7 +59,7 @@ public class TypeVariableReference_Behavior {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), thisNode);
     } else {
       BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
@@ -75,9 +75,9 @@ public class TypeVariableReference_Behavior {
         return thisNode;
       }
       SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
-      if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      if (SNodeOperations.isInstanceOf(exp, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
         ListSequence.fromList(expTrace).addElement(thisNode);
-        exp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
+        exp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(exp, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
       }
       return exp;
     }
@@ -86,16 +86,16 @@ public class TypeVariableReference_Behavior {
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     SNode myResolvedType = thisNode;
     SNode resolvedT = t;
-    while (SNodeOperations.isInstanceOf(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), "jetbrains.mps.baseLanguage.structure.Type");
+    while (SNodeOperations.isInstanceOf(myResolvedType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(myResolvedType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
       if (temp != null) {
         myResolvedType = temp;
       } else {
         break;
       }
     }
-    while (SNodeOperations.isInstanceOf(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), "jetbrains.mps.baseLanguage.structure.Type");
+    while (SNodeOperations.isInstanceOf(resolvedT, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(resolvedT, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
       if (temp != null) {
         resolvedT = temp;
       } else {

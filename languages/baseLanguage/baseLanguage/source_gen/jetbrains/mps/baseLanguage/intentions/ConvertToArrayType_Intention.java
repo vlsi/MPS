@@ -9,13 +9,13 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToArrayType_Intention implements IntentionFactory {
@@ -47,7 +47,7 @@ public class ConvertToArrayType_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ArrayCreator", "componentType"));
+    return !(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"))) && !(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"))) && !(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) && !(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))) && !(SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184951007469l, "componentType")));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1226917954178");

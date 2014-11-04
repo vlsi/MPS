@@ -52,7 +52,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_egantk_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_egantk_b1a(editorContext, node));
@@ -87,7 +87,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_egantk_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_egantk_b2a(editorContext, node));
@@ -122,7 +122,7 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_egantk_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_egantk_b3a(editorContext, node));

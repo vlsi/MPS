@@ -15,6 +15,6 @@ public class IStyleSheetMember_Behavior {
     return "apply_" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static SNode call_getStyleSheet_1213877260644(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleSheet");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402211651l, "jetbrains.mps.lang.editor.structure.StyleSheet"));
   }
 }

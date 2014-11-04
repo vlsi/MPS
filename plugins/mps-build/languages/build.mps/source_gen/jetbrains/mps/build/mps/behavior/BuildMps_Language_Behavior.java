@@ -15,8 +15,8 @@ public class BuildMps_Language_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, 9200313594498201639l, "generator")) != null)) {
       return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, 9200313594498201639l, "generator"));
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
-      return SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Generator");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+      return SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
     }
     return null;
   }

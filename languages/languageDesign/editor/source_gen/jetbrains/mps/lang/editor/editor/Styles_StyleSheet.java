@@ -12,6 +12,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
@@ -120,31 +122,31 @@ public class Styles_StyleSheet {
   }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+    return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
   }
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a1a(EditorContext editorContext, SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
       return false;
     }
-    if (EditorCellModel_Behavior.call_isNewLine_1237383076236(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+    if (EditorCellModel_Behavior.call_isNewLine_1237383076236(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
       return true;
     }
-    if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+    if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
     }
     return false;
   }
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a2a(EditorContext editorContext, SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
       return false;
     }
-    return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+    return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
   }
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(EditorContext editorContext, SNode node) {
     return true;

@@ -18,15 +18,15 @@ public class NodeOperationsContainer_Behavior {
   public static void call_detachAllErrorOperations_5587533744543326483(SNode thisNode) {
     ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.test.structure.IChecksRules");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 8578280453507219248l, "jetbrains.mps.lang.test.structure.IChecksRules"));
       }
     });
   }
   public static void call_createNodeAndAttachReference_428590876657265140(SNode thisNode, SNode reference, IErrorReporter reporter) {
     NodeRuleFactory factory = new NodeRuleFactory(reporter);
     SNode newNode = factory.createNodeFromRuleMsg(reference);
-    if (SNodeOperations.isInstanceOf(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable")) {
-      SNode node = SNodeOperations.cast(newNode, "jetbrains.mps.lang.test.structure.IReferenceAttachable");
+    if (SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 2893471348147803052l, "jetbrains.mps.lang.test.structure.IReferenceAttachable"))) {
+      SNode node = SNodeOperations.cast(newNode, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 2893471348147803052l, "jetbrains.mps.lang.test.structure.IReferenceAttachable"));
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canAttachReference_2893471348147804024", new Object[]{reference})) {
         BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachReference_2893471348147987863", new Object[]{reference});
       }

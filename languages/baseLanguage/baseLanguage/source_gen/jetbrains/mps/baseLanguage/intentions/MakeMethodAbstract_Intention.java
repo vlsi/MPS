@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -17,8 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -55,14 +55,14 @@ public class MakeMethodAbstract_Intention implements IntentionFactory {
     if (contextNode == null) {
       return true;
     }
-    SNode containingClassifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (!(SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    SNode containingClassifier = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    if (!(SNodeOperations.isInstanceOf(containingClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
       return false;
     }
-    List<SNode> includingStatementLists = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.StatementList", true);
+    List<SNode> includingStatementLists = SNodeOperations.getNodeAncestors(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), true);
     Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.hasRole(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "body");
+        return SNodeOperations.hasRole(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"));
       }
     });
     return Sequence.fromIterable(includingBodies).isEmpty();

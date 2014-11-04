@@ -55,7 +55,7 @@ public class EmptyCommentLine extends KeyMapImpl {
       editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SNode textPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
-          ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addElement(textPart);
+          ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addElement(textPart);
         }
       });
     }

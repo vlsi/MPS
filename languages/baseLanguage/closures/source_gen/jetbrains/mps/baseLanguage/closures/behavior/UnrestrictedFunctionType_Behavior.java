@@ -48,10 +48,10 @@ public class UnrestrictedFunctionType_Behavior {
   }
   public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
     SNode tt = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType"));
-    if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      List<SNode> args = SLinkOperations.getChildren(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
+    if (SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
+      List<SNode> args = SLinkOperations.getChildren(SNodeOperations.cast(tt, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
       tt = ListSequence.fromList(args).getElement(0);
     }
-    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
+    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) ? tt : null);
   }
 }

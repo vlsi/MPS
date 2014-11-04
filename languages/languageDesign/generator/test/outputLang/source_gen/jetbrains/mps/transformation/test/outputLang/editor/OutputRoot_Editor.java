@@ -46,7 +46,7 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3ev9w4_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_3ev9w4_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3ev9w4_b0a(editorContext, node));
@@ -108,7 +108,7 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3ev9w4_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_3ev9w4_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3ev9w4_b4a(editorContext, node));

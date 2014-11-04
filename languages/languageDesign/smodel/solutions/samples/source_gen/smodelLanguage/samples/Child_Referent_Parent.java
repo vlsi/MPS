@@ -9,6 +9,7 @@ import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 
 public class Child_Referent_Parent {
@@ -50,29 +51,29 @@ public class Child_Referent_Parent {
     SNode parent_IfStatement = null;
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression);
     while (mayBe_IfStatement != null) {
-      if (SNodeOperations.isInstanceOf(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        parent_IfStatement = SNodeOperations.cast(mayBe_IfStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
+      if (SNodeOperations.isInstanceOf(mayBe_IfStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
+        parent_IfStatement = SNodeOperations.cast(mayBe_IfStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
         break;
       }
       mayBe_IfStatement = SNodeOperations.getParent(mayBe_IfStatement);
     }
   }
   public void accessToParentNode_2(SNode methodCall) {
-    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   public void accessToParentNode_3(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
   }
   public void accessToAncestorNode_1(SNode expression) {
-    SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
+    SNode parent_IfStatement = SNodeOperations.getNodeAncestor(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), false, false);
   }
   public void accessToAncestorNode_2(SNode expression) {
-    SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
+    SNode parent_If_or_WhileStatement = SNodeOperations.getNodeAncestorWhereConceptInList(expression, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, "jetbrains.mps.baseLanguage.structure.WhileStatement")}, false, false);
   }
   public void accessToAncestorNodes_1(SNode expression) {
-    List<SNode> allAncestorStatements = SNodeOperations.getAncestors(expression, "jetbrains.mps.baseLanguage.structure.Statement", true);
+    List<SNode> allAncestorStatements = SNodeOperations.getNodeAncestors(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true);
   }
   public void accessToAncestorNodes_2(SNode expression) {
-    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
+    List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getNodeAncestorsWhereConceptInList(expression, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, "jetbrains.mps.baseLanguage.structure.WhileStatement")}, true);
   }
 }

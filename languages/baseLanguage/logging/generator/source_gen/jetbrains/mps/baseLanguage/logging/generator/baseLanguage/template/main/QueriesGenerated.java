@@ -6,9 +6,10 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -27,10 +28,10 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1169464530672(final BaseMappingRuleContext _context) {
-    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty();
+    return SNodeOperations.getParent(_context.getNode()) == null && ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), false, new SConcept[]{})).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_1232620749768(final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null);
   }
   public static boolean baseMappingRule_Condition_1210168710480(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167245565795l, "severity"), "fatal", "debug");
@@ -54,10 +55,10 @@ public class QueriesGenerated {
     return LoggingGenerationUtil.generateUniqueFieldName(_context.getNode(), _context.getTemplateValue());
   }
   public static Object referenceMacro_GetReferent_1210169044888(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).last(), "logFieldDeclaration");
   }
   public static Object referenceMacro_GetReferent_1210169054074(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "logFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).last(), "logFieldDeclaration");
   }
   public static Object referenceMacro_GetReferent_1169471975875(final ReferenceMacroContext _context) {
     SNode method = null;
@@ -86,9 +87,9 @@ public class QueriesGenerated {
     return LoggingGenerationUtil.toPlus(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8505622446592443681l, -8359413340076074077l), 1168401810208l, 1168401864803l, "textExpression")));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1187224198430(final WeavingMappingRuleContext _context) {
-    SNode logStatement = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).first();
+    SNode logStatement = ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), false, new SConcept[]{})).first();
     SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(logStatement, "logFieldUsage");
-    SNode ancestor = SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, true);
+    SNode ancestor = SNodeOperations.getNodeAncestor(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, true);
     if (ancestor != null) {
       return ancestor;
     }

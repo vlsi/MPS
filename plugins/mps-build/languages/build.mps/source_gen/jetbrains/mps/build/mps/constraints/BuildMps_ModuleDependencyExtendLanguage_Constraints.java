@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseConstraintsDescriptor {
@@ -71,7 +72,7 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language")) || SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 7259033139236285166l, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4278635856200794938");
   private static SNodePointer breakingNode_x6a53i_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561902804");

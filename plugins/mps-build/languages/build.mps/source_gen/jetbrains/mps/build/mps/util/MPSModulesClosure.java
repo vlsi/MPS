@@ -7,12 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -34,7 +34,7 @@ public class MPSModulesClosure {
     this.initialModules = Sequence.<SNode>singleton(initialModule);
   }
   public MPSModulesClosure(Iterable<SNode> initialModules) {
-    this.initialModules = SNodeOperations.ofConcept(initialModules, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+    this.initialModules = SNodeOperations.ofConcept(initialModules, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     SNode containingRoot = SNodeOperations.getContainingRoot(Sequence.fromIterable(initialModules).first());
     for (SNode m : Sequence.fromIterable(initialModules)) {
       if (containingRoot != SNodeOperations.getContainingRoot(m)) {
@@ -68,7 +68,7 @@ public class MPSModulesClosure {
   private Iterable<SNode> toOriginalLangs(Iterable<SNode> langs) {
     return Sequence.fromIterable(langs).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.as(toOriginal(it), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+        return SNodeOperations.as(toOriginal(it), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -79,12 +79,12 @@ public class MPSModulesClosure {
   private Iterable<SNode> dependencies(SNode module) {
     return ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 5253498789149547704l, "dependencies"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 7259033139236285166l, 7259033139236285167l, "dependency")) : it);
+        return (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 7259033139236285166l, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")) ? SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 7259033139236285166l, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 7259033139236285166l, 7259033139236285167l, "dependency")) : it);
       }
     });
   }
   private Iterable<SNode> getDependencies(SNode module, final boolean reexportOnly) {
-    Iterable<SNode> dependencies = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> dependencies = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (!(reexportOnly) || SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547713l, "reexport")));
       }
@@ -95,7 +95,7 @@ public class MPSModulesClosure {
     });
 
     // add extended langs 
-    dependencies = Sequence.fromIterable(dependencies).concat(Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage")).select(new ISelector<SNode, SNode>() {
+    dependencies = Sequence.fromIterable(dependencies).concat(Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200794926l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200794926l, 4278635856200794928l, "language"));
       }
@@ -111,7 +111,7 @@ public class MPSModulesClosure {
     }
     Iterable<SNode> solutionsFromDevkits = Sequence.fromIterable(usedDevkits).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, 322010710375832962l, "exports")), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution")).select(new ISelector<SNode, SNode>() {
+        return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, 322010710375832962l, "exports")), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375832954l, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode iit) {
             return SLinkOperations.getTarget(iit, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375832954l, 322010710375832955l, "solution"));
           }
@@ -122,7 +122,7 @@ public class MPSModulesClosure {
     return toOriginal(IterableUtil.distinct(IterableUtil.merge(dependencies, solutionsFromDevkits)));
   }
   private Iterable<SNode> getUsedLanguages(SNode module) {
-    Iterable<SNode> usedLangs = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage")).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> usedLangs = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731922642l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731922642l, 3189788309731922643l, "language"));
       }
@@ -134,7 +134,7 @@ public class MPSModulesClosure {
     }
     Iterable<SNode> languagesFromDevkits = Sequence.fromIterable(usedDevkits).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, 322010710375832962l, "exports")), "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage")).select(new ISelector<SNode, SNode>() {
+        return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, 322010710375832962l, "exports")), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375832938l, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode iit) {
             return SLinkOperations.getTarget(iit, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375832938l, 322010710375832947l, "language"));
           }
@@ -146,7 +146,7 @@ public class MPSModulesClosure {
     return toOriginalLangs(includingExtendedLanguages(IterableUtil.merge(usedLangs, languagesFromDevkits)));
   }
   private Iterable<SNode> usedDevkits(SNode module) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit")).select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(module), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710376037449l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710376037449l, 322010710376037450l, "devkit"));
       }
@@ -172,7 +172,7 @@ public class MPSModulesClosure {
     return new RecursiveIterator<SNode>(langs, false) {
       @Override
       protected Iterator<SNode> children(SNode node) {
-        return Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(node), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage")).select(new ISelector<SNode, SNode>() {
+        return Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(node), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200794926l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200794926l, 4278635856200794928l, "language"));
           }
@@ -183,7 +183,7 @@ public class MPSModulesClosure {
   private Iterable<SNode> usedGenerators(Iterable<SNode> generators) {
     return new RecursiveIterator<SNode>(generators, false) {
       protected Iterator<SNode> children(SNode generator) {
-        return Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(generator), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")).where(new IWhereFilter<SNode>() {
+        return Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(generator), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547705l, "module")) != null);
           }
@@ -191,7 +191,7 @@ public class MPSModulesClosure {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547705l, "module"));
           }
-        }), "jetbrains.mps.build.mps.structure.BuildMps_Generator")).iterator();
+        }), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))).iterator();
       }
     };
   }
@@ -239,7 +239,7 @@ public class MPSModulesClosure {
       if (g == null) {
         continue;
       }
-      Iterable<SNode> deps = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(g), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> deps = Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(g), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547705l, "module")) != null);
         }
@@ -249,7 +249,7 @@ public class MPSModulesClosure {
         }
       });
       // I'm not quite sure it's possible to depend directly from generator module. Instead, introduce a dependency from generator's source language 
-      SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, "jetbrains.mps.build.mps.structure.BuildMps_Generator")).select(new ISelector<SNode, SNode>() {
+      SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(it);
         }
@@ -259,7 +259,7 @@ public class MPSModulesClosure {
         }
       }));
       // any language generator depends from are better to be there, too. 
-      SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
+      SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language"))));
     }
     SetSequence.fromSet(extraLangs).removeSequence(SetSequence.fromSet(modules));
     modules.addAll(extraLangs);
@@ -338,11 +338,11 @@ public class MPSModulesClosure {
     for (SNode language : getUsedLanguages(m)) {
       boolean hasRuntime = false;
       for (SNode rdep : SLinkOperations.getChildren(language, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, 3189788309731917348l, "runtime"))) {
-        if (!(SNodeOperations.isInstanceOf(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"))) {
+        if (!(SNodeOperations.isInstanceOf(rdep, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731981027l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime")))) {
           hasRuntime = true;
           continue;
         }
-        SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731981027l, 3189788309731981028l, "solution"))), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+        SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731981027l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731981027l, 3189788309731981028l, "solution"))), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
         if (runtimeSolution != null) {
           SetSequence.fromSet(runtimeSolutions).addElement(runtimeSolution);
         }
@@ -357,11 +357,11 @@ public class MPSModulesClosure {
       public Iterable<SNode> translate(SNode mod) {
         return ListSequence.fromList(SLinkOperations.getChildren(mod, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 5253498789149547704l, "dependencies"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928316l, "reexport"));
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule")) && SPropertyOperations.getBoolean(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule")), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928316l, "reexport"));
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928317l, "module"));
+            return SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928317l, "module"));
           }
         });
       }
@@ -375,7 +375,7 @@ public class MPSModulesClosure {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 5253498789149547704l, "dependencies"));
       }
-    }), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule")).select(new ISelector<SNode, SNode>() {
+    }), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928317l, "module"));
       }

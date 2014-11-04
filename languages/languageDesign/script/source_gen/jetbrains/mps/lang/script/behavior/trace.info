@@ -63,18 +63,18 @@
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/2291767839160328141">
     <file name="AbstractMethodSpecification_Behavior.java">
-      <node id="2291767839160330467" at="11,80,12,121" concept="3" />
-      <node id="2291767839160328141" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2291767839160328141" at="11,0,14,0" concept="4" trace="call_getPullUpMethod_2291767839160328420#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2291767839160328303" at="9,43,9,43" />
-      <scope id="2291767839160328423" at="11,80,12,121" />
-      <scope id="2291767839160328141" at="9,0,11,0">
+      <node id="2291767839160330467" at="13,80,14,228" concept="3" />
+      <node id="2291767839160328141" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2291767839160328141" at="13,0,16,0" concept="4" trace="call_getPullUpMethod_2291767839160328420#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2291767839160328303" at="11,43,11,43" />
+      <scope id="2291767839160328423" at="13,80,14,228" />
+      <scope id="2291767839160328141" at="11,0,13,0">
         <var name="thisNode" id="2291767839160328141" />
       </scope>
-      <scope id="2291767839160328141" at="11,0,14,0">
+      <scope id="2291767839160328141" at="13,0,16,0">
         <var name="thisNode" id="2291767839160328141" />
       </scope>
-      <unit id="2291767839160328141" at="8,0,15,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
+      <unit id="2291767839160328141" at="10,0,17,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914717773">
@@ -138,18 +138,18 @@
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5166971494091017143">
     <file name="PullUpMethod_Behavior.java">
-      <node id="5166971494091017150" at="11,77,12,134" concept="3" />
-      <node id="5166971494091017143" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5166971494091017143" at="11,0,14,0" concept="4" trace="call_getMigration_5166971494091017146#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5166971494091017145" at="9,43,9,43" />
-      <scope id="5166971494091017149" at="11,77,12,134" />
-      <scope id="5166971494091017143" at="9,0,11,0">
+      <node id="5166971494091017150" at="13,77,14,242" concept="3" />
+      <node id="5166971494091017143" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5166971494091017143" at="13,0,16,0" concept="4" trace="call_getMigration_5166971494091017146#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5166971494091017145" at="11,43,11,43" />
+      <scope id="5166971494091017149" at="13,77,14,242" />
+      <scope id="5166971494091017143" at="11,0,13,0">
         <var name="thisNode" id="5166971494091017143" />
       </scope>
-      <scope id="5166971494091017143" at="11,0,14,0">
+      <scope id="5166971494091017143" at="13,0,16,0">
         <var name="thisNode" id="5166971494091017143" />
       </scope>
-      <unit id="5166971494091017143" at="8,0,15,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />
+      <unit id="5166971494091017143" at="10,0,17,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112920986">

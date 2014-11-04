@@ -10,14 +10,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -51,7 +52,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false, new String[]{});
+    List<SNode> descendants = SNodeOperations.getNodeDescendantsWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174665551739l, "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174666260556l, "jetbrains.mps.lang.typesystem.structure.TypeVarReference"), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement")}, false, new SConcept[]{});
     return ListSequence.fromList(descendants).isEmpty();
   }
   public SNodeReference getIntentionNodeReference() {
@@ -78,7 +79,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
       SPropertyOperations.set(nonTypesystemRule, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SLinkOperations.setTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body"))));
       SLinkOperations.setTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode"))));
-      for (SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body")), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
+      for (SNode applicableNodeReference : SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174650418652l, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"), false, new SConcept[]{})) {
         if (SLinkOperations.getTarget(applicableNodeReference, MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174650418652l, 1174650432090l, "applicableNode")) == SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode"))) {
           SLinkOperations.setTarget(applicableNodeReference, MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174650418652l, 1174650432090l, "applicableNode"), SLinkOperations.getTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")));
         }

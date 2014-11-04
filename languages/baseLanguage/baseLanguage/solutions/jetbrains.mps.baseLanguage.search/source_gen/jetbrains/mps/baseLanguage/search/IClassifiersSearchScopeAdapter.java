@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IClassifiersSearchScopeAdapter {
   public IClassifiersSearchScopeAdapter() {
@@ -16,34 +16,34 @@ public class IClassifiersSearchScopeAdapter {
   public static Iterable<SNode> filterMembers(Iterable<SNode> members, final int constraint) {
     return Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        if (((constraint & IClassifiersSearchScope.INTERFACE) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        if (((constraint & IClassifiersSearchScope.INTERFACE) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.CLASS) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        if (((constraint & IClassifiersSearchScope.CLASS) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.ANNOTATION) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Annotation"))) {
+        if (((constraint & IClassifiersSearchScope.ANNOTATION) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.CONSTRUCTOR) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.CONSTRUCTOR) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.INSTANCE_METHOD) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.INSTANCE_METHOD) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.INSTANCE_FIELD) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.INSTANCE_FIELD) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.STATIC_METHOD) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.STATIC_METHOD) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.STATIC_FIELD) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.STATIC_FIELD) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.ENUM_CONSTANT) != 0) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
+        if (((constraint & IClassifiersSearchScope.ENUM_CONSTANT) != 0) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")))) {
           return false;
         }
-        if (((constraint & IClassifiersSearchScope.NON_FINAL) != 0) && (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final")))) {
+        if (((constraint & IClassifiersSearchScope.NON_FINAL) != 0) && (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) && SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final")))) {
           return false;
         }
 

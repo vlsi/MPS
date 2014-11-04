@@ -8,10 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class QueryFunction_StyleParameter_Behavior {
@@ -35,10 +35,10 @@ public class QueryFunction_StyleParameter_Behavior {
     if (styleContainer == null) {
       return null;
     }
-    return SNodeOperations.as(SNodeOperations.getParent(styleContainer), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
+    return SNodeOperations.as(SNodeOperations.getParent(styleContainer), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"));
   }
   public static SNode call_getStyleClassItem_7991857262599017464(SNode thisNode) {
-    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleClassItem");
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402475462l, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_evejyl_a0a4();

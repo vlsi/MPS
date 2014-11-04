@@ -67,7 +67,7 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z29e2a_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_z29e2a_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z29e2a_b2a(editorContext, node));

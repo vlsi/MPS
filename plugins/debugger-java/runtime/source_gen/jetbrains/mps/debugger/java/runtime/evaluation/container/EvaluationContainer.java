@@ -32,13 +32,13 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -110,7 +110,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getCode_317191294093624551", new Object[]{}));
+        return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 9172312269976647291l, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), "virtual_getCode_317191294093624551", new Object[]{}));
       }
     });
   }

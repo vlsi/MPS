@@ -19,8 +19,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -44,9 +44,9 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", true, false);
-            if (rule != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")) {
-              ListSequence.fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"));
+            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), true, false);
+            if (rule != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"))) {
+              ListSequence.fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
             }
             return result;
           }

@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SafeDeleteMethod {
   private SNode myMethod;
@@ -20,8 +20,8 @@ public class SafeDeleteMethod {
 
   public void doRefactor() {
     for (SNode method : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(myMethod, new EmptyProgressMonitor()))) {
-      if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
-        SNode methodDecl = SNodeOperations.cast(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
+      if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+        SNode methodDecl = SNodeOperations.cast(method, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
         SLinkOperations.setTarget(methodDecl, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod"), getNewOverriddenMethod(myMethod));
       }
     }

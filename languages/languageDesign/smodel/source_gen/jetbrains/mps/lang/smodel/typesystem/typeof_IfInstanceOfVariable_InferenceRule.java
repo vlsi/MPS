@@ -8,13 +8,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IfInstanceOfVariable_InferenceRule() {
   }
   public void applyRule(final SNode variable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode iiostmt = SNodeOperations.as(SNodeOperations.getParent(variable), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement");
+    SNode iiostmt = SNodeOperations.as(SNodeOperations.getParent(variable), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1883223317721008708l, "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"));
     if ((iiostmt != null)) {
       typeCheckingContext.typeOf(iiostmt, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8658296822738406899", true);
     }

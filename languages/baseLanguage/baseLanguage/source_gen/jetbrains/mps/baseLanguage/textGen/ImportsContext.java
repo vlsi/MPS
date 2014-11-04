@@ -106,10 +106,10 @@ public class ImportsContext {
     ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
     if (instance == null) {
       SNode rootNode = (SNode) buffer.getUserObject(TextGen.ROOT_NODE);
-      if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
         throw new IllegalStateException();
       }
-      instance = new ImportsContext(buffer, SNodeOperations.cast(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      instance = new ImportsContext(buffer, SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
       buffer.putUserObject(USER_OBJECT_KEY, instance);
     }
     return instance;

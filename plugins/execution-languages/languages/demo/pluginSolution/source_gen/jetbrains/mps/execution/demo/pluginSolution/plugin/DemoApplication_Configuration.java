@@ -40,7 +40,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.execution.demo.structure.SomeConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.execution.demo.structure.SomeConcept"), MetaAdapterFactory.getProperty(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, 4928971978190605252l, "valid"));
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, "jetbrains.mps.execution.demo.structure.SomeConcept")), MetaAdapterFactory.getProperty(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, 4928971978190605252l, "valid"));
     }
   });
   public void checkConfiguration() throws RuntimeConfigurationException {

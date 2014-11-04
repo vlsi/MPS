@@ -14,9 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import org.jetbrains.mps.util.Condition;
@@ -109,8 +109,8 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         }
       });
       if (!(canBeAncestor)) {
-        SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
-        component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept")) + " cannot be ancestor of node " + child, rule);
+        SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 7855321458717464197l, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"));
+        component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept")) + " cannot be ancestor of node " + child, rule);
       }
     }
 
@@ -123,7 +123,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
     List<SNode> props = ((List<SNode>) chs.getNodes(new Condition<SNode>() {
       public boolean met(SNode n) {
-        return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+        return SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       }
     }));
     for (SNode p : ListSequence.fromList(props)) {

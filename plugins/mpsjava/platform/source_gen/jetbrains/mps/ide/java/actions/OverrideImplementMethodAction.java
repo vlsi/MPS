@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -18,8 +20,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class OverrideImplementMethodAction {
   private Project myProject;
@@ -36,12 +36,12 @@ public class OverrideImplementMethodAction {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
     final SNode contextClass = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true, false);
       }
     });
     final SNode contextMember = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true, false);
       }
     });
     final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {
@@ -70,7 +70,7 @@ public class OverrideImplementMethodAction {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
             }
           }).toListSequence();
 

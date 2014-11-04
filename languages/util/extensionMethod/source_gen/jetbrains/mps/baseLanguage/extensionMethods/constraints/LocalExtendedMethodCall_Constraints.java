@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -27,7 +28,6 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -65,10 +65,10 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) {
+            if (SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false, false) != null) {
               return result;
             }
-            SNode classifier = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", false, false));
+            SNode classifier = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false, false));
             if (classifier == null) {
               return result;
             }
@@ -86,7 +86,7 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
                 SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
               }
 
-              classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              classifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
             }
             return result;
           }
@@ -100,7 +100,7 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", true, false) != null;
+    return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7685333756920187172");
   private static SNodePointer breakingNode_rxyf25_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7517860079983420347");

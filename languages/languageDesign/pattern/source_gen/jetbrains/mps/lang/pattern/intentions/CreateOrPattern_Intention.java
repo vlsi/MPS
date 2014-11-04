@@ -9,14 +9,14 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateOrPattern_Intention implements IntentionFactory {
@@ -49,7 +49,7 @@ public class CreateOrPattern_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
-    return SNodeOperations.getAncestor(currentNode, "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false) != null;
+    return SNodeOperations.getNodeAncestor(currentNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false) != null;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "8263735385373627208");

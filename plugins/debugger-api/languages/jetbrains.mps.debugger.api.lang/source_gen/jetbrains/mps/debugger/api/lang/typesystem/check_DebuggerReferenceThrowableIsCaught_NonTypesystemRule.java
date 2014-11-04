@@ -8,21 +8,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule() {
   }
   public void applyRule(final SNode debuggerReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562217892l, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"))) {
       Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(throwables).addElement(_quotation_createNode_fpej4j_a0a1a0a1());
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, debuggerReference);

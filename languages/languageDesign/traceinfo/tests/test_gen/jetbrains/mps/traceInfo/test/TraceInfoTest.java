@@ -8,13 +8,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -39,7 +39,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.ifTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement")));
       }
     });
   }
@@ -52,7 +52,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.forTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ForStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement")));
       }
     });
   }
@@ -65,7 +65,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.blockStatementTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, "jetbrains.mps.baseLanguage.structure.ThrowStatement")));
       }
     });
   }
@@ -78,7 +78,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
           SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it");
-          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944193378l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });
@@ -92,7 +92,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
           SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
-          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944193378l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });

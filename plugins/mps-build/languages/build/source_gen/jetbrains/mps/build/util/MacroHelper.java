@@ -46,11 +46,11 @@ public final class MacroHelper {
     }
     for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     })) {
       SNode depProject = SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
@@ -78,7 +78,7 @@ public final class MacroHelper {
     }
   }
   private void add(SNode macro, String importName, String exportName) {
-    SNode macroProject = SNodeOperations.as(SNodeOperations.getContainingRoot(macro), "jetbrains.mps.build.structure.BuildProject");
+    SNode macroProject = SNodeOperations.as(SNodeOperations.getContainingRoot(macro), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
     if (macroProject == null) {
       context.reportProblem("macro is defined outside of the project", macro);
       return;
@@ -108,11 +108,11 @@ public final class MacroHelper {
   public Iterable<SNode> getVarsContainers() {
     return ListSequence.fromList(SLinkOperations.getChildren(this.project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && depPrefixes.containsKey(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")) && depPrefixes.containsKey(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     });
   }
@@ -157,7 +157,7 @@ public final class MacroHelper {
       this.existingMacros = GenerationUtil.<SNode,MacroHelper>getSessionMap(project, genContext, "macroHelpers");
     }
     public MacroHelper getMacros(SNode dep) {
-      dep = SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), "jetbrains.mps.build.structure.BuildProject");
+      dep = SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
       if (dep == null) {
         return null;
       }
@@ -181,10 +181,10 @@ public final class MacroHelper {
       }
     }
     public SNode getOriginalMacro(SNode macro) {
-      return SNodeOperations.as(DependenciesHelper.getOriginalNode(macro, genContext), "jetbrains.mps.build.structure.BuildMacro");
+      return SNodeOperations.as(DependenciesHelper.getOriginalNode(macro, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745375l, "jetbrains.mps.build.structure.BuildMacro"));
     }
     public SNode getOriginalDep(SNode dep) {
-      return SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), "jetbrains.mps.build.structure.BuildProjectDependency");
+      return SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
     }
     public void reportProblem(String message, SNode node) {
       genContext.showErrorMessage(node, message);

@@ -74,7 +74,7 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_u9fvp8_a0b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
       if (renderingCondition_u9fvp8_a0a0b0(node, editorContext)) {
         editorCell.addEditorCell(this.createConstant_u9fvp8_a0a1a(editorContext, node));

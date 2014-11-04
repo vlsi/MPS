@@ -93,7 +93,7 @@
       <node id="63012922131002398" at="20,49,21,42" concept="3" />
       <node id="63012922131002429" at="22,21,23,54" concept="1" />
       <node id="63012922130945368" at="24,5,25,221" concept="4" />
-      <node id="6778078592468845424" at="28,300,29,279" concept="4" />
+      <node id="6778078592468845424" at="28,403,29,381" concept="4" />
       <node id="6778078592468845433" at="30,12,31,362" concept="4" />
       <node id="63012922130945360" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6778078592468845431" at="30,10,32,5" concept="0" />
@@ -103,7 +103,7 @@
       <node id="63012922130945360" at="18,0,27,0" concept="5" trace="call_getId_63012922130945363#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="63012922130945362" at="16,43,16,43" />
       <scope id="63012922131002413" at="22,21,23,54" />
-      <scope id="6778078592468845423" at="28,300,29,279" />
+      <scope id="6778078592468845423" at="28,403,29,381" />
       <scope id="6778078592468845432" at="30,12,31,362" />
       <scope id="63012922130945360" at="16,0,18,0">
         <var name="thisNode" id="63012922130945360" />
@@ -170,14 +170,14 @@
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/8029776554053057792">
     <file name="ExtensionObjectGetter_Behavior.java">
-      <node id="7261386713308443600" at="14,83,15,488" concept="4" />
-      <node id="6778078592468845455" at="17,88,18,393" concept="4" />
+      <node id="7261386713308443600" at="14,83,15,601" concept="4" />
+      <node id="6778078592468845455" at="17,88,18,506" concept="4" />
       <node id="8029776554053057792" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8029776554053057792" at="14,0,17,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8029776554053057792" at="17,0,20,0" concept="5" trace="call_getReturnClassifierType_7261386713308443934#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="8029776554053057794" at="12,43,12,43" />
-      <scope id="8029776554053057797" at="14,83,15,488" />
-      <scope id="7261386713308443937" at="17,88,18,393" />
+      <scope id="8029776554053057797" at="14,83,15,601" />
+      <scope id="7261386713308443937" at="17,88,18,506" />
       <scope id="8029776554053057792" at="12,0,14,0">
         <var name="thisNode" id="8029776554053057792" />
       </scope>

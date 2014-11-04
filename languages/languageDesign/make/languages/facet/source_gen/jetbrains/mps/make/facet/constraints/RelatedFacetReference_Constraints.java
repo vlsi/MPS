@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -43,7 +44,7 @@ public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return Sequence.fromIterable(new FacetsScope(_context.getContextNode()).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.make.facet.structure.FacetDeclaration");
+                return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

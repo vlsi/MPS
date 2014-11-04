@@ -13,11 +13,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -42,13 +43,13 @@ public abstract class BaseLanguagesImportHelper {
       if (node == null) {
         continue;
       }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
         SNode clone = _quotation_createNode_5vd2f2_a0a0b0b0d(node);
         transformNode(clone, SNodeOperations.getModel(container));
         ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(clone);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"))) {
         transformNode(node, SNodeOperations.getModel(container));
-        ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement"));
+        ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")));
       }
     }
   }
@@ -70,7 +71,7 @@ public abstract class BaseLanguagesImportHelper {
   private void transformNodeToProperVariableReference(SNode node, SModel containerModel) {
     if (ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
       SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
-      if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
         SNode matchingVar = findVariable(reference);
         if (matchingVar != null) {
           SNodeOperations.replaceWithAnother(node, createVariableReference(matchingVar));
@@ -80,7 +81,7 @@ public abstract class BaseLanguagesImportHelper {
   }
   private void transformNode(SNode node, final SModel containerModel) {
     // try to resolve variables 
-    ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ListSequence.fromList(SNodeOperations.getChildren(it)).isEmpty();
       }
@@ -90,7 +91,7 @@ public abstract class BaseLanguagesImportHelper {
       }
     });
     // all links to subs -> to debugger stubs 
-    for (SNode d : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
+    for (SNode d : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SConcept[]{}))) {
       replaceStubReferences(d, containerModel);
     }
   }

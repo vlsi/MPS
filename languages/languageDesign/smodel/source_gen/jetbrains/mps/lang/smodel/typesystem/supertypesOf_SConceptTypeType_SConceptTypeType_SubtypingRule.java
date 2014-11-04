@@ -25,7 +25,7 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode concept = SLinkOperations.getTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, 1180481110358l, "conceptDeclaraton"));
-    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
         ListSequence.fromList(list).addElement(_quotation_createNode_keb29w_a0a0a1a2a1(superConcept));

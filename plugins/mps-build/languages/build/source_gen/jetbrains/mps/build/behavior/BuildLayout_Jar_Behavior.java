@@ -26,7 +26,7 @@ public class BuildLayout_Jar_Behavior {
     helper.locations().put(thisNode, zipLocation);
 
     if (helper.isContentRequired(thisNode)) {
-      String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "deps", SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       helper.emit(_quotation_createNode_20awhq_a0a1a5a0(tempPath));
       helper.emit(_quotation_createNode_20awhq_a0a2a5a0(zipLocation, tempPath));
       helper.contentLocations().put(thisNode, tempPath);
@@ -38,10 +38,10 @@ public class BuildLayout_Jar_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       final SNode node = (SNode) object;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_JavaModule")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"))) {
         return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, 2591537044435828006l, "module")) == node;
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf")) && SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, 2591537044435828006l, "module")) == node;
           }
         });
       } else {
@@ -53,14 +53,14 @@ public class BuildLayout_Jar_Behavior {
   public static boolean call_scanInJarNodes_5970181360961342226(final SNode thisNode, SNode container, final Object object) {
     if (ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_InJarNode") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_InJarNode"), "virtual_reexportsFromJar_5970181360961342219", new Object[]{object});
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), "virtual_reexportsFromJar_5970181360961342219", new Object[]{object});
       }
     })) {
       return true;
     }
     return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder") && BuildLayout_Jar_Behavior.call_scanInJarNodes_5970181360961342226(thisNode, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Folder"), object);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) && BuildLayout_Jar_Behavior.call_scanInJarNodes_5970181360961342226(thisNode, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")), object);
       }
     });
   }

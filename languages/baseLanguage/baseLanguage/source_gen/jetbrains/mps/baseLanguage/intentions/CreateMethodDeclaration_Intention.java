@@ -12,10 +12,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.Editor;
@@ -77,12 +77,12 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
-      boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
+      boolean isSameClassifier = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == classifier;
       final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
       SNode type;
       SNode inferType = TypeChecker.getInstance().getInferredTypeOf(node);
-      if (SNodeOperations.isInstanceOf(inferType, "jetbrains.mps.baseLanguage.structure.Type")) {
-        type = SNodeOperations.cast(inferType, "jetbrains.mps.baseLanguage.structure.Type");
+      if (SNodeOperations.isInstanceOf(inferType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))) {
+        type = SNodeOperations.cast(inferType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
       } else {
         type = _quotation_createNode_v1wtfy_a0a0a5a0();
       }

@@ -37,7 +37,7 @@ public class MigrateClassifierMembersNodes_MigrationScript extends BaseMigration
       public void doUpdateInstanceNode(SNode node) {
         Iterable<SNode> members = Classifier_Behavior.call_members_1465982738252129704(node);
         for (SNode member : Sequence.fromIterable(members)) {
-          if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"))) {
+          if (!(SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1465982738277781862l, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")))) {
             SNodeOperations.detachNode(member);
           }
         }

@@ -5,6 +5,8 @@ package jetbrains.mps.lang.quotation.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.EmptyScope;
 
@@ -24,8 +26,8 @@ public class AbstractAntiquotation_Behavior {
     SNode node = thisNode;
     int metaLevelChange = 0;
     while ((node != null)) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")) {
-        metaLevelChange += BehaviorReflection.invokeVirtual(Integer.TYPE, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
+        metaLevelChange += BehaviorReflection.invokeVirtual(Integer.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")), "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
       }
       if (metaLevelChange == 0) {
         break;

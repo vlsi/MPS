@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,13 +25,13 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
   public CallsToNonThreadSafeMethod_NonTypesystemRule() {
   }
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode parentLoop = SNodeOperations.getAncestor(baseMethodCall, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
+    SNode parentLoop = SNodeOperations.getNodeAncestor(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), false, false);
     if (parentLoop != null) {
-      if (SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
+      if (SNodeOperations.isInstanceOf(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
-        final SNode classConcept = SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"));
+        final SNode classConcept = SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"));
         if (AttributeOperations.getAttribute(classConcept, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
@@ -52,12 +52,12 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
             }
           }
         }
-      } else if ((SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")))) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
+      } else if ((SNodeOperations.isInstanceOf(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")) && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))))) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
-        SNode instanceMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        SNode declaringClass = SNodeOperations.getAncestor(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        SNode instanceMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+        SNode declaringClass = SNodeOperations.getNodeAncestor(instanceMethodDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
         if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null && SPropertyOperations.getBoolean(declaringClass, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
           return;
         }
@@ -72,12 +72,12 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(baseMethodCall, "Calling a method on a potentially non-thread-safe shared object", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "5384012304952427127", null, errorTarget);
         }
         return;
-      } else if ((SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
+      } else if ((SNodeOperations.isInstanceOf(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")) && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))))) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
-        SNode staticMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-        SNode declaringClass = SNodeOperations.getAncestor(staticMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        SNode staticMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+        SNode declaringClass = SNodeOperations.getNodeAncestor(staticMethodDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
         if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }

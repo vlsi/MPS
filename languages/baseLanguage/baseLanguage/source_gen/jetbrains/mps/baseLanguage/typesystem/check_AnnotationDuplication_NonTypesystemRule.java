@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,10 +23,10 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
   public check_AnnotationDuplication_NonTypesystemRule() {
   }
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"))) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, "jetbrains.mps.baseLanguage.structure.HasAnnotation")))) {
       return;
     }
-    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation");
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(annotationInstance), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, "jetbrains.mps.baseLanguage.structure.HasAnnotation"));
     ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getIndexInParent(it) > SNodeOperations.getIndexInParent(annotationInstance);

@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -23,7 +23,7 @@ public class ConstructorInvocationStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
-    SNode concept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode concept = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
       ListSequence.fromList(typeVarRefs).addElement(_quotation_createNode_teq92u_a0a0a2a0(tvd));

@@ -85,11 +85,11 @@ public class ProjectDependency {
   private Iterable<SNode> getImmediateDependencies(SNode project) {
     return ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts")) == null) && !(BuildProject_Behavior.call_isPackaged_4129895186893455885(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), Context.defaultContext(myGenContext)));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts")) == null) && !(BuildProject_Behavior.call_isPackaged_4129895186893455885(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), Context.defaultContext(myGenContext)));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     });
   }

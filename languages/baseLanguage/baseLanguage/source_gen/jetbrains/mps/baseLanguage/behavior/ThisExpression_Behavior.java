@@ -21,14 +21,14 @@ public class ThisExpression_Behavior {
   public static SNode call_getContextClassifierMember_6516287307421538194(SNode thisNode) {
     SNode classConcept = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"));
     if ((classConcept != null)) {
-      for (SNode classifierMember : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)) {
+      for (SNode classifierMember : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)) {
         if (SNodeOperations.getParent(classifierMember) == classConcept) {
           return classifierMember;
         }
       }
       return null;
     } else {
-      SNode classifierMember = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false, false);
+      SNode classifierMember = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false, false);
       return classifierMember;
     }
   }

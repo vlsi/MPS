@@ -25,7 +25,7 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     public ConceptMethodDeclaration_generic_cellMenu_v7l746_a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")));
+      return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")));
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);

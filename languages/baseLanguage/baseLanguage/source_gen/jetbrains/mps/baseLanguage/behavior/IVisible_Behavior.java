@@ -16,13 +16,13 @@ public class IVisible_Behavior {
   public static Icon call_getVisibilityIcon_5017341185733869581(SNode thisNode) {
     Icon defaultIcon = IconResourceBundle_Visibility.getInstance().getResource("PACKAGE_LOCAL");
     SNode visibility = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
-    if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+    if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return IconResourceBundle_Visibility.getInstance().getResource("PUBLIC");
     }
-    if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
       return IconResourceBundle_Visibility.getInstance().getResource("PRIVATE");
     }
-    if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+    if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644641414l, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       return IconResourceBundle_Visibility.getInstance().getResource("PROTECTED");
     }
     return defaultIcon;

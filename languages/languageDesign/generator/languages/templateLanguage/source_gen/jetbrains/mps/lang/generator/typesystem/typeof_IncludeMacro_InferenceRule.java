@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,7 +26,7 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
   public typeof_IncludeMacro_InferenceRule() {
   }
   public void applyRule(final SNode macro, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode containingTemplate = SNodeOperations.getAncestor(macro, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false);
+    SNode containingTemplate = SNodeOperations.getNodeAncestor(macro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), false, false);
     SNode includedTemplate = SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194566366375l, "includeTemplate"));
 
     if ((includedTemplate == null)) {

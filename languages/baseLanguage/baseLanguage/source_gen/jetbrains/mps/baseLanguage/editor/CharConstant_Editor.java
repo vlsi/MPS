@@ -51,7 +51,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
       editorCell = this.createProperty_d77dl_a1a_0(editorContext, node);
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+    style.set(StyleAttributes.LAYOUT_CONSTRAINT, 0, "punctuation");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

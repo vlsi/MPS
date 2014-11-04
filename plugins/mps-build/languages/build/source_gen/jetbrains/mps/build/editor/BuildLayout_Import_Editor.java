@@ -40,7 +40,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4dmy40_a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Import_Editor.ReplaceWith_BuildLayout_Node_cellMenu_4dmy40_a0a0()}));

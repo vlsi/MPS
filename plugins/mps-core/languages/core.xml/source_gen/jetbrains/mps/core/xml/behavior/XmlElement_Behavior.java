@@ -15,10 +15,10 @@ public class XmlElement_Behavior {
   public static boolean call_isMultiline_8886258982030574875(SNode thisNode) {
     boolean multiline = false;
     for (SNode n : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content"))) {
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.core.xml.structure.XmlBaseElement")) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299053l, "jetbrains.mps.core.xml.structure.XmlBaseElement"))) {
         multiline = true;
-      } else if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.core.xml.structure.XmlComment")) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, "jetbrains.mps.core.xml.structure.XmlComment"), MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"))).count() > 1) {
+      } else if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment"))) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment")), MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"))).count() > 1) {
           multiline = true;
         }
       } else if ((n != null) && (SNodeOperations.getPrevSibling(n) != null)) {

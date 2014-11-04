@@ -36,7 +36,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
         SNode replacement;
         if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 8730965736661186051l, "query")) != null)) {
           replacement = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", null);
-          SLinkOperations.setTarget(SNodeOperations.cast(replacement, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, 9122903797336200706l, "query"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 8730965736661186051l, "query")));
+          SLinkOperations.setTarget(SNodeOperations.cast(replacement, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, 9122903797336200706l, "query"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 8730965736661186051l, "query")));
         } else {
           replacement = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null);
         }

@@ -63,7 +63,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_jug38p_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -71,7 +71,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_jug38p_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -87,7 +87,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       editorCell.setRole("baseMethodDeclaration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -198,8 +198,8 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_jug38p_a5a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

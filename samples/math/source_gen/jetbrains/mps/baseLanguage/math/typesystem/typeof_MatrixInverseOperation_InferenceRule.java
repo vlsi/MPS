@@ -26,7 +26,7 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
       final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229396", true);
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, "jetbrains.mps.baseLanguage.math.structure.MatrixType"))) {
             {
               SNode _nodeToCheck_1029348928467 = op;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749153", 0, null);
@@ -37,7 +37,7 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749160", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749167", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749162", true), _info_12389875345);
             }
-            SNode mt = SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            SNode mt = SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, "jetbrains.mps.baseLanguage.math.structure.MatrixType"));
             if (SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != 0 && SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) != 0 && SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();

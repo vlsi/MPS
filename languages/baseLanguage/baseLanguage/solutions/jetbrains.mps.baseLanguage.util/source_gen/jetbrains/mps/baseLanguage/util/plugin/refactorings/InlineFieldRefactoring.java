@@ -39,10 +39,10 @@ public abstract class InlineFieldRefactoring {
   }
 
   public static InlineFieldRefactoring createRefactoring(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return new InlineFieldAssignmentRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+      return new InlineFieldAssignmentRefactoring(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")));
     } else {
-      return new InlineFieldReferenceRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"));
+      return new InlineFieldReferenceRefactoring(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")));
     }
   }
 }

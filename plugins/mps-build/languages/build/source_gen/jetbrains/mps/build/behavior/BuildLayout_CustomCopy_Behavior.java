@@ -16,7 +16,7 @@ public class BuildLayout_CustomCopy_Behavior {
   public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1330375798058820290l, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"));
       }
     });
   }

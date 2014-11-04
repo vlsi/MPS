@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -27,25 +27,25 @@ public class MethodRefactoringUtils {
   }
   public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
     List<SNode> results = new ArrayList<SNode>();
-    if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+      if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
         return results;
       }
       SearchResults<SNode> searchResults;
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder");
       } else {
         searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
       }
 
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
-    if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
       SearchResults<SNode> searchResults = FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
       for (SearchResult<SNode> result : ListSequence.fromList(searchResults.getSearchResults())) {
-        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+        ListSequence.fromList(results).addElement(SNodeOperations.cast(result.getObject(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
     return results;

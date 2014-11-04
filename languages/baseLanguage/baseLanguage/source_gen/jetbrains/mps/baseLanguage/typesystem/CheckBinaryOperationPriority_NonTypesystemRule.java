@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -22,8 +22,8 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
   public CheckBinaryOperationPriority_NonTypesystemRule() {
   }
   public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.getParent(binaryOperation) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    if (SNodeOperations.getParent(binaryOperation) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(binaryOperation), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
+      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(binaryOperation), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       boolean isRigth = false;
       if (SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")) == binaryOperation) {
         isRigth = true;

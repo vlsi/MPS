@@ -14,12 +14,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import org.junit.Test;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -43,7 +44,7 @@ public class ScopesTest {
         for (SModel model : project.getProjectModels()) {
           for (SNode root : model.getRootNodes()) {
             // todo: use fast nodes finder here 
-            ListSequence.fromList(nodesToCheck).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.test.structure.ScopesTest", true, new String[]{})).select(new ISelector<SNode, SNode[]>() {
+            ListSequence.fromList(nodesToCheck).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest"), true, new SConcept[]{})).select(new ISelector<SNode, SNode[]>() {
               public SNode[] select(SNode it) {
                 return new SNode[]{it};
               }

@@ -59,7 +59,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
                 {
                   SNode _nodeToCheck_1029348928467 = invoke;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720529", 0, null);
-                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720538", true), (SNode) ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(typeCheckingContext.getExpandedNode(reifiedRet), "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).first(), _info_12389875345);
+                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720538", true), (SNode) ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(typeCheckingContext.getExpandedNode(reifiedRet), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).first(), _info_12389875345);
                 }
               } else {
                 SNode _nodeToCheck_1029348928467 = invoke;

@@ -14,13 +14,13 @@ import jetbrains.mps.build.mps.util.RequiredPlugins;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
@@ -52,7 +52,7 @@ public class BuildMPSPlugin_Behavior {
         return SNodeOperations.getContainingRoot(it) != project;
       }
     })) {
-      SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), "jetbrains.mps.build.structure.BuildLayout_Node");
+      SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {
         builder.add(pluginArtifact, plugin);
       }
@@ -60,20 +60,20 @@ public class BuildMPSPlugin_Behavior {
 
     // fetch stuff for ant task classpath 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
-    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), "jetbrains.mps.build.structure.BuildProject");
-    SNode antMpsModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "ant-mps"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
+    SNode antMpsModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "ant-mps"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((antMpsModule != null)) {
-      SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), "jetbrains.mps.build.structure.BuildLayout_Node");
+      SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((antMpsJar != null)) {
         helper.artifacts().put("ant-mps", antMpsJar);
         builder.add(antMpsJar, antMpsModule);
       }
 
-      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), "jetbrains.mps.build.structure.BuildProject");
+      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
       Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
       SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
       if ((jdom != null)) {
-        SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), "jetbrains.mps.build.structure.BuildLayout_Node");
+        SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((jdomJar != null)) {
           helper.artifacts().put("jdom", jdomJar);
           builder.add(jdomJar, jdom);
@@ -81,7 +81,7 @@ public class BuildMPSPlugin_Behavior {
       }
       SNode log4j = visibleJarsScope.resolve(mpsCore, "IDEA::lib/log4j.jar");
       if ((log4j != null)) {
-        SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), "jetbrains.mps.build.structure.BuildLayout_Node");
+        SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if ((log4jJar != null)) {
           helper.artifacts().put("log4j", log4jJar);
           builder.add(log4jJar, log4j);
@@ -95,7 +95,7 @@ public class BuildMPSPlugin_Behavior {
     SNode gentest = visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7");
     if ((gentest != null)) {
       if (SNodeOperations.getContainingRoot(gentest) != SNodeOperations.getContainingRoot(thisNode)) {
-        SNode gentestJar = SNodeOperations.as(artifacts.findArtifact(gentest), "jetbrains.mps.build.structure.BuildLayout_Node");
+        SNode gentestJar = SNodeOperations.as(artifacts.findArtifact(gentest), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if (gentestJar != null) {
           helper.artifacts().put(SPropertyOperations.getString(gentest, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")), gentestJar);
           builder.add(gentestJar, gentest);

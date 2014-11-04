@@ -20,9 +20,9 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 1148687202698l, "applicableLink")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
+    SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 1148687202698l, "applicableLink")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     if ((target == null)) {
-      target = SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
+      target = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
     }
     return _quotation_createNode_q6xvx3_a2a0(target);
   }
@@ -37,8 +37,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
       }
     }
     SNode lastStmt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLastStatement_1239354409446", new Object[]{});
-    if (SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"))), sequenceType);
+    if (SNodeOperations.isInstanceOf(lastStmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+      return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"))), sequenceType);
     }
     return true;
   }
@@ -46,7 +46,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     return (ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(thisNode) != null) && ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isNodeSequenceReturned_2990203945683056978(thisNode);
   }
   public static SNode call_getValidator_2990203945683058946(SNode thisNode) {
-    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, 3481330710159185858l, "validator")) : (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 3481330710159425093l, "validator")) : null));
+    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope")) ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope")), MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, 3481330710159185858l, "validator")) : (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint")) ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint")), MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 3481330710159425093l, "validator")) : null));
   }
   private static SNode _quotation_createNode_q6xvx3_a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

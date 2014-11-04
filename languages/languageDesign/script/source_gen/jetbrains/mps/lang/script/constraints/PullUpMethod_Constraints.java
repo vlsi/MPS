@@ -20,12 +20,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
@@ -67,10 +67,10 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
+              SNode ancestor = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 6655357163912246425l, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"), true, false);
               return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 6655357163912246425l, 6655357163912246427l, "newClassifier")), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
                 }
               })) {
                 @Nullable
@@ -87,7 +87,7 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 6655357163912246425l, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "849077997121906176");
   private static SNodePointer breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "4242940223545087963");

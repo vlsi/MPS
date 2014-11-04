@@ -33,9 +33,9 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.openapi.module.Module;
 
@@ -115,10 +115,10 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         return;
       }
       SetSequence.fromSet(myProcessedNodes).addElement(superClassifier);
-      if (SNodeOperations.isInstanceOf(superClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      if (SNodeOperations.isInstanceOf(superClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         mapInterfaces();
         mapClasses();
-      } else if (SNodeOperations.isInstanceOf(superClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      } else if (SNodeOperations.isInstanceOf(superClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         mapClasses();
       } else {
         return;
@@ -141,8 +141,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         if (superClass != null) {
           safeMap(SLinkOperations.getTarget(superClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), aClass);
         }
-        if (SNodeOperations.isInstanceOf(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-          safeMap(SLinkOperations.getTarget(SNodeOperations.cast(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), aClass);
+        if (SNodeOperations.isInstanceOf(aClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+          safeMap(SLinkOperations.getTarget(SNodeOperations.cast(aClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), aClass);
         }
         for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(aClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
           safeMap(SLinkOperations.getTarget(implementedInterface, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), aClass);
@@ -188,8 +188,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
         SetSequence.fromSet(myProcessedNodes).addElement(sNodeId);
         SNode node = sNodeId.getNode();
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+          SNode classifier = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
           ListSequence.fromList(myResult).addElement(classifier);
           QueueSequence.fromQueue(myQueue).addLastElement(classifier);
         }

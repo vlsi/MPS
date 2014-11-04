@@ -20,7 +20,7 @@ public class BaseAssignmentExpression_Behavior {
     return true;
   }
   public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike", "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}) && (!(rightParen) || ListSequence.fromList(SNodeOperations.getAncestors(leaf, null, true)).contains(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"))));
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike", "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}) && (!(rightParen) || ListSequence.fromList(SNodeOperations.getNodeAncestors(leaf, null, true)).contains(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"))));
   }
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"));

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class InternalPartialFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590086595l, "instance")) != null)) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590086595l, "instance")), "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"))) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590086595l, "instance")), MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1202838164916l, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression")))) {
         appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590086595l, "instance")));
         this.append(".");
       }

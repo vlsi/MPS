@@ -54,7 +54,7 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
-            SNode top = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", true, false);
+            SNode top = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), true, false);
             if ((top != null)) {
               BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(top, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search")), "virtual_getString_1222432436326", new Object[]{matches});
             }

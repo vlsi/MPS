@@ -33,7 +33,7 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", true, false), MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 4544608336420681235l, "thisNode")) != null);
+    return (SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), true, false), MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 4544608336420681235l, "thisNode")) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966315980");
 }

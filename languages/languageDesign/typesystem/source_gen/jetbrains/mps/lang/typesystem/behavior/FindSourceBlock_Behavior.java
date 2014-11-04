@@ -33,12 +33,12 @@ public class FindSourceBlock_Behavior {
     for (SNode returnStatement : returnStatements) {
       SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression")));
     }
-    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")));
+    if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+      SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")));
     }
     for (SNode expr : expressions) {
       SNode type = TypeChecker.getInstance().getTypeOf(expr);
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_1go9bg_b0a0b0f0b()) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType"))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_1go9bg_b0a0b0f0b()) && !(SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")))) {
         return true;
       }
     }

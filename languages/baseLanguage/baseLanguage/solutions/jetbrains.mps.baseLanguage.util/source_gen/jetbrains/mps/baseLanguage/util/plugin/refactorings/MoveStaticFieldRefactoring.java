@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   public MoveStaticFieldRefactoring(SNode moving, SNode destination) {
@@ -17,14 +17,14 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   @Override
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
-    if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
+    if (SNodeOperations.getNodeAncestor(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == this.myDestination) {
       SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a1a1(this.myReplacing));
     } else {
       SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a0b0b(this.myDestination, this.myReplacing));
     }
   }
   protected boolean goodDestination() {
-    return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.isInstanceOf(this.myDestination, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
   private static SNode _quotation_createNode_fls06q_a0a0a0b0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

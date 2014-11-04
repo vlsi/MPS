@@ -164,7 +164,7 @@ public class IconManager {
     SNode cd = null;
     Icon icon = null;
     if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
-      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       icon = getIconForConcept(cd);
     }
     if (icon == null) {

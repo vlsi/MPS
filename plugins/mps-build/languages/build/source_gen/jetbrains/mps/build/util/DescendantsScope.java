@@ -13,10 +13,10 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public abstract class DescendantsScope extends Scope {
   private SNode node;
@@ -64,7 +64,7 @@ public abstract class DescendantsScope extends Scope {
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept)))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept)))) {
       return null;
     }
 
@@ -85,10 +85,10 @@ public abstract class DescendantsScope extends Scope {
     return new DescendantsScope(node, link, concept) {
       @Override
       public String getName(SNode child) {
-        if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+        if (!(SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")))) {
           return child.getPresentation();
         }
-        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+        return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     };
   }

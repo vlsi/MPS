@@ -74,72 +74,72 @@
       <unit id="1347577327951781517" at="24,0,58,0" name="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
     </file>
     <file name="RenameConcept_Target.java">
-      <node id="1347577327951781521" at="12,52,13,46" concept="8" />
-      <node id="1347577327951781521" at="15,41,16,17" concept="8" />
-      <node id="1347577327951781521" at="18,64,19,127" concept="8" />
-      <node id="1347577327951781521" at="22,51,23,19" concept="8" />
-      <node id="1347577327951781521" at="24,5,25,16" concept="8" />
-      <node id="1347577327951781521" at="10,0,12,0" concept="2" trace="RenameConcept_Target#()V" />
-      <node id="1347577327951781521" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="1347577327951781521" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="1347577327951781521" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="1347577327951781521" at="21,52,24,5" concept="5" />
-      <node id="1347577327951781521" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="1347577327951781521" at="10,33,10,33" />
-      <scope id="1347577327951781521" at="12,52,13,46" />
-      <scope id="1347577327951781521" at="15,41,16,17" />
-      <scope id="1347577327951781521" at="18,64,19,127" />
-      <scope id="1347577327951781521" at="22,51,23,19" />
-      <scope id="1347577327951781521" at="10,0,12,0" />
-      <scope id="1347577327951781521" at="12,0,15,0" />
-      <scope id="1347577327951781521" at="15,0,18,0" />
-      <scope id="1347577327951781521" at="18,0,21,0">
+      <node id="1347577327951781521" at="14,52,15,46" concept="8" />
+      <node id="1347577327951781521" at="17,41,18,17" concept="8" />
+      <node id="1347577327951781521" at="20,64,21,230" concept="8" />
+      <node id="1347577327951781521" at="24,51,25,19" concept="8" />
+      <node id="1347577327951781521" at="26,5,27,16" concept="8" />
+      <node id="1347577327951781521" at="12,0,14,0" concept="2" trace="RenameConcept_Target#()V" />
+      <node id="1347577327951781521" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="1347577327951781521" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="1347577327951781521" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="1347577327951781521" at="23,52,26,5" concept="5" />
+      <node id="1347577327951781521" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="1347577327951781521" at="12,33,12,33" />
+      <scope id="1347577327951781521" at="14,52,15,46" />
+      <scope id="1347577327951781521" at="17,41,18,17" />
+      <scope id="1347577327951781521" at="20,64,21,230" />
+      <scope id="1347577327951781521" at="24,51,25,19" />
+      <scope id="1347577327951781521" at="12,0,14,0" />
+      <scope id="1347577327951781521" at="14,0,17,0" />
+      <scope id="1347577327951781521" at="17,0,20,0" />
+      <scope id="1347577327951781521" at="20,0,23,0">
         <var name="entity" id="1347577327951781521" />
       </scope>
-      <scope id="1347577327951781521" at="21,52,25,16" />
-      <scope id="1347577327951781521" at="21,0,27,0">
+      <scope id="1347577327951781521" at="23,52,27,16" />
+      <scope id="1347577327951781521" at="23,0,29,0">
         <var name="entity" id="1347577327951781521" />
       </scope>
-      <unit id="1347577327951781521" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />
+      <unit id="1347577327951781521" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />
     </file>
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/1347577327951781638">
     <file name="RenameLink_Target.java">
-      <node id="1347577327951781653" at="12,52,13,46" concept="8" />
-      <node id="1347577327951781653" at="15,41,16,17" concept="8" />
-      <node id="1347577327951781653" at="18,64,19,116" concept="8" />
-      <node id="1347577327951781653" at="22,51,23,19" concept="8" />
-      <node id="1347577327951781653" at="24,5,25,16" concept="8" />
-      <node id="1347577327951781653" at="10,0,12,0" concept="2" trace="RenameLink_Target#()V" />
-      <node id="1347577327951781653" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="1347577327951781653" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="1347577327951781653" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="1347577327951781653" at="21,52,24,5" concept="5" />
-      <node id="1347577327951781653" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="1347577327951781653" at="10,30,10,30" />
-      <scope id="1347577327951781653" at="12,52,13,46" />
-      <scope id="1347577327951781653" at="15,41,16,17" />
-      <scope id="1347577327951781653" at="18,64,19,116" />
-      <scope id="1347577327951781653" at="22,51,23,19" />
-      <scope id="1347577327951781653" at="10,0,12,0" />
-      <scope id="1347577327951781653" at="12,0,15,0" />
-      <scope id="1347577327951781653" at="15,0,18,0" />
-      <scope id="1347577327951781653" at="18,0,21,0">
+      <node id="1347577327951781653" at="14,52,15,46" concept="8" />
+      <node id="1347577327951781653" at="17,41,18,17" concept="8" />
+      <node id="1347577327951781653" at="20,64,21,219" concept="8" />
+      <node id="1347577327951781653" at="24,51,25,19" concept="8" />
+      <node id="1347577327951781653" at="26,5,27,16" concept="8" />
+      <node id="1347577327951781653" at="12,0,14,0" concept="2" trace="RenameLink_Target#()V" />
+      <node id="1347577327951781653" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="1347577327951781653" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="1347577327951781653" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="1347577327951781653" at="23,52,26,5" concept="5" />
+      <node id="1347577327951781653" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="1347577327951781653" at="12,30,12,30" />
+      <scope id="1347577327951781653" at="14,52,15,46" />
+      <scope id="1347577327951781653" at="17,41,18,17" />
+      <scope id="1347577327951781653" at="20,64,21,219" />
+      <scope id="1347577327951781653" at="24,51,25,19" />
+      <scope id="1347577327951781653" at="12,0,14,0" />
+      <scope id="1347577327951781653" at="14,0,17,0" />
+      <scope id="1347577327951781653" at="17,0,20,0" />
+      <scope id="1347577327951781653" at="20,0,23,0">
         <var name="entity" id="1347577327951781653" />
       </scope>
-      <scope id="1347577327951781653" at="21,52,25,16" />
-      <scope id="1347577327951781653" at="21,0,27,0">
+      <scope id="1347577327951781653" at="23,52,27,16" />
+      <scope id="1347577327951781653" at="23,0,29,0">
         <var name="entity" id="1347577327951781653" />
       </scope>
-      <unit id="1347577327951781653" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.RenameLink_Target" />
+      <unit id="1347577327951781653" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.RenameLink_Target" />
     </file>
     <file name="RenameLink.java">
       <node id="1347577327951781638" at="29,23,30,42" concept="3" />
       <node id="1347577327951781638" at="32,52,33,35" concept="8" />
       <node id="1347577327951781638" at="35,39,36,25" concept="8" />
       <node id="1347577327951781638" at="38,47,39,24" concept="8" />
-      <node id="1347577327951781661" at="41,69,42,169" concept="7" />
-      <node id="1347577327951781671" at="42,169,43,264" concept="7" />
+      <node id="1347577327951781661" at="41,69,42,276" concept="7" />
+      <node id="1347577327951781671" at="42,276,43,264" concept="7" />
       <node id="1347577327951781686" at="43,264,44,147" concept="3" />
       <node id="1347577327951781700" at="46,88,47,73" concept="7" />
       <node id="1347577327951781707" at="47,73,48,93" concept="7" />
@@ -201,41 +201,41 @@
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/1347577327951781764">
     <file name="RenameProperty_Target.java">
-      <node id="1347577327951781789" at="12,52,13,46" concept="8" />
-      <node id="1347577327951781789" at="15,41,16,17" concept="8" />
-      <node id="1347577327951781789" at="18,64,19,120" concept="8" />
-      <node id="1347577327951781789" at="22,51,23,19" concept="8" />
-      <node id="1347577327951781789" at="24,5,25,16" concept="8" />
-      <node id="1347577327951781789" at="10,0,12,0" concept="2" trace="RenameProperty_Target#()V" />
-      <node id="1347577327951781789" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="1347577327951781789" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="1347577327951781789" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="1347577327951781789" at="21,52,24,5" concept="5" />
-      <node id="1347577327951781789" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="1347577327951781789" at="10,34,10,34" />
-      <scope id="1347577327951781789" at="12,52,13,46" />
-      <scope id="1347577327951781789" at="15,41,16,17" />
-      <scope id="1347577327951781789" at="18,64,19,120" />
-      <scope id="1347577327951781789" at="22,51,23,19" />
-      <scope id="1347577327951781789" at="10,0,12,0" />
-      <scope id="1347577327951781789" at="12,0,15,0" />
-      <scope id="1347577327951781789" at="15,0,18,0" />
-      <scope id="1347577327951781789" at="18,0,21,0">
+      <node id="1347577327951781789" at="14,52,15,46" concept="8" />
+      <node id="1347577327951781789" at="17,41,18,17" concept="8" />
+      <node id="1347577327951781789" at="20,64,21,223" concept="8" />
+      <node id="1347577327951781789" at="24,51,25,19" concept="8" />
+      <node id="1347577327951781789" at="26,5,27,16" concept="8" />
+      <node id="1347577327951781789" at="12,0,14,0" concept="2" trace="RenameProperty_Target#()V" />
+      <node id="1347577327951781789" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="1347577327951781789" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="1347577327951781789" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="1347577327951781789" at="23,52,26,5" concept="5" />
+      <node id="1347577327951781789" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="1347577327951781789" at="12,34,12,34" />
+      <scope id="1347577327951781789" at="14,52,15,46" />
+      <scope id="1347577327951781789" at="17,41,18,17" />
+      <scope id="1347577327951781789" at="20,64,21,223" />
+      <scope id="1347577327951781789" at="24,51,25,19" />
+      <scope id="1347577327951781789" at="12,0,14,0" />
+      <scope id="1347577327951781789" at="14,0,17,0" />
+      <scope id="1347577327951781789" at="17,0,20,0" />
+      <scope id="1347577327951781789" at="20,0,23,0">
         <var name="entity" id="1347577327951781789" />
       </scope>
-      <scope id="1347577327951781789" at="21,52,25,16" />
-      <scope id="1347577327951781789" at="21,0,27,0">
+      <scope id="1347577327951781789" at="23,52,27,16" />
+      <scope id="1347577327951781789" at="23,0,29,0">
         <var name="entity" id="1347577327951781789" />
       </scope>
-      <unit id="1347577327951781789" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.RenameProperty_Target" />
+      <unit id="1347577327951781789" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.RenameProperty_Target" />
     </file>
     <file name="RenameProperty.java">
       <node id="1347577327951781764" at="28,27,29,42" concept="3" />
       <node id="1347577327951781764" at="31,52,32,39" concept="8" />
       <node id="1347577327951781764" at="34,39,35,29" concept="8" />
       <node id="1347577327951781764" at="37,47,38,24" concept="8" />
-      <node id="1347577327951781797" at="40,69,41,169" concept="7" />
-      <node id="1347577327951781807" at="41,169,42,264" concept="7" />
+      <node id="1347577327951781797" at="40,69,41,276" concept="7" />
+      <node id="1347577327951781807" at="41,276,42,264" concept="7" />
       <node id="7845864677499819233" at="42,264,43,147" concept="3" />
       <node id="1347577327951781836" at="45,88,46,73" concept="7" />
       <node id="1347577327951781843" at="46,73,47,118" concept="7" />
@@ -298,33 +298,33 @@
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3068114543317961454">
     <file name="MoveConcepts_Target.java">
-      <node id="3068114543317961951" at="12,52,13,46" concept="8" />
-      <node id="3068114543317961951" at="15,41,16,16" concept="8" />
-      <node id="3068114543317961951" at="18,64,19,127" concept="8" />
-      <node id="3068114543317961951" at="22,51,23,19" concept="8" />
-      <node id="3068114543317961951" at="24,5,25,16" concept="8" />
-      <node id="3068114543317961951" at="10,0,12,0" concept="2" trace="MoveConcepts_Target#()V" />
-      <node id="3068114543317961951" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="3068114543317961951" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="3068114543317961951" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="3068114543317961951" at="21,52,24,5" concept="5" />
-      <node id="3068114543317961951" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="3068114543317961951" at="10,32,10,32" />
-      <scope id="3068114543317961951" at="12,52,13,46" />
-      <scope id="3068114543317961951" at="15,41,16,16" />
-      <scope id="3068114543317961951" at="18,64,19,127" />
-      <scope id="3068114543317961951" at="22,51,23,19" />
-      <scope id="3068114543317961951" at="10,0,12,0" />
-      <scope id="3068114543317961951" at="12,0,15,0" />
-      <scope id="3068114543317961951" at="15,0,18,0" />
-      <scope id="3068114543317961951" at="18,0,21,0">
+      <node id="3068114543317961951" at="14,52,15,46" concept="8" />
+      <node id="3068114543317961951" at="17,41,18,16" concept="8" />
+      <node id="3068114543317961951" at="20,64,21,230" concept="8" />
+      <node id="3068114543317961951" at="24,51,25,19" concept="8" />
+      <node id="3068114543317961951" at="26,5,27,16" concept="8" />
+      <node id="3068114543317961951" at="12,0,14,0" concept="2" trace="MoveConcepts_Target#()V" />
+      <node id="3068114543317961951" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="3068114543317961951" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="3068114543317961951" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="3068114543317961951" at="23,52,26,5" concept="5" />
+      <node id="3068114543317961951" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="3068114543317961951" at="12,32,12,32" />
+      <scope id="3068114543317961951" at="14,52,15,46" />
+      <scope id="3068114543317961951" at="17,41,18,16" />
+      <scope id="3068114543317961951" at="20,64,21,230" />
+      <scope id="3068114543317961951" at="24,51,25,19" />
+      <scope id="3068114543317961951" at="12,0,14,0" />
+      <scope id="3068114543317961951" at="14,0,17,0" />
+      <scope id="3068114543317961951" at="17,0,20,0" />
+      <scope id="3068114543317961951" at="20,0,23,0">
         <var name="entity" id="3068114543317961951" />
       </scope>
-      <scope id="3068114543317961951" at="21,52,25,16" />
-      <scope id="3068114543317961951" at="21,0,27,0">
+      <scope id="3068114543317961951" at="23,52,27,16" />
+      <scope id="3068114543317961951" at="23,0,29,0">
         <var name="entity" id="3068114543317961951" />
       </scope>
-      <unit id="3068114543317961951" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts_Target" />
+      <unit id="3068114543317961951" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts_Target" />
     </file>
     <file name="MoveConcepts.java">
       <node id="3068114543317961454" at="42,25,43,46" concept="3" />
@@ -550,7 +550,7 @@
       <node id="3068114543317979887" at="44,47,45,27" concept="8" />
       <node id="3068114543317980111" at="47,68,48,64" concept="7" />
       <node id="46729075931908177" at="48,64,49,82" concept="7" />
-      <node id="3068114543317980114" at="51,25,52,173" concept="3" />
+      <node id="3068114543317980114" at="51,25,52,280" concept="3" />
       <node id="3068114543317980136" at="55,34,56,19" concept="8" />
       <node id="2893383476258780656" at="57,5,58,31" concept="9" />
       <node id="5101259057297978721" at="59,71,60,61" concept="3" />
@@ -597,7 +597,7 @@
       <scope id="3068114543317979887" at="38,52,39,35" />
       <scope id="3068114543317979887" at="41,39,42,26" />
       <scope id="3068114543317979887" at="44,47,45,27" />
-      <scope id="46729075931947729" at="51,25,52,173" />
+      <scope id="46729075931947729" at="51,25,52,280" />
       <scope id="3068114543317980127" at="55,34,56,19" />
       <scope id="5101259057297978720" at="59,71,60,61" />
       <scope id="46729075932005980" at="63,25,64,180" />
@@ -660,33 +660,33 @@
       <unit id="3068114543317979887" at="32,0,106,0" name="jetbrains.mps.lang.structure.refactorings.MoveLinkUp" />
     </file>
     <file name="MoveLinkUp_Target.java">
-      <node id="3068114543317979891" at="12,52,13,46" concept="8" />
-      <node id="3068114543317979891" at="15,41,16,17" concept="8" />
-      <node id="3068114543317979891" at="18,64,19,116" concept="8" />
-      <node id="3068114543317979891" at="22,51,23,19" concept="8" />
-      <node id="3068114543317979891" at="24,5,25,16" concept="8" />
-      <node id="3068114543317979891" at="10,0,12,0" concept="2" trace="MoveLinkUp_Target#()V" />
-      <node id="3068114543317979891" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="3068114543317979891" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="3068114543317979891" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="3068114543317979891" at="21,52,24,5" concept="5" />
-      <node id="3068114543317979891" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="3068114543317979891" at="10,30,10,30" />
-      <scope id="3068114543317979891" at="12,52,13,46" />
-      <scope id="3068114543317979891" at="15,41,16,17" />
-      <scope id="3068114543317979891" at="18,64,19,116" />
-      <scope id="3068114543317979891" at="22,51,23,19" />
-      <scope id="3068114543317979891" at="10,0,12,0" />
-      <scope id="3068114543317979891" at="12,0,15,0" />
-      <scope id="3068114543317979891" at="15,0,18,0" />
-      <scope id="3068114543317979891" at="18,0,21,0">
+      <node id="3068114543317979891" at="14,52,15,46" concept="8" />
+      <node id="3068114543317979891" at="17,41,18,17" concept="8" />
+      <node id="3068114543317979891" at="20,64,21,219" concept="8" />
+      <node id="3068114543317979891" at="24,51,25,19" concept="8" />
+      <node id="3068114543317979891" at="26,5,27,16" concept="8" />
+      <node id="3068114543317979891" at="12,0,14,0" concept="2" trace="MoveLinkUp_Target#()V" />
+      <node id="3068114543317979891" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="3068114543317979891" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="3068114543317979891" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="3068114543317979891" at="23,52,26,5" concept="5" />
+      <node id="3068114543317979891" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="3068114543317979891" at="12,30,12,30" />
+      <scope id="3068114543317979891" at="14,52,15,46" />
+      <scope id="3068114543317979891" at="17,41,18,17" />
+      <scope id="3068114543317979891" at="20,64,21,219" />
+      <scope id="3068114543317979891" at="24,51,25,19" />
+      <scope id="3068114543317979891" at="12,0,14,0" />
+      <scope id="3068114543317979891" at="14,0,17,0" />
+      <scope id="3068114543317979891" at="17,0,20,0" />
+      <scope id="3068114543317979891" at="20,0,23,0">
         <var name="entity" id="3068114543317979891" />
       </scope>
-      <scope id="3068114543317979891" at="21,52,25,16" />
-      <scope id="3068114543317979891" at="21,0,27,0">
+      <scope id="3068114543317979891" at="23,52,27,16" />
+      <scope id="3068114543317979891" at="23,0,29,0">
         <var name="entity" id="3068114543317979891" />
       </scope>
-      <unit id="3068114543317979891" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_Target" />
+      <unit id="3068114543317979891" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_Target" />
     </file>
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3068114543317980424">
@@ -780,33 +780,33 @@
       <unit id="3068114543317980424" at="30,0,84,0" name="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" />
     </file>
     <file name="MovePropertyUp_Target.java">
-      <node id="3068114543317980452" at="12,52,13,46" concept="8" />
-      <node id="3068114543317980452" at="15,41,16,17" concept="8" />
-      <node id="3068114543317980452" at="18,64,19,120" concept="8" />
-      <node id="3068114543317980452" at="22,51,23,19" concept="8" />
-      <node id="3068114543317980452" at="24,5,25,16" concept="8" />
-      <node id="3068114543317980452" at="10,0,12,0" concept="2" trace="MovePropertyUp_Target#()V" />
-      <node id="3068114543317980452" at="12,0,15,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-      <node id="3068114543317980452" at="15,0,18,0" concept="6" trace="allowMultipleTargets#()Z" />
-      <node id="3068114543317980452" at="18,0,21,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-      <node id="3068114543317980452" at="21,52,24,5" concept="5" />
-      <node id="3068114543317980452" at="21,0,27,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
-      <scope id="3068114543317980452" at="10,34,10,34" />
-      <scope id="3068114543317980452" at="12,52,13,46" />
-      <scope id="3068114543317980452" at="15,41,16,17" />
-      <scope id="3068114543317980452" at="18,64,19,120" />
-      <scope id="3068114543317980452" at="22,51,23,19" />
-      <scope id="3068114543317980452" at="10,0,12,0" />
-      <scope id="3068114543317980452" at="12,0,15,0" />
-      <scope id="3068114543317980452" at="15,0,18,0" />
-      <scope id="3068114543317980452" at="18,0,21,0">
+      <node id="3068114543317980452" at="14,52,15,46" concept="8" />
+      <node id="3068114543317980452" at="17,41,18,17" concept="8" />
+      <node id="3068114543317980452" at="20,64,21,223" concept="8" />
+      <node id="3068114543317980452" at="24,51,25,19" concept="8" />
+      <node id="3068114543317980452" at="26,5,27,16" concept="8" />
+      <node id="3068114543317980452" at="12,0,14,0" concept="2" trace="MovePropertyUp_Target#()V" />
+      <node id="3068114543317980452" at="14,0,17,0" concept="6" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="3068114543317980452" at="17,0,20,0" concept="6" trace="allowMultipleTargets#()Z" />
+      <node id="3068114543317980452" at="20,0,23,0" concept="6" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="3068114543317980452" at="23,52,26,5" concept="5" />
+      <node id="3068114543317980452" at="23,0,29,0" concept="6" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="3068114543317980452" at="12,34,12,34" />
+      <scope id="3068114543317980452" at="14,52,15,46" />
+      <scope id="3068114543317980452" at="17,41,18,17" />
+      <scope id="3068114543317980452" at="20,64,21,223" />
+      <scope id="3068114543317980452" at="24,51,25,19" />
+      <scope id="3068114543317980452" at="12,0,14,0" />
+      <scope id="3068114543317980452" at="14,0,17,0" />
+      <scope id="3068114543317980452" at="17,0,20,0" />
+      <scope id="3068114543317980452" at="20,0,23,0">
         <var name="entity" id="3068114543317980452" />
       </scope>
-      <scope id="3068114543317980452" at="21,52,25,16" />
-      <scope id="3068114543317980452" at="21,0,27,0">
+      <scope id="3068114543317980452" at="23,52,27,16" />
+      <scope id="3068114543317980452" at="23,0,29,0">
         <var name="entity" id="3068114543317980452" />
       </scope>
-      <unit id="3068114543317980452" at="9,0,28,0" name="jetbrains.mps.lang.structure.refactorings.MovePropertyUp_Target" />
+      <unit id="3068114543317980452" at="11,0,30,0" name="jetbrains.mps.lang.structure.refactorings.MovePropertyUp_Target" />
     </file>
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3883347270486219802">

@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/1177463041902">
     <file name="typeof_MigrationScriptPart_node_InferenceRule.java">
-      <node id="1177463235295" at="22,117,23,322" concept="5" />
+      <node id="1177463235295" at="22,117,23,428" concept="5" />
       <node id="1209063748602" at="24,5,25,46" concept="5" />
       <node id="1209063748602" at="25,46,26,196" concept="5" />
       <node id="1209063748602" at="26,196,27,288" concept="2" />
@@ -34,7 +34,7 @@
       <node id="1177463041902" at="30,0,33,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1177463041902" at="39,0,42,0" concept="4" trace="overrides#()Z" />
       <node id="1177463041902" at="33,68,37,5" concept="0" />
-      <node id="1209063748602" at="23,322,28,5" concept="0" />
+      <node id="1209063748602" at="23,428,28,5" concept="0" />
       <node id="1177463041902" at="33,0,39,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1196777967634" at="42,0,49,0" concept="7" trace="_quotation_createNode_4okgzg_a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1177463041902" at="22,0,30,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />

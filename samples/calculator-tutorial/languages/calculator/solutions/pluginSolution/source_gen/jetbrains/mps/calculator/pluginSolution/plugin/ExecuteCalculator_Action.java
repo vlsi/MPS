@@ -11,11 +11,11 @@ import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -54,7 +54,7 @@ public class ExecuteCalculator_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.calculator.structure.Calculator"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2788808807702744790l, -8953487104835967071l), 1241362555920l, "jetbrains.mps.calculator.structure.Calculator")))) {
           node = null;
         }
       }

@@ -27,7 +27,7 @@ public class BlockActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.testHybridEditor.structure.Diagram"), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
         if (eq_dpv54c_a0a0a0a3b(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source"))), node) || eq_dpv54c_a0a0a0a3b_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target"))), node)) {
           SNodeOperations.deleteNode(connector);
         }
@@ -62,7 +62,7 @@ public class BlockActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.testHybridEditor.structure.Diagram"), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
         if (eq_dpv54c_a0a0a0a3c(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source"))), node) || eq_dpv54c_a0a0a0a3c_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target"))), node)) {
           SNodeOperations.deleteNode(connector);
         }

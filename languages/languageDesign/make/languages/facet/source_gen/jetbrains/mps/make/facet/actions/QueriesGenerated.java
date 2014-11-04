@@ -60,10 +60,10 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<Tuples._2<SNode, SNode>> queryResult = new Computable<Iterable<Tuples._2<SNode, SNode>>>() {
           public Iterable<Tuples._2<SNode, SNode>> compute() {
-            final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
+            final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode fct) {
-                return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getAncestor(fct, "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
+                return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getNodeAncestor(fct, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
               }
             }).translate(new ITranslator2<SNode, Tuples._2<SNode, SNode>>() {
               public Iterable<Tuples._2<SNode, SNode>> translate(final SNode td) {
@@ -144,7 +144,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7320828025189219295l, "parameters")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
+            return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7320828025189219295l, "parameters")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
           }
         }.compute();
         if (queryResult != null) {
@@ -171,7 +171,7 @@ __switch__:
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_7320828025189375235(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false) != null);
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3344436107830239664(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -181,8 +181,8 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            final SNode td = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
-            SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+            final SNode td = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false);
+            SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
             return ListSequence.fromList(SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6418371274763146558l, "targetDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode sibl) {
                 return sibl != td;
@@ -206,12 +206,12 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode fve = _quotation_createNode_gb3jz3_a0a0a0a0(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
+                SNode fve = _quotation_createNode_gb3jz3_a0a0a0a0(SNodeOperations.getNodeAncestor((item), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false));
                 SNode op = _quotation_createNode_gb3jz3_a0b0a0a0((item));
                 return _quotation_createNode_gb3jz3_a2a0a0a(fve, op);
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "." + SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+                return SPropertyOperations.getString(SNodeOperations.getNodeAncestor((item), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "." + SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -261,7 +261,7 @@ __switch__:
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ResourceClassifierType_4902420589276882578(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"));
+    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IPropertyExpression_2191561637326275634(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -329,19 +329,19 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReferenceExpression_8703512757937161166(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.facet.structure.TargetReferenceExpression"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 8703512757937156087l, "jetbrains.mps.make.facet.structure.TargetReferenceExpression")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_FacetReference_8703512757937205090(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.FacetReferenceExpression", false, false);
+        return SNodeOperations.getNodeAncestor(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 7178445679340358576l, "jetbrains.mps.make.facet.structure.FacetReferenceExpression"), false, false);
       }
     }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReference_8703512757937205101(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression", false, false) == null);
+    return (SNodeOperations.getNodeAncestor(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 8703512757937156087l, "jetbrains.mps.make.facet.structure.TargetReferenceExpression"), false, false) == null);
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_TargetDeclaration_7219266275016399963(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

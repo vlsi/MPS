@@ -83,7 +83,7 @@ public class CheckingTestsUtil {
       return true;
     }
     for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
         return false;
       }
     }

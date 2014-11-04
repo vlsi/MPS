@@ -14,12 +14,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e0(jetbrains.mps.lang.generator.actions)/1169570915271">
     <file name="QueriesGenerated.java">
-      <node id="1195244142608" at="64,189,65,128" concept="3" />
-      <node id="1195244680228" at="72,189,73,130" concept="3" />
+      <node id="1195244142608" at="64,189,65,231" concept="3" />
+      <node id="1195244680228" at="72,189,73,233" concept="3" />
       <node id="1169582381136" at="64,0,67,0" concept="5" trace="nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <node id="1195244660444" at="72,0,75,0" concept="5" trace="nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="1169582381137" at="64,189,65,128" />
-      <scope id="1195244660445" at="72,189,73,130" />
+      <scope id="1169582381137" at="64,189,65,231" />
+      <scope id="1195244660445" at="72,189,73,233" />
       <scope id="1169582381136" at="64,0,67,0">
         <var name="_context" id="1169582381136" />
         <var name="operationContext" id="1169582381136" />
@@ -32,32 +32,32 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e0(jetbrains.mps.lang.generator.actions)/1198265022560">
     <file name="QueriesGenerated.java">
-      <node id="1207674552830" at="29,117,30,464" concept="0" />
-      <node id="3562028609770756518" at="30,464,31,158" concept="2" />
-      <node id="3562028609770820675" at="33,125,34,303" concept="0" />
-      <node id="3562028609770861979" at="35,131,36,302" concept="0" />
-      <node id="3562028609770869948" at="37,127,38,298" concept="0" />
-      <node id="3562028609770882803" at="39,128,40,299" concept="0" />
-      <node id="3562028609770883283" at="41,133,42,316" concept="0" />
-      <node id="3562028609770883763" at="43,126,44,309" concept="0" />
-      <node id="7834938100936651364" at="50,117,51,476" concept="0" />
-      <node id="224926278906398657" at="55,125,56,214" concept="0" />
+      <node id="1207674552830" at="29,220,30,567" concept="0" />
+      <node id="3562028609770756518" at="30,567,31,261" concept="2" />
+      <node id="3562028609770820675" at="33,228,34,406" concept="0" />
+      <node id="3562028609770861979" at="35,234,36,405" concept="0" />
+      <node id="3562028609770869948" at="37,230,38,401" concept="0" />
+      <node id="3562028609770882803" at="39,231,40,402" concept="0" />
+      <node id="3562028609770883283" at="41,242,42,425" concept="0" />
+      <node id="3562028609770883763" at="43,235,44,418" concept="0" />
+      <node id="7834938100936651364" at="50,220,51,579" concept="0" />
+      <node id="224926278906398657" at="55,228,56,214" concept="0" />
       <node id="7834938100936651353" at="49,156,52,5" concept="1" />
       <node id="224926278906350088" at="54,160,57,5" concept="1" />
       <node id="7834938100936651351" at="49,0,54,0" concept="5" trace="nodeFactory_NodeSetup_CopySrcListMacro_7834938100936651351#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="224926278906344519" at="54,0,59,0" concept="5" trace="nodeFactory_NodeSetup_Reduction_MappingRule_224926278906344519#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="5590278813170626320" at="32,38,45,9" concept="1" />
-      <node id="3562028609770756949" at="31,158,46,7" concept="1" />
+      <node id="3562028609770756949" at="31,261,46,7" concept="1" />
       <node id="1207674483510" at="28,143,47,5" concept="1" />
       <node id="1207674454117" at="28,0,49,0" concept="5" trace="nodeFactory_NodeSetup_NodeMacro_1207674454117#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="5590278813170626321" at="33,125,34,303" />
-      <scope id="3562028609770837938" at="35,131,36,302" />
-      <scope id="3562028609770839505" at="37,127,38,298" />
-      <scope id="3562028609770842139" at="39,128,40,299" />
-      <scope id="3562028609770842206" at="41,133,42,316" />
-      <scope id="3562028609770842276" at="43,126,44,309" />
-      <scope id="7834938100936651355" at="50,117,51,476" />
-      <scope id="224926278906350089" at="55,125,56,214" />
+      <scope id="5590278813170626321" at="33,228,34,406" />
+      <scope id="3562028609770837938" at="35,234,36,405" />
+      <scope id="3562028609770839505" at="37,230,38,401" />
+      <scope id="3562028609770842139" at="39,231,40,402" />
+      <scope id="3562028609770842206" at="41,242,42,425" />
+      <scope id="3562028609770842276" at="43,235,44,418" />
+      <scope id="7834938100936651355" at="50,220,51,579" />
+      <scope id="224926278906350089" at="55,228,56,214" />
       <scope id="7834938100936651352" at="49,156,52,5" />
       <scope id="224926278906344520" at="54,160,57,5" />
       <scope id="7834938100936651351" at="49,0,54,0">
@@ -69,7 +69,7 @@
         <var name="operationContext" id="224926278906344519" />
       </scope>
       <scope id="3562028609770756952" at="32,38,45,9" />
-      <scope id="1207674483512" at="29,117,46,7">
+      <scope id="1207674483512" at="29,220,46,7">
         <var name="sourceNodeQuery" id="3562028609770756519" />
       </scope>
       <scope id="1207674454118" at="28,143,47,5" />
@@ -81,11 +81,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e0(jetbrains.mps.lang.generator.actions)/8421689336187916450">
     <file name="QueriesGenerated.java">
-      <node id="8421689336187917112" at="79,190,80,122" concept="3" />
+      <node id="8421689336187917112" at="79,190,80,231" concept="3" />
       <node id="8421689336187928120" at="89,43,90,967" concept="3" />
       <node id="8421689336188156509" at="90,967,91,0" concept="4" />
       <node id="8421689336187916452" at="79,0,82,0" concept="5" trace="nodeSubstituteActionsBuilder_Precondition_Expression_8421689336187916452#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="8421689336187916453" at="79,190,80,122" />
+      <scope id="8421689336187916453" at="79,190,80,231" />
       <scope id="8421689336187917125" at="89,43,91,0" />
       <scope id="8421689336187916452" at="79,0,82,0">
         <var name="_context" id="8421689336187916452" />

@@ -4,9 +4,9 @@ package jetbrains.mps.typesystemEngine.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -21,12 +21,12 @@ public class LatticeUtil {
   private static void processMeetsAndJoins(SNode node) {
     {
       SNode joinType = node;
-      if (SNodeOperations.isInstanceOf(joinType, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+      if (SNodeOperations.isInstanceOf(joinType, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
         for (SNode child : SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
           processMeetsAndJoins(child);
           {
             SNode childJoinType = child;
-            if (SNodeOperations.isInstanceOf(childJoinType, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+            if (SNodeOperations.isInstanceOf(childJoinType, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
               for (SNode grandChild : SLinkOperations.getChildren(childJoinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
                 SNodeOperations.detachNode(grandChild);
                 ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(grandChild);
@@ -39,12 +39,12 @@ public class LatticeUtil {
     }
     {
       SNode meetType = node;
-      if (SNodeOperations.isInstanceOf(meetType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      if (SNodeOperations.isInstanceOf(meetType, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
         for (SNode child : SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
           processMeetsAndJoins(child);
           {
             SNode childMeetType = child;
-            if (SNodeOperations.isInstanceOf(childMeetType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+            if (SNodeOperations.isInstanceOf(childMeetType, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
               for (SNode grandChild : SLinkOperations.getChildren(childMeetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
                 SNodeOperations.detachNode(grandChild);
                 ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(grandChild);
@@ -58,13 +58,13 @@ public class LatticeUtil {
   }
   private static SNode join(SNode node1, SNode node2) {
     SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.JoinType");
+    if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
+      SNode joinWrapper1 = SNodeOperations.cast(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
       for (SNode bc : SLinkOperations.getChildren(joinWrapper1, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
         ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-        SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
+      if (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
+        SNode joinWrapper2 = SNodeOperations.cast(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
         for (SNode bc : SLinkOperations.getChildren(joinWrapper2, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
           ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
         }
@@ -72,8 +72,8 @@ public class LatticeUtil {
         ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
+    if (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
+      SNode joinWrapper2 = SNodeOperations.cast(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
       ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getChildren(joinWrapper2, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
         ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
@@ -86,13 +86,13 @@ public class LatticeUtil {
   }
   private static SNode meet(SNode node1, SNode node2) {
     SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
-    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.MeetType");
+    if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
+      SNode meetWrapper1 = SNodeOperations.cast(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
       for (SNode bc : SLinkOperations.getChildren(meetWrapper1, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
         ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-        SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
+      if (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
+        SNode meetWrapper2 = SNodeOperations.cast(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
         for (SNode bc : SLinkOperations.getChildren(meetWrapper2, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
           ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
         }
@@ -100,8 +100,8 @@ public class LatticeUtil {
         ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
+    if (SNodeOperations.isInstanceOf(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
+      SNode meetWrapper2 = SNodeOperations.cast(node2, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
       ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getChildren(meetWrapper2, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
         ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).addElement(HUtil.copyIfNecessary(bc));
@@ -145,18 +145,18 @@ public class LatticeUtil {
     return meetNodes(result);
   }
   public static boolean isMeet(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.MeetType");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
   }
   public static boolean isJoin(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
   }
   public static boolean isPolymorphic(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.MeetType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"));
   }
   public static List<SNode> getMeetArguments(SNode meet) {
-    return SLinkOperations.getChildren(SNodeOperations.as(meet, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
+    return SLinkOperations.getChildren(SNodeOperations.as(meet, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
   }
   public static List<SNode> getJoinArguments(SNode join) {
-    return SLinkOperations.getChildren(SNodeOperations.as(join, "jetbrains.mps.lang.typesystem.structure.JoinType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"));
+    return SLinkOperations.getChildren(SNodeOperations.as(join, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"));
   }
 }

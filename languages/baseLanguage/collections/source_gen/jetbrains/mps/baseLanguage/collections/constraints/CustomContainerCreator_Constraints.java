@@ -66,8 +66,8 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode expr = SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Expression");
-            return ((expr != null) ? Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{expr}))).where(new IWhereFilter<SNode>() {
+            SNode expr = SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
+            return ((expr != null) ? Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201183863028l, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), "virtual_deriveType_1213877435747", new Object[]{expr}))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485216l, 6099516049394485311l, "containerType"))), "jetbrains.mps.baseLanguage.collections.structure.MapType"));
               }

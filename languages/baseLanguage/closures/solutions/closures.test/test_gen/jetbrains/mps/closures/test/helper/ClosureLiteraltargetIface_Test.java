@@ -9,14 +9,14 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget;
 import jetbrains.mps.baseLanguage.closures.helper.Values;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
@@ -37,7 +37,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       this.addNodeById("7178287329507546170");
       this.addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_d9e2q8_b0a2a0());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_d9e2q8_c0a3a0());
     }
@@ -45,7 +45,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       this.addNodeById("7178287329507546170");
       this.addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_d9e2q8_b0a2a1());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_d9e2q8_c0a3a1());
     }

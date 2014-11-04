@@ -26,9 +26,9 @@ public class ChangeMethodSignatureRefactoring {
     if (this.myParameters.isReturnValueChanged()) {
       SLinkOperations.setTarget(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"))));
     }
-    if (SNodeOperations.isInstanceOf(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible")) {
+    if (SNodeOperations.isInstanceOf(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
       if (this.myParameters.isVisibilityChanged()) {
-        SLinkOperations.setTarget(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SLinkOperations.getTarget(SNodeOperations.cast(this.myParameters.getDeclaration(), "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
+        SLinkOperations.setTarget(SNodeOperations.cast(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SLinkOperations.getTarget(SNodeOperations.cast(this.myParameters.getDeclaration(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
       }
     }
     this.changeParameters();
@@ -72,6 +72,6 @@ public class ChangeMethodSignatureRefactoring {
     this.myUssages = ussages;
   }
   public static boolean isApplicable(SNode node) {
-    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null) && (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
   }
 }

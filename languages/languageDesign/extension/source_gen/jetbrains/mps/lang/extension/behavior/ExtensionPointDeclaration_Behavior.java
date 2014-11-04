@@ -25,8 +25,8 @@ public class ExtensionPointDeclaration_Behavior {
     return moduleFqName + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 5911785528834333590l, "extensionName"));
   }
   public static SNode call_getObjectClassifierType_6778078592468845406(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
-      return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"))) {
+      return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     } else {
       return TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     }

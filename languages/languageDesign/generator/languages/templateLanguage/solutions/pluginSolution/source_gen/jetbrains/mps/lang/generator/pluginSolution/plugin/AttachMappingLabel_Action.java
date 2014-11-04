@@ -12,6 +12,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,8 +32,6 @@ import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -59,7 +59,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not inside macro 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.AbstractMacro", false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
       return false;
     }
     //  in root template - ok 
@@ -67,20 +67,20 @@ public class AttachMappingLabel_Action extends BaseAction {
       return true;
     }
     //  in in-line template - ok 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null) {
       return true;
     }
     //  in in-line template with context 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", false, false) != null) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), false, false) != null) {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
         }
       }) != null;
     }
     //  in template fragment - ok 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
         }

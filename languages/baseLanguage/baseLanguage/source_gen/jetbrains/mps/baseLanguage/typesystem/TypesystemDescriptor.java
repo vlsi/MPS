@@ -11,10 +11,10 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOpsProvider_OneTypeSpecified;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
@@ -1270,10 +1270,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       IVariableConverter_Runtime converter = new IVariableConverter_Runtime() {
         public boolean isApplicable(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+          if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")))) {
             return false;
           }
-          return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).contains(variable);
+          return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).contains(variable);
         }
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           return _quotation_createNode_3ist9o_a0a1a0a0a0yl0a();
@@ -1340,7 +1340,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleNodeId = "1236166412686";
     }
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
+      if (SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType"))) {
         return null;
       } else {
         return Queries.getBinaryOperationType(leftOperandType, rightOperandType);

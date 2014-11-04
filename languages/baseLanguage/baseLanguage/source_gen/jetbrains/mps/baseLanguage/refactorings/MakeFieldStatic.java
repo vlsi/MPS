@@ -7,6 +7,8 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -15,8 +17,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,10 +39,10 @@ public class MakeFieldStatic extends BaseRefactoring {
     final SNode node = refactoringContext.getSelectedNode();
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-          refactoringContext.setParameter("declaration", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+          refactoringContext.setParameter("declaration", SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
         } else {
-          refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+          refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
         }
         refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) refactoringContext.getParameter("declaration")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
         refactoringContext.setParameter("hasExternalUsages", false);
@@ -57,18 +57,18 @@ public class MakeFieldStatic extends BaseRefactoring {
   }
   public void refactor(final RefactoringContext refactoringContext) {
     SNode newDeclaration = _quotation_createNode_so6etp_a0a0a(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"))), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
-    SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode declarationClassifier = SNodeOperations.getNodeAncestor(((SNode) refactoringContext.getParameter("declaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     ListSequence.fromList(SLinkOperations.getChildren(declarationClassifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(newDeclaration);
     for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
       SNode usage = result.getObject();
       SNode replacing;
-      if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
+      if (SNodeOperations.isInstanceOf(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"))) {
         replacing = SNodeOperations.getParent(usage);
       } else {
         replacing = usage;
       }
       SNode newReference;
-      if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != declarationClassifier) {
+      if (SNodeOperations.getNodeAncestor(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) != declarationClassifier) {
         newReference = _quotation_createNode_so6etp_a0a0e0d0a(declarationClassifier, newDeclaration);
       } else {
         newReference = _quotation_createNode_so6etp_a0a0a4a3a0(newDeclaration);

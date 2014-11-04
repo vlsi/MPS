@@ -67,7 +67,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_XmlBaseElement_7926701909975919246(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaModule") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfFileSet") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, "jetbrains.mps.build.workflow.structure.BwfJavaModule")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 7926701909975416091l, "jetbrains.mps.build.workflow.structure.BwfFileSet")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfFileSet_7926701909975921570(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

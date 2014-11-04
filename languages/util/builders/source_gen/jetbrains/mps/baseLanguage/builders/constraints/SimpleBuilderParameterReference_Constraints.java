@@ -41,7 +41,7 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getChildren(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", true, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 5425713840853683089l, "parameter"));
+            return SLinkOperations.getChildren(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820421041l, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), true, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 5425713840853683089l, "parameter"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

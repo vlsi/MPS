@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DerivedInterfaces_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
@@ -41,8 +43,8 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       while (ListSequence.fromList(derived).count() != passed) {
         SNode passingNode = ListSequence.fromList(derived).getElement(passed);
         for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", passingNode, scope, monitor.subTask(1))) {
-          if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
-            ListSequence.fromList(derived).addElement(SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.Interface"));
+          if (SNodeOperations.hasRole(nodeUsage, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) {
+            ListSequence.fromList(derived).addElement(SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")));
           }
         }
         if (passingNode != node) {

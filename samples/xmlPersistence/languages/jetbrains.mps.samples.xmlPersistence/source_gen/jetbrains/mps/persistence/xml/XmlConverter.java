@@ -165,7 +165,7 @@ public class XmlConverter {
       if (len > start) {
         ListSequence.fromList(result).addElement(createXmlText_h7fa2c_a0a0a4a1a5(s.substring(start, len)));
       }
-      if (!(SNodeOperations.isInstanceOf(ListSequence.fromList(result).last(), "jetbrains.mps.core.xml.structure.XmlText")) && i + 1 < lines.length || len == 0) {
+      if (!(SNodeOperations.isInstanceOf(ListSequence.fromList(result).last(), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"))) && i + 1 < lines.length || len == 0) {
         ListSequence.fromList(result).addElement(createXmlText_h7fa2c_a0a0a5a1a5());
       }
     }

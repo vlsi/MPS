@@ -26,7 +26,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
     return getCaption();
   }
   protected void adjustMigratedIds(SNode node, SNode migrated) {
-    if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).contains(migrated))) {
+    if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false)).contains(migrated))) {
       ((jetbrains.mps.smodel.SNode) migrated).setId(((jetbrains.mps.smodel.SNode) node).getNodeId());
     }
   }

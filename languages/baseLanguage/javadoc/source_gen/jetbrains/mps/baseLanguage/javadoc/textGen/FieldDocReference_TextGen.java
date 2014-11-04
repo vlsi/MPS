@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FieldDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-972752984950357426l, -4964296947050367098l), 5562345046718956738l, 5562345046718956740l, "declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getFqName_1213877404258", new Object[]{}));
+    this.append(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-972752984950357426l, -4964296947050367098l), 5562345046718956738l, 5562345046718956740l, "declaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), "virtual_getFqName_1213877404258", new Object[]{}));
     this.append("#");
     this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-972752984950357426l, -4964296947050367098l), 5562345046718956738l, 5562345046718956740l, "declaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }

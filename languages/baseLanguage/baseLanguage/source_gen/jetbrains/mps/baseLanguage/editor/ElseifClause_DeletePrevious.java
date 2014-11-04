@@ -8,9 +8,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ElseifClause_DeletePrevious {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -32,7 +32,7 @@ public class ElseifClause_DeletePrevious {
       if ((SNodeOperations.getPrevSibling(node) != null)) {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));
       } else {
-        SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
+        SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
         SNode condition = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
         SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition"))));
         SNode body = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"));
@@ -56,7 +56,7 @@ public class ElseifClause_DeletePrevious {
       if ((SNodeOperations.getPrevSibling(node) != null)) {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));
       } else {
-        SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
+        SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
         SNode condition = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
         SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition"))));
         SNode body = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"));

@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
@@ -20,7 +20,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   @Override
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
-    MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), newDeclaration);
+    MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(this.myContainer, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), newDeclaration);
     // <node> 
     replaceNode(getExpression(), newDeclaration);
     if (this.myIsReplacingAll) {
@@ -32,9 +32,9 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   }
   @Override
   protected SNode findContainer(SNode node) {
-    SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    while ((SNodeOperations.getAncestor(container, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null)) {
-      container = SNodeOperations.getAncestor(container, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode container = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+    while ((SNodeOperations.getNodeAncestor(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null)) {
+      container = SNodeOperations.getNodeAncestor(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }
     return container;
   }
@@ -47,7 +47,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
   public static boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")) && (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null);
   }
   private static SNode _quotation_createNode_2jj2z2_a0a0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

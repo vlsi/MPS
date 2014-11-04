@@ -14,15 +14,15 @@ public class TypeCast {
     SNode nodeObject1 = ifStatement;
     SNode nodeObject2 = (SNode) SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
-    SNode expression = SNodeOperations.cast(nodeObject3, "jetbrains.mps.baseLanguage.structure.Expression");
+    SNode expression = SNodeOperations.cast(nodeObject3, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
   }
   public void cast_SNode_to_node(SNode node) {
     SNode node1 = node;
-    SNode node2 = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode node2 = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
   }
   public void upcast_snode(SNode snode) {
-    SNode ifStatement = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNode ifStatement1 = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode ifStatement = SNodeOperations.cast(snode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+    SNode ifStatement1 = SNodeOperations.cast(snode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
   }
   public void cast_children_to_nlist(SNode statementList) {
     List<SNode> statements = SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));

@@ -51,7 +51,7 @@ public class SwitchMacro_Constraints extends BaseConstraintsDescriptor {
             return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
               @Override
               public boolean isExcluded(SNode node) {
-                return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isNotEmpty();
+                return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isNotEmpty();
               }
             };
           }

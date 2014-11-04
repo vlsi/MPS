@@ -29,7 +29,7 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
       public boolean accept(SNode it) {
         return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.RequiredCondition");
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5538333046911348654l, "jetbrains.mps.lang.plugin.structure.RequiredCondition"));
           }
         });
       }

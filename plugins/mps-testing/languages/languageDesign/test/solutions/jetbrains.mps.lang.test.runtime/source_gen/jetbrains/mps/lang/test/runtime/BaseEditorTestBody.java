@@ -11,6 +11,9 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -105,7 +108,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   private CellReference findCellReference(SNode node) {
-    List<SNode> annotations = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{});
+    List<SNode> annotations = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SConcept[]{});
     if (ListSequence.fromList(annotations).isEmpty()) {
       return null;
     }

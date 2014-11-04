@@ -24,6 +24,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_AssertStatement_589054057631277541(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1171931690126l, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"), false, false) != null);
   }
 }

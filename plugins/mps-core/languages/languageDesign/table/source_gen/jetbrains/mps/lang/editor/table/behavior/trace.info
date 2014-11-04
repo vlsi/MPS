@@ -62,21 +62,21 @@
   </root>
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/6216065619544941718">
     <file name="CellModel_HierarchycalTable_Behavior.java">
-      <node id="6216065619544944236" at="12,96,13,139" concept="2" />
-      <node id="6216065619544944252" at="13,139,14,169" concept="3" />
-      <node id="6216065619544941718" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6216065619544941718" at="12,0,16,0" concept="4" trace="call_getContainingConceptDeclaration_6216065619544944230#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="6216065619544941720" at="10,43,10,43" />
-      <scope id="6216065619544941718" at="10,0,12,0">
+      <node id="6216065619544944236" at="14,96,15,245" concept="2" />
+      <node id="6216065619544944252" at="15,245,16,169" concept="3" />
+      <node id="6216065619544941718" at="12,0,14,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6216065619544941718" at="14,0,18,0" concept="4" trace="call_getContainingConceptDeclaration_6216065619544944230#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6216065619544941720" at="12,43,12,43" />
+      <scope id="6216065619544941718" at="12,0,14,0">
         <var name="thisNode" id="6216065619544941718" />
       </scope>
-      <scope id="6216065619544944233" at="12,96,14,169">
+      <scope id="6216065619544944233" at="14,96,16,169">
         <var name="editorComponent" id="6216065619544944237" />
       </scope>
-      <scope id="6216065619544941718" at="12,0,16,0">
+      <scope id="6216065619544941718" at="14,0,18,0">
         <var name="thisNode" id="6216065619544941718" />
       </scope>
-      <unit id="6216065619544941718" at="9,0,17,0" name="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior" />
+      <unit id="6216065619544941718" at="11,0,19,0" name="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior" />
     </file>
   </root>
 </debug-info>

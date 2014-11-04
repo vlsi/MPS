@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -41,7 +41,7 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode n = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false);
+            SNode n = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), true, false);
             if ((n != null)) {
               return ListSequence.fromList(SLinkOperations.getChildren(n, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, 2264311582634140421l, "fields"))).concat(ListSequence.fromList(SLinkOperations.getChildren(n, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, 2264311582634140418l, "parameters"))));
             }

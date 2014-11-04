@@ -25,7 +25,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -48,14 +48,14 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+            SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
             List<SNode> applicableMembers = new ArrayList<SNode>();
             {
               IMatchingPattern pattern_dyvyal_c0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
               SNode coercedNode_dyvyal_c0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_c0a0);
               if (coercedNode_dyvyal_c0a0 != null) {
                 for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_dyvyal_c0a0, "virtual_getMembers_1213877402148", new Object[]{_context.getEnclosingNode()})) {
-                  if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
+                  if (SNodeOperations.isInstanceOf(member, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) _context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
                     ListSequence.fromList(applicableMembers).addElement(member);
                   }
                 }

@@ -6,6 +6,8 @@ import com.intellij.ui.components.JBScrollPane;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.ThreadUtils;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
@@ -20,7 +22,7 @@ public class NodeHierarchyChooser extends JBScrollPane {
     this.myTree = new NodeHierarchyChooser.MyHierarchyTree();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        NodeHierarchyChooser.this.myTree.setHierarchyNode(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false));
+        NodeHierarchyChooser.this.myTree.setHierarchyNode(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false));
       }
     });
     this.setViewportView(this.myTree);

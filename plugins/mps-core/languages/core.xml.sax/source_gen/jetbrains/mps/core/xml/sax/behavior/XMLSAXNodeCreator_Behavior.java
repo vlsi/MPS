@@ -4,6 +4,8 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -16,15 +18,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 public class XMLSAXNodeCreator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode rule = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, false);
+    SNode rule = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false);
     return XMLSAXNodeRule_Behavior.call_getType_2264311582634140653(rule);
   }
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
@@ -32,7 +32,7 @@ public class XMLSAXNodeCreator_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-      SNode node = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
+      SNode node = SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"));
       if (node == null) {
         return new EmptyScope();
       }

@@ -20,6 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -48,8 +50,8 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
           SModelReference targetSModelReference = ref.getTargetSModelReference();
           if (targetSModelReference != null && SModelStereotype.getStereotype(targetSModelReference.getModelName()).equals(SModelStereotype.JAVA_STUB)) {
             SNode target = SLinkOperations.getTargetNode(ref);
-            if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-              String qualifiedName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{});
+            if ((target != null) && SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+              String qualifiedName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "virtual_getFqName_1213877404258", new Object[]{});
               if ("jetbrains.mps.smodel.INodeAdapter".equals(qualifiedName) || "jetbrains.mps.smodel.BaseAdapter".equals(qualifiedName)) {
                 SpecificChecker.addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }

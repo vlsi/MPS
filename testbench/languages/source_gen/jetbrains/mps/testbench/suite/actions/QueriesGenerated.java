@@ -80,7 +80,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
+            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
           }
         }.compute();
         if (queryResult != null) {
@@ -114,7 +114,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
+            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
           }
         }.compute();
         if (queryResult != null) {
@@ -148,7 +148,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
+            SNode msuite = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
                 return SModelOperations.getNodes(((SModel) smd), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");

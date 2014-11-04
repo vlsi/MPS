@@ -27,8 +27,8 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       return;
     }
     SNode argType = TypeChecker.getInstance().getTypeOf(arg);
-    if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      if (!((SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IntegerType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ShortType")))) {
+    if (SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
+      if (!((SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534370425l, "jetbrains.mps.baseLanguage.structure.IntegerType")) || SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534555686l, "jetbrains.mps.baseLanguage.structure.CharType")) || SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534604311l, "jetbrains.mps.baseLanguage.structure.ByteType")) || SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533982221l, "jetbrains.mps.baseLanguage.structure.ShortType"))))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Primitive argument of switch should be byte, short, char or int", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9035995549588681125", null, errorTarget);
@@ -36,13 +36,13 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       }
       return;
     }
-    if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+    if (SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         return;
       }
     }
-    if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+    if (SNodeOperations.isInstanceOf(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4609636120081351393l, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"))) {
+      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(argType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4609636120081351393l, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")), "virtual_baseClassifier_4125795553993767872", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         return;
       }
 

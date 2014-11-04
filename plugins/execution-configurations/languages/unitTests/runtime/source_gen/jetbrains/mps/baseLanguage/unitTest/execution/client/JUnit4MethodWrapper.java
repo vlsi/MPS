@@ -33,7 +33,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     return null;
   }
   public static boolean isJUnit4TestMethod(SNode method) {
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null)) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null)) {
       boolean hasTestAnnotation = false;
       for (SNode annotation : ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation")))) {
         if (eq_lclll2_a0a0b0a0d(check_lclll2_a0a0b0a0d(annotation), SLinkOperations.getTarget(_quotation_createNode_lclll2_a0a0a1a0a3(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")))) {
@@ -49,7 +49,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   }
   private static SNode check_lclll2_a0a0c(SNode checkedDotOperand, JUnit4MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.getAncestor(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      return SNodeOperations.getNodeAncestor(checkedDotOperand, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }
     return null;
   }

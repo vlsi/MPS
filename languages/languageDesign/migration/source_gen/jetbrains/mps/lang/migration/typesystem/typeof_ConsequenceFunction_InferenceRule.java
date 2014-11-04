@@ -26,7 +26,7 @@ public class typeof_ConsequenceFunction_InferenceRule extends AbstractInferenceR
       {
         SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getChildren(cf, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).first();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "8617889372942193888", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "8617889372942193891", true), (SNode) _quotation_createNode_mp3u01_a0a0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(SNodeOperations.cast(SNodeOperations.getParent(cf), "jetbrains.mps.lang.migration.structure.TransformStatement"))), true, _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "8617889372942193891", true), (SNode) _quotation_createNode_mp3u01_a0a0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(SNodeOperations.cast(SNodeOperations.getParent(cf), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, "jetbrains.mps.lang.migration.structure.TransformStatement")))), true, _info_12389875345);
       }
     }
     {

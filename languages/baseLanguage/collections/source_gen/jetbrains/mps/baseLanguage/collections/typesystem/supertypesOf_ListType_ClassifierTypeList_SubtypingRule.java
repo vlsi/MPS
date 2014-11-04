@@ -22,7 +22,7 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
   }
   public SNode getSubOrSuperType(SNode listType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode et = SLinkOperations.getTarget(listType, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"));
-    if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(et, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getBoxedType_1213877337320", new Object[]{});
     }
     return _quotation_createNode_tkf239_a2a1(et);

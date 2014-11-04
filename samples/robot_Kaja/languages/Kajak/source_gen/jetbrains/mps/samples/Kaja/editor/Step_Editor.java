@@ -23,7 +23,7 @@ public class Step_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     KajakStyles_StyleSheet.apply_Command(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

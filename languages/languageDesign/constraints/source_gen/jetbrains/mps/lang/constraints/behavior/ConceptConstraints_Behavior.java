@@ -27,10 +27,10 @@ public class ConceptConstraints_Behavior {
   public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
-        return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.CONSTRAINTS), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
+        return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.CONSTRAINTS), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")));
       }
     };
-    SNode method = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(concept, computePredicate), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+    SNode method = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(concept, computePredicate), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
     if (method == null) {
       return _quotation_createNode_wrxfmp_a0a2a2();
     } else {

@@ -40,7 +40,7 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
       }
       SNode query = SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569939267l, "sourceNodesQuery"));
       SNode NT = QueriesUtil.getOutputNodeType_fromSourceQuery(query);
-      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
+      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
       if (!(SModelUtil.isAssignableConcept(nodeConcept, templateApplicableConcept))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

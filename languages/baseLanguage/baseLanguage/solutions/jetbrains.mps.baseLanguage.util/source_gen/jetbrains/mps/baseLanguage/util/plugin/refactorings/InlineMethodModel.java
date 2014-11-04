@@ -5,11 +5,12 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -26,8 +27,8 @@ public class InlineMethodModel {
   public InlineMethodModel(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-          myMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+          myMethod = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
         } else {
           myCall = new MethodCallAdapter(node);
           myMethod = myCall.getMethodDeclaration();
@@ -50,7 +51,7 @@ public class InlineMethodModel {
     return myMethod;
   }
   public String getErrors() {
-    if ((SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
+    if ((SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5293379017992965193l, "jetbrains.mps.baseLanguage.structure.StubStatementList"))) {
       return "No sources attached";
     }
     if (myCall == null && isRecusive()) {
@@ -62,7 +63,7 @@ public class InlineMethodModel {
     return null;
   }
   private boolean isContainsSelfCalls() {
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(getMethod(), null, false, new String[]{}))) {
+    for (SNode call : ListSequence.fromList(SNodeOperations.getNodeDescendants(getMethod(), null, false, new SConcept[]{}))) {
       if (MethodCallAdapter.isMethodCall(call)) {
         if (new MethodCallAdapter(call).getMethodDeclaration() == getMethod()) {
           return true;

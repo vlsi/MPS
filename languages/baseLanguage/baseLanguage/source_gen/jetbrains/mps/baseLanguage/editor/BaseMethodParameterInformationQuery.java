@@ -6,10 +6,10 @@ import jetbrains.mps.editor.runtime.style.ParametersInformation;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -18,7 +18,7 @@ public class BaseMethodParameterInformationQuery implements ParametersInformatio
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
-    SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.structure.IMethodCall") : node);
+    SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) : node);
     return BaseMethodParameterInformationQueryUtil.getMethodsToShow(methodCall);
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
@@ -32,9 +32,9 @@ public class BaseMethodParameterInformationQuery implements ParametersInformatio
     if (selectedNode == null) {
       return null;
     }
-    return ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, "jetbrains.mps.baseLanguage.structure.Expression", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.IMethodCall") && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument");
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument");
       }
     });
   }

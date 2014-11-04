@@ -40,9 +40,9 @@ public class IRuleReference_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     structure_StyleSheet.apply_AnnotationNode(style, editorCell);
-    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "declaration");
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, 0, "declaration");
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

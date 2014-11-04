@@ -50,7 +50,7 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode classifier = SNodeOperations.cast(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), "jetbrains.mps.baseLanguage.structure.Classifier");
+              SNode classifier = SNodeOperations.cast(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
               if ((classifier == null)) {
                 return new EmptyScope();
               }

@@ -32,7 +32,7 @@ public class check_LightQuotationNode_NonTypesystemRule extends AbstractNonTypes
     })) {
       if (!(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")) == link;
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) && SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")) == link;
         }
       }))) {
         {

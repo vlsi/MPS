@@ -30,10 +30,10 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -231,8 +231,8 @@ public class RefactoringContext {
     String oldFeatureName = "";
     StructureModificationData.ConceptFeatureKind kind = StructureModificationData.ConceptFeatureKind.NONE;
     StructureModification.RenameNode.RenameType renameType = null;
-    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      SNode linkDeclaration = SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    if (SNodeOperations.isInstanceOf(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+      SNode linkDeclaration = SNodeOperations.cast(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
       oldConceptFQName = NameUtil.nodeFQName(SNodeOperations.getParent(linkDeclaration));
       oldFeatureName = SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
       if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
@@ -250,7 +250,7 @@ public class RefactoringContext {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
+    if (SNodeOperations.isInstanceOf(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
       oldConceptFQName = NameUtil.nodeFQName(SNodeOperations.getParent(feature));
       oldFeatureName = feature.getName();
       kind = StructureModificationData.ConceptFeatureKind.PROPERTY;
@@ -259,11 +259,11 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       oldConceptFQName = NameUtil.nodeFQName(feature);
       oldFeatureName = feature.getName();
       kind = StructureModificationData.ConceptFeatureKind.CONCEPT;
@@ -272,7 +272,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
         }
       }
     }

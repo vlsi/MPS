@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_8756503640281003227(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1823319949748058981l, "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation"));
   }
   public static Object propertyMacro_GetPropertyValue_1206456545048(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, 1206442096288l, "conceptDeclaration")), "virtual_getFqName_1213877404258", new Object[]{});

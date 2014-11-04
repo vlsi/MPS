@@ -4,9 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
@@ -14,7 +14,7 @@ public class IndentLayoutIndentAnchorStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") || SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+    return SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) || SNodeOperations.isInstanceOf(cellModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
   }
   public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR;

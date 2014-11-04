@@ -20,7 +20,7 @@ public class HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule e
   public HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule() {
   }
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType")))) {
       if (SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1227008846812l, 1227019158144l, "toStringFunction")) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

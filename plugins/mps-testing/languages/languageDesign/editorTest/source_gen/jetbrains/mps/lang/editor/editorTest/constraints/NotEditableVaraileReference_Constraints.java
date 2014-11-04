@@ -19,6 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -42,10 +43,10 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode block : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", true)) {
+            for (SNode block : SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 3702466984434609595l, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), true)) {
               for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(block))) {
-                if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock")) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"));
+                if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 2613454275903819473l, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"))) {
+                  ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 2613454275903819473l, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock")));
                 }
               }
             }

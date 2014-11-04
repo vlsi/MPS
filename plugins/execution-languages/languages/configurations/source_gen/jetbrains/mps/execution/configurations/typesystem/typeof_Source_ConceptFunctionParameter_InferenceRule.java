@@ -9,10 +9,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class typeof_Source_ConceptFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_Source_ConceptFunctionParameter_InferenceRule() {
@@ -21,7 +21,7 @@ public class typeof_Source_ConceptFunctionParameter_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = source;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150985", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150982", true), (SNode) typeCheckingContext.typeOf(check_b03dtm_a0a0a1(SNodeOperations.getAncestor(source, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", false, false)), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150996", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150982", true), (SNode) typeCheckingContext.typeOf(check_b03dtm_a0a0a1(SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294149030l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart"), false, false)), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658150996", true), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

@@ -80,7 +80,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066605l, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), true, false) != null);
   }
   private static SNode _quotation_createNode_lq9qwe_b0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

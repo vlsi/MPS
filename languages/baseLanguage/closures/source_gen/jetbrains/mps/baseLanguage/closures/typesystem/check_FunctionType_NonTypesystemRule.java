@@ -32,12 +32,12 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
       }
       SNode mtd = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).first();
       if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ft, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
-        if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
+        if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "return type expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049710", null, errorTarget);
         }
       } else {
-        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "void expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291057444", null, errorTarget);
         }

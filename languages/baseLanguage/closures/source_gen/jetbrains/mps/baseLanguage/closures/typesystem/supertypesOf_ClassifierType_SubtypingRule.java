@@ -33,7 +33,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode classifier = SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
+    if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")) || SPropertyOperations.getBoolean(SNodeOperations.as(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
       Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(classifier);
       Iterable<SNode> cands = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode m) {
@@ -50,15 +50,15 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
 
         for (SNode p : SLinkOperations.getChildren(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
           SNode pt = SLinkOperations.getTarget(p, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
-          if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-            pt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+          if (SNodeOperations.isInstanceOf(pt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+            pt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(pt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
           ListSequence.fromList(paramTypes).addElement(pt);
         }
 
         SNode rt = SLinkOperations.getTarget(mtd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
-        if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-          rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+        if (SNodeOperations.isInstanceOf(rt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+          rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
         }
         supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0b(paramTypes, rt));
       }

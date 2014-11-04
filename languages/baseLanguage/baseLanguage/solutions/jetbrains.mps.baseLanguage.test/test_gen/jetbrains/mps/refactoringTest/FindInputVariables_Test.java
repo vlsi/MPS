@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter;
 import junit.framework.Assert;
@@ -26,10 +28,10 @@ public class FindInputVariables_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_inputVariablesTest() throws Exception {
       this.addNodeById("1230052444310");
-      ExtractMethodRefactoringAnalyzer a = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052444319"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("1230052444324"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052444331"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+      ExtractMethodRefactoringAnalyzer a = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052444319"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), SNodeOperations.cast(this.getNodeById("1230052444324"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), SNodeOperations.cast(this.getNodeById("1230052444331"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
       List<MethodParameter> vars = a.getInputVariables();
       Assert.assertEquals(1, ListSequence.fromList(vars).count());
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("1230052444315"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), ListSequence.fromList(vars).first().getDeclaration());
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("1230052444315"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")), ListSequence.fromList(vars).first().getDeclaration());
     }
   }
 }

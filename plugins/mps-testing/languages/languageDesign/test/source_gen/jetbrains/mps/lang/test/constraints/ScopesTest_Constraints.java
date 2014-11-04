@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
@@ -54,7 +55,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
               @Override
               public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                 List<SNode> nodes = new ArrayList<SNode>();
-                for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.lang.test.structure.ScopesTest"))))) {
+                for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest")))))) {
                   ListSequence.fromList(nodes).addElement(SLinkOperations.getTargetNode(reference));
                 }
                 return nodes;

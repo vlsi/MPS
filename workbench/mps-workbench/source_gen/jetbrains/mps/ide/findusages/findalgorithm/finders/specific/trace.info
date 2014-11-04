@@ -24,7 +24,7 @@
       <node id="8056901375583862275" at="36,77,37,76" concept="9" />
       <node id="8056901375583889423" at="39,51,40,108" concept="10" />
       <node id="6056923343037305780" at="42,7,43,54" concept="9" />
-      <node id="6056923343037331224" at="46,41,47,108" concept="10" />
+      <node id="6056923343037331224" at="46,41,47,211" concept="10" />
       <node id="6056923343037305812" at="49,11,50,31" concept="4" />
       <node id="6056923343037305819" at="50,31,51,74" concept="4" />
       <node id="6056923343037305832" at="52,7,53,215" concept="4" />
@@ -33,7 +33,7 @@
       <node id="6056923343037305879" at="59,30,60,16" concept="1" />
       <node id="6056923343037305880" at="63,5,64,85" concept="10" />
       <node id="6056923343037305896" at="66,96,67,89" concept="9" />
-      <node id="6056923343037305916" at="69,104,70,17" concept="3" />
+      <node id="6056923343037305916" at="69,206,70,17" concept="3" />
       <node id="6056923343037305917" at="71,7,72,24" concept="4" />
       <node id="6056923343037305922" at="72,24,73,67" concept="4" />
       <node id="8056901375583889421" at="39,0,42,0" concept="8" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
@@ -50,8 +50,8 @@
       <node id="6056923343037305787" at="43,54,54,5" concept="6" />
       <node id="6056923343037305756" at="34,0,66,0" concept="8" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <scope id="8056901375583889422" at="39,51,40,108" />
-      <scope id="6056923343037331221" at="46,41,47,108" />
-      <scope id="6056923343037305915" at="69,104,70,17" />
+      <scope id="6056923343037331221" at="46,41,47,211" />
+      <scope id="6056923343037305915" at="69,206,70,17" />
       <scope id="6056923343037305747" at="30,75,32,42" />
       <scope id="6056923343037305811" at="49,11,51,74" />
       <scope id="8056901375583889421" at="39,0,42,0">

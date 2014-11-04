@@ -9,6 +9,8 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -34,8 +36,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -54,7 +54,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.Interface");
+    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -76,7 +76,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
           node = null;
         }
       }
@@ -124,7 +124,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
       modelAccess.runReadAction(new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
             ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
           } else {
             ListSequence.fromList(finderClasses).addElement("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
@@ -149,11 +149,11 @@ public class GoToInheritedClassifier_Action extends BaseAction {
                 }));
                 ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumClass");
+                    return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"));
                   }
                 }).translate(new ITranslator2<SNode, SNodePointer>() {
                   public Iterable<SNodePointer> translate(SNode it) {
-                    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
+                    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
                       public SNodePointer select(SNode e) {
                         return new SNodePointer(e);
                       }

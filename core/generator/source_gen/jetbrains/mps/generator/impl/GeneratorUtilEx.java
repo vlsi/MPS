@@ -77,19 +77,19 @@ public final class GeneratorUtilEx {
     return templateFragments;
   }
   public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
+    if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559333462l, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"))) {
       dispatch.templateDeclarationReference(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
       dispatch.inlineTemplateWithContext(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
       dispatch.inlineTemplate(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158154974l, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"))) {
       dispatch.inlineSwitch(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"))) {
       dispatch.weaveEach(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1202776937179l, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"))) {
       dispatch.abandonInput(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559512253l, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"))) {
       dispatch.dismissTopRule(ruleConsequence);
     } else {
       dispatch.unknown(ruleConsequence);

@@ -75,7 +75,7 @@ public class SurroundWithVerticalCollection_Intention implements IntentionFactor
       List<SNode> nodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
       for (SNode sn : nodes) {
-        ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(SNodeOperations.cast(sn, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+        ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(SNodeOperations.cast(sn, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
       }
     }
     public IntentionDescriptor getDescriptor() {

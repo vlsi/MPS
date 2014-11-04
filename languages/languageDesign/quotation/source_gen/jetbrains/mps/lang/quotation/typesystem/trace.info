@@ -687,7 +687,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)/8182547171709513208">
     <file name="check_LightQuotationNode_NonTypesystemRule.java">
       <node id="8182547171709513296" at="29,39,30,395" concept="7" />
-      <node id="8182547171709514493" at="34,41,35,381" concept="7" />
+      <node id="8182547171709514493" at="34,41,35,597" concept="7" />
       <node id="8182547171709514544" at="38,9,39,62" concept="6" />
       <node id="8182547171709514544" at="39,62,40,425" concept="6" />
       <node id="8182547171709514544" at="41,11,42,150" concept="6" />
@@ -711,7 +711,7 @@
       <node id="8182547171709513208" at="27,0,50,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8182547171709513208" at="25,55,25,55" />
       <scope id="8182547171709513293" at="29,39,30,395" />
-      <scope id="8182547171709514492" at="34,41,35,381" />
+      <scope id="8182547171709514492" at="34,41,35,597" />
       <scope id="8182547171709513208" at="50,46,51,68" />
       <scope id="8182547171709513208" at="59,30,60,17" />
       <scope id="8182547171709513208" at="25,0,27,0" />
@@ -758,7 +758,7 @@
       <node id="8182547171709514613" at="18,44,19,250" concept="7" />
       <node id="8182547171709514780" at="21,35,22,117" concept="6" />
       <node id="8182547171709514839" at="22,117,23,237" concept="2" />
-      <node id="8182547171709514675" at="23,237,24,305" concept="2" />
+      <node id="8182547171709514675" at="23,237,24,413" concept="2" />
       <node id="8182547171709514600" at="16,0,18,0" concept="1" trace="addLinkValue_QuickFix#()V" />
       <node id="8182547171709514600" at="18,0,21,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8182547171709514600" at="21,0,26,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -768,7 +768,7 @@
       <scope id="8182547171709514600" at="18,0,21,0">
         <var name="node" id="8182547171709514600" />
       </scope>
-      <scope id="8182547171709514602" at="21,35,24,305">
+      <scope id="8182547171709514602" at="21,35,24,413">
         <var name="val" id="8182547171709514781" />
       </scope>
       <scope id="8182547171709514600" at="21,0,26,0">
@@ -821,8 +821,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)/8182547171709952572">
     <file name="typeof_LightQuotationLinkList_InferenceRule.java">
-      <node id="8182547171709952633" at="25,117,26,137" concept="6" />
-      <node id="8182547171709952816" at="26,137,27,15" concept="6" />
+      <node id="8182547171709952633" at="25,117,26,245" concept="6" />
+      <node id="8182547171709952816" at="26,245,27,15" concept="6" />
       <node id="8182547171709952844" at="28,242,29,389" concept="2" />
       <node id="8182547171709952867" at="30,12,31,390" concept="2" />
       <node id="7838325468139342753" at="33,5,34,46" concept="6" />

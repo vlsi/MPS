@@ -41,7 +41,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xpsq7t_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_xpsq7t_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xpsq7t_a0(editorContext, node));
@@ -64,7 +64,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getChildren(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a0a(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a0a(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).first();
         if (annotation == null) {
@@ -78,7 +78,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
         if (description == null) {
           return "";
         }
-        String descriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(description, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214607812l, "value")), "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
+        String descriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(description, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214607812l, "value")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
         return descriptionString;
       }
       public void setText(String s) {
@@ -91,7 +91,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -99,7 +99,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_xpsq7t_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +109,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getChildren(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a2a(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a2a(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).first();
         if (annotation == null) {
@@ -123,7 +123,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
         if (longDescription == null) {
           return "";
         }
-        String longDescriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(longDescription, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214607812l, "value")), "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
+        String longDescriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(longDescription, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214607812l, "value")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
         return longDescriptionString;
       }
       public void setText(String s) {
@@ -136,7 +136,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_c0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

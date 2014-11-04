@@ -277,7 +277,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
               }
-            }), "jetbrains.mps.baseLanguage.structure.Interface");
+            }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
             List<SNode> eifcParams = new ArrayList<SNode>();
             ListSequence.fromList(eifcParams).addSequence(ListSequence.fromList(tvds).skip(1).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
@@ -354,7 +354,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
               }
-            }), "jetbrains.mps.baseLanguage.structure.Interface");
+            }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
             List<SNode> eifcParams = new ArrayList<SNode>();
             ListSequence.fromList(eifcParams).addSequence(ListSequence.fromList(tvds).skip(1).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
@@ -429,7 +429,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               public boolean accept(SNode it) {
                 return ename.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
               }
-            }), "jetbrains.mps.baseLanguage.structure.Interface");
+            }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
             List<SNode> eifcParams = new ArrayList<SNode>();
             ListSequence.fromList(eifcParams).addSequence(ListSequence.fromList(tvds).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {

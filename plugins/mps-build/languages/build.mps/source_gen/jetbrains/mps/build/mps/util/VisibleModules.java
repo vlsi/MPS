@@ -19,6 +19,7 @@ import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -41,33 +42,33 @@ public class VisibleModules {
     while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode project = QueueSequence.fromQueue(queue).removeFirstElement();
       for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))) {
-        SNode projectDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildProjectDependency");
+        SNode projectDependency = SNodeOperations.as(dep, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
         if (projectDependency == null) {
           continue;
         }
 
         SNode depproj = SLinkOperations.getTarget(projectDependency, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
         if ((depproj == null)) {
-          SReference ref = SNodeOperations.getReference(projectDependency, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", "script"));
+          SReference ref = SNodeOperations.getReference(projectDependency, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
           report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a5(ref.getTargetSModelReference()), projectDependency);
         }
         if (depproj != null && seen.add(depproj)) {
           QueueSequence.fromQueue(queue).addLastElement(depproj);
         }
       }
-      ListSequence.fromList(allModules).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})));
+      ListSequence.fromList(allModules).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SConcept[]{})));
     }
     for (SNode module : allModules) {
-      SNode currProj = SNodeOperations.getAncestor(module, "jetbrains.mps.build.structure.BuildProject", false, false);
+      SNode currProj = SNodeOperations.getNodeAncestor(module, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
       if (moduleById.containsKey(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")))) {
         SNode other = moduleById.get(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")));
-        SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
+        SNode otherProj = SNodeOperations.getNodeAncestor(other, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
         report("found two modules with the same id: " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + ". First module " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " from project " + otherProj, module);
       }
       moduleById.put(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")), module);
       if (moduleByName.containsKey(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
         SNode other = moduleByName.get(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
-        SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
+        SNode otherProj = SNodeOperations.getNodeAncestor(other, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
         report("found two modules with the same name: " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ". First module " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + " from project " + otherProj, other);
       }
       moduleByName.put(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), module);

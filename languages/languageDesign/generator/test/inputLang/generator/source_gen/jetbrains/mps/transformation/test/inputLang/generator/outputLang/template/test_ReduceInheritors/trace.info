@@ -214,14 +214,14 @@
       <unit id="1206459766745" at="34,0,168,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1206461877477" at="27,104,28,358" concept="9" />
-      <node id="1206461190507" at="30,104,31,358" concept="9" />
-      <node id="1206461151462" at="33,104,34,358" concept="9" />
+      <node id="1206461877477" at="27,104,28,465" concept="9" />
+      <node id="1206461190507" at="30,104,31,465" concept="9" />
+      <node id="1206461151462" at="33,104,34,465" concept="9" />
       <node id="1206460094750" at="36,104,37,221" concept="9" />
       <node id="2507865635201740142" at="52,113,53,250" concept="9" />
-      <scope id="1206461877476" at="27,104,28,358" />
-      <scope id="1206461190506" at="30,104,31,358" />
-      <scope id="1206461124352" at="33,104,34,358" />
+      <scope id="1206461877476" at="27,104,28,465" />
+      <scope id="1206461190506" at="30,104,31,465" />
+      <scope id="1206461124352" at="33,104,34,465" />
       <scope id="1206460092546" at="36,104,37,221" />
       <scope id="2507865635201605484" at="52,113,53,250" />
     </file>

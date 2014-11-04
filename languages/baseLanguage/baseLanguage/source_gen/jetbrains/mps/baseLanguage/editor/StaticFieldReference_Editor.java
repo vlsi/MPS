@@ -119,7 +119,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setRole("variableDeclaration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0()}));

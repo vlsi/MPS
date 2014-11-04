@@ -30,6 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.scope.CompositeScope;
@@ -89,7 +90,7 @@ public class BuildProject_Behavior {
       final SNode _this = thisNode;
       return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
-          return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, "jetbrains.mps.build.structure.BuildProject"), false)).contains(_this));
+          return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), false)).contains(_this));
         }
       });
     }
@@ -133,11 +134,11 @@ public class BuildProject_Behavior {
     if (directDependenciesOnly) {
       return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")) != thisNode;
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")) && SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")) != thisNode;
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
         }
       });
     } else {
@@ -152,10 +153,10 @@ public class BuildProject_Behavior {
       return;
     }
     for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(current, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies")))) {
-      if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildProjectDependency"))) {
+      if (!(SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")))) {
         continue;
       }
-      BuildProject_Behavior.call_collectVisibleProjects_1224588814561808211(thisNode, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")));
+      BuildProject_Behavior.call_collectVisibleProjects_1224588814561808211(thisNode, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")));
     }
   }
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child, final Set<SNode> visited) {
@@ -164,23 +165,23 @@ public class BuildProject_Behavior {
     }
     SetSequence.fromSet(visited).addElement(thisNode);
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "macros"));
-    SNode containingProject = SNodeOperations.getAncestor(child, "jetbrains.mps.build.structure.BuildProject", false, false);
+    SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildMacro"), "virtual_isPublic_6547494638219688113", new Object[]{});
+          return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745375l, "jetbrains.mps.build.structure.BuildMacro")), "virtual_isPublic_6547494638219688113", new Object[]{});
         }
       });
     }
     if ((containingProject != null)) {
       final Wrappers._T<SNode> definedMacro = new Wrappers._T<SNode>();
       if (ListSequence.fromList(SLinkOperations.getChildren(containingProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).contains(child)) {
-        definedMacro.value = SNodeOperations.cast(child, "jetbrains.mps.build.structure.BuildMacro");
+        definedMacro.value = SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745375l, "jetbrains.mps.build.structure.BuildMacro"));
       } else {
         definedMacro.value = ListSequence.fromList(SLinkOperations.getChildren(containingProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SNodeOperations.getDescendants(it, null, false, new String[]{})).contains(child);
+            return ListSequence.fromList(SNodeOperations.getNodeDescendants(it, null, false, new SConcept[]{})).contains(child);
           }
         });
       }
@@ -198,16 +199,16 @@ public class BuildProject_Behavior {
     ListSequence.fromList(scopes).addElement(rootScope);
     ListSequence.fromList(scopes).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), child, visited);
+        return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), child, visited);
       }
     }));
     ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency"));
+        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")));
       }
     }), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), child)));
 

@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +20,7 @@ public class TestMethod_Behavior {
   }
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     SNode method = thisNode;
-    return SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", false, false);
+    return SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1171931851043l, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), false, false);
   }
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     SNode method = thisNode;

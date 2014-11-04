@@ -18,11 +18,11 @@ public class BuildSource_JavaModule_Behavior {
   public static Iterable<SNode> call_getTestSources_1065091787192492727(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"));
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 2754769020641429197l, "folders"))).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 2754769020641429197l, "folders"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), "test", null);
           }

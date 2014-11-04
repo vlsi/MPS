@@ -48,7 +48,7 @@ public class OutputNode_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b30nd0_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_b30nd0_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b30nd0_b1a(editorContext, node));
@@ -89,7 +89,7 @@ public class OutputNode_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b30nd0_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_b30nd0_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b30nd0_b2a(editorContext, node));

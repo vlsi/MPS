@@ -17,10 +17,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class OrPatternVariableReference_Constraints extends BaseConstraintsDescriptor {
@@ -41,7 +41,7 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode orPattern = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.structure.OrPattern", false, false);
+            SNode orPattern = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, false);
             return check_8aolto_a1a0a(orPattern);
           }
           @Override

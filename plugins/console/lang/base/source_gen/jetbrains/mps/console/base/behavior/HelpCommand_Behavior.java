@@ -38,7 +38,7 @@ public class HelpCommand_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 473081947980701568l, 6928665434433788203l, "target")) == null)) {
       Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleTab().getConsoleModel())).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(it);
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(it);
         }
       }).sort(new ISelector<SNode, String>() {
         public String select(SNode it) {

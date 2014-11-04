@@ -178,7 +178,7 @@ public class TraceInfoUtil {
                 finished = true;
                 for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
                   SNode otherNode = new SNodePointer(model, otherPos.getNodeId()).resolve(MPSModuleRepository.getInstance());
-                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
+                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getNodeAncestors(otherNode, null, false)).contains(currentNode)) {
                     currentNode = otherNode;
                     finished = false;
                     break;

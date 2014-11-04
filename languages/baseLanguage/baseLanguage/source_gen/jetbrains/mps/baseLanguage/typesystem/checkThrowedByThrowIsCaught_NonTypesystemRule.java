@@ -27,10 +27,10 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
     }
     SNode throwableType = TypeChecker.getInstance().getTypeOf(throwable);
     Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(throwable), "jetbrains.mps.baseLanguage.structure.Type")) {
-      SetSequence.fromSet(throwables).addElement(SNodeOperations.cast(throwableType, "jetbrains.mps.baseLanguage.structure.Type"));
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(throwable), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))) {
+      SetSequence.fromSet(throwables).addElement(SNodeOperations.cast(throwableType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")));
     }
-    if (SNodeOperations.isInstanceOf(throwableType, "jetbrains.mps.baseLanguage.structure.Type")) {
+    if (SNodeOperations.isInstanceOf(throwableType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))) {
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);
     }
   }

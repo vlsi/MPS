@@ -145,8 +145,8 @@
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/935069066463578464">
     <file name="Slot_Behavior.java">
-      <node id="935069066463587515" at="19,87,20,133" concept="3" />
-      <node id="935069066463611761" at="20,133,21,23" concept="3" />
+      <node id="935069066463587515" at="19,87,20,242" concept="3" />
+      <node id="935069066463611761" at="20,242,21,23" concept="3" />
       <node id="2161719505004057826" at="21,23,22,54" concept="3" />
       <node id="2161719505004067452" at="23,229,24,64" concept="0" />
       <node id="935069066463649131" at="24,64,25,379" concept="0" />

@@ -33,19 +33,19 @@ public class QueriesGenerated {
     });
   }
   public static boolean baseMappingRule_Condition_1225277059829(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.BaseStringOperation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271315873l, "jetbrains.mps.baseLanguage.structure.BaseStringOperation"));
   }
   public static boolean baseMappingRule_Condition_4592826945243769884(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference"));
+    return !(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference")));
   }
   public static boolean baseMappingRule_Condition_4592826945243769825(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference");
+    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference"));
   }
   public static boolean baseMappingRule_Condition_4592826945243771501(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference"));
+    return !(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference")));
   }
   public static boolean baseMappingRule_Condition_4592826945243771513(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference");
+    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference"));
   }
   public static boolean baseMappingRule_Condition_1225277059846(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, 1225271546413l, "trimKind"), "leading", "both");
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, 1225271546413l, "trimKind"), "trailing", "both");
   }
   public static boolean baseMappingRule_Condition_4592826945243770285(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference");
+    return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference"));
   }
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final PropertyMacroContext _context) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
@@ -182,7 +182,7 @@ public class QueriesGenerated {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
   public static Object insertMacro_varValue_6269300764715623918(final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
       }
@@ -192,7 +192,7 @@ public class QueriesGenerated {
     // ExtractStaticMethodExpression looks for first non static class 
     // and as long as there's no alternative to ESME, this code shall 
     // respect the way ContextUtil.getContextForMethod works 
-    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
       }

@@ -59,13 +59,13 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.samples.heating.structure.HeatingPlan", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232698866l, 5063359128232717389l, "dailyPlans"))).where(new IWhereFilter<SNode>() {
+            return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232698866l, "jetbrains.mps.samples.heating.structure.HeatingPlan"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232698866l, 5063359128232717389l, "dailyPlans"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1(it, _context.getContextNode());
               }
             })) {
               public String getName(SNode child) {
-                return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.samples.heating.structure.DailyPlan"), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 4664795093170417662l, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
+                return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 4664795093170417662l, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
               }
             };
           }

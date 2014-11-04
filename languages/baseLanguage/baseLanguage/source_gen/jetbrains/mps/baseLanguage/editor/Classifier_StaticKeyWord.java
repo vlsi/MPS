@@ -28,8 +28,8 @@ public class Classifier_StaticKeyWord {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (true));
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        SNode classConcept = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         if (SPropertyOperations.getBoolean(classConcept, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "abstractKeyword", 0);
         } else if (SPropertyOperations.getBoolean(classConcept, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
@@ -37,8 +37,8 @@ public class Classifier_StaticKeyWord {
         } else {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "classKeyword", 0);
         }
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface"), "interfaceKeyword", 0);
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")), "interfaceKeyword", 0);
       }
     }
   }
@@ -52,8 +52,8 @@ public class Classifier_StaticKeyWord {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (true));
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        SNode classConcept = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         if (SPropertyOperations.getBoolean(classConcept, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "abstractKeyword", 0);
         } else if (SPropertyOperations.getBoolean(classConcept, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
@@ -61,8 +61,8 @@ public class Classifier_StaticKeyWord {
         } else {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "classKeyword", 0);
         }
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface"), "interfaceKeyword", 0);
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")), "interfaceKeyword", 0);
       }
     }
   }

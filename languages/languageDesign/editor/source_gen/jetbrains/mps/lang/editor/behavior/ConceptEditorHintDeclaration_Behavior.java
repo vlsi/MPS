@@ -14,7 +14,7 @@ public class ConceptEditorHintDeclaration_Behavior {
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839003601246l, 168363875802087287l, "showInUI"), "" + (true));
   }
   public static SNode call_getHintsContainer_5944657839039105002(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"));
   }
   public static String call_getQualifiedName_5944657839039104991(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, ConceptEditorHintDeclaration_Behavior.call_getHintsContainer_5944657839039105002(thisNode), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));

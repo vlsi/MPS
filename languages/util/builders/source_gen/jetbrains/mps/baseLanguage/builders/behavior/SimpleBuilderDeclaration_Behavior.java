@@ -24,11 +24,11 @@ public class SimpleBuilderDeclaration_Behavior {
   }
   public static List<SNode> call_getDescendants_3816167865390609214(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", false, false);
+    SNode container = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"), false, false);
     for (SNode builder : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model)) {
       for (SNode dcl : SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"))) {
-        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), thisNode)) {
-          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+        if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")) && SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")), thisNode)) {
+          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")));
         }
       }
     }
@@ -46,11 +46,11 @@ public class SimpleBuilderDeclaration_Behavior {
   public static List<SNode> call_getExtensions_7782956297805903915(SNode thisNode, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> ancestors = SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode);
-    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", true, false);
+    SNode container = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"), true, false);
     for (SNode sb : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model)) {
       for (SNode dcl : SLinkOperations.getChildren(sb, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"))) {
-        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration") && ListSequence.fromList(ancestors).contains(SLinkOperations.getTarget(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, 6254726786820459254l, "extended")))) {
-          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"));
+        if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration")) && ListSequence.fromList(ancestors).contains(SLinkOperations.getTarget(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, 6254726786820459254l, "extended")))) {
+          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration")));
         }
       }
     }

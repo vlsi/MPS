@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -24,7 +24,7 @@ public class typeof_TemplateDeclarationReference_InferenceRule extends AbstractI
   public typeof_TemplateDeclarationReference_InferenceRule() {
   }
   public void applyRule(final SNode templateDeclRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode rule = SNodeOperations.getAncestor(templateDeclRef, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
+    SNode rule = SNodeOperations.getNodeAncestor(templateDeclRef, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), false, false);
     if (rule != null) {
       SNode templateApplicableConcept = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(templateDeclRef), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"));
       SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));

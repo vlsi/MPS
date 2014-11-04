@@ -9,9 +9,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)/1206455304202">
     <file name="QueriesGenerated.java">
-      <node id="8756503640281003229" at="27,110,28,292" concept="1" />
+      <node id="8756503640281003229" at="27,110,28,400" concept="1" />
       <node id="8756503640281024580" at="78,108,79,196" concept="1" />
-      <scope id="8756503640281003228" at="27,110,28,292" />
+      <scope id="8756503640281003228" at="27,110,28,400" />
       <scope id="8756503640281024579" at="78,108,79,196" />
     </file>
   </root>

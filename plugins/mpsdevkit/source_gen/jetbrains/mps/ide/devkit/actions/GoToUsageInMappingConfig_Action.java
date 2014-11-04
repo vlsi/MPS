@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +44,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     if ((SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))) == null)) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
       return false;
     }
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator)) {

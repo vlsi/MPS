@@ -8,19 +8,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class typeof_EditorNodeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EditorNodeExpression_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode editorComponent = SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.editor.structure.BaseEditorComponent");
+    SNode editorComponent = SNodeOperations.cast(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"));
     if (editorComponent != null) {
       {
         SNode _nodeToCheck_1029348928467 = node;

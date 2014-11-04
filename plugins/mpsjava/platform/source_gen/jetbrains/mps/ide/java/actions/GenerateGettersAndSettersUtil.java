@@ -32,7 +32,7 @@ public class GenerateGettersAndSettersUtil {
   }
   public static String getFieldGetterName(SNode fieldDeclaration, Project project) {
     String get = "get";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534644030l, "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
       get = "is";
     }
     return get + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));

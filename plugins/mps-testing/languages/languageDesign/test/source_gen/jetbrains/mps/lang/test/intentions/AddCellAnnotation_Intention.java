@@ -9,15 +9,16 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -57,7 +58,7 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.test.structure.EditorTestCase", false, false) != null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, "jetbrains.mps.lang.test.structure.EditorTestCase"), false, false) != null;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "1225963656881");
@@ -79,10 +80,10 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ancessor = node;
-      while (ancessor != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ancessor), "jetbrains.mps.lang.test.structure.EditorTestCase"))) {
+      while (ancessor != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ancessor), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, "jetbrains.mps.lang.test.structure.EditorTestCase")))) {
         ancessor = SNodeOperations.getParent(ancessor);
       }
-      for (SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{})) {
+      for (SNode oldAnnotation : SNodeOperations.getNodeDescendants(ancessor, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SConcept[]{})) {
         SNodeOperations.deleteNode(oldAnnotation);
       }
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);

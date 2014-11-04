@@ -58,11 +58,11 @@ public class Option_makeDefault_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption")) ? "Make default" : "Make not default");
+      return (SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption")) ? "Make default" : "Make not default");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      boolean makeDefault = SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
-      SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + ((makeDefault ? SNodeOperations.getIndexInParent(node) : -1)));
+      boolean makeDefault = SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
+      SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + ((makeDefault ? SNodeOperations.getIndexInParent(node) : -1)));
     }
     public IntentionDescriptor getDescriptor() {
       return Option_makeDefault_Intention.this;

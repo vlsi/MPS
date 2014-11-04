@@ -101,12 +101,12 @@
   <root nodeRef="r:b5180cd2-175a-4e3c-bddc-ca01ea9e1b1f(jetbrains.mps.baseLanguage.constructors.actions)/3391577739832644581">
     <file name="QueriesGenerated.java">
       <node id="3391577739832652192" at="115,94,116,135" concept="6" />
-      <node id="3391577739832644602" at="130,136,131,413" concept="6" />
+      <node id="3391577739832644602" at="130,242,131,626" concept="6" />
       <node id="3391577739832644611" at="132,5,133,17" concept="6" />
       <node id="3391577739832644596" at="129,194,132,5" concept="3" />
       <node id="3391577739832644592" at="129,0,135,0" concept="7" trace="nodeSubstituteActionsBuilder_Precondition_ArgumentClause_3391577739832644592#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="3391577739832644620" at="115,94,116,135" />
-      <scope id="3391577739832644601" at="130,136,131,413" />
+      <scope id="3391577739832644601" at="130,242,131,626" />
       <scope id="3391577739832644593" at="129,194,133,17" />
       <scope id="3391577739832644592" at="129,0,135,0">
         <var name="_context" id="3391577739832644592" />
@@ -120,11 +120,11 @@
       <node id="994932413699403434" at="82,144,83,303" concept="5" />
       <node id="994932413699403445" at="83,303,84,206" concept="1" />
       <node id="994932413699403475" at="84,206,85,26" concept="6" />
-      <node id="994932413699399117" at="103,136,104,414" concept="6" />
+      <node id="994932413699399117" at="103,242,104,627" concept="6" />
       <node id="994932413699399144" at="105,5,106,17" concept="6" />
       <node id="994932413699399110" at="102,193,105,5" concept="3" />
       <node id="994932413699396077" at="102,0,108,0" concept="7" trace="nodeSubstituteActionsBuilder_Precondition_ArgumentClause_994932413699396077#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="994932413699399115" at="103,136,104,414" />
+      <scope id="994932413699399115" at="103,242,104,627" />
       <scope id="994932413699396076" at="81,105,85,26">
         <var name="parameter" id="994932413699403435" />
         <var name="result" id="994932413699403415" />

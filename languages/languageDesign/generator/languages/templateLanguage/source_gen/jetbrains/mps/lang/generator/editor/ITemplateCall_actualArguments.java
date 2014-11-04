@@ -39,7 +39,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1xd1xh_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_1xd1xh_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_1xd1xh_a0(editorContext, node));
@@ -50,7 +50,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1xd1xh_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_1xd1xh_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1xd1xh_b0a(editorContext, node));
@@ -74,7 +74,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("ITCA_refNodeList_actualArgument");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new TemplateDeclarationParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new TemplateDeclarationParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -133,9 +133,9 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1xd1xh_a1a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -146,8 +146,8 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     editorCell.setCellId("Constant_1xd1xh_c0a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

@@ -24,8 +24,8 @@ public class check_AntiquotationContents_NonTypesystemRule extends AbstractNonTy
   }
   public void applyRule(final SNode antiquotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode contentsType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(antiquotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
-    if (SNodeOperations.isInstanceOf(contentsType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(contentsType, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    if (SNodeOperations.isInstanceOf(contentsType, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
+      if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(contentsType, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(antiquotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")), "Substitution of a classifier here is probably an error", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228301999219", null, errorTarget);

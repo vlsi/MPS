@@ -171,7 +171,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     editorCell.setCellId("Constant_e5b6m9_c0");
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -242,7 +242,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     editorCell.setCellId("Constant_e5b6m9_e0");
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

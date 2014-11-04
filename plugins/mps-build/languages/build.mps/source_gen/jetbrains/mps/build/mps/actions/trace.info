@@ -189,11 +189,11 @@
     <file name="QueriesGenerated.java">
       <node id="8369506495128729611" at="37,163,38,204" concept="1" />
       <node id="8369506495128729645" at="38,204,39,254" concept="1" />
-      <node id="2105528055260692159" at="42,131,43,486" concept="1" />
+      <node id="2105528055260692159" at="42,238,43,593" concept="1" />
       <node id="2105528055260692133" at="41,168,44,5" concept="2" />
       <node id="8369506495128727677" at="37,0,41,0" concept="6" trace="nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="2105528055260692131" at="41,0,46,0" concept="6" trace="nodeFactory_NodeSetup_BuildMpsLayout_ModuleSources_2105528055260692131#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="2105528055260692135" at="42,131,43,486" />
+      <scope id="2105528055260692135" at="42,238,43,593" />
       <scope id="8369506495128729610" at="37,163,39,254" />
       <scope id="2105528055260692132" at="41,168,44,5" />
       <scope id="8369506495128727677" at="37,0,41,0">

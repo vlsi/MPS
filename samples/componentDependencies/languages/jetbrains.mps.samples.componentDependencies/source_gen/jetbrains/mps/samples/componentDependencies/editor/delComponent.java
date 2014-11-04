@@ -31,7 +31,7 @@ public class delComponent {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
+      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
@@ -57,7 +57,7 @@ public class delComponent {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
+      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {

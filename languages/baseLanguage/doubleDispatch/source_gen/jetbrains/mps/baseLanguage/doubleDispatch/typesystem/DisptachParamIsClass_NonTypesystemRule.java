@@ -24,7 +24,7 @@ public class DisptachParamIsClass_NonTypesystemRule extends AbstractNonTypesyste
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2323553266850475941l, 2323553266850475953l, "modifiers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(9057940065237224321l, -4794704520121574714l), 2403002034744698617l, "jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"));
       }
     }).isEmpty()) {
       return;
@@ -46,7 +46,7 @@ public class DisptachParamIsClass_NonTypesystemRule extends AbstractNonTypesyste
     // turned it off, because unentered yet type is shown as error which is bad 
     // <node> 
 
-    if (!(SNodeOperations.isInstanceOf(paramType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(paramType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    if (!(SNodeOperations.isInstanceOf(paramType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(paramType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(paramType, "Dispatch parameter must have class type", "r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)", "2323553266855237975", null, errorTarget);

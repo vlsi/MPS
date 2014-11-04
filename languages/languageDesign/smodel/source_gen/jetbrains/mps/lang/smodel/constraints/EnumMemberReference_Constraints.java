@@ -16,12 +16,12 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -43,10 +43,10 @@ public class EnumMemberReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum")) {
-              SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
+            if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138661924179l, "jetbrains.mps.lang.smodel.structure.Property_SetOperation")) || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1146171026731l, "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum"))) {
+              SNode datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, "jetbrains.mps.lang.smodel.structure.SNodeOperation")));
               if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(datatype)) {
-                return new SimpleSearchScope(SLinkOperations.getChildren(SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member")));
+                return new SimpleSearchScope(SLinkOperations.getChildren(SNodeOperations.cast(datatype, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member")));
               }
             }
             return null;

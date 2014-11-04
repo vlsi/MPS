@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
@@ -34,8 +34,8 @@ public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode dotExpression = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression", true, false);
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))), "jetbrains.mps.lang.plugin.structure.ToolType"), MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1208528650020l, 1208529537963l, "tool")), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration");
+    SNode dotExpression = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"), true, false);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1208528650020l, "jetbrains.mps.lang.plugin.structure.ToolType")), MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1208528650020l, 1208529537963l, "tool")), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5896642449625981893l, "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8096638938275444163");
 }

@@ -37,8 +37,8 @@ public class BuildCompositePath_Behavior {
     return SPropertyOperations.getString(last, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
   }
   public static String call_getPathToHead_3968971886499106107(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) {
-      return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) + "/" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) {
+      return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) + "/" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
     }
     return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
   }
@@ -48,8 +48,8 @@ public class BuildCompositePath_Behavior {
       return ListSequence.fromList(new ArrayList<String>());
     }
 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) {
-      relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) {
+      relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath")));
     }
 
     IFile file = FileSystem.getInstance().getFileByPath(relativePath);
@@ -72,7 +72,7 @@ public class BuildCompositePath_Behavior {
     }, true).toListSequence();
   }
   public static IFile call_getFile_841084130032784919(SNode thisNode, Context context) {
-    String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
+    String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
     if ((basePath == null || basePath.length() == 0)) {
       return null;
     }

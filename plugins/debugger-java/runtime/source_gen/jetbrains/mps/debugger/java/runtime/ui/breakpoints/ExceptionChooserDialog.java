@@ -9,9 +9,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
@@ -30,10 +30,10 @@ public class ExceptionChooserDialog extends StubsClassChooserDialog {
   @Override
   protected boolean isValid(SNode node) {
     SNode base = node;
-    while (base != null && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !((eq_lt001m_a0a0a1a2(base, myThrowableClassifier)))) {
-      base = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(base, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    while (base != null && SNodeOperations.isInstanceOf(base, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !((eq_lt001m_a0a0a1a2(base, myThrowableClassifier)))) {
+      base = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(base, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     }
-    return (base != null) && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return (base != null) && SNodeOperations.isInstanceOf(base, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   @Nullable
   @NonNls

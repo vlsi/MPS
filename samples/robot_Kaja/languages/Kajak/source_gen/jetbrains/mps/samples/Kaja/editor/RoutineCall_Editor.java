@@ -78,7 +78,7 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
       KajakStyles_StyleSheet.apply_Command(style, editorCell);
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -101,6 +101,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition")), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null;
+    return SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition")), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 4394627182934741782l, "jetbrains.mps.samples.Kaja.structure.Library"), false, false) != null;
   }
 }

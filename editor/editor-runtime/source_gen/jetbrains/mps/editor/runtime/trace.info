@@ -65,8 +65,8 @@
   </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/6774261846361407465">
     <file name="ExtractComponentUtil.java">
-      <node id="6774261846361407470" at="26,86,27,135" concept="6" />
-      <node id="6774261846361407478" at="27,135,28,174" concept="6" />
+      <node id="6774261846361407470" at="26,86,27,241" concept="6" />
+      <node id="6774261846361407478" at="27,241,28,174" concept="6" />
       <node id="6774261846361407489" at="29,32,30,13" concept="7" />
       <node id="6352952732699797846" at="31,5,32,0" concept="8" />
       <node id="6774261846361407496" at="34,25,35,54" concept="6" />

@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.List;
-import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfNotNullAll extends DataFlowConstructor {
@@ -27,8 +27,8 @@ public class IfNotNullAll extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     List<SNode> conditions = NullableUtil.getAndConditions(node);
     for (SNode condition : conditions) {
-      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
         if (notNullNode != null) {
           {
             Object object = condition;

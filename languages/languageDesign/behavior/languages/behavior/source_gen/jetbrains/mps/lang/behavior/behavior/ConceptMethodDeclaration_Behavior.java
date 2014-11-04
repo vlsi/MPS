@@ -4,9 +4,9 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +16,7 @@ public class ConceptMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getBehaviour_1225196403947(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
   }
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
@@ -59,7 +59,7 @@ public class ConceptMethodDeclaration_Behavior {
     return true;
   }
   public static String call_getOverridenMethodConceptName_1225196403980(SNode thisNode) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getAncestor(ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
+    SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(thisNode), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
     return SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {

@@ -18,9 +18,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -44,7 +44,7 @@ public class MappingConfigFinder implements IFinder {
     for (SNode mappingConfig : mappingConfigs) {
       for (SNode rule : ListSequence.fromList(SNodeOperations.getChildren(mappingConfig)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule");
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"));
         }
       })) {
         nodesToCheck.add(rule);
@@ -66,7 +66,7 @@ public class MappingConfigFinder implements IFinder {
   private void collectChildrenThatMayHaveReferenceOnTemplate(SNode parent, List<SNode> result) {
     List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(parent, false);
     for (SNode child : children) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
+      if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
         continue;
       }
       result.add(child);

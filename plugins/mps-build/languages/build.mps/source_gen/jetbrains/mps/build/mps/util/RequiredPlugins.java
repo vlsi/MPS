@@ -9,6 +9,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
@@ -16,8 +19,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.util.DependenciesHelper;
 
 public class RequiredPlugins {
@@ -28,7 +29,7 @@ public class RequiredPlugins {
   private final List<SNode> myPlugins = ListSequence.fromList(new ArrayList<SNode>());
   public RequiredPlugins(SNode project, TemplateQueryContext genContext) {
     myContext = genContext;
-    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", false, new String[]{})));
+    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), false, new SConcept[]{})));
     myRoot = project;
     myDependency = GenerationUtil.<SNode>getSessionSet(project, genContext, KEY);
   }
@@ -36,13 +37,13 @@ public class RequiredPlugins {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addElement(initialPlugin);
     myRoot = SNodeOperations.getContainingRoot(initialPlugin);
-    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
+    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
   }
   public RequiredPlugins(TemplateQueryContext genContext, SNode root, Iterable<SNode> initialPlugins) {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addSequence(Sequence.fromIterable(initialPlugins));
     myRoot = root;
-    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
+    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
   }
   public void collectDependencies() {
     Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
@@ -71,7 +72,7 @@ public class RequiredPlugins {
     for (SNode dependency : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499028l, "dependencies")))) {
       SNode dependencyPlugin = SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499027l, 6592112598314499066l, "target"));
       if (SNodeOperations.getContainingRoot(dependencyPlugin) != myRoot) {
-        dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin");
+        dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"));
         if (dependencyPlugin == null) {
           continue;
         }

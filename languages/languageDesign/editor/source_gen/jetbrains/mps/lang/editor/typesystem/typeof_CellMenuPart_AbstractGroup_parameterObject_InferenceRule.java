@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +18,7 @@ public class typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule ext
   public typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode ancestor = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", false, false);
+    SNode ancestor = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup"), false, false);
     SNode parameterObjectType = SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, 1165253890469l, "parameterObjectType"));
     {
       SNode _nodeToCheck_1029348928467 = node;

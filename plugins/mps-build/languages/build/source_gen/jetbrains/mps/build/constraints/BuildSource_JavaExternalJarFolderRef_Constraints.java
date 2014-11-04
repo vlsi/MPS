@@ -17,12 +17,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,7 +49,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
             String target = null;
             if ((contextProject != null)) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleJarFoldersScope(contextProject);
@@ -58,7 +58,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
               }
             }
             if (target == null) {
-              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder") ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{}));
+              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder")) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{}));
             }
             return target;
           }
@@ -69,7 +69,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleJarFoldersScope(contextProject);
               }

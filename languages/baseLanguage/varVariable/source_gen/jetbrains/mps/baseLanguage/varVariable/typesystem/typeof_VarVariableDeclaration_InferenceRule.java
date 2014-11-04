@@ -29,7 +29,7 @@ public class typeof_VarVariableDeclaration_InferenceRule extends AbstractInferen
       final SNode _concreteInitializerType = typeCheckingContext.getRepresentative(initializerType_typevar_8425555512443936489);
       typeCheckingContext.whenConcrete(_concreteInitializerType, new Runnable() {
         public void run() {
-          SNode concreteInitializerType = SNodeOperations.cast(typeCheckingContext.getExpandedNode(_concreteInitializerType), "jetbrains.mps.baseLanguage.structure.Type");
+          SNode concreteInitializerType = SNodeOperations.cast(typeCheckingContext.getExpandedNode(_concreteInitializerType), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
           concreteInitializerType = ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(concreteInitializerType));
           {
             SNode _nodeToCheck_1029348928467 = varVariableDeclaration;

@@ -28,8 +28,8 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode) castType, _info_12389875345);
       }
 
-      if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        castType = _quotation_createNode_sr53ct_a0a0d0a0b(SLinkOperations.getTarget(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
+      if (SNodeOperations.isInstanceOf(castType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+        castType = _quotation_createNode_sr53ct_a0a0d0a0b(SLinkOperations.getTarget(SNodeOperations.cast(castType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
       }
       {
         SNode _nodeToCheck_1029348928467 = castExpression;

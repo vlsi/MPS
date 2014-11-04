@@ -21,15 +21,15 @@
       <node id="8077936094962945057" at="39,44,40,20" concept="5" />
       <node id="8077936094962945057" at="47,63,48,58" concept="5" />
       <node id="8077936094962945827" at="52,13,53,41" concept="6" />
-      <node id="8077936094962945840" at="53,41,54,319" concept="4" />
-      <node id="3050821798734714024" at="58,71,59,271" concept="5" />
+      <node id="8077936094962945840" at="53,41,54,426" concept="4" />
+      <node id="3050821798734714024" at="58,71,59,374" concept="5" />
       <node id="8077936094962945057" at="66,7,67,22" concept="5" />
       <node id="8077936094962945057" at="69,0,70,0" concept="7" trace="breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1" />
       <node id="8077936094962945057" at="31,0,34,0" concept="1" trace="ComeFromExpression_Constraints#()V" />
       <node id="8077936094962945057" at="38,0,42,0" concept="3" trace="hasOwnScopeProvider#()Z" />
       <node id="8077936094962945057" at="46,0,50,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3050821798734714012" at="56,0,61,0" concept="3" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3050821798734714002" at="54,319,61,16" concept="5" />
+      <node id="3050821798734714002" at="54,426,61,16" concept="5" />
       <node id="8077936094962945057" at="51,122,62,13" concept="0" />
       <node id="8077936094962945057" at="50,0,64,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="8077936094962945057" at="44,56,64,10" concept="5" />
@@ -39,7 +39,7 @@
       <scope id="8077936094962945057" at="31,43,32,113" />
       <scope id="8077936094962945057" at="39,44,40,20" />
       <scope id="8077936094962945057" at="47,63,48,58" />
-      <scope id="3050821798734714019" at="58,71,59,271" />
+      <scope id="3050821798734714019" at="58,71,59,374" />
       <scope id="8077936094962945057" at="31,0,34,0" />
       <scope id="8077936094962945057" at="38,0,42,0" />
       <scope id="8077936094962945057" at="46,0,50,0" />

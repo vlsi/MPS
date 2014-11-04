@@ -348,9 +348,9 @@
       <unit id="3893401255414084744" at="30,0,119,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="3893401255414132236" at="21,110,22,344" concept="9" />
+      <node id="3893401255414132236" at="21,110,22,447" concept="9" />
       <node id="3893401255414131864" at="24,110,25,220" concept="9" />
-      <scope id="3893401255414132235" at="21,110,22,344" />
+      <scope id="3893401255414132235" at="21,110,22,447" />
       <scope id="3893401255414129778" at="24,110,25,220" />
     </file>
   </root>

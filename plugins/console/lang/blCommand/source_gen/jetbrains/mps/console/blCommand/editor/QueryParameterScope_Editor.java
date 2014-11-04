@@ -26,7 +26,7 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5iann0_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5iann0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5iann0_b0(editorContext, node));
@@ -57,7 +57,7 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
       editorCell.setRole("value");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, true);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
     QueryParameterScopeValue_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

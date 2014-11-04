@@ -24,11 +24,11 @@ public class ExternalViewFigure_Behavior {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801538l, 2178507174411801591l, "classifier")) != null) {
       return Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801538l, 2178507174411801591l, "classifier")), "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
       }), new EmptyScope());
     }

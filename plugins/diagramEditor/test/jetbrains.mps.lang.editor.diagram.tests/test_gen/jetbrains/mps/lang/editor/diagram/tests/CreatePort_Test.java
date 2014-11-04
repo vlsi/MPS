@@ -32,7 +32,7 @@ public class CreatePort_Test extends BaseTransformationTest {
       initEditor("2278461409093572745", "2278461409093572838");
       this.getEditorComponent().getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
-          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts"), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414436946l, "outputs"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort");
+          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts")), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414436946l, "outputs"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort");
         }
       });
       ModelAccess.instance().flushEventQueue();

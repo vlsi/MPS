@@ -8,13 +8,15 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SNodeOperation_DataFlow extends DataFlowBuilder {
   public SNodeOperation_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode expr : ListSequence.fromList(SNodeOperations.getChildren(_context.getNode()))) {
-      if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
         _context.getBuilder().build((SNode) expr);
       }
     }

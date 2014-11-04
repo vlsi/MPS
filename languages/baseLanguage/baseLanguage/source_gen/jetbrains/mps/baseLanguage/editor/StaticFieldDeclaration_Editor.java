@@ -71,7 +71,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_t6d1qn_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._DeprecatedPart");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -88,7 +88,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6d1qn_d0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -105,7 +105,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6d1qn_e0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -125,7 +125,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6d1qn_f0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -145,7 +145,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6d1qn_g0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -196,7 +196,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6d1qn_j0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_t6d1qn_a9a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_t6d1qn_b9a(editorContext, node));
@@ -224,7 +224,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setRole("initializer");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -241,7 +241,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t6d1qn_k0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -274,7 +274,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isFinal");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -290,7 +290,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_t6d1qn_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -300,7 +300,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -351,7 +351,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isVolatile");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

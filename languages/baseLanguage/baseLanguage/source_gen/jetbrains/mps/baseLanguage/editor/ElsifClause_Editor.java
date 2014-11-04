@@ -37,7 +37,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_m61dlm_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.POSITION, "next-line");
+    style.set(StyleAttributes.POSITION, 0, "next-line");
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_m61dlm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m61dlm_b0(editorContext, node));
@@ -53,7 +53,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_m61dlm_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_m61dlm_a0a0()}));
@@ -128,7 +128,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_m61dlm_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -143,8 +143,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       editorCell.setRole("statementList");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -161,7 +161,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_m61dlm_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     IfStatement_LastBrace.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

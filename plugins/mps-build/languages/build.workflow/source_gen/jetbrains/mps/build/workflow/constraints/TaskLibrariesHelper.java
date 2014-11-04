@@ -67,7 +67,7 @@ public class TaskLibrariesHelper {
           SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getContainingRoot();
-          if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
+          if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221391506l, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"))) {
             genContext.showErrorMessage(n, "task library is not imported");
           }
         }

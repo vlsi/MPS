@@ -64,7 +64,7 @@ public class DirectClassifierSpecification_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_v9q52x_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

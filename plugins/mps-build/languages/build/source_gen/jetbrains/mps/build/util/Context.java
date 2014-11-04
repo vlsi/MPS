@@ -9,9 +9,9 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,14 +39,14 @@ public class Context {
     return ((T) MapSequence.fromMap(myProperties).get(key));
   }
   protected SNode getBuildProject(SNode node) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildProject", true, false);
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
   }
   public MacroHelper getMacros(SNode context) {
     SNode buildProject = getBuildProject(context);
     if (buildProject == null) {
       return null;
     }
-    buildProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(buildProject, myGenerationContext), "jetbrains.mps.build.structure.BuildProject");
+    buildProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(buildProject, myGenerationContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
     if (buildProject == null) {
       return null;
     }

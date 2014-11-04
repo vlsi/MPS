@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -26,19 +27,19 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
       return;
     }
 
-    SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode parent = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     boolean checkReturns = true;
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       checkReturns = false;
     } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isAbstract_1232982539764", new Object[]{})) {
       checkReturns = false;
     } else if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}) == null)) {
       checkReturns = false;
-    } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+    } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       checkReturns = false;
     } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       checkReturns = false;
-    } else if (ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isNotEmpty()) {
+    } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8412076637103718467l, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SConcept[]{})).isNotEmpty()) {
       checkReturns = false;
     }
 

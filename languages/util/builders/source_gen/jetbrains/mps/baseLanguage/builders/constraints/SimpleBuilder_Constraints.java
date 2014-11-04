@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
@@ -28,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -52,12 +52,12 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contextBuilder = null;
-            if (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getContextNode()), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-              contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") ? SNodeOperations.getParent(_context.getContextNode()) : _context.getContextNode()));
+            if (SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")) || SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getContextNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")) || SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+              contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), (SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) ? SNodeOperations.getParent(_context.getContextNode()) : _context.getContextNode()));
             }
-            if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
-              return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), _context.getModel());
-            } else if (contextBuilder == null && (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"))) {
+            if (SNodeOperations.isInstanceOf(contextBuilder, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"))) {
+              return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")), _context.getModel());
+            } else if (contextBuilder == null && (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981707292l, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement")) || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7057666463730155278l, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator")))) {
 
               List<SNode> result = new ArrayList<SNode>();
 
@@ -66,8 +66,8 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
                   return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"));
                 }
               })) {
-                if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+                if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")) && SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")))) {
+                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")));
                 }
               }
 

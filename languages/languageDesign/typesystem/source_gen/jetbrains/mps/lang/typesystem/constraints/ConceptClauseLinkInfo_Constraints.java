@@ -39,7 +39,7 @@ public class ConceptClauseLinkInfo_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", true, false), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1240322207314l, 1240322227198l, "matchingConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"));
+            return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1240322207314l, "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause"), true, false), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1240322207314l, 1240322227198l, "matchingConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

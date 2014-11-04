@@ -37,17 +37,17 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221454647", true), (SNode) _quotation_createNode_8lb61p_a0c0a0b(typeCheckingContext.getRepresentative(elementType_typevar_1188221443596)), _info_12389875345);
       }
     } else {
-      SNode creator = SNodeOperations.getAncestor(arrayLiteral, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", false, false);
+      SNode creator = SNodeOperations.getNodeAncestor(arrayLiteral, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), false, false);
       if ((creator == null)) {
         return;
       }
       SNode componentType = SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, 1154542793668l, "componentType"));
       SNode parent = arrayLiteral;
-      while (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ArrayLiteral")) {
-        componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"));
-        parent = SNodeOperations.getParent(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"));
+      while (SNodeOperations.isInstanceOf(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")) && SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"))) {
+        componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"));
+        parent = SNodeOperations.getParent(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral")));
       }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ArrayLiteral")) {
+      if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"))) {
         // an array literal nested too deeply 
         {
           SNode _nodeToCheck_1029348928467 = arrayLiteral;

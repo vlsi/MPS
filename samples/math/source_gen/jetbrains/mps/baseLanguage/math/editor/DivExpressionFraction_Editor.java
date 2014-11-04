@@ -41,7 +41,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -49,8 +49,8 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.HORIZONTAL_ALIGN, 0, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_ksgn1c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCustom_ksgn1c_b1a(editorContext, node));
@@ -86,7 +86,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_ksgn1c_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -116,7 +116,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

@@ -47,27 +47,27 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
 
   private SNode lastCmd() {
     SNode cur = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, 7195119950189425818l, "item"))).last();
-    while ((cur != null) && !(SNodeOperations.isInstanceOf(cur, "jetbrains.mps.console.base.structure.CommandHolder"))) {
-      cur = SNodeOperations.cast(SNodeOperations.getPrevSibling(cur), "jetbrains.mps.console.base.structure.HistoryItem");
+    while ((cur != null) && !(SNodeOperations.isInstanceOf(cur, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")))) {
+      cur = SNodeOperations.cast(SNodeOperations.getPrevSibling(cur), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"));
     }
-    return SNodeOperations.cast(cur, "jetbrains.mps.console.base.structure.CommandHolder");
+    return SNodeOperations.cast(cur, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"));
   }
 
   private SNode getPrevCmd(SNode cmd) {
     SNode item = cmd;
     do {
-      item = SNodeOperations.cast(SNodeOperations.getPrevSibling(item), "jetbrains.mps.console.base.structure.HistoryItem");
-    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.CommandHolder")));
+      item = SNodeOperations.cast(SNodeOperations.getPrevSibling(item), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"));
+    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"))));
 
-    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
+    return SNodeOperations.cast(item, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"));
   }
   private SNode getNextCmd(SNode cmd) {
     SNode item = cmd;
     do {
-      item = SNodeOperations.cast(SNodeOperations.getNextSibling(item), "jetbrains.mps.console.base.structure.HistoryItem");
-    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, "jetbrains.mps.console.base.structure.CommandHolder")));
+      item = SNodeOperations.cast(SNodeOperations.getNextSibling(item), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"));
+    } while ((item != null) && !(SNodeOperations.isInstanceOf(item, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"))));
 
-    return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
+    return SNodeOperations.cast(item, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"));
   }
 
   private void setSelection() {

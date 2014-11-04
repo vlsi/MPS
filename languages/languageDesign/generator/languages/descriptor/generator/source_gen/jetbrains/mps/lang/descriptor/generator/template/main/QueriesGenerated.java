@@ -146,7 +146,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400377l, "nodeID"));
   }
   public static Object propertyMacro_GetPropertyValue_1698302279987411159(final PropertyMacroContext _context) {
-    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
+    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"));
     return (ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator"))).count() == 1 ? "Generator" : "Generator" + ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator"))).indexOf(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_7633657384060768610(final PropertyMacroContext _context) {
@@ -169,7 +169,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021682l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final PropertyMacroContext _context) {
-    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
+    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"));
     return SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace")) + "/" + ((isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) ? "<no name>" : SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
   }
   public static Object propertyMacro_GetPropertyValue_4565427742315554124(final PropertyMacroContext _context) {
@@ -327,7 +327,7 @@ public class QueriesGenerated {
     });
   }
   public static SNode insertMacro_Query_1509962061695074412(final TemplateQueryContextWithMacro _context) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Language");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"));
   }
   public static Object insertMacro_varValue_931939946132747150(final TemplateQueryContext _context) {
     return PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(_context.getNode()));

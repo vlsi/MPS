@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ResultStatement_Constraints extends BaseConstraintsDescriptor {
@@ -31,8 +33,8 @@ public class ResultStatement_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode anc = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false);
-    return SNodeOperations.isInstanceOf(anc, "jetbrains.mps.make.script.structure.JobDefinition") || SNodeOperations.isInstanceOf(anc, "jetbrains.mps.make.script.structure.ConfigDefinition");
+    SNode anc = SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 1977954644795375332l, "jetbrains.mps.make.script.structure.ConfigDefinition"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")}, false, false);
+    return SNodeOperations.isInstanceOf(anc, MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition")) || SNodeOperations.isInstanceOf(anc, MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 1977954644795375332l, "jetbrains.mps.make.script.structure.ConfigDefinition"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "1977954644795408666");
 }

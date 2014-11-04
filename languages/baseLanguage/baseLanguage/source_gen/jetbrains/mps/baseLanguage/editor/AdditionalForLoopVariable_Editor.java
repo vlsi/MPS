@@ -41,7 +41,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_165sw5_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_165sw5_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_165sw5_b1a(editorContext, node));
@@ -70,7 +70,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
       editorCell.setRole("initializer");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

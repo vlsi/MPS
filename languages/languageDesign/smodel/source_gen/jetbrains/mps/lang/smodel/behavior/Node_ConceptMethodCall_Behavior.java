@@ -4,9 +4,9 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -18,7 +18,7 @@ public class Node_ConceptMethodCall_Behavior {
     return (Node_ConceptMethodCall_Behavior.call_getVirtualMethodDeclaration_1213877437832(thisNode) != null);
   }
   public static boolean call_isSuperMethodCall_1521124695248146659(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+    return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
   public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
     SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));

@@ -49,7 +49,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
         curNode = SLinkOperations.getTarget(curNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"));
       } while (curNode != null);
       // find concept 
-      SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+      SNode conceptDeclaration = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
       if ((conceptDeclaration == null)) {
         return;
       }

@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -55,7 +55,7 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode sc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", true, false);
+            SNode sc = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616734266l, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), true, false);
             return SLinkOperations.getChildren(SLinkOperations.getTarget(sc, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l, "action")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1227008813498l, "constructionParameter"));
           }
           @Override
@@ -68,7 +68,7 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616734266l, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038327");
   private static SNodePointer breakingNode_ikwodz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038348");

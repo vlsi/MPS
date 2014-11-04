@@ -20,6 +20,6 @@ public class RunConfigurationProducerPart_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294149030l, 7301162575811113551l, "source")) == null)) {
       return "";
     }
-    return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294149030l, 7301162575811113551l, "source"))), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Object[]{}));
+    return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294149030l, 7301162575811113551l, "source"))), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
 }

@@ -30,10 +30,10 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/5308946314782063423">
     <file name="QueriesGenerated.java">
-      <node id="5308946314782064317" at="32,124,33,491" concept="1" />
+      <node id="5308946314782064317" at="32,233,33,600" concept="1" />
       <node id="5308946314782063429" at="31,151,34,5" concept="2" />
       <node id="5308946314782063425" at="31,0,36,0" concept="5" trace="nodeFactory_NodeSetup_AbsractMake_5308946314782063425#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="5308946314782063430" at="32,124,33,491" />
+      <scope id="5308946314782063430" at="32,233,33,600" />
       <scope id="5308946314782063426" at="31,151,34,5" />
       <scope id="5308946314782063425" at="31,0,36,0">
         <var name="_context" id="5308946314782063425" />
@@ -43,7 +43,7 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/5932042262275855252">
     <file name="QueriesGenerated.java">
-      <node id="1926293835606250097" at="48,125,49,293" concept="3" />
+      <node id="1926293835606250097" at="48,227,49,395" concept="3" />
       <node id="1926293835606288372" at="50,158,51,27" concept="4" />
       <node id="1926293835606292566" at="53,11,54,22" concept="4" />
       <node id="1926293835606285046" at="62,59,63,63" concept="3" />
@@ -55,7 +55,7 @@
       <node id="1926293835606285046" at="68,182,69,24" concept="4" />
       <node id="1926293835606285046" at="66,148,68,182" concept="0" />
       <node id="1926293835606285046" at="66,148,68,182" concept="0" />
-      <node id="1926293835606259868" at="49,293,52,13" concept="2" />
+      <node id="1926293835606259868" at="49,395,52,13" concept="2" />
       <node id="1926293835606285046" at="65,30,68,182" concept="0" />
       <node id="1926293835606285046" at="65,30,68,182" concept="0" />
       <node id="1926293835606179774" at="47,43,53,11" concept="2" />
@@ -63,7 +63,7 @@
       <scope id="1926293835606259871" at="50,158,51,27" />
       <scope id="1926293835606285046" at="66,148,68,182" />
       <scope id="1926293835606285046" at="65,30,68,182" />
-      <scope id="1926293835606179775" at="48,125,52,13">
+      <scope id="1926293835606179775" at="48,227,52,13">
         <var name="operand" id="1926293835606250100" />
       </scope>
       <scope id="5932042262275855362" at="47,43,54,22" />

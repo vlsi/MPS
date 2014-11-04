@@ -6,6 +6,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.ArrayList;
 
 public class ExtractMethodFactory {
@@ -13,7 +15,7 @@ public class ExtractMethodFactory {
   }
   public static ExtractMethodRefactoringParameters createParameters(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
-    if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+    if (SNodeOperations.isInstanceOf(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       List<SNode> newNodes = new ArrayList<SNode>();
       ListSequence.fromList(newNodes).addElement(SNodeOperations.getParent(first));
       return new ExtractMethodRefactoringParameters(newNodes);
@@ -21,14 +23,14 @@ public class ExtractMethodFactory {
     return new ExtractMethodRefactoringParameters(nodes);
   }
   public static ExtractMethodRefactoring createRefactoring(ExtractMethodRefactoringParameters parameteres) {
-    if (SNodeOperations.isInstanceOf(ListSequence.fromList(parameteres.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+    if (SNodeOperations.isInstanceOf(ListSequence.fromList(parameteres.getNodesToRefactor()).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
       return new ExtractMethodFromExpressionRefactoring(parameteres);
     }
     if (ListSequence.fromList(parameteres.getAnalyzer().getOutputVariables()).isNotEmpty()) {
       return new ExtractMethodWithOutputVariable(parameteres);
     }
     SNode containerType = parameteres.getAnalyzer().getExtractMethodReafactoringProcessor().getContainerReturnType();
-    if (parameteres.getAnalyzer().isAlwaysReturns() && containerType != null && !(SNodeOperations.isInstanceOf(containerType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    if (parameteres.getAnalyzer().isAlwaysReturns() && containerType != null && !(SNodeOperations.isInstanceOf(containerType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")))) {
       return new ExtractMethodWithReturn(parameteres);
     }
     if (parameteres.getAnalyzer().hasExitPoints()) {
@@ -38,8 +40,8 @@ public class ExtractMethodFactory {
   }
   public static boolean isRefactoringAvailable(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
-    boolean hasProperContainer = (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false) != null);
-    return ((ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
+    boolean hasProperContainer = (SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false) != null) || (SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false, false) != null);
+    return ((ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) || SNodeOperations.isInstanceOf(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"))) && hasProperContainer;
   }
   public static String getErrors(List<SNode> nodes) {
     ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(nodes);

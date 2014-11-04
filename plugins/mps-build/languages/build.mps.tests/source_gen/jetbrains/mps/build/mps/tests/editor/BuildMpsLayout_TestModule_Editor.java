@@ -64,7 +64,7 @@ public class BuildMpsLayout_TestModule_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "module");
       editorCell.setCellId("ReferencePresentation_jhv8ot_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, false);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

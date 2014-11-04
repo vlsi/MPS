@@ -15,14 +15,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -42,7 +42,7 @@ public class CommentStatements_Action extends BaseAction {
       public EditorCell select(SNode it) {
         return (EditorCell) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(it);
       }
-    }))) && (SNodeOperations.getAncestor(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
+    }))) && (SNodeOperations.getNodeAncestor(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), false, false) == null);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -66,7 +66,7 @@ public class CommentStatements_Action extends BaseAction {
       boolean error = false;
       if (nodes != null) {
         for (SNode node : ListSequence.fromList(nodes)) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
+          if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")))) {
             error = true;
             break;
           }

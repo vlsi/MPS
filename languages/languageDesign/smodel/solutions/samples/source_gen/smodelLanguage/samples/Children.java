@@ -10,9 +10,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Children {
@@ -42,25 +43,25 @@ public class Children {
     }
   }
   public void accessToChildren_3(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), null, false, new String[]{});
-    List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
-    List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true, new String[]{});
-    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    List<SNode> children1 = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), null, false, new SConcept[]{});
+    List<SNode> children2 = SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SConcept[]{});
+    List<SNode> children3 = SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), true, new SConcept[]{});
+    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")) == true;
       }
     });
     SNode abcdef;
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false, new String[]{});
-    SNodeOperations.getDescendants(statement, null, false, new String[]{});
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false, new String[]{});
-    SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new String[]{});
+    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, null, false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SConcept[]{});
     SNode aConcept = null;
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(aConcept), false, new String[]{});
+    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) aConcept), false, new SConcept[]{});
   }
   public void accessToChildren_4(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
-    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
+    List<SNode> children1 = SNodeOperations.getNodeDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant")}, false, new SConcept[]{});
+    List<SNode> children2 = SNodeOperations.getNodeDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant")}, true, new SConcept[]{});
   }
 }

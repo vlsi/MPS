@@ -42,10 +42,10 @@ public class CycleHelper {
     final Set<String> seenDependencies = new HashSet<String>();
     ListSequence.fromList(SLinkOperations.getChildren(m, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode dep) {
-        if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"))) {
+        if (!(SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")))) {
           return false;
         }
-        SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, 7926701909975791137l, "classpath"));
+        SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, 7926701909975791137l, "classpath"));
         XmlSignature s = new XmlSignature().add(cp);
         String id = (s.hasErrors() ? "dep." + cp.getNodeId().toString() : s.getResult());
         return !(seenDependencies.add(id));
@@ -56,11 +56,11 @@ public class CycleHelper {
     List<SNode> modules = new ArrayList<SNode>();
     ListSequence.fromList(modules).addSequence(ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, 2769948622284574304l, "parts"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, "jetbrains.mps.build.workflow.structure.BwfJavaModule"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, "jetbrains.mps.build.workflow.structure.BwfJavaModule"));
       }
     }));
     for (SNode m : ListSequence.fromList(modules)) {
@@ -118,16 +118,16 @@ public class CycleHelper {
         heapSize = Math.max(heapSize, SPropertyOperations.getInteger(module, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 927724900262398947l, "heapSize")));
         ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference") && cycleModules.contains(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) && cycleModules.contains(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
           }
         });
         for (SNode dep : SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))) {
-          if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) {
-            seenModules.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
-          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference")) {
-            seenLibraries.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, 144710003695507916l, "target")));
-          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
-            SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, 7926701909975791137l, "classpath"));
+          if (SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"))) {
+            seenModules.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
+          } else if (SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"))) {
+            seenLibraries.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, 144710003695507916l, "target")));
+          } else if (SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"))) {
+            SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, 7926701909975791137l, "classpath"));
             XmlSignature s = new XmlSignature().add(cp);
             String id = (s.hasErrors() ? "dep." + cp.getNodeId().toString() : s.getResult());
             if (seenDependencies.add(id)) {
@@ -214,10 +214,10 @@ public class CycleHelper {
           targets = new HashSet<CycleHelper.Module>();
           for (SNode ref : ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
+              return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"));
             }
           })) {
-            CycleHelper.Module tm = map.get(SLinkOperations.getTarget(SNodeOperations.cast(ref, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
+            CycleHelper.Module tm = map.get(SLinkOperations.getTarget(SNodeOperations.cast(ref, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target")));
             if (tm == null) {
               genContext.showErrorMessage(ref, "internal problem: unsatisfied local dependency");
             } else {

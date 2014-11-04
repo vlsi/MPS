@@ -46,7 +46,7 @@ public class Diagram1_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yfdxtz_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_yfdxtz_a0(editorContext, node));
     return editorCell;
@@ -55,7 +55,7 @@ public class Diagram1_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfdxtz_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createDiagram_yfdxtz_a0a(editorContext, node));
     return editorCell;

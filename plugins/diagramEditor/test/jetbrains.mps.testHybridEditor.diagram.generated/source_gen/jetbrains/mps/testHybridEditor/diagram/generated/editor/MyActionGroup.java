@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import javax.swing.Icon;
 
 public class MyActionGroup implements PaletteActionGroup {
@@ -29,10 +31,10 @@ public class MyActionGroup implements PaletteActionGroup {
     final List<PaletteElement> paletteElements = ListSequence.fromList(new ArrayList<PaletteElement>());
     for (SNode node : Sequence.fromIterable(myNodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.testHybridEditor.structure.MetaBlock");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, "jetbrains.mps.testHybridEditor.structure.MetaBlock"));
       }
     })) {
-      ListSequence.fromList(paletteElements).addElement(new MyBlockCreationAction(myDiagramCell, SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.MetaBlock")));
+      ListSequence.fromList(paletteElements).addElement(new MyBlockCreationAction(myDiagramCell, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, "jetbrains.mps.testHybridEditor.structure.MetaBlock"))));
     }
     return ListSequence.fromList(paletteElements).toGenericArray(PaletteElement.class);
   }

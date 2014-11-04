@@ -30,7 +30,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_3863300516938126188(final PropertyMacroContext _context) {
-    return _context.createUniqueName("decisionTable", SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+    return _context.createUniqueName("decisionTable", SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
   }
   public static Object referenceMacro_GetReferent_3863300516938126286(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "decisionTable2Method");
@@ -48,7 +48,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
   }
   public static SNode sourceNodeQuery_3863300516938171105(final SourceSubstituteMacroNodeContext _context) {
-    SNode t = SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false);
+    SNode t = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"), false, false);
     SNode rowHeader = _context.getNode();
     SNode colHeader = (SNode) _context.getNode().getUserObject("colHeader");
     return ListSequence.fromList(SLinkOperations.getChildren(t, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934918l, "resultValues"))).getElement(SNodeOperations.getIndexInParent(rowHeader) * ListSequence.fromList(SLinkOperations.getChildren(t, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934916l, "colHeaders"))).count() + SNodeOperations.getIndexInParent(colHeader));
@@ -72,7 +72,7 @@ public class QueriesGenerated {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_3863300516938171067(final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> rowHeaders = SLinkOperations.getChildren(SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false), MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934917l, "rowHeaders"));
+    List<SNode> rowHeaders = SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934917l, "rowHeaders"));
     ListSequence.fromList(rowHeaders).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         it.putUserObject("colHeader", _context.getNode());
@@ -84,6 +84,6 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934916l, "colHeaders"));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final WeavingMappingRuleContext _context) {
-    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
   }
 }

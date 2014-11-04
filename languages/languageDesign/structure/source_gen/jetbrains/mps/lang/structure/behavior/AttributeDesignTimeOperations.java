@@ -34,7 +34,7 @@ public class AttributeDesignTimeOperations {
     ConceptsScope conceptsScope = new ConceptsScope(accessNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     return Sequence.fromIterable(conceptsScope.getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

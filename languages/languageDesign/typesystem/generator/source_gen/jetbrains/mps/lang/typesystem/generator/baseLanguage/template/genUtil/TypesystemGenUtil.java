@@ -4,11 +4,12 @@ package jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -23,16 +24,16 @@ public class TypesystemGenUtil {
     SNode oldCurrent = null;
     while (current != null) {
       oldCurrent = current;
-      current = SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
+      current = SNodeOperations.getNodeAncestor(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), false, false);
     }
-    return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(oldCurrent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getNodeAncestor(oldCurrent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static boolean isInRuleWithContext(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule")) {
+    if (SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"))) {
       return true;
     }
-    SNode baseMethodDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    SNode baseMethodDeclaration = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
     if ((baseMethodDeclaration != null)) {
       for (SNode annotationInstance : SLinkOperations.getChildren(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
@@ -44,15 +45,15 @@ public class TypesystemGenUtil {
     return false;
   }
   public static boolean returnsNode(SNode subtypingRule) {
-    List<SNode> returnStatements = SNodeOperations.getDescendants(subtypingRule, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
+    List<SNode> returnStatements = SNodeOperations.getNodeDescendants(subtypingRule, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), false, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")});
     for (SNode retSt : returnStatements) {
       if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(retSt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"))), _quotation_createNode_y65bbo_b0a0a0b0d()))) {
         return false;
       }
     }
     SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), subtypingRule, "virtual_getLastStatement_1239354409446", new Object[]{});
-    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"))), _quotation_createNode_y65bbo_b0a0a0d0d()))) {
+    if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"))), _quotation_createNode_y65bbo_b0a0a0d0d()))) {
         return false;
       }
     }

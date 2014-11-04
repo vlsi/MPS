@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,18 +31,18 @@ public class ClassifierMember_Behavior {
   }
   public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     final Wrappers._T<SNode> _contextClassifier = new Wrappers._T<SNode>(contextClassifier);
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.StaticKind")) {
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4790782560812794334l, "jetbrains.mps.baseLanguage.structure.StaticKind"))) {
       // todo: read specification! 
       _contextClassifier.value = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode);
     }
 
     // public 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return true;
     }
     // private 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(_contextClassifier.value, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last() == ListSequence.fromList(SNodeOperations.getNodeAncestors(_contextClassifier.value, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last();
     }
     // default 
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
@@ -52,23 +52,23 @@ public class ClassifierMember_Behavior {
       return eq_i8o263_a0a0l0c(contextNodePackage, contextClassifierPackage);
     }
     // protected 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644641414l, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       if (eq_i8o263_a0a0n0c(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
       // two cases: 1) from class 2) from dot expression 
-      Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getNodeAncestors(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(it)).contains(_contextClassifier.value);
         }
       });
-      if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
         // 1 
         return Sequence.fromIterable(possibleClassifiers).isNotEmpty();
       } else {
         // 2 
-        SNode leftClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+        SNode leftClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")));
         final Set<SNode> extendedClassifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), ClassifierScopeUtils.getExtendedClassifiers(leftClassifier));
         return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -84,7 +84,7 @@ public class ClassifierMember_Behavior {
     // do nothing by default 
   }
   public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), contextNode});
   }
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});

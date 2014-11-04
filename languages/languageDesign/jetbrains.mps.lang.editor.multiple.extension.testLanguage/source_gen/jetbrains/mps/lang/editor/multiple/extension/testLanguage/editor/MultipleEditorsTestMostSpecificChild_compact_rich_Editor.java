@@ -31,7 +31,7 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     editorCell.setCellId("Collection_crd8ui_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_crd8ui_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_crd8ui_b0(editorContext, node));
@@ -45,7 +45,7 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -65,7 +65,7 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_richCompactProperty");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

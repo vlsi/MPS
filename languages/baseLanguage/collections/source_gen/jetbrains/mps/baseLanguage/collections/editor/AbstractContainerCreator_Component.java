@@ -89,8 +89,8 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     editorCell.setCellId("ReadOnlyModelAccessor_jky4mt_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -105,7 +105,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jky4mt_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jky4mt_b1a(editorContext, node));
@@ -120,7 +120,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     editorCell.setCellId("Constant_jky4mt_a1a");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_LeftAngleBracket(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -149,10 +149,10 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     editorCell.setCellId("Constant_jky4mt_c1a");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_RightAngleBracket(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -161,8 +161,8 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jky4mt_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_jky4mt_b2a(editorContext, node));
@@ -177,8 +177,8 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     editorCell.setCellId("Constant_jky4mt_a2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -241,11 +241,11 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty");
       editorCell.setCellId("Constant_jky4mt_a1c0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -256,7 +256,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     editorCell.setCellId("Constant_jky4mt_c2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -265,8 +265,8 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jky4mt_a3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jky4mt_b3a(editorContext, node));
@@ -327,7 +327,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jky4mt_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jky4mt_b4a(editorContext, node));

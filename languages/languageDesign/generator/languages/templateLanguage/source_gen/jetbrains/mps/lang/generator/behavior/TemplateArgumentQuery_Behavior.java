@@ -4,9 +4,9 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
@@ -18,8 +18,8 @@ public class TemplateArgumentQuery_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode expr = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", false, false);
-    SNode call = SNodeOperations.cast(SNodeOperations.getParent(expr), "jetbrains.mps.lang.generator.structure.ITemplateCall");
+    SNode expr = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4035562641222585520l, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"), false, false);
+    SNode call = SNodeOperations.cast(SNodeOperations.getParent(expr), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
     int index = SNodeOperations.getIndexInParent(expr);
     if ((call != null) && (SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")) != null) && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isNotEmpty() && index >= 0 && index < ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).count()) {
       SNode templateParameter = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).getElement(index);

@@ -33,11 +33,11 @@
       <node id="7376433222636454337" at="56,5,57,47" concept="12" />
       <node id="1227302916595" at="58,149,59,19" concept="11" />
       <node id="7376433222636453551" at="60,5,61,25" concept="12" />
-      <node id="1227303239951" at="62,122,63,19" concept="11" />
+      <node id="1227303239951" at="62,229,63,19" concept="11" />
       <node id="7376433222636453785" at="64,5,65,30" concept="12" />
       <node id="1227301461753" at="66,162,67,18" concept="11" />
       <node id="7376433222636454127" at="68,5,69,33" concept="12" />
-      <node id="1227303353946" at="70,139,71,18" concept="11" />
+      <node id="1227303353946" at="70,246,71,18" concept="11" />
       <node id="8900764248744327410" at="72,5,73,41" concept="12" />
       <node id="8900764248744327491" at="76,41,77,161" concept="11" />
       <node id="7376433222636453237" at="80,5,81,34" concept="12" />
@@ -118,8 +118,8 @@
       <node id="7951506190797597682" at="157,29,161,25" concept="8" />
       <node id="1227316931941" at="191,0,195,0" concept="9" trace="run#()V" />
       <node id="428466863025296200" at="43,0,48,0" concept="3" trace="AttachMappingLabel_Action#()V" />
-      <node id="8900764248744327481" at="74,150,79,17" concept="11" />
-      <node id="1227303582013" at="82,142,87,17" concept="11" />
+      <node id="8900764248744327481" at="74,263,79,17" concept="11" />
+      <node id="1227303582013" at="82,245,87,17" concept="11" />
       <node id="1227315376409" at="124,89,129,11" concept="5" />
       <node id="1227316931939" at="189,26,195,9" concept="5" />
       <node id="2381446136244093880" at="203,0,209,0" concept="14" trace="check_gwd6n9_a0a3a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
@@ -146,9 +146,9 @@
       <scope id="428466863025296200" at="49,32,50,16" />
       <scope id="1227301419290" at="54,73,55,19" />
       <scope id="1227301736173" at="58,149,59,19" />
-      <scope id="1227301508765" at="62,122,63,19" />
+      <scope id="1227301508765" at="62,229,63,19" />
       <scope id="1227301441631" at="66,162,67,18" />
-      <scope id="1227301472774" at="70,139,71,18" />
+      <scope id="1227301472774" at="70,246,71,18" />
       <scope id="8900764248744327490" at="76,41,77,161" />
       <scope id="1227303582022" at="84,41,85,161" />
       <scope id="428466863025296200" at="98,42,99,93" />
@@ -204,8 +204,8 @@
       <scope id="1227316931941" at="191,0,195,0" />
       <scope id="2381446136244093880" at="203,72,207,16" />
       <scope id="428466863025296200" at="43,0,48,0" />
-      <scope id="8900764248744327415" at="74,150,79,17" />
-      <scope id="1227303402738" at="82,142,87,17" />
+      <scope id="8900764248744327415" at="74,263,79,17" />
+      <scope id="1227303402738" at="82,245,87,17" />
       <scope id="1227315142199" at="123,40,129,11">
         <var name="ownTemplateModels" id="8056901375583041747" />
       </scope>
@@ -251,8 +251,8 @@
         <var name="_params" id="428466863025296200" />
         <var name="event" id="428466863025296200" />
       </scope>
-      <unit id="8900764248744327489" at="75,97,79,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$1" />
-      <unit id="1227303582021" at="83,97,87,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$2" />
+      <unit id="8900764248744327489" at="75,101,79,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$1" />
+      <unit id="1227303582021" at="83,101,87,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$2" />
       <unit id="8056901375583091369" at="125,74,129,9" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$3" />
       <unit id="1227316931941" at="190,37,195,7" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$5" />
       <unit id="1227316931925" at="137,25,185,15" name="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabel_Action$6" />

@@ -5,10 +5,11 @@ package jetbrains.mps.lang.typesystem.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MessageStatementUtil {
   public static final int MIN_LENGTH = 3;
@@ -16,7 +17,7 @@ public class MessageStatementUtil {
   private static final int MAX_LENGTH = 20;
 
   public static String generateNameFromExpression(SNode expr) {
-    List<SNode> descendants = SNodeOperations.getDescendants(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral", true, new String[]{});
+    List<SNode> descendants = SNodeOperations.getNodeDescendants(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"), true, new SConcept[]{});
     if (ListSequence.fromList(descendants).isEmpty()) {
       return null;
     }

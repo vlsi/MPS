@@ -5,10 +5,10 @@ package jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.m
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -22,16 +22,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1029302639053656988(final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1029302639053433191l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"), false, false) != null);
   }
   public static boolean baseMappingRule_Condition_1029302639053657563(final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1029302639053433191l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"), false, false) != null);
   }
   public static boolean baseMappingRule_Condition_1029302639053657573(final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1029302639053433191l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"), false, false) != null);
   }
   public static boolean baseMappingRule_Condition_1029302639053657583(final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1029302639053433191l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"), false, false) != null);
   }
   public static Object propertyMacro_GetPropertyValue_1205839158549(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));

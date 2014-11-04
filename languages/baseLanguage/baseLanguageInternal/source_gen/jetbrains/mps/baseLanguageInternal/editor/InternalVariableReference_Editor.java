@@ -46,7 +46,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_7tajt9_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "SquareBrace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,7 +74,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_7tajt9_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "SquareBrace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

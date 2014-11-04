@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 @Generated
 public class QueriesGenerated {
@@ -57,7 +58,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197255776563l, 1197255783048l, "event")), MetaAdapterFactory.getProperty(new UUID(7603857644014030527l, -6707735206917717554l), 1197169363230l, 1197169394841l, "code"));
   }
   public static Object referenceMacro_GetReferent_5891355986060738160(final ReferenceMacroContext _context) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), MetaAdapterFactory.getReferenceLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, 1197247793411l, "stateMachine")), "StateMachineFactory"))).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest")), MetaAdapterFactory.getReferenceLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, 1197247793411l, "stateMachine")), "StateMachineFactory"))).first();
   }
   public static SNode sourceNodeQuery_1197241620516(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
@@ -76,7 +77,7 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1197241595255(final SourceSubstituteMacroNodesContext _context) {
     SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197149564476l, 1197223095983l, "state"));
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false, new String[]{});
+    return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(7603857644014030527l, -6707735206917717554l), 1197240155690l, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"), false, new SConcept[]{});
   }
   public static Iterable<SNode> sourceNodesQuery_199058371937525658(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, 1197252952541l, "testMethod"));

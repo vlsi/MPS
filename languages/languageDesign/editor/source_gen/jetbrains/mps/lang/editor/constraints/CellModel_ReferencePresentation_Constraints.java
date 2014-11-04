@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_ReferencePresentation_Constraints extends BaseConstraintsDescriptor {
@@ -31,8 +32,8 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode ancestorRef = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", true, false);
-    SNode ancestorList = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", true, false);
+    SNode ancestorRef = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1088013125922l, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), true, false);
+    SNode ancestorList = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), true, false);
     if ((ancestorRef == null)) {
       return false;
     }

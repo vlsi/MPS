@@ -58,8 +58,8 @@ public class AnnotationInstanceParameterInformationQuery implements ParametersIn
   }
   private SNode getSelectedAnnotationMethod(EditorContext editorContext, SNode annotationInstance) {
     for (SNode argument = editorContext.getSelectedNode(); argument != null; argument = SNodeOperations.getParent(argument)) {
-      if (SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") && SNodeOperations.getParent(argument) == annotationInstance) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214555875l, "key"));
+      if (SNodeOperations.isInstanceOf(argument, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")) && SNodeOperations.getParent(argument) == annotationInstance) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(argument, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214555875l, "key"));
       }
     }
     return null;

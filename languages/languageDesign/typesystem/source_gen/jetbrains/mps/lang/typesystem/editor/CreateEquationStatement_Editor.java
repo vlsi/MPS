@@ -51,7 +51,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mi4qyq_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_mi4qyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mi4qyq_b0a(editorContext, node));
@@ -68,8 +68,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_mi4qyq_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -82,8 +82,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_mi4qyq_b0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -146,8 +146,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_mi4qyq_f0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -159,7 +159,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mi4qyq_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_mi4qyq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_mi4qyq_b1a(editorContext, node));
@@ -238,7 +238,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_mi4qyq_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

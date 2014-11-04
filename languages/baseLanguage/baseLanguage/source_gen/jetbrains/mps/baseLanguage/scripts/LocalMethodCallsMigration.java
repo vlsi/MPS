@@ -50,18 +50,18 @@ public class LocalMethodCallsMigration {
         // todo: make it in right way 
         // copy smodel attributes 
         for (SNode attribute : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))) {
-          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), "jetbrains.mps.lang.core.structure.Attribute");
-          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(copy);
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute"));
+          ListSequence.fromList(SNodeOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).addElement(copy);
         }
         // copy actualArgument 
         for (SNode argument : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))) {
-          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(argument), "jetbrains.mps.baseLanguage.structure.Expression");
-          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument"))).addElement(copy);
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(argument), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
+          ListSequence.fromList(SNodeOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(copy);
         }
         // copy typeArgument 
         for (SNode type : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))) {
-          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(type), "jetbrains.mps.baseLanguage.structure.Type");
-          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "typeArgument"))).addElement(copy);
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(type), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
+          ListSequence.fromList(SNodeOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))).addElement(copy);
         }
 
         // copy 

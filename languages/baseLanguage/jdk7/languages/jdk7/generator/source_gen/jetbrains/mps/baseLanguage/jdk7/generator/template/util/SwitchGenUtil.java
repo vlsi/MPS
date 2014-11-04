@@ -30,7 +30,7 @@ public class SwitchGenUtil {
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
+        return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
       }
     }, true);
   }
@@ -44,7 +44,7 @@ public class SwitchGenUtil {
     m = MapSequence.fromMap(new HashMap<String, Integer>());
     int index = 0;
     for (SNode e : nodes) {
-      MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")), index++);
+      MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")), index++);
     }
     genContext.putTransientObject("switch" + node.getNodeId().toString(), m);
     return m;

@@ -31,7 +31,7 @@ public class IfStatement_elseBlockStatement_delete {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"));
-      List<SNode> statements = SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+      List<SNode> statements = SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
       if (ListSequence.fromList(statements).isEmpty()) {
         statement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
       } else {
@@ -51,7 +51,7 @@ public class IfStatement_elseBlockStatement_delete {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"));
-      List<SNode> statements = SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+      List<SNode> statements = SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
       if (ListSequence.fromList(statements).isEmpty()) {
         statement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
       } else {

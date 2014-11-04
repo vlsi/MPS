@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import junit.framework.Assert;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 
@@ -32,7 +34,7 @@ public class PortHasNoDecoratorTest_Test extends BaseTransformationTest {
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619094462938"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), TestBody.this.getEditorComponent());
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619094462938"), MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436850l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort")), TestBody.this.getEditorComponent());
         }
       });
       Assert.assertTrue(descendantMapper.value != null);

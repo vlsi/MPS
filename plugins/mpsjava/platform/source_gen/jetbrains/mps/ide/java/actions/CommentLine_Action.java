@@ -40,13 +40,13 @@ public class CommentLine_Action extends BaseAction {
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"));
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList") && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(statement).getParent()));
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")) && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(statement).getParent()));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -96,7 +96,7 @@ public class CommentLine_Action extends BaseAction {
       SNode currentNode;
       if (singleLineComment != null) {
         // uncommenting 
-        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement"));
+        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement"));
         SNodeOperations.replaceWithAnother(singleLineComment, innerStatement);
         SNodeOperations.deleteNode(singleLineComment);
         currentNode = innerStatement;
@@ -119,10 +119,10 @@ public class CommentLine_Action extends BaseAction {
     }
   }
   private SNode getStatement(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+    return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true, false);
   }
   private SNode getSingleLineComment(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.SingleLineComment", true, false);
+    return SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), true, false);
   }
   protected static Logger LOG = LogManager.getLogger(CommentLine_Action.class);
 }

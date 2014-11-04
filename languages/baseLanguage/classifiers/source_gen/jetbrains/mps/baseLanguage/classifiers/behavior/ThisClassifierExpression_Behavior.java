@@ -25,7 +25,7 @@ public class ThisClassifierExpression_Behavior {
   }
   public static List<SNode> call_getPossibleClassifiers_1219068414643(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false))) {
+    for (SNode current : ListSequence.fromList(SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false))) {
       ListSequence.fromList(result).addElement(current);
     }
     return result;

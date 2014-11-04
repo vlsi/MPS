@@ -26,7 +26,7 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2jlgx_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_2jlgx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2jlgx_b0(editorContext, node));
@@ -36,7 +36,7 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_2jlgx_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

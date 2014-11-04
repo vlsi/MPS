@@ -69,7 +69,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         while (typeArgument_it.hasNext() && typeVar_it.hasNext()) {
           typeArgument_var = typeArgument_it.next();
           typeVar_var = typeVar_it.next();
-          if ((SLinkOperations.getTarget(typeVar_var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")) != null) && !(SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
+          if ((SLinkOperations.getTarget(typeVar_var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")) != null) && !(SNodeOperations.isInstanceOf(typeArgument_var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType")))) {
             if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(typeVar_var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")), "virtual_isSupersetOf_9029841626175335449", new Object[]{typeArgument_var, substitutions}))) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();

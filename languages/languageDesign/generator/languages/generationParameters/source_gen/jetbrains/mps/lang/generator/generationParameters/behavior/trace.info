@@ -19,8 +19,8 @@
   </root>
   <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">
     <file name="DefaultGeneratorParameter_Behavior.java">
-      <node id="8484425748929510090" at="14,79,15,477" concept="0" />
-      <node id="8484425748929510113" at="15,477,16,257" concept="1" />
+      <node id="8484425748929510090" at="14,79,15,683" concept="0" />
+      <node id="8484425748929510113" at="15,683,16,257" concept="1" />
       <node id="8484425748929510084" at="12,0,14,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8484425748929510084" at="14,0,18,0" concept="2" trace="virtual_getUniqueId_650531548511609559#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8484425748929510086" at="12,43,12,43" />

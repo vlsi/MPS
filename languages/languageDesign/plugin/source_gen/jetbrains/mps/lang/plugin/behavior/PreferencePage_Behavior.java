@@ -14,7 +14,7 @@ public class PreferencePage_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_1217679829877(SNode thisNode) {
-    String componentName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String componentName = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1210179134063l, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     String pageName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     return componentName + "_" + pageName + "_PreferencesPage";
   }

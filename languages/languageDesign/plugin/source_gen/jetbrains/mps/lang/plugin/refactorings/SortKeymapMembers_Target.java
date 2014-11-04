@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.refactorings;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SortKeymapMembers_Target implements IRefactoringTarget {
   public SortKeymapMembers_Target() {
@@ -16,7 +18,7 @@ public class SortKeymapMembers_Target implements IRefactoringTarget {
     return false;
   }
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"));
   }
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {

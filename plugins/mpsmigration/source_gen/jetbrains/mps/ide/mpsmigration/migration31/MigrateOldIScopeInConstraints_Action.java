@@ -21,6 +21,8 @@ import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
@@ -61,13 +63,13 @@ public class MigrateOldIScopeInConstraints_Action extends BaseAction {
     try {
       SAbstractConcept concept1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope");
       Set<SNode> instances1 = FindUsagesManager.getInstance().findInstances(new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), Collections.singleton(concept1), false, new EmptyProgressMonitor());
-      Sequence.fromIterable(SNodeOperations.ofConcept(instances1, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope")).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(SNodeOperations.ofConcept(instances1, MetaAdapterFactory.getConcept(new UUID(1401823809184416330l, -7197931390967525754l), 1161622878565l, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.getModel(it).isReadOnly());
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(it), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
+          return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(it), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {

@@ -21,15 +21,15 @@ public class check_StaticFinalFieldNotAssigned_NonTypesystemRule extends Abstrac
   public check_StaticFinalFieldNotAssigned_NonTypesystemRule() {
   }
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
       return;
     }
-    SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
     if (!(SPropertyOperations.getBoolean(declaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")))) {
       return;
     }
 
-    if (CheckingUtil.isAssigned(variableReference) && (SNodeOperations.getAncestor(variableReference, "jetbrains.mps.baseLanguage.structure.StaticInitializer", false, false) == null || (SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null))) {
+    if (CheckingUtil.isAssigned(variableReference) && (SNodeOperations.getNodeAncestor(variableReference, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), false, false) == null || (SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to a final variable '" + SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "775398157036223996", null, errorTarget);

@@ -21,7 +21,7 @@ public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
       SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
     }
     for (SNode reference : this.findAllReferenceOperations(this.myVariable)) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
+      SNodeOperations.replaceWithAnother(SNodeOperations.getNodeAncestor(reference, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"), false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
     }
     this.optimizeDeclaration(this.myVariable);
     return null;

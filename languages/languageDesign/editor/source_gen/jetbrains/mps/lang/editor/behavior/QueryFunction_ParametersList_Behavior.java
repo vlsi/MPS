@@ -4,9 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -19,7 +19,7 @@ public class QueryFunction_ParametersList_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", false, false);
+    SNode ancestor = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery"), false, false);
     SNode expectedType = SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 7667276221847612622l, 8178273524755058633l, "type"));
     if (expectedType == null) {
       return _quotation_createNode_1gao1h_a0a2a0();

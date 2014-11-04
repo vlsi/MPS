@@ -21,10 +21,10 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -73,9 +73,9 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getEnclosingNode(), false).getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getEnclosingNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))}) || Sequence.fromIterable((ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 2423993921025641700l, "implements"))).where(new IWhereFilter<SNode>() {
+                return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_ymgo28_a0a0a0a0a0a0a0(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))}) || Sequence.fromIterable((ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(it, MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 2423993921025641700l, "implements"))).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != null);
                   }
@@ -101,7 +101,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"));
   }
   private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

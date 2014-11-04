@@ -12,6 +12,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 
@@ -31,7 +32,7 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         {
-          SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+          SNode classifier = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
           if (classifier != null) {
             return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (" + NameUtil.compactNodeFQName(classifier) + ")";
           }

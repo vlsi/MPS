@@ -35,16 +35,16 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     if (myIsFinal) {
       SPropertyOperations.set(newDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
     }
-    SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classConcept = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     MemberInsertingUtils.insertClassifierMemberInBestPlace(classConcept, newDeclaration);
     SNode assignExp = _quotation_createNode_282g55_a0k0a(expression, newDeclaration);
     SNode assignmentStatement = _quotation_createNode_282g55_a0l0a(assignExp);
 
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
-      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignmentStatement));
+      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), SNodeOperations.copyNode(assignmentStatement));
     }
     if (this.myFieldInitialization == FieldInitializationPlace.STATICINIT) {
-      SNode declaration = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode declaration = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
       Iterable<SNode> staticInitializers = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), declaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticInitializers_3136320261464948039", new Object[]{});
       SNode initializer;
       if (Sequence.fromIterable(staticInitializers).isNotEmpty()) {

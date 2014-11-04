@@ -36,20 +36,20 @@ public class IdeaPluginDependenciesHelper {
 
     visible.addAll(ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499050l, "content"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, 6592112598314499037l, "target"));
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, 6592112598314499037l, "target"));
       }
     }).toListSequence());
     visible.addAll(ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499050l, "content"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 6592112598314586626l, "group")), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"));
+        return SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 6592112598314586626l, "group")), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"));
       }
     }).toListSequence());
     for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499028l, "dependencies")))) {
@@ -60,8 +60,8 @@ public class IdeaPluginDependenciesHelper {
     if (visible == null) {
       buildVisible();
     }
-    if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).runtimeClosure();
+    if (SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
+      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))).runtimeClosure();
       Iterable<SNode> seq = Sequence.fromIterable(runtimeDependencies.getAllModules()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(visible.contains(it));

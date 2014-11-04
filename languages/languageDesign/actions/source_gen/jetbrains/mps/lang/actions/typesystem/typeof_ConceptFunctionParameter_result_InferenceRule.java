@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule extends Abstra
   public typeof_ConceptFunctionParameter_result_InferenceRule() {
   }
   public void applyRule(final SNode result, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode conceptOfResult = SLinkOperations.getTarget(SNodeOperations.getAncestor(result, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1182819125053l, 1182819234902l, "concept"));
+    SNode conceptOfResult = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(result, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1182819125053l, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1182819125053l, 1182819234902l, "concept"));
     {
       SNode _nodeToCheck_1029348928467 = result;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766215", 0, null);

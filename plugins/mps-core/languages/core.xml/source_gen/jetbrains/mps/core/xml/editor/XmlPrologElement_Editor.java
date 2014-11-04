@@ -22,8 +22,8 @@ public class XmlPrologElement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_hddz4f_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

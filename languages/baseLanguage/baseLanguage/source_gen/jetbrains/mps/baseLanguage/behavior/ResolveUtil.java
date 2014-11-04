@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class ResolveUtil {
     List<SNode> result = ListSequence.fromList(new LinkedList<SNode>());
     boolean containsVars = false;
     for (SNode parameter : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
-      if (ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})).isNotEmpty()) {
+      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(parameter, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), true, new SConcept[]{})).isNotEmpty()) {
         containsVars = true;
       }
       ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))));
@@ -45,9 +46,9 @@ public class ResolveUtil {
     }
     List<SNode> typeParameters = ListSequence.fromList(SLinkOperations.getChildren(concreteMethodClassifierType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).toListSequence();
     for (SNode paramType : ListSequence.fromListWithValues(new ArrayList<SNode>(), result)) {
-      for (SNode typeVar : SNodeOperations.getDescendants(paramType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
+      for (SNode typeVar : SNodeOperations.getNodeDescendants(paramType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), true, new SConcept[]{})) {
         SNode variableDeclaration = SLinkOperations.getTarget(typeVar, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variableDeclaration), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variableDeclaration), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           SNode replacement = SNodeOperations.copyNode(ListSequence.fromList(typeParameters).getElement(SNodeOperations.getIndexInParent(variableDeclaration)));
           if ((SNodeOperations.getParent(typeVar) == null)) {
             ListSequence.fromList(result).insertElement(ListSequence.fromList(result).indexOf(typeVar), replacement);
@@ -62,7 +63,7 @@ public class ResolveUtil {
   }
   public static SNode getConcreteClassifierType(SNode typeWithVars, SNode classifierSubtype) {
     SNode result = SNodeOperations.copyNode(typeWithVars);
-    List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
+    List<SNode> varRefs = SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{});
     List<SNode> params = ListSequence.fromList(SLinkOperations.getChildren(classifierSubtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).toListSequence();
     for (SNode varRef : varRefs) {
       int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
@@ -83,8 +84,8 @@ public class ResolveUtil {
         concreteMethodClassifierType = currentType;
         break;
       }
-      if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        SNode classConcept = SNodeOperations.cast(currentClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      if (SNodeOperations.isInstanceOf(currentClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        SNode classConcept = SNodeOperations.cast(currentClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         SNode superclass = SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
         if ((superclass != null)) {
           ListSequence.fromList(frontier).addElement(getConcreteClassifierType(superclass, currentType));
@@ -93,8 +94,8 @@ public class ResolveUtil {
           ListSequence.fromList(frontier).addElement(getConcreteClassifierType(intfc, currentType));
         }
       }
-      if (SNodeOperations.isInstanceOf(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-        SNode interfaceConcept = SNodeOperations.cast(currentClassifier, "jetbrains.mps.baseLanguage.structure.Interface");
+      if (SNodeOperations.isInstanceOf(currentClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        SNode interfaceConcept = SNodeOperations.cast(currentClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
         for (SNode intfc : SLinkOperations.getChildren(interfaceConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) {
           ListSequence.fromList(frontier).addElement(getConcreteClassifierType(intfc, currentType));
         }
@@ -103,16 +104,16 @@ public class ResolveUtil {
     return concreteMethodClassifierType;
   }
   public static SNode processMethodToImplement(SNode enclosingClassifier, SNode method) {
-    SNode declaringClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode declaringClassifier = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     SNode result = SNodeOperations.copyNode(method);
     List<SNode> initialClassifierTypes = ListSequence.fromList(new ArrayList<SNode>());
-    if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    if (SNodeOperations.isInstanceOf(enclosingClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      SNode classConcept = SNodeOperations.cast(enclosingClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       SNode superclass;
-      if (SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      if (SNodeOperations.isInstanceOf(classConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
         superclass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-        SLinkOperations.setTarget(superclass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")));
-        for (SNode type : SLinkOperations.getChildren(SNodeOperations.cast(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))) {
+        SLinkOperations.setTarget(superclass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(classConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")));
+        for (SNode type : SLinkOperations.getChildren(SNodeOperations.cast(classConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))) {
           ListSequence.fromList(SLinkOperations.getChildren(superclass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(SNodeOperations.copyNode(type));
         }
       } else {
@@ -125,8 +126,8 @@ public class ResolveUtil {
         ListSequence.fromList(initialClassifierTypes).addElement(intfc);
       }
     }
-    if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SNode interfaceConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.Interface");
+    if (SNodeOperations.isInstanceOf(enclosingClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      SNode interfaceConcept = SNodeOperations.cast(enclosingClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
       for (SNode intfc : SLinkOperations.getChildren(interfaceConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) {
         ListSequence.fromList(initialClassifierTypes).addElement(intfc);
       }
@@ -139,7 +140,7 @@ public class ResolveUtil {
     }
     List<SNode> params = SLinkOperations.getChildren(concreteSuperClassifierType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"));
     for (SNode typeToModify : types) {
-      for (SNode varRef : SNodeOperations.getDescendants(typeToModify, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
+      for (SNode varRef : SNodeOperations.getNodeDescendants(typeToModify, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), true, new SConcept[]{})) {
         // maybe a var from method 
         SNode typeVariableDeclaration = SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
         if (SNodeOperations.getParent(typeVariableDeclaration) != result) {
@@ -155,13 +156,13 @@ public class ResolveUtil {
     return result;
   }
   public static boolean goodArguments(Iterable<SNode> parameterTypes, List<SNode> arguments) {
-    if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+    if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, "jetbrains.mps.baseLanguage.structure.VariableArityType"))) {
       if (Sequence.fromIterable(parameterTypes).count() - 1 > ListSequence.fromList(arguments).count()) {
         return false;
       }
 
       SNode lastArgument = ListSequence.fromList(arguments).last();
-      SNode varArgType = SNodeOperations.cast(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+      SNode varArgType = SNodeOperations.cast(Sequence.fromIterable(parameterTypes).last(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, "jetbrains.mps.baseLanguage.structure.VariableArityType"));
       Iterator<SNode> pTypesItr = Sequence.fromIterable(parameterTypes).iterator();
       Iterator<SNode> argumentsItr = ListSequence.fromList(arguments).iterator();
 
@@ -177,7 +178,7 @@ public class ResolveUtil {
           }
           SNode mayBeLastArgumentType = TypeChecker.getInstance().getTypeOf(argument);
           SNode varArgComponentType = SLinkOperations.getTarget(varArgType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, 1219921048460l, "componentType"));
-          if ((lastArgument == argument) && SNodeOperations.isInstanceOf(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SNodeOperations.cast(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType")), varArgComponentType)) {
+          if ((lastArgument == argument) && SNodeOperations.isInstanceOf(mayBeLastArgumentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SNodeOperations.cast(mayBeLastArgumentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType")), varArgComponentType)) {
             // array type as vararg 
             return true;
           } else {

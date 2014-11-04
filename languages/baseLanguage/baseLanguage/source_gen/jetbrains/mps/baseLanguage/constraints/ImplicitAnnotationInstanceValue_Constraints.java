@@ -22,9 +22,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraintsDescriptor {
@@ -74,8 +74,8 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
-      SNode annotationInstance = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+    if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"))) {
+      SNode annotationInstance = SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
       if (ListSequence.fromList(SLinkOperations.getChildren(annotationInstance, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188214630783l, "value"))).count() <= 1) {
         if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1107880067339l, "method"))).count() == 1) {
           return true;

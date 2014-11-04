@@ -5,6 +5,8 @@ package jetbrains.mps.execution.configurations.pluginSolution.plugin;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ public class Run_Configuration_TabDescriptor extends RelationDescriptor {
     return null;
   }
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfiguration");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171345993l, "jetbrains.mps.execution.configurations.structure.RunConfiguration"));
   }
   public List<SNode> getNodes(SNode node) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());

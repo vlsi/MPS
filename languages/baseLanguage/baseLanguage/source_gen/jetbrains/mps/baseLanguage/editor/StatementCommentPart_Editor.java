@@ -24,7 +24,7 @@ public class StatementCommentPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1mgzv8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_1mgzv8_a0(editorContext, node));
     return editorCell;

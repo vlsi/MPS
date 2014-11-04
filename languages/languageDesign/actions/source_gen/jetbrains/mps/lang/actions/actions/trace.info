@@ -61,14 +61,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/3757480014665236932">
     <file name="QueriesGenerated.java">
-      <node id="3757480014665236954" at="26,132,27,1085" concept="1" />
-      <node id="2931819695409437982" at="28,124,29,477" concept="1" />
-      <node id="2931819695409438045" at="33,128,34,1073" concept="1" />
-      <node id="2931819695409438036" at="35,131,36,484" concept="1" />
-      <node id="2931819695409438074" at="40,137,41,1100" concept="1" />
-      <node id="2931819695409438100" at="42,140,43,493" concept="1" />
-      <node id="2931819695409438123" at="47,141,48,1112" concept="1" />
-      <node id="2931819695409438149" at="49,144,50,497" concept="1" />
+      <node id="3757480014665236954" at="26,241,27,1412" concept="1" />
+      <node id="2931819695409437982" at="28,226,29,579" concept="1" />
+      <node id="2931819695409438045" at="33,237,34,1400" concept="1" />
+      <node id="2931819695409438036" at="35,233,36,586" concept="1" />
+      <node id="2931819695409438074" at="40,246,41,1427" concept="1" />
+      <node id="2931819695409438100" at="42,242,43,595" concept="1" />
+      <node id="2931819695409438123" at="47,250,48,1439" concept="1" />
+      <node id="2931819695409438149" at="49,246,50,599" concept="1" />
       <node id="3757480014665236952" at="25,166,30,5" concept="2" />
       <node id="2931819695409438012" at="32,162,37,5" concept="2" />
       <node id="2931819695409438072" at="39,171,44,5" concept="2" />
@@ -77,14 +77,14 @@
       <node id="3757480014665236934" at="32,0,39,0" concept="6" trace="nodeFactory_NodeSetup_NF_Concept_NewInstance_3757480014665236934#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="3757480014665236937" at="39,0,46,0" concept="6" trace="nodeFactory_NodeSetup_NF_Model_CreateNewNodeOperation_3757480014665236937#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="3757480014665236943" at="46,0,53,0" concept="6" trace="nodeFactory_NodeSetup_NF_Model_CreateNewRootNodeOperation_3757480014665236943#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="3757480014665236953" at="26,132,27,1085" />
-      <scope id="2931819695409437888" at="28,124,29,477" />
-      <scope id="2931819695409438013" at="33,128,34,1073" />
-      <scope id="2931819695409438026" at="35,131,36,484" />
-      <scope id="2931819695409438073" at="40,137,41,1100" />
-      <scope id="2931819695409438099" at="42,140,43,493" />
-      <scope id="2931819695409438122" at="47,141,48,1112" />
-      <scope id="2931819695409438148" at="49,144,50,497" />
+      <scope id="3757480014665236953" at="26,241,27,1412" />
+      <scope id="2931819695409437888" at="28,226,29,579" />
+      <scope id="2931819695409438013" at="33,237,34,1400" />
+      <scope id="2931819695409438026" at="35,233,36,586" />
+      <scope id="2931819695409438073" at="40,246,41,1427" />
+      <scope id="2931819695409438099" at="42,242,43,595" />
+      <scope id="2931819695409438122" at="47,250,48,1439" />
+      <scope id="2931819695409438148" at="49,246,50,599" />
       <scope id="3757480014665236947" at="25,166,30,5" />
       <scope id="3757480014665236935" at="32,162,37,5" />
       <scope id="3757480014665236938" at="39,171,44,5" />

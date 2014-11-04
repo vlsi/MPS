@@ -44,7 +44,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2konf7_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2konf7_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2konf7_b0(editorContext, node));
@@ -64,7 +64,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2konf7_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_2konf7_a1a(editorContext, node));
     if (renderingCondition_2konf7_a1b0(node, editorContext)) {
@@ -106,7 +106,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
     editorCell.setCellId("Constant_2konf7_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a()}));
@@ -129,7 +129,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2konf7_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_2konf7_a2a(editorContext, node));
     if (renderingCondition_2konf7_a1c0(node, editorContext)) {
@@ -148,7 +148,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2konf7_b2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2konf7_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2konf7_b1c0(editorContext, node));
@@ -200,7 +200,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
     editorCell.setCellId("Constant_2konf7_c2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a()}));

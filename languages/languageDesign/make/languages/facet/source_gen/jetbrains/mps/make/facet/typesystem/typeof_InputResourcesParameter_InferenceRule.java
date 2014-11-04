@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -26,7 +26,7 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
   public typeof_InputResourcesParameter_InferenceRule() {
   }
   public void applyRule(final SNode inres, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode tdecl = SNodeOperations.getAncestor(inres, "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
+    SNode tdecl = SNodeOperations.getNodeAncestor(inres, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false);
     if ((tdecl != null)) {
       List<SNode> resourceType = SLinkOperations.getChildren(SLinkOperations.getTarget(tdecl, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 119022571401949664l, "input")), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, 119022571401949655l, "resourceType"));
       SNode cls = ListSequence.fromList(resourceType).where(new IWhereFilter<SNode>() {
@@ -38,7 +38,7 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
         }
       }).first();
-      if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) {
+      if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"))) {
         SNode ntt = _quotation_createNode_3tga6z_a0a0c0b0b(cls);
         {
           SNode _nodeToCheck_1029348928467 = inres;

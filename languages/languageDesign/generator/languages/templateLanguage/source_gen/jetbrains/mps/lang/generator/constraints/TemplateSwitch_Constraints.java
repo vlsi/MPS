@@ -21,9 +21,9 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNodePointer;
@@ -58,8 +58,8 @@ public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
                 }
                 // allow to modify/extend switches that accept exactly same parameters only, not superset therof. 
                 // the reason is sub-switch may be invoked directly, while the rules of its parent would expect more parameters than there're actually 
-                SNode contributor = SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
-                SNode originCandidate = SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitch");
+                SNode contributor = SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
+                SNode originCandidate = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
                 if (ListSequence.fromList(SLinkOperations.getChildren(originCandidate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(contributor, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).count()) {
                   return true;
                 }

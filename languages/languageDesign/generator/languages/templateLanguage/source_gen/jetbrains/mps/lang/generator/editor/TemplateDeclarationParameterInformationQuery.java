@@ -33,7 +33,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
     if (selectedNode == null) {
       return null;
     }
-    return ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, "jetbrains.mps.baseLanguage.structure.Expression", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) == templateCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument");
       }

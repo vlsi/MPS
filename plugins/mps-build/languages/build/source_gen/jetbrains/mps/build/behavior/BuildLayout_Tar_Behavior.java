@@ -23,7 +23,7 @@ public class BuildLayout_Tar_Behavior {
     helper.locations().put(thisNode, tarLocation);
 
     if (helper.isContentRequired(thisNode)) {
-      String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "deps", SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       helper.emit(_quotation_createNode_cokct5_a0a1a5a0(tempPath));
       helper.emit(_quotation_createNode_cokct5_a0a2a5a0(tarLocation, tempPath, SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8577651205286814211l, 1979010778009209128l, "compression"), "none")));
       helper.contentLocations().put(thisNode, tempPath);

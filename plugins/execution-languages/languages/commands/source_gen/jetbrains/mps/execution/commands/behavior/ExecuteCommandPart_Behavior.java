@@ -29,7 +29,7 @@ public class ExecuteCommandPart_Behavior {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode))) {
       return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, 6129022259108579245l, "parameterDeclaration"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 7327337331549086040l, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
         }
       }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter"))))).toListSequence();
     }
@@ -43,7 +43,7 @@ public class ExecuteCommandPart_Behavior {
     }).toListSequence();
   }
   public static SNode call_getCommandDeclaration_6129022259108621200(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), false, false);
   }
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qal9w4_a0a0a3());

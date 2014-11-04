@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -43,8 +43,8 @@ public class ForeignParametersExpression_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            final SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
-            SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+            final SNode td = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false);
+            SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
             return ListSequence.fromList(SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6418371274763146558l, "targetDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode sibl) {
                 return sibl != td;

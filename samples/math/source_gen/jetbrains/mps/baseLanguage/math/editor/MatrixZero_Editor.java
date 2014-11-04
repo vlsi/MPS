@@ -62,7 +62,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
       editorCell.setRole("rows");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,7 +79,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_d13tpt_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -97,7 +97,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
       editorCell.setRole("columns");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -138,7 +138,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_square");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -166,7 +166,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
       editorCell.setRole("rows");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

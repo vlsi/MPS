@@ -16,6 +16,6 @@ public class GroupAnchor_Behavior {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static String call_getActionId_5495648829643890225(SNode thisNode) {
-    return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) + GroupAnchor_Behavior.call_getId_1213877276567(thisNode);
+    return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"))) + GroupAnchor_Behavior.call_getId_1213877276567(thisNode);
   }
 }

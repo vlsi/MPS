@@ -18,7 +18,7 @@ public class ReferenceMacro_Behavior {
     if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, 1167770376702l, "referentFunction")) == child) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.Attribute") && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.Attribute"))) {
+    if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute")) && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute")))) {
       return false;
     }
     return true;

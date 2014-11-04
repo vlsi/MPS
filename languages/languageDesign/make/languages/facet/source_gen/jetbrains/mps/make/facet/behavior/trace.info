@@ -254,16 +254,16 @@
   </root>
   <root nodeRef="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)/7854369758457971843">
     <file name="TargetDeclaration_Behavior.java">
-      <node id="7854369758457974823" at="16,81,17,122" concept="4" />
-      <node id="899969561582409501" at="19,80,20,196" concept="3" />
-      <node id="899969561582409511" at="20,196,21,379" concept="4" />
+      <node id="7854369758457974823" at="16,81,17,230" concept="4" />
+      <node id="899969561582409501" at="19,80,20,304" concept="3" />
+      <node id="899969561582409511" at="20,304,21,379" concept="4" />
       <node id="5997052361990365243" at="23,83,24,411" concept="4" />
       <node id="7854369758457971843" at="14,0,16,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7854369758457971843" at="16,0,19,0" concept="5" trace="call_facetDeclaration_7854369758457971846#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7854369758457971843" at="23,0,26,0" concept="5" trace="virtual_classifierName_4609636120081351397#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="7854369758457971843" at="19,0,23,0" concept="5" trace="call_getTargetFqName_899969561582409481#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="7854369758457971845" at="14,43,14,43" />
-      <scope id="7854369758457971851" at="16,81,17,122" />
+      <scope id="7854369758457971851" at="16,81,17,230" />
       <scope id="5997052361990365079" at="23,83,24,411" />
       <scope id="7854369758457971843" at="14,0,16,0">
         <var name="thisNode" id="7854369758457971843" />

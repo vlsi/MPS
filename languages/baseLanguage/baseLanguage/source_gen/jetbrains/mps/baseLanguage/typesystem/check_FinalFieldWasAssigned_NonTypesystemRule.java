@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -33,7 +34,7 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
     if (SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null) {
       return;
     }
-    SNode classifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classifier = SNodeOperations.getNodeAncestor(field, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if (classifier == null) {
       return;
     }
@@ -43,16 +44,16 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
     ListSequence.fromList(mayInitialize).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classifier)));
     for (SNode member : mayInitialize) {
       if (member != null) {
-        for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(member, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        for (SNode reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
           }
         }).toListSequence()) {
           if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == field && CheckingUtil.isAssigned(reference)) {
             return;
           }
         }
-        for (SNode reference : SNodeOperations.getDescendants(member, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})) {
+        for (SNode reference : SNodeOperations.getNodeDescendants(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SConcept[]{})) {
           if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")) == field && CheckingUtil.isAssigned(reference)) {
             return;
           }

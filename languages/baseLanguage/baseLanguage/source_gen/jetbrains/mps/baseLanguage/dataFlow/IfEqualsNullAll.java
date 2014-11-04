@@ -29,14 +29,14 @@ public class IfEqualsNullAll extends DataFlowConstructor {
     SNode ifTrue = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"));
     List<SNode> vars = new ArrayList<SNode>();
     for (SNode expression : NullableUtil.getOrConditions(node)) {
-      if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
+      if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
+        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression")));
         if (notNullNode != null) {
           ListSequence.fromList(vars).addElement(notNullNode);
         }
       }
     }
-    if (!((ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement")))) {
+    if (!((ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"))))) {
       for (SNode var : vars) {
         {
           Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"));

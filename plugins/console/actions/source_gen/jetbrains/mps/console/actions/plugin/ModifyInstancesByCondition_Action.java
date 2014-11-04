@@ -13,13 +13,14 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.console.tool.ConsoleTab;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.tool.ConsoleTool;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -58,7 +59,7 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
           node = null;
         }
       }
@@ -74,7 +75,7 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
       ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
       SNode command = _quotation_createNode_nwjg5s_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
       tab.insertCommand(command);
-      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).getElement(1), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body")));
+      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(tab.getRoot(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), false, new SConcept[]{})).getElement(1), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ModifyInstancesByCondition", t);

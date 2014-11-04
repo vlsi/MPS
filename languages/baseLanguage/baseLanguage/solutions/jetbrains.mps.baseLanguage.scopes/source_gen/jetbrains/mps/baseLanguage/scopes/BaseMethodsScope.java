@@ -13,10 +13,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
@@ -53,11 +54,11 @@ public abstract class BaseMethodsScope extends Scope {
     nameToMethods = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode node : ListSequence.fromList(SNodeOperations.getChildren(classifier)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     })) {
       String name = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
@@ -74,7 +75,7 @@ public abstract class BaseMethodsScope extends Scope {
   public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
     if (Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.Classifier");
+        return SNodeOperations.cast(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
       }
     }).distinct().count() == 1) {
       return groupWithEqualSignature;
@@ -111,11 +112,11 @@ public abstract class BaseMethodsScope extends Scope {
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
       for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Object[]{classifier, kind}).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+          return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
         }
       })) {
         String signature = getSignatureForOverriding(method, classifier);
@@ -137,7 +138,7 @@ public abstract class BaseMethodsScope extends Scope {
     if (prefix == null) {
       allMethods = ListSequence.fromList(result).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
         }
       }).toGenericArray(SNode.class);
     }
@@ -149,7 +150,7 @@ public abstract class BaseMethodsScope extends Scope {
   public SNode resolve(SNode contextNode, @NotNull final String refText) {
     List<SNode> methods = Sequence.fromIterable(this.getAvailableElements(refText)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -162,10 +163,10 @@ public abstract class BaseMethodsScope extends Scope {
     if (methods.size() == 1) {
       return ListSequence.fromList(methods).first();
     }
-    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+    if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
       return null;
     }
-    List<SNode> actualArguments = SLinkOperations.getChildren((SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
+    List<SNode> actualArguments = SLinkOperations.getChildren((SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
 
     methods = MethodResolveUtil.selectByParmCount(methods, actualArguments);
     if (methods.size() == 1) {
@@ -182,10 +183,10 @@ public abstract class BaseMethodsScope extends Scope {
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @Override
   public boolean contains(SNode node) {
-    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).contains(node);
+    return SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).contains(node);
   }
 }

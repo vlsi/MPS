@@ -4,9 +4,9 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -19,8 +19,8 @@ public class VarMacro_ValueQuery_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.generator.structure.VarMacro")) {
-      SNode node = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.generator.structure.VarMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, 5015072279636624635l, "type"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, "jetbrains.mps.lang.generator.structure.VarMacro"))) {
+      SNode node = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, "jetbrains.mps.lang.generator.structure.VarMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, 5015072279636624635l, "type"));
       if ((node != null)) {
         return node;
       }

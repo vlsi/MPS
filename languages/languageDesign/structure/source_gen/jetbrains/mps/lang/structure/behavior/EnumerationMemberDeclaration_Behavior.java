@@ -22,7 +22,7 @@ public class EnumerationMemberDeclaration_Behavior {
     return NameUtil.toValidIdentifier(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(thisNode));
   }
   public static String call_getName_1240169660918(SNode thisNode) {
-    SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1197591154882l, "memberIdentifierPolicy"), "derive_from_internal_value", "derive_from_presentation")) {
       return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue"));
     }

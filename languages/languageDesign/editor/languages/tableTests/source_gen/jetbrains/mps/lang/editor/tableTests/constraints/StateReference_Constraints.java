@@ -56,7 +56,7 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getChildren(AbstractStateMachineElement_Behavior.call_getStateMachine_7943979732673457916(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.tableTests.structure.Transition")), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726949l, "states"));
+            return SLinkOperations.getChildren(AbstractStateMachineElement_Behavior.call_getStateMachine_7943979732673457916(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, "jetbrains.mps.lang.editor.tableTests.structure.Transition"))), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726949l, "states"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -68,7 +68,7 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.tableTests.structure.Transition");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, "jetbrains.mps.lang.editor.tableTests.structure.Transition"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "6767735723023353509");
   private static SNodePointer breakingNode_fj6pw8_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "7943979732673497619");

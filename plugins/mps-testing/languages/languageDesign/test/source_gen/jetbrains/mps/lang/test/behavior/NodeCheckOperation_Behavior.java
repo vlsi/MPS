@@ -23,13 +23,13 @@ public class NodeCheckOperation_Behavior {
     return true;
   }
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.NodesTestCase", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"), false, false);
   }
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     return "test_" + NodeCheckOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getNodeId().toString();
   }
   public static SNode call_getAnnotatedNode_2912288420882528229(SNode thisNode) {
-    SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.test.structure.NodeOperationsContainer");
+    SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     return SNodeOperations.getParent(container);
   }
 }

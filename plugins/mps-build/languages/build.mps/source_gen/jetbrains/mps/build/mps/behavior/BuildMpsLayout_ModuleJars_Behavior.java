@@ -26,10 +26,10 @@ public class BuildMpsLayout_ModuleJars_Behavior {
       SNode node = (SNode) artifactId;
       String languageLocation = helper.locations().get(thisNode);
 
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
         return languageLocation.substring(0, languageLocation.length() - ".jar".length()) + "-generator.jar";
       }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
         return languageLocation;
       }
     }
@@ -38,10 +38,10 @@ public class BuildMpsLayout_ModuleJars_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
-        return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l, 1265949165890536425l, "module")) == BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+        return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l, 1265949165890536425l, "module")) == BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator")));
       }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
         return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l, 1265949165890536425l, "module")) == node;
       }
     }

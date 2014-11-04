@@ -85,7 +85,7 @@ public class GenerateConstructor_Action extends BaseAction {
       boolean needsShowConstructorsDialog = false;
       SNodeReference[] selectedConstructors = null;
       SNodeReference[] selectedFields = null;
-      superclass = SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      superclass = SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       if (superclass == null) {
         superclass = SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
       }
@@ -137,7 +137,7 @@ public class GenerateConstructor_Action extends BaseAction {
       SNode constructorDeclaration = null;
       Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
       for (SNodeReference ptr : selectedConstructors) {
-        SNode selectedSuperConstructor = SNodeOperations.cast(((SNodePointer) ptr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        SNode selectedSuperConstructor = SNodeOperations.cast(((SNodePointer) ptr).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
         SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         constructorDeclaration = constructor;
         SNodeFactoryOperations.setNewChild(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -158,7 +158,7 @@ public class GenerateConstructor_Action extends BaseAction {
           }
         }
         for (SNodeReference fieldPtr : selectedFields) {
-          SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
           SNode parameterDeclaration = _quotation_createNode_yl16du_a0b0f0r0a(SNodeOperations.copyNode(SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
           ListSequence.fromList(SLinkOperations.getChildren(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(parameterDeclaration);
           SNode expressionStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
@@ -177,7 +177,7 @@ public class GenerateConstructor_Action extends BaseAction {
     }
   }
   private SNode getClassConcept(final Map<String, Object> _params) {
-    return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+    return SNodeOperations.getNodeAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true, false);
   }
   protected static Logger LOG = LogManager.getLogger(GenerateConstructor_Action.class);
   private static SNode _quotation_createNode_yl16du_a0b0f0r0a(Object parameter_1, Object parameter_2) {

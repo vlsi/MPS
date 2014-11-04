@@ -4,11 +4,11 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
@@ -22,11 +22,11 @@ public class ReferenceMacro_GetReferent_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode referenceMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false);
+    SNode referenceMacro = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), false, false);
     SNode attributedNode = SNodeOperations.getParent(referenceMacro);
     String linkRole = AttributeOperations.getLinkRole(referenceMacro);
     ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
-    SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
     SNode targetConcept = SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     SNode expectedNodeType = _quotation_createNode_mxwyp3_a0g0a(targetConcept);
     // reference may be resolved dynamically? 

@@ -38,7 +38,7 @@ public class typeof_TrigonometricExpression_InferenceRule extends AbstractInfere
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238344499372", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238344499377", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qDouble), _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238344499359), "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238344499359), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237107700024l, "jetbrains.mps.baseLanguage.math.structure.ComplexType"))) {
             {
               SNode _nodeToCheck_1029348928467 = expression;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238344499408", 0, null);

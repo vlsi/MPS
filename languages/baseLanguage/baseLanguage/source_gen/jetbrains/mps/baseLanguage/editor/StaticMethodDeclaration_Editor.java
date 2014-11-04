@@ -52,7 +52,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_j4vm40_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_j4vm40_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_j4vm40_b0(editorContext, node));
@@ -92,7 +92,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_j4vm40_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._DeprecatedPart");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -109,7 +109,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_d0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -129,7 +129,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_e0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticInMethodDeclaration.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -146,7 +146,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_f0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -166,7 +166,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteNativeInMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -323,8 +323,8 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_j4vm40_a21a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -335,8 +335,8 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -345,7 +345,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j4vm40_o0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_j4vm40_a41a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_j4vm40_b41a(editorContext, node));
@@ -359,7 +359,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_a41a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     DeleteThrowsInMethods.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -422,7 +422,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j4vm40_p0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -449,7 +449,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_j4vm40_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -459,7 +459,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

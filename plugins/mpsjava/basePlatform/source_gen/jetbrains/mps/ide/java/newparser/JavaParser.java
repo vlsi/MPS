@@ -31,6 +31,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -317,7 +318,7 @@ public class JavaParser {
   }
   public static void tryResolveUnknowns(Iterable<SNode> roots) {
     for (SNode node : Sequence.fromIterable(roots)) {
-      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
+      List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8136348407761606757l, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SConcept[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
         final SNode unkNode = unk;

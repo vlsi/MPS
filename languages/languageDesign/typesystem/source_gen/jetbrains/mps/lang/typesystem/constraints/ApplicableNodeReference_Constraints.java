@@ -19,8 +19,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -44,38 +44,38 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
+            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), false, false);
             if (rule != null) {
               SNode appNode = SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode"));
               if (appNode != null) {
                 ListSequence.fromList(result).addElement(appNode);
               }
-              if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
-                SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, 1188820750135l, "anotherNode"));
+              if (SNodeOperations.isInstanceOf(rule, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"))) {
+                SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, 1188820750135l, "anotherNode"));
                 if (appNode2 != null) {
                   ListSequence.fromList(result).addElement(appNode2);
                 }
               }
-              if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")) {
-                SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, 1201607798918l, "supertypeNode"));
+              if (SNodeOperations.isInstanceOf(rule, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"))) {
+                SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, 1201607798918l, "supertypeNode"));
                 if (appNode2 != null) {
                   ListSequence.fromList(result).addElement(appNode2);
                 }
               }
             }
-            SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
+            SNode coerceStatement = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1176558773329l, "jetbrains.mps.lang.typesystem.structure.CoerceStatement"), false, false);
             while (coerceStatement != null) {
               if (SLinkOperations.getTarget(coerceStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176558773329l, 1176558876970l, "pattern")) != null) {
                 ListSequence.fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176558773329l, 1176558876970l, "pattern")));
               }
-              coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
+              coerceStatement = SNodeOperations.getNodeAncestor(coerceStatement, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1176558773329l, "jetbrains.mps.lang.typesystem.structure.CoerceStatement"), false, false);
             }
-            SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
+            SNode matchStatementItem = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1177514840044l, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), false, false);
             while (matchStatementItem != null) {
               if (SLinkOperations.getTarget(matchStatementItem, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1177514840044l, 1177514849858l, "condition")) != null) {
                 ListSequence.fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1177514840044l, 1177514849858l, "condition")));
               }
-              matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
+              matchStatementItem = SNodeOperations.getNodeAncestor(matchStatementItem, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1177514840044l, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), false, false);
             }
             return result;
           }

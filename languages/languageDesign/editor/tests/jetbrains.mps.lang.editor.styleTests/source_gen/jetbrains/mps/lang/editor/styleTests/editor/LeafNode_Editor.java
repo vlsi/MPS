@@ -28,7 +28,7 @@ public class LeafNode_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iqgd1i_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_iqgd1i_a0a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_iqgd1i_b0a(editorContext, node));

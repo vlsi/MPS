@@ -18,9 +18,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -90,7 +90,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
       final Wrappers._T<String> initialText = new Wrappers._T<String>("");
 
       final EditorCell_Label errorLabel = AddModelImportByRoot_Action.this.getErrorCell(_params);
-      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference");
+      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2948164764175055168l, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
 
       if (errorLabel != null) {
         initialText.value = errorLabel.getRenderedText();

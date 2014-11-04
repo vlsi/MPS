@@ -48,7 +48,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b1a(editorContext, node));
@@ -62,7 +62,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_r514zz_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_r514zz_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b1b0(editorContext, node));
@@ -86,7 +86,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_a1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_r514zz_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b0b1a(editorContext, node));
@@ -140,7 +140,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_c1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b2b1a(editorContext, node));
@@ -182,7 +182,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b4b1a(editorContext, node));
@@ -224,7 +224,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_g1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a6b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b6b1a(editorContext, node));
@@ -257,7 +257,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_r514zz_h1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_r514zz_a7b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b7b1a(editorContext, node));
@@ -270,7 +270,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_a7b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_r514zz_a0h1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b0h1b0(editorContext, node));
@@ -280,7 +280,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deprecated");
     editorCell.setCellId("Constant_r514zz_a0h1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -298,7 +298,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_b7b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a1h1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b1h1b0(editorContext, node));
@@ -340,7 +340,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_j1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a9b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b9b1a(editorContext, node));
@@ -382,7 +382,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_l1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a11b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b11b1a(editorContext, node));
@@ -424,7 +424,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r514zz_n1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_r514zz_a31b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b31b1a(editorContext, node));

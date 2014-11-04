@@ -41,10 +41,10 @@ public abstract class InlineVariableRefactoring {
         }
       }
     }
-    SNodeOperations.deleteNode(SNodeOperations.getAncestor(variable, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
+    SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(variable, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false));
   }
   public void optimizeAssignment(SNode assignment, SNode variable) {
-    SNode method = SNodeOperations.getAncestor(assignment, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    SNode method = SNodeOperations.getNodeAncestor(assignment, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
     Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
     AnalysisResult<Set<ReadInstruction>> reachingReads = program.analyze(new ReachingReadsAnalyzer());
     for (Instruction instruction : ListSequence.fromList(program.getInstructionsFor(assignment))) {
@@ -59,17 +59,17 @@ public abstract class InlineVariableRefactoring {
     SNodeOperations.deleteNode(SNodeOperations.getParent(assignment));
   }
   public SNode getBaseStatementList(SNode node) {
-    SNode current = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    while ((SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null)) {
-      current = SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    SNode current = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
+    while ((SNodeOperations.getNodeAncestor(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) != null)) {
+      current = SNodeOperations.getNodeAncestor(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     }
     return current;
   }
   public static InlineVariableRefactoring createRefactoring(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      return new InlineVariableAssignmentRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      return new InlineVariableAssignmentRefactoring(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
     } else {
-      return new InlineVariableReferenceRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"));
+      return new InlineVariableReferenceRefactoring(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")));
     }
   }
 }

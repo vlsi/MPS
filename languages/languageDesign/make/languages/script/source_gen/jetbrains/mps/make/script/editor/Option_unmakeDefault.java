@@ -52,10 +52,10 @@ public class Option_unmakeDefault extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
+      return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + (-1));
+      SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + (-1));
     }
     public String getKeyStroke() {
       return " DELETE";

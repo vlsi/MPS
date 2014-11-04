@@ -42,11 +42,11 @@ public class EditorCellModel_Behavior {
   }
   public static String call_getUniqueCellIdPrefix_8288068497638798229(SNode thisNode) {
     SNode containingNode = SNodeOperations.getContainingRoot(thisNode);
-    if (SNodeOperations.isInstanceOf(containingNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
+    if (SNodeOperations.isInstanceOf(containingNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
       return "";
     }
-    if (SNodeOperations.isInstanceOf(containingNode, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")) {
-      return EditorCellModel_Behavior.call_getAbbreviation_8288068497639139061(thisNode, SNodeOperations.cast(containingNode, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")) + "_";
+    if (SNodeOperations.isInstanceOf(containingNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"))) {
+      return EditorCellModel_Behavior.call_getAbbreviation_8288068497639139061(thisNode, SNodeOperations.cast(containingNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"))) + "_";
     }
     return containingNode.getNodeId().toString();
   }
@@ -69,14 +69,14 @@ public class EditorCellModel_Behavior {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1381004262292414836l, 1381004262292426837l, "parentStyleClass"));
   }
   public static boolean call_isSelectable_1219420196673(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186414928363l, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
     if ((firstItem == null)) {
       return true;
     }
     return SPropertyOperations.getBoolean(firstItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"));
   }
   public static void call_setSelectable_1241444765326(SNode thisNode, boolean newSelectable) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186414928363l, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
     if ((firstItem == null)) {
       firstItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
       ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(firstItem);
@@ -110,26 +110,26 @@ public class EditorCellModel_Behavior {
   }
   public static String call_getStyle_7730231143366568266(SNode thisNode) {
     // TODO: apply seted style to cell in editor 
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"));
     if (item == null) {
       return null;
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(item, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 4151393920404978387l, "key")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
   }
   public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186404549998l, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"));
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
   public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186404574412l, "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"));
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
   public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem");
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1214406454886l, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"));
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
   }
   public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186414999511l, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
     if ((firstItem == null)) {
       return false;
     }
@@ -139,14 +139,14 @@ public class EditorCellModel_Behavior {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), false);
   }
   public static int call_getFontSize_1221216397365(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
     if ((firstItem == null) || !(firstItem.hasProperty("value"))) {
       return EditorSettings.getInstance().getDefaultEditorFont().getSize();
     }
     return SPropertyOperations.getInteger(firstItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221209241505l, "value"));
   }
   public static int call_getFontStyle_1221053923273(SNode thisNode) {
-    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem");
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
     if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "PLAIN") == null || SPropertyOperations.hasValue(firstItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "QUERY", "PLAIN")) {
       return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getDefaultFontStyle_1221472292001", new Object[]{});
     }
@@ -179,7 +179,7 @@ public class EditorCellModel_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1164826688380l, "menuDescriptor")) != null) || (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1081339532145l, "keyMap")) != null) || (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1139959269582l, "actionMap")) != null)) {
       hasActionStuff = true;
     }
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList") && (SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 1165347032372l, "elementMenuDescriptor")) != null)) {
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) && (SLinkOperations.getTarget(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 1165347032372l, "elementMenuDescriptor")) != null)) {
       hasActionStuff = true;
     }
     if (hasActionStuff) {
@@ -203,7 +203,7 @@ public class EditorCellModel_Behavior {
     return false;
   }
   public static boolean call_getBooleanStyleValue_1237383442523(SNode thisNode, SNode styleItem, boolean defaultValue) {
-    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem");
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"));
     if ((item == null)) {
       return defaultValue;
     }
@@ -222,7 +222,7 @@ public class EditorCellModel_Behavior {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), false);
   }
   public static SNode call_getParentCollectionCell_9186828658634887710(SNode thisNode) {
-    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection"));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

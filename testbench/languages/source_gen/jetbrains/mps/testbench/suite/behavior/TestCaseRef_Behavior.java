@@ -20,7 +20,7 @@ public class TestCaseRef_Behavior {
   }
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     List<SNode> testMethods;
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "jetbrains.mps.lang.test.structure.NodesTestCase")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"))) {
       testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "virtual_getTestSet_1216130724401", new Object[]{});
     } else {
       testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "virtual_getTestMethods_2148145109766218395", new Object[]{});

@@ -35,7 +35,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_oq95n1_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     CommentedStatement_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -51,7 +51,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("statement");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

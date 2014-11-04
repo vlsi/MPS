@@ -19,9 +19,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +44,7 @@ public class GenerationContextOp_ParameterRef_Constraints extends BaseConstraint
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode templDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.generator.structure.IParameterizedTemplate", false, false);
+            SNode templDeclaration = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"), false, false);
             if ((templDeclaration != null) && ListSequence.fromList(SLinkOperations.getChildren(templDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isNotEmpty()) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(templDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))));
             }

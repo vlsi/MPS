@@ -21,11 +21,11 @@ public class typeof_OperationParm_LinkQualifier_InferenceRule extends AbstractIn
   }
   public void applyRule(final SNode operationParam, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode linkQualifier = SLinkOperations.getTarget(operationParam, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 5168775467716640652l, 5168775467716640653l, "linkQualifier"));
-    if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")) {
+    if (SNodeOperations.isInstanceOf(linkQualifier, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"))) {
       {
         SNode _nodeToCheck_1029348928467 = operationParam;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4228794276714510602", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4228794276714510614", true), (SNode) _quotation_createNode_m2dx3q_a0a0b0b(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(linkQualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, 1204851882689l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4228794276714510614", true), (SNode) _quotation_createNode_m2dx3q_a0a0b0b(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(linkQualifier, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, 1204851882689l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
       }
     } else {
       {

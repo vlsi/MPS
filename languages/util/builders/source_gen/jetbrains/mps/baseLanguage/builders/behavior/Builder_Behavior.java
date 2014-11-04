@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Builder_Behavior {
   public static void init(SNode thisNode) {
@@ -37,7 +37,7 @@ public class Builder_Behavior {
     return false;
   }
   public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept thisConcept, SNode context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false)).findFirst(new IWhereFilter<SNode>() {
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isLeaf_932644095877881871", new Object[]{}));
       }

@@ -65,7 +65,7 @@ public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3pil43_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_3pil43_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3pil43_b2a(editorContext, node));

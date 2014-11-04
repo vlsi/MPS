@@ -9,6 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -21,9 +24,9 @@ public class NoReturnInsideParallelFor_NonTypesystemRule extends AbstractNonType
   public NoReturnInsideParallelFor_NonTypesystemRule() {
   }
   public void applyRule(final SNode parallelFor, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    ListSequence.fromList(SNodeOperations.getDescendants(parallelFor, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(parallelFor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false) == parallelFor;
+        return SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false) == parallelFor;
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {

@@ -60,8 +60,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cmnz0s_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "try");
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "try");
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -77,8 +77,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("body");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -95,9 +95,9 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cmnz0s_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "try");
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "try");
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     TryStatement_DeleteBodyEndingBrace.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -148,7 +148,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_cmnz0s_a4a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -159,7 +159,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cmnz0s_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -170,8 +170,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cmnz0s_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "finally");
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "finally");
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -187,8 +187,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("finallyBody");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -205,8 +205,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cmnz0s_i0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "finally");
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "finally");
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

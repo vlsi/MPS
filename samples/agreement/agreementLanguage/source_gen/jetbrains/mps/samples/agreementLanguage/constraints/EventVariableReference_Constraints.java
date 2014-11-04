@@ -41,7 +41,7 @@ public class EventVariableReference_Constraints extends BaseConstraintsDescripto
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode eventType = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Event", true, false), MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, 1111793668132l, "type"));
+            SNode eventType = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, "jetbrains.mps.samples.agreementLanguage.structure.Event"), true, false), MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, 1111793668132l, "type"));
             return new SubnodesSearchScope(eventType);
           }
           @Override

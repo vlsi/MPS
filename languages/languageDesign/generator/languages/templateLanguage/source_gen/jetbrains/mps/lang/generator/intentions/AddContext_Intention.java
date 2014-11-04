@@ -68,7 +68,7 @@ public class AddContext_Intention implements IntentionFactory {
       SNode tNode = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"), null);
       SNode result = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
-      if (SNodeOperations.isInstanceOf(tNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      if (SNodeOperations.isInstanceOf(tNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), _quotation_createNode_4m6r5j_a0a0d0a(tNode));
       } else {
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), tNode);

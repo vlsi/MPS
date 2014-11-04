@@ -23,6 +23,6 @@ public class UnknownNew_Behavior {
     if ((claz == null)) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
-    return SNodeOperations.ofConcept(SLinkOperations.getChildren(claz, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(claz, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
   }
 }

@@ -5,16 +5,17 @@ package jetbrains.mps.debugger.api.lang.generator.template.generator.template.ma
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -23,10 +24,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7329423411587633024(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562217892l, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"));
   }
   public static boolean baseMappingRule_Condition_7329423411587656275(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562217892l, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator")));
   }
   public static Object propertyMacro_GetPropertyValue_6013762200472629077(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, 1104094430779068757l, "debuggerName"));
@@ -44,13 +45,13 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-305890210646176633l, -6498307851035425706l), 5789575999242884574l, 5789575999242884575l, "conceptDeclaration")), "virtual_getFqName_1213877404258", new Object[]{});
   }
   public static boolean ifMacro_Condition_4030433165042041058(final IfMacroContext _context) {
-    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3157158168562219320l, "createBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
+    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3157158168562219320l, "createBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), false, new SConcept[]{})).isNotEmpty();
   }
   public static boolean ifMacro_Condition_7796501636717933060(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex"))) || ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632085l, "isApplicable")) == null) && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint")) == null));
   }
   public static boolean ifMacro_Condition_7796501636717933370(final IfMacroContext _context) {
-    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3157158168562219320l, "createBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
+    return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3157158168562219320l, "createBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), false, new SConcept[]{})).isNotEmpty();
   }
   public static boolean ifMacro_Condition_1018031474355522788(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex")));

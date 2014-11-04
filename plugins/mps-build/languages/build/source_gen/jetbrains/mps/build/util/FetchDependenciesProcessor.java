@@ -5,13 +5,14 @@ package jetbrains.mps.build.util;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -29,7 +30,7 @@ public class FetchDependenciesProcessor {
     VisibleArtifacts artifacts = new VisibleArtifacts(project, genContext);
     artifacts.collect();
     UnpackHelper helper = new UnpackHelper(artifacts, genContext);
-    for (SNode dep : SNodeOperations.getDescendants(project, "jetbrains.mps.build.structure.BuildExternalDependency", false, new String[]{})) {
+    for (SNode dep : SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 841011766566205091l, "jetbrains.mps.build.structure.BuildExternalDependency"), false, new SConcept[]{})) {
       BehaviorReflection.invokeVirtual(Void.class, dep, "virtual_fetchDependencies_5908258303322131137", new Object[]{artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper)});
     }
     helper.eval();

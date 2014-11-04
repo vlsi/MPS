@@ -69,13 +69,13 @@ public class QueriesGenerated {
     return (SNodeOperations.getNextSibling(_context.getNode()) == null);
   }
   public static boolean ifMacro_Condition_5081393330032802689(final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), "jetbrains.mps.core.xml.structure.XmlNoSpaceValue"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 3080189811177426492l, "jetbrains.mps.core.xml.structure.XmlNoSpaceValue")));
   }
   public static boolean ifMacro_Condition_5081393330032741683(final IfMacroContext _context) {
     return (SNodeOperations.getNextSibling(_context.getNode()) == null);
   }
   public static boolean ifMacro_Condition_5081393330032799727(final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), "jetbrains.mps.core.xml.structure.XmlNoSpaceValue"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 3080189811177426492l, "jetbrains.mps.core.xml.structure.XmlNoSpaceValue")));
   }
   public static boolean ifMacro_Condition_5081393330032805834(final IfMacroContext _context) {
     return (SNodeOperations.getNextSibling(_context.getNode()) == null);
@@ -84,7 +84,7 @@ public class QueriesGenerated {
     return (SNodeOperations.getNextSibling(_context.getNode()) == null);
   }
   public static boolean ifMacro_Condition_5081393330032774218(final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), "jetbrains.mps.core.xml.structure.XmlNoSpaceValue"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 3080189811177426492l, "jetbrains.mps.core.xml.structure.XmlNoSpaceValue")));
   }
   public static SNode sourceNodeQuery_7417816926334825613(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6806790875199616463l, -5220878866465632027l), 9152904044274328259l, 9152904044274328260l, "element"));

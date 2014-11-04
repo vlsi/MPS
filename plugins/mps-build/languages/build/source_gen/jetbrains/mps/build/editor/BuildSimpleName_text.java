@@ -13,9 +13,9 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class BuildSimpleName_text extends KeyMapImpl {
@@ -57,7 +57,7 @@ public class BuildSimpleName_text extends KeyMapImpl {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
       }
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildStringPart"))) {
+      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702015l, "jetbrains.mps.build.structure.BuildStringPart")))) {
         return false;
       }
       return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text")));

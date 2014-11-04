@@ -33,11 +33,11 @@
       <node id="5379647004618378867" at="58,0,59,18" concept="6" />
       <node id="5379647004618378867" at="62,98,63,135" concept="5" />
       <node id="5379647004618378867" at="66,44,67,20" concept="6" />
-      <node id="3778783095369073642" at="74,142,75,343" concept="5" />
-      <node id="4739047193854568224" at="76,126,77,58" concept="5" />
-      <node id="4739047193854568233" at="77,58,78,328" concept="2" />
-      <node id="4739047193854568252" at="78,328,79,28" concept="6" />
-      <node id="4739047193854546269" at="80,134,81,301" concept="6" />
+      <node id="3778783095369073642" at="74,142,75,453" concept="5" />
+      <node id="4739047193854568224" at="76,233,77,58" concept="5" />
+      <node id="4739047193854568233" at="77,58,78,435" concept="2" />
+      <node id="4739047193854568252" at="78,435,79,28" concept="6" />
+      <node id="4739047193854546269" at="80,241,81,408" concept="6" />
       <node id="4739047193854568255" at="82,20,83,26" concept="6" />
       <node id="5379647004618378867" at="87,63,88,58" concept="6" />
       <node id="5379647004618378867" at="92,7,93,22" concept="6" />
@@ -56,7 +56,7 @@
       <node id="5379647004618378867" at="47,0,51,0" concept="4" trace="hasOwnCanBeParentMethod#()Z" />
       <node id="5379647004618378867" at="65,0,69,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="5379647004618378867" at="86,0,90,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="3778783095369073621" at="75,343,84,13" concept="3" />
+      <node id="3778783095369073621" at="75,453,84,13" concept="3" />
       <node id="5379647004618378867" at="37,0,47,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <node id="5379647004618378867" at="51,0,61,0" concept="4" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <node id="5379647004618378867" at="73,0,86,0" concept="4" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
@@ -70,13 +70,13 @@
       <scope id="5379647004618378867" at="48,44,49,16" />
       <scope id="5379647004618378867" at="55,51,56,68" />
       <scope id="5379647004618378867" at="66,44,67,20" />
-      <scope id="4739047193854546268" at="80,134,81,301" />
+      <scope id="4739047193854546268" at="80,241,81,408" />
       <scope id="4739047193854568254" at="82,20,83,26" />
       <scope id="5379647004618378867" at="87,63,88,58" />
       <scope id="3778783095369207576" at="95,148,96,16" />
       <scope id="3778783095369352260" at="98,148,99,16" />
       <scope id="5379647004618378867" at="30,0,33,0" />
-      <scope id="3778783095369073622" at="76,126,79,28">
+      <scope id="3778783095369073622" at="76,233,79,28">
         <var name="result" id="4739047193854568225" />
       </scope>
       <scope id="5379647004618378867" at="95,0,98,0">

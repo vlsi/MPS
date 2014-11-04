@@ -62,7 +62,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Interface")).where(new IWhereFilter<SNode>() {
+            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return TupleIntefaceUtils.isTupleInterface(it);
               }
@@ -83,7 +83,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierType_1240500098737(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration") && "extends".equals(SPropertyOperations.getString(_context.getLink(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) && "extends".equals(SPropertyOperations.getString(_context.getLink(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_6880792723344953334(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -196,7 +196,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final"), "" + (true));
+        SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration")), MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -216,7 +216,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1240401116348(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final")));
+    return !(SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration")), MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final")));
   }
   private static SNode _quotation_createNode_vpowte_a0a0a1a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

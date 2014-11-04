@@ -29,8 +29,8 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
   public typeOf_VarRef_InferenceRule() {
   }
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-      final SNode fieldDecl = SNodeOperations.cast(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+      final SNode fieldDecl = SNodeOperations.cast(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
       if ((fieldDecl == null)) {
         return;
       }
@@ -42,11 +42,11 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
 
       SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
       SNode fieldType = SLinkOperations.getTarget(fieldDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
-      if (SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      if (SNodeOperations.isInstanceOf(fieldType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
         Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
         BehaviorReflection.invokeVirtual(Void.class, thisType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-        fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(fieldType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+        fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
       }
       {
         SNode _nodeToCheck_1029348928467 = varRef;

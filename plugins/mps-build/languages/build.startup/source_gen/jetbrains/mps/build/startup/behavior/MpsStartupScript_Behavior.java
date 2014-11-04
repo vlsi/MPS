@@ -38,7 +38,7 @@ public class MpsStartupScript_Behavior {
     });
   }
   public static Iterable<SNode> call_getVmOptions_2693344784285058735(SNode thisNode, boolean is64bit) {
-    return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 2693344784283221851l, "vmOptions64")) : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 3885435385580627556l, "vmOptions")))), "jetbrains.mps.build.startup.structure.SimpleVmOptions");
+    return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 2693344784283221851l, "vmOptions64")) : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 3885435385580627556l, "vmOptions")))), MetaAdapterFactory.getConcept(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582732l, "jetbrains.mps.build.startup.structure.SimpleVmOptions"));
   }
   public static Iterable<SNode> call_getDefaultVmOptionsLines_2693344784285072660(SNode thisNode, boolean is64bit) {
     return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(thisNode, is64bit).split("\\s"))).where(new IWhereFilter<String>() {

@@ -23,7 +23,7 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode attr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
-    if (AttributeDesignTimeOperations.isMultipleAttribute(attr) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
+    if (AttributeDesignTimeOperations.isMultipleAttribute(attr) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583040688l, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"))) {
       {
         SNode _nodeToCheck_1029348928467 = operation;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2788452359612125336", 0, null);

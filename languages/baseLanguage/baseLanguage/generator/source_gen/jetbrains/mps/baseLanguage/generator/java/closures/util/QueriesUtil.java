@@ -5,14 +5,15 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -22,7 +23,7 @@ public class QueriesUtil {
   public QueriesUtil() {
   }
   public static SNode createClassType_forClosure_enclosingClass(SNode inputClosure, ITemplateGenerator generator) {
-    SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode enclosingClass = SNodeOperations.getNodeAncestor(inputClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if (enclosingClass == null) {
       // closure is not in class 
       enclosingClass = getJavaLangObject();
@@ -37,7 +38,7 @@ public class QueriesUtil {
     return outputClassType;
   }
   public static List<SNode> getTypeVars_from_Closure_enclosingClass(SNode inputClosure) {
-    SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode enclosingClass = SNodeOperations.getNodeAncestor(inputClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if (enclosingClass == null) {
       // closure is not in class 
       enclosingClass = getJavaLangObject();
@@ -48,13 +49,13 @@ public class QueriesUtil {
     // 
     // must be invoked in $COPY-SRC$ because use ref on class in 'input model' 
     // 
-    SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode enclosingClass = SNodeOperations.getNodeAncestor(nodeInsideClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if (enclosingClass == null) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
     }
-    SNode enclosingMethodOrClosure = SNodeOperations.getAncestorWhereConceptInList(nodeInsideClosure, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
+    SNode enclosingMethodOrClosure = SNodeOperations.getNodeAncestorWhereConceptInList(nodeInsideClosure, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure")}, false, false);
     // --- in closure 
-    if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.Closure")) {
+    if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure"))) {
       SNode fieldRef = _quotation_createNode_w9106s_a0a0h0d();
       SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(typeOfField, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), enclosingClass);
@@ -62,7 +63,7 @@ public class QueriesUtil {
       return fieldRef;
     }
     // --- in instance method 
-    if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+    if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(enclosingMethodOrClosure, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       SNode thisExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       SLinkOperations.setTarget(thisExpr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), enclosingClass);
       return thisExpr;
@@ -71,7 +72,7 @@ public class QueriesUtil {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
   private static SNode getJavaLangObject() {
-    return SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_w9106s_a0a0a4(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_w9106s_a0a0a4(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   private static SNode _quotation_createNode_w9106s_a0a0h0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

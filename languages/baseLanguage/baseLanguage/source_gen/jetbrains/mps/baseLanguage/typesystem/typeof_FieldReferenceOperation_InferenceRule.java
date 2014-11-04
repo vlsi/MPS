@@ -40,10 +40,10 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       typeCheckingContext.whenConcrete(OT, new Runnable() {
         public void run() {
           SNode fieldType = SLinkOperations.getTarget(fieldDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType") && SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")) && SNodeOperations.isInstanceOf(fieldType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
             Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
-            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+            BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
 
           {

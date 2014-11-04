@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
@@ -34,11 +34,11 @@ public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    if (!(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"))) {
+    if (!(SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression")))) {
       return false;
     } else {
-      SNode expr = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression");
-      return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, 6389121991274611516l, "expression"))), "jetbrains.mps.baseLanguage.math.structure.VectorType"));
+      SNode expr = SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"));
+      return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, 6389121991274611516l, "expression"))), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, "jetbrains.mps.baseLanguage.math.structure.VectorType")));
     }
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "964810815943407927");

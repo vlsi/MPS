@@ -32,7 +32,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, 2539347366864648268l, "archivePath")), "virtual_getLocalPath_5481553824944787364", new Object[]{context}) + "!";
   }
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    artifacts.needsFetch(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildLayout", false, false));
+    artifacts.needsFetch(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745364l, "jetbrains.mps.build.structure.BuildLayout"), false, false));
     // and still, ???? 
   }
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
@@ -53,7 +53,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
       }
       return null;
     }
-    DependenciesHelper helper = new DependenciesHelper(generationContext, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false));
+    DependenciesHelper helper = new DependenciesHelper(generationContext, SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false));
     String unpackPath = helper.contentLocations().get(DependenciesHelper.getOriginalNode(thisNode, generationContext));
     if ((unpackPath == null || unpackPath.length() == 0)) {
       generationContext.showErrorMessage(thisNode, "Empty unpack path for an archive relative path.");
@@ -62,7 +62,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
     return unpackPath;
   }
   public static String call_calculateUnpackPath_715289236985547394(SNode thisNode, Context context) {
-    SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
+    SNode nlayout = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3542413272732529456l, "jetbrains.mps.build.structure.BuildNamedLayout"), true, false);
     return context.getTempPath(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, 2539347366864648268l, "archivePath")), "virtual_getLastSegment_1368030936106771141", new Object[]{context.getMacros(thisNode)}).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : "default"));
   }
   public static SNode call_getUnpackTask_8990969321156029654(SNode thisNode, Context context) {

@@ -22,8 +22,8 @@ public class ClassStaticContainerProcessor extends AbstractStaticContainerProces
   @Override
   public SNode createMethodCall(SNode method, List<SNode> arguments) {
     SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.cast(this.myStaticContainer, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+    SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
     ListSequence.fromList(SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addSequence(ListSequence.fromList(arguments));
     return call;
   }

@@ -43,10 +43,10 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-99792949465233975l, -5897283353115830529l), 4844813484172611385l, 4844813484172611386l, "nodeExpr"))), "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
+            if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-99792949465233975l, -5897283353115830529l), 4844813484172611385l, 4844813484172611386l, "nodeExpr"))), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")))) {
               return new ArrayList<SNode>();
             }
-            return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-99792949465233975l, -5897283353115830529l), 4844813484172611385l, 4844813484172611386l, "nodeExpr"))), "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
+            return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-99792949465233975l, -5897283353115830529l), 4844813484172611385l, 4844813484172611386l, "nodeExpr"))), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

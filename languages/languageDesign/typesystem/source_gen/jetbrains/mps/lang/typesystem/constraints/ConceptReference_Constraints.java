@@ -46,8 +46,8 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
       public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         if ((newReferentNode != null) && newReferentNode != oldReferentNode) {
           SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), NameUtil.decapitalize(SPropertyOperations.getString(newReferentNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(referenceNode), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
-            SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(referenceNode), "jetbrains.mps.lang.typesystem.structure.InferenceRule"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "typeof_" + SPropertyOperations.getString(newReferentNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(referenceNode), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174643105530l, "jetbrains.mps.lang.typesystem.structure.InferenceRule"))) {
+            SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(referenceNode), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174643105530l, "jetbrains.mps.lang.typesystem.structure.InferenceRule")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "typeof_" + SPropertyOperations.getString(newReferentNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }
       }

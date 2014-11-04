@@ -82,8 +82,8 @@ public class GeneratorInternal_LibraryArtifacts_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_hkdrh7_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "paren-attrs");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "paren-attrs");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

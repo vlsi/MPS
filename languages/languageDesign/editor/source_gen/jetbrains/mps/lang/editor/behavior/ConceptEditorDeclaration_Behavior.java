@@ -23,7 +23,7 @@ public class ConceptEditorDeclaration_Behavior {
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     List<SNode> createdEditors = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(candidate, LanguageAspect.EDITOR);
     for (SNode createdEditor : createdEditors) {
-      if (SNodeOperations.isInstanceOf(createdEditor, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
+      if (SNodeOperations.isInstanceOf(createdEditor, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
         return false;
       }
     }

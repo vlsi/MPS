@@ -40,8 +40,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public void setHighLevelNode(SNode node) {
     myIsHighLevelInfoAvailable = true;
     myHighLevelNode = new SNodePointer(node);
-    myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
-    myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : myLowLevelName);
+    myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")));
+    myHighLevelName = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : myLowLevelName);
   }
   public void setHighLevelName(String highLevelName) {
     myHighLevelName = highLevelName;

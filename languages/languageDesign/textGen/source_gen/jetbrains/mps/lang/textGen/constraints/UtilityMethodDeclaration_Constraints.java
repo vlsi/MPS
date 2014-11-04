@@ -13,9 +13,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -33,7 +33,7 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         List<SNode> methods = new ArrayList<SNode>();
-        SNode textGen = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", false, false);
+        SNode textGen = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false);
         if (textGen != null) {
           while (true) {
             ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(textGen, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234526822589l, "function"))));

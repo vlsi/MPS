@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -21,15 +21,15 @@ public class typeof_ConstraintFunctionParameter_checkedNode_InferenceRule extend
   public typeof_ConstraintFunctionParameter_checkedNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false) != null)) {
-      SNode constraint = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false);
+    if ((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false) != null)) {
+      SNode constraint = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false);
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "2990203945683059391", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "2990203945683059402", true), (SNode) _quotation_createNode_98w0k3_a0b0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(constraint, MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 1148687202698l, "applicableLink")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
       }
-    } else if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", false, false) != null)) {
-      SNode defaultScope = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", false, false);
+    } else if ((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), false, false) != null)) {
+      SNode defaultScope = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1159285995602l, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), false, false);
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "2990203945683059428", 0, null);

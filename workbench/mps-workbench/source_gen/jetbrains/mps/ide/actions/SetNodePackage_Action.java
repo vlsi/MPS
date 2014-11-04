@@ -15,13 +15,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -73,7 +73,7 @@ public class SetNodePackage_Action extends BaseAction {
       boolean error = false;
       if (nodes != null) {
         for (SNode node : ListSequence.fromList(nodes)) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
+          if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")))) {
             error = true;
             break;
           }
@@ -115,8 +115,8 @@ public class SetNodePackage_Action extends BaseAction {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
             SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), dialog.getPackage());
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for (SNode aspect : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{}))) {
+            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+              for (SNode aspect : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{}))) {
                 SPropertyOperations.set(((SNode) aspect), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), dialog.getPackage());
               }
             }

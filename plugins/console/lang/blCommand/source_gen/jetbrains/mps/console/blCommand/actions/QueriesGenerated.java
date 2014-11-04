@@ -5,9 +5,9 @@ package jetbrains.mps.console.blCommand.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -26,15 +26,15 @@ import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_QueryExpression_4307205004138627841(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.QueryExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.QueryExpression"), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter")));
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, "jetbrains.mps.console.blCommand.structure.QueryExpression"))) {
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, "jetbrains.mps.console.blCommand.structure.QueryExpression")), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter")));
     } else {
       SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter"), null);
     }
   }
   public static void nodeFactory_NodeSetup_AbstractPrintExpression_7284872370241013747(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object")));
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"))) {
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object")));
     }
   }
   public static void nodeFactory_NodeSetup_ModulesScope_3492877759608901831(final IOperationContext operationContext, final NodeSetupContext _context) {

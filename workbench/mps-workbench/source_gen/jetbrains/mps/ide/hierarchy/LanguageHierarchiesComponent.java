@@ -417,7 +417,7 @@ outer:
       });
     }
     public SNode getNode() {
-      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     }
     public void paint(Graphics graphics) {
       Graphics2D g = (Graphics2D) graphics;

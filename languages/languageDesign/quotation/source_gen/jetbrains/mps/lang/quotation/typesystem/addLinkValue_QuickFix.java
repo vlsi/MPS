@@ -21,6 +21,6 @@ public class addLinkValue_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     SNode val = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
     SLinkOperations.setTarget(val, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link"), ((SNode) addLinkValue_QuickFix.this.getField("link")[0]));
-    ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(val);
+    ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode")), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(val);
   }
 }

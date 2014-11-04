@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -32,8 +34,8 @@ public class IGenericType_Behavior {
   public static SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, final Map<SNode, SNode> substitutions, final List<SNode> expTrace) {
     IGenericType_Behavior.call_walkDescendants_8203593308483669984(thisNode, expanded, new _FunctionTypes._return_P2_E0<Boolean, SNode, Queue<SNode>>() {
       public Boolean invoke(SNode desc, Queue<SNode> queue) {
-        if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-          SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
+        if (SNodeOperations.isInstanceOf(desc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+          SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(desc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
           if (next != desc) {
             SNodeOperations.replaceWithAnother(desc, SNodeOperations.copyNode(next));
             QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(desc)));

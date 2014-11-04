@@ -56,7 +56,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       editorCell.setRole("classifier");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ClassifierClassExpression_Editor.ClassifierClassExpression_generic_cellMenu_ejwutq_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -82,7 +82,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_ejwutq_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+      style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
@@ -97,7 +97,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SNodeOperations.cast(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
     }
     public boolean isReferentPresentation() {
       return false;

@@ -30,11 +30,11 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
     return null;
   }
   public static boolean isTestMethod(@NotNull SNode method) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) && SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).startsWith("test");
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) && SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).startsWith("test");
   }
   private static SNode check_pj3jcm_a0a0c(SNode checkedDotOperand, JUnit3MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.getAncestor(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      return SNodeOperations.getNodeAncestor(checkedDotOperand, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }
     return null;
   }

@@ -15,14 +15,14 @@ import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 public class InternalClassExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode type = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1174478619261l, 1174478663778l, "type"));
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
-        SNode icf = SNodeOperations.cast(type, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"))) {
+        SNode icf = SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
         String pack = NameUtil.namespaceFromLongName(SPropertyOperations.getString(icf, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, 1174914081067l, "fqClassName")));
         String name = NameUtil.shortNameFromLongName(SPropertyOperations.getString(icf, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, 1174914081067l, "fqClassName")));
         BaseLanguageTextGen.internalClassName(pack, name, node, this);
       } else {
-        BaseLanguageTextGen.internalClassifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), node, this);
+        BaseLanguageTextGen.internalClassifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), node, this);
       }
     } else {
       appendNode(type);

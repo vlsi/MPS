@@ -39,7 +39,7 @@ public class RefactoringParameterReference_Constraints extends BaseConstraintsDe
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getChildren(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902236376l, "parameter"));
+            return SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, "jetbrains.mps.lang.refactoring.structure.Refactoring"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902236376l, "parameter"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

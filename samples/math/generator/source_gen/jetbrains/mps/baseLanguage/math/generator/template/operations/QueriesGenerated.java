@@ -23,10 +23,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1237111605288(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236426976680l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
   }
   public static boolean baseMappingRule_Condition_1237111638742(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
   }
   public static boolean baseMappingRule_Condition_1237112518374(final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427162021l, "precondition")) != null;
@@ -53,13 +53,13 @@ public class QueriesGenerated {
     return _context.createUniqueName("v", null);
   }
   public static Object referenceMacro_GetReferent_1237125777321(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex")), "TmpLocalVar");
   }
   public static Object referenceMacro_GetReferent_1237112085618(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex")), "TmpLocalVar");
   }
   public static Object referenceMacro_GetReferent_1237112162700(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex")), "TmpLocalVar");
   }
   public static Object referenceMacro_GetReferent_1237113243060(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ForeachVar");
@@ -83,10 +83,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
   }
   public static boolean ifMacro_Condition_1237117033967(final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression");
+    return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236428480583l, "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"));
   }
   public static SNode sourceNodeQuery_1237191873553(final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression"))), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getBoxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
   public static SNode sourceNodeQuery_1237191873573(final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
@@ -104,7 +104,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var"));
   }
   public static SNode sourceNodeQuery_1237111816463(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426976680l, 1236427140288l, "iterable"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236426976680l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex")), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426976680l, 1236427140288l, "iterable"));
   }
   public static SNode sourceNodeQuery_1237125715824(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var"));
@@ -125,7 +125,7 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression")));
   }
   public static SNode sourceNodeQuery_1237123277187(final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression"))), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getBoxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
   public static SNode sourceNodeQuery_1237123277200(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427008116l, "expression"));

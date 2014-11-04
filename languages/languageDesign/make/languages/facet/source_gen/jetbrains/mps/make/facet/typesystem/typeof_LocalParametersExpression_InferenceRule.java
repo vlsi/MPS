@@ -20,7 +20,7 @@ public class typeof_LocalParametersExpression_InferenceRule extends AbstractInfe
   public typeof_LocalParametersExpression_InferenceRule() {
   }
   public void applyRule(final SNode lve, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode vars = SLinkOperations.getTarget(SNodeOperations.getAncestor(lve, "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7320828025189219295l, "parameters"));
+    SNode vars = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(lve, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7320828025189219295l, "parameters"));
     if (vars != null) {
       {
         SNode _nodeToCheck_1029348928467 = lve;

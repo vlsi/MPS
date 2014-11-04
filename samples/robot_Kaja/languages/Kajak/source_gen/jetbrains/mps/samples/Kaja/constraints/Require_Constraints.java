@@ -23,9 +23,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -69,7 +70,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
             {
               final Iterable<SNode> libraries = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.samples.Kaja.structure.Library")).where(new IWhereFilter<SNode>() {
                 public boolean accept(final SNode library) {
-                  return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "jetbrains.mps.samples.Kaja.structure.Require", false, new String[]{})).where(new IWhereFilter<SNode>() {
+                  return ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 4394627182934757449l, "jetbrains.mps.samples.Kaja.structure.Require"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
                       return it != _context.getContextNode();
                     }
@@ -86,7 +87,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
               });
               return new ListScope(libraries) {
                 public String getName(SNode child) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+                  return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
                 }
               };
             }
@@ -97,7 +98,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.Kaja.structure.CommandList") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.samples.Kaja.structure.Script");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, "jetbrains.mps.samples.Kaja.structure.CommandList")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)", "4394627182934757714");
   private static SNodePointer breakingNode_iz8172_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)", "4394627182935253715");

@@ -72,7 +72,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1nfcr6_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_1nfcr6_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1nfcr6_b2a(editorContext, node));
@@ -113,7 +113,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(required)");
     editorCell.setCellId("Constant_1nfcr6_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

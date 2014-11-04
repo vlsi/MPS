@@ -30,7 +30,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_1202327274819(final PropertyMacroContext _context) {
     SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
-    return "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1202327887568(final PropertyMacroContext _context) {
     SNode inputNode = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
@@ -71,21 +71,21 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1202338546473(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
-    String text = "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String text = "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), text);
     return result;
   }
   public static SNode mapSrcMacro_mapper_1202338683284(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
-    String text = "LEVEL 1: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String text = "LEVEL 1: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), text);
     return result;
   }
   public static SNode mapSrcMacro_mapper_1202338740199(final MapSrcMacroContext _context) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
-    String text = "LEVEL 2: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String text = "LEVEL 2: " + SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), text);
     return result;
   }

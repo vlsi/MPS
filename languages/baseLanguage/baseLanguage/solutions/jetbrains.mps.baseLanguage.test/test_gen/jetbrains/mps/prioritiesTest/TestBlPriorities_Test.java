@@ -44,52 +44,52 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
     }
     public void expressionPriorityRebalance(SNode e) {
       for (SNode child : SNodeOperations.getChildren(e)) {
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Expression")) {
-          this.expressionPriorityRebalance(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Expression"));
+        if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
+          this.expressionPriorityRebalance(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
         }
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-        ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
+        ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
       }
     }
     public Object eval(SNode e) {
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-        return this.evalBinaryOperation(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
+        return this.evalBinaryOperation(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
-        return SPropertyOperations.getInteger(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"));
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant"))) {
+        return SPropertyOperations.getInteger(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"));
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-        return SPropertyOperations.getBoolean(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"));
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
+        return SPropertyOperations.getBoolean(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"));
       }
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
     public Object evalBinaryOperation(SNode e) {
-      Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
-      Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
+      Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
 
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225892208569l, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"))) {
         return ((Integer) left) << ((Integer) right);
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224500764161l, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"))) {
         return ((Integer) left) & ((Integer) right);
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224500790866l, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"))) {
         return ((Integer) left) | ((Integer) right);
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224500799915l, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"))) {
         return ((Integer) left) ^ ((Integer) right);
       }
 
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
         return ((Boolean) left) && ((Boolean) right);
       }
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
         return ((Boolean) left) || ((Boolean) right);
       }
 
-      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+      if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
         return eq_p8h609_a0a0l0f2(left, right);
       }
 

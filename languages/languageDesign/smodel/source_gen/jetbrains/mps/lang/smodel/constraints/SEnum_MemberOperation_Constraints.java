@@ -41,7 +41,7 @@ public class SEnum_MemberOperation_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode enumNode = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, 1240930118028l, "enumDeclaration"));
+            SNode enumNode = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, 1240930118028l, "enumDeclaration"));
             if (enumNode != null) {
               return SLinkOperations.getChildren(enumNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"));
             }

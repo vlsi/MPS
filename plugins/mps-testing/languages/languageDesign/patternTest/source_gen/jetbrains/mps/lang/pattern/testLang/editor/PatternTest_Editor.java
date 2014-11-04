@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -78,7 +79,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -100,7 +101,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
       editorCell.setRole("pattern");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -116,8 +117,8 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -132,7 +133,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
       editorCell.setRole("nodeToMatch");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -148,8 +149,8 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -170,7 +171,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
       editorCell.setRole("matches");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -186,7 +187,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kasahx_i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_kasahx_a0i0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_kasahx_a8a(editorContext, node));
@@ -206,7 +207,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kasahx_a8a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_kasahx_a0i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kasahx_b0i0(editorContext, node));
@@ -214,14 +215,14 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a0i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a0i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a0i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -230,7 +231,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pattern variables matches:");
     editorCell.setCellId("Constant_kasahx_b0i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -240,7 +241,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_variable");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -281,7 +282,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kasahx_b8a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_kasahx_a1i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kasahx_b1i0(editorContext, node));
@@ -289,14 +290,14 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a1i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a1i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a1i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -305,7 +306,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Pattern properties matches:");
     editorCell.setCellId("Constant_kasahx_b1i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -315,7 +316,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_property");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -356,7 +357,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kasahx_c8a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_kasahx_a2i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kasahx_b2i0(editorContext, node));
@@ -364,14 +365,14 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a2i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136727061274l, "jetbrains.mps.lang.pattern.structure.ListPattern"), false, new SConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a2i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kasahx_a2i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -380,7 +381,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "List pattern matches:");
     editorCell.setCellId("Constant_kasahx_b2i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -390,7 +391,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_list");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

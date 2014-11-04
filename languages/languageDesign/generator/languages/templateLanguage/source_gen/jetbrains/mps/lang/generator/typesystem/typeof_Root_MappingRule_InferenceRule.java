@@ -29,7 +29,7 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
     if ((template != null)) {
       SNode attrib = AttributeOperations.getAttribute(template, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
       if ((attrib != null)) {
-        SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"));
+        SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"));
         SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
         if ((ruleApplicableConcept != null) && (templateApplicableConcept != null)) {
           if (!(SConceptOperations.isSubConceptOf(ruleApplicableConcept, NameUtil.nodeFQName(templateApplicableConcept)))) {

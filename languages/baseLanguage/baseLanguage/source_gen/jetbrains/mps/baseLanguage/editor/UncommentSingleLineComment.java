@@ -8,10 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentSingleLineComment {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -31,21 +31,21 @@ public class UncommentSingleLineComment {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode selected = editorContext.getSelectedNode();
-      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.CommentPart") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment") && !(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).contains(SNodeOperations.cast(selected, "jetbrains.mps.baseLanguage.structure.CommentPart")))) {
-        SNode prevLine = SNodeOperations.cast(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+      if (SNodeOperations.isInstanceOf(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && !(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).contains(SNodeOperations.cast(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"))))) {
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getParent(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
         ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))));
         SNodeOperations.deleteNode(node);
         return;
       }
-      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart")) {
-        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement")));
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"))) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement")));
         return;
       }
-      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.SingleLineComment") && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
+      if (SNodeOperations.isInstanceOf(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"))) {
         // if we got 'delete' for whole comment (not CommentPart), and this map is attached to double slash  
         // constant, it's likely we got 'Del' or 'Backspace' (no way to tell one from another) pressed over 
         // double slash constant. Try to join comment lines then. 
-        SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
         ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))));
         SNodeOperations.deleteNode(node);
       }
@@ -64,21 +64,21 @@ public class UncommentSingleLineComment {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode selected = editorContext.getSelectedNode();
-      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.CommentPart") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment") && !(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).contains(SNodeOperations.cast(selected, "jetbrains.mps.baseLanguage.structure.CommentPart")))) {
-        SNode prevLine = SNodeOperations.cast(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+      if (SNodeOperations.isInstanceOf(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && !(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).contains(SNodeOperations.cast(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"))))) {
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getParent(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
         ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))));
         SNodeOperations.deleteNode(node);
         return;
       }
-      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart")) {
-        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement")));
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"))) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement")));
         return;
       }
-      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.SingleLineComment") && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
+      if (SNodeOperations.isInstanceOf(selected, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"))) {
         // if we got 'delete' for whole comment (not CommentPart), and this map is attached to double slash  
         // constant, it's likely we got 'Del' or 'Backspace' (no way to tell one from another) pressed over 
         // double slash constant. Try to join comment lines then. 
-        SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(selected), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"));
         ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))));
         SNodeOperations.deleteNode(node);
       }

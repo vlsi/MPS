@@ -28,8 +28,8 @@ public class RuleWhileNotNull extends DataFlowConstructor {
     List<SNode> result = new ArrayList<SNode>();
     NullableUtil.getAndExpressions(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, 1076505808688l, "condition")), result);
     for (SNode condition : result) {
-      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
         if (notNullNode != null) {
           {
             Object object = condition;

@@ -4,9 +4,9 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildLayout_ExportAsJavaLibrary_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +14,7 @@ public class BuildLayout_ExportAsJavaLibrary_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_JavaLibrary")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6057319140845467763l, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"))) {
         return node == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2913098736709465755l, 2913098736709465758l, "library"));
       }
     }

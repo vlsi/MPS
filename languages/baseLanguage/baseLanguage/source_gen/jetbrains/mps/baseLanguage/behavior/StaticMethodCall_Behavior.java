@@ -40,7 +40,7 @@ public class StaticMethodCall_Behavior {
   }
   public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
     SNode classConcept1 = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"));
-    SNode classConcept2 = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classConcept2 = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     return classConcept1 == classConcept2;
   }
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {

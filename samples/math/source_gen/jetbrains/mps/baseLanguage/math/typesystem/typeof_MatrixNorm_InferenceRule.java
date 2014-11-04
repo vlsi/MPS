@@ -31,7 +31,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
       final SNode mT = typeCheckingContext.typeOf(SLinkOperations.getTarget(norm, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 920952925470358962l, 758819215871053777l, "mat")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835031830", true);
       typeCheckingContext.whenConcrete(mT, new Runnable() {
         public void run() {
-          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(mT), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
+          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(mT), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(norm, "Expression should have matrix or vector type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835032977", null, errorTarget);
@@ -48,7 +48,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
               } else if (MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a2a2a0a0a0b_0())) {
                 i = _quotation_createNode_8pyikg_a0a0a2a2a0a0a0b();
                 f = _quotation_createNode_8pyikg_a0b0a2a2a0a0a0b();
-              } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) {
+              } else if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"))) {
                 i = SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
                 f = SNodeOperations.copyNode(MathTypeUtil.qBigDecimal);
               }
@@ -57,13 +57,13 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033179", 0, null);
                 typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033176", true), (SNode) ((floatResult ? f : i)), _info_12389875345);
               }
-            } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
+            } else if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237107700024l, "jetbrains.mps.baseLanguage.math.structure.ComplexType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = norm;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033410", 0, null);
                 typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033415", true), (SNode) _quotation_createNode_8pyikg_a0a0a2a0a0a0b(), _info_12389875345);
               }
-            } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType")) {
+            } else if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237108887116l, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = norm;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033432", 0, null);

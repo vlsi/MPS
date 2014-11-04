@@ -39,8 +39,8 @@ public class QueriesGenerated {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path"), "jetbrains.mps.build.structure.BuildSourcePath");
   }
   public static void nodeFactory_NodeSetup_BuildMpsLayout_ModuleSources_2105528055260692131(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources")) {
-      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module")));
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"))) {
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module")));
     }
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildMps_ModuleSource_3189788309731979156(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

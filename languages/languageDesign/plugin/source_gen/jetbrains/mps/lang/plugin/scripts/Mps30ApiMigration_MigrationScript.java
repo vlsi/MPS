@@ -9,9 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -37,7 +37,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return StubRefUtil.isEnumClassifierReference(node, "f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)", "~SubProgressKind");
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNodeId targetNodeId = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "enumConstantDeclaration")).getTargetNodeId();
+        SNodeId targetNodeId = SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration")).getTargetNodeId();
         String value = (targetNodeId != null ? targetNodeId.toString() : null);
         if (value == null || value.endsWith("DEFAULT")) {
           StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0c0a0());
@@ -64,7 +64,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.progress.SubProgressKind");
+        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.progress.SubProgressKind");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a1());
@@ -124,7 +124,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.progress.ProgressMonitor");
+        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.progress.ProgressMonitor");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a4());
@@ -186,7 +186,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.ide.ui.MPSTree");
+        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.ide.ui.MPSTree");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a7());
@@ -206,7 +206,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.ide.ui.MPSTreeNode");
+        return StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.ide.ui.MPSTreeNode");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a8());
@@ -226,7 +226,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODES");
+        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, 1217252646389l, "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODES");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a9());
@@ -246,7 +246,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODES");
+        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODES");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a01());
@@ -266,7 +266,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODE");
+        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, 1217252646389l, "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODE");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a11());
@@ -286,7 +286,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODE");
+        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_NODE");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a21());
@@ -306,7 +306,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE");
+        return StubRefUtil.isReferenceToField(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, 1217252646389l, "key")), "jetbrains.mps.workbench.MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE");
       }
       public void doUpdateInstanceNode(SNode node) {
         StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0a31());
@@ -326,15 +326,15 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), "jetbrains.mps.workbench.MPSDataKeys"))) {
+        if (!(StubRefUtil.isReferenceToClass(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), "jetbrains.mps.workbench.MPSDataKeys"))) {
           return false;
         }
 
-        SNode ancestor = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        SNode ancestor = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
         return (ancestor != null) && eq_kgm8nx_a0a3a3a0a0a0a51a0(SPropertyOperations.getString(ancestor, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "MPSCommonDataKeys");
       }
       public void doUpdateInstanceNode(SNode node) {
-        StubRefUtil.replaceReference(node, SNodeOperations.getReference(_quotation_createNode_kyzgj4_a1a0a0o(), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")));
+        StubRefUtil.replaceReference(node, SNodeOperations.getReference(_quotation_createNode_kyzgj4_a1a0a0o(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")));
       }
       public boolean isShowAsIntention() {
         return false;

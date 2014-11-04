@@ -12,9 +12,9 @@ public class ExtensionObjectGetter_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, 3729007189729192405l, "extensionPoint")), MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType"));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, 3729007189729192405l, "extensionPoint")), MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType"));
   }
   public static SNode call_getReturnClassifierType_7261386713308443934(SNode thisNode) {
-    return ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, 3729007189729192405l, "extensionPoint")));
+    return ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, 3729007189729192405l, "extensionPoint")));
   }
 }

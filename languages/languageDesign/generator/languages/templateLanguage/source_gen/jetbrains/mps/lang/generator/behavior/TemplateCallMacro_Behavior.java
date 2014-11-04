@@ -27,7 +27,7 @@ public class TemplateCallMacro_Behavior {
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
   public static SNode call_getTemplate_982871510068205176(SNode thisNode) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
   }
   public static class Pattern_4ckpni_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;

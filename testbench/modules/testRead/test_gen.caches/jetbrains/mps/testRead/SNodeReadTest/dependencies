@@ -25,7 +25,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />

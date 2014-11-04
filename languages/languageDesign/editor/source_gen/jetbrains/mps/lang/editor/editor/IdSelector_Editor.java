@@ -38,7 +38,7 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xpgp09_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_string(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     AbstractCellSelector_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_cellId");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_string(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     AbstractCellSelector_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -79,8 +79,8 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xpgp09_c0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_string(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     AbstractCellSelector_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

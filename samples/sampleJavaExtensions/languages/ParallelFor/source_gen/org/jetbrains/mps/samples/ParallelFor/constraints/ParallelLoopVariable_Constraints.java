@@ -16,6 +16,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor {
@@ -53,7 +54,7 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
     return properties;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)", "47688671297852481");
 }

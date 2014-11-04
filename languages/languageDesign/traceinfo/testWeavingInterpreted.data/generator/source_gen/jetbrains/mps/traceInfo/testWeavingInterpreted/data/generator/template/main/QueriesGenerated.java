@@ -57,13 +57,13 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-22571445583983012l, -7559480957372974393l), 6186432342008318668l, 6186432342008533359l, "weaveEachMany"));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_6186432342008490339(final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept"), "map_RootConcept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-22571445583983012l, -7559480957372974393l), 6186432342008318668l, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept")), "map_RootConcept");
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_6186432342008522529(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_RootConcept");
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_6186432342008533384(final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept"), "map_RootConcept");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-22571445583983012l, -7559480957372974393l), 6186432342008318668l, "jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept")), "map_RootConcept");
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_6186432342008533368(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_RootConcept");

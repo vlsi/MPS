@@ -64,7 +64,7 @@ public class Interface_Behavior {
   }
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
+    if (SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == null) {
       return fqName;
     }
     int index = fqName.lastIndexOf(".");
@@ -88,8 +88,8 @@ public class Interface_Behavior {
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember")) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), "virtual_populateMember_7405920559687254644", new Object[]{context, classifierType});
+      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"))) {
+        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember")), "virtual_populateMember_7405920559687254644", new Object[]{context, classifierType});
       }
     }
 

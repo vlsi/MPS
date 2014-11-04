@@ -39,7 +39,7 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_drsbu8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new CreateRefcontextHint());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new CreateRefcontextHint());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_drsbu8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drsbu8_b0(editorContext, node));
@@ -192,7 +192,7 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_drsbu8_i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -44,7 +44,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor;
         SNode node = SModelOperations.getRootByName(model, "YetAnotherGoodConcept");
-        SNode property = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"))).first();
+        SNode property = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"))).first();
         refactoringContext.setSelectedNode(property);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newPropertyName);

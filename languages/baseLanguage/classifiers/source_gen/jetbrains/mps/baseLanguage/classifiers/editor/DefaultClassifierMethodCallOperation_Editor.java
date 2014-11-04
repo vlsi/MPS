@@ -44,7 +44,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     editorCell.setCellId("Collection_c9gv4j_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new DefaultClassifierMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new DefaultClassifierMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_c9gv4j_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c9gv4j_b0(editorContext, node));
@@ -64,7 +64,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       editorCell.setRole("member");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -175,8 +175,8 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_c9gv4j_a2a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

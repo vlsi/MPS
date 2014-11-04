@@ -50,7 +50,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleSources_Editor.ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0()}));
     return editorCell;
@@ -139,7 +139,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gp4zyx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gp4zyx_b0a(editorContext, node));

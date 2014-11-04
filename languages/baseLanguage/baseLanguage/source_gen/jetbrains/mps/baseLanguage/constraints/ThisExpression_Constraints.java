@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
@@ -62,10 +63,10 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (!(SNodeOperations.isInstanceOf(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+            if (!(SNodeOperations.isInstanceOf(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, "jetbrains.mps.baseLanguage.structure.ThisExpression")))) {
               return new EmptyScope();
             }
-            return new NamedElementsScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
+            return new NamedElementsScope(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, "jetbrains.mps.baseLanguage.structure.ThisExpression")))) {
               @Nullable
               @Override
               public SNode resolve(SNode contextNode, @NotNull String refText) {

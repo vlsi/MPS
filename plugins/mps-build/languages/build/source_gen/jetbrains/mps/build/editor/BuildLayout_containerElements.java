@@ -38,7 +38,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hdw7mg_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_hdw7mg_a0(editorContext, node));
     if (renderingCondition_hdw7mg_a1a(node, editorContext)) {
@@ -51,7 +51,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("BLE_refNodeList_children");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -94,7 +94,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_hdw7mg_a0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<empty>");
       return editorCell;
@@ -107,6 +107,6 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_hdw7mg_a1a(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).last(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848004876l, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")));
   }
 }

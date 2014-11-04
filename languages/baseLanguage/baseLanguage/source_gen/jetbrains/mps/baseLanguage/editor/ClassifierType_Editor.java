@@ -65,7 +65,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       editorCell.setRole("classifier");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -97,9 +97,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91bvrs_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new ClassifierType_ParameterDeclarationQuery());
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new ClassifierType_ParameterDeclarationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_91bvrs_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_91bvrs_b1a(editorContext, node));
@@ -114,8 +114,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_91bvrs_a1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -177,7 +177,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_91bvrs_c1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

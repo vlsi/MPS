@@ -27,9 +27,9 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_x1gmbt_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));

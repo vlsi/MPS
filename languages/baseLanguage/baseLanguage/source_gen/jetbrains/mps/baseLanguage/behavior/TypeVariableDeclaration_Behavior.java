@@ -40,7 +40,7 @@ public class TypeVariableDeclaration_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer buff = new StringBuffer();
-    buff.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    buff.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     buff.append(".");
     buff.append(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")) != null)) {
@@ -52,13 +52,13 @@ public class TypeVariableDeclaration_Behavior {
     return buff.toString();
   }
   public static SNode call_getTypeWithConcreteUpperBounds_4346214032091504651(SAbstractConcept thisConcept, SNode inputType, Set<SNode> visitedVars) {
-    if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), visitedVars);
+    if (SNodeOperations.isInstanceOf(inputType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), visitedVars);
     }
     SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), inputType, "virtual_getJavaType_1213877337345", new Object[]{});
-    if (SNodeOperations.isInstanceOf(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+    if (SNodeOperations.isInstanceOf(javaType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(javaType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
       return result;
     } else {
       return SNodeOperations.copyNode(javaType);

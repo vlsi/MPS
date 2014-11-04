@@ -21,7 +21,7 @@ public class typeof_AnalyzerFunParameterInput_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = input;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042364861", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042364858", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(input, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, 9177062368042359739l, "latticeElementType")), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042364858", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(input, MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, 9177062368042359739l, "latticeElementType")), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

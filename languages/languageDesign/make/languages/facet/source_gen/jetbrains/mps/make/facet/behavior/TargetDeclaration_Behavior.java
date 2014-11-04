@@ -4,9 +4,9 @@ package jetbrains.mps.make.facet.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 
@@ -14,10 +14,10 @@ public class TargetDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_facetDeclaration_7854369758457971846(SNode thisNode) {
-    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
   }
   public static String call_getTargetFqName_899969561582409481(SNode thisNode) {
-    String ffqn = FacetDeclaration_Behavior.call_getFacetFqName_1919086248986828221(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.make.facet.structure.FacetDeclaration"));
+    String ffqn = FacetDeclaration_Behavior.call_getFacetFqName_1919086248986828221(SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration")));
     return (ffqn != null ? ffqn + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {

@@ -26,7 +26,7 @@ public class BaseLanguageUtil {
     return scope.getClassifiers().contains(toClassifier);
   }
   public static SNode getSuperclass(SNode subClass) {
-    return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"))), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   private static SNode check_b9g70l_a0a0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {

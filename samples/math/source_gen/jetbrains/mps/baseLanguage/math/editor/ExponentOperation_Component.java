@@ -93,7 +93,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_spngij_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUPERSCRIPT);
     editorCell.getStyle().putAll(style);
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
     return editorCell;
@@ -105,7 +105,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node)))) {
         if (!(SPropertyOperations.getBoolean(a, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
-          ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
+          ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")));
         }
       }
       return result;
@@ -138,7 +138,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_spngij_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

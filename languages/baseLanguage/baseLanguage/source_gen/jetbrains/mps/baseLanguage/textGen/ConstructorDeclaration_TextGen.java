@@ -8,9 +8,9 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -30,9 +30,9 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) != null)) {
       appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
     }
-    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     BaseLanguageTextGen.annotations(node, this);
-    if (!(SNodeOperations.isInstanceOf(declaringClass, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+    if (!(SNodeOperations.isInstanceOf(declaringClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
       BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), this);
     } else {
       this.indentBuffer();
@@ -81,7 +81,7 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       {
         String traceableProperty = "";
         try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
+          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369891l, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
@@ -92,7 +92,7 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369890l, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);

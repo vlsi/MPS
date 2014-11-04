@@ -43,8 +43,8 @@ public class QueriesGenerated {
     SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
   public static void nodeFactory_NodeSetup_LinkDeclaration_850862791448416029(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      SNode sampleLink = SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+      SNode sampleLink = SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
       SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), SPropertyOperations.getString_def(sampleLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference"));
       SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), SPropertyOperations.getString_def(sampleLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1"));
       SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(sampleLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
@@ -52,8 +52,8 @@ public class QueriesGenerated {
     }
   }
   public static void nodeFactory_NodeSetup_PropertyDeclaration_850862791450337453(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
-      SNode sampleProperty = SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
+      SNode sampleProperty = SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"), SLinkOperations.getTarget(sampleProperty, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")));
       SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(sampleProperty, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     }
@@ -100,7 +100,7 @@ public class QueriesGenerated {
           public Iterable<SNode> compute() {
             return Sequence.fromIterable(new ConceptsScope(_context.getParentNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SNodeOperations.as(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+                return SNodeOperations.as(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -143,7 +143,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"), "" + (true));
+        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -169,7 +169,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final"), "" + (true));
+        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -198,7 +198,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           final boolean aggregation = SPropertyOperations.hasValue(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference");
           List<SNode> result = new ArrayList<SNode>();
-          SNode enclosingConcept = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+          SNode enclosingConcept = SNodeOperations.getNodeAncestor(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), true, false);
           List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept, false);
           for (SNode concept : ListSequence.fromList(directSupers)) {
             List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
@@ -313,7 +313,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return SNodeOperations.as(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+              return SNodeOperations.as(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
             }
           }).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
@@ -407,7 +407,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return SNodeOperations.as(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+              return SNodeOperations.as(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
             }
           }).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
@@ -500,7 +500,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return SNodeOperations.as(it, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration");
+              return SNodeOperations.as(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164218l, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
             }
           }).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {

@@ -124,7 +124,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setRole("variableDeclaration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0()}));
@@ -203,7 +203,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
+      if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))))) {
         SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", null);
         return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), node);
 

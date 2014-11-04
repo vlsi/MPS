@@ -105,11 +105,11 @@ public class MPSModulesPartitioner {
     return external;
   }
   public static Iterable<SNode> getModules(SNode project) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), "jetbrains.mps.build.mps.structure.BuildMps_Group")).translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, "jetbrains.mps.build.mps.structure.BuildMps_Group"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"));
       }
-    }).concat(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")));
+    }).concat(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))));
   }
   private class Node implements IVertex {
     private SNode module;
@@ -123,8 +123,8 @@ public class MPSModulesPartitioner {
       return (useMeta ? metaDependencies : dependencyNodes);
     }
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {
-      if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).skipExternalModules().generationDependenciesClosure();
+      if (SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
+        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"))).skipExternalModules().generationDependenciesClosure();
         for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {
@@ -138,8 +138,8 @@ public class MPSModulesPartitioner {
             SetSequence.fromSet(dependencyNodes).addElement(node);
           }
         }
-      } else if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-        SNode devkit = SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+      } else if (SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"))) {
+        SNode devkit = SNodeOperations.cast(module, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"));
         Iterable<SNode> extended = ListSequence.fromList(SLinkOperations.getChildren(devkit, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, 322010710375805250l, "extends"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375805242l, 322010710375805243l, "devkit")) != null);

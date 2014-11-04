@@ -62,7 +62,7 @@ public class AdaptableClassifierTarget {
     return aname + "_to_" + tname + "_adapter";
   }
   public SNode getTarget(SNode expr) {
-    SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+    SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
     ntype = (ntype == null ? TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) : ntype);
     assert ntype != null;
     final String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);

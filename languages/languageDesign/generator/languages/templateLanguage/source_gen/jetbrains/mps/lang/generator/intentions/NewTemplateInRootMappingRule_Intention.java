@@ -100,13 +100,13 @@ public class NewTemplateInRootMappingRule_Intention implements IntentionFactory 
         }
       }, new Setter<SNode>() {
         public void set(SNode root) {
-          if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+          if (!(SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")))) {
             return;
           }
-          SPropertyOperations.set(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name.value);
+          SPropertyOperations.set(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name.value);
           MacroIntentionsUtil.copyVirtualPackage(root, node);
           SLinkOperations.setTarget(AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"), SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept")));
-          SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"), SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"));
+          SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"), SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")));
           SelectionUtil.selectCell(editorContext, rule, "templateName");
         }
       });

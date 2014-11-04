@@ -21,7 +21,7 @@ public class check_FigureParameterAttribute_NonTypesystemRule extends AbstractNo
   public check_FigureParameterAttribute_NonTypesystemRule() {
   }
   public void applyRule(final SNode figureParameterAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "Non-public member specified as @FigureParemter", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9026300686792786362", null, errorTarget);

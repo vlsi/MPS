@@ -36,7 +36,7 @@ public class NodeSubstituteActionsBuilder_Behavior {
         return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
       }
 
-      SNode thisVarDecl = SNodeOperations.as(child, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
+      SNode thisVarDecl = SNodeOperations.as(child, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1178539929008l, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"));
       List<SNode> result = new ArrayList<SNode>();
       for (SNode nextVarDecl : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1178540170602l, "variable")))) {
         if (nextVarDecl == thisVarDecl) {

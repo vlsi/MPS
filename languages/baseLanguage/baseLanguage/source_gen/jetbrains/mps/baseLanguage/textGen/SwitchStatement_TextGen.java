@@ -37,7 +37,7 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
     for (SNode sc : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670772911l, "case"))) {
       this.appendNewLine();
       this.appendWithIndent("case ");
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression")), "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"))) {
         SNode enumConstant = (SNode) SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression"));
         this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       } else {
@@ -60,7 +60,7 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
       {
         String traceableProperty = "";
         try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
+          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369891l, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);

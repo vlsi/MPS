@@ -48,8 +48,8 @@ public class VariableUnifyingMigration {
         SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
         // copy smodel attributes 
         for (SNode attribute : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))) {
-          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), "jetbrains.mps.lang.core.structure.Attribute");
-          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(copy);
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute"));
+          ListSequence.fromList(SNodeOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).addElement(copy);
         }
         return result;
       }

@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -49,7 +49,7 @@ public class ClassCreator_Constraints extends BaseConstraintsDescriptor {
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (_context.getInEditor()) {
-              return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.baseLanguage.structure.Classifier"), _context.getEnclosingNode());
+              return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), _context.getEnclosingNode());
             }
             if (_context.getVisible()) {
               return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(_context.getParameterNode(), _context.getEnclosingNode());

@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029895l, 8974276187400029896l, "declaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_2990235398087273707(final PropertyMacroContext _context) {
-    SNode irb = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029895l, 8974276187400029896l, "declaration")), "jetbrains.mps.lang.resources.structure.IconResourceBundle", false, false);
+    SNode irb = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029895l, 8974276187400029896l, "declaration")), MetaAdapterFactory.getConcept(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029885l, "jetbrains.mps.lang.resources.structure.IconResourceBundle"), false, false);
     return JavaNameUtil.packageName(SNodeOperations.getModel(irb)) + "." + IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(irb);
   }
   public static Object propertyMacro_GetPropertyValue_7038317550322744907(final PropertyMacroContext _context) {

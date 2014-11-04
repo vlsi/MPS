@@ -54,7 +54,7 @@ public class LanguageTextGenDeclaration_Behavior {
   }
   public static List<SNode> call_getBaseTextGenComponents_1234781318244(SNode thisNode, List<SNode> list, SNode node) {
     ListSequence.fromList(list).addElement(node);
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"))) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration")))) {
       return list;
     } else {
       return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")));

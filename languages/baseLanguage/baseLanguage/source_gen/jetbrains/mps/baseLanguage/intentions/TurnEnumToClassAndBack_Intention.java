@@ -9,9 +9,9 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -60,10 +61,10 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) == null);
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) == null);
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "visibility") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "annotation") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass");
+    return SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) || SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation")) || SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")) || SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4063776913609769409");
@@ -81,10 +82,10 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") ? "Turn Enum to Class" : "Turn Class to Enum");
+      return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")) ? "Turn Enum to Class" : "Turn Class to Enum");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      final SNode classNode = (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) ? SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.EnumClass") : SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      final SNode classNode = (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) ? SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.EnumClass") : SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       SPropertyOperations.set(classNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))));
       SPropertyOperations.set(classNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName")));
@@ -99,12 +100,12 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
       ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))));
       ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addSequence(Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)));
 
-      ListSequence.fromList(SNodeOperations.getDescendants(classNode, "jetbrains.mps.baseLanguage.structure.SuperMethodCall", false, new String[]{})).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SNodeOperations.getNodeDescendants(classNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073063089578l, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), false, new SConcept[]{})).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           final SNode superMethodCall = it;
           SNode foundNewSuperMethod = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classNode, "virtual_getSuperclass_1240936569950", new Object[]{}))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SLinkOperations.getTarget(superMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+              return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), SLinkOperations.getTarget(superMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
             }
           });
           if ((foundNewSuperMethod != null)) {

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -31,11 +32,11 @@ public class QueriesGenerated {
         return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(it) && RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(it);
       }
     })) {
-      for (SNode builder : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(executor, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 7945003362267213473l, "execute")), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      for (SNode builder : ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(executor, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 7945003362267213473l, "execute")), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode commandBuilder) {
           return (ListSequence.fromList(SLinkOperations.getChildren(commandBuilder, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 856705193941281781l, "argument"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode arg) {
-              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arg, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281764l, 856705193941281765l, "parameterDeclaration")), "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration");
+              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arg, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281764l, 856705193941281765l, "parameterDeclaration")), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 8478830098674460022l, "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration"));
             }
           }) == null);
         }

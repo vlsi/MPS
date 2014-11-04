@@ -5,15 +5,15 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FixInstanceOfExpressionPrecedences_QuickFix extends QuickFix_Runtime {
   public FixInstanceOfExpressionPrecedences_QuickFix() {
   }
   public void execute(SNode node) {
-    SNode instanceOfExpression = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+    SNode instanceOfExpression = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"));
     SNodeOperations.replaceWithAnother(instanceOfExpression, SLinkOperations.getTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993304l, "leftExpression")));
     SNodeOperations.replaceWithAnother(((SNode) FixInstanceOfExpressionPrecedences_QuickFix.this.getField("expressionRoot")[0]), instanceOfExpression);
     SLinkOperations.setTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993304l, "leftExpression"), ((SNode) FixInstanceOfExpressionPrecedences_QuickFix.this.getField("expressionRoot")[0]));

@@ -78,31 +78,31 @@ public class InvertIfCondition_Intention implements IntentionFactory {
       // Invert condition 
       SNode condition = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
       if ((condition != null)) {
-        if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
-          condition = SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
+        if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression"))) {
+          condition = SLinkOperations.getTarget(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
         } else {
           SNode newCondition = null;
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null);
           } else
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
           } else
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506762703l, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", null);
           } else
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153417849900l, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanExpression", null);
           } else
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.LessThanExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506773034l, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", null);
           } else
-          if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression")) {
+          if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153422305557l, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"))) {
             newCondition = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
           }
           if (newCondition != null) {
-            SLinkOperations.setTarget(newCondition, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
-            SLinkOperations.setTarget(newCondition, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SLinkOperations.getTarget(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
+            SLinkOperations.setTarget(newCondition, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+            SLinkOperations.setTarget(newCondition, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SLinkOperations.getTarget(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
             condition = newCondition;
           } else {
             SNode notExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
@@ -121,15 +121,15 @@ public class InvertIfCondition_Intention implements IntentionFactory {
       if (ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isEmpty()) {
         newIfFalse = null;
       } else
-      if (ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
         newIfFalse = ListSequence.fromList(SLinkOperations.getChildren(ifTrue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
       } else {
         newIfFalse = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
-        SLinkOperations.setTarget(SNodeOperations.cast(newIfFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), ifTrue);
+        SLinkOperations.setTarget(SNodeOperations.cast(newIfFalse, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), ifTrue);
       }
       // Set new ifTrue 
-      if (SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-        newIfTrue = SLinkOperations.getTarget(SNodeOperations.cast(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
+      if (SNodeOperations.isInstanceOf(ifFalse, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"))) {
+        newIfTrue = SLinkOperations.getTarget(SNodeOperations.cast(ifFalse, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
       } else {
         newIfTrue = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
         if (ifFalse != null) {

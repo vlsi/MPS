@@ -26,8 +26,8 @@ public class IMethodLike_Behavior {
       ListSequence.fromList(statements).removeLastElement();
     }
     SNode lastStatement = ListSequence.fromList(statements).last();
-    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
+    if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"))) {
+      SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
       if (ListSequence.fromList(SLinkOperations.getChildren(innerStatementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isEmpty()) {
         return lastStatement;
       } else {
@@ -43,7 +43,7 @@ public class IMethodLike_Behavior {
     return true;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors", "virtual_suppress_3393165121846091591", new Object[]{child}) && eq_snrb2w_a0a0a0f(child, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{})) && SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StubStatementList");
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors", "virtual_suppress_3393165121846091591", new Object[]{child}) && eq_snrb2w_a0a0a0f(child, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{})) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5293379017992965193l, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
   }
   private static boolean eq_snrb2w_a0a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

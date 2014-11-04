@@ -44,8 +44,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_3_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,9 +74,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.MATCHING_LABEL, "block");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -97,8 +97,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("trueBranch");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,8 +115,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "block");
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "block");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -125,7 +125,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eb7h0d_f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_eb7h0d_a5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eb7h0d_b5a(editorContext, node));
@@ -150,8 +150,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_b5a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "else_block");
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "else_block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -166,8 +166,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("falseBranch");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -184,7 +184,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eb7h0d_d5a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "else_block");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "else_block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

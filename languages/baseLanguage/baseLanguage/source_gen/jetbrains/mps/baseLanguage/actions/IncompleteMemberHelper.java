@@ -35,7 +35,7 @@ public class IncompleteMemberHelper {
     Iterable<SNode> availableElements = ClassifierScopes.getVisibleClassifiersScope(member, true).getAvailableElements(pattern);
     return pattern.equals("string") || pattern.equals("map") || pattern.equals("set") || pattern.equals("list") || pattern.equals("sorted_set") || pattern.equals("sorted_map") || Sequence.fromIterable(availableElements).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_fp5qrn_a0a0a0a0a0a0b0d(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), pattern);
+        return eq_fp5qrn_a0a0a0a0a0a0b0d(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), pattern);
       }
     }).isNotEmpty();
   }
@@ -45,7 +45,7 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static boolean canBeField(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 8355037393080469281l, "native"))));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 8355037393080469281l, "native"))));
   }
 
   /*package*/ static boolean canBeMethod(SNode member) {
@@ -94,12 +94,12 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static String getNameOfConstructor(SNode member) {
-    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     return (clNode != null ? SPropertyOperations.getString(clNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "()" : null);
   }
 
   /*package*/ static boolean hasNameEqualToSurroundingClassifier(SNode member, String memberName) {
-    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     return clNode != null && SPropertyOperations.getString(clNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(memberName);
   }
 

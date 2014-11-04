@@ -26,14 +26,14 @@ public class AttributeUtil {
     List<SNode> valuesToDelete = new ArrayList<SNode>();
     SNode lastValue = null;
     for (SNode part : SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))) {
-      if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
-        if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")))) {
+      if (SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
+        if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue")), MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")))) {
           ListSequence.fromList(valuesToDelete).addElement(part);
         } else if (lastValue != null) {
-          SPropertyOperations.set(lastValue, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), SPropertyOperations.getString_def(lastValue, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), "") + SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
+          SPropertyOperations.set(lastValue, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), SPropertyOperations.getString_def(lastValue, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), "") + SPropertyOperations.getString(SNodeOperations.cast(part, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue")), MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
           ListSequence.fromList(valuesToDelete).addElement(part);
         } else {
-          lastValue = SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue");
+          lastValue = SNodeOperations.cast(part, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"));
         }
       } else {
         lastValue = null;

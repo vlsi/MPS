@@ -48,7 +48,7 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+        return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     });
     properties.put(MetaIdFactory.propId(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, 1211505677611l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, 1211505677611l), this) {
@@ -59,7 +59,7 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       @Override
       public Object getValue(SNode node) {
         String propertyName = "nestedName";
-        return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName"));
+        return SPropertyOperations.getString(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName"));
       }
     });
     properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l), this) {
@@ -70,13 +70,13 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       @Override
       public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
-        return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.IResolveInfo"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l, "resolveInfo"));
+        return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l, "resolveInfo"));
       }
     });
     return properties;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.IResolveInfo");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")) && SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213107437659");
 }

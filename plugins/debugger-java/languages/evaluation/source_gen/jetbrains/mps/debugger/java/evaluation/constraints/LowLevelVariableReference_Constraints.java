@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -45,7 +45,7 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode evaluator = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false);
+            SNode evaluator = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), false, false);
             if (SPropertyOperations.getBoolean(evaluator, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243739l, "isShowContext"))) {
               return SLinkOperations.getChildren(evaluator, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243735l, "variables"));
             }

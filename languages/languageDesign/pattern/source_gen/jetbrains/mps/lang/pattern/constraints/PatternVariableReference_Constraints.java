@@ -20,8 +20,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,7 +60,7 @@ public class PatternVariableReference_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode declaration : SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})) {
+            for (SNode declaration : SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SConcept[]{})) {
               if (SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
                 ListSequence.fromList(result).addElement(declaration);
               }
@@ -76,7 +77,7 @@ public class PatternVariableReference_Constraints extends BaseConstraintsDescrip
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false) != null;
+    return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "2248628811136240168");
   private static SNodePointer breakingNode_fw8caj_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "2248628811136175356");

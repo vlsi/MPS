@@ -5,6 +5,8 @@ package jetbrains.mps.lang.generator.intentions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.generator.helper.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,8 +16,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -29,8 +29,8 @@ public final class MacroIntentionsUtil {
     if ((enclosingMacro == null)) {
       return QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
     }
-    if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
-      return getConceptFrom(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
+    if (SNodeOperations.isInstanceOf(enclosingMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167951328751l, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"))) {
+      return getConceptFrom(SNodeOperations.cast(enclosingMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167951328751l, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")));
     }
     return null;
   }
@@ -38,7 +38,7 @@ public final class MacroIntentionsUtil {
     SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(macro);
     SNode returnType = TypeChecker.getInstance().getTypeOf(query);
     // ====== 
-    if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery")) {
+    if (SNodeOperations.isInstanceOf(query, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168024337012l, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery"))) {
       {
         GeneratedMatchingPattern pattern_iiuth6_a0d0b = new MacroIntentionsUtil.Pattern_iiuth6_a0a0a0a3a1();
         SNode coercedNode_iiuth6_a0d0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0d0b);
@@ -48,7 +48,7 @@ public final class MacroIntentionsUtil {
           return null;
         }
       }
-    } else if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery")) {
+    } else if (SNodeOperations.isInstanceOf(query, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167951910403l, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery"))) {
       {
         GeneratedMatchingPattern pattern_iiuth6_a0a3a1 = new MacroIntentionsUtil.Pattern_iiuth6_a0a0a0a0d0b();
         SNode coercedNode_iiuth6_a0a3a1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0a3a1);
@@ -103,7 +103,7 @@ public final class MacroIntentionsUtil {
     SPropertyOperations.set(to, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(SNodeOperations.getContainingRoot(from), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
   }
   public static boolean isInGeneratorModel(SNode node) {
-    return SNodeOperations.isInstanceOf(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), "jetbrains.mps.lang.project.structure.Generator");
+    return SNodeOperations.isInstanceOf(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, "jetbrains.mps.lang.project.structure.Generator"));
   }
   public static class Pattern_iiuth6_a0a0a0a3a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;

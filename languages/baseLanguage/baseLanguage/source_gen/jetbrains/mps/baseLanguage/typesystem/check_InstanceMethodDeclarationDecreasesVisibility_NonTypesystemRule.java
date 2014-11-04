@@ -31,20 +31,20 @@ public class check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRul
       return;
     }
 
-    SNode superVisibility = SLinkOperations.getTarget(SNodeOperations.cast(nearestOverriddenMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
+    SNode superVisibility = SLinkOperations.getTarget(SNodeOperations.cast(nearestOverriddenMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
     SNode myVisibility = SLinkOperations.getTarget(instanceMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
 
-    if (SNodeOperations.isInstanceOf(superVisibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility") || eq_68cpna_a0a7a1(SNodeOperations.getConceptDeclaration(myVisibility), SNodeOperations.getConceptDeclaration(superVisibility))) {
+    if (SNodeOperations.isInstanceOf(superVisibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) || eq_68cpna_a0a7a1(SNodeOperations.getConceptDeclaration(myVisibility), SNodeOperations.getConceptDeclaration(superVisibility))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(superVisibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility") && SNodeOperations.isInstanceOf(myVisibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+    if (SNodeOperations.isInstanceOf(superVisibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644641414l, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) && SNodeOperations.isInstanceOf(myVisibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return;
     }
-    if ((superVisibility == null) && !(SNodeOperations.isInstanceOf(myVisibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
+    if ((superVisibility == null) && !(SNodeOperations.isInstanceOf(myVisibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")))) {
       return;
     }
 
-    String classifierName = SPropertyOperations.getString(SNodeOperations.getAncestor(nearestOverriddenMethod, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String classifierName = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(nearestOverriddenMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     if (classifierName == null) {
       classifierName = "the super class";
     }

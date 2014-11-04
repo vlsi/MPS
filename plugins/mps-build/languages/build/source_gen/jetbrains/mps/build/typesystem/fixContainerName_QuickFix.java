@@ -5,10 +5,10 @@ package jetbrains.mps.build.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,10 +21,10 @@ public class fixContainerName_QuickFix extends QuickFix_Runtime {
     return "Change extension to " + ((String) fixContainerName_QuickFix.this.getField("newExtension")[0]);
   }
   public void execute(SNode node) {
-    SNode containerName = SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildString");
+    SNode containerName = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString"));
     SNode last = ListSequence.fromList(SLinkOperations.getChildren(containerName, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, 4903714810883783243l, "parts"))).last();
-    if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.build.structure.BuildTextStringPart")) {
-      SNode text = SNodeOperations.cast(last, "jetbrains.mps.build.structure.BuildTextStringPart");
+    if (SNodeOperations.isInstanceOf(last, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart"))) {
+      SNode text = SNodeOperations.cast(last, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart"));
       int dot = SPropertyOperations.getString(text, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text")).indexOf('.');
       SPropertyOperations.set(text, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), ((dot >= 0 ? SPropertyOperations.getString(text, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text")).substring(0, dot) : SPropertyOperations.getString(text, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text")))) + ((String) fixContainerName_QuickFix.this.getField("newExtension")[0]));
     } else {

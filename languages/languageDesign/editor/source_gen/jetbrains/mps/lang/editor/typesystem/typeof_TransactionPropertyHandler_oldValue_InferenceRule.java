@@ -8,18 +8,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TransactionPropertyHandler_oldValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_TransactionPropertyHandler_oldValue_InferenceRule() {
   }
   public void applyRule(final SNode value, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode transactionalProperty = SNodeOperations.getAncestor(value, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", false, false);
+    SNode transactionalProperty = SNodeOperations.getNodeAncestor(value, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1216380990741l, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), false, false);
     {
       SNode _nodeToCheck_1029348928467 = value;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2735767332089496685", 0, null);

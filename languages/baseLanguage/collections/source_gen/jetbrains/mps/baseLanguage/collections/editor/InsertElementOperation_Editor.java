@@ -43,7 +43,7 @@ public class InsertElementOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5acpf8_a0");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_Operation(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InsertElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_5acpf8_a0a0()}));

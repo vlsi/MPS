@@ -5,12 +5,14 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class VariableInitialized_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    NodeDataFlowCheckerUtil.checkDataFlow(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
+    NodeDataFlowCheckerUtil.checkDataFlow(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false));
   }
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeVariableInitializedCheck";

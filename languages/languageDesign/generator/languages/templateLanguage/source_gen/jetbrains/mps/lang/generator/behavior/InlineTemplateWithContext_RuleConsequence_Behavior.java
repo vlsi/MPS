@@ -8,13 +8,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InlineTemplateWithContext_RuleConsequence_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
-    List<SNode> fragments = SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode")), "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
+    List<SNode> fragments = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SConcept[]{});
     if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
       return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(ListSequence.fromList(fragments).first()));
     }

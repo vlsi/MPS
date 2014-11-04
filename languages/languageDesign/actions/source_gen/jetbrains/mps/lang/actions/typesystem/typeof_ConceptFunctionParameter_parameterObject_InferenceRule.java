@@ -18,19 +18,19 @@ public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule exten
   public typeof_ConceptFunctionParameter_parameterObject_InferenceRule() {
   }
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, 1177337679534l, "type")) != null) {
+    if (SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, 1177337679534l, "type")) != null) {
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503204", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503209", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, 1177337679534l, "type")), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503209", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177337641126l, 1177337679534l, "type")), _info_12389875345);
       }
       return;
     }
-    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, 1177508914797l, "type")) != null) {
+    if (SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, 1177508914797l, "type")) != null) {
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503121", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503126", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, 1177508914797l, "type")), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503126", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parameter, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, 1177508914797l, "type")), _info_12389875345);
       }
       return;
     }

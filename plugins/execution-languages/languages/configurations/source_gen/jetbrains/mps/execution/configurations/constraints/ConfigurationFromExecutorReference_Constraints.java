@@ -55,7 +55,7 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
     return properties;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "7806358006983738929");
 }

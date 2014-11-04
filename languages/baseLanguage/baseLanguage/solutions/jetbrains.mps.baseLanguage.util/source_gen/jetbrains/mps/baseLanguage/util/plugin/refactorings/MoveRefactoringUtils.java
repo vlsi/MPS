@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -19,14 +19,15 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class MoveRefactoringUtils {
   public MoveRefactoringUtils() {
   }
   public static void addNodeAtLink(SNode container, SNode node) {
-    if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.Classifier"), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
+    if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
     } else {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
@@ -61,7 +62,7 @@ public class MoveRefactoringUtils {
     addImportIfNeed(SNodeOperations.getModel(node), SNodeOperations.getModel(toImport));
   }
   public static void fixImportsFromNode(SNode node) {
-    for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+    for (SNode descendant : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SConcept[]{}))) {
       for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
         addNodeModelImportIfNeed(node, SLinkOperations.getTargetNode(reference));
       }

@@ -5,9 +5,9 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -19,16 +19,16 @@ public class NodeTypeSetCheckOperation_Behavior {
     final SNode operation = thisNode;
     PerformUtil.checkNodeWithTypeCheckingAction(node, new NodeTypeCheckingAction(operation) {
       public void checkOperation(TypeCheckingContext context) {
-        if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation")) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"))) {
           SNode type1 = context.getTypeDontCheck(getNodeToCheck());
           boolean hasType = false;
-          for (SNode type2 : (SLinkOperations.getChildren(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, 95706764259116184l, "type")))) {
+          for (SNode type2 : (SLinkOperations.getChildren(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, 95706764259116184l, "type")))) {
             if (MatchingUtil.matchNodes(type1, type2)) {
               hasType = true;
               break;
             }
           }
-          Assert.assertTrue("node type <" + NodeCheckerUtil.nodeWithIdToString(type1) + "> is not in <" + SLinkOperations.getChildren(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, 95706764259116184l, "type")) + ">", hasType);
+          Assert.assertTrue("node type <" + NodeCheckerUtil.nodeWithIdToString(type1) + "> is not in <" + SLinkOperations.getChildren(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 95706764259116183l, 95706764259116184l, "type")) + ">", hasType);
         }
       }
     });

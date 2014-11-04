@@ -17,8 +17,8 @@
   <root nodeRef="r:3327d2a2-75f9-4a1d-b66f-79d02cebe2d2(jetbrains.mps.lang.textGen.actions)/1234362649055">
     <file name="QueriesGenerated.java">
       <node id="1234362700251" at="32,203,33,93" concept="5" />
-      <node id="1234362735010" at="36,42,37,175" concept="5" />
-      <node id="1234362735019" at="37,175,38,83" concept="5" />
+      <node id="1234362735010" at="36,42,37,282" concept="5" />
+      <node id="1234362735019" at="37,282,38,83" concept="5" />
       <node id="1234362735048" at="39,36,40,101" concept="6" />
       <node id="1234362735040" at="41,18,42,65" concept="6" />
       <node id="1234362700251" at="47,40,48,228" concept="1" />
@@ -122,11 +122,11 @@
   </root>
   <root nodeRef="r:3327d2a2-75f9-4a1d-b66f-79d02cebe2d2(jetbrains.mps.lang.textGen.actions)/1237983620276">
     <file name="QueriesGenerated.java">
-      <node id="1237985010135" at="86,94,87,318" concept="1" />
-      <node id="1237985043793" at="87,318,88,40" concept="6" />
-      <node id="1237983689515" at="106,196,107,154" concept="6" />
+      <node id="1237985010135" at="86,94,87,421" concept="1" />
+      <node id="1237985043793" at="87,421,88,40" concept="6" />
+      <node id="1237983689515" at="106,196,107,257" concept="6" />
       <node id="1237983685138" at="106,0,109,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1237983685138#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="1237983685139" at="106,196,107,154" />
+      <scope id="1237983685139" at="106,196,107,257" />
       <scope id="1237983885241" at="86,94,88,40" />
       <scope id="1237983685138" at="106,0,109,0">
         <var name="_context" id="1237983685138" />

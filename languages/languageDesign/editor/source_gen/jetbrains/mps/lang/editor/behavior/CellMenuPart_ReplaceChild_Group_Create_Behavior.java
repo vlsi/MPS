@@ -4,9 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -22,7 +22,7 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     if (thisNode == null) {
       return null;
     }
-    SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, false);
+    SNode hostMenuPart = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1164824854750l, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), false, false);
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     return _quotation_createNode_tzpw84_a4a0(conceptOfChild);

@@ -43,7 +43,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
     } else {
       boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
       SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getLastStatement_1239354409446", new Object[]{});
-      if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
         somethingReturned = true;
       }
       if (!(somethingReturned)) {

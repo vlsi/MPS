@@ -38,7 +38,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_q1hswy_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_q1hswy_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_q1hswy_a0(editorContext, node));
@@ -49,7 +49,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q1hswy_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_q1hswy_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_q1hswy_b0a(editorContext, node));
@@ -127,9 +127,9 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_q1hswy_a1a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -140,7 +140,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     editorCell.setCellId("Constant_q1hswy_c0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, true);
     editorCell.getStyle().putAll(style);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

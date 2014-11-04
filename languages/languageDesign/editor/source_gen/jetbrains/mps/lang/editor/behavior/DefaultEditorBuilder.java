@@ -304,19 +304,19 @@ public class DefaultEditorBuilder {
     return sb.toString();
   }
   private boolean isStringProperty(SNode property) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")))) {
       return false;
     }
-    if (!((eq_xgdobq_a0a0b0y(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "string")))) {
+    if (!((eq_xgdobq_a0a0b0y(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "string")))) {
       return false;
     }
     return true;
   }
   private boolean isBooleanProperty(SNode property) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")))) {
       return false;
     }
-    if (!((eq_xgdobq_a0a0b0z(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "boolean")))) {
+    if (!((eq_xgdobq_a0a0b0z(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "boolean")))) {
       return false;
     }
     return true;

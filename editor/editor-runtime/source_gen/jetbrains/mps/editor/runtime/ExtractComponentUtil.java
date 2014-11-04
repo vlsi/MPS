@@ -5,13 +5,13 @@ package jetbrains.mps.editor.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -24,7 +24,7 @@ public class ExtractComponentUtil {
   public ExtractComponentUtil() {
   }
   public static void extractComponent(final SNode node, EditorContext editorContext) {
-    final SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
+    final SNode container = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false, false);
     final String componentName = Messages.showInputDialog(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()), "Enter a component name:", "", null);
     if (componentName == null) {
       return;

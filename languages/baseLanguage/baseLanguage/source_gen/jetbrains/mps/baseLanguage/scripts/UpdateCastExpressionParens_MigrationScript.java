@@ -27,7 +27,7 @@ public class UpdateCastExpressionParens_MigrationScript extends BaseMigrationScr
         return "jetbrains.mps.baseLanguage.structure.CastExpression";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) && PrecedenceUtil.needsParensAroundCastExpression(node);
+        return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) && PrecedenceUtil.needsParensAroundCastExpression(node);
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode expression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"));

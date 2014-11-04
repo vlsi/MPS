@@ -93,7 +93,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+      style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -110,9 +110,9 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2saq3j_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2saq3j_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2saq3j_b1a(editorContext, node));
@@ -130,7 +130,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2saq3j_a1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -230,7 +230,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
         editorCell.setCellId("Constant_2saq3j_a0a0b1a");
         Style style = new StyleImpl();
-        style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
         editorCell.getStyle().putAll(style);
         editorCell.setDefaultText("");
         return editorCell;
@@ -241,7 +241,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2saq3j_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_2saq3j_a0c1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2saq3j_a2b0(editorContext, node));
@@ -321,7 +321,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2saq3j_d1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -331,7 +331,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2saq3j_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -346,7 +346,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("controlClosure");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -363,7 +363,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2saq3j_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

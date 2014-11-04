@@ -58,7 +58,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kbrshr_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_kbrshr_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kbrshr_b1a(editorContext, node));
@@ -66,7 +66,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kbrshr_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691693l, "isHigh")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691693l, "isHigh")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept")));
   }
   private EditorCell createConstant_kbrshr_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

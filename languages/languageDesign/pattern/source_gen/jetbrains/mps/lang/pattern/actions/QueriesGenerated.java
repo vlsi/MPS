@@ -47,6 +47,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2879868312063095317(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false) != null;
+    return SNodeOperations.getNodeAncestor(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false) != null;
   }
 }

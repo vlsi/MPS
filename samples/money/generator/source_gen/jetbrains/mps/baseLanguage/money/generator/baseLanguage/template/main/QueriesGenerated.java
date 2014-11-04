@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1187352489455(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"));
   }
   public static boolean baseMappingRule_Condition_1187347436103(final BaseMappingRuleContext _context) {
     return Util.isPlusMinusExpressionMoneyExpression(_context.getNode());
@@ -43,10 +43,10 @@ public class QueriesGenerated {
     return new_node;
   }
   public static SNode sourceNodeQuery_1187347392064(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, 1187344039345l, "amount"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator")), MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, 1187344039345l, "amount"));
   }
   public static SNode sourceNodeQuery_1187347370038(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, 1187344093002l, "currency"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator")), MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, 1187344093002l, "currency"));
   }
   public static SNode sourceNodeQuery_1217888347510(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));

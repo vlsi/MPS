@@ -4,11 +4,11 @@ package jetbrains.mps.samples.heating.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,7 +17,7 @@ public class Slot_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getCustomizedSlot_935069066463578518(final SNode thisNode) {
-    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.heating.structure.DailyPlan");
+    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan"));
     SNode found = null;
     List<SNode> visitedPlans = new ArrayList<SNode>();
     while (found == null && (SLinkOperations.getTarget(dailyPlan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null)) {

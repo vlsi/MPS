@@ -20,7 +20,7 @@ public class BeanBuilder_Behavior {
     return _quotation_createNode_ef9w03_a0a0(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
   }
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return _quotation_createNode_ef9w03_a0a1(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return _quotation_createNode_ef9w03_a0a1(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
   }
   private static SNode _quotation_createNode_ef9w03_a0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

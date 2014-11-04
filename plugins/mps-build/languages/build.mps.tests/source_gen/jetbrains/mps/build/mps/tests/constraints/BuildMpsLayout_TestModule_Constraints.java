@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.build.mps.behavior.BuildMps_Solution_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -64,7 +65,7 @@ public class BuildMpsLayout_TestModule_Constraints extends BaseConstraintsDescri
             return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || !(BuildMps_Solution_Behavior.call_hasTestsSources_7354447573575923452(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
+                return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) || !(BuildMps_Solution_Behavior.call_hasTestsSources_7354447573575923452(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))));
               }
             };
           }
@@ -74,7 +75,7 @@ public class BuildMpsLayout_TestModule_Constraints extends BaseConstraintsDescri
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "8574011380873415725");
   private static SNodePointer breakingNode_6428vo_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "8574011380720160746");

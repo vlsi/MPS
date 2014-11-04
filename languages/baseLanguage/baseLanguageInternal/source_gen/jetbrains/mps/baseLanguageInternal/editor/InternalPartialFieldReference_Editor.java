@@ -94,7 +94,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bblft7_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bblft7_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bblft7_b4a(editorContext, node));
@@ -137,7 +137,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bblft7_c4a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -152,7 +152,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setRole("instance");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

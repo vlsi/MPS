@@ -43,7 +43,7 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560008022l, "tupleDeclaration")))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+            return ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")), MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560008022l, "tupleDeclaration")))).reversedList().translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode ntd) {
                 return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
               }

@@ -62,8 +62,8 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_lnoz1c_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     DeleteIncompleteRightParen.setCellActions(editorCell, node, editorContext);
     return editorCell;

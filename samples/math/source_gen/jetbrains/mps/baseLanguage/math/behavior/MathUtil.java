@@ -4,11 +4,11 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -20,8 +20,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class MathUtil {
   private static SNode[] operations = {_quotation_createNode_30uc9x_a0a(), _quotation_createNode_30uc9x_b0a(), _quotation_createNode_30uc9x_c0a(), _quotation_createNode_30uc9x_d0a(), _quotation_createNode_30uc9x_e0a(), _quotation_createNode_30uc9x_f0a(), _quotation_createNode_30uc9x_g0a(), _quotation_createNode_30uc9x_h0a(), _quotation_createNode_30uc9x_i0a(), _quotation_createNode_30uc9x_j0a()};
   public static boolean applicable(SNode contextParent) {
-    boolean operation_ok = SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.PlusExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.DivExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.MulExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.MinusExpression");
-    boolean types_ok = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
+    boolean operation_ok = SNodeOperations.isInstanceOf(contextParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242875l, "jetbrains.mps.baseLanguage.structure.PlusExpression")) || SNodeOperations.isInstanceOf(contextParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1095950406618l, "jetbrains.mps.baseLanguage.structure.DivExpression")) || SNodeOperations.isInstanceOf(contextParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1092119917967l, "jetbrains.mps.baseLanguage.structure.MulExpression")) || SNodeOperations.isInstanceOf(contextParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242869l, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    boolean types_ok = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106070629l, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237108887116l, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"));
     return operation_ok && types_ok;
   }
   public static SNode convert1(SNode bmc) {
@@ -248,23 +248,23 @@ public class MathUtil {
     if (MatchingUtil.matchNodes(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), _quotation_createNode_30uc9x_a0e0h())) {
       return 5;
     }
-    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) {
+    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"))) {
       return 6;
     }
-    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType")) {
+    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106070629l, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"))) {
       return 7;
     }
-    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
+    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237107700024l, "jetbrains.mps.baseLanguage.math.structure.ComplexType"))) {
       return 8;
     }
-    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigComplexType")) {
+    if (SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237108887116l, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"))) {
       return 9;
     }
     return 0;
   }
   public static SNode operConstant(SNode node) {
-    boolean b1 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType");
-    boolean b2 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
+    boolean b1 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106070629l, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"));
+    boolean b2 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237108887116l, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"));
     SNode operation = _quotation_createNode_30uc9x_a0c0i();
     if (b1) {
       operation = _quotation_createNode_30uc9x_a0a0d0i(MathUtil.getMathContext(node));
@@ -272,11 +272,11 @@ public class MathUtil {
     if (b2) {
       operation = _quotation_createNode_30uc9x_a0a0e0i(MathUtil.getMathContext(node));
     }
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation") && (b1 || b2)) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1238402702427l, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation")) && (b1 || b2)) {
       return operation;
-    } else if ((SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457276l, 1904947163751464663l, "context")) != null) && (b1 || b2)) {
+    } else if ((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457276l, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation")) && SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457276l, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation")), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457276l, 1904947163751464663l, "context")) != null) && (b1 || b2)) {
       return operation;
-    } else if ((SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, 1904947163751468044l, "context")) != null) && (b1 || b2)) {
+    } else if ((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation")) && SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation")), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, 1904947163751468044l, "context")) != null) && (b1 || b2)) {
       return operation;
     } else {
       return operations[getIndex(node)];

@@ -25,13 +25,13 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1206461877475(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
   }
   public static boolean baseMappingRule_Condition_1206461190505(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
   }
   public static boolean baseMappingRule_Condition_1206461124351(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getNodeAncestor(_context.getNode(), null, false, true), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");
   }
   public static boolean baseMappingRule_Condition_1206460092545(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "reduceInheritors", "none");

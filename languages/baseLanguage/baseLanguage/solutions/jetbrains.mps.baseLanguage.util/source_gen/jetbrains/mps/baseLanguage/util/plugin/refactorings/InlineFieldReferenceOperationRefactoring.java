@@ -12,7 +12,7 @@ public class InlineFieldReferenceOperationRefactoring extends InlineFieldRefacto
   private SNode myReference;
 
   public InlineFieldReferenceOperationRefactoring(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")))) {
       throw new IllegalArgumentException();
     }
 
@@ -23,7 +23,7 @@ public class InlineFieldReferenceOperationRefactoring extends InlineFieldRefacto
   public SNode doRefactoring() {
     SNode variable = SLinkOperations.getTarget(this.myReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"));
     SNode nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
-    SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(this.myReference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), nodeToSelect);
+    SNodeOperations.replaceWithAnother(SNodeOperations.getNodeAncestor(this.myReference, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"), false, false), nodeToSelect);
 
     this.optimizeDeclaration(variable);
     return nodeToSelect;

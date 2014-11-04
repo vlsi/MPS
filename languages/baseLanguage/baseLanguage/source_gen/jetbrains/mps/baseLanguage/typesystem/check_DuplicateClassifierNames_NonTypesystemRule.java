@@ -29,11 +29,11 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
   }
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-    if ((name == null || name.length() == 0) || SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+    if ((name == null || name.length() == 0) || SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       return;
     }
     Iterable<SNode> siblingClassifiers;
-    SNode parentClassifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode parentClassifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     if ((parentClassifier == null)) {
       siblingClassifiers = SModelOperations.getRoots(SNodeOperations.getModel(classifier), "jetbrains.mps.baseLanguage.structure.Classifier");
     } else {
@@ -45,11 +45,11 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
       }
       siblingClassifiers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentClassifier, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       });
     }

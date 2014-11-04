@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1174294166120l, 1174317636233l, "instance")) != null)) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1174294166120l, 1174317636233l, "instance")), "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"))) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1174294166120l, 1174317636233l, "instance")), MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1202838164916l, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression")))) {
         appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1174294166120l, 1174317636233l, "instance")));
         this.append(".");
       }

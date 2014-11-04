@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -40,7 +40,7 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", false, false);
+            SNode container = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 8022092943110829337l, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), false, false);
             return SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(6757083949642499970l, -9110065865172803712l), 8022092943110829337l, 1973189701690661983l, "staticFields"));
           }
           @Override

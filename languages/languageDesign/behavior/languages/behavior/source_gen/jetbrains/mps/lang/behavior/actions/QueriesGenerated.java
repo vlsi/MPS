@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -23,6 +23,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -33,7 +34,7 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ConceptMethodDeclaration_1238617792579(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode behaviour = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+    SNode behaviour = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(behaviour, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract"), "" + (true));
@@ -48,7 +49,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            SNode behavior = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
+            SNode behavior = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false);
             return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), _context.getParentNode());
           }
         }.compute();
@@ -71,7 +72,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1238617792565(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return false && SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, true, false) != null;
+    return false && SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194413805l, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration")}, true, false) != null;
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_SuperNodeExpression_7448026190102456640(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

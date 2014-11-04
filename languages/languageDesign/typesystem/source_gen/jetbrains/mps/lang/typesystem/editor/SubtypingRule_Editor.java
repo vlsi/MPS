@@ -47,7 +47,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "subtyping");
     editorCell.setCellId("Constant_156sr0_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -69,7 +69,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -86,7 +86,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_156sr0_d0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -95,7 +95,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_156sr0_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_156sr0_b1a(editorContext, node));
@@ -109,7 +109,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_156sr0_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_156sr0_b1b0(editorContext, node));
@@ -123,7 +123,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_a1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_156sr0_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_156sr0_b0b1a(editorContext, node));
@@ -163,7 +163,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_156sr0_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_156sr0_b1b1a(editorContext, node));
@@ -174,7 +174,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable");
     editorCell.setCellId("Constant_156sr0_a1b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -208,7 +208,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_156sr0_c1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -217,7 +217,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_d1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_156sr0_a3b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_156sr0_b3b1a(editorContext, node));
@@ -228,7 +228,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_156sr0_a3b1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -238,7 +238,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_156sr0_b3b1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "rule-block");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "rule-block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -247,7 +247,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_156sr0_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_156sr0_b4b1a(editorContext, node));
@@ -281,7 +281,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_156sr0_f1b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "rule-block");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "rule-block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

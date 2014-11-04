@@ -23,8 +23,8 @@ public class supertypesOf_ListType_SNodeList_SubtypingRule extends SubtypingRule
   }
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      ListSequence.fromList(result).addElement(_quotation_createNode_rq4kb9_a0a0a1a1(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"))));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
+      ListSequence.fromList(result).addElement(_quotation_createNode_rq4kb9_a0a0a1a1(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"))));
     }
     return result;
   }

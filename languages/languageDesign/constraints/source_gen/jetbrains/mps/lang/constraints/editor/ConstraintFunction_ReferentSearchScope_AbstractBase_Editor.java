@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -37,7 +39,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     editorCell.setCellId("Collection_5v10so_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_5v10so_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0(editorContext, node));
@@ -51,7 +53,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5v10so_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5v10so_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0a(editorContext, node));
@@ -60,8 +62,8 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createComponent_5v10so_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -69,8 +71,8 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "provider");
     editorCell.setCellId("Constant_5v10so_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -79,7 +81,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,7 +89,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createComponent_5v10so_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -95,7 +97,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -104,7 +106,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macros:");
     editorCell.setCellId("Constant_5v10so_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -113,7 +115,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5v10so_f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_5v10so_a5a(editorContext, node));
@@ -136,7 +138,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_a5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a0f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0f0(editorContext, node));
@@ -152,7 +154,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model of node containing reference");
     editorCell.setCellId("Constant_5v10so_b0f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -161,7 +163,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_b5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a1f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1f0(editorContext, node));
@@ -177,7 +179,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false when reference is being created");
     editorCell.setCellId("Constant_5v10so_b1f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -186,7 +188,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_c5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a2f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b2f0(editorContext, node));
@@ -202,7 +204,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node with the reference, or closest not-null context node");
     editorCell.setCellId("Constant_5v10so_b2f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -211,7 +213,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_d5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a3f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b3f0(editorContext, node));
@@ -227,7 +229,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target role in contextNode");
     editorCell.setCellId("Constant_5v10so_b3f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -236,7 +238,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_e5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a4f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b4f0(editorContext, node));
@@ -252,7 +254,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target index in contextRole");
     editorCell.setCellId("Constant_5v10so_b4f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -261,14 +263,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_f5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a5f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b5f0(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_5v10so_a5f0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 3906442776579556545l, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
   }
   private EditorCell createConstant_5v10so_a5f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterNode");
@@ -280,7 +282,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node to present (target of the referenceNode's reference)");
     editorCell.setCellId("Constant_5v10so_b5f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -289,7 +291,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_g5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a6f0(editorContext, node));
     return editorCell;
@@ -304,7 +306,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_h5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a7f0(editorContext, node));
     return editorCell;
@@ -313,7 +315,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Deprecated:");
     editorCell.setCellId("Constant_5v10so_a7f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -322,7 +324,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_i5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a8f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b8f0(editorContext, node));
@@ -332,7 +334,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode");
     editorCell.setCellId("Constant_5v10so_a8f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -341,7 +343,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5v10so_b8f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a1i5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1i5a(editorContext, node));
@@ -351,7 +353,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node that contains reference link");
     editorCell.setCellId("Constant_5v10so_a1i5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -360,8 +362,8 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(optional - may not exist yet)");
     editorCell.setCellId("Constant_5v10so_b1i5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -370,7 +372,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_j5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a9f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b9f0(editorContext, node));
@@ -380,7 +382,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkTarget");
     editorCell.setCellId("Constant_5v10so_a9f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -389,7 +391,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept where link can refer to (for specialized links)");
     editorCell.setCellId("Constant_5v10so_b9f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -398,7 +400,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_k5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a01f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b01f0(editorContext, node));
@@ -408,7 +410,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode");
     editorCell.setCellId("Constant_5v10so_a01f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -417,7 +419,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5v10so_b01f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a1k5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1k5a(editorContext, node));
@@ -427,7 +429,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent of referenceNode, null for root nodes");
     editorCell.setCellId("Constant_5v10so_a1k5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -436,7 +438,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceNode and ecnlosingNode cannot be null both at the same time");
     editorCell.setCellId("Constant_5v10so_b1k5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -445,7 +447,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5v10so_l5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a11f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b11f0(editorContext, node));
@@ -455,7 +457,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containingLink");
     editorCell.setCellId("Constant_5v10so_a11f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -464,7 +466,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5v10so_b11f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5v10so_a1l5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1l5a(editorContext, node));
@@ -474,7 +476,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration describing parent-child relationship between");
     editorCell.setCellId("Constant_5v10so_a1l5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -483,7 +485,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enclosingNode and referenceNode");
     editorCell.setCellId("Constant_5v10so_b1l5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

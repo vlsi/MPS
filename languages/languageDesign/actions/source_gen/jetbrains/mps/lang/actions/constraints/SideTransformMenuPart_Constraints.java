@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +32,7 @@ public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", false, false) != null;
+    return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), false, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1371735981988471174");
 }

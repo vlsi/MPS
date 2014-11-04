@@ -20,6 +20,6 @@ public class IncompleteMemberDeclaration_Behavior {
     return true;
   }
   public static boolean call_canBeMadeAbstract_6224545524881696659(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
   }
 }

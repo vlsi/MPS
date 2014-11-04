@@ -24,7 +24,7 @@ public class BaseEditorComponent_Behavior {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {
-          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       };
     }
@@ -32,7 +32,7 @@ public class BaseEditorComponent_Behavior {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {
-          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
+          return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
         }
       };
     }
@@ -40,7 +40,7 @@ public class BaseEditorComponent_Behavior {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {
-          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
+          return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
         }
       };
     }
@@ -48,7 +48,7 @@ public class BaseEditorComponent_Behavior {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {
-          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
+          return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
         }
       };
     }

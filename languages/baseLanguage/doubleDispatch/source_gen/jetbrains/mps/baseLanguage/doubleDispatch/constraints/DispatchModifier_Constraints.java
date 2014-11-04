@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
@@ -32,7 +33,7 @@ public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     // applicable only to java methods 
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d7b3732-9bef-45a8-98fa-22d696f27853(jetbrains.mps.baseLanguage.doubleDispatch.constraints)", "2403002034744707318");
 }

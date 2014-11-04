@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -20,7 +20,7 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
   public typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode hostBuilder = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", false, false);
+    SNode hostBuilder = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), false, false);
     SNode applicableConcept = SLinkOperations.getTarget(hostBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept"));
     {
       SNode _nodeToCheck_1029348928467 = node;

@@ -24,7 +24,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   }
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // see JLS 3.0 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType")), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       return Arrays.asList(_quotation_createNode_l6pagy_a0a0b0b(), _quotation_createNode_l6pagy_b0a0b0b(), _quotation_createNode_l6pagy_c0a0b0b());
     }
     return ListSequence.fromList(new ArrayList<SNode>());

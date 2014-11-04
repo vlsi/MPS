@@ -6,6 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
@@ -21,12 +24,12 @@ public class ConceptRef {
     boolean b3 = SConceptOperations.isExactly(concept1, NameUtil.nodeFQName(concept2));
   }
   public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
-    SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
-    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node)));
-    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept1));
-    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
-    SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
+    SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+    SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
+    SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(node)));
+    SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept1));
+    SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept2));
+    SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept2));
   }
   public void concept_conceptProperties(SNode exprConcept) {
     boolean b = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(exprConcept)), "virtual_lvalue_1262430001741497939", new Object[]{});
@@ -48,8 +51,8 @@ public class ConceptRef {
     exprConcept = n2;
     // ====== to concept 
     // - ok - 
-    SNode exprConc = SNodeOperations.castConcept(c1, "jetbrains.mps.baseLanguage.structure.Expression");
-    SNode bExprConc = SNodeOperations.castConcept(exprConcept, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    SNode exprConc = SNodeOperations.castConcept(c1, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
+    SNode bExprConc = SNodeOperations.castConcept(exprConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     exprConc = bExprConc;
     // -- not ok -- 
     bExprConc = exprConc;

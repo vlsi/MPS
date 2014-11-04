@@ -29,7 +29,7 @@ public class DeleteDeprecationOnAttributedNode {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
+      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), null);
       SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
@@ -43,7 +43,7 @@ public class DeleteDeprecationOnAttributedNode {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
+      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), null);
       SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }

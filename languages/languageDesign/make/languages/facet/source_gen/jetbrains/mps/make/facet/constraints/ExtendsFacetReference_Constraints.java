@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -45,11 +46,11 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
             // todo: rewrite using filtering scope on facets scope! 
             return Sequence.fromIterable(new FacetsScope(_context.getContextNode()).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SNodeOperations.cast(it, "jetbrains.mps.make.facet.structure.FacetDeclaration");
+                return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(it)).contains(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration")));
+                return !(Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(it)).contains(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"))));
               }
             });
           }

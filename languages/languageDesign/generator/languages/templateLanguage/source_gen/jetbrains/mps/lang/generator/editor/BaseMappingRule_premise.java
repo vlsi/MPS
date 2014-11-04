@@ -35,9 +35,9 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_v63wqt_a0(editorContext, node));
@@ -49,7 +49,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_v63wqt_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_v63wqt_b0a(editorContext, node));
@@ -60,7 +60,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setCellId("Constant_v63wqt_a0a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +108,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("BMR_property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -125,7 +125,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_v63wqt_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_v63wqt_b1a(editorContext, node));
@@ -136,7 +136,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setCellId("Constant_v63wqt_a1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -162,7 +162,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_v63wqt_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_v63wqt_b2a(editorContext, node));
@@ -173,7 +173,7 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setCellId("Constant_v63wqt_a2a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

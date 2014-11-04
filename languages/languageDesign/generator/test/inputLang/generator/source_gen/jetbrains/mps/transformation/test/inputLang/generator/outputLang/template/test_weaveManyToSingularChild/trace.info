@@ -172,11 +172,11 @@
     </file>
     <file name="QueriesGenerated.java">
       <node id="1218738691459" at="20,104,21,229" concept="7" />
-      <node id="1218738882048" at="23,104,24,353" concept="7" />
-      <node id="1218739852064" at="29,116,30,222" concept="7" />
+      <node id="1218738882048" at="23,104,24,456" concept="7" />
+      <node id="1218739852064" at="29,116,30,325" concept="7" />
       <scope id="1218738676458" at="20,104,21,229" />
-      <scope id="1218738876109" at="23,104,24,353" />
-      <scope id="1218738863686" at="29,116,30,222" />
+      <scope id="1218738876109" at="23,104,24,456" />
+      <scope id="1218738863686" at="29,116,30,325" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738789586">

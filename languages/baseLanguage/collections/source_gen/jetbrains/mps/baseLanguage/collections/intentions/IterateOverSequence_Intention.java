@@ -10,13 +10,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -51,7 +51,7 @@ public class IterateOverSequence_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // TODO replace with isSubtype() when MPS-10610 is fixed 
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SequenceType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SetType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), _quotation_createNode_7wizo7_b0a0b0a());
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, "jetbrains.mps.baseLanguage.collections.structure.SequenceType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, "jetbrains.mps.baseLanguage.collections.structure.ListType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1226511727824l, "jetbrains.mps.baseLanguage.collections.structure.SetType")) || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), _quotation_createNode_7wizo7_b0a0b0a());
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "309173295241374789");
@@ -73,8 +73,8 @@ public class IterateOverSequence_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
-      SNode outerStatement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      boolean deleteStatement = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+      SNode outerStatement = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
+      boolean deleteStatement = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
       SNodeOperations.insertNextSiblingChild(outerStatement, forStatement);
       SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence"), node);
       if (deleteStatement) {

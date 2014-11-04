@@ -40,16 +40,16 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
       return;
     }
 
-    boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
+    boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getNodeAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
-    }).isNotEmpty() || (SNodeOperations.getAncestor(expression, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
-    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), null, true)).where(new IWhereFilter<SNode>() {
+    }).isNotEmpty() || (SNodeOperations.getNodeAncestor(expression, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null);
+    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
-    }).isNotEmpty() || (SNodeOperations.getAncestor(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
+    }).isNotEmpty() || (SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null);
     if (expressionInTemplate && !(classifierInTemplate)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

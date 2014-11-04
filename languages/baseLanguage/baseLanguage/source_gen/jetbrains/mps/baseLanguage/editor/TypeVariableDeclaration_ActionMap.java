@@ -42,9 +42,9 @@ public class TypeVariableDeclaration_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
+      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"));
       if (ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isEmpty()) {
-        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")), "TYPE_VARIABLES_ANCHOR");
       }
     }
   }
@@ -57,9 +57,9 @@ public class TypeVariableDeclaration_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
+      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"));
       if (ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isEmpty()) {
-        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")), "TYPE_VARIABLES_ANCHOR");
       }
     }
   }

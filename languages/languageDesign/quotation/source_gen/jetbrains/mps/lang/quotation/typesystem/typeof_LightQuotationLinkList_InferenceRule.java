@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -23,7 +23,7 @@ public class typeof_LightQuotationLinkList_InferenceRule extends AbstractInferen
   public typeof_LightQuotationLinkList_InferenceRule() {
   }
   public void applyRule(final SNode list, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode lval = SNodeOperations.as(SNodeOperations.getParent(list), "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink");
+    final SNode lval = SNodeOperations.as(SNodeOperations.getParent(list), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"));
     SNode type;
     if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(lval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")))) {
       type = _quotation_createNode_ttlvyh_a0a0c0b(SLinkOperations.getTarget(SLinkOperations.getTarget(lval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")));

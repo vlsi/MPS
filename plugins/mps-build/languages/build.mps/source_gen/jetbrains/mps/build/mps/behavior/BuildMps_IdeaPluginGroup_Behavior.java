@@ -4,10 +4,10 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -17,8 +17,8 @@ public class BuildMps_IdeaPluginGroup_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
-        return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 6592112598314586626l, "group")), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"))).contains(SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {
+        return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 6592112598314586626l, "group")), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"))).contains(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")));
       }
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "virtual_exports_6547494638219603457", new Object[]{object});

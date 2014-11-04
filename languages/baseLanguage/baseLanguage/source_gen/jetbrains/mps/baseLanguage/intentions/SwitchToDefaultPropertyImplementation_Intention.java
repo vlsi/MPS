@@ -47,7 +47,7 @@ public class SwitchToDefaultPropertyImplementation_Intention implements Intentio
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201372606839l, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation")));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "6526572214144798617");

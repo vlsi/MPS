@@ -97,7 +97,7 @@ public class MembersPopulatingContext {
     return classifiers.size() == 1;
   }
   public boolean isElementVisible(SNode element) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(element, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(element, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
       return isPrivateVisible();
     }
     if ((SLinkOperations.getTarget(element, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null)) {

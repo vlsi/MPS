@@ -33,7 +33,7 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(final SNode node, final String propertyValue) {
         String propertyName = "start";
-        return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.samples.heating.structure.DailyPlan"), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).all(new IWhereFilter<SNode>() {
+        return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_wqhmm2_a0a0a0a0a0a0a0b0b0a1a0b0b(it, node) || SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) != (SPropertyOperations.getInteger(propertyValue));
           }

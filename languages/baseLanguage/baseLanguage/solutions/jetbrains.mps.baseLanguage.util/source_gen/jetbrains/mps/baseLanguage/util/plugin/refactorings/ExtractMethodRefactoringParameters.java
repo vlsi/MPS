@@ -8,10 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Iterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExtractMethodRefactoringParameters extends MethodModel {
@@ -60,7 +60,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
       for (SNode method : methods) {
         boolean good = this.isParametersMatch(method);
         if (good) {
-          return SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+          return SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         }
       }
     }

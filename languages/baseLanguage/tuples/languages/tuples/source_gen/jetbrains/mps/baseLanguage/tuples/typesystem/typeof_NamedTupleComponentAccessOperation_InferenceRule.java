@@ -16,6 +16,7 @@ import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -26,7 +27,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> PTYPES = new ArrayList<SNode>();
-    SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239576519914l, 1239576542472l, "component"))), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
+    SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239576519914l, 1239576542472l, "component"))), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
     for (SNode tvr : ListSequence.fromList(SLinkOperations.getChildren(tupleDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")))) {
       final SNode PTYPE_typevar_1239974367138 = typeCheckingContext.createNewRuntimeTypesVariable();
       ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getRepresentative(PTYPE_typevar_1239974367138));
@@ -37,11 +38,11 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode) _quotation_createNode_kga4po_a0d0b(tupleDecl, PTYPES), false, false, _info_12389875345);
     }
     SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239576519914l, 1239576542472l, "component")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1239462974287l, "type")));
-    if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
+    if (SNodeOperations.isInstanceOf(opType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+      int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(opType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
       opType = ListSequence.fromList(PTYPES).getElement(idx);
     } else {
-      List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
+      List<SNode> variableReferences = SNodeOperations.getNodeDescendants(opType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{});
       List<SNode> tvrs = new ArrayList<SNode>();
       ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
       for (SNode tvr : tvrs) {

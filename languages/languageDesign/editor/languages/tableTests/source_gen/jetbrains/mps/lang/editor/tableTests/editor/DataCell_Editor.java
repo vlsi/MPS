@@ -27,7 +27,7 @@ public class DataCell_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +18,7 @@ public class typeof_SwitchCase_InferenceRule extends AbstractInferenceRule_Runti
   public typeof_SwitchCase_InferenceRule() {
   }
   public void applyRule(final SNode switchCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode switchNode = SNodeOperations.as(SNodeOperations.getParent(switchCase), "jetbrains.mps.baseLanguage.structure.SwitchStatement");
+    SNode switchNode = SNodeOperations.as(SNodeOperations.getParent(switchCase), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement"));
     if ((switchNode != null)) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {

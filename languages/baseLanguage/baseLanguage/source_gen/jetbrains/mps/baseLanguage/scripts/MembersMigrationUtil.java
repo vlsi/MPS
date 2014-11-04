@@ -48,7 +48,7 @@ public class MembersMigrationUtil {
   private static SNode findNewBehaviorMethod(final String methodName) {
     List<SNode> methods = ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(classifierConcepts()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(it, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+        return SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(it, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {

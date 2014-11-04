@@ -73,7 +73,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -198,7 +198,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1i2int_a5a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -224,7 +224,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i2int_h0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_1i2int_a7a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1i2int_b7a(editorContext, node));
@@ -298,14 +298,14 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1i2int_i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_1i2int_a8a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1i2int_b8a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_1i2int_a8a(SNode node, EditorContext editorContext) {
-    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 8022092943109322131l, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"), false, false) != null);
   }
   private EditorCell createConstant_1i2int_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
@@ -343,7 +343,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1i2int_k0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

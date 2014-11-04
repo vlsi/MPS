@@ -21,13 +21,13 @@
       <node id="943668161921866886" at="49,154,50,217" concept="0" />
       <node id="943668161921859106" at="50,217,51,28" concept="3" />
       <node id="943668161921859028" at="53,64,54,209" concept="3" />
-      <node id="943668161921858949" at="63,183,64,142" concept="3" />
+      <node id="943668161921858949" at="63,183,64,249" concept="3" />
       <node id="943668161921929034" at="75,47,76,177" concept="3" />
       <node id="943668161921866960" at="84,98,85,146" concept="2" />
       <node id="943668161921866966" at="85,146,86,217" concept="0" />
       <node id="943668161921866973" at="86,217,87,28" concept="3" />
       <node id="943668161921866978" at="89,64,90,214" concept="3" />
-      <node id="943668161921866996" at="99,183,100,145" concept="3" />
+      <node id="943668161921866996" at="99,183,100,252" concept="3" />
       <node id="943668161921929148" at="39,0,42,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="943668161921858894" at="63,0,66,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921858894#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <node id="943668161921929030" at="75,0,78,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -36,10 +36,10 @@
       <node id="943668161921866953" at="73,44,78,32" concept="3" />
       <scope id="943668161921929149" at="39,47,40,177" />
       <scope id="943668161921859027" at="53,64,54,209" />
-      <scope id="943668161921858895" at="63,183,64,142" />
+      <scope id="943668161921858895" at="63,183,64,249" />
       <scope id="943668161921929031" at="75,47,76,177" />
       <scope id="943668161921866977" at="89,64,90,214" />
-      <scope id="943668161921866948" at="99,183,100,145" />
+      <scope id="943668161921866948" at="99,183,100,252" />
       <scope id="943668161921929148" at="39,0,42,0">
         <var name="it" id="943668161921929148" />
       </scope>

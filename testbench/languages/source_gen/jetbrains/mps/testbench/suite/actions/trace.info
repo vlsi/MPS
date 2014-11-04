@@ -95,7 +95,7 @@
       <node id="1280144168199520224" at="75,216,76,93" concept="5" />
       <node id="1280144168199520224" at="77,5,78,131" concept="5" />
       <node id="1280144168199520224" at="78,131,79,62" concept="5" />
-      <node id="1514755338276056527" at="82,44,83,388" concept="6" />
+      <node id="1514755338276056527" at="82,44,83,501" concept="6" />
       <node id="1280144168199520332" at="89,98,90,129" concept="5" />
       <node id="1280144168199520339" at="90,129,91,202" concept="1" />
       <node id="1280144168199631450" at="91,202,92,141" concept="1" />
@@ -116,7 +116,7 @@
       <node id="1280144168199520224" at="76,93,106,5" concept="0" />
       <node id="1280144168199520224" at="76,93,106,5" concept="0" />
       <node id="1280144168199520224" at="75,0,109,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_JUnit3TestCaseRef_1280144168199520224#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="1280144168199520224" at="82,44,83,388" />
+      <scope id="1280144168199520224" at="82,44,83,501" />
       <scope id="1280144168199520319" at="96,61,97,139" />
       <scope id="1280144168199520224" at="99,68,100,48" />
       <scope id="1280144168199520224" at="82,0,85,0" />
@@ -163,7 +163,7 @@
       <node id="1280144168199633207" at="109,216,110,93" concept="5" />
       <node id="1280144168199633207" at="111,5,112,131" concept="5" />
       <node id="1280144168199633207" at="112,131,113,62" concept="5" />
-      <node id="1514755338276204742" at="116,44,117,388" concept="6" />
+      <node id="1514755338276204742" at="116,44,117,501" concept="6" />
       <node id="1280144168199633278" at="123,98,124,129" concept="5" />
       <node id="1280144168199633284" at="124,129,125,202" concept="1" />
       <node id="1280144168199633290" at="125,202,126,141" concept="1" />
@@ -184,7 +184,7 @@
       <node id="1280144168199633207" at="110,93,140,5" concept="0" />
       <node id="1280144168199633207" at="110,93,140,5" concept="0" />
       <node id="1280144168199633207" at="109,0,143,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_JUnit4TestCaseRef_1280144168199633207#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="1280144168199633207" at="116,44,117,388" />
+      <scope id="1280144168199633207" at="116,44,117,501" />
       <scope id="1280144168199633325" at="130,61,131,139" />
       <scope id="1280144168199633207" at="133,68,134,48" />
       <scope id="1280144168199633207" at="116,0,119,0" />
@@ -231,7 +231,7 @@
       <node id="1280144168199742766" at="143,210,144,93" concept="5" />
       <node id="1280144168199742766" at="145,5,146,125" concept="5" />
       <node id="1280144168199742766" at="146,125,147,62" concept="5" />
-      <node id="1280144168199742781" at="150,44,151,149" concept="5" />
+      <node id="1280144168199742781" at="150,44,151,262" concept="5" />
       <node id="1280144168199742920" at="153,60,154,124" concept="6" />
       <node id="1280144168199742863" at="162,98,163,123" concept="5" />
       <node id="1280144168199742869" at="163,123,164,205" concept="1" />
@@ -244,7 +244,7 @@
       <node id="1280144168199742811" at="153,0,156,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
       <node id="1280144168199742766" at="169,0,172,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1280144168199742766" at="172,0,175,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1280144168199742804" at="151,149,156,32" concept="6" />
+      <node id="1280144168199742804" at="151,262,156,32" concept="6" />
       <node id="1280144168199742766" at="162,0,169,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1280144168199742766" at="150,0,158,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
       <node id="1280144168199742766" at="148,98,158,20" concept="5" />

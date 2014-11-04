@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,7 +28,6 @@ import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -70,19 +70,19 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode classifier = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              SNode classifier = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
               if (classifier == null) {
                 return new EmptyScope();
               }
-              final SNode enclosingProperty = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Property", false, false);
+              final SNode enclosingProperty = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
               SNode classifierType = _quotation_createNode_pyukpt_a0d0a0(classifier);
               return new NamedElementsScope(Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"));
                 }
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode it) {
-                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+                  return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"));
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
@@ -97,7 +97,7 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode ancestor = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false);
+    SNode ancestor = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
     if (ancestor != null) {
       if (eq_pyukpt_a0a0b0e(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 5862977038373003187l, 5862977038373003188l, "property")), ancestor)) {
         return false;

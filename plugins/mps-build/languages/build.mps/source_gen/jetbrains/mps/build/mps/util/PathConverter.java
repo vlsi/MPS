@@ -37,15 +37,15 @@ public class PathConverter {
     final List<SNode> withoutPath = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        String path = normalizePath(BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), Context.defaultContext()), true);
+        String path = normalizePath(BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro")), Context.defaultContext()), true);
         if (path != null && path.length() > 1) {
-          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro")));
+          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"))));
         } else {
-          ListSequence.fromList(withoutPath).addElement(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"));
+          ListSequence.fromList(withoutPath).addElement(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro")));
         }
       }
     });
@@ -63,7 +63,7 @@ public class PathConverter {
       relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
     } else {
       relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath");
-      SLinkOperations.setTarget(SNodeOperations.cast(relPath, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro"), macro);
+      SLinkOperations.setTarget(SNodeOperations.cast(relPath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro"), macro);
     }
     buildCompositePath(relPath, currPath, model);
     return relPath;

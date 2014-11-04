@@ -30,7 +30,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
       Style styleToPut;
       styleToPut = new StyleImpl();
       ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);
-      style.putAll(styleToPut);
+      style.putAll(styleToPut, 0);
     }
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_drvoix_a0(editorContext, node));
@@ -45,7 +45,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type an expression or {statements} to execute.");
     editorCell.setCellId("Constant_drvoix_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -54,7 +54,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type ? for a list of commands.");
     editorCell.setCellId("Constant_drvoix_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Press Ctrl+Enter to execute command.");
     editorCell.setCellId("Constant_drvoix_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -72,7 +72,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M, Ctrl+R and Ctrl+L to add imports and languages.");
     editorCell.setCellId("Constant_drvoix_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

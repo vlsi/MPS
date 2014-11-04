@@ -20,7 +20,7 @@ public class typeof_MigrationScriptPart_node_InferenceRule extends AbstractInfer
   public typeof_MigrationScriptPart_node_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", false, false), MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 1177457850499l, 1177457957477l, "affectedInstanceConcept"));
+    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 1177457850499l, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 1177457850499l, 1177457957477l, "affectedInstanceConcept"));
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "1209063748602", 0, null);

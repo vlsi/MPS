@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_createdNode_InferenceRule extends A
   public typeof_ConceptFunctionParameter_createdNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode ancestor = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
+    SNode ancestor = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177323996388l, "jetbrains.mps.lang.actions.structure.AddMenuPart"), false, false);
     SNode concept = SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177333529597l, 1177333551023l, "concept"));
     if (concept != null) {
       {

@@ -15,7 +15,7 @@ public class PropertyReference_Behavior {
     return Property_Behavior.call_hasSetter_1213877383224(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201385106094l, 1201385237847l, "property")));
   }
   public static boolean call_isBeingAssigned_6861608246250221916(SNode thisNode) {
-    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
-    return SNodeOperations.hasRole(parent, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue");
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+    return SNodeOperations.hasRole(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"));
   }
 }

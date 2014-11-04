@@ -5,13 +5,14 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import junit.framework.Assert;
 import jetbrains.mps.errors.MessageStatus;
 
@@ -29,7 +30,7 @@ public class CheckErrorMessagesAction implements Runnable {
   @Override
   public void run() {
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
-    List<SNode> descendants = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{});
+    List<SNode> descendants = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SConcept[]{});
     final Iterable<IErrorReporter> reporters = checker.getAllErrors();
     for (IErrorReporter reporter : reporters) {
       SNode child = reporter.getSNode();
@@ -52,7 +53,7 @@ public class CheckErrorMessagesAction implements Runnable {
     }
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.IChecksRules")) {
+      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 8578280453507219248l, "jetbrains.mps.lang.test.structure.IChecksRules"))) {
         return true;
       }
     }

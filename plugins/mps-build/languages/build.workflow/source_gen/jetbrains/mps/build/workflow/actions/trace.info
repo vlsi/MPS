@@ -70,7 +70,7 @@
       <node id="7926701909975920304" at="52,195,53,211" concept="1" />
       <node id="7926701909975919287" at="53,211,54,27" concept="5" />
       <node id="7926701909975919384" at="56,61,57,43" concept="5" />
-      <node id="7926701909975919248" at="69,194,70,350" concept="5" />
+      <node id="7926701909975919248" at="69,194,70,674" concept="5" />
       <node id="7926701909975921570" at="72,209,73,93" concept="4" />
       <node id="7926701909975921570" at="74,5,75,123" concept="4" />
       <node id="7926701909975921570" at="75,123,76,62" concept="4" />
@@ -115,7 +115,7 @@
       <node id="7926701909975921570" at="72,0,100,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_BwfFileSet_7926701909975921570#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <node id="7926701909975917808" at="100,0,128,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_BwfJavaDependency_7926701909975917808#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="7926701909975919381" at="56,61,57,43" />
-      <scope id="7926701909975919247" at="69,194,70,350" />
+      <scope id="7926701909975919247" at="69,194,70,674" />
       <scope id="7926701909975921570" at="85,60,86,25" />
       <scope id="7926701909975917808" at="113,60,114,25" />
       <scope id="7926701909975919246" at="69,0,72,0">

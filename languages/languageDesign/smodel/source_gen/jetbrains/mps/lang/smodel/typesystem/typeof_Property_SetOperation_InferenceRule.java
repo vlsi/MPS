@@ -9,9 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,10 +25,10 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
   }
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
-    if (!(SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"))) {
+    if (!(SNodeOperations.isInstanceOf(leftOperation, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138056022639l, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")))) {
       return;
     }
-    SNode propertyAccessOp = SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess");
+    SNode propertyAccessOp = SNodeOperations.cast(leftOperation, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138056022639l, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"));
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056022639l, 1138056395725l, "property")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
     if (!((dataType != null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -63,7 +63,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
         }
       } else
       if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(dataType)) {
-        if (!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.lang.smodel.structure.EnumMemberReference"))) {
+        if (!(SNodeOperations.isInstanceOf(value, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138676077309l, "jetbrains.mps.lang.smodel.structure.EnumMemberReference")))) {
           if (DataTypeDeclaration_Behavior.call_isEnumOfInteger_1220268950942(dataType)) {
             {
               SNode _nodeToCheck_1029348928467 = value;

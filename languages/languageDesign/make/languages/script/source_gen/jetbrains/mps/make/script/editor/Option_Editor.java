@@ -49,7 +49,7 @@ public class Option_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_nr3cqj_a0a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
+    return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
   }
   private EditorCell createProperty_nr3cqj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -59,7 +59,7 @@ public class Option_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

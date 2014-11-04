@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class AbstractStateMachineElement_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +32,7 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3337c730-5e29-47e4-8453-e911897300b4(jetbrains.mps.samples.multipleProjections.stateMachine.constraints)", "7943979732673457902");
 }

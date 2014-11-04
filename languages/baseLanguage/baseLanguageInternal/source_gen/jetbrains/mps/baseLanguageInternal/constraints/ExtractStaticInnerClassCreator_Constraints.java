@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -54,7 +54,7 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (_context.getInEditor()) {
-              return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.baseLanguage.structure.Classifier"), _context.getEnclosingNode());
+              return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), _context.getEnclosingNode());
             }
             if (_context.getVisible()) {
               return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(_context.getParameterNode(), _context.getEnclosingNode());
@@ -66,7 +66,7 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> res = new ArrayList<SNode>();
             SNode context = ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode());
-            for (SNode n : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", false)) {
+            for (SNode n : SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), false)) {
               if ((SLinkOperations.getTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 7738261905749564105l, "innerClass")) != null)) {
                 ListSequence.fromList(res).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SLinkOperations.getTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 7738261905749564105l, "innerClass")))));
               }

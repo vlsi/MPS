@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,7 +40,7 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
+            SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 3542758363529077353l, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"));
             return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), qualifierContainer, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
           }
           @Override

@@ -27,7 +27,7 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
     if (SPropertyOperations.getBoolean(abstractConceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
       return;
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {

@@ -52,6 +52,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
@@ -280,7 +281,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         public boolean accept(SNode it) {
           return eq_un708i_a0a0a0a0a0b1a0a0a0a13a21(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "mps_home");
         }
-      }), "jetbrains.mps.build.structure.BuildFolderMacro")), branding, plugin, buildNumber, dateMacro), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))));
+      }), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"))), branding, plugin, buildNumber, dateMacro), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))));
     } else {
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).addElement(_quotation_createNode_un708i_a0a0a0fb0m_0(name + ".zip", plugin));
     }
@@ -291,7 +292,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     PathConverter pathConverter = new PathConverter(buildProject);
     VisibleModules visible = new VisibleModules(buildProject);
     visible.collect();
-    for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{}))) {
+    for (SNode module : ListSequence.fromList(SNodeOperations.getNodeDescendants(buildProject, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"), false, new SConcept[]{}))) {
       try {
         ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
       } catch (ModuleLoaderException ex) {
@@ -322,9 +323,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).addElement(version);
     SNode buildNumber = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildVariableMacro") && eq_un708i_a0a0a0a0a0a0a11a31(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(_quotation_createNode_un708i_a0a0a0a0a0a0l0n(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, "jetbrains.mps.build.structure.BuildVariableMacro")) && eq_un708i_a0a0a0a0a0a0a11a31(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(_quotation_createNode_un708i_a0a0a0a0a0a0l0n(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
-    }), "jetbrains.mps.build.structure.BuildVariableMacro");
+    }), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, "jetbrains.mps.build.structure.BuildVariableMacro"));
 
     // copy-paste from buildDistribution 
     // we do not want to invent something complicated just before release 

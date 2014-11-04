@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -29,7 +30,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyValueReference_Constraints extends BaseConstraintsDescriptor {
@@ -69,19 +69,19 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode classifier = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              SNode classifier = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
               if (classifier == null) {
                 return new EmptyScope();
               }
-              final SNode enclosingProperty = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Property", false, false);
+              final SNode enclosingProperty = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
               SNode classifierType = _quotation_createNode_yrz94z_a0d0a0(classifier);
               return new NamedElementsScope(Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"));
                 }
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode it) {
-                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+                  return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"));
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
@@ -96,7 +96,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false) != null;
+    return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"), false, false) != null;
   }
   private static SNode _quotation_createNode_yrz94z_a0d0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

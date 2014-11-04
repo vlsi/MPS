@@ -54,7 +54,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Builder_5389689214216567780(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981707292l, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7057666463730278808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

@@ -41,7 +41,7 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
       List<SNode> classNodes = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", node, scope, monitor.subTask(1));
       ListSequence.fromList(classNodes).addElement(node);
       for (SNode classNode : ListSequence.fromList(classNodes)) {
-        for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
+        for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(classNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
           SNode interfaceNode = (SNode) SLinkOperations.getTarget(implementedInterface, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
           if ((interfaceNode != null)) {
             ListSequence.fromList(result).addElement(interfaceNode);

@@ -22,10 +22,10 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
   public check_LocalStaticMethodCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode localMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
       return;
     }
-    List<SNode> containers = SNodeOperations.getAncestors(localMethodCall, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
+    List<SNode> containers = SNodeOperations.getNodeAncestors(localMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
       List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(classConcept).getClassifiers();

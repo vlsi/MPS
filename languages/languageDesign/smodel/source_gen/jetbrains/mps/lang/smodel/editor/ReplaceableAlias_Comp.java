@@ -44,7 +44,7 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
   private EditorCell createComponent_gk1mhy_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAlias_Comp.ReplaceWith_SNodeOperation_cellMenu_gk1mhy_a0a0()}));
     return editorCell;

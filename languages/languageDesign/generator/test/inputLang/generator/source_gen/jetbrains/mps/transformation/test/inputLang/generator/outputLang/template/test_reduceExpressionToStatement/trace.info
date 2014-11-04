@@ -169,9 +169,9 @@
       <unit id="1209150022679" at="33,0,138,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1209150621175" at="20,104,21,373" concept="8" />
+      <node id="1209150621175" at="20,104,21,476" concept="8" />
       <node id="1209150505329" at="23,104,24,232" concept="8" />
-      <scope id="1209150617831" at="20,104,21,373" />
+      <scope id="1209150617831" at="20,104,21,476" />
       <scope id="1209150502312" at="23,104,24,232" />
     </file>
   </root>

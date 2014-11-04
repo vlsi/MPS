@@ -35,7 +35,7 @@ public class MPSActionReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5z7arn_a0");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

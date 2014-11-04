@@ -42,15 +42,15 @@ public class AnnotationUtil {
   public AnnotationUtil() {
   }
   public static boolean accept(SNode targetKinds, SNode hasAnnotation) {
-    if (SNodeOperations.isInstanceOf(targetKinds, "jetbrains.mps.baseLanguage.structure.ArrayLiteral")) {
-      for (SNode expr : SLinkOperations.getChildren(SNodeOperations.cast(targetKinds, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, 1188220173759l, "item"))) {
-        if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.EnumConstantReference") && acceptKind(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), hasAnnotation)) {
+    if (SNodeOperations.isInstanceOf(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"))) {
+      for (SNode expr : SLinkOperations.getChildren(SNodeOperations.cast(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, 1188220173759l, "item"))) {
+        if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) && acceptKind(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")), hasAnnotation)) {
           return true;
         }
       }
       return false;
-    } else if (SNodeOperations.isInstanceOf(targetKinds, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
-      return acceptKind(SNodeOperations.cast(targetKinds, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), hasAnnotation);
+    } else if (SNodeOperations.isInstanceOf(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"))) {
+      return acceptKind(SNodeOperations.cast(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")), hasAnnotation);
     } else {
       return false;
     }

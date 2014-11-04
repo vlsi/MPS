@@ -11,12 +11,12 @@
   </root>
   <root nodeRef="r:f7b87f92-a08a-4895-8bca-f9a67fdad62e(jetbrains.mps.execution.configurations.actions)/7806358006983765718">
     <file name="QueriesGenerated.java">
-      <node id="7806358006983766889" at="32,45,33,425" concept="0" />
+      <node id="7806358006983766889" at="32,45,33,533" concept="0" />
       <node id="7806358006983766902" at="39,98,40,153" concept="0" />
-      <node id="2186841766260430072" at="49,214,50,186" concept="0" />
+      <node id="2186841766260430072" at="49,214,50,294" concept="0" />
       <node id="2186841766260429985" at="49,0,52,0" concept="1" trace="nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="7806358006983766887" at="39,98,40,153" />
-      <scope id="2186841766260429986" at="49,214,50,186" />
+      <scope id="2186841766260429986" at="49,214,50,294" />
       <scope id="2186841766260429985" at="49,0,52,0">
         <var name="_context" id="2186841766260429985" />
         <var name="operationContext" id="2186841766260429985" />

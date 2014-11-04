@@ -28,7 +28,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
     if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
       return;
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {

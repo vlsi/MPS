@@ -41,7 +41,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
       List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(acd, LanguageAspect.EDITOR);
       if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
-          return SNodeOperations.isInstanceOf(a, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
+          return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
         }
       })) {
         return;

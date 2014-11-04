@@ -19,9 +19,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -45,11 +45,11 @@ public class SimpleBuilderDeclaration_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", true, false);
+            SNode container = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"), true, false);
             for (SNode builders : SimpleBuilders_Behavior.call_getAncestors_6211769134875410554(container)) {
               for (SNode dcl : SLinkOperations.getChildren(builders, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"))) {
-                if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+                if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
+                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")));
                 }
               }
             }

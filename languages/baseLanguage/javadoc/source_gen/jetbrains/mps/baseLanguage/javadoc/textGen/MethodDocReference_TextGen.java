@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class MethodDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode method = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-972752984950357426l, -4964296947050367098l), 2217234381367530195l, 2217234381367530196l, "methodDeclaration"));
-    this.append(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getFqName_1213877404258", new Object[]{}));
+    this.append(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), "virtual_getFqName_1213877404258", new Object[]{}));
     this.append("#");
     this.append(SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     this.append("(");

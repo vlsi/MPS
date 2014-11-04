@@ -39,7 +39,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "solution");
     editorCell.setCellId("Constant_ns5ajd_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0()}));

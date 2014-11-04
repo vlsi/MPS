@@ -28,9 +28,9 @@ public class check_ClassCreatorConstructorVisibility_NonTypesystemRule extends A
     String visibilityName = "public";
     if (visibility == null) {
       visibilityName = "package-local";
-    } else if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    } else if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
       visibilityName = "private";
-    } else if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+    } else if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644641414l, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       visibilityName = "protected";
     }
 

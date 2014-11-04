@@ -44,7 +44,7 @@ public class _CellKeyMapLnk_Component implements ConceptEditorComponent {
       editorCell.setRole("keyMap");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -75,7 +75,7 @@ public class _CellKeyMapLnk_Component implements ConceptEditorComponent {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("_CKMLC_property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.DRAW_BORDER, true);
+      style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

@@ -47,7 +47,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     editorCell.setCellId("VDNCC_property_name");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     if (renderingCondition_j36akn_a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -64,7 +64,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
   }
   private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext) {
     boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "jetbrains.mps.baseLanguage.structure.Type")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))) {
       return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
     } else {
       return condition;

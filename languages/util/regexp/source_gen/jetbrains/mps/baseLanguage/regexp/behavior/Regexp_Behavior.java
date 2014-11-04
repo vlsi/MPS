@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -17,8 +17,8 @@ public class Regexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getTopLevelRegexp_1223362823237(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
-      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
+      return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")));
     }
     return thisNode;
   }
@@ -56,7 +56,7 @@ public class Regexp_Behavior {
   }
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
     for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(thisNode))) {
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_isValid_4759120547781297301", new Object[]{}))) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")), "virtual_isValid_4759120547781297301", new Object[]{}))) {
         return false;
       }
     }

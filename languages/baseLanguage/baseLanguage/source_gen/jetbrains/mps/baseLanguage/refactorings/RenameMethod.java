@@ -46,7 +46,7 @@ public class RenameMethod extends BaseRefactoring {
   }
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-    if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     } else {
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");

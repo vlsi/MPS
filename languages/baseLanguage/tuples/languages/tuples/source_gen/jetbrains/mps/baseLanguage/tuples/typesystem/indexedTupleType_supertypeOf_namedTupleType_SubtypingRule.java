@@ -34,8 +34,8 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
         ListSequence.fromList(queue).addElement(SLinkOperations.getTarget(tmp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType")));
         while (ListSequence.fromList(queue).isNotEmpty()) {
           SNode t = ListSequence.fromList(queue).removeElementAt(0);
-          if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-            int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
+          if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+            int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(t, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
             if (idx < ListSequence.fromList(pts).count()) {
               SNodeOperations.replaceWithAnother(t, SNodeOperations.copyNode(ListSequence.fromList(pts).getElement(idx)));
             }

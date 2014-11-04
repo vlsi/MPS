@@ -77,7 +77,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setCellId("name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
       editorCell.setCommitInCommand(false);
@@ -152,7 +152,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lnae77_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -173,7 +173,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_lnae77_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lnae77_b0(editorContext, node));

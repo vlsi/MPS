@@ -19,7 +19,7 @@ public class XmlTextValue_TextGen extends SNodeTextGen {
     }
     this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart")), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
         return;
       }
       this.appendNewLine();

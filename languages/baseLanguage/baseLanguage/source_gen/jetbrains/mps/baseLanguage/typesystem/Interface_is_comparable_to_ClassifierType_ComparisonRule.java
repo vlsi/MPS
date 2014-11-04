@@ -16,7 +16,7 @@ public class Interface_is_comparable_to_ClassifierType_ComparisonRule extends Co
   public Interface_is_comparable_to_ClassifierType_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       return true;
     }
     return false;

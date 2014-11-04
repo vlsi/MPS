@@ -18,7 +18,7 @@ public class Order_Behavior {
   public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
     if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
-      n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+      n = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 3743831881070611759l, "jetbrains.mps.lang.plugin.structure.EditorTab"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
       n = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }

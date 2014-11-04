@@ -28,6 +28,6 @@ public class BuildVarRefStringPart_Behavior {
     return (SNodeOperations.getNextSibling(thisNode) == null);
   }
   public static boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.build.structure.BuildTextStringPart"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart")));
   }
 }

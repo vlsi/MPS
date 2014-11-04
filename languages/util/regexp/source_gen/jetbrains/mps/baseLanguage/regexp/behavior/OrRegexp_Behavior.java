@@ -21,6 +21,6 @@ public class OrRegexp_Behavior {
     return true;
   }
   public static boolean call_inParentheses_1353467374623956858(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"));
   }
 }

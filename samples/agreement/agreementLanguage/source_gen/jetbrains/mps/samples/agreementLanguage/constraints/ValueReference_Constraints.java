@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,7 +40,7 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode plan = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Plan", true, false);
+            SNode plan = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111790951422l, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), true, false);
             return new SubnodesSearchScope(plan);
           }
           @Override

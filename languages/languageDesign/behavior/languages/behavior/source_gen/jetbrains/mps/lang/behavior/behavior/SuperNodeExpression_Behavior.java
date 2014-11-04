@@ -18,9 +18,9 @@ public class SuperNodeExpression_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l, "superConcept")) != null)) {
       result = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l, "superConcept"));
     } else {
-      SNode behaviour = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
+      SNode behaviour = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false);
       SNode concept = SLinkOperations.getTarget(behaviour, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
-      if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+      if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
         SNode cd = ((SNode) concept);
         result = SLinkOperations.getTarget(cd, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       } else {
@@ -31,7 +31,7 @@ public class SuperNodeExpression_Behavior {
     return result;
   }
   public static SNode call_getSuperMethod_5527038142169086661(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false);
   }
   public static boolean call_isSuperMethodStatic_5212852298298945349(SNode thisNode) {
     SNode method = SuperNodeExpression_Behavior.call_getSuperMethod_5527038142169086661(thisNode);

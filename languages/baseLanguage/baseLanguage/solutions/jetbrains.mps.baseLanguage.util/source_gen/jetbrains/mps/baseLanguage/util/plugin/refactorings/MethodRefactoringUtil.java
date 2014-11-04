@@ -4,17 +4,17 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MethodRefactoringUtil {
   public MethodRefactoringUtil() {
   }
   public static SNode getMethodDeclaration(SNode methodOrMethodCall) {
-    if (SNodeOperations.isInstanceOf(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      return SNodeOperations.cast(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if (SNodeOperations.isInstanceOf(methodOrMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      return SNodeOperations.cast(methodOrMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     }
-    return SLinkOperations.getTarget(SNodeOperations.cast(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+    return SLinkOperations.getTarget(SNodeOperations.cast(methodOrMethodCall, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
   }
 }

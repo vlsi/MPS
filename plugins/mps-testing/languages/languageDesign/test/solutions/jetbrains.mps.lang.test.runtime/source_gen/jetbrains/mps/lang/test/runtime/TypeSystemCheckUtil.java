@@ -6,6 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import junit.framework.Assert;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
@@ -20,7 +23,7 @@ public class TypeSystemCheckUtil {
   public static void checkGenerationMode(SNode node) {
     TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     typeCheckingContext.checkRoot(true);
-    for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+    for (SNode child : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SConcept[]{})) {
       TypeCheckingContext typeCheckingContext2 = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getContainingRoot());
       SNode type1 = typeCheckingContext.getTypeDontCheck(child);
       if (type1 == null) {

@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -37,7 +39,7 @@ public class XMLSAXChildRule_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, new String[]{});
+            return SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, new SConcept[]{});
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

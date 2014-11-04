@@ -261,8 +261,8 @@
   <root nodeRef="r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)/6981317760235393639">
     <file name="typeof_GetEditorOperation_InferenceRule.java">
       <node id="6981317760235403018" at="22,122,23,100" concept="6" />
-      <node id="6981317760235403036" at="24,5,25,318" concept="6" />
-      <node id="6981317760235403036" at="25,318,26,209" concept="6" />
+      <node id="6981317760235403036" at="24,5,25,420" concept="6" />
+      <node id="6981317760235403036" at="25,420,26,209" concept="6" />
       <node id="6981317760235403036" at="26,209,27,378" concept="2" />
       <node id="6981317760235403009" at="29,5,30,51" concept="6" />
       <node id="6981317760235403009" at="30,51,31,209" concept="6" />

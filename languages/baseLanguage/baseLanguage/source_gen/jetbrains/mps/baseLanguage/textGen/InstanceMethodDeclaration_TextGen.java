@@ -35,7 +35,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"))) {
       this.append("final ");
     }
-    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")))) {
       this.append("abstract ");
     }
     if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 4276006055363816570l, "isSynchronized"))) {
@@ -76,7 +76,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
       this.append(";");
       this.appendNewLine();
     } else {
@@ -97,7 +97,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       {
         String traceableProperty = "";
         try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
+          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369891l, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
@@ -108,7 +108,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369890l, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);

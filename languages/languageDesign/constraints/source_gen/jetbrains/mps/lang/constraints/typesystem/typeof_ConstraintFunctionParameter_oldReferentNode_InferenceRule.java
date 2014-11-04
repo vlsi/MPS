@@ -20,7 +20,7 @@ public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule ex
   public typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 1148687202698l, "applicableLink")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
+    SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1148687176410l, 1148687202698l, "applicableLink")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     if ((targetConcept == null)) {
       {
         SNode _nodeToCheck_1029348928467 = node;

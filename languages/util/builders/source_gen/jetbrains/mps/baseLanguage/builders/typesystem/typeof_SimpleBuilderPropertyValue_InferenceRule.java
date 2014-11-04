@@ -8,17 +8,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SimpleBuilderPropertyValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SimpleBuilderPropertyValue_InferenceRule() {
   }
   public void applyRule(final SNode value, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode prop = SNodeOperations.getAncestor(value, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", true, false);
+    SNode prop = SNodeOperations.getNodeAncestor(value, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214216990954l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), true, false);
     {
       SNode _nodeToCheck_1029348928467 = value;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "5389689214217316347", 0, null);

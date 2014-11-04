@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.List;
@@ -15,9 +17,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 @MPSLaunch
 public class CopyWithTrace_Test extends BaseTransformationTest {
@@ -35,18 +36,18 @@ public class CopyWithTrace_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_copyNodeWithTrace() throws Exception {
       this.addNodeById("7327404875649026841");
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInput(TracingUtil.copyWithTrace(SNodeOperations.cast(this.getNodeById("7327404875649026848"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))).resolve(MPSModuleRepository.getInstance()));
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), TracingUtil.getInput(TracingUtil.copyWithTrace(SNodeOperations.cast(this.getNodeById("7327404875649026848"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))).resolve(MPSModuleRepository.getInstance()));
     }
     public void test_copyNListWithTrace() throws Exception {
       this.addNodeById("7327404875649026841");
-      List<SNode> copy = TracingUtil.copyWithTrace(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7327404875649026848"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("7327404875649026875"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+      List<SNode> copy = TracingUtil.copyWithTrace(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7327404875649026848"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), SNodeOperations.cast(this.getNodeById("7327404875649026875"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))));
       SNode utilityCopy = ListSequence.fromList(copy).getElement(0);
       SNode callingCopy = ListSequence.fromList(copy).getElement(1);
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInput(utilityCopy).resolve(MPSModuleRepository.getInstance()));
-      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026875"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInput(callingCopy).resolve(MPSModuleRepository.getInstance()));
-      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(callingCopy, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), TracingUtil.getInput(utilityCopy).resolve(MPSModuleRepository.getInstance()));
+      Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026875"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), TracingUtil.getInput(callingCopy).resolve(MPSModuleRepository.getInstance()));
+      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(callingCopy, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
         }
       }).toListSequence().first(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), utilityCopy);
     }

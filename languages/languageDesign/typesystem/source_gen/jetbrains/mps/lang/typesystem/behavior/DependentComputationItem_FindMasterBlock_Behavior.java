@@ -19,7 +19,7 @@ public class DependentComputationItem_FindMasterBlock_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return _quotation_createNode_fiyp4x_a0a0(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 8058965347377019242l, 3036516800121956503l, "blockingNodeConcept")));
+    return _quotation_createNode_fiyp4x_a0a0(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 8058965347377019242l, "jetbrains.mps.lang.typesystem.structure.DependentComputationItem")), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 8058965347377019242l, 3036516800121956503l, "blockingNodeConcept")));
   }
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});

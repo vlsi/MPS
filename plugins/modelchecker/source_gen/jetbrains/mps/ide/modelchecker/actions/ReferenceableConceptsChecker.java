@@ -51,14 +51,14 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           }
         })) {
           SNode target = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
-          if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-            SNode decl = SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+          if (SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+            SNode decl = SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
             if (SPropertyOperations.hasValue(decl, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null)) {
               SpecificChecker.addIssue(results, ref, "Reference to a non-referenceable concept found: " + SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable concept", null);
             }
           }
         }
-        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null)) {
+        if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null)) {
           SNode c = concept;
           if (SConceptOperations.isSubConceptOf(c, "jetbrains.mps.lang.core.structure.INamedConcept")) {
             SpecificChecker.addIssue(results, c, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
@@ -100,11 +100,11 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     if (conceptDecl == null) {
       SpecificChecker.addIssue(results, node, "No concept found for " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
     }
-    if (SNodeOperations.isInstanceOf(conceptDecl, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode decl = SNodeOperations.cast(conceptDecl, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    if (SNodeOperations.isInstanceOf(conceptDecl, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      SNode decl = SNodeOperations.cast(conceptDecl, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
 
       if (isAncestor) {
-        if (SNodeOperations.isInstanceOf(decl, "jetbrains.mps.lang.core.structure.ScopeFacade") && !(ListSequence.fromList(SNodeOperations.getAncestors(refNode, null, true)).contains(node))) {
+        if (SNodeOperations.isInstanceOf(decl, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3361475375157466558l, "jetbrains.mps.lang.core.structure.ScopeFacade")) && !(ListSequence.fromList(SNodeOperations.getNodeAncestors(refNode, null, true)).contains(node))) {
           SpecificChecker.addIssue(results, anchor, "Reference from outside to a node under ScopeFacade: facade=" + SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
         }
       } else {

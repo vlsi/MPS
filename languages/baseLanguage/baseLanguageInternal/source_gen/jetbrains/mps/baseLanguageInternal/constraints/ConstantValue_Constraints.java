@@ -46,7 +46,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "className";
-        return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1585405235656310154l, 1585405235656310155l, "constant"))), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+        return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1585405235656310154l, 1585405235656310155l, "constant"))), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     });
     return properties;

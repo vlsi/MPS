@@ -55,8 +55,8 @@ public class IndexedTupleType_Behavior {
   }
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     for (SNode ct : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType")))) {
-      if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      if (SNodeOperations.isInstanceOf(ct, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ct, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
       }
     }
   }

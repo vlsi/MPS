@@ -21,7 +21,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
   public SNode getSubOrSuperType(SNode conceptType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SLinkOperations.getTarget(conceptType, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, 1180481110358l, "conceptDeclaraton"));
     if (concept != null) {
-      if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+      if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
         return _quotation_createNode_6unv0u_a0a0a1a1();
       }
       // commented out because: 
@@ -29,7 +29,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
       // if SomeConcreteConcept is a subconcept of SomeInterfaceConcept. 
       // (see rule supertypesOf_SConceptTypeType_SConceptTypeType) 
       /*
-        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+        if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
           return _quotation_createNode_6unv0u_a0a0f0b0b();
         }
       */

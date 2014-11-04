@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -51,7 +53,7 @@ public class UnmarkAsThreadSafe_Intention implements IntentionFactory {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null;
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe");
+    return SNodeOperations.isInstanceOf(childNode, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 2975785153735111398l, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "2975785153735222149");

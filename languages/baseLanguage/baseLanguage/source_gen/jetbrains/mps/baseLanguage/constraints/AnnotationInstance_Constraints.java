@@ -37,7 +37,7 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
     if (SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       return true;
     }
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2030079436469605453");
 }

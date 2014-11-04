@@ -78,7 +78,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     private EditorCell createModelAccess_boi5ax_a0a0a(final EditorContext editorContext, final SNode node) {
       ModelAccessor modelAccessor = new ModelAccessor() {
         public String getText() {
-          return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getAncestor(node, null, false, true), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+          return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getNodeAncestor(node, null, false, true), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
         public void setText(String text) {
         }
@@ -91,7 +91,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ModelAccess_boi5ax_a0a0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
       return editorCell;
@@ -106,7 +106,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_label");
       Style style = new StyleImpl();
       TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
-      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

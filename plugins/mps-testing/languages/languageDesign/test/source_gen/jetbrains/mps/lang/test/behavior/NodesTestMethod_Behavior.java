@@ -15,7 +15,7 @@ public class NodesTestMethod_Behavior {
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null));
   }
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
-    return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.NodesTestCase", false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"), false, false);
   }
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     return "test_" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));

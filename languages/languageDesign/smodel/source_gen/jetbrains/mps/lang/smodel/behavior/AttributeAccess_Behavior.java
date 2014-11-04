@@ -23,7 +23,7 @@ public class AttributeAccess_Behavior {
     return true;
   }
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return !((AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")));
+    return !((AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, 6407023681583036852l, "qualifier")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583040688l, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"))));
   }
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return true;

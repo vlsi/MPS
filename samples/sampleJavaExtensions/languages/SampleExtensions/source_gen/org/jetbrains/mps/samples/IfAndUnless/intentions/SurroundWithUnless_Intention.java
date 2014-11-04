@@ -68,7 +68,7 @@ public class SurroundWithUnless_Intention implements IntentionFactory {
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), unlessStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(unlessStatement, MetaAdapterFactory.getContainmentLink(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, 393299394024627228l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(unlessStatement, MetaAdapterFactory.getContainmentLink(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, 393299394024627228l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.getNodeAncestor(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true, false));
       }
       editorContext.select(SLinkOperations.getTarget(unlessStatement, MetaAdapterFactory.getContainmentLink(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, 393299394024627214l, "condition")));
 

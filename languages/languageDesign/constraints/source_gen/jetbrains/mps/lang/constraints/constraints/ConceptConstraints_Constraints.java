@@ -129,13 +129,13 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints", true, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
+            SNode concept = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), true, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
             Language currentLanguage = Language.getLanguageForLanguageAspect(_context.getModel());
             if (currentLanguage == null) {
               return ListSequence.fromList(new ArrayList<SNode>());
             }
 
-            List<SNode> subConcepts = (List<SNode>) SConceptOperations.getAllSubConcepts(SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept")), Collections.singleton(currentLanguage));
+            List<SNode> subConcepts = (List<SNode>) SConceptOperations.getAllSubConcepts(SLinkOperations.getTarget(SNodeOperations.as(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept")), Collections.singleton(currentLanguage));
             return ListSequence.fromList(subConcepts).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")));

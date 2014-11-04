@@ -40,7 +40,7 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jxypb2_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jxypb2_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_jxypb2_b0a(editorContext, node));
@@ -74,7 +74,7 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_concept");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

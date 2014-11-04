@@ -26,6 +26,7 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.console.base.util.SubconceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -66,7 +67,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
             }) {
               @Override
               public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
+                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && !(AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))));
               }
             };
           }

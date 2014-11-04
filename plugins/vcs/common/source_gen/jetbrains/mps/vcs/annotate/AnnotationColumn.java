@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -138,7 +139,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private MessageBusConnection myMessageBusConnection;
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, final AbstractVcs vcs, VirtualFile virtualFile) {
     super(leftEditorHighlighter);
-    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
+    Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getNodeDescendants(root, null, true, new SConcept[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();
       }
@@ -330,7 +331,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     EditorComponent editor = getEditorComponent();
     SNode editedNode = editor.getEditedNode();
     SNode node = editedNode.getModel().getNode(content.getNodeId());
-    if (node == null || !(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(editedNode))) {
+    if (node == null || !(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).contains(editedNode))) {
       return null;
     }
 

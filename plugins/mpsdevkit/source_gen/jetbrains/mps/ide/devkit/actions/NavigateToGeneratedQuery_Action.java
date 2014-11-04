@@ -9,6 +9,8 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -33,7 +35,7 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
     // check that node in generator? 
     SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")));
 
-    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false) != null);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -69,7 +71,7 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode fun = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
+      SNode fun = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false);
       GeneratedQueriesOpener.openQueryMethod(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext(), fun);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

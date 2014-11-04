@@ -60,7 +60,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
@@ -93,7 +93,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       Set<SNode> errorInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
       return SetSequence.fromSet(errorInstances).toListSequence().select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1175517767210l, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
         }
       }).toListSequence();
     }
@@ -159,7 +159,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

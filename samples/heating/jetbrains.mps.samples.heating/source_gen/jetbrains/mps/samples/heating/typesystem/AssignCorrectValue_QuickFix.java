@@ -5,9 +5,9 @@ package jetbrains.mps.samples.heating.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AssignCorrectValue_QuickFix extends QuickFix_Runtime {
   public AssignCorrectValue_QuickFix() {
@@ -16,11 +16,11 @@ public class AssignCorrectValue_QuickFix extends QuickFix_Runtime {
     return "Assign correct value";
   }
   public void execute(SNode node) {
-    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.samples.heating.structure.Slot");
+    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(node), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot"));
     if ((prev != null)) {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot"), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (SPropertyOperations.getInteger(prev, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) + 1));
+      SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (SPropertyOperations.getInteger(prev, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) + 1));
     } else {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot"), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (0));
+      SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (0));
     }
   }
 }

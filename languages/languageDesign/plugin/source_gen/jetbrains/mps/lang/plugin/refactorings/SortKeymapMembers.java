@@ -31,7 +31,7 @@ public class SortKeymapMembers extends BaseRefactoring {
     ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, 1562714432501166199l, "shortcutChange"))).clear();
     ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, 1562714432501166199l, "shortcutChange"))).addSequence(ListSequence.fromList(copy).sort(new ISelector<SNode, Boolean>() {
       public Boolean select(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616734266l, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"));
       }
     }, true).alsoSort(new ISelector<SNode, String>() {
       public String select(SNode it) {

@@ -20,8 +20,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -77,13 +77,13 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
             {
               SNode n = _context.getContextNode();
               while (n != null) {
-                if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.quotation.structure.NodeBuilder")) {
+                if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) || SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, "jetbrains.mps.lang.quotation.structure.NodeBuilder"))) {
                   break;
                 }
                 n = SNodeOperations.getParent(n);
               }
-              if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) {
-                SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
+              if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"))) {
+                SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
                 List<SNode> result = new ArrayList<SNode>();
                 for (String cname : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(BehaviorReflection.invokeVirtual(String.class, target, "virtual_getFqName_1213877404258", new Object[]{}))) {
                   SNode cc = SModelUtil.findConceptDeclaration(cname);
@@ -106,7 +106,7 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilder");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference") || SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709738802l, "jetbrains.mps.lang.quotation.structure.NodeBuilderList")) || SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, "jetbrains.mps.lang.quotation.structure.NodeBuilder"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709478764");
   private static SNodePointer breakingNode_ij2gcp_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709535913");

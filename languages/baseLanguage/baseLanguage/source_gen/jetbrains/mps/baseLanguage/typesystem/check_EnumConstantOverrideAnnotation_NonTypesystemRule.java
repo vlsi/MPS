@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -23,10 +23,10 @@ public class check_EnumConstantOverrideAnnotation_NonTypesystemRule extends Abst
   public check_EnumConstantOverrideAnnotation_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SNodeOperations.getParent(enumConstant) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+    if ((SNodeOperations.getParent(enumConstant) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(enumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
       return;
     }
-    OverridingMethodsFinder finder = new OverridingMethodsFinder(SNodeOperations.cast(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstant);
+    OverridingMethodsFinder finder = new OverridingMethodsFinder(SNodeOperations.cast(SNodeOperations.getParent(enumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), enumConstant);
     Set<SNode> overridingMethods = finder.getOverridingMethods();
     for (SNode method : SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))) {
       for (SNode annotationInstance : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))) {

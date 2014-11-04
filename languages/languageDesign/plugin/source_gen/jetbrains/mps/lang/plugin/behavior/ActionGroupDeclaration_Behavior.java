@@ -4,9 +4,9 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +17,7 @@ public class ActionGroupDeclaration_Behavior {
   }
   public static String call_getGroupPrefix_1213877494242(SNode thisNode) {
     String prefix = "";
-    SNode parentGroup = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
+    SNode parentGroup = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), false, false);
     if (parentGroup != null) {
       prefix = ActionGroupDeclaration_Behavior.call_getGroupPrefix_1213877494242(parentGroup) + SPropertyOperations.getString(parentGroup, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }

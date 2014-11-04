@@ -56,8 +56,8 @@ public class IncompleteLeftParen_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_tlxkur_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     DeleteIncompleteLeftParen.setCellActions(editorCell, node, editorContext);
     return editorCell;

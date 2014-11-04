@@ -14,7 +14,7 @@ public class GetAccessor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Property", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201371521209l, "type"));
+    return SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, "jetbrains.mps.baseLanguage.structure.Property"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201371521209l, "type"));
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201402044357l, 1202593363480l, "statementList"));

@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
@@ -48,7 +49,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
             String target = null;
             if ((_context.getContextNode() != null) && contextProject != null) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleArtifactsScope(contextProject, false);
@@ -68,7 +69,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
+              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleArtifactsScope(contextProject, false);
               }

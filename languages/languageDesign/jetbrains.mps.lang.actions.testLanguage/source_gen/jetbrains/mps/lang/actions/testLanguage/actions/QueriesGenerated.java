@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -22,8 +24,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -102,7 +102,7 @@ public class QueriesGenerated {
         tmpVar = tmpVar && operationContext != null;
         tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
 
-        assert SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer");
+        assert SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer"));
         List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
         ListSequence.fromList(result).addElement(new AbstractNodeSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), _context.getParentNode()) {
           @Override
@@ -160,7 +160,7 @@ public class QueriesGenerated {
 
                 SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
                 if ((item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")) {
-                  SLinkOperations.addNewChild(SNodeOperations.cast(result, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child");
+                  SLinkOperations.addNewChild(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child");
                 }
                 return result;
               }
@@ -191,7 +191,7 @@ public class QueriesGenerated {
                 }
                 if ((item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")) {
                   // returning node to select 
-                  return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(createdNode, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"))).first();
+                  return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(createdNode, MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"))).first();
                 }
                 return createdNode;
               }
@@ -482,7 +482,7 @@ public class QueriesGenerated {
             // Check if we have read access here 
             String name = SPropertyOperations.getString(nodeToWrap, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
 
-            return SNodeOperations.isInstanceOf(nodeToWrap, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2");
+            return SNodeOperations.isInstanceOf(nodeToWrap, MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2747974755163525074l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2"));
           }
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {

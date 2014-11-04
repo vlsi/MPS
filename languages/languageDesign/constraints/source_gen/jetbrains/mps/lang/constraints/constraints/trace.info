@@ -44,11 +44,11 @@
       <node id="7966406217186709654" at="113,15,114,0" concept="8" />
       <node id="7966406217186709901" at="114,0,115,151" concept="6" />
       <node id="1213100797365" at="123,44,124,20" concept="6" />
-      <node id="5629249995614139016" at="131,142,132,323" concept="5" />
-      <node id="7707911143192339956" at="132,323,133,98" concept="5" />
+      <node id="5629249995614139016" at="131,142,132,429" concept="5" />
+      <node id="7707911143192339956" at="132,429,133,98" concept="5" />
       <node id="7707911143192342985" at="134,42,135,67" concept="6" />
       <node id="1194746224771109976" at="136,13,137,0" concept="8" />
-      <node id="4243528096704799748" at="137,0,138,403" concept="5" />
+      <node id="4243528096704799748" at="137,0,138,505" concept="5" />
       <node id="4243528096704831364" at="140,47,141,199" concept="6" />
       <node id="1213100797365" at="146,63,147,58" concept="6" />
       <node id="1213100797365" at="151,7,152,22" concept="6" />
@@ -74,7 +74,7 @@
       <node id="1213100797365" at="122,0,126,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1213100797365" at="145,0,149,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1213100934016" at="75,29,80,11" concept="3" />
-      <node id="4243528096704831331" at="138,403,143,15" concept="6" />
+      <node id="4243528096704831331" at="138,505,143,15" concept="6" />
       <node id="7966406217186709794" at="157,0,163,0" concept="10" trace="check_guz8cy_a0c0a0#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1213100797365" at="73,37,82,9" concept="0" />
       <node id="1213100797365" at="53,0,63,0" concept="4" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
@@ -188,8 +188,8 @@
       <node id="7376433222636453721" at="44,142,45,56" concept="7" />
       <node id="1213104781823" at="45,56,46,139" concept="5" />
       <node id="1248408370189085166" at="47,44,48,90" concept="5" />
-      <node id="6277721878946470006" at="49,118,50,288" concept="2" />
-      <node id="6277721878946470015" at="51,22,52,283" concept="2" />
+      <node id="6277721878946470006" at="49,220,50,390" concept="2" />
+      <node id="6277721878946470015" at="51,22,52,386" concept="2" />
       <node id="1213104781843" at="54,13,55,117" concept="6" />
       <node id="1213104781819" at="58,63,59,58" concept="6" />
       <node id="1213104781819" at="63,7,64,22" concept="6" />
@@ -207,8 +207,8 @@
       <node id="1213104781819" at="31,0,66,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
       <scope id="1213104781819" at="28,47,29,106" />
       <scope id="1213104781819" at="36,44,37,20" />
-      <scope id="6277721878946469995" at="49,118,50,288" />
-      <scope id="6277721878946470014" at="51,22,52,283" />
+      <scope id="6277721878946469995" at="49,220,50,390" />
+      <scope id="6277721878946470014" at="51,22,52,386" />
       <scope id="1213104781819" at="58,63,59,58" />
       <scope id="1213104781819" at="28,0,31,0" />
       <scope id="1213104781819" at="35,0,39,0" />
@@ -242,8 +242,8 @@
       <node id="7376433222636453535" at="44,142,45,51" concept="7" />
       <node id="1213104781935" at="45,51,46,139" concept="5" />
       <node id="6277721878946469964" at="47,44,48,90" concept="5" />
-      <node id="6277721878946470025" at="49,118,50,288" concept="2" />
-      <node id="6277721878946470032" at="51,22,52,283" concept="2" />
+      <node id="6277721878946470025" at="49,220,50,390" concept="2" />
+      <node id="6277721878946470032" at="51,22,52,386" concept="2" />
       <node id="1213104781955" at="54,13,55,122" concept="6" />
       <node id="1213104781931" at="58,63,59,58" concept="6" />
       <node id="1213104781931" at="63,7,64,22" concept="6" />
@@ -261,8 +261,8 @@
       <node id="1213104781931" at="31,0,66,0" concept="4" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
       <scope id="1213104781931" at="28,47,29,106" />
       <scope id="1213104781931" at="36,44,37,20" />
-      <scope id="6277721878946469945" at="49,118,50,288" />
-      <scope id="6277721878946469979" at="51,22,52,283" />
+      <scope id="6277721878946469945" at="49,220,50,390" />
+      <scope id="6277721878946469979" at="51,22,52,386" />
       <scope id="1213104781931" at="58,63,59,58" />
       <scope id="1213104781931" at="28,0,31,0" />
       <scope id="1213104781931" at="35,0,39,0" />

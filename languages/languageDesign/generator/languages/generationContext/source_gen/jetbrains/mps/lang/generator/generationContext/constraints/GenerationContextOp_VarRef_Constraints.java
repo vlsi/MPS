@@ -55,8 +55,8 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
             SNode contextNode = (_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode());
             List<SNode> vars = new ArrayList<SNode>();
             while ((contextNode != null)) {
-              if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.generator.structure.VarMacro")) {
-                ListSequence.fromList(vars).addElement(SNodeOperations.cast(contextNode, "jetbrains.mps.lang.generator.structure.VarMacro"));
+              if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, "jetbrains.mps.lang.generator.structure.VarMacro"))) {
+                ListSequence.fromList(vars).addElement(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, "jetbrains.mps.lang.generator.structure.VarMacro")));
               }
               contextNode = TraverseUtil.parent(contextNode);
             }

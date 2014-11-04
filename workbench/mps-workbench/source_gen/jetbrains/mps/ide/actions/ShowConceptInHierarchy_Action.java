@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -91,16 +93,16 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
   }
   private SNode getConceptNode(final Map<String, Object> _params) {
     SNode refNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      return SNodeOperations.cast(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    if (SNodeOperations.isInstanceOf(refNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      return SNodeOperations.cast(refNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
     }
-    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration")) {
-      SNode concept = SNodeOperations.getAncestor(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    if (SNodeOperations.isInstanceOf(refNode, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194413805l, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"))) {
+      SNode concept = SNodeOperations.getNodeAncestor(refNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
       if (concept != null) {
         return concept;
       }
     }
-    SNode outerConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+    SNode outerConcept = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), true, false);
     if (outerConcept != null) {
       return outerConcept;
     }
@@ -110,10 +112,10 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
     }
     TabbedEditor tabbedEditor = (TabbedEditor) ((Editor) MapSequence.fromMap(_params).get("editor"));
     SNode editedNode = ((SNodePointer) tabbedEditor.getCurrentlyEditedNode()).resolve(MPSModuleRepository.getInstance());
-    if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(editedNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
       return null;
     }
-    return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    return SNodeOperations.cast(editedNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   protected static Logger LOG = LogManager.getLogger(ShowConceptInHierarchy_Action.class);
 }

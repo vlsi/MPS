@@ -28,10 +28,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_8923957828369629274(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477803l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"));
   }
   public static boolean baseMappingRule_Condition_4697196167065973042(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode()), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
+    return SNodeOperations.isInstanceOf(ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"));
   }
   public static boolean baseMappingRule_Condition_7865129668867016083(final BaseMappingRuleContext _context) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), true) != null;
@@ -53,7 +53,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3786532327622816550l, -4790818904192366506l), 633195941006921788l, 633195941006921797l, "numberOfThreads"));
   }
   public static Object referenceMacro_GetReferent_7865129668867189303(final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getNode().getReferenceTarget("exc"), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(_context.getNode().getReferenceTarget("exc"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
   public static Object referenceMacro_GetReferent_7793246093815939787(final ReferenceMacroContext _context) {
     return "localA";

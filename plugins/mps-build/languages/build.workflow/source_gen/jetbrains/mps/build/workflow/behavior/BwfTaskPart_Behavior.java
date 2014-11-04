@@ -26,7 +26,7 @@ public class BwfTaskPart_Behavior {
       }
       if (task == null || SNodeOperations.getParent(task) != SNodeOperations.getParent(thisNode)) {
         for (SNode n : SNodeOperations.getAllSiblings(thisNode, false)) {
-          if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart") && SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart"), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"))) {
+          if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart")) && SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"))) {
             scope.addScope(SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks")));
           }
         }

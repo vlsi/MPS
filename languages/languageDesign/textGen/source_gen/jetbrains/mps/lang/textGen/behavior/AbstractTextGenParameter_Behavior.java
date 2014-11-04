@@ -25,7 +25,7 @@ public class AbstractTextGenParameter_Behavior {
     return builder.toString();
   }
   public static boolean call_inLangConcept_1236168601263(SNode thisNode) {
-    return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+    return SNodeOperations.isInstanceOf((SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1234281982537l, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), false, false)), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
   }
   public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return false;

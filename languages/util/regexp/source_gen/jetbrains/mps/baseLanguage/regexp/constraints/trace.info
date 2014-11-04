@@ -60,64 +60,64 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/1213104860358">
     <file name="MatchVariableReferenceRegexp_Constraints.java">
-      <node id="1213104860358" at="30,53,31,107" concept="12" />
-      <node id="1213104860358" at="34,98,35,135" concept="7" />
-      <node id="1213104860358" at="38,44,39,20" concept="8" />
-      <node id="1213104860358" at="46,44,47,24" concept="8" />
-      <node id="8786899561264898304" at="50,128,51,435" concept="8" />
-      <node id="1222876750634" at="54,142,55,57" concept="7" />
-      <node id="1213104860369" at="55,57,56,52" concept="7" />
-      <node id="1213104860387" at="57,178,58,51" concept="3" />
-      <node id="1213104860393" at="59,13,60,202" concept="3" />
-      <node id="1213104860409" at="61,117,62,148" concept="3" />
-      <node id="1213104860414" at="63,13,64,27" concept="8" />
-      <node id="1213104860358" at="67,63,68,58" concept="8" />
-      <node id="1213104860358" at="72,7,73,22" concept="8" />
-      <node id="1213104860358" at="75,0,76,0" concept="10" trace="breakingNode_15u81x_a0a3a0a0a1a0b0a1a1" />
-      <node id="1213104860358" at="30,0,33,0" concept="2" trace="MatchVariableReferenceRegexp_Constraints#()V" />
-      <node id="1213104860373" at="56,52,59,13" concept="13" />
-      <node id="1213104860403" at="60,202,63,13" concept="5" />
-      <node id="1213104860358" at="37,0,41,0" concept="6" trace="hasOwnScopeProvider#()Z" />
-      <node id="1213104860358" at="45,0,49,0" concept="6" trace="hasPresentation#()Z" />
-      <node id="1213104860358" at="49,0,53,0" concept="6" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
-      <node id="1213104860358" at="66,0,70,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1213104860358" at="53,0,66,0" concept="6" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-      <node id="1213104860358" at="43,56,70,10" concept="8" />
-      <node id="1213104860358" at="41,0,72,0" concept="6" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="1213104860358" at="35,135,72,7" concept="3" />
-      <node id="1213104860358" at="33,0,75,0" concept="6" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="1213104860358" at="30,53,31,107" />
-      <scope id="1213104860358" at="38,44,39,20" />
-      <scope id="1213104860358" at="46,44,47,24" />
-      <scope id="8786899561264893435" at="50,128,51,435" />
-      <scope id="1213104860386" at="57,178,58,51" />
-      <scope id="1213104860408" at="61,117,62,148" />
-      <scope id="1213104860358" at="67,63,68,58" />
-      <scope id="1213104860358" at="30,0,33,0" />
-      <scope id="1213104860358" at="37,0,41,0" />
-      <scope id="1213104860358" at="45,0,49,0" />
-      <scope id="1213104860358" at="49,0,53,0">
+      <node id="1213104860358" at="31,53,32,107" concept="12" />
+      <node id="1213104860358" at="35,98,36,135" concept="7" />
+      <node id="1213104860358" at="39,44,40,20" concept="8" />
+      <node id="1213104860358" at="47,44,48,24" concept="8" />
+      <node id="8786899561264898304" at="51,128,52,435" concept="8" />
+      <node id="1222876750634" at="55,142,56,57" concept="7" />
+      <node id="1213104860369" at="56,57,57,52" concept="7" />
+      <node id="1213104860387" at="58,281,59,51" concept="3" />
+      <node id="1213104860393" at="60,13,61,311" concept="3" />
+      <node id="1213104860409" at="62,220,63,251" concept="3" />
+      <node id="1213104860414" at="64,13,65,27" concept="8" />
+      <node id="1213104860358" at="68,63,69,58" concept="8" />
+      <node id="1213104860358" at="73,7,74,22" concept="8" />
+      <node id="1213104860358" at="76,0,77,0" concept="10" trace="breakingNode_15u81x_a0a3a0a0a1a0b0a1a1" />
+      <node id="1213104860358" at="31,0,34,0" concept="2" trace="MatchVariableReferenceRegexp_Constraints#()V" />
+      <node id="1213104860373" at="57,52,60,13" concept="13" />
+      <node id="1213104860403" at="61,311,64,13" concept="5" />
+      <node id="1213104860358" at="38,0,42,0" concept="6" trace="hasOwnScopeProvider#()Z" />
+      <node id="1213104860358" at="46,0,50,0" concept="6" trace="hasPresentation#()Z" />
+      <node id="1213104860358" at="50,0,54,0" concept="6" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
+      <node id="1213104860358" at="67,0,71,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1213104860358" at="54,0,67,0" concept="6" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="1213104860358" at="44,56,71,10" concept="8" />
+      <node id="1213104860358" at="42,0,73,0" concept="6" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="1213104860358" at="36,135,73,7" concept="3" />
+      <node id="1213104860358" at="34,0,76,0" concept="6" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <scope id="1213104860358" at="31,53,32,107" />
+      <scope id="1213104860358" at="39,44,40,20" />
+      <scope id="1213104860358" at="47,44,48,24" />
+      <scope id="8786899561264893435" at="51,128,52,435" />
+      <scope id="1213104860386" at="58,281,59,51" />
+      <scope id="1213104860408" at="62,220,63,251" />
+      <scope id="1213104860358" at="68,63,69,58" />
+      <scope id="1213104860358" at="31,0,34,0" />
+      <scope id="1213104860358" at="38,0,42,0" />
+      <scope id="1213104860358" at="46,0,50,0" />
+      <scope id="1213104860358" at="50,0,54,0">
         <var name="_context" id="1213104860358" />
         <var name="operationContext" id="1213104860358" />
       </scope>
-      <scope id="1213104860358" at="66,0,70,0" />
-      <scope id="1213104860361" at="54,142,64,27">
+      <scope id="1213104860358" at="67,0,71,0" />
+      <scope id="1213104860361" at="55,142,65,27">
         <var name="matches" id="1222876750635" />
         <var name="top" id="1213104860370" />
       </scope>
-      <scope id="1213104860358" at="53,0,66,0">
+      <scope id="1213104860358" at="54,0,67,0">
         <var name="_context" id="1213104860358" />
         <var name="operationContext" id="1213104860358" />
       </scope>
-      <scope id="1213104860358" at="43,56,70,10" />
-      <scope id="1213104860358" at="41,0,72,0" />
-      <scope id="1213104860358" at="34,98,73,22">
+      <scope id="1213104860358" at="44,56,71,10" />
+      <scope id="1213104860358" at="42,0,73,0" />
+      <scope id="1213104860358" at="35,98,74,22">
         <var name="references" id="1213104860358" />
       </scope>
-      <scope id="1213104860358" at="33,0,75,0" />
-      <unit id="1213104860358" at="44,19,70,9" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$2" />
-      <unit id="1213104860358" at="36,132,72,5" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$1" />
-      <unit id="1213104860358" at="29,0,77,0" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints" />
+      <scope id="1213104860358" at="34,0,76,0" />
+      <unit id="1213104860358" at="45,19,71,9" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$2" />
+      <unit id="1213104860358" at="37,132,73,5" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints$1" />
+      <unit id="1213104860358" at="30,0,78,0" name="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/1231768529435">
@@ -130,8 +130,8 @@
       <node id="1231768529435" at="33,5,34,0" concept="9" />
       <node id="1231768529435" at="34,0,35,18" concept="8" />
       <node id="1231768622582" at="37,148,38,24" concept="7" />
-      <node id="1231768622588" at="39,105,40,307" concept="7" />
-      <node id="1231769537590" at="40,307,41,181" concept="3" />
+      <node id="1231768622588" at="39,207,40,409" concept="7" />
+      <node id="1231769537590" at="40,409,41,181" concept="3" />
       <node id="1231769278811" at="42,5,43,15" concept="8" />
       <node id="1231768529435" at="45,0,46,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="1231768529435" at="20,0,23,0" concept="2" trace="ReplaceWithRegexpOperation_Constraints#()V" />
@@ -143,7 +143,7 @@
       <scope id="1231768529435" at="20,51,21,107" />
       <scope id="1231768529435" at="24,43,25,16" />
       <scope id="1231768529435" at="31,51,32,67" />
-      <scope id="1231768622587" at="39,105,41,181">
+      <scope id="1231768622587" at="39,207,41,181">
         <var name="type" id="1231768622589" />
       </scope>
       <scope id="1231768529435" at="20,0,23,0" />
@@ -182,8 +182,8 @@
       <node id="1231768928736" at="33,5,34,0" concept="9" />
       <node id="1231768928736" at="34,0,35,18" concept="8" />
       <node id="1231768963651" at="37,148,38,24" concept="7" />
-      <node id="1231768963657" at="39,105,40,307" concept="7" />
-      <node id="1231769510643" at="40,307,41,181" concept="3" />
+      <node id="1231768963657" at="39,207,40,409" concept="7" />
+      <node id="1231769510643" at="40,409,41,181" concept="3" />
       <node id="1231769292378" at="42,5,43,15" concept="8" />
       <node id="1231768928736" at="45,0,46,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="1231768928736" at="20,0,23,0" concept="2" trace="MatchRegexpOperation_Constraints#()V" />
@@ -195,7 +195,7 @@
       <scope id="1231768928736" at="20,45,21,107" />
       <scope id="1231768928736" at="24,43,25,16" />
       <scope id="1231768928736" at="31,51,32,67" />
-      <scope id="1231768963656" at="39,105,41,181">
+      <scope id="1231768963656" at="39,207,41,181">
         <var name="type" id="1231768963658" />
       </scope>
       <scope id="1231768928736" at="20,0,23,0" />
@@ -234,8 +234,8 @@
       <node id="3796137614137203372" at="33,5,34,0" concept="9" />
       <node id="3796137614137203372" at="34,0,35,18" concept="8" />
       <node id="3796137614137203375" at="37,148,38,24" concept="7" />
-      <node id="3796137614137203381" at="39,105,40,307" concept="7" />
-      <node id="3796137614137203390" at="40,307,41,181" concept="3" />
+      <node id="3796137614137203381" at="39,207,40,409" concept="7" />
+      <node id="3796137614137203390" at="40,409,41,181" concept="3" />
       <node id="3796137614137203402" at="42,5,43,15" concept="8" />
       <node id="3796137614137203372" at="45,0,46,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="3796137614137203372" at="20,0,23,0" concept="2" trace="ReplaceRegexpOperation_Constraints#()V" />
@@ -247,7 +247,7 @@
       <scope id="3796137614137203372" at="20,47,21,113" />
       <scope id="3796137614137203372" at="24,43,25,16" />
       <scope id="3796137614137203372" at="31,51,32,67" />
-      <scope id="3796137614137203380" at="39,105,41,181">
+      <scope id="3796137614137203380" at="39,207,41,181">
         <var name="type" id="3796137614137203382" />
       </scope>
       <scope id="3796137614137203372" at="20,0,23,0" />
@@ -284,14 +284,14 @@
       <node id="3796137614137558190" at="47,44,48,24" concept="8" />
       <node id="3796137614137558252" at="51,128,52,435" concept="8" />
       <node id="3796137614137558196" at="55,142,56,57" concept="7" />
-      <node id="3796137614137558202" at="56,57,57,164" concept="7" />
+      <node id="3796137614137558202" at="56,57,57,277" concept="7" />
       <node id="3796137614137558304" at="58,32,59,300" concept="3" />
       <node id="3796137614137558248" at="60,13,61,27" concept="8" />
       <node id="3796137614137558190" at="64,63,65,58" concept="8" />
       <node id="3796137614137558190" at="69,7,70,22" concept="8" />
       <node id="3796137614137558190" at="72,0,73,0" concept="10" trace="breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1" />
       <node id="3796137614137558190" at="31,0,34,0" concept="2" trace="MatchVariableReferenceReplacement_Constraints#()V" />
-      <node id="3796137614137558294" at="57,164,60,13" concept="5" />
+      <node id="3796137614137558294" at="57,277,60,13" concept="5" />
       <node id="3796137614137558190" at="38,0,42,0" concept="6" trace="hasOwnScopeProvider#()Z" />
       <node id="3796137614137558190" at="46,0,50,0" concept="6" trace="hasPresentation#()Z" />
       <node id="3796137614137558190" at="50,0,54,0" concept="6" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
@@ -476,149 +476,149 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/8030573611853647771">
     <file name="RegexUtil.java">
-      <node id="8030573611853647782" at="17,73,18,49" concept="7" />
-      <node id="8030573611853647798" at="19,144,20,102" concept="3" />
-      <node id="8030573611853647806" at="22,126,23,29" concept="7" />
-      <node id="8030573611853647812" at="24,269,25,191" concept="3" />
-      <node id="8030573611853647838" at="28,282,29,197" concept="3" />
-      <node id="8030573611853647844" at="29,197,30,18" concept="1" />
-      <node id="8030573611853647858" at="35,159,36,107" concept="3" />
-      <node id="8030573611853647883" at="39,5,40,19" concept="8" />
-      <node id="8030573611853647893" at="42,65,43,184" concept="7" />
-      <node id="8030573611853647899" at="43,184,44,137" concept="7" />
-      <node id="8030573611853647912" at="45,22,46,17" concept="8" />
-      <node id="8030573611853647914" at="47,5,48,0" concept="9" />
-      <node id="8030573611853647915" at="48,0,49,131" concept="7" />
-      <node id="8030573611853647945" at="53,192,54,29" concept="8" />
-      <node id="8030573611853647955" at="58,5,59,0" concept="9" />
-      <node id="8030573611853647974" at="62,242,63,22" concept="8" />
-      <node id="8030573611853647989" at="66,5,67,16" concept="8" />
-      <node id="8030573611853648001" at="69,65,70,45" concept="7" />
-      <node id="8030573611853648007" at="70,45,71,71" concept="3" />
-      <node id="8030573611853648014" at="71,71,72,15" concept="8" />
-      <node id="8030573611853795790" at="75,53,76,13" concept="8" />
-      <node id="8030573611853795795" at="77,5,78,49" concept="3" />
-      <node id="8030573611853795800" at="78,49,79,0" concept="9" />
-      <node id="8030573611853795817" at="81,186,82,220" concept="3" />
-      <node id="8030573611853795833" at="85,148,86,51" concept="3" />
-      <node id="8030573611853795851" at="89,53,90,117" concept="7" />
-      <node id="8030573611853795861" at="91,299,92,97" concept="8" />
-      <node id="8030573611853795885" at="93,5,94,16" concept="8" />
-      <node id="8030573611853647773" at="15,0,17,0" concept="2" trace="RegexUtil#()V" />
-      <node id="8030573611853647788" at="18,49,21,5" concept="4" />
-      <node id="8030573611853647856" at="34,30,37,9" concept="4" />
-      <node id="8030573611853647907" at="44,137,47,5" concept="5" />
-      <node id="8030573611853647938" at="52,175,55,11" concept="5" />
-      <node id="8030573611853647972" at="61,318,64,9" concept="5" />
-      <node id="8030573611853795788" at="74,104,77,5" concept="5" />
-      <node id="8030573611853795810" at="80,163,83,7" concept="5" />
-      <node id="8030573611853795824" at="84,5,87,5" concept="4" />
-      <node id="8030573611853795859" at="90,117,93,5" concept="5" />
-      <node id="8030573611853647836" at="27,206,31,11" concept="5" />
-      <node id="8030573611853647854" at="33,7,38,7" concept="5" />
-      <node id="8030573611853647934" at="51,143,56,9" concept="4" />
-      <node id="8030573611853647960" at="60,116,65,7" concept="4" />
-      <node id="8030573611853647999" at="69,0,74,0" concept="11" trace="collectNamedParentheses#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="8030573611853795801" at="79,0,84,5" concept="4" />
-      <node id="8030573611853647829" at="26,14,32,9" concept="4" />
-      <node id="8030573611853647827" at="26,12,33,7" concept="0" />
-      <node id="8030573611853647925" at="50,22,57,7" concept="4" />
-      <node id="8030573611853647956" at="59,0,66,5" concept="4" />
-      <node id="8030573611853795847" at="89,0,96,0" concept="11" trace="getRegexpIfContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8030573611853647923" at="49,131,58,5" concept="5" />
-      <node id="8030573611853647810" at="23,29,33,7" concept="5" />
-      <node id="8030573611853795785" at="74,0,89,0" concept="11" trace="collectNamedParenthesesInternal#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Ljava/util/List;)V" />
-      <node id="8030573611853647804" at="21,5,39,5" concept="4" />
-      <node id="8030573611853647779" at="17,0,42,0" concept="11" trace="collectMatchReferences#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="8030573611853647890" at="42,0,69,0" concept="11" trace="findRegexpUsingConstructionFor#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="8030573611853647776" at="15,22,15,22" />
-      <scope id="8030573611853647797" at="19,144,20,102" />
-      <scope id="8030573611853647811" at="24,269,25,191" />
-      <scope id="8030573611853647857" at="35,159,36,107" />
-      <scope id="8030573611853647911" at="45,22,46,17" />
-      <scope id="8030573611853647944" at="53,192,54,29" />
-      <scope id="8030573611853647973" at="62,242,63,22" />
-      <scope id="8030573611853795789" at="75,53,76,13" />
-      <scope id="8030573611853795816" at="81,186,82,220" />
-      <scope id="8030573611853795832" at="85,148,86,51" />
-      <scope id="8030573611853795860" at="91,299,92,97" />
-      <scope id="8030573611853647773" at="15,0,17,0" />
-      <scope id="8030573611853647837" at="28,282,30,18" />
-      <scope id="8030573611853647788" at="18,49,21,5">
+      <node id="8030573611853647782" at="18,73,19,49" concept="7" />
+      <node id="8030573611853647798" at="20,251,21,102" concept="3" />
+      <node id="8030573611853647806" at="23,232,24,29" concept="7" />
+      <node id="8030573611853647812" at="25,273,26,191" concept="3" />
+      <node id="8030573611853647838" at="29,286,30,197" concept="3" />
+      <node id="8030573611853647844" at="30,197,31,18" concept="1" />
+      <node id="8030573611853647858" at="36,274,37,107" concept="3" />
+      <node id="8030573611853647883" at="40,5,41,19" concept="8" />
+      <node id="8030573611853647893" at="43,65,44,184" concept="7" />
+      <node id="8030573611853647899" at="44,184,45,244" concept="7" />
+      <node id="8030573611853647912" at="46,22,47,17" concept="8" />
+      <node id="8030573611853647914" at="48,5,49,0" concept="9" />
+      <node id="8030573611853647915" at="49,0,50,238" concept="7" />
+      <node id="8030573611853647945" at="54,192,55,29" concept="8" />
+      <node id="8030573611853647955" at="59,5,60,0" concept="9" />
+      <node id="8030573611853647974" at="63,242,64,22" concept="8" />
+      <node id="8030573611853647989" at="67,5,68,16" concept="8" />
+      <node id="8030573611853648001" at="70,65,71,45" concept="7" />
+      <node id="8030573611853648007" at="71,45,72,71" concept="3" />
+      <node id="8030573611853648014" at="72,71,73,15" concept="8" />
+      <node id="8030573611853795790" at="76,53,77,13" concept="8" />
+      <node id="8030573611853795795" at="78,5,79,49" concept="3" />
+      <node id="8030573611853795800" at="79,49,80,0" concept="9" />
+      <node id="8030573611853795817" at="82,186,83,220" concept="3" />
+      <node id="8030573611853795833" at="86,257,87,51" concept="3" />
+      <node id="8030573611853795851" at="90,53,91,223" concept="7" />
+      <node id="8030573611853795861" at="92,503,93,199" concept="8" />
+      <node id="8030573611853795885" at="94,5,95,16" concept="8" />
+      <node id="8030573611853647773" at="16,0,18,0" concept="2" trace="RegexUtil#()V" />
+      <node id="8030573611853647788" at="19,49,22,5" concept="4" />
+      <node id="8030573611853647856" at="35,30,38,9" concept="4" />
+      <node id="8030573611853647907" at="45,244,48,5" concept="5" />
+      <node id="8030573611853647938" at="53,284,56,11" concept="5" />
+      <node id="8030573611853647972" at="62,433,65,9" concept="5" />
+      <node id="8030573611853795788" at="75,104,78,5" concept="5" />
+      <node id="8030573611853795810" at="81,272,84,7" concept="5" />
+      <node id="8030573611853795824" at="85,5,88,5" concept="4" />
+      <node id="8030573611853795859" at="91,223,94,5" concept="5" />
+      <node id="8030573611853647836" at="28,206,32,11" concept="5" />
+      <node id="8030573611853647854" at="34,7,39,7" concept="5" />
+      <node id="8030573611853647934" at="52,250,57,9" concept="4" />
+      <node id="8030573611853647960" at="61,222,66,7" concept="4" />
+      <node id="8030573611853647999" at="70,0,75,0" concept="11" trace="collectNamedParentheses#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="8030573611853795801" at="80,0,85,5" concept="4" />
+      <node id="8030573611853647829" at="27,14,33,9" concept="4" />
+      <node id="8030573611853647827" at="27,12,34,7" concept="0" />
+      <node id="8030573611853647925" at="51,22,58,7" concept="4" />
+      <node id="8030573611853647956" at="60,0,67,5" concept="4" />
+      <node id="8030573611853795847" at="90,0,97,0" concept="11" trace="getRegexpIfContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8030573611853647923" at="50,238,59,5" concept="5" />
+      <node id="8030573611853647810" at="24,29,34,7" concept="5" />
+      <node id="8030573611853795785" at="75,0,90,0" concept="11" trace="collectNamedParenthesesInternal#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Ljava/util/List;)V" />
+      <node id="8030573611853647804" at="22,5,40,5" concept="4" />
+      <node id="8030573611853647779" at="18,0,43,0" concept="11" trace="collectMatchReferences#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="8030573611853647890" at="43,0,70,0" concept="11" trace="findRegexpUsingConstructionFor#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="8030573611853647776" at="16,22,16,22" />
+      <scope id="8030573611853647797" at="20,251,21,102" />
+      <scope id="8030573611853647811" at="25,273,26,191" />
+      <scope id="8030573611853647857" at="36,274,37,107" />
+      <scope id="8030573611853647911" at="46,22,47,17" />
+      <scope id="8030573611853647944" at="54,192,55,29" />
+      <scope id="8030573611853647973" at="63,242,64,22" />
+      <scope id="8030573611853795789" at="76,53,77,13" />
+      <scope id="8030573611853795816" at="82,186,83,220" />
+      <scope id="8030573611853795832" at="86,257,87,51" />
+      <scope id="8030573611853795860" at="92,503,93,199" />
+      <scope id="8030573611853647773" at="16,0,18,0" />
+      <scope id="8030573611853647837" at="29,286,31,18" />
+      <scope id="8030573611853647788" at="19,49,22,5">
         <var name="ruc" id="8030573611853647795" />
       </scope>
-      <scope id="8030573611853647855" at="34,30,37,9" />
-      <scope id="8030573611853647856" at="34,30,37,9">
+      <scope id="8030573611853647855" at="35,30,38,9" />
+      <scope id="8030573611853647856" at="35,30,38,9">
         <var name="expr" id="8030573611853647870" />
       </scope>
-      <scope id="8030573611853647937" at="52,175,55,11" />
-      <scope id="8030573611853647971" at="61,318,64,9" />
-      <scope id="8030573611853648000" at="69,65,72,15">
+      <scope id="8030573611853647937" at="53,284,56,11" />
+      <scope id="8030573611853647971" at="62,433,65,9" />
+      <scope id="8030573611853648000" at="70,65,73,15">
         <var name="res" id="8030573611853648002" />
       </scope>
-      <scope id="8030573611853795809" at="80,163,83,7" />
-      <scope id="8030573611853795824" at="84,5,87,5">
+      <scope id="8030573611853795809" at="81,272,84,7" />
+      <scope id="8030573611853795824" at="85,5,88,5">
         <var name="mpe" id="8030573611853795830" />
       </scope>
-      <scope id="8030573611853647835" at="27,206,31,11" />
-      <scope id="8030573611853647933" at="51,143,56,9" />
-      <scope id="8030573611853647934" at="51,143,56,9">
+      <scope id="8030573611853647835" at="28,206,32,11" />
+      <scope id="8030573611853647933" at="52,250,57,9" />
+      <scope id="8030573611853647934" at="52,250,57,9">
         <var name="regref" id="8030573611853647935" />
       </scope>
-      <scope id="8030573611853647959" at="60,116,65,7" />
-      <scope id="8030573611853647960" at="60,116,65,7">
+      <scope id="8030573611853647959" at="61,222,66,7" />
+      <scope id="8030573611853647960" at="61,222,66,7">
         <var name="expr" id="8030573611853647969" />
       </scope>
-      <scope id="8030573611853647999" at="69,0,74,0">
+      <scope id="8030573611853647999" at="70,0,75,0">
         <var name="node" id="8030573611853648017" />
       </scope>
-      <scope id="8030573611853795801" at="79,0,84,5">
+      <scope id="8030573611853795801" at="80,0,85,5">
         <var name="ref" id="8030573611853795807" />
       </scope>
-      <scope id="8030573611853795850" at="89,53,94,16">
+      <scope id="8030573611853795850" at="90,53,95,16">
         <var name="container" id="8030573611853795852" />
       </scope>
-      <scope id="8030573611853647828" at="26,14,32,9" />
-      <scope id="8030573611853647829" at="26,14,32,9">
+      <scope id="8030573611853647828" at="27,14,33,9" />
+      <scope id="8030573611853647829" at="27,14,33,9">
         <var name="elseif" id="8030573611853647833" />
       </scope>
-      <scope id="8030573611853647924" at="50,22,57,7" />
-      <scope id="8030573611853647925" at="50,22,57,7">
+      <scope id="8030573611853647924" at="51,22,58,7" />
+      <scope id="8030573611853647925" at="51,22,58,7">
         <var name="parentRuc" id="8030573611853647931" />
       </scope>
-      <scope id="8030573611853647956" at="59,0,66,5">
+      <scope id="8030573611853647956" at="60,0,67,5">
         <var name="ifst" id="8030573611853647957" />
       </scope>
-      <scope id="8030573611853795847" at="89,0,96,0">
+      <scope id="8030573611853795847" at="90,0,97,0">
         <var name="n" id="8030573611853795887" />
       </scope>
-      <scope id="8030573611853795787" at="74,104,87,5" />
-      <scope id="8030573611853795785" at="74,0,89,0">
+      <scope id="8030573611853795787" at="75,104,88,5" />
+      <scope id="8030573611853795785" at="75,0,90,0">
         <var name="found" id="8030573611853795843" />
         <var name="node" id="8030573611853795839" />
         <var name="seen" id="8030573611853795841" />
       </scope>
-      <scope id="8030573611853647805" at="22,126,38,7">
+      <scope id="8030573611853647805" at="23,232,39,7">
         <var name="toCollect" id="8030573611853647807" />
       </scope>
-      <scope id="8030573611853647804" at="21,5,39,5">
+      <scope id="8030573611853647804" at="22,5,40,5">
         <var name="ifst" id="8030573611853647881" />
       </scope>
-      <scope id="8030573611853647781" at="17,73,40,19">
+      <scope id="8030573611853647781" at="18,73,41,19">
         <var name="matches" id="8030573611853647783" />
       </scope>
-      <scope id="8030573611853647779" at="17,0,42,0">
+      <scope id="8030573611853647779" at="18,0,43,0">
         <var name="enclosingNode" id="8030573611853647886" />
       </scope>
-      <scope id="8030573611853647892" at="42,65,67,16">
+      <scope id="8030573611853647892" at="43,65,68,16">
         <var name="dcl" id="8030573611853647916" />
         <var name="parens" id="8030573611853647894" />
         <var name="ruc" id="8030573611853647900" />
       </scope>
-      <scope id="8030573611853647890" at="42,0,69,0">
+      <scope id="8030573611853647890" at="43,0,70,0">
         <var name="ref" id="8030573611853647991" />
       </scope>
-      <unit id="8030573611853647771" at="14,0,97,0" name="jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil" />
+      <unit id="8030573611853647771" at="15,0,98,0" name="jetbrains.mps.baseLanguage.regexp.constraints.RegexUtil" />
     </file>
   </root>
 </debug-info>

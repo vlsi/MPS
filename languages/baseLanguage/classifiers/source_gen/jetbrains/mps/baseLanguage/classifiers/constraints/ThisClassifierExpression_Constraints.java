@@ -19,7 +19,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ThisClassifierExpression_Constraints extends BaseConstraintsDescriptor {
@@ -54,7 +56,7 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
+            return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(SNodeOperations.cast(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression")));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -66,7 +68,7 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
+    return SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752174734l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")}, true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213107438050");
   private static SNodePointer breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1218737393727");

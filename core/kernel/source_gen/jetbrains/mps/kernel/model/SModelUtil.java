@@ -113,7 +113,7 @@ public class SModelUtil {
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
-      if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
+      if (SNodeOperations.isInstanceOf(superConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) && !(SetSequence.fromSet(result).contains(superConcept))) {
         for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
           SetSequence.fromSet(result).addElement((SNode) node);
         }
@@ -123,7 +123,7 @@ public class SModelUtil {
   }
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       if (extended != null) {

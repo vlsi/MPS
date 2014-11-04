@@ -106,7 +106,7 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       editorCell.setRole("persistentConfiguration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, true);
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -4,16 +4,16 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ITemplateCall_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument")) {
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"))) {
       SNode template = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"));
       int i = SNodeOperations.getIndexInParent(expression);
       if (i < ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).count()) {

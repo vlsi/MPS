@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -26,7 +28,7 @@ public class TestScope extends Scope {
     Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression"), this, null);
     return Sequence.fromIterable(((Iterable<SNode>) ListSequence.fromList(new ArrayList<SNode>()))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.DotExpression");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
       }
     });
   }

@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractStatementListInnerExpression_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +32,7 @@ public class ExtractStatementListInnerExpression_Constraints extends BaseConstra
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 3196918548952765095l, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "8733626498296461356");
 }

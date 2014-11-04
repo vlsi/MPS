@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MultiForEachVariable_Editor extends DefaultNodeEditor {
@@ -33,7 +35,7 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_bqabhr_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_bqabhr_a0(editorContext, node));
     return editorCell;
@@ -60,8 +62,8 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
     }
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
-      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Object[]{})));
+      if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))) {
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")), "virtual_getVariableSuffixes_1213877337304", new Object[]{})));
       }
       return postfixes;
     }

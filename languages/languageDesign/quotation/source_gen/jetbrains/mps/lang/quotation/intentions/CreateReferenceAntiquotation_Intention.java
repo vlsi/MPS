@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -17,8 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceAntiquotation_Intention implements IntentionFactory {
@@ -54,7 +54,7 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
     if (!(selectedCell.isReferenceCell())) {
       return false;
     }
-    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
+    SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
     if (contextNode == null) {
       return false;
     }
@@ -83,13 +83,13 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
       if (!(selectedCell.isReferenceCell())) {
         return;
       }
-      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
+      SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
       if (contextNode == null) {
         return;
       }
       String role = selectedCell.getRole();
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
+      if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785117l, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
+        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
         AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), null);
         return;

@@ -16,6 +16,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -53,7 +54,7 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
     return properties;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints");
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "5944657839039155481");
 }

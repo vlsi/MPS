@@ -34,7 +34,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
       }
       return;
     }
-    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(slot), "jetbrains.mps.samples.heating.structure.Slot");
+    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(slot), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot"));
     if ((prev != null)) {
       if (!(SPropertyOperations.getInteger(prev, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) <= SPropertyOperations.getInteger(slot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")))) {
         MessageTarget errorTarget = new NodeMessageTarget();

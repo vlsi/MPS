@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -74,7 +75,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
       return "Convert to Inline Template";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")), "jetbrains.mps.lang.generator.structure.TemplateFragment", true, new String[]{});
+      List<SNode> TFs = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), true, new SConcept[]{});
       if (ListSequence.fromList(TFs).isEmpty()) {
         JOptionPane.showMessageDialog(null, "No fragments found");
         return;

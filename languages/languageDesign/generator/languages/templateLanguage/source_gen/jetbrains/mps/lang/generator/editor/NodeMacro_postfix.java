@@ -45,8 +45,8 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_crgygw_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.HORIZONTAL_GAP, 0, new Padding(3, Measure.PIXELS));
     editorCell.getStyle().putAll(style);
     if (renderingCondition_crgygw_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_crgygw_a0(editorContext, node));
@@ -93,7 +93,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_crgygw_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

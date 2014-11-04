@@ -32,7 +32,7 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_y4nzw5_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     PrefixOperationActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

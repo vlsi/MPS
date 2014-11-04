@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -42,7 +43,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> nodes = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", true);
+            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));

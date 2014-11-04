@@ -29,12 +29,12 @@ public class BuildJavaPlugin_Behavior {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
         @Override
         public String getName(SNode jo) {
-          String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName"));
+          String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, "jetbrains.mps.build.structure.BuildSource_JavaOptions")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName"));
           return ((optionsName == null || optionsName.length() == 0) ? "<default options>" : optionsName);
         }
       }, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName")));
+          return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, "jetbrains.mps.build.structure.BuildSource_JavaOptions")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName")));
         }
       });
     }

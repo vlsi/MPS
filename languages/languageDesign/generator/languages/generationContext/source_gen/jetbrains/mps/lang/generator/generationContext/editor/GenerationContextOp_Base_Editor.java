@@ -25,7 +25,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

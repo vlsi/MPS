@@ -17,7 +17,7 @@
     <file name="QueriesGenerated.java">
       <node id="4737294400113452187" at="25,112,26,139" concept="2" />
       <node id="4737294400113452193" at="26,139,27,105" concept="3" />
-      <node id="5499565529811713158" at="29,112,30,579" concept="3" />
+      <node id="5499565529811713158" at="29,112,30,681" concept="3" />
       <node id="5499565529811667622" at="32,109,33,139" concept="2" />
       <node id="5499565529811371610" at="33,139,34,107" concept="3" />
       <node id="5499565529811668373" at="36,109,37,139" concept="2" />
@@ -26,7 +26,7 @@
       <node id="4737294400113494197" at="41,139,42,105" concept="3" />
       <node id="4737294400113494154" at="44,109,45,139" concept="2" />
       <node id="4737294400113494160" at="45,139,46,105" concept="3" />
-      <node id="5499565529811346971" at="48,109,49,472" concept="3" />
+      <node id="5499565529811346971" at="48,109,49,676" concept="3" />
       <node id="5499565529811382401" at="51,109,52,145" concept="3" />
       <node id="5499565529811356537" at="54,108,55,157" concept="3" />
       <node id="5499565529811356520" at="57,108,58,157" concept="3" />
@@ -94,8 +94,8 @@
       <node id="5499565529811383022" at="144,0,150,0" concept="4" trace="_quotation_createNode_x583g4_d0a0a23#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5499565529811383107" at="150,0,156,0" concept="4" trace="_quotation_createNode_x583g4_e0a0a23#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5499565529811383165" at="156,0,162,0" concept="4" trace="_quotation_createNode_x583g4_f0a0a23#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5499565529811713157" at="29,112,30,579" />
-      <scope id="5499565529811346970" at="48,109,49,472" />
+      <scope id="5499565529811713157" at="29,112,30,681" />
+      <scope id="5499565529811346970" at="48,109,49,676" />
       <scope id="5499565529811382400" at="51,109,52,145" />
       <scope id="5499565529811356536" at="54,108,55,157" />
       <scope id="5499565529811356519" at="57,108,58,157" />

@@ -20,7 +20,7 @@ public class typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule extends A
   public typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule() {
   }
   public void applyRule(final SNode cellKeyMap_FunctionParm_selectedNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(cellKeyMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, 1139445935125l, "applicableConcept"));
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(cellKeyMap_FunctionParm_selectedNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, 1139445935125l, "applicableConcept"));
     {
       SNode _nodeToCheck_1029348928467 = cellKeyMap_FunctionParm_selectedNode;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086188", 0, null);

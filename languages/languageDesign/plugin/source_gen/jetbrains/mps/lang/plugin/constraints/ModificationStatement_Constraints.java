@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ModificationStatement_Constraints extends BaseConstraintsDescriptor {
@@ -45,11 +46,11 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ModificationStatement"), MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203092361741l, 1203092736097l, "modifiedGroup")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, 1207145245948l, "contents"));
-            if (SNodeOperations.isInstanceOf(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents")) {
-              return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1207145163717l, 1207145201301l, "reference"))).where(new IWhereFilter<SNode>() {
+            SNode contents = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203092361741l, "jetbrains.mps.lang.plugin.structure.ModificationStatement")), MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203092361741l, 1203092736097l, "modifiedGroup")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, 1207145245948l, "contents"));
+            if (SNodeOperations.isInstanceOf(contents, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1207145163717l, "jetbrains.mps.lang.plugin.structure.ElementListContents"))) {
+              return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(contents, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1207145163717l, "jetbrains.mps.lang.plugin.structure.ElementListContents")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1207145163717l, 1207145201301l, "reference"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.GroupAnchor");
+                  return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203680534665l, "jetbrains.mps.lang.plugin.structure.GroupAnchor"));
                 }
               }).toListSequence();
             }
@@ -74,10 +75,10 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
-            SNode groupDeclaration = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
-            List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+            SNode groupDeclaration = SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), false, false);
+            List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.fromList(SNodeOperations.getNodeDescendants(groupDeclaration, null, false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
+                return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"));
               }
             }).toListSequence());
             ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);

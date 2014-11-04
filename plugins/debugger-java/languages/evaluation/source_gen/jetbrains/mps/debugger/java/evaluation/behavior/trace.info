@@ -97,10 +97,10 @@
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4544608336420723235">
     <file name="DebuggedType_Behavior.java">
-      <node id="4544608336420723259" at="15,281,16,276" concept="4" />
-      <node id="4544608336420723288" at="18,280,19,275" concept="4" />
+      <node id="4544608336420723259" at="15,383,16,378" concept="4" />
+      <node id="4544608336420723288" at="18,382,19,377" concept="4" />
       <node id="4544608336420723299" at="20,5,21,16" concept="4" />
-      <node id="4544608336420723321" at="24,280,25,275" concept="4" />
+      <node id="4544608336420723321" at="24,382,25,377" concept="4" />
       <node id="4544608336420723332" at="26,5,27,16" concept="4" />
       <node id="4544608336420723235" at="12,0,14,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4544608336420723243" at="14,86,17,5" concept="2" />
@@ -109,9 +109,9 @@
       <node id="4544608336420723235" at="23,0,29,0" concept="6" trace="call_getLowClassifierType_4544608336420723302#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4544608336420723235" at="14,0,23,0" concept="6" trace="call_getHighClassifierType_4544608336420723238#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4544608336420723237" at="12,43,12,43" />
-      <scope id="4544608336420723245" at="15,281,16,276" />
-      <scope id="4544608336420723272" at="18,280,19,275" />
-      <scope id="4544608336420723320" at="24,280,25,275" />
+      <scope id="4544608336420723245" at="15,383,16,378" />
+      <scope id="4544608336420723272" at="18,382,19,377" />
+      <scope id="4544608336420723320" at="24,382,25,377" />
       <scope id="4544608336420723235" at="12,0,14,0">
         <var name="thisNode" id="4544608336420723235" />
       </scope>
@@ -176,11 +176,11 @@
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/6036237525966348398">
     <file name="EvaluatorsSuperMethodCall_Behavior.java">
-      <node id="6036237525966348407" at="14,83,15,560" concept="4" />
+      <node id="6036237525966348407" at="14,83,15,672" concept="4" />
       <node id="6036237525966348398" at="12,0,14,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6036237525966348398" at="14,0,17,0" concept="6" trace="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="6036237525966348400" at="12,43,12,43" />
-      <scope id="6036237525966348404" at="14,83,15,560" />
+      <scope id="6036237525966348404" at="14,83,15,672" />
       <scope id="6036237525966348398" at="12,0,14,0">
         <var name="thisNode" id="6036237525966348398" />
       </scope>

@@ -12,10 +12,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeDotExpressionChecked_Intention implements IntentionFactory {
@@ -59,10 +59,10 @@ public class MakeDotExpressionChecked_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression") ? "Make Dot Expression Not Checked" : "Make Dot Expression Checked");
+      return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) ? "Make Dot Expression Not Checked" : "Make Dot Expression Checked");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"))) {
         SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
         SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
         SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")));

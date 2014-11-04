@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class EnvironmentExpression_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +32,7 @@ public class EnvironmentExpression_Constraints extends BaseConstraintsDescriptor
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", true, false) != null) || (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 2454261876037468744l, "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction"), true, false) != null) || (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 6139196002333163564l, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "33324785353658740");
 }

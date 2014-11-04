@@ -62,13 +62,13 @@ public class _QueriesUtil {
     return null;
   }
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
-    if (!((SNodeOperations.isInstanceOf(inputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
+    if (!((SNodeOperations.isInstanceOf(inputNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))))) {
       return Collections.emptyList();
     }
     List<SNode> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
     List<SNode> parms = new ArrayList<SNode>();
     for (SNode var : variablesUsedInClosure) {
-      if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SNodeOperations.isInstanceOf(var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
         parms.add(var);
       }
     }
@@ -94,7 +94,7 @@ public class _QueriesUtil {
           }
           return false;
         }
-        if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
+        if (SNodeOperations.isInstanceOf(object, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure"))) {
           return true;
         }
         return ClosuresUtil.isClosureContextOwner(((SNode) object));

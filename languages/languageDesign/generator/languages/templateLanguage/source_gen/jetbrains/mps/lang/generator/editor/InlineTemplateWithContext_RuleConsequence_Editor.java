@@ -33,7 +33,7 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
     editorCell.setCellId("Constant_j89piv_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

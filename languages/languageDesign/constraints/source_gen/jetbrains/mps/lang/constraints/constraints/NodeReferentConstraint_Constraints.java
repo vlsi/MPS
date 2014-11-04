@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -46,10 +46,10 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
             SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getReferenceNode());
             if (applicableConcept == null) {
               SNode root = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
-              if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
-                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
+              if (SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
+                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
               } else {
-                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
+                applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
               }
             }
             return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(applicableConcept);

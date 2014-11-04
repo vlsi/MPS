@@ -40,7 +40,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_io6s4u_a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildFolderMacro_Editor.ReplaceWith_BuildMacro_cellMenu_io6s4u_a0a0()}));

@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -49,7 +49,7 @@ public class BuildMps_IdeaPluginModule_Constraints extends BaseConstraintsDescri
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (SNodeOperations.getContainingRoot(_context.getParameterNode()) != SNodeOperations.getContainingRoot(_context.getContextNode())) {
-              SNode proj = SNodeOperations.as(SNodeOperations.getContainingRoot(_context.getParameterNode()), "jetbrains.mps.build.structure.BuildProject");
+              SNode proj = SNodeOperations.as(SNodeOperations.getContainingRoot(_context.getParameterNode()), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
               if (proj != null) {
                 return SPropertyOperations.getString(proj, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "/" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }

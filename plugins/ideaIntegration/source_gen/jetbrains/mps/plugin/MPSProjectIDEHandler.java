@@ -33,10 +33,10 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -176,7 +176,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         }
         Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
           }
         });
         SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {

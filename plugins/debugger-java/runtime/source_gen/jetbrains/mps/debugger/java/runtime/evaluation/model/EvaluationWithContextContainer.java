@@ -120,7 +120,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   private void createVars() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        fillVariables(SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"));
+        fillVariables(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept")));
       }
     });
   }
@@ -197,7 +197,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       return null;
     }
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SNodeOperations.cast(unit, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SNodeOperations.cast(unit, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
     return classifierType;
   }
   public SNode findUnit(final String unitName) {
@@ -208,7 +208,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       SModel model = stub;
       SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(model, "jetbrains.mps.lang.traceable.structure.UnitConcept")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       });
       if (node != null) {
@@ -222,9 +222,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     Set<SNode> instances = findUsages.findInstances(new ModelsScope(getCandidateNonStubModels(unitName)), Collections.singleton(concept), false, new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(((SNode) it), "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(it, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{}).equals(unitName);
+        return SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")) && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369892l, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}).equals(unitName);
       }
-    }), "jetbrains.mps.lang.traceable.structure.UnitConcept");
+    }), MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369892l, "jetbrains.mps.lang.traceable.structure.UnitConcept"));
   }
   @Nullable
   private SModel findStubForFqName(String fqName) {
@@ -290,7 +290,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       if (matchingVar == null) {
         matchingVar = ListSequence.fromList(SLinkOperations.getChildren(myEvaluatorNode, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243735l, "variables"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_v5yv3u_a0a0a0a0a0a0a1a2v(SPropertyOperations.getString(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(variableReference), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return eq_v5yv3u_a0a0a0a0a0a0a1a2v(SPropertyOperations.getString(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(variableReference), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         });
       }

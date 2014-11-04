@@ -4,14 +4,14 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildMps_Generator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getSourceLanguage_9200313594510517119(SNode thisNode) {
-    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") ? SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") : SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, 868963075225252684l, "sourceLanguage")));
+    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language")) ? SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language")) : SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, 868963075225252684l, "sourceLanguage")));
   }
 }

@@ -12,6 +12,6 @@ public class BuildVariableMacroInitValue_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getMacroName_244868996532694558(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildVariableMacro"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, "jetbrains.mps.build.structure.BuildVariableMacro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

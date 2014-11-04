@@ -39,7 +39,7 @@ public class QueriesGenerated {
           SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null));
         } else {
           SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null));
-          SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")), "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), candidate);
+          SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), candidate);
         }
         return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"));
       }
@@ -71,7 +71,7 @@ public class QueriesGenerated {
           SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null));
         } else {
           SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null));
-          SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")), "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), candidate);
+          SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), candidate);
         }
         return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"));
       }
@@ -156,6 +156,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7704855178159597571(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor") && SNodeOperations.hasRole(_context.getSourceNode(), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "threadPool");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor")) && SNodeOperations.hasRole(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool"));
   }
 }

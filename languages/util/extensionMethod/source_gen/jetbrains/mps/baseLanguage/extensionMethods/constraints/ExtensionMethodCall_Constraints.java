@@ -58,7 +58,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
               @Override
               public List<SNode> getNodes(Condition<SNode> p0) {
                 List<SNode> result = new ArrayList<SNode>();
-                SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+                SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
                 for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
                   if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(extension, MetaAdapterFactory.getContainmentLink(new UUID(6757083949642499970l, -9110065865172803712l), 1894531970723270160l, 1894531970723323134l, "type")), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())}))) {
                     for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(extension, MetaAdapterFactory.getContainmentLink(new UUID(6757083949642499970l, -9110065865172803712l), 8022092943110829337l, 8022092943110829339l, "methods")))) {
@@ -81,8 +81,8 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
               }
               @Override
               public boolean isInScope(SNode node) {
-                SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
-                SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+                SNode extMethod = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"));
+                SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())})) && VisibilityUtil.isVisible(_context.getReferenceNode(), extMethod);
               }
             };

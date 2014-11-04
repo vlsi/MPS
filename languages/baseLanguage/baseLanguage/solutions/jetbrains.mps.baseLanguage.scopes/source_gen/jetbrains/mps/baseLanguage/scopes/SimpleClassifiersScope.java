@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class SimpleClassifiersScope extends Scope {
@@ -42,7 +42,7 @@ public class SimpleClassifiersScope extends Scope {
     String firstComponent = tokenizer.nextToken();
 
     // this exact class which provides the scope 
-    if (!(SNodeOperations.isInstanceOf(myClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+    if (!(SNodeOperations.isInstanceOf(myClassifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
       if (firstComponent.equals(SPropertyOperations.getString(myClassifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
         return ClassifierResolveUtils.construct(myClassifier, tokenizer);
       }

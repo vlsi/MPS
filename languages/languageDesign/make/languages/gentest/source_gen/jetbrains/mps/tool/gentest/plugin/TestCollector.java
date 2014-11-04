@@ -104,9 +104,9 @@ public class TestCollector {
           public boolean accept(SNode cls) {
             return BehaviorReflection.invokeVirtual(String.class, cls, "virtual_getFqName_1213877404258", new Object[]{}).equals(testCase);
           }
-        }), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
-    }), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   private SNode getTestAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -118,7 +118,7 @@ public class TestCollector {
           }
         });
       }
-    }), "jetbrains.mps.baseLanguage.structure.Annotation");
+    }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"));
   }
   private SNode getIgnoreAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, IGNORE_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -130,7 +130,7 @@ public class TestCollector {
           }
         });
       }
-    }), "jetbrains.mps.baseLanguage.structure.Annotation");
+    }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"));
   }
   private SNode getMPSLaunchAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, MPS_LAUNCH_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -142,7 +142,7 @@ public class TestCollector {
           }
         });
       }
-    }), "jetbrains.mps.baseLanguage.structure.Annotation");
+    }), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"));
   }
   private SNode getNode(SModel context, String kind, _FunctionTypes._return_P0_E0<? extends SNode> getter) {
     SNode node = MapSequence.fromMap(nodeCache).get(MultiTuple.<String,String>from(context.getReference().getModelName(), kind));

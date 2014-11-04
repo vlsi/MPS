@@ -55,7 +55,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_q2jz9e_a0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClassifierDocComment_Editor._StyleParameter_QueryFunction_q2jz9e_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClassifierDocComment_Editor._StyleParameter_QueryFunction_q2jz9e_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -70,8 +70,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_body");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
@@ -115,7 +115,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_q2jz9e_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.addKeyMap(new InsertAnEmptyCommentLine());
       editorCell.setDefaultText("");
@@ -126,7 +126,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q2jz9e_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_q2jz9e_a2a(editorContext, node));
@@ -151,14 +151,14 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
   }
   private EditorCell createConstant_q2jz9e_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_q2jz9e_a2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -169,8 +169,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_author");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -216,8 +216,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_since");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -263,8 +263,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_version");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -310,8 +310,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_see");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -357,8 +357,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_param");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -409,8 +409,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -424,15 +424,15 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_q2jz9e_a6c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
   }
   private EditorCell createConstant_q2jz9e_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_q2jz9e_d0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

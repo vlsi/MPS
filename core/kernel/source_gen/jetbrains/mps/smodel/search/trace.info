@@ -408,7 +408,7 @@
       <node id="8401916545537506205" at="80,0,81,208" concept="9" />
       <node id="8401916545537506335" at="82,37,83,20" concept="10" />
       <node id="8401916545537506303" at="84,7,85,0" concept="12" />
-      <node id="8401916545537503559" at="85,0,86,403" concept="9" />
+      <node id="8401916545537503559" at="85,0,86,506" concept="9" />
       <node id="8401916545537506145" at="87,33,88,20" concept="10" />
       <node id="8401916545537506153" at="89,7,90,0" concept="12" />
       <node id="8401916545537506352" at="90,0,91,81" concept="10" />
@@ -421,7 +421,7 @@
       <node id="8401916545537551754" at="55,66,58,7" concept="7" />
       <node id="8401916545537518385" at="61,0,64,0" concept="8" trace="getSearchScope#()Ljetbrains/mps/smodel/search/ISearchScope;" />
       <node id="8401916545537506322" at="81,208,84,7" concept="7" />
-      <node id="8401916545537506136" at="86,403,89,7" concept="7" />
+      <node id="8401916545537506136" at="86,506,89,7" concept="7" />
       <node id="8401916545537503520" at="33,0,37,0" concept="8" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3587601930838099689" at="64,0,68,0" concept="8" trace="contains#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="7712479415687789293" at="72,0,76,0" concept="1" trace="RefAdapter#(Ljetbrains/mps/smodel/search/ISearchScope;Lorg/jetbrains/mps/openapi/model/SReference;)V" />

@@ -28,9 +28,9 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     }
     SNode varDeclaration = SLinkOperations.getTarget(var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
     // <node> 
-    SNode parentStatement = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-    while (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentStatement), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
-      parentStatement = SNodeOperations.getAncestor(parentStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    SNode parentStatement = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
+    while (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentStatement), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")))) {
+      parentStatement = SNodeOperations.getNodeAncestor(parentStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
     }
     SNodeOperations.insertPrevSiblingChild(parentStatement, var);
     replaceNode(getExpression(), varDeclaration);
@@ -45,9 +45,9 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
   @Override
   protected SNode getRootToFindDuplicates(SNode node) {
-    SNode result = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    while ((SNodeOperations.getAncestor(result, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null)) {
-      result = SNodeOperations.getAncestor(result, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    SNode result = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
+    while ((SNodeOperations.getNodeAncestor(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) != null)) {
+      result = SNodeOperations.getNodeAncestor(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     }
     return result;
   }
@@ -58,16 +58,16 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }
   private void moveDeclarationIfNeed(SNode node, SNode declaration) {
-    List<SNode> declAncestors = SNodeOperations.getAncestors(declaration, null, false);
+    List<SNode> declAncestors = SNodeOperations.getNodeAncestors(declaration, null, false);
     ListSequence.fromList(declAncestors).addElement(declaration);
-    SNode commonList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    SNode commonList = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     while ((commonList != null) && !(ListSequence.fromList(declAncestors).contains(commonList))) {
-      commonList = SNodeOperations.getAncestor(commonList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+      commonList = SNodeOperations.getNodeAncestor(commonList, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     }
     if ((commonList != null)) {
       SNode firstAncestor = null;
       for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(commonList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
-        List<SNode> nodeAncestors = SNodeOperations.getAncestors(node, null, false);
+        List<SNode> nodeAncestors = SNodeOperations.getNodeAncestors(node, null, false);
         if (ListSequence.fromList(declAncestors).contains(statement) || ListSequence.fromList(nodeAncestors).contains(statement)) {
           firstAncestor = statement;
           break;
@@ -79,7 +79,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     }
   }
   public static boolean isApplicable(SNode expr) {
-    return SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null;
+    return SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")) && SNodeOperations.getNodeAncestor(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) != null;
   }
   private static SNode _quotation_createNode_nngwe4_a0b0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

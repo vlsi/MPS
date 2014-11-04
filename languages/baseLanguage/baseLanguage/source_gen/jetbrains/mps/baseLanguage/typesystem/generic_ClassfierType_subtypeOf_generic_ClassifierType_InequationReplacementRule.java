@@ -52,63 +52,63 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         BehaviorReflection.invokeVirtual(Void.class, coercedNode_e5spwb_a0, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsLeft});
         BehaviorReflection.invokeVirtual(Void.class, supertype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsRight});
         MapSequence.fromMap(subsLeft).putAll(subsRight);
-        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctLeftExp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctRightExp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
           final SNode leftParam = leftParamIt.next();
           final SNode rightParam = rightParamIt.next();
-          if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-            if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+          if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+            if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5840665131588018276", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), false, true, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), false, true, _info_12389875345);
               }
             } else {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159241", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), false, true, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), false, true, _info_12389875345);
               }
             }
-          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-            if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+          } else if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
+            if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5840665131588026918", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createGreaterThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), false, true, _info_12389875345);
+                typeCheckingContext.createGreaterThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), false, true, _info_12389875345);
               }
             } else {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159351", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createGreaterThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), false, true, _info_12389875345);
+                typeCheckingContext.createGreaterThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), false, true, _info_12389875345);
               }
             }
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5450156852668094224", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               typeCheckingContext.createEquation((SNode) rightParam, (SNode) leftParam, _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+          } else if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
             // nothing to do 
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7192154694570987550", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5450156852673290347", 0, null);
@@ -154,33 +154,33 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         BehaviorReflection.invokeVirtual(Void.class, coercedNode_e5spwb_a0, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsLeft});
         BehaviorReflection.invokeVirtual(Void.class, supertype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subsRight});
         MapSequence.fromMap(subsLeft).putAll(subsRight);
-        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        SNode ctLeftExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), coercedNode_e5spwb_a0, "virtual_expandGenerics_4107091686347199582", new Object[]{subsLeft}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        SNode ctRightExp = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), supertype, "virtual_expandGenerics_4107091686347199582", new Object[]{subsRight}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
 
         Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctLeftExp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getChildren(ctRightExp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
           final SNode leftParam = leftParamIt.next();
           final SNode rightParam = rightParamIt.next();
-          if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-            if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), true);
+          if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+            if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), true);
             } else {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), true);
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), true);
             }
-          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-            if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), true);
+          } else if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
+            if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), true);
             } else {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) leftParam, true);
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), (SNode) leftParam, true);
             }
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
             result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) rightParam, (SNode) leftParam);
-          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+          } else if (SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
             // nothing to do 
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
-          } else if (SNodeOperations.isInstanceOf(leftParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          } else if (SNodeOperations.isInstanceOf(leftParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && SNodeOperations.isInstanceOf(rightParam, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
           } else {
             // <node> 

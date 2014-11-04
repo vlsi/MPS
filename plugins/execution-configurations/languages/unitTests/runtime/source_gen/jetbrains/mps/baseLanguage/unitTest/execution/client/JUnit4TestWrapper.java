@@ -51,7 +51,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     });
   }
   public static boolean isJUnit4TestCase(SNode clazz) {
-    if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
+    if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
       return false;
     }
     for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), clazz, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {

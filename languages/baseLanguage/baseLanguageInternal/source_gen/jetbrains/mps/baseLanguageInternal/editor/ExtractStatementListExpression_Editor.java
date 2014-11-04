@@ -59,9 +59,9 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_416fys_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_416fys_a2a(editorContext, node));
     return editorCell;
@@ -70,7 +70,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_416fys_a2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_416fys_a0c0(editorContext, node));
     return editorCell;
@@ -99,7 +99,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_416fys_d0");
     Style style = new StyleImpl();
     StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(1, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

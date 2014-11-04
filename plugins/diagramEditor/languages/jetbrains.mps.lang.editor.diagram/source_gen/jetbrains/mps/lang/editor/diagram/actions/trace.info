@@ -15,10 +15,10 @@
   </root>
   <root nodeRef="r:955ebbcf-4887-40d1-b99b-8243cf12e6a2(jetbrains.mps.lang.editor.diagram.actions)/1497735617372820860">
     <file name="QueriesGenerated.java">
-      <node id="1497735617373401928" at="39,116,40,439" concept="1" />
+      <node id="1497735617373401928" at="39,219,40,542" concept="1" />
       <node id="1497735617373401926" at="38,162,41,5" concept="3" />
       <node id="1497735617372820937" at="38,0,43,0" concept="7" trace="nodeFactory_NodeSetup_FigureParameterMapping_1497735617372820937#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="1497735617373401927" at="39,116,40,439" />
+      <scope id="1497735617373401927" at="39,219,40,542" />
       <scope id="1497735617372820938" at="38,162,41,5" />
       <scope id="1497735617372820937" at="38,0,43,0">
         <var name="_context" id="1497735617372820937" />
@@ -33,7 +33,7 @@
       <node id="285670992217709792" at="74,130,75,62" concept="5" />
       <node id="285670992217709815" at="78,44,79,216" concept="5" />
       <node id="285670992217709824" at="80,47,81,45" concept="6" />
-      <node id="285670992217709838" at="84,45,85,106" concept="6" />
+      <node id="285670992217709838" at="84,45,85,209" concept="6" />
       <node id="285670992217709845" at="93,98,94,164" concept="5" />
       <node id="285670992217709852" at="94,164,95,203" concept="1" />
       <node id="285670992217709858" at="95,203,96,33" concept="6" />
@@ -45,7 +45,7 @@
       <node id="285670992217709792" at="115,134,116,62" concept="5" />
       <node id="285670992217709887" at="119,44,120,224" concept="5" />
       <node id="285670992217709896" at="121,51,122,45" concept="6" />
-      <node id="285670992217709910" at="125,45,126,110" concept="6" />
+      <node id="285670992217709910" at="125,45,126,213" concept="6" />
       <node id="285670992217709917" at="134,98,135,168" concept="5" />
       <node id="285670992217709924" at="135,168,136,207" concept="1" />
       <node id="285670992217709930" at="136,207,137,33" concept="6" />
@@ -101,11 +101,11 @@
       <node id="285670992217709792" at="113,5,154,5" concept="0" />
       <node id="285670992217709792" at="71,0,179,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_AbstractArgument_285670992217709792#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="285670992217709823" at="80,47,81,45" />
-      <scope id="285670992217709837" at="84,45,85,106" />
+      <scope id="285670992217709837" at="84,45,85,209" />
       <scope id="285670992217709861" at="103,61,104,189" />
       <scope id="285670992217709792" at="106,68,107,48" />
       <scope id="285670992217709895" at="121,51,122,45" />
-      <scope id="285670992217709909" at="125,45,126,110" />
+      <scope id="285670992217709909" at="125,45,126,213" />
       <scope id="285670992217709933" at="144,61,145,189" />
       <scope id="285670992217709792" at="147,68,148,48" />
       <scope id="285670992217709957" at="160,94,161,152" />

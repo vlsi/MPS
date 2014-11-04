@@ -16,9 +16,9 @@
       <node id="6374750171056867521" at="32,53,33,46" concept="2" />
       <node id="6374750171056867521" at="33,46,34,46" concept="2" />
       <node id="6374750171056867524" at="34,46,35,58" concept="5" />
-      <node id="6374750171056867530" at="35,58,36,148" concept="5" />
-      <node id="6374750171056867760" at="36,148,37,146" concept="5" />
-      <node id="6374750171056867534" at="37,146,38,139" concept="2" />
+      <node id="6374750171056867530" at="35,58,36,250" concept="5" />
+      <node id="6374750171056867760" at="36,250,37,248" concept="5" />
+      <node id="6374750171056867534" at="37,248,38,139" concept="2" />
       <node id="6374750171056867549" at="38,139,39,91" concept="2" />
       <node id="6374750171056867481" at="41,46,42,67" concept="6" />
       <node id="6374750171056867499" at="44,101,45,76" concept="5" />
@@ -124,14 +124,14 @@
       <node id="7178287329507546203" at="36,45,37,46" concept="2" />
       <node id="7178287329507546203" at="37,46,38,46" concept="2" />
       <node id="7178287329507546210" at="38,46,39,58" concept="5" />
-      <node id="7178287329507551974" at="39,58,40,148" concept="5" />
-      <node id="7178287329507546220" at="40,148,41,101" concept="2" />
+      <node id="7178287329507551974" at="39,58,40,250" concept="5" />
+      <node id="7178287329507546220" at="40,250,41,101" concept="2" />
       <node id="7178287329507579476" at="41,101,42,91" concept="2" />
       <node id="7178287329507581133" at="44,46,45,46" concept="2" />
       <node id="7178287329507581133" at="45,46,46,46" concept="2" />
       <node id="7178287329507581136" at="46,46,47,58" concept="5" />
-      <node id="7178287329507581142" at="47,58,48,148" concept="5" />
-      <node id="7178287329507581146" at="48,148,49,101" concept="2" />
+      <node id="7178287329507581142" at="47,58,48,250" concept="5" />
+      <node id="7178287329507581146" at="48,250,49,101" concept="2" />
       <node id="7178287329507581158" at="49,101,50,91" concept="2" />
       <node id="7178287329507571068" at="52,46,53,67" concept="6" />
       <node id="7178287329507579314" at="55,101,56,76" concept="5" />
@@ -355,20 +355,20 @@
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7289865355732881079">
     <file name="Generics_Test.java">
-      <node id="7289865355732881079" at="16,77,17,124" concept="2" />
-      <node id="7289865355732881079" at="17,124,18,130" concept="2" />
-      <node id="7289865355732881079" at="22,79,23,146" concept="5" />
-      <node id="7289865355732881079" at="23,146,24,159" concept="2" />
-      <node id="7289865355732881079" at="22,0,26,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
-      <node id="7289865355732881079" at="15,0,20,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
-      <scope id="7289865355732881079" at="16,77,18,130" />
-      <scope id="7289865355732881079" at="22,79,24,159">
+      <node id="7289865355732881079" at="18,77,19,124" concept="2" />
+      <node id="7289865355732881079" at="19,124,20,130" concept="2" />
+      <node id="7289865355732881079" at="24,79,25,249" concept="5" />
+      <node id="7289865355732881079" at="25,249,26,159" concept="2" />
+      <node id="7289865355732881079" at="24,0,28,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <node id="7289865355732881079" at="17,0,22,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <scope id="7289865355732881079" at="18,77,20,130" />
+      <scope id="7289865355732881079" at="24,79,26,159">
         <var name="operation" id="7289865355732881079" />
       </scope>
-      <scope id="7289865355732881079" at="22,0,26,0" />
-      <scope id="7289865355732881079" at="15,0,20,0" />
-      <unit id="7289865355732881079" at="20,0,27,0" name="jetbrains.mps.closures.test.helper.Generics_Test$TestBody" />
-      <unit id="7289865355732881079" at="13,0,28,0" name="jetbrains.mps.closures.test.helper.Generics_Test" />
+      <scope id="7289865355732881079" at="24,0,28,0" />
+      <scope id="7289865355732881079" at="17,0,22,0" />
+      <unit id="7289865355732881079" at="22,0,29,0" name="jetbrains.mps.closures.test.helper.Generics_Test$TestBody" />
+      <unit id="7289865355732881079" at="15,0,30,0" name="jetbrains.mps.closures.test.helper.Generics_Test" />
     </file>
   </root>
 </debug-info>

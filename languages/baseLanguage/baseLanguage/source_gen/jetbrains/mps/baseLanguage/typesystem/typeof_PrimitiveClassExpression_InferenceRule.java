@@ -23,11 +23,11 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
   }
   public void applyRule(final SNode primitiveClassExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode unboxedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(primitiveClassExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4564374268190696673l, 4564374268190696674l, "primitiveType")), "virtual_getBoxedType_1213877337320", new Object[]{});
-    if (SNodeOperations.isInstanceOf(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+    if (SNodeOperations.isInstanceOf(unboxedType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       {
         SNode _nodeToCheck_1029348928467 = primitiveClassExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697521", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697523", true), (SNode) _quotation_createNode_im3uqe_a0a0b0b(SLinkOperations.getTarget(SNodeOperations.cast(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4564374268190697523", true), (SNode) _quotation_createNode_im3uqe_a0a0b0b(SLinkOperations.getTarget(SNodeOperations.cast(unboxedType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))), _info_12389875345);
       }
     }
   }

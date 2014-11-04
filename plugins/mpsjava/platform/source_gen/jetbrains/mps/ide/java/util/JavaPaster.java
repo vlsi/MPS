@@ -17,6 +17,8 @@ import java.io.IOException;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
@@ -27,9 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
@@ -84,7 +84,7 @@ public class JavaPaster {
     try {
       SNode context = null;
       if (FeatureKind.CLASS_CONTENT.equals(featureKind)) {
-        context = SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+        context = SNodeOperations.getNodeAncestor(anchor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
       }
       List<SNode> nodes = parser.parse(javaCode, featureKind, context, true).getNodes();
 
@@ -102,20 +102,20 @@ public class JavaPaster {
           break;
         case CLASS_CONTENT:
           for (SNode node : ListSequence.fromList(nodes)) {
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation"));
-            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-              pasteMember(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
+            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206574119l, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206574119l, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation"));
+            } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+              pasteMember(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
             }
           }
           break;
@@ -137,11 +137,11 @@ public class JavaPaster {
     }
   }
   private static boolean pasteAtAnchorInRole(SNode node, SNode anchor, SNode parentConcept, SNode role) {
-    SNode parent = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(parentConcept), true, false);
+    SNode parent = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parentConcept), true, false);
     if ((parent == null)) {
       return false;
     }
-    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), true, false);
+    anchor = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(role, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), true, false);
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
       parent.addChild(SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), node);
     } else {
@@ -150,7 +150,7 @@ public class JavaPaster {
     return true;
   }
   private static boolean pasteMember(SNode member, SNode anchor, SNode parentConcept) {
-    SNode parent = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(parentConcept), true, false);
+    SNode parent = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parentConcept), true, false);
     if ((parent == null)) {
       return false;
     }
@@ -158,13 +158,13 @@ public class JavaPaster {
       anchor = SNodeOperations.getParent(anchor);
     }
     int index = -1;
-    if (SNodeOperations.isInstanceOf(anchor, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      index = ListSequence.fromList(SNodeOperations.getChildren(parent, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"))).indexOf(SNodeOperations.cast(anchor, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
+    if (SNodeOperations.isInstanceOf(anchor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      index = ListSequence.fromList(SNodeOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).indexOf(SNodeOperations.cast(anchor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
     }
     if (index == -1) {
       ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(member);
     } else {
-      ListSequence.fromList(SNodeOperations.getChildren(parent, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"))).insertElement(index, member);
+      ListSequence.fromList(SNodeOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).insertElement(index, member);
     }
     return true;
   }

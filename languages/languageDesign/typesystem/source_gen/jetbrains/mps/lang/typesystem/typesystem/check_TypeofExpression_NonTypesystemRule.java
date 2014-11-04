@@ -24,7 +24,7 @@ public class check_TypeofExpression_NonTypesystemRule extends AbstractNonTypesys
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeOfExpression, "TYPEOF should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217231011", null, errorTarget);
     }
-    if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(typeOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1174657509053l, "term")), "jetbrains.mps.lang.typesystem.structure.TypeVarReference")))) {
+    if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(typeOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1174657509053l, "term")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174666260556l, "jetbrains.mps.lang.typesystem.structure.TypeVarReference"))))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeOfExpression, "type of a type has little sense", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1204815653385", null, errorTarget);
     }

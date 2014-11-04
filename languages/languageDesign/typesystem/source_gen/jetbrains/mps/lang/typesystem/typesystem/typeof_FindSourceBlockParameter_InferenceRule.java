@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -20,7 +20,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule extends AbstractInfer
   public typeof_FindSourceBlockParameter_InferenceRule() {
   }
   public void applyRule(final SNode findSourceBlockParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode dependency = SNodeOperations.getAncestor(findSourceBlockParameter, "jetbrains.mps.lang.typesystem.structure.Dependency", false, false);
+    SNode dependency = SNodeOperations.getNodeAncestor(findSourceBlockParameter, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1193733698246l, "jetbrains.mps.lang.typesystem.structure.Dependency"), false, false);
     if ((dependency != null)) {
       {
         SNode _nodeToCheck_1029348928467 = findSourceBlockParameter;

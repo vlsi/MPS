@@ -5,17 +5,17 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InlineTagCommentLinePart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBegining) {
     int index = SNodeOperations.getIndexInParent(thisNode);
-    SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+    SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
     SNodeOperations.deleteNode(thisNode);
     NodeCaretPair pair = CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
     if (pair == null) {

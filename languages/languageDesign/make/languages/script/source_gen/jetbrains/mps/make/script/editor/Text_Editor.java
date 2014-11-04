@@ -36,7 +36,7 @@ public class Text_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wlph7j_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -51,8 +51,8 @@ public class Text_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -72,7 +72,7 @@ public class Text_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wlph7j_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

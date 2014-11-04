@@ -61,7 +61,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_943668161921858894(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066585l, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_943668161921858987(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -97,6 +97,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_943668161921866947(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
+    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066585l, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")));
   }
 }

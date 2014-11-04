@@ -57,7 +57,7 @@ public class LinkAttributeQualifier_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return AttributeDesignTimeOperations.getApplicableAttributes(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.AttributeAccess"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "3364660638048049745"));
+            return AttributeDesignTimeOperations.getApplicableAttributes(SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, "jetbrains.mps.lang.smodel.structure.AttributeAccess")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "3364660638048049745"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

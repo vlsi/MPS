@@ -32,7 +32,7 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_pmdlax_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_pmdlax_a0(editorContext, node));
@@ -43,7 +43,7 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_pmdlax_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pmdlax_b0a(editorContext, node));
@@ -62,7 +62,7 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_pmdlax_a1a0(editorContext, node));
     return editorCell;

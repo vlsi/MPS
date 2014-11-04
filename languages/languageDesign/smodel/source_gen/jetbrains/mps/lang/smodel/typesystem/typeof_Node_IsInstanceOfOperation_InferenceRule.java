@@ -27,8 +27,8 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033747690", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033747692", true), (SNode) _quotation_createNode_bsicn0_a0b0b(), false, true, _info_12389875345);
     }
-    if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
-      SNode conceptReference = SNodeOperations.cast(conceptArg, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference");
+    if (SNodeOperations.isInstanceOf(conceptArg, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"))) {
+      SNode conceptReference = SNodeOperations.cast(conceptArg, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"));
       {
         SNode _nodeToCheck_1029348928467 = op;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450650", 0, null);

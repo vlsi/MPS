@@ -9,9 +9,10 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
@@ -26,7 +27,7 @@ public class DependenciesCollector {
   }
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
+    for (SNode applicableNodeReference : SNodeOperations.getNodeDescendants(inferenceRule, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174650418652l, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"), false, new SConcept[]{})) {
       if (SLinkOperations.getTarget(applicableNodeReference, MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174650418652l, 1174650432090l, "applicableNode")) == SLinkOperations.getTarget(inferenceRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode"))) {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
@@ -90,7 +91,7 @@ public class DependenciesCollector {
                       }
                     }
                     if (matches_bcwvc2_a0b0c0f0b) {
-                      for (SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+                      for (SNode variableReference : SNodeOperations.getNodeDescendants(inferenceRule, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})) {
                         if (SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == node) {
                           MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, _quotation_createNode_bcwvc2_b0a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a1()));
                         }
@@ -106,17 +107,17 @@ public class DependenciesCollector {
                       if (matches_bcwvc2_b0b0c0f0b) {
                         {
                           SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_bcwvc2_a1a2a5a1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
-                          for (SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+                          for (SNode reference : SNodeOperations.getNodeDescendants(inferenceRule, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})) {
                             if (SLinkOperations.getTarget(matchedNode_bcwvc2_a1a2a5a1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == variableDeclaration) {
-                              SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_bcwvc2_a1a2a5a1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-                              SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                              SNode nodeStatement = SNodeOperations.getNodeAncestor(matchedNode_bcwvc2_a1a2a5a1, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
+                              SNode usageStatement = SNodeOperations.getNodeAncestor(reference, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
                               while (SNodeOperations.getParent(nodeStatement) != SNodeOperations.getParent(usageStatement)) {
-                                usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                                usageStatement = SNodeOperations.getNodeAncestor(usageStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
                               }
                               List<SNode> list = CollectionUtil.filter(jetbrains.mps.util.SNodeOperations.getChildren(SNodeOperations.getParent(nodeStatement)), new Condition() {
                                 @Override
                                 public boolean met(Object p0) {
-                                  return SNodeOperations.isInstanceOf(((SNode) p0), "jetbrains.mps.baseLanguage.structure.Statement");
+                                  return SNodeOperations.isInstanceOf(((SNode) p0), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
                                 }
                               });
                               if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {

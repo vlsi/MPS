@@ -17,12 +17,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +44,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode n = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", true, false);
+            SNode n = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258345570625l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), true, false);
             List<SNode> indices = new ArrayList<SNode>();
             while (n != null) {
               {
@@ -74,7 +74,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                   }
                 }
               }
-              n = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", false, false);
+              n = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258345570625l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), false, false);
             }
             return indices;
           }

@@ -6,11 +6,11 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -23,7 +23,7 @@ public class DataFlowTryCatchUtil {
   }
   public static List<SNode> getPossibleCatches(SNode source, List<SNode> catchClauses) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode statement = SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    SNode statement = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
     Set<SNode> uncaughtThrowables = Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false);
     for (SNode catchClause : catchClauses) {
       SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));

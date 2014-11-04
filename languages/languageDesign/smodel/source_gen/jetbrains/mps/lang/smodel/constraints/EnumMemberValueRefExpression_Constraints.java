@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,12 +49,12 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode enumMemberValueRef = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", true, false);
+              SNode enumMemberValueRef = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 6973815483243445083l, "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression"), true, false);
               return new SimpleScope(SLinkOperations.getChildren(SLinkOperations.getTarget(enumMemberValueRef, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 6973815483243445083l, 6973815483243564601l, "enum")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))) {
                 @Nullable
                 @Override
                 public String getReferenceText(@NotNull SNode target) {
-                  return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
+                  return SPropertyOperations.getString(SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
                 }
               };
             }

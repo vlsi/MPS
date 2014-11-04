@@ -54,8 +54,8 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -84,8 +84,8 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -121,7 +121,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -192,7 +192,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_h0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -221,7 +221,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z2b22p_j0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_z2b22p_a9a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_z2b22p_b9a(editorContext, node));
@@ -233,7 +233,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_a9a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -299,9 +299,9 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_z2b22p_a1j0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -312,9 +312,9 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z2b22p_c9a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

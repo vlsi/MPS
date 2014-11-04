@@ -157,10 +157,10 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/6129022259108621140">
     <file name="ExecuteCommandPart_Behavior.java">
-      <node id="1388651548839371027" at="31,39,32,116" concept="5" />
+      <node id="1388651548839371027" at="31,39,32,224" concept="5" />
       <node id="6129022259108621282" at="35,5,36,211" concept="5" />
       <node id="6129022259108621305" at="40,39,41,124" concept="5" />
-      <node id="6129022259108621204" at="45,86,46,128" concept="5" />
+      <node id="6129022259108621204" at="45,86,46,239" concept="5" />
       <node id="558680274511380758" at="48,91,49,104" concept="5" />
       <node id="558680274511380768" at="51,69,52,363" concept="5" />
       <node id="558680274511380778" at="54,80,55,47" concept="5" />
@@ -205,9 +205,9 @@
       <node id="6129022259108621140" at="28,0,38,0" concept="7" trace="call_getParameters_6129022259108621180#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="558680274511380779" at="67,0,80,0" concept="7" trace="_quotation_createNode_qal9w4_a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="6129022259108621142" at="26,43,26,43" />
-      <scope id="1388651548839371024" at="31,39,32,116" />
+      <scope id="1388651548839371024" at="31,39,32,224" />
       <scope id="6129022259108621302" at="40,39,41,124" />
-      <scope id="6129022259108621203" at="45,86,46,128" />
+      <scope id="6129022259108621203" at="45,86,46,239" />
       <scope id="558680274511380757" at="48,91,49,104" />
       <scope id="558680274511380767" at="51,69,52,363" />
       <scope id="558680274511380777" at="54,80,55,47" />

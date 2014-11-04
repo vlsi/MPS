@@ -22,8 +22,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -60,11 +60,11 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
                 List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
                 SNode developer = _context.getReferenceNode();
-                if (SNodeOperations.isInstanceOf(developer, "testDefaultEditor.structure.Developer")) {
-                  SNode devnode = SNodeOperations.cast(developer, "testDefaultEditor.structure.Developer");
+                if (SNodeOperations.isInstanceOf(developer, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, "testDefaultEditor.structure.Developer"))) {
+                  SNode devnode = SNodeOperations.cast(developer, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, "testDefaultEditor.structure.Developer"));
                   SNode team = SNodeOperations.getParent(devnode);
-                  if (SNodeOperations.isInstanceOf(team, "testDefaultEditor.structure.Team")) {
-                    SNode teamNode = SNodeOperations.cast(team, "testDefaultEditor.structure.Team");
+                  if (SNodeOperations.isInstanceOf(team, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, "testDefaultEditor.structure.Team"))) {
+                    SNode teamNode = SNodeOperations.cast(team, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, "testDefaultEditor.structure.Team"));
                     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(teamNode, MetaAdapterFactory.getContainmentLink(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, 938834323431434551l, "developer"))));
                   } else {
                     ListSequence.fromList(result).addElement(devnode);

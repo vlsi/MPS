@@ -39,9 +39,9 @@ public class ConceptBehavior_Behavior {
     AbstractExtractMethodRefactoringProcessor result = new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract) {
       @Override
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
-        if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
+        if (SNodeOperations.isInstanceOf(declaration, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", null);
-          SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
+          SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(declaration, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
           ListSequence.fromList(SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addSequence(ListSequence.fromList(arguments));
           return call;
         }
@@ -102,21 +102,21 @@ public class ConceptBehavior_Behavior {
     while (QueueSequence.fromQueue(q).isNotEmpty()) {
       SNode qn = QueueSequence.fromQueue(q).removeFirstElement();
       ListSequence.fromList(conceptResult).addElement(qn);
-      if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-        if ((SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) != null)) {
-          SNode cl = SLinkOperations.getTarget(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
+      if (SNodeOperations.isInstanceOf(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+        if ((SLinkOperations.getTarget(SNodeOperations.cast(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) != null)) {
+          SNode cl = SLinkOperations.getTarget(SNodeOperations.cast(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
           if (seen.add(cl)) {
             QueueSequence.fromQueue(q).addLastElement(cl);
           }
         }
-        for (SNode i : SLinkOperations.getChildren(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))) {
+        for (SNode i : SLinkOperations.getChildren(SNodeOperations.cast(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))) {
           SNode cl = SLinkOperations.getTarget(i, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
           if (seen.add(cl)) {
             QueueSequence.fromQueue(q).addLastElement(cl);
           }
         }
-      } else if (SNodeOperations.isInstanceOf(qn, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-        for (SNode i : SLinkOperations.getChildren(SNodeOperations.cast(qn, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))) {
+      } else if (SNodeOperations.isInstanceOf(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
+        for (SNode i : SLinkOperations.getChildren(SNodeOperations.cast(qn, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))) {
           SNode cl = SLinkOperations.getTarget(i, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
           if (seen.add(cl)) {
             QueueSequence.fromQueue(q).addLastElement(cl);
@@ -126,7 +126,7 @@ public class ConceptBehavior_Behavior {
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode concept : conceptResult) {
-      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       if (behavior != null) {
         ListSequence.fromList(result).addElement(behavior);
       }

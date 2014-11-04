@@ -5,9 +5,9 @@ package jetbrains.mps.execution.configurations.pluginSolution.plugin;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -30,13 +30,13 @@ public class Producer_TabDescriptor extends RelationDescriptor {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
   public SNode getBaseNode(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"))) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")), MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"));
     }
     return null;
   }
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfiguration");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171345993l, "jetbrains.mps.execution.configurations.structure.RunConfiguration"));
   }
   public List<SNode> getNodes(SNode node) {
     final SNode nodeFinal = node;

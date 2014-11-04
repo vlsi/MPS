@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +27,7 @@ public class EnumConstantDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    SNode enumClass = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
+    SNode enumClass = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
     return ClassConcept_Behavior.call_constructors_5292274854859503373(enumClass);
   }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
@@ -46,8 +46,8 @@ public class EnumConstantDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
-    SNode containingEnum = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{}));
+    SNode containingEnum = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
+    return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{}));
   }
   public static String call_getEnumConstantDeclarationPresentation_8767021959483237039(SNode thisNode) {
     return "Enum constant '" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' in ";
@@ -63,13 +63,13 @@ public class EnumConstantDeclaration_Behavior {
     return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"));
   }
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
       return null;
     }
 
     List<SNode> methods = new ArrayList<SNode>();
-    List<SNode> methodsToImplement = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
-    ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+    List<SNode> methodsToImplement = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
+    ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"));
       }
@@ -86,15 +86,15 @@ public class EnumConstantDeclaration_Behavior {
     return methods;
   }
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
       return null;
     }
 
     List<SNode> methods = new ArrayList<SNode>();
-    List<SNode> methodsToOverride = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
-    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+    List<SNode> methodsToOverride = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
+    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"))) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"))) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
       }
     }));
     ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToOverride).where(new IWhereFilter<SNode>() {
@@ -110,15 +110,15 @@ public class EnumConstantDeclaration_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
-      Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
-      Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+      Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
+      Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+          return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
         }
       });
       Scope visibleEumMembers = new ListScope(methods) {
         public String getName(SNode child) {
-          return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       };
       return new CompositeScope(visibleMembers, visibleEumMembers);

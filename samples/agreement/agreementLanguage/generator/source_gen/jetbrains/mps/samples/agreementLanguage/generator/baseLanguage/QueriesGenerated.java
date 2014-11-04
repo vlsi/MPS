@@ -97,11 +97,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1197663461983(final PropertyMacroContext _context) {
-    SNode value = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Value");
+    SNode value = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792520557l, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"))), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111791020814l, "jetbrains.mps.samples.agreementLanguage.structure.Value"));
     return SPropertyOperations.getString(value, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1197663681552(final PropertyMacroContext _context) {
-    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.Event", false, false);
+    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, "jetbrains.mps.samples.agreementLanguage.structure.Event"), false, false);
     return SPropertyOperations.getBoolean_def(event, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, 1116368080504l, "taxable"), "true");
   }
   public static Object propertyMacro_GetPropertyValue_1197663161045(final PropertyMacroContext _context) {
@@ -138,7 +138,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793363741l, "amount")), MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"));
   }
   public static Object referenceMacro_GetReferent_1197659829378(final ReferenceMacroContext _context) {
-    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Event");
+    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111794734295l, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"))), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, "jetbrains.mps.samples.agreementLanguage.structure.Event"));
     SNode eventType = SLinkOperations.getTarget(event, MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111791038612l, 1111793668132l, "type"));
     if ("SERVICE CALL".equals(SPropertyOperations.getString(eventType, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
       return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0c0gb(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
@@ -152,7 +152,7 @@ public class QueriesGenerated {
     return null;
   }
   public static Object referenceMacro_GetReferent_1197661270681(final ReferenceMacroContext _context) {
-    SNode postingRule = SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792355423l, 1111792463585l, "value"));
+    SNode postingRule = SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111794734295l, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792355423l, 1111792463585l, "value"));
     SNode accountType = SLinkOperations.getTarget(postingRule, MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111794888922l, 1111795211704l, "account"));
     if ("base-usage".equals(SPropertyOperations.getString(accountType, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
       return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0c0hb(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"));

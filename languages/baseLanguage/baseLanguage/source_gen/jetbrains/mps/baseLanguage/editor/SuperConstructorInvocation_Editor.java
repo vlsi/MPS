@@ -30,7 +30,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_aafbxa_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_aafbxa_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aafbxa_b0(editorContext, node));
@@ -44,7 +44,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_aafbxa_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "baseMethodDeclaration");
+    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, 0, "baseMethodDeclaration");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actualArgument");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -119,8 +119,8 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_aafbxa_a2a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.SELECTABLE, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

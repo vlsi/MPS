@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -54,12 +55,12 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
             SNode top = _context.getEnclosingNode();
-            while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
+            while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
               top = SNodeOperations.getParent(top);
             }
-            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})));
-            if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")) {
-              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
+            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), true, new SConcept[]{})));
+            if (SNodeOperations.isInstanceOf(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"))) {
+              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
             }
             return matches;
           }

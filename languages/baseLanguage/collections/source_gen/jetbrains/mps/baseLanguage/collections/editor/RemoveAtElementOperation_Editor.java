@@ -39,7 +39,7 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_Operation(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new RemoveAtElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0()}));
     return editorCell;

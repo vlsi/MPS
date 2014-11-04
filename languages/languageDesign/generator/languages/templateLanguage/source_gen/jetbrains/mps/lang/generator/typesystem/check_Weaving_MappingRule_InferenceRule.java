@@ -21,11 +21,11 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
   public check_Weaving_MappingRule_InferenceRule() {
   }
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1169570368028l, "ruleConsequence")), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
-      SNode template = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1169570368028l, "ruleConsequence")), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1169570368028l, "ruleConsequence")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559333462l, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"))) {
+      SNode template = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1169570368028l, "ruleConsequence")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559333462l, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")));
       boolean useRootTemplateFragment = false;
       for (SNode child : SNodeOperations.getChildren(SLinkOperations.getTarget(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")))) {
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.TemplateFragment")) {
+        if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"))) {
           useRootTemplateFragment = true;
         }
       }

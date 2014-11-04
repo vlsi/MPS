@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -17,7 +19,7 @@ public class typeof_AbstractTextGenParameter_InferenceRule extends AbstractInfer
   public typeof_AbstractTextGenParameter_InferenceRule() {
   }
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode textGen = SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false);
+    SNode textGen = SNodeOperations.getNodeAncestor(parameter, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1234281982537l, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), false, false);
     if ((textGen == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

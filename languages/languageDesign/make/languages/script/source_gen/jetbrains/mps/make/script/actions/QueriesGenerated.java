@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -68,8 +69,8 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_2360002718792651973(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    SNode anc = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false);
-    return SNodeOperations.isInstanceOf(anc, "jetbrains.mps.make.script.structure.JobDefinition") || SNodeOperations.isInstanceOf(anc, "jetbrains.mps.make.script.structure.ConfigDefinition");
+    SNode anc = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 1977954644795375332l, "jetbrains.mps.make.script.structure.ConfigDefinition"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")}, false, false);
+    return SNodeOperations.isInstanceOf(anc, MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition")) || SNodeOperations.isInstanceOf(anc, MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 1977954644795375332l, "jetbrains.mps.make.script.structure.ConfigDefinition"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_OutputResources_2360002718792652028(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -77,7 +78,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_OutputResources_2360002718792652029(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false, false), "jetbrains.mps.make.script.structure.JobDefinition");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")}, false, false), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1977954644795375337(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -85,7 +86,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1977954644795375338(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.make.script.structure.ConfigDefinition"}, false, false) == null);
+    return (SNodeOperations.getNodeAncestorWhereConceptInList(_context.getParentNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 1977954644795375332l, "jetbrains.mps.make.script.structure.ConfigDefinition")}, false, false) == null);
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_3668957831723381944(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -118,7 +119,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_3668957831723381945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), false, false) != null);
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_187226666892820054(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -147,7 +148,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), "jetbrains.mps.make.script.structure.BeginWorkStatement", false, new String[]{});
+            return SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683650l, "jetbrains.mps.make.script.structure.BeginWorkStatement"), false, new SConcept[]{});
           }
         }.compute();
         if (queryResult != null) {
@@ -173,7 +174,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), "jetbrains.mps.make.script.structure.BeginWorkStatement", false, new String[]{});
+            return SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683650l, "jetbrains.mps.make.script.structure.BeginWorkStatement"), false, new SConcept[]{});
           }
         }.compute();
         if (queryResult != null) {
@@ -196,7 +197,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_187226666892820055(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792625579l, "jetbrains.mps.make.script.structure.JobDefinition"), false, false) != null);
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3297237684108627750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -204,13 +205,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_3297237684108627751(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.script.structure.BeginWorkStatement") && SLinkOperations.findLinkDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", "ofTotal") == _context.getLink();
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683650l, "jetbrains.mps.make.script.structure.BeginWorkStatement")) && SLinkOperations.findLinkDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", "ofTotal") == _context.getLink();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Option_3681941909241126021(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.Option"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + (SNodeOperations.getIndexInParent(_context.getSourceNode())));
+        SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"), "" + (SNodeOperations.getIndexInParent(_context.getSourceNode())));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -233,7 +234,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Option_3681941909241126023(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.getIndexInParent(_context.getSourceNode()) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
+    return SNodeOperations.getIndexInParent(_context.getSourceNode()) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 505095865854384059l, 3681941909241080172l, "defaultOption"));
   }
   private static SNode _quotation_createNode_hskkdq_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
