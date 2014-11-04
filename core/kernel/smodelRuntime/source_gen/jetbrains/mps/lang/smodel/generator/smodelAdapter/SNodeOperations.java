@@ -746,13 +746,21 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    return childNode.getContainmentLink().getDeclarationNode();
+    SContainmentLink containmentLink = childNode.getContainmentLink();
+    if (containmentLink == null) {
+      return null;
+    }
+    return containmentLink.getDeclarationNode();
   }
   public static String getContainingLinkRole(SNode childNode) {
     if (childNode == null) {
       return null;
     }
-    return childNode.getContainmentLink().getRoleName();
+    SContainmentLink containmentLink = childNode.getContainmentLink();
+    if (containmentLink == null) {
+      return null;
+    }
+    return containmentLink.getRoleName();
   }
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {
