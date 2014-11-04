@@ -1,3 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="23uof9kdshdkj0yw2b6915z7bq302ud" />
+<dependencies version="2" modelHash="23uof9kdshdkj0yw2b6915z7bq302ud">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9wlhbwrqvxk44oua9jknf4nidmtbldh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3mdk2bj76ablikvxyqlttdmholnu4rz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-dbr2g6jzucxcoqvfqf08v9ihfbxe7mv" />
+  <common hash="23uof9kdshdkj0yw2b6915z7bq302ud" dependsOnNodes="true">
+    <dep root="1174482743037" />
+    <dep root="1174482753837" />
+    <dep root="1174482769792" />
+    <dep root="1174482804200" />
+    <dep root="1174482808826" />
+    <dep root="1174483125581" />
+    <dep root="1174484562151" />
+    <dep root="1174485167097" />
+    <dep root="1174485235885" />
+    <dep root="1174491169200" />
+    <dep root="1174510540317" />
+    <dep root="1174512414484" />
+    <dep root="1174552240608" />
+    <dep root="1174554186090" />
+    <dep root="1174554211468" />
+    <dep root="1174554238051" />
+    <dep root="1174554386384" />
+    <dep root="1174554406855" />
+    <dep root="1174555732504" />
+    <dep root="1174556813606" />
+    <dep root="1174557861378" />
+    <dep root="1174557878319" />
+    <dep root="1174558301835" />
+    <dep root="1174558792178" />
+    <dep root="1174564062919" />
+    <dep root="1174565027678" />
+    <dep root="1174653354106" />
+    <dep root="1174655989549" />
+    <dep root="1174656254036" />
+    <dep root="1174660461415" />
+    <dep root="1174660505718" />
+    <dep root="1174660533095" />
+    <dep root="1174662351725" />
+    <dep root="1174662605354" />
+    <dep root="1174904166999" />
+    <dep root="1174904442594" />
+    <dep root="1174904605806" />
+    <dep root="1174906321267" />
+    <dep root="1174906468661" />
+    <dep root="1174906544517" />
+    <dep root="1174906762287" />
+    <dep root="1174906790902" />
+    <dep root="1174909099093" />
+    <dep root="1174919147781" />
+    <dep root="1175154849582" />
+    <dep root="1175161264766" />
+    <dep root="1175161300324" />
+    <dep root="1175164405556" />
+    <dep root="1175169009571" />
+    <dep root="1179357154354" />
+    <dep root="1203415418648" />
+    <dep root="1203415512996" />
+    <dep root="1220021842985" />
+    <dep root="1220356640633" />
+    <dep root="1222256539755" />
+    <dep root="1222260469397" />
+    <dep root="1222260556146" />
+    <dep root="3796137614137086346" />
+    <dep root="3796137614137538892" />
+    <dep root="3796137614137538894" />
+    <dep root="3796137614137538898" />
+    <dep root="6129327962763158517" />
+    <dep root="7473568212391781030" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1174482743037" name="Regexp" />
+  <source id="1174482753837" name="StringLiteralRegexp" />
+  <source id="1174482769792" name="OrRegexp" />
+  <source id="1174482804200" name="PlusRegexp" />
+  <source id="1174482808826" name="StarRegexp" />
+  <source id="1174483125581" name="RegexpDeclaration" />
+  <source id="1174484562151" name="SeqRegexp" />
+  <source id="1174485167097" name="BinaryRegexp" />
+  <source id="1174485235885" name="UnaryRegexp" />
+  <source id="1174491169200" name="ParensRegexp" />
+  <source id="1174510540317" name="InlineRegexpExpression" />
+  <source id="1174512414484" name="MatchRegexpStatement" />
+  <source id="1174552240608" name="QuestionRegexp" />
+  <source id="1174554186090" name="SymbolClassRegexp" />
+  <source id="1174554211468" name="PositiveSymbolClassRegexp" />
+  <source id="1174554238051" name="NegativeSymbolClassRegexp" />
+  <source id="1174554386384" name="PredefinedSymbolClassDeclaration" />
+  <source id="1174554406855" name="PredefinedSymbolClasses" />
+  <source id="1174555732504" name="PredefinedSymbolClassRegexp" />
+  <source id="1174556813606" name="DotRegexp" />
+  <source id="1174557861378" name="SymbolClassPart" />
+  <source id="1174557878319" name="CharacterSymbolClassPart" />
+  <source id="1174558301835" name="IntervalSymbolClassPart" />
+  <source id="1174558792178" name="PredefinedSymbolClassSymbolClassPart" />
+  <source id="1174564062919" name="MatchParensRegexp" />
+  <source id="1174565027678" name="MatchVariableReference" />
+  <source id="1174653354106" name="RegexpUsingConstruction" />
+  <source id="1174655989549" name="ReplaceWithRegexpExpression" />
+  <source id="1174656254036" name="ReplaceBlock" />
+  <source id="1174660461415" name="LazyStarRegexp" />
+  <source id="1174660505718" name="LazyPlusRegexp" />
+  <source id="1174660533095" name="LazyQuestionRegexp" />
+  <source id="1174662351725" name="Regexps" />
+  <source id="1174662605354" name="RegexpDeclarationReferenceRegexp" />
+  <source id="1174904166999" name="NTimesRegexp" />
+  <source id="1174904442594" name="AtLeastNTimesRegexp" />
+  <source id="1174904605806" name="FromNToMTimesRegexp" />
+  <source id="1174906321267" name="PositiveLookAheadRegexp" />
+  <source id="1174906468661" name="NegativeLookAheadRegexp" />
+  <source id="1174906544517" name="LookRegexp" />
+  <source id="1174906762287" name="PositiveLookBehindRegexp" />
+  <source id="1174906790902" name="NegativeLookBehindRegexp" />
+  <source id="1174909099093" name="MatchVariableReferenceRegexp" />
+  <source id="1174919147781" name="RegexpExpression" />
+  <source id="1175154849582" name="ForEachMatchStatement" />
+  <source id="1175161264766" name="LineStartRegexp" />
+  <source id="1175161300324" name="LineEndRegexp" />
+  <source id="1175164405556" name="SplitExpression" />
+  <source id="1175169009571" name="FindMatchStatement" />
+  <source id="1179357154354" name="MatchRegexpExpression" />
+  <source id="1203415418648" name="UnicodeCharacterRegexp" />
+  <source id="1203415512996" name="FourHex">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="FourHex_PropertySupport.java" />
+  </source>
+  <source id="1220021842985" name="IntersectionSymbolClassPart" />
+  <source id="1220356640633" name="SymbolClassRegexpAndPart" />
+  <source id="1222256539755" name="SplitOperation" />
+  <source id="1222260469397" name="MatchRegexpOperation" />
+  <source id="1222260556146" name="ReplaceWithRegexpOperation" />
+  <source id="7473568212391781030" name="_StringRegexp">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <file name="_StringRegexp_PropertySupport.java" />
+  </source>
+  <source id="6129327962763158517" name="FindMatchExpression" />
+  <source id="3796137614137086346" name="ReplaceRegexpOperation" />
+  <source id="3796137614137538892" name="LiteralReplacement" />
+  <source id="3796137614137538894" name="MatchVariableReferenceReplacement" />
+  <source id="3796137614137538898" name="Replacement" />
+</dependencies>
 

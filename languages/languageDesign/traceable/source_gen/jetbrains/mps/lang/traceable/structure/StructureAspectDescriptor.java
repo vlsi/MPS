@@ -13,9 +13,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptScopeConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369890L)).interface_().create();
-  /*package*/ final ConceptDescriptor myConceptTraceableConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369891L)).interface_().create();
-  /*package*/ final ConceptDescriptor myConceptUnitConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369892L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptScopeConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(new UUID(-7066981744759912873L, -4622583950651520061L), 5067982036267369890L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptTraceableConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(new UUID(-7066981744759912873L, -4622583950651520061L), 5067982036267369891L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptUnitConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(new UUID(-7066981744759912873L, -4622583950651520061L), 5067982036267369892L)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

@@ -1,3 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6v2rfghkugoa7f6glnonv09mbojqk8s" />
+<dependencies version="2" modelHash="6v2rfghkugoa7f6glnonv09mbojqk8s">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9wlhbwrqvxk44oua9jknf4nidmtbldh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3mdk2bj76ablikvxyqlttdmholnu4rz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-dbr2g6jzucxcoqvfqf08v9ihfbxe7mv" />
+  <common hash="6v2rfghkugoa7f6glnonv09mbojqk8s" dependsOnNodes="true">
+    <dep root="2353136177973871304" />
+    <dep root="2353136177973886045" />
+    <dep root="2353136177974080669" />
+    <dep root="2353136177974088982" />
+    <dep root="320213057867540364" />
+    <dep root="5288989961863963745" />
+    <dep root="725186580883451585" />
+    <dep root="725186580883451800" />
+    <dep root="725186580883451809" />
+    <dep root="725186580883451828" />
+    <dep root="725186580883451839" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="725186580883451585" name="Diagram" />
+  <source id="725186580883451800" name="Block" />
+  <source id="725186580883451809" name="Connector" />
+  <source id="725186580883451828" name="InputPort" />
+  <source id="725186580883451839" name="OutputPort" />
+  <source id="2353136177973871304" name="MetaBlock" />
+  <source id="2353136177973886045" name="MetaPort" />
+  <source id="2353136177974080669" name="BlockInstance" />
+  <source id="2353136177974088982" name="ConnectorInstance" />
+  <source id="5288989961863963745" name="ConnectorEndInstance" />
+  <source id="320213057867540364" name="BlockExt" />
+</dependencies>
 

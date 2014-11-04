@@ -1,3 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bo7ktg4f0ql56euh3ptm84uldtva95j" />
+<dependencies version="2" modelHash="bo7ktg4f0ql56euh3ptm84uldtva95j">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9wlhbwrqvxk44oua9jknf4nidmtbldh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-2a17z9hinc2u1lkhmfe2q73nkzsy8ad" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3mdk2bj76ablikvxyqlttdmholnu4rz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
+  <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" hash="alyezobjqtud7iltawjph5tg8ymqgh4" />
+  <dep model="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" hash="-5mjgyjpnqkbtnpeitt0yw9zzet3mi8j" />
+  <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="44dl5lg47wfzsrr1c90swfsavpgwcou" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-dbr2g6jzucxcoqvfqf08v9ihfbxe7mv" />
+  <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" hash="-350snzxbixlz7dj4mcs4whomrqtzhw4" />
+  <common hash="bo7ktg4f0ql56euh3ptm84uldtva95j" dependsOnNodes="true">
+    <dep root="1594211126127733907" />
+    <dep root="1594211126127774346" />
+    <dep root="181393747410936990" />
+    <dep root="2401501559171345993" />
+    <dep root="2401501559171345994" />
+    <dep root="2401501559171392633" />
+    <dep root="2454261876037468744" />
+    <dep root="33324785353654116" />
+    <dep root="3642991921657904775" />
+    <dep root="3642991921658122718" />
+    <dep root="4366236229294105349" />
+    <dep root="4366236229294141334" />
+    <dep root="4366236229294149030" />
+    <dep root="4366236229294149059" />
+    <dep root="4482357619022381603" />
+    <dep root="4482357619022394489" />
+    <dep root="4816403309550879744" />
+    <dep root="5453800039284219178" />
+    <dep root="6139196002333163564" />
+    <dep root="6550182048787537880" />
+    <dep root="6550182048787562516" />
+    <dep root="6550182048787583936" />
+    <dep root="7037083547576022975" />
+    <dep root="7301162575811126381" />
+    <dep root="7301162575811126382" />
+    <dep root="7301162575811126383" />
+    <dep root="7301162575811126384" />
+    <dep root="7301162575811126385" />
+    <dep root="7684700299064179245" />
+    <dep root="7806358006983614956" />
+    <dep root="7806358006983738927" />
+    <dep root="946964771156870353" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
+    <dep model="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
+    <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="2401501559171345993" name="RunConfiguration" />
+  <source id="2401501559171345994" name="RunConfigurationKind" />
+  <source id="2401501559171392633" name="AbstractRunConfigurationExecutor" />
+  <source id="6139196002333163564" name="ExecuteConfiguration_Function" />
+  <source id="7684700299064179245" name="Project_Parameter" />
+  <source id="7806358006983614956" name="RunConfigurationExecutor" />
+  <source id="7806358006983738927" name="ConfigurationFromExecutorReference" />
+  <source id="4816403309550879744" name="DebuggerSettings_Parameter" />
+  <source id="946964771156870353" name="StartProcessHandlerStatement" />
+  <source id="4366236229294105349" name="RunConfigurationProducer" />
+  <source id="4366236229294141334" name="RunConfigurationSource" />
+  <source id="4366236229294149030" name="RunConfigurationProducerPart" />
+  <source id="4366236229294149059" name="Create_ConceptFunction" />
+  <source id="3642991921657904775" name="Source_ConceptFunctionParameter" />
+  <source id="3642991921658122718" name="RunConfigurationCreator" />
+  <source id="7301162575811126381" name="ModelSource" />
+  <source id="7301162575811126382" name="ProjectSource" />
+  <source id="7301162575811126383" name="NodeListSource" />
+  <source id="7301162575811126384" name="ModuleSource" />
+  <source id="7301162575811126385" name="NodeSource" />
+  <source id="7037083547576022975" name="BeforeTask" />
+  <source id="2454261876037468744" name="ExecuteBeforeTask_ConceptFunction" />
+  <source id="6550182048787537880" name="BeforeTaskCall" />
+  <source id="6550182048787562516" name="BeforeTaskParameter" />
+  <source id="6550182048787583936" name="BeforeTaskParameterReference" />
+  <source id="1594211126127733907" name="ConsoleType" />
+  <source id="1594211126127774346" name="ConsoleCreator" />
+  <source id="5453800039284219178" name="GetProjectOperation" />
+  <source id="4482357619022381603" name="SModelSource" />
+  <source id="4482357619022394489" name="SModuleSource" />
+  <source id="33324785353654116" name="EnvironmentExpression" />
+  <source id="181393747410936990" name="Executor_Parameter" />
+</dependencies>
 

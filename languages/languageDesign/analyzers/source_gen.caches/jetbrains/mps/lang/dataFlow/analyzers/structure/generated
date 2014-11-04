@@ -1,3 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="al734tp33pt657g8xr98cmg265pdabt" />
+<dependencies version="2" modelHash="al734tp33pt657g8xr98cmg265pdabt">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9wlhbwrqvxk44oua9jknf4nidmtbldh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-2a17z9hinc2u1lkhmfe2q73nkzsy8ad" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3mdk2bj76ablikvxyqlttdmholnu4rz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
+  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="a7bzzwjc0ymc9affmz8fpbvp994soqt" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-dbr2g6jzucxcoqvfqf08v9ihfbxe7mv" />
+  <common hash="al734tp33pt657g8xr98cmg265pdabt" dependsOnNodes="true">
+    <dep root="2045671745393426211" />
+    <dep root="3325264799421290200" />
+    <dep root="3325264799421303651" />
+    <dep root="4217760266503579796" />
+    <dep root="4217760266503638748" />
+    <dep root="430844094082168520" />
+    <dep root="430844094082202272" />
+    <dep root="4746038179140566716" />
+    <dep root="4746038179140566725" />
+    <dep root="4746038179140588744" />
+    <dep root="4746038179140588745" />
+    <dep root="4746038179140588754" />
+    <dep root="4746038179140588756" />
+    <dep root="4943044633101449694" />
+    <dep root="4943044633102057744" />
+    <dep root="6393434056522580745" />
+    <dep root="6618572076229093257" />
+    <dep root="6618572076229093258" />
+    <dep root="752944717341640112" />
+    <dep root="7985661997283714146" />
+    <dep root="8424563347437821087" />
+    <dep root="8424563347437829923" />
+    <dep root="8424563347437829924" />
+    <dep root="9177062368042220422" />
+    <dep root="9177062368042220424" />
+    <dep root="9177062368042220438" />
+    <dep root="9177062368042364839" />
+    <dep root="95073643532950033" />
+    <dep root="95073643532950038" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="6618572076229093257" name="Analyzer" />
+  <source id="6618572076229093258" name="Instruction" />
+  <source id="6393434056522580745" name="AnalyzerMergeFunction" />
+  <source id="4746038179140566716" name="AnalyzerParameterProgram" />
+  <source id="4746038179140566725" name="AnalyzerMergeParameterInput" />
+  <source id="4746038179140588744" name="AnalyzerInitialFunction" />
+  <source id="4746038179140588745" name="AnalyzerFunFunction" />
+  <source id="4746038179140588754" name="AnalyzerFunParameterProgramState" />
+  <source id="4746038179140588756" name="AnalyzerFunParameterInput" />
+  <source id="9177062368042220422" name="AnalysisDirection" />
+  <source id="9177062368042220424" name="ForwardDirection" />
+  <source id="9177062368042220438" name="BackwardDirection" />
+  <source id="9177062368042364839" name="AnalyzerFunctionResultType" />
+  <source id="430844094082168520" name="Rule" />
+  <source id="430844094082202272" name="InstructionParameter" />
+  <source id="3325264799421290200" name="ApplicableCondition" />
+  <source id="3325264799421303651" name="PatternCondition" />
+  <source id="4217760266503579796" name="EmitInstruction" />
+  <source id="4217760266503638748" name="InstructionReference" />
+  <source id="752944717341640112" name="RuleReference" />
+  <source id="2045671745393426211" name="AnalyzerRunnerType" />
+  <source id="95073643532950033" name="AnalyzerRunnerAnalyzeOperation" />
+  <source id="95073643532950038" name="AnalyzerRunnerCreator" />
+  <source id="7985661997283714146" name="IsOperation" />
+  <source id="4943044633101449694" name="ConceptCondition" />
+  <source id="4943044633102057744" name="ApplicableNodeReference" />
+  <source id="8424563347437821087" name="InsertBeforePosition" />
+  <source id="8424563347437829923" name="InsertPosition" />
+  <source id="8424563347437829924" name="InsertAfterPosition" />
+</dependencies>
 
