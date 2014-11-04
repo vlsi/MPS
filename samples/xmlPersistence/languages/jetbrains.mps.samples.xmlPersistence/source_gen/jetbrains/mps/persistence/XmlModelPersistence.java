@@ -6,13 +6,13 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import java.util.Map;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -55,7 +55,12 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   }
 
   /**
-   * Loads a model from the given dataSource. The options carry additional information related to the required model.
+   * Instantiates a model on a given data source. Options can be used to pass additional parameters
+   * like stream encoding (usually, the default is utf-8), package name, containing module reference
+   * or module relative path of the source.
+   * 
+   * @throws UnsupportedDataSourceException if the data source is not supported
+   * @return The loaded model
    */
   @NotNull
   @Override
@@ -90,7 +95,10 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
 
 
   /**
-   * Creates a fresh model.
+   * Creates a new empty model.
+   * 
+   * @throws UnsupportedDataSourceException if the data source is not supported
+   * @throws IOException if the model cannot be created
    */
   @NotNull
   @Override
@@ -112,6 +120,11 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
+
+
+  /**
+   * Indicates, whether the supplied data source can be used to hold models created by this factory.
+   */
   @Override
   public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
     if (!((dataSource instanceof StreamDataSource))) {
@@ -124,6 +137,11 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     return true;
   }
+
+
+  /**
+   * Saves the model in the factory-specific format (including conversion when needed).
+   */
   @Override
   public void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException {
     if (!((dataSource instanceof StreamDataSource))) {
@@ -131,25 +149,55 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     writeModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource);
   }
+
+
+  /**
+   * Checks if the source content is outdated and needs to be upgraded.
+   */
   @Override
   public boolean needsUpgrade(DataSource dataSource) throws IOException {
     return false;
   }
+
+
+  /**
+   * Loads the model content, and saves it back in the up-to-date format.
+   */
   @Override
   public void upgrade(DataSource dataSource) throws IOException {
   }
+
+
+  /**
+   * returns true if plain text is not enough to represent stored data.
+   */
   @Override
   public boolean isBinary() {
     return false;
   }
+
+
+  /**
+   * returns the file extension this factory is registered on
+   */
   @Override
   public String getFileExtension() {
     return XML_EXTENSION;
   }
+
+
+  /**
+   * User-readable title of the storage format.
+   */
   @Override
   public String getFormatTitle() {
     return "XML file";
   }
+
+
+  /**
+   * Creates an empty model
+   */
   @Override
   public SModelData createEmpty(SModelReference reference, StreamDataSource source) {
     jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
@@ -162,6 +210,11 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     sModel.addRootNode(xmlFile);
     return sModel;
   }
+
+
+  /**
+   * Reads the model
+   */
   @Override
   public SModelData readModel(SModelReference reference, StreamDataSource source) throws IOException {
     InputStream in = null;
@@ -174,6 +227,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       InputSource inputSource = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       Document document = JDOMUtil.loadDocument(inputSource);
       SNode xmlFile = XmlConverter.convertDocument(name, document);
+
       jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
       sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
       sModel.addRootNode(xmlFile);
@@ -184,6 +238,11 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       FileUtil.closeFileSafe(in);
     }
   }
+
+
+  /**
+   * Saves the model
+   */
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
     Iterator<SNode> iterator = model.getRootNodes().iterator();
