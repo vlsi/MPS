@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public enum TestNodeWrapperFactory {
   LanguageTestCaseNodeWrapperFactory() {
@@ -190,11 +191,11 @@ public enum TestNodeWrapperFactory {
   }
   public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
     Iterable<SNode> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
-    return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{});
+    return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, SConcept>() {
+      public SConcept select(SNode it) {
+        return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) it);
       }
-    }).toGenericArray(String.class), true, isRoot);
+    }).toGenericArray(SConcept.class), true, isRoot);
   }
   private static SNode check_kl7j79_a0a0d0a0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
