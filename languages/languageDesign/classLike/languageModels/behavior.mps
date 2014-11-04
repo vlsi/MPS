@@ -107,6 +107,7 @@
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194628440" name="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
@@ -175,8 +176,6 @@
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145404486709/1145404616321" name="leftExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312/1160612519549" name="argument" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551/1160666822012" name="argument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668914799" name="condition" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668922816" name="ifTrue" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668934364" name="ifFalse" />
@@ -202,6 +201,7 @@
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144101972840/1207343664468" name="conceptArgument" />
     <childRole id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194240794/1225194240801" name="constructor" />
     <childRole id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194240794/1225194240805" name="method" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280/4693937538533538124" name="requestedConcept" />
     <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
     <childRole id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993863837/5455284157993863838" name="quotedNode" />
@@ -635,7 +635,7 @@
                     </node>
                   </node>
                   <node concept="j0ph.1160612413312" id="9097849371503288618" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <node concept="am4u.6496299201655527393" id="9097849371503288619" role="j0ph.1160612413312.1160612519549" info="nn">
+                    <node concept="am4u.6496299201655527393" id="9097849371503288619" role="j0ph.540871147943773365.540871147943773366" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="8260330507834998478" resolveInfo="create" />
                     </node>
                   </node>
@@ -765,7 +765,7 @@
                 </node>
               </node>
               <node concept="j0ph.1160666733551" id="2260648088428685599" role="vg0i.1197027756228.1197027833540" info="nn">
-                <node concept="vg0i.1197027756228" id="2260648088428624939" role="j0ph.1160666733551.1160666822012" info="nn">
+                <node concept="vg0i.1197027756228" id="2260648088428624939" role="j0ph.540871147943773365.540871147943773366" info="nn">
                   <node concept="vg0i.1197027756228" id="2260648088428621136" role="vg0i.1197027756228.1197027771414" info="nn">
                     <node concept="am4u.1225194691553" id="3384419124891049972" role="vg0i.1197027756228.1197027771414" info="nn" />
                     <node concept="4ia1.1138056282393" id="2260648088428621680" role="vg0i.1197027756228.1197027833540" info="nn">
@@ -1128,7 +1128,7 @@
                 </node>
               </node>
               <node concept="j0ph.1160612413312" id="6478870542308799370" role="vg0i.1197027756228.1197027833540" info="nn">
-                <node concept="am4u.6496299201655527393" id="9097849371503338129" role="j0ph.1160612413312.1160612519549" info="nn">
+                <node concept="am4u.6496299201655527393" id="9097849371503338129" role="j0ph.540871147943773365.540871147943773366" info="nn">
                   <reference role="vg0i.1204053956946.1068499141037" target="9097849371503335421" resolveInfo="create" />
                 </node>
               </node>
@@ -1773,7 +1773,7 @@
                 </node>
               </node>
               <node concept="j0ph.1160612413312" id="5820409521797743901" role="vg0i.1197027756228.1197027833540" info="nn">
-                <node concept="am4u.6496299201655527393" id="5820409521797744113" role="j0ph.1160612413312.1160612519549" info="nn">
+                <node concept="am4u.6496299201655527393" id="5820409521797744113" role="j0ph.540871147943773365.540871147943773366" info="nn">
                   <reference role="vg0i.1204053956946.1068499141037" target="8260330507834998478" resolveInfo="create" />
                 </node>
               </node>
