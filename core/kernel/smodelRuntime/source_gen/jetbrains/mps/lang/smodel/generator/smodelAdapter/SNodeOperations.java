@@ -621,7 +621,10 @@ public class SNodeOperations {
     return role.equals(node.getRoleInParent());
   }
   public static SNode getConceptDeclaration(SNode node) {
-    return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()));
+    return (node == null ? null : node.getConcept().getDeclarationNode());
+  }
+  public static SConcept getConcept(SNode node) {
+    return (node == null ? null : node.getConcept());
   }
   public static int getIndexInParent(SNode node) {
     if (node == null || node.getParent() == null) {
