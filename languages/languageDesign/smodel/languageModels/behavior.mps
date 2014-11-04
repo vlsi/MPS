@@ -6372,6 +6372,27 @@
         </node>
       </node>
     </node>
+    <node concept="am4u.1225194240794" id="334628810661446364" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="operation" />
+      <reference role="am4u.1225194240794.1225194240799" target="tp25.334628810661441841" resolveInfo="AsSConcept" />
+      <node concept="am4u.1225194413805" id="334628810661446365" role="am4u.1225194240794.1225194240801" info="in">
+        <node concept="vg0i.1068580123136" id="334628810661446366" role="vg0i.1137021947720.1137022507850" info="sn" />
+      </node>
+      <node concept="am4u.1225194472830" id="334628810661448899" role="am4u.1225194240794.1225194240805" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="applicableToConcept" />
+        <property role="am4u.1225194472830.5864038008284099149" value="true" />
+        <reference role="am4u.1225194472830.1225194472831" target="1262430001741498358" resolveInfo="applicableToConcept" />
+        <node concept="vg0i.1068580123136" id="334628810661448902" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123155" id="334628810661448912" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123137" id="334628810661448911" role="vg0i.1068580123155.1068580123156" info="nn">
+              <property role="vg0i.1068580123137.1068580123138" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1070534644030" id="334628810661448926" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="334628810661448927" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
   </contents>
 </model>
 

@@ -9917,6 +9917,32 @@
         <reference role="swut.1174642788531.1174642800329" target="tp25.2644386474302386080" resolveInfo="PropertyIdRefExpression" />
       </node>
     </node>
+    <node concept="swut.1174643105530" id="334628810661450575" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="typeof_AsSConcept" />
+      <property role="asn4.1133920641626.1193676396447" value="operation" />
+      <node concept="vg0i.1068580123136" id="334628810661450576" role="swut.1195213580585.1195213635060" info="sn">
+        <node concept="swut.1174658326157" id="334628810661456391" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="swut.1185788614172" id="334628810661456458" role="swut.1174660718586.1174660783414" info="ng">
+            <node concept="le35.1196350785113" id="334628810661456454" role="swut.1185788614172.1185788644032" info="nn">
+              <node concept="vg0i.1107535904670" id="334628810661456560" role="le35.1196350785113.1196350785114" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+              </node>
+            </node>
+          </node>
+          <node concept="swut.1185788614172" id="334628810661456394" role="swut.1174660718586.1174660783413" info="ng">
+            <node concept="swut.1174657487114" id="334628810661454515" role="swut.1185788614172.1185788644032" info="nn">
+              <node concept="swut.1174650418652" id="334628810661454556" role="swut.1174657487114.1174657509053" info="nn">
+                <reference role="swut.1174650418652.1174650432090" target="334628810661450578" resolveInfo="asSConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="swut.1174642788531" id="334628810661450578" role="swut.1174648085619.1174648101952" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="asSConcept" />
+        <reference role="swut.1174642788531.1174642800329" target="tp25.334628810661441841" resolveInfo="AsSConcept" />
+      </node>
+    </node>
   </contents>
 </model>
 

@@ -1973,6 +1973,13 @@
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="334628810661441841" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="AsSConcept" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="operation" />
+      <property role="4jta.1169125787135.5092175715804935370" value="asSConcept" />
+      <reference role="4jta.1071489090640.1071489389519" target="1138411891628" resolveInfo="SNodeOperation" />
+    </node>
   </contents>
 </model>
 

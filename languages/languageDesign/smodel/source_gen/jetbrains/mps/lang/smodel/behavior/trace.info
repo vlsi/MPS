@@ -39,10 +39,13 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.EnumMemberValueRefExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,278,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,280,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Model_RootsOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Model_RootsOperation_BehaviorDescriptor" />
+    </file>
+    <file name="AsSConcept_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.AsSConcept_BehaviorDescriptor" />
     </file>
     <file name="Reference_GetResolveInfo_BehaviorDescriptor.java">
       <unit at="10,0,33,0" name="jetbrains.mps.lang.smodel.behavior.Reference_GetResolveInfo_BehaviorDescriptor" />
@@ -2564,6 +2567,22 @@
       </scope>
       <scope id="8106064145944353424" at="47,0,54,0" />
       <unit id="2788452359612002126" at="19,0,55,0" name="jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/334628810661446364">
+    <file name="AsSConcept_Behavior.java">
+      <node id="334628810661448912" at="11,103,12,16" concept="7" />
+      <node id="334628810661446364" at="9,0,11,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="334628810661446364" at="11,0,14,0" concept="8" trace="virtual_applicableToConcept_1262430001741498358#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="334628810661446366" at="9,43,9,43" />
+      <scope id="334628810661448902" at="11,103,12,16" />
+      <scope id="334628810661446364" at="9,0,11,0">
+        <var name="thisNode" id="334628810661446364" />
+      </scope>
+      <scope id="334628810661446364" at="11,0,14,0">
+        <var name="thisConcept" id="334628810661446364" />
+      </scope>
+      <unit id="334628810661446364" at="8,0,15,0" name="jetbrains.mps.lang.smodel.behavior.AsSConcept_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3476105411552591981">

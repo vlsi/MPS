@@ -768,6 +768,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_8866923313516048823(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
+  public static SNode sourceNodeQuery_334628810663913560(final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
+  }
   public static SNode sourceNodeQuery_1206555031895(final SourceSubstituteMacroNodeContext _context) {
     // <expr>.<property-access>.<operation> 
     return SNodeOperation_Behavior.call_getLeftExpressionLeftExpression_1213877508920(_context.getNode());
@@ -1293,7 +1296,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0co(returnType);
+      return _quotation_createNode_x583g4_a0a0c0do(returnType);
     }
   }
   public static SNode sourceNodeQuery_3425232330195014656(final SourceSubstituteMacroNodeContext _context) {
@@ -1488,7 +1491,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0c0co(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0do(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
