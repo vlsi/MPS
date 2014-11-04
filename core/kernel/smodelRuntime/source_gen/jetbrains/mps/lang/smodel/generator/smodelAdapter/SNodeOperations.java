@@ -745,6 +745,12 @@ public class SNodeOperations {
     }
     return node;
   }
+  public static SConcept asSConcept(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+  }
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {
       return null;
