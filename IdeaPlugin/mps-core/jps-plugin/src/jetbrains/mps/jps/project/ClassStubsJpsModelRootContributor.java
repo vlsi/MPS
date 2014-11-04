@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.jps.project;
 
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.impl.libraries.LibraryTableImplUtil;
-import com.intellij.project.model.JpsModelManager;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.project.model.impl.module.JpsOrderEntryFactory;
+import com.intellij.project.model.impl.module.JpsRootModel;
 import com.intellij.project.model.impl.module.dependencies.JpsLibraryOrderEntry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import org.jetbrains.jps.model.java.JpsJavaLibraryType;
+import org.jetbrains.jps.model.JpsProject;
 import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.library.JpsOrderRootType;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
@@ -32,7 +35,9 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * danilla 7/12/13
@@ -41,15 +46,24 @@ import java.util.List;
 public class ClassStubsJpsModelRootContributor implements JpsModelRootContributor {
   @Override
   public Iterable<ModelRoot> getModelRoots(JpsModule module) {
+    JpsProject project = module.getProject();
+    Set<JpsLibrary> projectLibraries = new HashSet<JpsLibrary>(project.getLibraryCollection().getLibraries());
+
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>();
 
-    for (JpsDependencyElement dependency: module.getDependenciesList().getDependencies()) {
+    for (JpsDependencyElement dependency : module.getDependenciesList().getDependencies()) {
       if (!(dependency instanceof JpsLibraryDependency)) continue;
 
-      JpsLibraryOrderEntry libOrderEntry = new JpsLibraryOrderEntry(null, (JpsLibraryDependency) dependency);
-      if (!libOrderEntry.getLibraryLevel().equals(LibraryTableImplUtil.MODULE_LEVEL)) continue;
 
       JpsLibrary lib = ((JpsLibraryDependency) dependency).getLibrary();
+
+//      LibraryOrderEntry libOrderEntry = new JpsLibraryOrderEntry(null, (JpsLibraryDependency) dependency);
+//      if (!libOrderEntry.isModuleLevel()) continue;
+
+      // didn't find a way to get LibraryOrderEntry by JpsModule, hence this workaround
+      if (projectLibraries.contains(lib)) {
+        continue;
+      }
 
       List<File> roots = lib.getFiles(JpsOrderRootType.COMPILED);
       for (File root : roots) {
@@ -60,6 +74,7 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
         modelRoots.add(modelRoot);
       }
     }
+
 
     return modelRoots;
   }
