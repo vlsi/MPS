@@ -124,10 +124,15 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1281791650135608729(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_4715720811466829486(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8145375452081973427(final PropertyMacroContext _context) {
     boolean sameModels = _context.getInputModel() == SNodeOperations.getModel(_context.getNode());
     SModel mainModel = (sameModels ? _context.getOriginalInputModel() : SNodeOperations.getModel(_context.getNode()));
-    return ((ModuleId.Regular) mainModel.getModule().getModuleId()).getUUID().toString();
+    return ((ModuleId.Regular) mainModel.getModule().getModuleId()).getUUID().getMostSignificantBits() + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8145375452081983252(final PropertyMacroContext _context) {
+    boolean sameModels = _context.getInputModel() == SNodeOperations.getModel(_context.getNode());
+    SModel mainModel = (sameModels ? _context.getOriginalInputModel() : SNodeOperations.getModel(_context.getNode()));
+    return ((ModuleId.Regular) mainModel.getModule().getModuleId()).getUUID().getLeastSignificantBits() + "L";
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829506(final PropertyMacroContext _context) {
     return ((SNodeId.Regular) _context.getNode().getNodeId()).getId() + "L";
