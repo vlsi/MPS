@@ -23,7 +23,6 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
-import jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.HashMap;
 import jetbrains.mps.smodel.ModelAccess;
@@ -91,12 +90,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
         }
       }));
 
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder() {
-        @Override
-        protected List<SpecificChecker> getSpecificCheckers() {
-          return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new ReferenceableConceptsChecker());
-        }
-      });
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new ReferenceableConceptsChecker()));
 
       // extra debug 
       final Wrappers._int total = new Wrappers._int();

@@ -69,12 +69,7 @@ public class ModelCheckerExecutor {
     return new Runnable() {
       @Override
       public void run() {
-        IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder() {
-          @Override
-          protected List<SpecificChecker> getSpecificCheckers() {
-            return getMySpecificCheckers();
-          }
-        });
+        IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder(getMySpecificCheckers()));
         final ProgressMonitor promon = getOrCreateProgressMonitor(monitor);
         promon.start("Executing Model Fixes", 200);
 

@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
+import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -20,12 +21,22 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.project.Project;
 
 public class ModelCheckerIssueFinder implements IFinder {
+  private final List<SpecificChecker> myExtraCheckers;
+
   public ModelCheckerIssueFinder() {
+    myExtraCheckers = null;
+  }
+  public ModelCheckerIssueFinder(List<SpecificChecker> extraCheckers) {
+    myExtraCheckers = extraCheckers;
+  }
+  public ModelCheckerIssueFinder(SpecificChecker... extraCheckers) {
+    this(Arrays.asList(extraCheckers));
   }
   protected List<SpecificChecker> getSpecificCheckers() {
-    return null;
+    return myExtraCheckers;
   }
   @Override
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
@@ -58,33 +69,31 @@ public class ModelCheckerIssueFinder implements IFinder {
     monitor.start("Checking", work);
 
     try {
-      ModuleChecker moduleChecker = null;
+      SearchResults<ModelCheckerIssue> rv = new SearchResults<ModelCheckerIssue>();
       if (modules != null) {
-        moduleChecker = new ModuleChecker();
+        ModuleChecker moduleChecker = new ModuleChecker();
         for (SModule module : ListSequence.fromList(modules)) {
           moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
           if (monitor.isCanceled()) {
             break;
           }
         }
+        rv.addAll(moduleChecker.getSearchResults());
       }
       monitor.advance(0);
-      ModelChecker modelChecker;
-      if (moduleChecker != null) {
-        modelChecker = new ModelChecker(operationContext, moduleChecker.getSearchResults());
-      } else {
-        modelChecker = new ModelChecker(operationContext);
-      }
+
+      Project mpsProject = operationContext.getProject();
+      ModelChecker modelChecker = new ModelChecker(mpsProject);
       modelChecker.setSpecificCheckers(getSpecificCheckers());
       monitor.advance(1);
-
       for (SModel modelDescriptor : ListSequence.fromList(models)) {
         modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }
       }
-      return modelChecker.getSearchResults();
+      rv.addAll(modelChecker.getSearchResults());
+      return rv;
     } finally {
       monitor.done();
     }

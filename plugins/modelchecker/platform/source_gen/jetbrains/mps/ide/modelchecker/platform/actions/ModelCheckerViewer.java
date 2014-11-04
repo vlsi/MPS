@@ -8,17 +8,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.Icon;
 import javax.swing.JButton;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -27,7 +26,6 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +36,6 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -56,7 +53,8 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
 public abstract class ModelCheckerViewer extends JPanel {
-  private Project myProject;
+  private final Project myIdeaProject;
+  private final jetbrains.mps.project.Project myProject;
   private IOperationContext myOperationContext;
   private UsagesView myUsagesView;
   private String myTabTitle;
@@ -64,7 +62,8 @@ public abstract class ModelCheckerViewer extends JPanel {
   private JButton myFixButton;
   private String myCheckProgressTitle = "Checking...";
   public ModelCheckerViewer(Project project, IOperationContext operationContext) {
-    myProject = project;
+    myIdeaProject = project;
+    myProject = ProjectHelper.toMPSProject(project);
     myOperationContext = operationContext;
 
     setLayout(new BorderLayout());
@@ -107,7 +106,7 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     // Perform quick fixes 
     final Wrappers._int fixedTotal = new Wrappers._int(0);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         // Select all fixable issues 
         List<ModelCheckerIssue> issuesToFix = ModelCheckerViewer.this.getIssuesToFix();
@@ -115,7 +114,7 @@ public abstract class ModelCheckerViewer extends JPanel {
           Messages.showInfoMessage("There are no quick fixes for current problems", "No Quick Fixes");
           return;
         }
-        int dialogAnswer = Messages.showYesNoDialog(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+        int dialogAnswer = Messages.showYesNoDialog(myIdeaProject, "You are going to remove undeclared properties, children from nodes and resolve references. " + "You may not be able to undo it. Are you sure?", "Warning", null);
         if (dialogAnswer != 0) {
           return;
         }
@@ -136,7 +135,7 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     // Perform recheck if needed 
     if (fixedTotal.value != 0) {
-      int dialogAnswer1 = Messages.showYesNoDialog(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
+      int dialogAnswer1 = Messages.showYesNoDialog(myIdeaProject, "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
       if (dialogAnswer1 != 0) {
         return;
       }
@@ -152,13 +151,13 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
+        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable();
       }
     }).toListSequence();
   }
   private void runCheck() {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
+      ProgressManager.getInstance().run(new Task.Modal(myIdeaProject, myCheckProgressTitle, true) {
         @Override
         public void run(@NotNull ProgressIndicator indicator) {
           myUsagesView.run(indicator);
@@ -171,7 +170,7 @@ public abstract class ModelCheckerViewer extends JPanel {
   }
   public void prepareAndCheckModules(List<SModule> modules, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence(), myOperationContext), myProject.getComponent(MPSProject.class).getScope());
+    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence(), myOperationContext), myProject.getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
@@ -185,7 +184,7 @@ public abstract class ModelCheckerViewer extends JPanel {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
-    }).toListSequence(), myOperationContext), myProject.getComponent(MPSProject.class).getScope());
+    }).toListSequence(), myOperationContext), myProject.getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
