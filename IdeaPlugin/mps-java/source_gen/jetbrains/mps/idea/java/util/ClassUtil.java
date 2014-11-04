@@ -5,6 +5,8 @@ package jetbrains.mps.idea.java.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class ClassUtil {
@@ -14,7 +16,7 @@ public class ClassUtil {
     SNode curr = SNodeOperations.cast(((SNode) claz), "jetbrains.mps.baseLanguage.structure.Classifier");
     StringBuilder sb = new StringBuilder();
     do {
-      sb.insert(0, SPropertyOperations.getString(curr, "name"));
+      sb.insert(0, SPropertyOperations.getString(curr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       sb.insert(0, ".");
       SNode parent = SNodeOperations.getParent(curr);
       if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
