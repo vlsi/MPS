@@ -4,7 +4,6 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -55,16 +54,14 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 public abstract class ModelCheckerViewer extends JPanel {
   private final Project myIdeaProject;
   private final jetbrains.mps.project.Project myProject;
-  private IOperationContext myOperationContext;
   private UsagesView myUsagesView;
   private String myTabTitle;
   private Icon myTabIcon;
   private JButton myFixButton;
   private String myCheckProgressTitle = "Checking...";
-  public ModelCheckerViewer(Project project, IOperationContext operationContext) {
+  public ModelCheckerViewer(Project project) {
     myIdeaProject = project;
     myProject = ProjectHelper.toMPSProject(project);
-    myOperationContext = operationContext;
 
     setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
@@ -164,13 +161,13 @@ public abstract class ModelCheckerViewer extends JPanel {
         }
       });
     } catch (Throwable t) {
-      LogManager.getLogger(ModelCheckerViewer.class).error("An error occured while model checking:\n" + t);
+      LogManager.getLogger(ModelCheckerViewer.class).error("An error occurred while model checking:\n" + t);
     }
 
   }
   public void prepareAndCheckModules(List<SModule> modules, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence(), myOperationContext), myProject.getScope());
+    SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), myProject.getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
@@ -184,7 +181,7 @@ public abstract class ModelCheckerViewer extends JPanel {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
-    }).toListSequence(), myOperationContext), myProject.getScope());
+    }).toListSequence()), myProject.getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;

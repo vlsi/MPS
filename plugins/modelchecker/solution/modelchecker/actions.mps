@@ -767,11 +767,6 @@
         <reference role="79nr.1217252042208.1217252646389" target="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
         <node concept="79nr.5538333046911348654" id="8898893144448210506" role="79nr.1217413147516.5538333046911298738" info="ng" />
       </node>
-      <node concept="79nr.1217252042208" id="1453248744423276218" role="79nr.1203071646776.1217413222820" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="operationContext" />
-        <reference role="79nr.1217252042208.1217252646389" target="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-        <node concept="79nr.5538333046911348654" id="8898893144448210476" role="79nr.1217413147516.5538333046911298738" info="ng" />
-      </node>
       <node concept="79nr.1203083511112" id="1453248744423276219" role="79nr.1203071646776.1203083461638" info="in">
         <node concept="vg0i.1068580123136" id="1453248744423276220" role="vg0i.1137021947720.1137022507850" info="sn">
           <node concept="vg0i.1068580123155" id="215863513247815251" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -788,18 +783,6 @@
               </node>
               <node concept="vg0i.1202948039474" id="215863513247830734" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="phxh.3719390199793468337" resolveInfo="checkProject" />
-                <node concept="vg0i.1197027756228" id="1453248744423276229" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="1sqg.1205752633985" id="1453248744423276230" role="vg0i.1197027756228.1197027771414" info="nn" />
-                  <node concept="79nr.1217252428768" id="1453248744423276231" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="1sqg.1205756064662.1205756909548" target="1453248744423276217" resolveInfo="project" />
-                  </node>
-                </node>
-                <node concept="vg0i.1197027756228" id="1453248744423276232" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="1sqg.1205752633985" id="1453248744423276233" role="vg0i.1197027756228.1197027771414" info="nn" />
-                  <node concept="79nr.1217252428768" id="1453248744423276234" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="1sqg.1205756064662.1205756909548" target="1453248744423276218" resolveInfo="operationContext" />
-                  </node>
-                </node>
                 <node concept="vg0i.1068580123137" id="1453248744423276235" role="vg0i.1204053956946.1068499141038" info="nn">
                   <property role="vg0i.1068580123137.1068580123138" value="true" />
                 </node>
