@@ -88,7 +88,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
     </file>
     <file name="AbsractMake_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_BehaviorDescriptor" />
     </file>
     <file name="CallActionExpression_BehaviorDescriptor.java">
       <unit at="11,0,37,0" name="jetbrains.mps.console.ideCommands.behavior.CallActionExpression_BehaviorDescriptor" />
@@ -213,24 +213,18 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984889709">
     <file name="AbsractMake_Behavior.java">
-      <node id="2840424593984890708" at="11,86,12,16" concept="10" />
-      <node id="2840424593984890715" at="14,114,15,16" concept="10" />
+      <node id="2840424593984890715" at="11,114,12,16" concept="10" />
       <node id="2840424593984889709" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2840424593984889709" at="11,0,14,0" concept="12" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2840424593984889709" at="14,0,17,0" concept="12" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
+      <node id="2840424593984889709" at="11,0,14,0" concept="12" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
       <scope id="2840424593984889711" at="9,43,9,43" />
-      <scope id="2840424593984890707" at="11,86,12,16" />
-      <scope id="2840424593984890714" at="14,114,15,16" />
+      <scope id="2840424593984890714" at="11,114,12,16" />
       <scope id="2840424593984889709" at="9,0,11,0">
         <var name="thisNode" id="2840424593984889709" />
       </scope>
       <scope id="2840424593984889709" at="11,0,14,0">
-        <var name="thisNode" id="2840424593984889709" />
-      </scope>
-      <scope id="2840424593984889709" at="14,0,17,0">
         <var name="thisConcept" id="2840424593984889709" />
       </scope>
-      <unit id="2840424593984889709" at="8,0,18,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
+      <unit id="2840424593984889709" at="8,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
     </file>
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">
@@ -463,18 +457,18 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5582028874769074503">
     <file name="ModuleProperties_Behavior.java">
-      <node id="5582028874769074506" at="10,86,11,16" concept="10" />
-      <node id="5582028874769074503" at="8,0,10,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5582028874769074503" at="10,0,13,0" concept="12" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5582028874769074511" at="8,43,8,43" />
-      <scope id="5582028874769074505" at="10,86,11,16" />
-      <scope id="5582028874769074503" at="8,0,10,0">
+      <node id="5582028874769074506" at="11,100,12,16" concept="10" />
+      <node id="5582028874769074503" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5582028874769074503" at="11,0,14,0" concept="12" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="5582028874769074511" at="9,43,9,43" />
+      <scope id="5582028874769074505" at="11,100,12,16" />
+      <scope id="5582028874769074503" at="9,0,11,0">
         <var name="thisNode" id="5582028874769074503" />
       </scope>
-      <scope id="5582028874769074503" at="10,0,13,0">
-        <var name="thisNode" id="5582028874769074503" />
+      <scope id="5582028874769074503" at="11,0,14,0">
+        <var name="thisConcept" id="5582028874769074503" />
       </scope>
-      <unit id="5582028874769074503" at="7,0,14,0" name="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_Behavior" />
+      <unit id="5582028874769074503" at="8,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_Behavior" />
     </file>
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5582028874771853135">
