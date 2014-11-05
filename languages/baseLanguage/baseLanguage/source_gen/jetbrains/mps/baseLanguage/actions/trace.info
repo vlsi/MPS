@@ -7065,20 +7065,20 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/558454895479002756">
     <file name="ModuleDependencyUtils.java">
-      <node id="558454895478000698" at="11,50,12,217" concept="13" />
-      <node id="558454895477898425" at="12,217,13,71" concept="13" />
-      <node id="558454895477897463" at="13,71,14,68" concept="7" />
-      <node id="558454895477892754" at="10,78,15,5" concept="11" />
-      <node id="558454895479019226" at="10,0,17,0" concept="18" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <scope id="558454895477892757" at="11,50,14,68">
-        <var name="abstractModule" id="558454895477898426" />
-        <var name="jdk" id="558454895478000699" />
+      <node id="668461590426318306" at="12,50,13,134" concept="13" />
+      <node id="558454895477897463" at="14,30,15,73" concept="7" />
+      <node id="668461590426318568" at="13,134,16,7" concept="11" />
+      <node id="558454895477892754" at="11,78,17,5" concept="11" />
+      <node id="558454895479019226" at="11,0,19,0" concept="18" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="668461590426318571" at="14,30,15,73" />
+      <scope id="558454895477892757" at="12,50,16,7">
+        <var name="reference" id="668461590426318307" />
       </scope>
-      <scope id="558454895479002783" at="10,78,15,5" />
-      <scope id="558454895479019226" at="10,0,17,0">
+      <scope id="558454895479002783" at="11,78,17,5" />
+      <scope id="558454895479019226" at="11,0,19,0">
         <var name="currentModule" id="558454895479006190" />
       </scope>
-      <unit id="558454895479002756" at="9,0,18,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
+      <unit id="558454895479002756" at="10,0,20,0" name="jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/5606590085431552230">

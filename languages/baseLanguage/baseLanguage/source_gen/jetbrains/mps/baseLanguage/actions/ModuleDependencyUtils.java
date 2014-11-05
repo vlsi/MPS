@@ -4,14 +4,16 @@ package jetbrains.mps.baseLanguage.actions;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ModuleDependencyUtils {
   /*package*/ static void addDependencyOnJDKIfMissing(SModule currentModule) {
     if (currentModule instanceof AbstractModule) {
-      SModule jdk = SNodeOperations.getModel(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Thread")).getModule();
-      AbstractModule abstractModule = ((AbstractModule) currentModule);
-      abstractModule.addDependency(jdk.getModuleReference(), false);
+      SModuleReference reference = PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
+      if (reference != null) {
+        ((AbstractModule) currentModule).addDependency(reference, false);
+      }
     }
   }
 }
