@@ -42,10 +42,12 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private static final int MY_MIN_CELL_WIDTH = 300;
-  private static final int MY_MIN_CELL_HEIGHT = 18;
   private static final Logger LOG = LogManager.getLogger(NodeItemCellRenderer.class);
   public static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
 
@@ -59,6 +61,8 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
   private NodeSubstitutePatternEditor myPatternEditor;
   private int myOldStyle = Font.PLAIN;
+  private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
+  private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
 
 
   NodeItemCellRenderer(@NotNull NodeSubstitutePatternEditor patternEditor) {
@@ -86,7 +90,20 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     myPatternEditor = patternEditor;
   }
 
-  Dimension getMaxDimension(SubstituteAction action) {
+  @NotNull
+  Dimension getMaxDimension (List<SubstituteAction> actions) {
+    int maxWidth = 0;
+    int maxHeight = 0;
+    myConceptIconMap.clear();
+    myNodeIconMap.clear();
+    for (SubstituteAction action : actions) {
+      Dimension dimension = getDimension(action);
+      maxWidth = Math.max(maxWidth, dimension.width);
+      maxHeight = Math.max(maxHeight, dimension.height);
+    }
+    return new Dimension(maxWidth, maxHeight);
+  }
+  private Dimension getDimension(SubstituteAction action) {
     String pattern = myPatternEditor.getPattern();
     String matchingText;
     try {
@@ -102,13 +119,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     }
     int itemWidth = 0;
     int itemHeight = 0;
-//    try {
-//      Icon icon = getIcon(action, pattern);
-//      itemWidth += icon.getIconWidth();
-//      itemHeight += icon.getIconHeight();
-//    } catch (Throwable t) {
-//      LOG.error(null, t);
-//    }
+    try {
+      Icon icon = getIcon(action, pattern);
+      itemWidth += icon.getIconWidth();
+      itemHeight += icon.getIconHeight();
+    } catch (Throwable t) {
+      LOG.error(null, t);
+    }
     Font font = getFont(action);
     FontMetrics fontMetrics = FontRegistry.getInstance().getFontMetrics(font);
     itemWidth += myLeft.getIconTextGap();
@@ -119,7 +136,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     if (descriptionText != null) {
       itemWidth += fontMetrics.stringWidth(descriptionText);
     }
-    itemHeight = MY_MIN_CELL_HEIGHT;//Math.max(itemHeight, fontMetrics.getHeight());
+    itemHeight = Math.max(itemHeight, fontMetrics.getHeight()) + 2;
     itemWidth = Math.max(itemWidth, MY_MIN_CELL_WIDTH);
     return new Dimension(itemWidth, itemHeight);
   }
@@ -210,11 +227,27 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   }
 
   private Icon getIcon(SubstituteAction action, String pattern) {
-    Icon icon;
+    Icon icon = null;
     SNode iconNode = action.getIconNode(pattern);
     if (iconNode != null) {
-      icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
-          IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+
+      boolean isConcept = SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation());
+      boolean isCached = false;
+      if (isConcept && myConceptIconMap.containsKey(iconNode)) {
+        isCached = true;
+        icon = myConceptIconMap.get(iconNode);
+      } else if (!isConcept && myNodeIconMap.containsKey(iconNode)) {
+        isCached = true;
+        icon = myNodeIconMap.get(iconNode);
+      }
+      if (!isCached) {
+        icon = isConcept ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+        if (isConcept) {
+          myConceptIconMap.put(iconNode, icon);
+        } else {
+          myNodeIconMap.put(iconNode, icon);
+        }
+      }
     } else {
       icon = IdeIcons.DEFAULT_ICON;
     }

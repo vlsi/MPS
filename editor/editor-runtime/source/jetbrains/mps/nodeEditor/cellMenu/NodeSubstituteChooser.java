@@ -174,17 +174,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myEditorComponent.pushKeyboardHandler(this);
         rebuildMenuEntries();
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
+        getPopupWindow().setSelectionIndex(0);
         if (canShowPopup) {
           getPopupWindow().setVisible(true);
+          getPopupWindow().scrollToSelection();
         }
-        getPopupWindow().setSelectionIndex(0);
-        getPopupWindow().scrollToSelection();
         myPopupActivated = true;
       } else {
         if (canShowPopup) {
           getPopupWindow().setVisible(false);
+          getPopupWindow().done();
           getPatternEditor().done();
-          getPopupWindow().setRelativeCell(null);
         }
         myNodeSubstituteInfo.invalidateActions();
         myPopupActivated = false;
@@ -257,7 +257,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       LOG.error(e, e);
     }
 
-    getPopupWindow().setOldSelectedSubstituteAction(getPopupWindow().getCurrentSelectedSubstituteAction());
 
     mySubstituteActions = matchingActions;
     if (mySubstituteActions.size() == 0) {
@@ -280,14 +279,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       });
     }
 
-    getPopupWindow().resetMaxSize();
-    for (SubstituteAction item : mySubstituteActions) {
-      Dimension dimension = getCellRenderer().getMaxDimension(item);
-      getPopupWindow().updateMaxHeight(dimension.height);
-      getPopupWindow().updateMaxWidth(dimension.width);
-    }
-
-    getPopupWindow().updateListDimension();
+    getPopupWindow().updateListDimension(getCellRenderer().getMaxDimension(mySubstituteActions));
     getPopupWindow().initListModel();
   }
 
@@ -299,8 +291,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
+        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
         getPopupWindow().pack();
+        getPopupWindow().scrollToAction(actionToSelect);
         getPopupWindow().repaint();
       }
       return true;
@@ -325,9 +319,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
+        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
         if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
           getPopupWindow().pack();
+          getPopupWindow().scrollToAction(actionToSelect);
           getPopupWindow().repaint();
         }
       }
@@ -445,9 +441,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
-    private SubstituteAction mySelectedSubstituteAction;
-    private int myMaxHeight;
-    private int myMaxWidth;
     private final int MAX_LOOKUP_LIST_HEIGHT = 11;
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
@@ -528,16 +521,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
     }
-
+    private void done() {
+      setRelativeCell(null);
+    }
     @Override
     public void dispose() {
       getOwner().removeComponentListener(myComponentListener);
 
       super.dispose();
-    }
-
-    public void setOldSelectedSubstituteAction(SubstituteAction action) {
-      mySelectedSubstituteAction = action;
     }
 
     public SubstituteAction getCurrentSelectedSubstituteAction() {
@@ -548,18 +539,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         return null;
       }
     }
-    public void resetMaxSize() {
-      myMaxWidth = 0;
-      myMaxHeight = 0;
-    }
 
-    public void updateMaxWidth(int width) {
-      myMaxWidth = Math.max(myMaxWidth, width);
-    }
-
-    public void updateMaxHeight(int height) {
-      myMaxHeight = Math.max(myMaxHeight, height);
-    }
 
     public void setRelativeCell(EditorCell cell) {
       myRelativeCell = cell;
@@ -596,26 +576,18 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       Point newLocation = location;
 
-      int oldIndex = 0;
-      if (mySelectedSubstituteAction != null) {
-        int newIndexOfLastSelectedAction = mySubstituteActions.indexOf(mySelectedSubstituteAction);
-        if (newIndexOfLastSelectedAction != -1) {
-          oldIndex = newIndexOfLastSelectedAction;
-        }
+
+      if (preferredSize.getWidth() >= deviceBounds.width) {
+        setSize(deviceBounds.width, preferredSize.height);
+      } else {
+        setSize(preferredSize);
       }
 
-      setSelectionIndex(oldIndex);
-      scrollToSelection();
-
-      setSize(preferredSize);
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
       }
 
-      if (getWidth() >= deviceBounds.width) {
-        setSize(deviceBounds.width, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
-      }
 
       if (newLocation.x < deviceBounds.x) {
         newLocation.x = deviceBounds.x;
@@ -631,10 +603,22 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myScroller.validate();
     }
 
-    private void updateListDimension() {
+    public void scrollToAction(SubstituteAction action) {
+      int oldIndex = 0;
+      if (action != null) {
+        int newIndexOfLastSelectedAction = mySubstituteActions.indexOf(action);
+        if (newIndexOfLastSelectedAction != -1) {
+          oldIndex = newIndexOfLastSelectedAction;
+        }
+      }
+      setSelectionIndex(oldIndex);
+      scrollToSelection();
+    }
+
+    public void updateListDimension(Dimension dimension) {
       myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
-      myList.setFixedCellHeight(myMaxHeight);
-      myList.setFixedCellWidth(myMaxWidth);
+      myList.setFixedCellHeight(dimension.height);
+      myList.setFixedCellWidth(dimension.width);
     }
 
     private void initListModel() {

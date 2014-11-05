@@ -2542,8 +2542,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // caret is at the end of line
     boolean atTheEndOfLine = pattern.equals(patternEditor.getText());
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
+    substituteInfo.invalidateActions();
     if (originalTextChanged || atTheEndOfLine) {
-      substituteInfo.invalidateActions();
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
