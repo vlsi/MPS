@@ -1976,7 +1976,7 @@
       <property role="79nr.5023285075122009364.5023285075122009371" value="JetBrains" />
       <property role="79nr.5023285075122009364.4167053799973858143" value="/MPS_16.png" />
       <property role="asn4.1169194658468.1169194664001" value="Debugger API for MPS" />
-      <property role="79nr.5023285075122009364.5023285075122009373" value="129.1" />
+      <property role="79nr.5023285075122009364.5023285075122009373" value="139.1" />
       <property role="79nr.5023285075122009364.5023285075122009369" value="3.2" />
     </node>
     <node concept="vg0i.1068390468198" id="2392684134639444998" info="ig">
