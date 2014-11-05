@@ -4565,7 +4565,7 @@
       <reference role="9wj7.1166049232041.1166049300910" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
       <node concept="9wj7.1073389446423" id="6677504323281690196" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1073389577006" id="6677504323281690197" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="concept" />
+          <property role="9wj7.1073389577006.1073389577007" value="sconcept" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="6677504323281690198" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />

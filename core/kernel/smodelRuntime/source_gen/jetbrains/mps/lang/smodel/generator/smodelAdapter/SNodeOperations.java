@@ -751,6 +751,10 @@ public class SNodeOperations {
     }
     return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
   }
+  /**
+   * this method is used where both concept and declaration should be acceptable
+   */
+  @Deprecated
   public static SConcept asSConcept(SConcept concept) {
     if (concept == null) {
       return null;
