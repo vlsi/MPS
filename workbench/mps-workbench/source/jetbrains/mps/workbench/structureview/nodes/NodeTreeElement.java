@@ -19,20 +19,15 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
   protected SNodeReference myNode;
@@ -72,19 +67,15 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
       @Override
       public void run(final DataContext dataContext) {
-        final Project p = MPSDataKeys.PROJECT.getData(dataContext);
+        final Project p = MPSDataKeys.MPS_PROJECT.getData(dataContext);
         if (p == null) return;
 
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        p.getModelAccess().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode node = myNode.resolve(MPSModuleRepository.getInstance());
+            SNode node = myNode.resolve(p.getRepository());
             if (node == null) return;
-            SModel model = node.getModel();
-            if (model == null) return;
-            SModule module = model.getModule();
-            if (module == null) return;
-            NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
+            NavigationSupport.getInstance().openNode(p, node, true, true);
           }
         });
       }

@@ -59,6 +59,7 @@ public abstract class Project implements MPSModuleOwner {
 
   public abstract List<String> getWatchedModulesPaths();
 
+  @NotNull
   public SRepository getRepository() {
     return myRepository;
   }

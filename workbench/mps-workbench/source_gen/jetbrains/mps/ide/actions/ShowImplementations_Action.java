@@ -27,7 +27,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.components.ShowImplementationComponent;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -82,10 +81,6 @@ public class ShowImplementations_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
     if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
@@ -129,9 +124,9 @@ public class ShowImplementations_Action extends BaseAction {
       modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
-          final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((MPSProject) MapSequence.fromMap(_params).get("project")));
 
-          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPreferredFocusableComponent()).setRequestFocus(true).setProject(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
             @Override
             public Boolean compute() {
               modelAccess.executeCommandInEDT(new Runnable() {
@@ -143,7 +138,7 @@ public class ShowImplementations_Action extends BaseAction {
             }
           }).createPopup();
           popup.show(new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY())));
-          component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
+          component.getPreferredFocusableComponent().setRequestFocusEnabled(true);
           component.setPopup(popup);
         }
       });

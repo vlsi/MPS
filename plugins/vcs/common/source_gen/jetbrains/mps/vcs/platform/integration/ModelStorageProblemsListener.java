@@ -24,11 +24,8 @@ import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.event.HyperlinkEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.notification.Notifications;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -37,6 +34,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
@@ -149,15 +147,15 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
               final SNodeReference ref = errMap.get(e.getDescription());
               assert ref != null;
 
-              ModelAccess.instance().runWriteInEDT(new Runnable() {
+              project.value.getModelAccess().runWriteInEDT(new Runnable() {
                 public void run() {
 
-                  SNode resolved = ref.resolve(MPSModuleRepository.getInstance());
+                  SNode resolved = ref.resolve(project.value.getRepository());
                   if (resolved == null) {
                     return;
                   }
 
-                  NavigationSupport.getInstance().openNode(new ProjectOperationContext(project.value), resolved, true, true);
+                  NavigationSupport.getInstance().openNode(project.value, resolved, true, true);
                 }
               });
             }

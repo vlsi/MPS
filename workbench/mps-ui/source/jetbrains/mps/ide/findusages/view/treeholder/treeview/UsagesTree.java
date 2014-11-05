@@ -15,20 +15,14 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import com.intellij.icons.AllIcons;
-import com.intellij.icons.AllIcons.Debugger;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.LayeredIcon;
-import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -37,16 +31,15 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.Nullable;
@@ -65,8 +58,6 @@ import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -273,8 +264,8 @@ public class UsagesTree extends MPSTree {
 
   @Override
   protected UsagesTreeNode rebuild() {
-    final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-    return ModelAccess.instance().runReadAction(new Computable<UsagesTreeNode>() {
+    final IOperationContext operationContext = new ProjectOperationContext(myProject);
+    ComputeRunnable<UsagesTreeNode> cr = new ComputeRunnable<UsagesTreeNode>(new Computable<UsagesTreeNode>() {
       @Override
       public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode(operationContext);
@@ -304,6 +295,8 @@ public class UsagesTree extends MPSTree {
         return root;
       }
     });
+    myProject.getModelAccess().runReadAction(cr);
+    return cr.getResult();
   }
 
   //this is not recursive
@@ -660,18 +653,16 @@ public class UsagesTree extends MPSTree {
     SModule module = modelDescriptor.getModule();
     if (module == null) return;
 
-    ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
-    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getParent() == null));
+    NavigationSupport.getInstance().openNode(myProject, node, focus, !(node.getModel() != null && node.getParent() == null));
   }
 
   private void navigateInTree(Object o, boolean focus) {
-    ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
     if (o instanceof SNode) {
-      NavigationSupport.getInstance().selectInTree(context, (SNode) o, focus);
+      NavigationSupport.getInstance().selectInTree(myProject, (SNode) o, focus);
     } else if (o instanceof SModel) {
-      NavigationSupport.getInstance().selectInTree(context, ((SModel) o), focus);
+      NavigationSupport.getInstance().selectInTree(myProject, ((SModel) o), focus);
     } else if (o instanceof SModule) {
-      NavigationSupport.getInstance().selectInTree(context, (SModule) o, focus);
+      NavigationSupport.getInstance().selectInTree(myProject, (SModule) o, focus);
     } else {
       throw new IllegalArgumentException();
     }

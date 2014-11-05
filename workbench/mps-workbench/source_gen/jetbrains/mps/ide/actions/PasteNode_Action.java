@@ -101,7 +101,7 @@ public class PasteNode_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(modelAccess, _params);
       final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
@@ -136,12 +136,13 @@ public class PasteNode_Action extends BaseAction {
           if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
             final SNode root = pasteNodes.get(0).getContainingRoot();
             assert root != null;
-            jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(new Runnable() {
+            ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
               public void run() {
-                NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
-                NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
+                NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), root, true, true);
+                NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), root, false);
               }
             });
+
           }
         }
       });

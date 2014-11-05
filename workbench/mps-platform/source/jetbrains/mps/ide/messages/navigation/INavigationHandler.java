@@ -17,6 +17,11 @@ package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.openapi.project.Project;
 
+/**
+ * FIXME Revisit. There's com.intellij.pom.Navigatable and our own subclasses that navigate to model/node.
+ * If the purpose of this interface was to abstract away from the Idea platform, why Idea Project in parameters.
+ * If not, what's the reason to use this interface instead of aforementioned Navigatable
+ */
 interface INavigationHandler<T> {
   boolean canNavigate(T object);
   void navigate(T object, Project project, boolean focus, boolean select);

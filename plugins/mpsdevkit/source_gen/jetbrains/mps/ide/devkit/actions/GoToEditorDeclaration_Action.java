@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -74,10 +73,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
@@ -121,8 +116,8 @@ public class GoToEditorDeclaration_Action extends BaseAction {
 
       modelAccess.runWriteInEDT(new Runnable() {
         public void run() {
-          NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, true, true);
-          NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, false);
+          NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, true, true);
+          NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, false);
         }
       });
     } catch (Throwable t) {
