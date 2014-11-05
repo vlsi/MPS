@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -67,7 +68,7 @@ public class FindAllAdapterUsages_Action extends BaseAction {
           return SModelStereotype.isUserModel(md);
         }
       }));
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new AdapterUsagesFinder());
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new AdapterUsagesChecker()));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);

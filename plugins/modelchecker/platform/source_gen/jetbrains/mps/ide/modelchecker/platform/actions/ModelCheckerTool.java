@@ -8,21 +8,20 @@ import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JOptionPane;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 
 public class ModelCheckerTool extends BaseTabbedProjectTool {
@@ -34,8 +33,8 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     myProject = project;
   }
 
-  private ModelCheckerViewer performCheckingTask(_FunctionTypes._void_P1_E0<? super ModelCheckerViewer> task, IOperationContext operationContext, boolean showTab) {
-    ModelCheckerViewer newViewer = this.createViewer(operationContext);
+  private ModelCheckerViewer performCheckingTask(_FunctionTypes._void_P1_E0<? super ModelCheckerViewer> task, boolean showTab) {
+    ModelCheckerViewer newViewer = this.createViewer();
     task.invoke(newViewer);
     if (showTab) {
       if (newViewer.getSearchResults().getSearchResults().isEmpty() && !(ModelCheckerSettings.getInstance().getMigrationMode())) {
@@ -46,42 +45,42 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     }
     return newViewer;
   }
-  private ModelCheckerViewer performCheckingTaskForModels(final List<SModel> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer performCheckingTaskForModels(final List<SModel> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, boolean showTab) {
     return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon);
       }
-    }, operationContext, showTab);
+    }, showTab);
   }
-  private ModelCheckerViewer performCheckingTaskForModules(final List<SModule> modules, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer performCheckingTaskForModules(final List<SModule> modules, final String taskTargetTitle, final Icon taskIcon, boolean showTab) {
     return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModules(modules, taskTargetTitle, taskIcon);
       }
-    }, operationContext, showTab);
+    }, showTab);
   }
   public ModelCheckerViewer checkModel(SModel model, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModels(ListSequence.fromListAndArray(new ArrayList<SModel>(), model), model.getModelName(), IconManager.getIconFor(model), operationContext, showTab);
+    return this.performCheckingTaskForModels(ListSequence.fromListAndArray(new ArrayList<SModel>(), model), model.getModelName(), IconManager.getIconFor(model), showTab);
   }
   public ModelCheckerViewer checkModels(List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), IdeIcons.MODEL_ICON, operationContext, showTab);
+    return this.performCheckingTaskForModels(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), IdeIcons.MODEL_ICON, showTab);
   }
   public ModelCheckerViewer checkModels(final List<SModel> modelDescriptors, IOperationContext operationContext, boolean showTab, final ModelCheckerIssueFinder finder) {
     return this.performCheckingTask(new _FunctionTypes._void_P1_E0<ModelCheckerViewer>() {
       public void invoke(ModelCheckerViewer newViewer) {
         newViewer.prepareAndCheckModels(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", IdeIcons.MODEL_ICON, finder);
       }
-    }, operationContext, showTab);
+    }, showTab);
   }
   public ModelCheckerViewer checkModule(SModule module, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), module.getModuleName(), IconManager.getIconFor(module), operationContext, showTab);
+    return this.performCheckingTaskForModules(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), module.getModuleName(), IconManager.getIconFor(module), showTab);
   }
   public ModelCheckerViewer checkModules(List<SModule> modules, IOperationContext operationContext, boolean showTab) {
-    return this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), IdeIcons.MODULE_GROUP_CLOSED, operationContext, showTab);
+    return this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), IdeIcons.MODULE_GROUP_CLOSED, showTab);
   }
-  public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
-    MPSProject mpsProject = project.getComponent(MPSProject.class);
-    return this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, operationContext, showTab);
+  public ModelCheckerViewer checkProject(boolean showTab) {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    return this.performCheckingTaskForModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), mpsProject.getModules()), mpsProject.getName(), IdeIcons.PROJECT_ICON, showTab);
   }
   public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModel> modelDescriptors) {
     ModelCheckerViewer viewer = this.checkModels(modelDescriptors, operationContext, false);
@@ -107,8 +106,8 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     }
     return CheckinHandler.ReturnResult.COMMIT;
   }
-  private ModelCheckerViewer createViewer(IOperationContext operationContext) {
-    return new ModelCheckerViewer(this.myProject, operationContext) {
+  private ModelCheckerViewer createViewer() {
+    return new ModelCheckerViewer(this.myProject) {
       @Override
       protected void close() {
         ModelCheckerTool.this.closeTab(this);

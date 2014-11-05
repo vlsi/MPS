@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
@@ -71,7 +72,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
           return FindWrongAspectDependencies_Action.this.needsProcessing(md, _params);
         }
       }));
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new WrongAspectDependenciesFinder());
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new AspectDependenciesChecker()));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);

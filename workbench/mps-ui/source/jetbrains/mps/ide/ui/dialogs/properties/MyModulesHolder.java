@@ -13,44 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.model.holders;
+package jetbrains.mps.ide.ui.dialogs.properties;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ModulesHolder implements IHolder<List<SModule>> {
-  private List<SModule> myModules = new ArrayList<SModule>();
-
-  public ModulesHolder(List<SModule> modules) {
-    myModules = modules;
+/**
+ * No idea why can't we implement these methods in the superclass, after all
+ */
+class MyModulesHolder extends ModulesHolder {
+  public MyModulesHolder(List<SModule> modules) {
+    super(modules);
   }
-
-  @Override
-  public List<SModule> getObject() {
-    return myModules;
-  }
-
-  @Override
-  @NotNull
-  public String getCaption() {
-    return NameUtil.formatNumericalString(myModules.size(), "model");
-  }
-
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    throw new UnsupportedOperationException();
   }
 
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
-    throw new UnsupportedOperationException();
   }
 }

@@ -424,17 +424,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   );
                 }
               }
-
-              ModulesHolder modulesHolder = new ModulesHolder(modules, null) {
-                @Override
-                public void read(Element element, Project project) throws CantLoadSomethingException {
-                }
-
-                @Override
-                public void write(Element element, Project project) throws CantSaveSomethingException {
-                }
-              };
-              query[0] = new SearchQuery(modulesHolder, scope);
+              query[0] = new SearchQuery(new MyModulesHolder(modules), scope);
               provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder() {
                 @Override
                 public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
