@@ -22,8 +22,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,13 +41,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
 
   @Override
   public ItemPresentation getPresentation() {
-    //todo use SNodeReference here, get rid of read action
-    return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
-      @Override
-      public ItemPresentation compute() {
-        return new NodeTreeElementPresentation();
-      }
-    });
+    return new NodeTreeElementPresentation();
   }
 
   @Override

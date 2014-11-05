@@ -56,7 +56,7 @@ public class PackageNode extends SNodeGroupTreeNode {
       }
     }
 
-    result.addAll(getNodesUnderPackage(myModelNode.getSModelDescriptor()));
+    result.addAll(getNodesUnderPackage(myModelNode.getModel()));
 
     return result;
   }

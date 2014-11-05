@@ -78,9 +78,9 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
     List<SModel> models = new ArrayList<SModel>();
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
-        models.add(((SModelTreeNode) child).getSModelDescriptor());
+        models.add(((SModelTreeNode) child).getModel());
         for (SModelTreeNode childTreeNode : ((SModelTreeNode) child).getAllSubfolderSModelTreeNodes()) {
-          models.add(childTreeNode.getSModelDescriptor());
+          models.add(childTreeNode.getModel());
         }
       } else if (child instanceof NamespaceTextNode) {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());

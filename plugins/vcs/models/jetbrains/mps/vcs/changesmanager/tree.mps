@@ -5577,7 +5577,7 @@
                             </node>
                           </node>
                           <node concept="vg0i.1202948039474" id="8232981609242713297" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="8slo.~SModelTreeNode%dgetSModelDescriptor()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getSModelDescriptor" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="8slo.~SModelTreeNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                           </node>
                         </node>
                       </node>

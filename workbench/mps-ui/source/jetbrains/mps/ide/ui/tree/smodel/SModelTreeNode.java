@@ -103,7 +103,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
-    myIcon = IconManager.getIconFor(getSModelDescriptor());
+    myIcon = IconManager.getIconFor(getModel());
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
@@ -239,24 +239,8 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     }
   }
 
-  public org.jetbrains.mps.openapi.model.SModel getModel() {
+  public SModel getModel() {
     return myModelDescriptor;
-  }
-
-  /**
-   * use getModel
-   */
-  @Deprecated
-  public final SModel getSModel() {
-    return getModel();
-  }
-
-  /**
-   * use getModel
-   */
-  @Deprecated
-  public final SModel getSModelDescriptor() {
-    return getModel();
   }
 
   @NotNull
@@ -432,7 +416,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     final ArrayList<SNode> allRoots = new ArrayList<SNode>();
-    for (SNode root1 : getSModel().getRootNodes()) {
+    for (SNode root1 : getModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));

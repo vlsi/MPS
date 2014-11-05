@@ -31,7 +31,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
   public SNodeGroupTreeNode(SModelTreeNode model, String text, boolean autoDelete) {
     super(text);
-    myModelReference = model.getSModelDescriptor().getReference();
+    myModelReference = model.getModel().getReference();
     myAutoDelete = autoDelete;
   }
 
