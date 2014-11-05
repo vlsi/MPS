@@ -1154,39 +1154,34 @@
       <node id="3719390199793467588" at="21,41,22,0" concept="13" />
       <node id="3719390199793467589" at="22,0,23,124" concept="10" />
       <node id="3719390199793467598" at="23,124,24,0" concept="13" />
-      <node id="3719390199793467599" at="24,0,25,35" concept="10" />
-      <node id="3719390199793467618" at="26,16,27,75" concept="10" />
-      <node id="3719390199793467634" at="28,55,29,74" concept="10" />
-      <node id="3719390199793467642" at="30,57,31,77" concept="4" />
-      <node id="3719390199793467657" at="32,63,33,34" concept="4" />
-      <node id="3719390199793467666" at="34,9,35,347" concept="4" />
-      <node id="3719390199793467692" at="37,5,38,19" concept="4" />
-      <node id="3719390199793467696" at="38,19,39,19" concept="11" />
+      <node id="3719390199793467618" at="24,0,25,63" concept="10" />
+      <node id="3719390199793467634" at="26,30,27,72" concept="10" />
+      <node id="3719390199793467642" at="28,31,29,75" concept="4" />
+      <node id="3719390199793467657" at="30,37,31,32" concept="4" />
+      <node id="3719390199793467666" at="32,7,33,321" concept="4" />
+      <node id="3719390199793467692" at="34,5,35,19" concept="4" />
+      <node id="3719390199793467696" at="35,19,36,19" concept="11" />
       <node id="3719390199793467570" at="17,0,19,0" concept="2" trace="ModelPropertiesChecker#()V" />
-      <node id="3719390199793467640" at="29,74,34,9" concept="8" />
-      <node id="3719390199793467628" at="27,75,36,7" concept="8" />
-      <node id="3719390199793467615" at="25,35,37,5" concept="8" />
-      <node id="3719390199793467574" at="19,0,41,0" concept="9" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
+      <node id="3719390199793467640" at="27,72,32,7" concept="8" />
+      <node id="3719390199793467628" at="25,63,34,5" concept="8" />
+      <node id="3719390199793467574" at="19,0,38,0" concept="9" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <scope id="3719390199793467571" at="17,35,17,35" />
-      <scope id="3719390199793467641" at="30,57,31,77" />
-      <scope id="3719390199793467656" at="32,63,33,34" />
+      <scope id="3719390199793467641" at="28,31,29,75" />
+      <scope id="3719390199793467656" at="30,37,31,32" />
       <scope id="3719390199793467570" at="17,0,19,0" />
-      <scope id="3719390199793467633" at="28,55,35,347">
+      <scope id="3719390199793467633" at="26,30,33,321">
         <var name="extraMessage" id="3719390199793467635" />
       </scope>
-      <scope id="3719390199793467617" at="26,16,36,7">
+      <scope id="3719390199793467575" at="20,122,36,19">
         <var name="errors" id="3719390199793467619" />
-      </scope>
-      <scope id="3719390199793467575" at="20,122,39,19">
-        <var name="modelDescriptor" id="3719390199793467600" />
         <var name="results" id="3719390199793467590" />
       </scope>
-      <scope id="3719390199793467574" at="19,0,41,0">
+      <scope id="3719390199793467574" at="19,0,38,0">
         <var name="model" id="3719390199793467698" />
         <var name="monitor" id="3719390199793467700" />
         <var name="repository" id="5779969123418916000" />
       </scope>
-      <unit id="3719390199793467569" at="16,0,42,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelPropertiesChecker" />
+      <unit id="3719390199793467569" at="16,0,39,0" name="jetbrains.mps.ide.modelchecker.platform.actions.ModelPropertiesChecker" />
     </file>
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793467711">
