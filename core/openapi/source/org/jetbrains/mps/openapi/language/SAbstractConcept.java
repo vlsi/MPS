@@ -57,6 +57,11 @@ public interface SAbstractConcept {
   boolean isSubConceptOf(SAbstractConcept concept);
 
   /**
+   * @return <code>true</code> for interfaces and abstract concepts.
+   */
+  boolean isAbstract();
+
+  /**
    * Returns the declaration node in case sources for this concept are present in IDE
    */
   @Nullable

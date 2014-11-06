@@ -151,6 +151,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     return d.isAssignableTo(concept.getQualifiedName());
   }
 
+  @Override
+  public boolean isAbstract() {
+    ConceptDescriptor d = getConceptDescriptor();
+    return d == null || d.isAbstract();
+  }
+
   @Nullable
   @Override
   public SNode getDeclarationNode() {
