@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,12 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -37,22 +38,14 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myNode = node;
 
-    SNode concept = getDeclarationNode();
-    if (concept != null) {
-      setIcon(IconManager.getIconFor(concept));
-      setNodeIdentifier(concept.getName());
-    } else {
-      setNodeIdentifier(myNode.getConcept().getQualifiedName());
-    }
+    SConcept concept = myNode.getConcept();
+    setIcon(IconManager.getIcon(concept));
+    setNodeIdentifier(concept.getName());
   }
 
   @Override
   public SNode getSNode() {
     return myNode;
-  }
-
-  public SNode getDeclarationNode() {
-    return ((jetbrains.mps.smodel.SNode) myNode).getConceptDeclarationNode();
   }
 
   @Override

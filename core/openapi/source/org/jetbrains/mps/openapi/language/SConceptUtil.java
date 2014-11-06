@@ -21,8 +21,13 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
+ * @deprecated static helper methods are not explicit about iteration approach nor are quite in OOP paradigm. Use appropriate iterators
+ * instead (e.g. {@link org.jetbrains.mps.util.BreadthConceptHierarchyIterator}.
+ *
  * A set of helper functions
  */
+@Deprecated
+//ToRemove(version=3.2)
 public class SConceptUtil {
   public static Set<SAbstractConcept> getAllSuperConcepts(@NotNull SAbstractConcept concept) {
     Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();

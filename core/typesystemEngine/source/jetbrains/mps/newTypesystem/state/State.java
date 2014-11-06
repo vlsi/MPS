@@ -20,8 +20,6 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -46,15 +44,17 @@ import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.lang.reflect.Array;
@@ -375,10 +375,9 @@ public class State {
         if (!wCBlock.isSkipError()) {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
-            SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
-            boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.propertyName_AbstractConceptDeclaration_abstract);
-            boolean isRuntime = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.typesystem.RuntimeTypeVariable");
-            if (!isAbstract && !isRuntime) {
+            SConcept concept = node.getConcept();
+            boolean isRuntime = concept.equals(SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.lang.typesystem.RuntimeTypeVariable"));
+            if (!concept.isAbstract() && !isRuntime) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
                   wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
             }
