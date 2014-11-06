@@ -265,7 +265,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public List<SModel> getSelectedModels() {
     List<SModel> result = new ArrayList<SModel>();
     for (SModelTreeNode node : getSelectedTreeNodes(SModelTreeNode.class)) {
-      result.add(node.getSModelDescriptor());
+      result.add(node.getModel());
     }
     return result;
   }
@@ -273,7 +273,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public SModel getSelectedModel() {
     SModelTreeNode selectedTreeNode = getSelectedTreeNode(SModelTreeNode.class);
     if (selectedTreeNode == null) return null;
-    return selectedTreeNode.getSModelDescriptor();
+    return selectedTreeNode.getModel();
   }
 
   public SModel getContextModel() {
@@ -282,7 +282,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
-    return ((SModelTreeNode) treeNode).getSModelDescriptor();
+    return ((SModelTreeNode) treeNode).getModel();
   }
 
   public SModule getSelectedModule() {

@@ -196,7 +196,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       if (!myMayBeModel) {
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a model");
       }
-      SModel modelDescriptor = ((SModelTreeNode) node).getSModelDescriptor();
+      SModel modelDescriptor = ((SModelTreeNode) node).getModel();
       if (myReturnLoadedModels) {
         return modelDescriptor;
       } else {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,33 +16,28 @@
 package jetbrains.mps.ide.navigation;
 
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 
 /**
 * evgeny, 11/6/11
 */
 public class ModelNavigatable extends BaseNavigatable {
-  private SModelReference modelReference;
+  private SModelReference myModelReference;
 
-  public ModelNavigatable(Project project, SModelReference modelReference) {
+  public ModelNavigatable(@NotNull Project project, @NotNull SModelReference modelReference) {
     super(project);
-    this.modelReference = modelReference;
+    myModelReference = modelReference;
   }
 
   @Override
   protected void doNavigate(boolean focus) {
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (descriptor == null) return;
-
-    SModule module = descriptor.getModule();
-    if (module == null) return;
-
-    ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().selectInTree(context, descriptor, focus);
+    SModel descriptor = myModelReference.resolve(myProject.getRepository());
+    if (descriptor == null) {
+      return;
+    }
+    NavigationSupport.getInstance().selectInTree(myProject, descriptor, focus);
   }
 }

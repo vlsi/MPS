@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
@@ -32,11 +31,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -67,16 +63,8 @@ public class NewClassLike_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
@@ -104,11 +92,10 @@ public class NewClassLike_Action extends BaseAction {
       m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class));
       mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class).getModuleReference());
 
-      if (!(NewRootNodeAction.trySelectInCurrentPane(((Project) MapSequence.fromMap(_params).get("project")), newClass))) {
-        ProjectOperationContext context = new ProjectOperationContext(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-        NavigationSupport.getInstance().selectInTree(context, newClass, false);
+      if (!(NewRootNodeAction.trySelectInCurrentPane(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass))) {
+        NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, false);
       }
-      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), newClass, true, false);
+      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, true, false);
 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

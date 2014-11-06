@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.ThreadUtils;
@@ -53,10 +52,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -102,19 +103,14 @@ public abstract class UsagesView implements IExternalizeable {
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
   private AtomicReference<MakeSession> myMakeSession = new AtomicReference<MakeSession>();
-  private OccurenceNavigator myOccurenceNavigator;
+  private OccurenceNavigator myOccurrenceNavigator;
 
-  public UsagesView(Project project, ViewOptions defaultOptions) {
-    myProject = project;
+  public UsagesView(com.intellij.openapi.project.Project project, ViewOptions defaultOptions) {
+    myProject = ProjectHelper.toMPSProject(project);
 
     myPanel = new RootPanel();
-    myTreeComponent = new UsagesTreeComponent(defaultOptions) {
-      @Override
-      public Project getProject() {
-        return myProject;
-      }
-    };
-    myOccurenceNavigator = myTreeComponent.getOccurenceNavigator();
+    myTreeComponent = new UsagesTreeComponent(defaultOptions, myProject);
+    myOccurrenceNavigator = myTreeComponent.getOccurenceNavigator();
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());
@@ -128,7 +124,7 @@ public abstract class UsagesView implements IExternalizeable {
 
   public void dispose() {
     myTreeComponent.dispose();
-    myOccurenceNavigator = null;
+    myOccurrenceNavigator = null;
   }
 
   //----RUN STUFF----
@@ -170,7 +166,7 @@ public abstract class UsagesView implements IExternalizeable {
       models.add(modelDescriptor);
     }
 
-    ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+    ProjectOperationContext context = new ProjectOperationContext(myProject);
     if (myMakeSession.compareAndSet(null, new MakeSession(context))) {
       try {
         if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
@@ -375,32 +371,32 @@ public abstract class UsagesView implements IExternalizeable {
 
     @Override
     public boolean hasNextOccurence() {
-      return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();
+      return myOccurrenceNavigator != null && myOccurrenceNavigator.hasNextOccurence();
     }
 
     @Override
     public boolean hasPreviousOccurence() {
-      return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
+      return myOccurrenceNavigator != null && myOccurrenceNavigator.hasPreviousOccurence();
     }
 
     @Override
     public OccurenceInfo goNextOccurence() {
-      return myOccurenceNavigator != null ? myOccurenceNavigator.goNextOccurence() : null;
+      return myOccurrenceNavigator != null ? myOccurrenceNavigator.goNextOccurence() : null;
     }
 
     @Override
     public OccurenceInfo goPreviousOccurence() {
-      return myOccurenceNavigator != null ? myOccurenceNavigator.goPreviousOccurence() : null;
+      return myOccurrenceNavigator != null ? myOccurrenceNavigator.goPreviousOccurence() : null;
     }
 
     @Override
     public String getNextOccurenceActionName() {
-      return myOccurenceNavigator != null ? myOccurenceNavigator.getNextOccurenceActionName() : "";
+      return myOccurrenceNavigator != null ? myOccurrenceNavigator.getNextOccurenceActionName() : "";
     }
 
     @Override
     public String getPreviousOccurenceActionName() {
-      return myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "";
+      return myOccurrenceNavigator != null ? myOccurrenceNavigator.getPreviousOccurenceActionName() : "";
     }
 
     @Nullable
@@ -434,14 +430,17 @@ public abstract class UsagesView implements IExternalizeable {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
             final IHolder holder = mySearchQuery.getObjectHolder();
+            final ComputeRunnable<Object> getHolderValue = new ComputeRunnable<Object>(new Computable<Object>() {
+              @Override
+              public Object compute() {
+                return holder.getObject();
+              }
+            });
             if (!(holder instanceof VoidHolder)) {
-              Object o = ModelAccess.instance().runReadAction(new Computable<Object>() {
-                @Override
-                public Object compute() {
-                  return holder.getObject();
-                }
-              });
-              if (o == null) return; //object was deleted
+              myProject.getModelAccess().runReadAction(getHolderValue);
+              if (getHolderValue.getResult() == null) {
+                return; //object was deleted
+              }
             }
 
             AnActionEvent event =
@@ -451,20 +450,12 @@ public abstract class UsagesView implements IExternalizeable {
                   @Override
                   public <T> T getData(@NotNull DataKey<T> key) {
                     if (key == MPSCommonDataKeys.CONTEXT_MODEL) {
-                      return (T) ((SNode) ModelAccess.instance().runReadAction(new Computable<Object>() {
-                        @Override
-                        public Object compute() {
-                          return holder.getObject();
-                        }
-                      })).getModel();
+                      myProject.getModelAccess().runReadAction(getHolderValue);
+                      return (T) ((SNode) getHolderValue.getResult()).getModel();
                     }
                     if (key == MPSCommonDataKeys.NODE) {
-                      return (T) ModelAccess.instance().runReadAction(new Computable<Object>() {
-                        @Override
-                        public Object compute() {
-                          return holder.getObject();
-                        }
-                      });
+                      ModelAccess.instance().runReadAction(getHolderValue);
+                      return (T) getHolderValue.getResult();
                     }
                     return super.getData(key);
                   }
@@ -492,7 +483,7 @@ public abstract class UsagesView implements IExternalizeable {
               });
               if (o == null) return; //object was deleted
             }
-            ProgressManager.getInstance().run(new Modal(myProject, getSearchProgressTitle(), true) {
+            ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(myProject), getSearchProgressTitle(), true) {
               @Override
               public void run(@NotNull final ProgressIndicator indicator) {
                 indicator.setIndeterminate(true);

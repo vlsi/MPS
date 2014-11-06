@@ -4587,12 +4587,16 @@
                                         <node concept="vg0i.1068580123157" id="6444884150137525741" role="vg0i.1068580123136.1068581517665" info="nn" />
                                         <node concept="vg0i.1068580123155" id="6444884150137528796" role="vg0i.1068580123136.1068581517665" info="nn">
                                           <node concept="vg0i.1197027756228" id="6444884150137529919" role="vg0i.1068580123155.1068580123156" info="nn">
-                                            <node concept="vg0i.1081236700937" id="6444884150137529275" role="vg0i.1197027756228.1197027771414" info="nn">
-                                              <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
-                                              <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
+                                            <node concept="vg0i.1197027756228" id="5827861618212781585" role="vg0i.1197027756228.1197027771414" info="nn">
+                                              <node concept="vg0i.1068498886296" id="5827861618212780941" role="vg0i.1197027756228.1197027771414" info="nn">
+                                                <reference role="vg0i.1068498886296.1068581517664" target="6444884150137918297" resolveInfo="project" />
+                                              </node>
+                                              <node concept="vg0i.1202948039474" id="5827861618212785191" role="vg0i.1197027756228.1197027833540" info="nn">
+                                                <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModelAccess()%corg%djetbrains%dmps%dopenapi%dmodule%dModelAccess" resolveInfo="getModelAccess" />
+                                              </node>
                                             </node>
                                             <node concept="vg0i.1202948039474" id="6444884150137534405" role="vg0i.1197027756228.1197027833540" info="nn">
-                                              <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelCommandExecutor%drunWriteInEDT(java%dlang%dRunnable)%cvoid" resolveInfo="runWriteInEDT" />
+                                              <reference role="vg0i.1204053956946.1068499141037" target="88zw.~ModelAccess%drunWriteInEDT(java%dlang%dRunnable)%cvoid" resolveInfo="runWriteInEDT" />
                                               <node concept="cakq.1199569711397" id="6444884150137534538" role="vg0i.1204053956946.1068499141038" info="nn">
                                                 <node concept="vg0i.1068580123136" id="6444884150137534539" role="cakq.1199569711397.1199569916463" info="sn">
                                                   <node concept="vg0i.1068580123157" id="6444884150137695141" role="vg0i.1068580123136.1068581517665" info="nn" />
@@ -4608,9 +4612,13 @@
                                                         </node>
                                                         <node concept="vg0i.1202948039474" id="6444884150137644917" role="vg0i.1197027756228.1197027833540" info="nn">
                                                           <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeReference%dresolve(org%djetbrains%dmps%dopenapi%dmodule%dSRepository)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="resolve" />
-                                                          <node concept="vg0i.1081236700937" id="6444884150137645986" role="vg0i.1204053956946.1068499141038" info="nn">
-                                                            <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
-                                                            <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                                                          <node concept="vg0i.1197027756228" id="5827861618212786775" role="vg0i.1204053956946.1068499141038" info="nn">
+                                                            <node concept="vg0i.1068498886296" id="5827861618212786191" role="vg0i.1197027756228.1197027771414" info="nn">
+                                                              <reference role="vg0i.1068498886296.1068581517664" target="6444884150137918297" resolveInfo="project" />
+                                                            </node>
+                                                            <node concept="vg0i.1202948039474" id="5827861618212787916" role="vg0i.1197027756228.1197027833540" info="nn">
+                                                              <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetRepository()%corg%djetbrains%dmps%dopenapi%dmodule%dSRepository" resolveInfo="getRepository" />
+                                                            </node>
                                                           </node>
                                                         </node>
                                                       </node>
@@ -4635,14 +4643,9 @@
                                                         <reference role="vg0i.1081236700937.1144433194310" target="oobn.~NavigationSupport" resolveInfo="NavigationSupport" />
                                                       </node>
                                                       <node concept="vg0i.1202948039474" id="6444884150137631178" role="vg0i.1197027756228.1197027833540" info="nn">
-                                                        <reference role="vg0i.1204053956946.1068499141037" target="oobn.~NavigationSupport%dopenNode(jetbrains%dmps%dsmodel%dIOperationContext,org%djetbrains%dmps%dopenapi%dmodel%dSNode,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
-                                                        <node concept="vg0i.1145552977093" id="6444884150137975374" role="vg0i.1204053956946.1068499141038" info="nn">
-                                                          <node concept="vg0i.1212685548494" id="6444884150137978137" role="vg0i.1145552977093.1145553007750" info="nn">
-                                                            <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~ProjectOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dProject)" resolveInfo="ProjectOperationContext" />
-                                                            <node concept="vg0i.1068498886296" id="6444884150137978681" role="vg0i.1204053956946.1068499141038" info="nn">
-                                                              <reference role="vg0i.1068498886296.1068581517664" target="6444884150137918297" resolveInfo="project" />
-                                                            </node>
-                                                          </node>
+                                                        <reference role="vg0i.1204053956946.1068499141037" target="oobn.~NavigationSupport%dopenNode(jetbrains%dmps%dproject%dProject,org%djetbrains%dmps%dopenapi%dmodel%dSNode,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
+                                                        <node concept="vg0i.1068498886296" id="5827861618212791005" role="vg0i.1204053956946.1068499141038" info="nn">
+                                                          <reference role="vg0i.1068498886296.1068581517664" target="6444884150137918297" resolveInfo="project" />
                                                         </node>
                                                         <node concept="vg0i.1068498886296" id="6444884150137665085" role="vg0i.1204053956946.1068499141038" info="nn">
                                                           <reference role="vg0i.1068498886296.1068581517664" target="6444884150137641369" resolveInfo="resolved" />

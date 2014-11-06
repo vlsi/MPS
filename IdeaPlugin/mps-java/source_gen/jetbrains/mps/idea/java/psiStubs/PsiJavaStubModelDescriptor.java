@@ -34,6 +34,8 @@ import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.psi.PsiImportStaticStatement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -238,12 +240,12 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
       }
 
       SNode javaImport = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
-      SPropertyOperations.set(javaImport, "onDemand", "" + (imp.isOnDemand()));
-      SPropertyOperations.set(javaImport, "static", "" + (imp instanceof PsiImportStaticStatement));
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"), "" + (imp.isOnDemand()));
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 5574384225470059890l, "static"), "" + (imp instanceof PsiImportStaticStatement));
       String qName = ref.getQualifiedName();
-      SPropertyOperations.set(javaImport, "tokens", qName);
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), qName);
 
-      ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).addElement(javaImport);
+      ListSequence.fromList(SLinkOperations.getChildren(javaImports, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).addElement(javaImport);
     }
     return javaImports;
   }

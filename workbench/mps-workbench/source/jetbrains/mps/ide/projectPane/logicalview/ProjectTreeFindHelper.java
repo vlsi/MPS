@@ -215,7 +215,7 @@ public abstract class ProjectTreeFindHelper {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String outerName = SNodeOperations.getModelLongName(modelNode.getModel());
         String innerName = SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
@@ -254,7 +254,7 @@ public abstract class ProjectTreeFindHelper {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String outerName = SNodeOperations.getModelLongName(modelNode.getModel());
         String innerName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
@@ -292,7 +292,7 @@ public abstract class ProjectTreeFindHelper {
     public boolean met(MPSTreeNode node) {
       if (!(node instanceof SModelTreeNode)) return false;
       SModelTreeNode modelNode = (SModelTreeNode) node;
-      SModel modelDescriptor = modelNode.getSModelDescriptor();
+      SModel modelDescriptor = modelNode.getModel();
       SModelReference modelReference = modelDescriptor.getReference();
       return modelReference.equals(myModel.getReference());
     }
