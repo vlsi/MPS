@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -120,14 +121,14 @@ public class SModel implements SModelData {
     for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
       SNodeReference ptrConcept = env.getConceptId(node);
       if (ptrConcept == null) {
-        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
+        LOG.warn("concept not found for node " + SNodeOperations.getDebugText(node));
       } else {
         result.add(ptrConcept.getModelReference());
       }
       for (String propname : node.getPropertyNames()) {
         SNodeReference ptrDecl = env.getPropertyId(node, propname);
         if (ptrDecl == null) {
-          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
+          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeOperations.getDebugText(node));
         } else {
           result.add(ptrDecl.getModelReference());
         }
@@ -138,7 +139,7 @@ public class SModel implements SModelData {
         }
         SNodeReference ptrDecl = env.getReferenceRoleId(ref);
         if (ptrDecl == null) {
-          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
+          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeOperations.getDebugText(node));
         } else {
           result.add(ptrDecl.getModelReference());
         }
@@ -147,7 +148,7 @@ public class SModel implements SModelData {
         SNodeReference ptrDecl = env.getNodeRoleId(child);
         if (ptrDecl == null) {
           LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
+              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeOperations.getDebugText(
                   node));
         } else {
           result.add(ptrDecl.getModelReference());
@@ -645,7 +646,7 @@ public class SModel implements SModelData {
         }
 
         for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getReferenceLink().getContainingConcept().getLanguage());
+          myUsedLanguages.add(ref.getLink().getContainingConcept().getLanguage());
         }
       }
     }

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,11 +18,11 @@ public class typeof_DebuggerSettings_Parameter_InferenceRule extends AbstractInf
   public typeof_DebuggerSettings_Parameter_InferenceRule() {
   }
   public void applyRule(final SNode debuggerConnectionSettings, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerConnectionSettings), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"))) {
       {
         SNode _nodeToCheck_1029348928467 = debuggerConnectionSettings;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351281", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351291", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "debuggerConfiguration", true), "getSettings", true), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351283", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351291", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(debuggerConnectionSettings), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")), MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6720907903633293832l, "debuggerConfiguration")), MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 6720907903633266421l, 6720907903633266913l, "getSettings")), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351283", true), _info_12389875345);
       }
     }
   }

@@ -31,8 +31,8 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_gu0qdg_a0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlNoNewLine(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlNoSpaceValue_Editor._StyleParameter_QueryFunction_gu0qdg_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlNoSpaceValue_Editor._StyleParameter_QueryFunction_gu0qdg_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -55,8 +55,8 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_gu0qdg_c0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlNoNewLine(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlNoSpaceValue_Editor._StyleParameter_QueryFunction_gu0qdg_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlNoSpaceValue_Editor._StyleParameter_QueryFunction_gu0qdg_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

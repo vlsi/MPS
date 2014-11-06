@@ -64,8 +64,8 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_py9i4r_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,7 +74,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default property");
     editorCell.setCellId("Constant_py9i4r_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -83,7 +83,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_py9i4r_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -96,7 +96,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("METECC_property_defaultProperty");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -112,7 +112,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_py9i4r_g0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

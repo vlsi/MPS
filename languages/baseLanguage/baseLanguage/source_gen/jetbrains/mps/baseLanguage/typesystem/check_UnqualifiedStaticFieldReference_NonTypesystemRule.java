@@ -10,9 +10,11 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -27,12 +29,12 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
       return;
     }
 
-    SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+    SReference ref = SNodeOperations.getReference(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
     if (!(ref instanceof StaticReference)) {
       return;
     }
     SNode target = ref.getTargetNode();
-    if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
       return;
     }
 
@@ -43,10 +45,10 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
     }
 
     // out of scope, let's make this reference non-local, but qualified 
-    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode thatClass = SNodeOperations.getNodeAncestor(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-    SLinkOperations.setTarget(sfr, "classifier", thatClass, false);
-    SLinkOperations.setTarget(sfr, "variableDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);
+    SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), thatClass);
+    SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
 
     {
       MessageTarget errorTarget = new NodeMessageTarget();

@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -31,7 +33,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro"), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SPropertyOperations.getBoolean(it, "abstract"));
+          return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")));
         }
       }).subtract(Sequence.fromIterable(Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro")))).toListSequence();
     }
@@ -51,16 +53,16 @@ public class replace_node_macro extends AbstractCellMenuComponent {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
     public String getMatchingText_internal(SNode parameterObject) {
-      return SPropertyOperations.getString(parameterObject, "conceptAlias");
+      return SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     }
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SNode) parameterObject);
     }
     public String getDescriptionText_internal(SNode parameterObject) {
-      if (isNotEmptyString(SPropertyOperations.getString(parameterObject, "conceptShortDescription"))) {
-        return SPropertyOperations.getString(parameterObject, "conceptShortDescription");
+      if (isNotEmptyString(SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription")))) {
+        return SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription"));
       } else {
-        return SPropertyOperations.getString(parameterObject, "conceptAlias");
+        return SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
       }
     }
     private static boolean isNotEmptyString(String str) {

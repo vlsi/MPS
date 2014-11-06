@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,17 +22,17 @@ public class typeof_CustomConstructorUsage_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = customConstructorUsage;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "3041831561922455922", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "3041831561922455932", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, "customConstructor", false), "returnType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "3041831561922455932", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 3330196687714050067l, "returnType")), _info_12389875345);
     }
-    SNode args = SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, "customConstructor", false), "arguments", true);
-    if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
-      int min = Math.min(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).count(), ListSequence.fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).count());
+    SNode args = SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 5379647004618201111l, "arguments"));
+    if (SNodeOperations.isInstanceOf(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"))) {
+      int min = Math.min(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"))).count(), ListSequence.fromList(SLinkOperations.getChildren(customConstructorUsage, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569344l, "element"))).count());
       for (int i = 0; i < min; i++) {
-        SNode actualParam = ListSequence.fromList(SLinkOperations.getTargets(customConstructorUsage, "element", true)).getElement(i);
+        SNode actualParam = ListSequence.fromList(SLinkOperations.getChildren(customConstructorUsage, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569344l, "element"))).getElement(i);
         {
           SNode _nodeToCheck_1029348928467 = actualParam;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903431", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true)).getElement(i), "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903433", true), (SNode) typeCheckingContext.typeOf(actualParam, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903442", true), false, true, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(args, MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"))).getElement(i), "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903433", true), (SNode) typeCheckingContext.typeOf(actualParam, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "2299894485109903442", true), false, true, _info_12389875345);
         }
       }
     }

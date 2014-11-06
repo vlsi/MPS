@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
@@ -30,13 +32,13 @@ public class ChangeSigantureOfInterface_Test extends BaseTransformationTest {
       this.addNodeById("418758558327012739");
       this.addNodeById("418758558327019466");
       this.addNodeById("418758558327028811");
-      ChangeMethodSignatureParameters parameters = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("418758558327019496"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SPropertyOperations.set(parameters.getDeclaration(), "name", "myMethod");
-      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(parameters, SNodeOperations.cast(this.getNodeById("418758558327028802"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      ChangeMethodSignatureParameters parameters = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("418758558327019496"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      SPropertyOperations.set(parameters.getDeclaration(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "myMethod");
+      ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(parameters, SNodeOperations.cast(this.getNodeById("418758558327028802"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
       ref.doRefactoring();
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327028812"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327019475"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327028812"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327019475"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }

@@ -19,6 +19,8 @@ import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -29,6 +31,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -131,7 +134,7 @@ public class JavaParser {
           attachComments(source, converter, util.recordedParsingInformation);
           resultNodes = ListSequence.fromList(new ArrayList<SNode>());
           // stmtList may have new statements (comments) by now, after attachComments 
-          for (SNode stmt : ListSequence.fromList(SLinkOperations.getTargets(stmtList, "statement", true))) {
+          for (SNode stmt : ListSequence.fromList(SLinkOperations.getChildren(stmtList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
             SNodeOperations.deleteNode(stmt);
             ListSequence.fromList(resultNodes).addElement(stmt);
           }
@@ -178,9 +181,9 @@ public class JavaParser {
         for (String text : lines) {
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
           SNode part = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
-          SPropertyOperations.set(part, "text", text);
-          ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).addElement(part);
-          ListSequence.fromList(SLinkOperations.getTargets(doc, "body", true)).addElement(commentLine);
+          SPropertyOperations.set(part, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), text);
+          ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addElement(part);
+          ListSequence.fromList(SLinkOperations.getChildren(doc, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"))).addElement(commentLine);
         }
 
         continue;
@@ -196,7 +199,7 @@ public class JavaParser {
         }
       }
       if ((block != null)) {
-        int pos = ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
+        int pos = ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return !(MapSequence.fromMap(positions.value).containsKey(it)) || Math.abs(MapSequence.fromMap(positions.value).get(it)) <= linestart;
           }
@@ -207,10 +210,10 @@ public class JavaParser {
             line_ = line.substring(1);
           }
           SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
-          SPropertyOperations.set(commentText, "text", line_);
+          SPropertyOperations.set(commentText, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"), line_);
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-          ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
-          ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
+          ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).addElement(commentText);
+          ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).insertElement(pos++, commentLine);
         }
       } else {
         // no place to insert comment 
@@ -226,13 +229,13 @@ public class JavaParser {
     // putting first: current package in terms of source code 
     if (compResult.currentPackage != null) {
       SNode currPkg = makeImport(compResult.currentPackage);
-      SPropertyOperations.set(currPkg, "onDemand", "" + (true));
-      ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(currPkg);
+      SPropertyOperations.set(currPkg, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"), "" + (true));
+      ListSequence.fromList(SLinkOperations.getChildren(imports, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).addElement(currPkg);
     }
 
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
+        ListSequence.fromList(SLinkOperations.getChildren(imports, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).addElement(makeImport(imprt));
       }
     }
 
@@ -251,8 +254,8 @@ public class JavaParser {
     boolean onDemand = (impRef.bits & ASTNode.OnDemand) != 0;
     boolean isStatic = impRef.isStatic();
 
-    SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
-    SPropertyOperations.set(imp, "static", "" + (isStatic));
+    SPropertyOperations.set(imp, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"), "" + (onDemand));
+    SPropertyOperations.set(imp, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 5574384225470059890l, "static"), "" + (isStatic));
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
@@ -261,7 +264,7 @@ public class JavaParser {
       sb.append('.');
     }
     sb.deleteCharAt(sb.length() - 1);
-    SPropertyOperations.set(imp, "tokens", sb.toString());
+    SPropertyOperations.set(imp, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), sb.toString());
     return imp;
   }
   private String problemDescription(RecordedParsingInformation info) {
@@ -315,7 +318,7 @@ public class JavaParser {
   }
   public static void tryResolveUnknowns(Iterable<SNode> roots) {
     for (SNode node : Sequence.fromIterable(roots)) {
-      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
+      List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8136348407761606757l, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SConcept[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
         final SNode unkNode = unk;

@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -49,7 +51,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_kzyi6r_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kzyi6r_b0(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "name")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_kzyi6r_c0(editorContext, node));
     }
     return editorCell;
@@ -58,7 +60,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
@@ -91,7 +93,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       Set<SNode> errorInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
       return SetSequence.fromSet(errorInstances).toListSequence().select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1175517767210l, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
         }
       }).toListSequence();
     }
@@ -99,8 +101,8 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null), true);
-      SLinkOperations.setTarget(SLinkOperations.getTarget(node, "errorRef", true), "declaration", parameterObject, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null));
+      SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), parameterObject);
     }
     public boolean isReferentPresentation() {
       return false;
@@ -157,7 +159,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

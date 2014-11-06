@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.annotation.ImmutableObject;
 
 import java.util.Map;
 
@@ -31,7 +31,7 @@ import java.util.Map;
  * <code>TemplateContext</code> represents the lowest-level context of generation, with Generator at the top, supervising model transformation,
  * and <code>TemplateExecutionEnvironment</code> in the middle, responsible for thread/root generation and providing interaction with generation facilities.
  */
-@ImmutableObject
+@Immutable
 public interface TemplateContext {
 
   @NotNull

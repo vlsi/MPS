@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,46 +17,46 @@ public class DataTypeDeclaration_Behavior {
     return _quotation_createNode_47r3zh_a0a0();
   }
   public static boolean call_isSimple_1220268671473(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration") || SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration");
+    return SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) || SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978499127l, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"));
   }
   public static boolean call_isEnum_1220268692373(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    return SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
   public static boolean call_isSimpleString_1220268704138(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
-    } else if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")) {
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+    } else if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978499127l, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"))) {
       return true;
     }
     return false;
   }
   public static boolean call_isSimpleInteger_1220268868375(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
   public static boolean call_isSimpleBoolean_1220268891062(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1083243159079l, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
   public static boolean call_isEnumOfString_1220268917296(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }
   public static boolean call_isEnumOfInteger_1220268950942(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }
   public static boolean call_isEnumOfBoolean_1220268971570(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
+      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }

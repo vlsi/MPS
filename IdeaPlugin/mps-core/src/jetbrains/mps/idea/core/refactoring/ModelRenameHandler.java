@@ -40,7 +40,6 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -186,7 +185,7 @@ public class ModelRenameHandler implements RenameHandler {
         return false;
       }
 
-      if (SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) != null) {
+      if (SModelRepository.getInstance().getModelDescriptor(modelName) != null) {
         errorText[0] = MPSBundle.message("create.new.model.dialog.error.model.exists", modelName);
         return false;
       }

@@ -11,6 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -29,11 +31,11 @@ public class delComponent {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
+      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return ListSequence.fromList(SLinkOperations.getTargets(it, "dep", true)).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SLinkOperations.getTarget(it, "to", false) == node;
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")) == node;
             }
           });
         }
@@ -55,11 +57,11 @@ public class delComponent {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
+      List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return ListSequence.fromList(SLinkOperations.getTargets(it, "dep", true)).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SLinkOperations.getTarget(it, "to", false) == node;
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")) == node;
             }
           });
         }

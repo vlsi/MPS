@@ -4,6 +4,8 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -12,13 +14,13 @@ public class ClassLikeIntegerProperty_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getValueExpression_3855110916777030624(SNode thisNode) {
-    return _quotation_createNode_wnb7km_a0a0(String.valueOf(SPropertyOperations.getInteger(thisNode, "value")));
+    return _quotation_createNode_wnb7km_a0a0(String.valueOf(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308871877l, 6478870542308871878l, "value"))));
   }
   private static SNode _quotation_createNode_wnb7km_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), (String) parameter_1);
     return quotedNode_2;
   }
 }

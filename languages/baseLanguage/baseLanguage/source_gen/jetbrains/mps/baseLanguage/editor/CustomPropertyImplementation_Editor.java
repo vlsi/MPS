@@ -15,6 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,7 +42,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
       editorCell.setRole("getAccessor");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     AddSetterToCustom.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -63,7 +65,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
       editorCell.setRole("setAccessor");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -76,6 +78,6 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_mlq0a_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")) != null);
   }
 }

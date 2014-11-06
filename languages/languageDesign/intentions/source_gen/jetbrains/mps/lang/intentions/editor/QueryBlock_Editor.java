@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
@@ -46,8 +48,8 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfw6cj_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yfw6cj_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yfw6cj_b0a(editorContext, node));
@@ -58,10 +60,10 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_yfw6cj_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -70,10 +72,10 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_yfw6cj_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -112,14 +114,14 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
           public EditorCell createEditorCell(EditorContext editorContext) {
             jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
-            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
-              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
+            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription")) != null) {
+              collection.addEditorCell(new EditorCell_Constant(editorContext, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"))));
             }
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
             for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
-              String alias = SPropertyOperations.getString(cfp, "conceptAlias");
-              String description = SPropertyOperations.getString(cfp, "shortDescription");
+              String alias = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+              String description = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"));
               if (description == null) {
                 description = "<no help. use short_description concept function property to create one>";
               }

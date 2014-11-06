@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
@@ -107,8 +109,8 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         }
       });
       if (!(canBeAncestor)) {
-        SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
-        component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) + " cannot be ancestor of node " + child, rule);
+        SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 7855321458717464197l, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"));
+        component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept")) + " cannot be ancestor of node " + child, rule);
       }
     }
 
@@ -121,12 +123,12 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
     List<SNode> props = ((List<SNode>) chs.getNodes(new Condition<SNode>() {
       public boolean met(SNode n) {
-        return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+        return SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       }
     }));
     for (SNode p : ListSequence.fromList(props)) {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
-      final String propertyName = SPropertyOperations.getString(p, "name");
+      final String propertyName = SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (propertyName == null) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
@@ -142,11 +144,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
-        if ("name".equals(SPropertyOperations.getString(p, "name")) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, "name")) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, "name")))) {
+        if ("name".equals(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
           continue;
         }
         // todo find a rule 
-        component.addError(node, "Property constraint violation for property \"" + SPropertyOperations.getString(p, "name") + "\"", null, new PropertyMessageTarget(SPropertyOperations.getString(p, "name")));
+        component.addError(node, "Property constraint violation for property \"" + SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "\"", null, new PropertyMessageTarget(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
       }
     }
   }

@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BlockActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,30 +27,30 @@ public class BlockActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.testHybridEditor.structure.Diagram"), "newConnectors", true))) {
-        if (eq_dpv54c_a0a0a0a3b(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, "source", true)), node) || eq_dpv54c_a0a0a0a3b_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, "target", true)), node)) {
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
+        if (eq_dpv54c_a0a0a0a3b(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source"))), node) || eq_dpv54c_a0a0a0a3b_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target"))), node)) {
           SNodeOperations.deleteNode(connector);
         }
       }
       SNodeOperations.deleteNode(node);
     }
-    private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
-      }
-      return null;
-    }
-    private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
-      }
-      return null;
-    }
     private static boolean eq_dpv54c_a0a0a0a3b(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
+    private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
+      }
+      return null;
+    }
     private static boolean eq_dpv54c_a0a0a0a3b_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
+    }
+    private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
+      }
+      return null;
     }
   }
   public static class BlockActionMap_BACKSPACE extends AbstractCellAction {
@@ -60,30 +62,30 @@ public class BlockActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.testHybridEditor.structure.Diagram"), "newConnectors", true))) {
-        if (eq_dpv54c_a0a0a0a3c(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, "source", true)), node) || eq_dpv54c_a0a0a0a3c_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, "target", true)), node)) {
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors")))) {
+        if (eq_dpv54c_a0a0a0a3c(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source"))), node) || eq_dpv54c_a0a0a0a3c_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target"))), node)) {
           SNodeOperations.deleteNode(connector);
         }
       }
       SNodeOperations.deleteNode(node);
     }
-    private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
-      }
-      return null;
-    }
-    private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
-      }
-      return null;
-    }
     private static boolean eq_dpv54c_a0a0a0a3c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
+    private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
+      }
+      return null;
+    }
     private static boolean eq_dpv54c_a0a0a0a3c_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
+    }
+    private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
+      }
+      return null;
     }
   }
 }

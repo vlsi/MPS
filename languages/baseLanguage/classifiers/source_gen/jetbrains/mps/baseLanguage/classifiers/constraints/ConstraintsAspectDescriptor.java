@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 0:
         return new DefaultClassifierFieldDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1205756064662l) {
+      return new IMemberOperation_Constraints();
+    }
+    if (id == 1205752633985l) {
+      return new ThisClassifierExpression_Constraints();
+    }
+    if (id == 1205752906494l) {
+      return new DefaultClassifierType_Constraints();
+    }
+    if (id == 1217433449852l) {
+      return new SuperClassifierExpresson_Constraints();
+    }
+    if (id == 1213999088275l) {
+      return new DefaultClassifierFieldDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
 }

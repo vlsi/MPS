@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -21,7 +23,7 @@ public class typeof_AnalyzerMergeParameterInput_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = input;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359803", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359800", true), (SNode) _quotation_createNode_rg9vlp_a0a0b(SLinkOperations.getTarget(SNodeOperations.getAncestor(input, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), "latticeElementType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359800", true), (SNode) _quotation_createNode_rg9vlp_a0a0b(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(input, MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, 9177062368042359739l, "latticeElementType"))), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -43,7 +45,7 @@ public class typeof_AnalyzerMergeParameterInput_InferenceRule extends AbstractIn
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

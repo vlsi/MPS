@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
@@ -17,10 +19,10 @@ public class TreeSetCreator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return _quotation_createNode_529210_a0a0(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return _quotation_createNode_529210_a0a0(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType")));
   }
   public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1240247536947l, 2261417478148778174l, "comparator")) == null);
   }
   public static boolean virtual_hasInitSize_1262430001741498238(SAbstractConcept thisConcept) {
     return false;
@@ -40,7 +42,7 @@ public class TreeSetCreator_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226511727824l, 1226511765987l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

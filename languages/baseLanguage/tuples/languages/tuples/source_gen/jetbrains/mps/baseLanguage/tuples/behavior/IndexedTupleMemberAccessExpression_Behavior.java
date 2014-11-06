@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IndexedTupleMemberAccessExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "tuple", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238857743184l, 1238857764950l, "tuple")), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1238853782547l, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral")));
   }
 }

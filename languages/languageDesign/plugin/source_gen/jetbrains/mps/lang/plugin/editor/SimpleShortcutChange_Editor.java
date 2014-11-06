@@ -53,7 +53,7 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
       editorCell.setRole("action");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(3, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

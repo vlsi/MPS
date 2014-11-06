@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -21,9 +23,9 @@ public class check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule ext
   public check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode constructorDeclaration = SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false);
+    SNode constructorDeclaration = SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if ((constructorDeclaration == null)) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isEmpty()) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))).isEmpty()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(anonymousClass, "no method declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7340437691575753017", null, errorTarget);
@@ -38,7 +40,7 @@ public class check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule ext
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(anonymousClass, "no method declaration", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746295084", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
-            intentionProvider.putArgument("classifier", SLinkOperations.getTarget(anonymousClass, "classifier", false));
+            intentionProvider.putArgument("classifier", SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")));
             intentionProvider.putArgument("methodCall", anonymousClass);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }

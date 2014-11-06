@@ -45,9 +45,9 @@ public class BLQueryArgument_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_c3akx4_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     BLQueryArgumentSharpActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -71,7 +71,7 @@ public class BLQueryArgument_Editor extends DefaultNodeEditor {
       editorCell.setRole("query");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

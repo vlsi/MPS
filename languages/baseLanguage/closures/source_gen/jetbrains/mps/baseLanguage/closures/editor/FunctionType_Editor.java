@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -63,7 +65,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bqk3nx_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -126,8 +128,8 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_bqk3nx_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -152,7 +154,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       editorCell.setRole("resultType");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -168,14 +170,14 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bqk3nx_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bqk3nx_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_bqk3nx_b4a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_bqk3nx_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"))).isNotEmpty();
   }
   private EditorCell createConstant_bqk3nx_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " throws");
@@ -243,7 +245,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bqk3nx_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -252,15 +254,15 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ifc");
     editorCell.setCellId("Constant_bqk3nx_g0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.FONT_SIZE, 9);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_SIZE, 0, 9);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private static boolean renderingCondition_bqk3nx_a6a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "runtimeIface", false) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 100821637069096425l, "runtimeIface")) != null);
   }
   private EditorCell createCollection_bqk3nx_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
@@ -273,7 +275,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bqk3nx_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bqk3nx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_bqk3nx_b0a(editorContext, node));

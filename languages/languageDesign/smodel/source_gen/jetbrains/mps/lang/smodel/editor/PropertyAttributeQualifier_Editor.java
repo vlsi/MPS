@@ -49,7 +49,7 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
       editorCell.setRole("attributeConcept");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -82,9 +82,9 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wc9pc4_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -113,10 +113,10 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wc9pc4_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

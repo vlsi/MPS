@@ -7,16 +7,18 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ForEachStatement_DataFlow extends DataFlowBuilder {
   public ForEachStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence")));
     _context.getBuilder().emitLabel("condition");
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/1207323191691");
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "variable", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"), "r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/1207323226796");

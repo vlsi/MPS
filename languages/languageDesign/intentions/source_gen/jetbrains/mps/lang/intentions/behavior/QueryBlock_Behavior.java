@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -26,7 +28,7 @@ public class QueryBlock_Behavior {
     return result;
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return _quotation_createNode_wmmpg6_a0a2(SLinkOperations.getTarget(thisNode, "paramType", true));
+    return _quotation_createNode_wmmpg6_a0a2(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 1240316299033l, 1240393479918l, "paramType")));
   }
   private static SNode _quotation_createNode_wmmpg6_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -35,7 +37,7 @@ public class QueryBlock_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

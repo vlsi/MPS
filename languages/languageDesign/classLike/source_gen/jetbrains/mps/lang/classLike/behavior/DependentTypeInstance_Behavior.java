@@ -4,13 +4,15 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class DependentTypeInstance_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getMyType_9097849371504546165(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "decl", false) == null ? null : DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, "decl", false), SLinkOperations.getTarget(thisNode, "point", false)));
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, 3751132065236767084l, "decl")) == null ? null : DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, 3751132065236767084l, "decl")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, 9097849371505568270l, "point"))));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode);

@@ -60,8 +60,8 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new CastExpression_KeyMap());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EqualsStructurallyExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_5qomut_a0b0()}));

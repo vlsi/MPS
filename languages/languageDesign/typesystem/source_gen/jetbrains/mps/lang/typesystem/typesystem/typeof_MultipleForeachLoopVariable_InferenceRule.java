@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,8 +19,8 @@ public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractIn
   public typeof_MultipleForeachLoopVariable_InferenceRule() {
   }
   public void applyRule(final SNode forEachVar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode variable = SLinkOperations.getTarget(forEachVar, "variable", true);
-    SNode inputSequence = SLinkOperations.getTarget(forEachVar, "iterable", true);
+    SNode variable = SLinkOperations.getTarget(forEachVar, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547881822l, "variable"));
+    SNode inputSequence = SLinkOperations.getTarget(forEachVar, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547896901l, "iterable"));
     if ((inputSequence != null) && (variable != null)) {
       final SNode elementType_typevar_8290446284380616563 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
@@ -56,15 +58,15 @@ public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractIn
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, false);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
-      quotedNode_4.addChild("elementType", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"), HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_3.addChild("argument", quotedNode_4);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, false);
     quotedNode_7 = (SNode) parameter_2;
     if (quotedNode_7 != null) {
-      quotedNode_5.addChild("componentType", HUtil.copyIfNecessary(quotedNode_7));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"), HUtil.copyIfNecessary(quotedNode_7));
     }
-    quotedNode_3.addChild("argument", quotedNode_5);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), quotedNode_5);
     return quotedNode_3;
   }
 }

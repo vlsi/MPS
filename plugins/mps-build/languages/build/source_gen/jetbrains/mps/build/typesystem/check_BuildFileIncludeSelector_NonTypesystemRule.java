@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -18,7 +20,7 @@ public class check_BuildFileIncludeSelector_NonTypesystemRule extends AbstractNo
   public check_BuildFileIncludeSelector_NonTypesystemRule() {
   }
   public void applyRule(final SNode inc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getString(inc, "pattern").contains(" ") || SPropertyOperations.getString(inc, "pattern").contains("\t") || SPropertyOperations.getString(inc, "pattern").contains(",")) {
+    if (SPropertyOperations.getString(inc, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051100l, 5248329904288051101l, "pattern")).contains(" ") || SPropertyOperations.getString(inc, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051100l, 5248329904288051101l, "pattern")).contains("\t") || SPropertyOperations.getString(inc, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051100l, 5248329904288051101l, "pattern")).contains(",")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("pattern");

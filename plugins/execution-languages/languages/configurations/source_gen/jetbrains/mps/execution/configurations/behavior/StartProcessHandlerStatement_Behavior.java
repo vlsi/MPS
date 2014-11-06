@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -22,16 +24,16 @@ public class StartProcessHandlerStatement_Behavior {
     return StartProcessHandlerStatement_Behavior.call_getComponentByName_1594211126127708848(thisNode, "listener");
   }
   public static SNode call_getComponentByName_1594211126127708848(SNode thisNode, final String name) {
-    if ((SLinkOperations.getTarget(thisNode, "tool", true) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 946964771156870353l, 1594211126127621024l, "tool")) == null)) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")) {
-      SNode first = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "componentRef", true)).findFirst(new IWhereFilter<SNode>() {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 946964771156870353l, 1594211126127621024l, "tool")), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"))) {
+      SNode first = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 946964771156870353l, 1594211126127621024l, "tool")), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560910577l, "componentRef"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getString(SLinkOperations.getTarget(it, "componentDeclaration", false), "name").equals(name);
+          return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560595302l, "componentDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(name);
         }
       });
-      return SLinkOperations.getTarget(first, "value", true);
+      return SLinkOperations.getTarget(first, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560837729l, "value"));
     }
     return null;
   }

@@ -6,13 +6,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildLayout_TransparentContainer_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});
   }
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);

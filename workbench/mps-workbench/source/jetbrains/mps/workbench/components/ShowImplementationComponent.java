@@ -39,7 +39,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -75,7 +74,7 @@ public class ShowImplementationComponent extends JPanel {
 
   private List<ImplementationNode> myImplNodes;
 
-  public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
+  public ShowImplementationComponent(List<SNode> nodes, Project project) {
     ModelAccess.assertLegalRead();
 
     myImplNodes = new ArrayList<ImplementationNode>(nodes.size());
@@ -84,7 +83,7 @@ public class ShowImplementationComponent extends JPanel {
       myImplNodes.add(new ImplementationNode(node));
     }
 
-    myProject = context.getProject();
+    myProject = project;
 
     myEditor = new EmbeddableEditor(myProject, false);
     myEditor.editNode(myImplNodes.get(0).myNode);
@@ -98,7 +97,7 @@ public class ShowImplementationComponent extends JPanel {
     myPopup = popup;
   }
 
-  public JComponent getPrefferedFocusableComponent() {
+  public JComponent getPreferredFocusableComponent() {
     return myNodeChooser;
   }
 
@@ -275,20 +274,19 @@ public class ShowImplementationComponent extends JPanel {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-      myProject.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           int selectedIndex = myNodeChooser.getSelectedIndex();
           if (selectedIndex < 0) {
             return;
           }
-          IOperationContext operationContext = myEditor.getEditor().getOperationContext();
           SNode selectedNode = myImplNodes.get(selectedIndex).myOriginalNodePointer.resolve(MPSModuleRepository.getInstance());
           if (selectedNode == null) {
             return;
           }
-          NavigationSupport.getInstance().openNode(operationContext, selectedNode, true, true);
-          NavigationSupport.getInstance().selectInTree(operationContext, selectedNode, false);
+          NavigationSupport.getInstance().openNode(myProject, selectedNode, true, true);
+          NavigationSupport.getInstance().selectInTree(myProject, selectedNode, false);
           if (myClosePopup) {
             myPopup.cancel();
           }

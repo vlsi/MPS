@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class _PatternExpression_KeyMap extends KeyMapImpl {
   public _PatternExpression_KeyMap() {
@@ -293,7 +295,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if (contextNode == null) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785118l, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"))) {
         SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), null);
@@ -346,8 +348,8 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
         return;
       }
       String role = selectedCell.getRole();
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
-        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
+      if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785117l, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
+        SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
         AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), null);
         return;

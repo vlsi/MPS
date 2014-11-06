@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
 
@@ -29,7 +31,7 @@ public class IMember_Behavior {
   }
   public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
-    SLinkOperations.setTarget(result, "member", thisNode, false);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"), thisNode);
     return result;
   }
   public static SNode call_getContainer_1213877353020(SNode thisNode) {

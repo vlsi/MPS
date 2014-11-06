@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 class ModelChange {
   static void assertLegalNodeRegistration(SModel model, SNode node) {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
-      throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + SNodeUtil.getDebugText(node));
+      throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + SNodeOperations.getDebugText(node));
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
-      throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeUtil.getDebugText(node));
+      throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeOperations.getDebugText(
+          node));
     }
   }
 

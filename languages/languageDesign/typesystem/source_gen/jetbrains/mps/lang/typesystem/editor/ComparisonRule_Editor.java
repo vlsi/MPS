@@ -47,7 +47,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comparison rule ");
     editorCell.setCellId("Constant_c2v57n_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -73,7 +73,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -91,7 +91,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for ");
     editorCell.setCellId("Constant_c2v57n_a2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -144,7 +144,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -161,7 +161,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_c2v57n_a4a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -171,7 +171,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_c2v57n_b4a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -187,7 +187,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_c2v57n_a5a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -216,7 +216,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_c2v57n_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -225,7 +225,7 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_h0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_c2v57n_a7a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_c2v57n_b7a(editorContext, node));

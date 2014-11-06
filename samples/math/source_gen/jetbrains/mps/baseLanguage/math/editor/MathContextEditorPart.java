@@ -18,6 +18,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MathContextEditorPart implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -42,8 +44,8 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qri1nn_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qri1nn_b0a(editorContext, node));
@@ -76,15 +78,15 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qri1nn_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qri1nn_b1a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
+    return SPropertyOperations.getInteger_def(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1904947163751448715l, 1904947163751462197l, "precisionSetting"), "0") == 0;
   }
   private EditorCell createConstant_qri1nn_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rounding mode:");
@@ -113,15 +115,15 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qri1nn_a2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qri1nn_b2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
+    return SPropertyOperations.getInteger_def(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1904947163751448715l, 1904947163751462197l, "precisionSetting"), "0") == 0;
   }
   private EditorCell createConstant_qri1nn_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision:");

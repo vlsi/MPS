@@ -9,6 +9,8 @@ import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CompositeWithParentScope {
   public static Scope from(Scope original, SNode node, SNode kind) {
@@ -26,7 +28,7 @@ public class CompositeWithParentScope {
     return from(new SimpleRoleScope(node, link, BehaviorReflection.invokeVirtual(String.class, kind, "virtual_getFqName_1213877404258", new Object[]{})) {
       @Override
       public String getName(SNode child) {
-        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, node, kind);
   }

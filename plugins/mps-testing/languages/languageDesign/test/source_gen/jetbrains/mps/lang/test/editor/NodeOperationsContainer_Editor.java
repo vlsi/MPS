@@ -47,7 +47,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_62u4bw_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -57,7 +57,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_62u4bw_b0");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -74,7 +74,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_nodeOperations");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -131,7 +131,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
       editorCell.setCellId("operationCell");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, false);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, 0, false);
       editorCell.getStyle().putAll(style);
       Annotation_Actions.setCellActions(editorCell, node, editorContext);
       editorCell.setDefaultText("");
@@ -143,7 +143,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_62u4bw_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

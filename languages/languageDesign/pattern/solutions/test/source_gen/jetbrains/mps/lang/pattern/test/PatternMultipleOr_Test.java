@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -67,7 +70,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_ay21uv_ = "ifTrue";
+            SContainmentLink childRole_ay21uv_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue");
             if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0a1a2c, childRole_ay21uv_, 1))) {
               return false;
             }
@@ -82,7 +85,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_ay21uv__0 = "condition";
+            SContainmentLink childRole_ay21uv__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition");
             if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0a1a2c, childRole_ay21uv__0, 1))) {
               return false;
             }
@@ -149,7 +152,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_ay21uv__1 = "rightExpression";
+              SContainmentLink childRole_ay21uv__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0a0a0b0c2, childRole_ay21uv__1, 1))) {
                 return false;
               }
@@ -162,7 +165,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_ay21uv__2 = "leftExpression";
+              SContainmentLink childRole_ay21uv__2 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0a0a0b0c2, childRole_ay21uv__2, 1))) {
                 return false;
               }
@@ -200,7 +203,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_ay21uv__3 = "rightExpression";
+              SContainmentLink childRole_ay21uv__3 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a1a0a0b0c2, childRole_ay21uv__3, 1))) {
                 return false;
               }
@@ -215,7 +218,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_ay21uv__4 = "leftExpression";
+              SContainmentLink childRole_ay21uv__4 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a1a0a0b0c2, childRole_ay21uv__4, 1))) {
                 return false;
               }
@@ -251,7 +254,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_ay21uv__5 = "rightExpression";
+              SContainmentLink childRole_ay21uv__5 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a2a0a0b0c2, childRole_ay21uv__5, 1))) {
                 return false;
               }
@@ -260,7 +263,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_ay21uv__6 = "leftExpression";
+              SContainmentLink childRole_ay21uv__6 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a2a0a0b0c2, childRole_ay21uv__6, 1))) {
                 return false;
               }
@@ -272,7 +275,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    String childRole_ay21uv__7 = "rightExpression";
+                    SContainmentLink childRole_ay21uv__7 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
                     if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0c0a0a1a2c, childRole_ay21uv__7, 1))) {
                       return false;
                     }
@@ -287,7 +290,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     }
                   }
                   {
-                    String childRole_ay21uv__8 = "leftExpression";
+                    SContainmentLink childRole_ay21uv__8 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
                     if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0c0a0a1a2c, childRole_ay21uv__8, 1))) {
                       return false;
                     }
@@ -326,7 +329,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_ay21uv__9 = "rightExpression";
+              SContainmentLink childRole_ay21uv__9 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a3a0a0b0c2, childRole_ay21uv__9, 1))) {
                 return false;
               }
@@ -335,7 +338,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_ay21uv__10 = "leftExpression";
+              SContainmentLink childRole_ay21uv__10 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a3a0a0b0c2, childRole_ay21uv__10, 1))) {
                 return false;
               }
@@ -347,7 +350,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     return false;
                   }
                   {
-                    String childRole_ay21uv__11 = "leftExpression";
+                    SContainmentLink childRole_ay21uv__11 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
                     if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0d0a0a1a2c, childRole_ay21uv__11, 1))) {
                       return false;
                     }
@@ -362,7 +365,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
                     }
                   }
                   {
-                    String childRole_ay21uv__12 = "rightExpression";
+                    SContainmentLink childRole_ay21uv__12 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
                     if (!(PatternUtil.hasNChildren(nodeToMatch_ay21uv_a0d0a0a1a2c, childRole_ay21uv__12, 1))) {
                       return false;
                     }
@@ -408,23 +411,23 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, false);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_6, "value", "3");
-      quotedNode_4.addChild("rightExpression", quotedNode_6);
+      SNodeAccessUtil.setProperty(quotedNode_6, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "3");
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), quotedNode_6);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_7, "value", "4");
-      quotedNode_4.addChild("leftExpression", quotedNode_7);
-      quotedNode_2.addChild("rightExpression", quotedNode_4);
+      SNodeAccessUtil.setProperty(quotedNode_7, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "4");
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), quotedNode_7);
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), quotedNode_4);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, false);
       quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
-      quotedNode_5.addChild("leftExpression", quotedNode_8);
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), quotedNode_8);
       quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, false);
       quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
-      quotedNode_9.addChild("primitiveType", quotedNode_10);
-      quotedNode_5.addChild("rightExpression", quotedNode_9);
-      quotedNode_2.addChild("leftExpression", quotedNode_5);
-      quotedNode_1.addChild("condition", quotedNode_2);
+      quotedNode_9.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4564374268190696673l, 4564374268190696674l, "primitiveType"), quotedNode_10);
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), quotedNode_9);
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), quotedNode_5);
+      quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
-      quotedNode_1.addChild("ifTrue", quotedNode_3);
+      quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), quotedNode_3);
       return quotedNode_1;
     }
     private static SNode _quotation_createNode_ay21uv_a6a2c() {
@@ -433,7 +436,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       SNode quotedNode_2 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null, null, false);
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
-      quotedNode_1.addChild("primitiveType", quotedNode_2);
+      quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4564374268190696673l, 4564374268190696674l, "primitiveType"), quotedNode_2);
       return quotedNode_1;
     }
   }

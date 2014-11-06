@@ -9,10 +9,12 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,12 +26,12 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
   public check_UnqualifiedStaticCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode localCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SReference ref = SNodeOperations.getReference(localCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method"));
+    SReference ref = SNodeOperations.getReference(localCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if (!(ref instanceof StaticReference)) {
       return;
     }
     SNode target = ref.getTargetNode();
-    if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
       return;
     }
 
@@ -40,8 +42,8 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
 
     // it's out of scope, let's make it StaticMethodCall 
     SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(smc, "classConcept", SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
-    SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+    SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.getNodeAncestor(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
+    SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
     ResolveUnknownUtil.reattachMethodArguments(localCall, smc);
     ResolveUnknownUtil.reattachTypeArguments(localCall, smc);
 

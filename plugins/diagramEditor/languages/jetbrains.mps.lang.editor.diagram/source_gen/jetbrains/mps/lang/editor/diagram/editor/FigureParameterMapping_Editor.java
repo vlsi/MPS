@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -47,8 +49,8 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.AUTO_DELETABLE, true);
+    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
     FigureParameterMappingName_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FigureParameterMapping_Editor.FigureParameterMapping_generic_cellMenu_3uf681_a0a0()}));
@@ -68,13 +70,13 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     public FigureParameterMapping_generic_cellMenu_3uf681_a0a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(FigureParameterMapping_Behavior.call_getDiagramNodeCell_1491555030355957123(node), "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(FigureParameterMapping_Behavior.call_getDiagramNodeCell_1491555030355957123(node), MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure")), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "name", parameterObject);
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), parameterObject);
     }
     public boolean isReferentPresentation() {
       return false;
@@ -84,9 +86,9 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3uf681_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

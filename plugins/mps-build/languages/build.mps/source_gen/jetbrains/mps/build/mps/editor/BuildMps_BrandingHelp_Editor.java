@@ -34,7 +34,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_r7vwah_a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -43,8 +43,8 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r7vwah_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_r7vwah_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r7vwah_b1a(editorContext, node));
@@ -73,7 +73,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
       editorCell.setRole("file");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -104,7 +104,7 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
       editorCell.setRole("root");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AsTypeBuilder_Behavior {
   public static void init(SNode thisNode) {
@@ -12,6 +14,6 @@ public class AsTypeBuilder_Behavior {
     throw new UnsupportedOperationException();
   }
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "type", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214216557332l, 5389689214216557333l, "type"));
   }
 }

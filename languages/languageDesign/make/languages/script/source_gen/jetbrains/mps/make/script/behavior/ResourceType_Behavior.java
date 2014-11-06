@@ -4,6 +4,8 @@ package jetbrains.mps.make.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -12,7 +14,7 @@ public class ResourceType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    String param = ((SLinkOperations.getTarget(thisNode, "classifierType", true) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifierType", true), "virtual_getPresentation_1213877396640", new Object[]{}) : "");
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + param + ">";
+    String param = ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, 3308693286243004242l, "classifierType")) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, 3308693286243004242l, "classifierType")), "virtual_getPresentation_1213877396640", new Object[]{}) : "");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + "<" + param + ">";
   }
 }

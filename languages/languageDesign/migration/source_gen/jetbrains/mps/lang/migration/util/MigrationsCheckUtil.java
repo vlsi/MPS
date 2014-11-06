@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,7 +21,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodeUtil;
 import java.util.Arrays;
 
 public class MigrationsCheckUtil {
@@ -42,24 +43,24 @@ public class MigrationsCheckUtil {
   private static Iterable<SNode> allScriptdependencies(final SNode script) {
     Iterable<SNode> result = Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "script", false) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4950161090496546961l, 5722749943445015285l, "script")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "script", false);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4950161090496546961l, 5722749943445015285l, "script"));
       }
     }).concat(Sequence.fromIterable(MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "script", false) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4144229974054378362l, 4144229974054378363l, "script")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "script", false);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4144229974054378362l, 4144229974054378363l, "script"));
       }
     }));
     return result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(script), "jetbrains.mps.lang.migration.structure.MigrationScript")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, "fromVersion") < SPropertyOperations.getInteger(script, "fromVersion");
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) < SPropertyOperations.getInteger(script, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
       }
     }));
   }
@@ -76,15 +77,12 @@ public class MigrationsCheckUtil {
     }
     boolean hasIncompleteScript = false;
     List<Integer> scripts = new ArrayList<Integer>();
-    for (SNode root : migModel.getRootNodes()) {
-      if (!(SNodeOperations.isInstanceOf(root, SNodeUtil.concept_AbstractMigrationScript))) {
-        continue;
-      }
-      if (root.getProperty(SNodeUtil.property_AbstractMigrationScript_fromVersion) == null) {
+    for (SNode root : SModelOperations.getRoots(migModel, "jetbrains.mps.lang.migration.structure.MigrationScript")) {
+      if (root.getProperty(MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) == null) {
         hasIncompleteScript = true;
         continue;
       }
-      scripts.add(SPropertyOperations.getInteger(root, SNodeUtil.property_AbstractMigrationScript_fromVersion));
+      scripts.add(SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")));
     }
     if (scripts.isEmpty()) {
       return;

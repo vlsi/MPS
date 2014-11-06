@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,13 +20,13 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
   public typeof_rightOperandConcept_parameter_InferenceRule() {
   }
   public void applyRule(final SNode concept_parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", false, false);
+    SNode typeRule = SNodeOperations.getNodeAncestor(concept_parameter, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"), false, false);
     if ((typeRule != null)) {
-      if (SPropertyOperations.getBoolean(typeRule, "rightIsExact")) {
+      if (SPropertyOperations.getBoolean(typeRule, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, 1236771585835l, "rightIsExact"))) {
         {
           SNode _nodeToCheck_1029348928467 = concept_parameter;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8968381972988137807", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8968381972988137814", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(typeRule, "rightOperandType", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8968381972988137809", true), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8968381972988137814", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(typeRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, 1236083115200l, "rightOperandType")), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8968381972988137809", true), _info_12389875345);
         }
       } else {
         {

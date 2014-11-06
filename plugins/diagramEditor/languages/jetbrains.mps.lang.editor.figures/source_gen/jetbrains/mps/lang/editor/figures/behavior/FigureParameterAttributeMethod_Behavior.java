@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.figures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FigureParameterAttributeMethod_Behavior {
@@ -13,9 +15,9 @@ public class FigureParameterAttributeMethod_Behavior {
     return FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode);
   }
   public static SNode call_getMethodDeclaration_7911346875269168300(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
   }
   public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
-    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
   }
 }

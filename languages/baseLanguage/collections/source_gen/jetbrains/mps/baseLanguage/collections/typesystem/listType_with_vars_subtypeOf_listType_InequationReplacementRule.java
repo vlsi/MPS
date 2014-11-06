@@ -8,6 +8,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -19,11 +21,11 @@ public class listType_with_vars_subtypeOf_listType_InequationReplacementRule ext
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
-        return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+        return SNodeOperations.isInstanceOf(ch, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       }
     })) && ListSequence.fromList(SNodeOperations.getChildren(subtype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
-        return SNodeOperations.isInstanceOf(ch, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+        return SNodeOperations.isInstanceOf(ch, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       }
     });
   }

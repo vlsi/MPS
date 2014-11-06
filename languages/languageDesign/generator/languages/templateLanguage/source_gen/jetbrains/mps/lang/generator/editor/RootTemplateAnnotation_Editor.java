@@ -30,7 +30,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1qmre8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_1qmre8_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_1qmre8_b0(editorContext, node));
@@ -40,9 +40,9 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1qmre8_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_1qmre8_a0a(editorContext, node));
@@ -55,7 +55,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1qmre8_a0a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -64,7 +64,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1qmre8_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_1qmre8_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1qmre8_b1a0(editorContext, node));
@@ -75,7 +75,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1qmre8_a1a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -120,7 +120,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -137,7 +137,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1qmre8_c0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -52,7 +52,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1uorir_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_1uorir_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1uorir_b0a(editorContext, node));
@@ -85,8 +85,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -96,8 +96,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1uorir_c0a");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -106,8 +106,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1uorir_d0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_1uorir_a3a0(editorContext, node));
     return editorCell;
@@ -160,7 +160,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a0d0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -171,8 +171,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1uorir_e0a");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform|default_RTransform");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform|default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -211,8 +211,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -222,8 +222,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1uorir_c0a_0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -276,7 +276,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a3a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -287,8 +287,8 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1uorir_e0a_0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform|default_RTransform");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform|default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

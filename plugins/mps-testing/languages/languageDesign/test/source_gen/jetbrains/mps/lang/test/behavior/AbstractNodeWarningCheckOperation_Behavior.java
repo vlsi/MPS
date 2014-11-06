@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractNodeWarningCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -25,6 +27,6 @@ public class AbstractNodeWarningCheckOperation_Behavior {
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}) == null)) {
       return null;
     }
-    return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}), "declaration", false);
+    return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"));
   }
 }

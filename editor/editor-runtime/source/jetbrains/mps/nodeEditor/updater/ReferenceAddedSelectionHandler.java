@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SReference;
  * User: shatalin
  * Date: 09/09/14
  */
-public class ReferenceAddedSelectionHandler extends ModelEventsSelectionHandler {
+class ReferenceAddedSelectionHandler extends ModelEventsSelectionHandler {
   private final SReference myReference;
 
   ReferenceAddedSelectionHandler(@NotNull SReference reference) {

@@ -9,9 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
@@ -30,11 +31,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -53,7 +51,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, "name") + " class");
+      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " class");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewClassLike", t);
@@ -65,16 +63,8 @@ public class NewClassLike_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
@@ -88,8 +78,8 @@ public class NewClassLike_Action extends BaseAction {
       final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr)), null));
       ((SModel) MapSequence.fromMap(_params).get("model")).addRootNode(newClass);
       AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", null));
-      SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", NewClassLike_Action.this.descr, false);
-      ListSequence.fromList(SLinkOperations.getTargets(NewClassLike_Action.this.descr, "member", true)).visitAll(new IVisitor<SNode>() {
+      SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"), NewClassLike_Action.this.descr);
+      ListSequence.fromList(SLinkOperations.getChildren(NewClassLike_Action.this.descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member"))).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           BehaviorReflection.invokeVirtual(Void.class, it, "virtual_init_6478870542308635887", new Object[]{newClass});
         }
@@ -102,11 +92,10 @@ public class NewClassLike_Action extends BaseAction {
       m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class));
       mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class).getModuleReference());
 
-      if (!(NewRootNodeAction.trySelectInCurrentPane(((Project) MapSequence.fromMap(_params).get("project")), newClass))) {
-        ProjectOperationContext context = new ProjectOperationContext(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-        NavigationSupport.getInstance().selectInTree(context, newClass, false);
+      if (!(NewRootNodeAction.trySelectInCurrentPane(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass))) {
+        NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, false);
       }
-      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), newClass, true, false);
+      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, true, false);
 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

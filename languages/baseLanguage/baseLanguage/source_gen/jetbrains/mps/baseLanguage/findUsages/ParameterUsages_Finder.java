@@ -7,6 +7,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -33,19 +36,19 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
   @Override
   public boolean isApplicable(SNode node) {
-    return (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false) != null);
+    return (SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")}, false, false) != null);
   }
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
-      SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
+      SNode nodeParentMethod = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")}, false, false);
       // 
       List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, monitor.subTask(1));
       ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
       // 
       for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
-        SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
+        SNode parameterNode = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(methodNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(SNodeOperations.getIndexInParent(node));
         for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, monitor.subTask(1)))) {
           ListSequence.fromList(_results).addElement(parameterUsage);
         }
@@ -56,13 +59,13 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   }
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
-    SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
+    SNode nodeParentMethod = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")}, false, false);
     // 
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressMonitor());
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
+      ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(methodNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
   @Override

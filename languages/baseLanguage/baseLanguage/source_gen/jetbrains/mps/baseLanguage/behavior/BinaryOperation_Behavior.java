@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BinaryOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -13,15 +15,15 @@ public class BinaryOperation_Behavior {
     return 0;
   }
   public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
-    SLinkOperations.setTarget(thisNode, "leftExpression", expr, true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), expr);
   }
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    SLinkOperations.setTarget(thisNode, "rightExpression", expr, true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), expr);
   }
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "leftExpression", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
   }
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "rightExpression", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
   }
 }

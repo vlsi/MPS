@@ -40,7 +40,7 @@ public class ClassLikeProperty_Name_EditorComponent implements ConceptEditorComp
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("CLPNEC_property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     RealObject2Placeholder.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

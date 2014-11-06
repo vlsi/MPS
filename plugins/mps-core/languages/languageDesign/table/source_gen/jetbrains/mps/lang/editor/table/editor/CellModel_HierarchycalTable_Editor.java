@@ -37,7 +37,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cqolwn_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqolwn_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqolwn_b0a(editorContext, node));
@@ -54,7 +54,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cqolwn_b0a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqolwn_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_cqolwn_b1a0(editorContext, node));
@@ -134,7 +134,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cqolwn_b0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_cqolwn_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqolwn_b1a(editorContext, node));
@@ -145,7 +145,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cqolwn_a1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqolwn_a0b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_cqolwn_b0b0(editorContext, node));
@@ -225,7 +225,7 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cqolwn_b1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_cqolwn_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_cqolwn_b1b0(editorContext, node));

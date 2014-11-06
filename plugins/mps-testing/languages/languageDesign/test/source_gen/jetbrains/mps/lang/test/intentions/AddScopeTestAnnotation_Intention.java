@@ -18,6 +18,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -79,13 +81,13 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest"), newAnnotation);
 
       if (ScopesTest_Behavior.call_isSimple_5449224527592395483(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node)) {
-        SLinkOperations.setTarget(newAnnotation, "checkingReference", ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode(), false);
+        SLinkOperations.setTarget(newAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"), ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode());
         Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation));
 
         for (SNode avaliable : scope.getAvailableElements(null)) {
           SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
-          SLinkOperations.setTarget(expectedNode, "ref", avaliable, false);
-          ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodes", true)).addElement(expectedNode);
+          SLinkOperations.setTarget(expectedNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, 4052780437578824735l, "ref"), avaliable);
+          ListSequence.fromList(SLinkOperations.getChildren(newAnnotation, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))).addElement(expectedNode);
         }
       }
 

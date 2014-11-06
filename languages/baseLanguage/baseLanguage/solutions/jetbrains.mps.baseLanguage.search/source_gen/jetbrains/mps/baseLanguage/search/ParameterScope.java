@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
@@ -21,16 +23,16 @@ public class ParameterScope extends AbstractSearchScope {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
     SNode current = contextNode;
     while ((current != null)) {
-      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
-        ListSequence.fromList(methods).addElement(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"));
+      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+        ListSequence.fromList(methods).addElement(SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")));
       }
       current = Scope.parent(current);
     }
     this.params = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {
       for (SNode child : SNodeOperations.getChildren(bmd)) {
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-          ListSequence.fromList(this.params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+        if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+          ListSequence.fromList(this.params).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")));
         }
       }
     }

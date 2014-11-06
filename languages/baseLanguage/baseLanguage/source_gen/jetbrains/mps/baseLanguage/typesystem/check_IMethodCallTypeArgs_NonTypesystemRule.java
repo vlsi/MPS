@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class check_IMethodCallTypeArgs_NonTypesystemRule extends AbstractNonType
   public check_IMethodCallTypeArgs_NonTypesystemRule() {
   }
   public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).count() > 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(iMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))).count() > 0 && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(iMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count() != ListSequence.fromList(SLinkOperations.getChildren(iMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iMethodCall, "Incorrect number of type arguments for a generic method.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850880720443", null, errorTarget);

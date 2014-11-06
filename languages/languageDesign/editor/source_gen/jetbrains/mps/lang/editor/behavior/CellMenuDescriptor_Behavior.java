@@ -4,20 +4,23 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getEditedFeature_1220342015727(SNode thisNode) {
-    SNode owner = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.CellMenuComponent"}, false, false);
-    if (SNodeOperations.isInstanceOf(owner, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(owner, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), "relationDeclaration", false);
-    } else if (SNodeOperations.isInstanceOf(owner, "jetbrains.mps.lang.editor.structure.CellMenuComponent")) {
-      SNode component = SNodeOperations.cast(owner, "jetbrains.mps.lang.editor.structure.CellMenuComponent");
-      SNode feature = SLinkOperations.getTarget(component, "applicableFeature", true);
+    SNode owner = SNodeOperations.getNodeAncestorWhereConceptInList(thisNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent")}, false, false);
+    if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"))) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"));
+    } else if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent"))) {
+      SNode component = SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent"));
+      SNode feature = SLinkOperations.getTarget(component, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, 1166040865497l, "applicableFeature"));
       if ((feature != null)) {
-        return SLinkOperations.getTarget(feature, "relationDeclaration", false);
+        return SLinkOperations.getTarget(feature, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166041033436l, 1166054297096l, "relationDeclaration"));
       }
       return null;
     } else {

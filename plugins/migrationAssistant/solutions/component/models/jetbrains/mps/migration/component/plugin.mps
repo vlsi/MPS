@@ -20,6 +20,8 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
@@ -27,10 +29,13 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203088046679" name="jetbrains.mps.lang.plugin.structure.ActionInstance" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854815" name="jetbrains.mps.lang.plugin.structure.ActionGroupRef" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
@@ -103,7 +108,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="7834630562321988558" resolveInfo="ExecuteMigrationAssistant" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="7834630562322129881" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="7834630562322129881" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1215012161252" resolveInfo="IDEATools" />
       </node>
     </node>
@@ -150,9 +155,9 @@
       <property role="79nr.5023285075122009364.5023285075122009371" value="JetBrains" />
       <property role="79nr.5023285075122009364.4167053799973858143" value="/MPS_16.png" />
       <property role="asn4.1169194658468.1169194664001" value="Migration Assistant" />
-      <property role="79nr.5023285075122009364.5023285075122009373" value="136.1" />
+      <property role="79nr.5023285075122009364.5023285075122009373" value="139.1" />
       <property role="79nr.5023285075122009364.5023285075122009369" value="3.2" />
-      <node concept="79nr.331224023792854814" id="410076905192262197" role="79nr.5023285075122009364.331224023792859996" info="ng">
+      <node concept="79nr.331224023792854814" id="410076905192262197" role="79nr.5023285075122009364.331224023792859996" info="lg">
         <node concept="79nr.331224023792854815" id="410076905192263352" role="79nr.331224023792854814.331224023792854818" info="ng">
           <reference role="79nr.331224023792854815.331224023792854816" target="7834630562321988169" resolveInfo="MigationAssistantActions" />
         </node>

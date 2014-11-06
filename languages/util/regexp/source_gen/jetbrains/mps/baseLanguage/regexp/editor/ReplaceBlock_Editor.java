@@ -38,8 +38,8 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
       editorCell.setRole("body");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

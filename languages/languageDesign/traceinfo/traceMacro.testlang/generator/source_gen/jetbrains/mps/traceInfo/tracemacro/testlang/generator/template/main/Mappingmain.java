@@ -25,6 +25,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -114,7 +116,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable");
             try {
               environment.nodeCopied(context, tnode7, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793601");
-              SNodeAccessUtil.setProperty(tnode7, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(new PropertyMacroContext(context, "var", propertyMacro_417xrn_c0a0c0b0e0b0d0c0b51))));
+              SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(new PropertyMacroContext(context, "var", propertyMacro_417xrn_c0a0c0b0e0b0d0c0b51))));
             } finally {
             }
             tlist6 = TemplateUtil.singletonList(tnode7);

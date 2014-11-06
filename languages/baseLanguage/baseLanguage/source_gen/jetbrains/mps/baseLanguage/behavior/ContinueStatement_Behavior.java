@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -11,19 +13,19 @@ public class ContinueStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getLoop_1213877346346(SNode thisNode) {
-    for (SNode loop : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)) {
-      if ((SLinkOperations.getTarget(thisNode, "loopLabelReference", true) != null)) {
-        SNode loopLabel = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "loopLabelReference", true), "loopLabel", false);
+    for (SNode loop : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false)) {
+      if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 9056323058805226429l, "loopLabelReference")) != null)) {
+        SNode loopLabel = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 9056323058805226429l, "loopLabelReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 363746191845183785l, 363746191845183786l, "loopLabel"));
         if ((loopLabel != null)) {
-          if (loopLabel == SLinkOperations.getTarget(loop, "loopLabel", true)) {
+          if (loopLabel == SLinkOperations.getTarget(loop, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel"))) {
             return loop;
           }
         }
       } else {
-        if (SPropertyOperations.getString(thisNode, "label") == null) {
+        if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")) == null) {
           return loop;
         }
-        if (SPropertyOperations.getString(thisNode, "label").equals(SPropertyOperations.getString(loop, "label"))) {
+        if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")).equals(SPropertyOperations.getString(loop, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label")))) {
           return loop;
         }
       }

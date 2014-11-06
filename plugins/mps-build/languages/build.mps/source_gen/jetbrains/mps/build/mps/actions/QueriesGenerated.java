@@ -5,6 +5,8 @@ package jetbrains.mps.build.mps.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -33,12 +35,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SPropertyOperations.set(_context.getNewNode(), "compact", "" + (true));
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "path", "jetbrains.mps.build.structure.BuildSourcePath");
+    SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact"), "" + (true));
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path"), "jetbrains.mps.build.structure.BuildSourcePath");
   }
   public static void nodeFactory_NodeSetup_BuildMpsLayout_ModuleSources_2105528055260692131(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "module", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"), "module", false), false);
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"))) {
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources")), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 1692280246134781713l, "module")));
     }
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildMps_ModuleSource_3189788309731979156(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -51,7 +53,7 @@ public class QueriesGenerated {
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
-            SLinkOperations.setTarget(res, "folder", nodeToWrap, true);
+            SLinkOperations.setTarget(res, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149588970l, 5253498789149588972l, "folder"), nodeToWrap);
             return res;
           }
           public boolean returnSmallPart(SNode nodeToWrap) {
@@ -73,7 +75,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
+        SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547713l, "reexport"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -93,13 +95,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_ModuleDependencyOnModule_5253498789149547751(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "reexport"));
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547713l, "reexport")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_ModuleDependencyOnJavaModule_3189788309731933926(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
+        SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928316l, "reexport"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -119,13 +121,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_ModuleDependencyOnJavaModule_3189788309731933940(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "reexport"));
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731928315l, 3189788309731928316l, "reexport")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_Module_3189788309731994246(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "doNotCompile", "" + (true));
+        SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -145,13 +147,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_Module_3189788309731994251(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "doNotCompile"));
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_AbstractModule_1500819558096400258(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "path", "jetbrains.mps.build.structure.BuildSourcePath");
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path"), "jetbrains.mps.build.structure.BuildSourcePath");
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -171,7 +173,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_AbstractModule_1500819558096400259(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "path", true) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path")) == null);
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_Solution_269707337718167391(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -185,7 +187,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SPropertyOperations.set(_context.getSourceNode(), "sourcesKind", "" + ((item)));
+              SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), "" + ((item)));
               return _context.getSourceNode();
             }
             public String getMatchingText(String pattern) {
@@ -208,14 +210,14 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_Solution_269707337717102164(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    String sourcesKind = SPropertyOperations.getString_def(_context.getSourceNode(), "sourcesKind", null);
+    String sourcesKind = SPropertyOperations.getString_def(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null);
     return (sourcesKind == null || sourcesKind.length() == 0) || sourcesKind.equals("sources");
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPlugin_1238980147630030569(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "pluginXml", "jetbrains.mps.build.structure.BuildSourcePath");
+        return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 1238980147629899306l, "pluginXml"), "jetbrains.mps.build.structure.BuildSourcePath");
       }
       public String getMatchingText(String pattern) {
         return "from file";
@@ -234,13 +236,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPlugin_1238980147630030570(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "pluginXml", true) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 1238980147629899306l, "pluginXml")) == null);
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPluginModule_4034578608468849422(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "customPackaging", "" + (true));
+        SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, 4034578608468849375l, "customPackaging"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -260,13 +262,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginModule_4034578608468849423(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "customPackaging"));
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499036l, 4034578608468849375l, "customPackaging")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPluginGroup_4034578608469015649(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SLinkOperations.addNewChild(_context.getSourceNode(), "customPackaging", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
+        SLinkOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -286,6 +288,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginGroup_4034578608469015663(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "customPackaging", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"))).isEmpty();
   }
 }

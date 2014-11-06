@@ -41,7 +41,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yczb8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createComponent_yczb8_a0(editorContext, node));
@@ -58,7 +58,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_yczb8_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -67,7 +67,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Image cell:");
     editorCell.setCellId("Constant_yczb8_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,7 +76,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yczb8_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_yczb8_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yczb8_b3a(editorContext, node));
@@ -87,8 +87,8 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_a3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yczb8_a0d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yczb8_b0d0(editorContext, node));
@@ -126,8 +126,8 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_b3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yczb8_a1d0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yczb8_b1d0(editorContext, node));
@@ -146,8 +146,8 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_b1d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_yczb8_a1b3a(editorContext, node));
     editorCell.addEditorCell(this.createJComponent_yczb8_b1b3a(editorContext, node));
@@ -161,8 +161,8 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_imageFile");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -178,7 +178,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CellModel_Image_Editor._QueryFunction_JComponent_yczb8_a1b1d0(node, editorContext), "_yczb8_b1b3a");
     editorCell.setCellId("JComponent_yczb8_b1b3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -189,8 +189,8 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_c3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yczb8_a2d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yczb8_b2d0(editorContext, node));
@@ -213,7 +213,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_descent");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

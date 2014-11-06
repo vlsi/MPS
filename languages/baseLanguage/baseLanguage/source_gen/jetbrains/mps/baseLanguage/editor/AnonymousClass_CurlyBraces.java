@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,18 +29,18 @@ public class AnonymousClass_CurlyBraces {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
-        SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"))) {
+        SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"));
         final SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
-        SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
+        SLinkOperations.setTarget(classCreator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter"))).addElement(it);
           }
         });
-        ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(it);
           }
         });
       } else {
@@ -55,18 +57,18 @@ public class AnonymousClass_CurlyBraces {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
-        SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"))) {
+        SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"));
         final SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
-        SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
+        SLinkOperations.setTarget(classCreator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter"))).addElement(it);
           }
         });
-        ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
+            ListSequence.fromList(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(it);
           }
         });
       } else {

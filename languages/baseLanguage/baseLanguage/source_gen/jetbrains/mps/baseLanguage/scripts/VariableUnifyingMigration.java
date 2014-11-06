@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -43,11 +45,11 @@ public class VariableUnifyingMigration {
       @Override
       public SNode migrateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-        SLinkOperations.setTarget(result, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
         // copy smodel attributes 
-        for (SNode attribute : SLinkOperations.getTargets(node, "smodelAttribute", true)) {
-          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), "jetbrains.mps.lang.core.structure.Attribute");
-          ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", "smodelAttribute"))).addElement(copy);
+        for (SNode attribute : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))) {
+          SNode copy = SNodeOperations.cast(CopyUtil.copyAndPreserveId(attribute), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute"));
+          ListSequence.fromList(SNodeOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).addElement(copy);
         }
         return result;
       }
@@ -68,18 +70,18 @@ public class VariableUnifyingMigration {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, null, false);
-    quotedNode_6.setReference("link", SReference.create("link", quotedNode_6, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("1068581517664")));
-    quotedNode_4.addChild("operation", quotedNode_6);
+    quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link"), quotedNode_6, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("1068581517664")));
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), quotedNode_6);
     quotedNode_7 = (SNode) parameter_1;
     if (quotedNode_7 != null) {
-      quotedNode_4.addChild("operand", HUtil.copyIfNecessary(quotedNode_7));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), HUtil.copyIfNecessary(quotedNode_7));
     }
-    quotedNode_3.addChild("operand", quotedNode_4);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, null, false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_8, "conceptDeclaration", (SNode) parameter_2);
-    quotedNode_5.addChild("conceptArgument", quotedNode_8);
-    quotedNode_3.addChild("operation", quotedNode_5);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_8, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, 1177026940964l, "conceptDeclaration"), (SNode) parameter_2);
+    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1139621453865l, 1177027386292l, "conceptArgument"), quotedNode_8);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), quotedNode_5);
     return quotedNode_3;
   }
 }

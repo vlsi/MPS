@@ -8,6 +8,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1209146548167" name="jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1209149421970" name="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />

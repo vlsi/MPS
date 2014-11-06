@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -23,7 +25,7 @@ public class ClosureLiteral_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("{");
     String sep = " ";
-    for (SNode pd : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode pd : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, pd, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ", ";
     }
@@ -36,10 +38,10 @@ public class ClosureLiteral_Behavior {
     return _quotation_createNode_l77foe_a0a2(paramTypes, resultType, throwsTypes);
   }
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "forceMultiLine"));
+    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 890797661671409019l, "forceMultiLine")));
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "body", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"));
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     // everything which is not void and null is good, 
@@ -58,7 +60,7 @@ public class ClosureLiteral_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
-        return Scopes.forVariables(kind, SLinkOperations.getTargets(thisNode, "parameter", true), ScopeUtils.lazyParentScope(thisNode, kind));
+        return Scopes.forVariables(kind, SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter")), ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
     return null;
@@ -73,17 +75,17 @@ public class ClosureLiteral_Behavior {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_4.addChild("parameterType", HUtil.copyIfNecessary(child));
+        quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
-      quotedNode_4.addChild("resultType", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"), HUtil.copyIfNecessary(quotedNode_6));
     }
     {
       List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {
-        quotedNode_4.addChild("throwsType", HUtil.copyIfNecessary(child));
+        quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_4;
@@ -92,7 +94,7 @@ public class ClosureLiteral_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 }

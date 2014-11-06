@@ -119,11 +119,11 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
           String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
-          if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
+          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.propertyName_BaseConcept_virtualPackage, fullTargetPack);
+          if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
             List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
             for (SNode aspect : allAspects) {
-              SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+              SNodeAccessUtil.setProperty(aspect, SNodeUtil.propertyName_BaseConcept_virtualPackage, fullTargetPack);
             }
           }
         }
@@ -198,7 +198,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
   }
 
   private String getVirtualPackage(final SNode node) {
-    String result = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
+    String result = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
     return (result == null) ? "" : result;
   }
 

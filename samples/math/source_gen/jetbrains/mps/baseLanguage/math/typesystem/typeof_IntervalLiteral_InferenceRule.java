@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,16 +20,16 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode elementType_typevar_1235747425275 = typeCheckingContext.createNewRuntimeTypesVariable();
-    if ((SLinkOperations.getTarget(literal, "end", true) != null)) {
+    if ((SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354990l, "end")) != null)) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "end", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354990l, "end"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236434335326", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(elementType_typevar_1235747425275), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236434335330", true), _info_12389875345);
       }
     }
-    if ((SLinkOperations.getTarget(literal, "start", true) != null)) {
+    if ((SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354989l, "start")) != null)) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "start", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354989l, "start"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236434330693", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(elementType_typevar_1235747425275), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236434330697", true), _info_12389875345);
       }
@@ -57,7 +59,7 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354994l, 1235747354995l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

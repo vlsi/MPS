@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
@@ -50,8 +52,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_xc5f9o_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_xc5f9o_b0a(editorContext, node));
@@ -119,8 +121,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_xc5f9o_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b1a(editorContext, node));
@@ -184,14 +186,14 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_e1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_xc5f9o_a4b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4b0(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_xc5f9o_a4b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "leftIsExact"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, 1236771579180l, "leftIsExact")));
   }
   private EditorCell createConstant_xc5f9o_a4b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
@@ -220,7 +222,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_xc5f9o_f1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -229,8 +231,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_xc5f9o_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b2a(editorContext, node));
@@ -293,14 +295,14 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_e2a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_xc5f9o_a4c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4c0(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_xc5f9o_a4c0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "rightIsExact"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, 1236771585835l, "rightIsExact")));
   }
   private EditorCell createConstant_xc5f9o_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
@@ -380,7 +382,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xc5f9o_h0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

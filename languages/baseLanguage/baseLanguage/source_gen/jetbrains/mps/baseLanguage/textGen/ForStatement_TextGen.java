@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -23,35 +25,35 @@ public class ForStatement_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createPositionInfo(this, node);
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
-    if (SLinkOperations.getTarget(node, "loopLabel", true) != null) {
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel")) != null) {
       this.appendNewLine();
-      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "loopLabel", true), "name"));
+      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       this.append(":");
-    } else if (SPropertyOperations.getString(node, "label") != null) {
+    } else if (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label")) != null) {
       this.appendNewLine();
-      this.append(SPropertyOperations.getString(node, "label"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label")));
       this.append(":");
     }
     this.appendNewLine();
     this.indentBuffer();
     this.append("for (");
-    if ((SLinkOperations.getTarget(node, "variable", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "variable", true));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")) != null)) {
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")));
     }
-    for (SNode additionalVar : SLinkOperations.getTargets(node, "additionalVar", true)) {
+    for (SNode additionalVar : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1032195626824963089l, "additionalVar"))) {
       this.append(", ");
       appendNode(additionalVar);
     }
     this.append("; ");
-    if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "condition", true));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")) != null)) {
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition")));
     }
     this.append(";");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231408325l, "iteration"))).isNotEmpty()) {
       this.append(" ");
     }
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "iteration", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231408325l, "iteration"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
         appendNode(item);
@@ -62,7 +64,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
     }
     this.append(") {");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "body", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
@@ -70,7 +72,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
       {
         String traceableProperty = "";
         try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
+          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369891l, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
@@ -81,7 +83,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369890l, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);

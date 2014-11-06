@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -35,13 +37,13 @@ public class StyleClass_Behavior {
       if (ListSequence.fromList(extendsTree).tail(ListSequence.fromList(extendsTree).count() - 1).contains(ListSequence.fromList(extendsTree).first())) {
         return -1;
       } else if (down) {
-        if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "dominates", true) != null)) {
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "dominates", true), "dominatesStyleClassList", true), "element", true)).isEmpty()) {
+        if ((SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")) != null)) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, 2491174914159330058l, "dominatesStyleClassList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element"))).isEmpty()) {
             MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), 1);
             down = false;
           } else {
             MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).first(), -1);
-            ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "dominates", true), "dominatesStyleClassList", true), "element", true), "jetbrains.mps.lang.editor.structure.StyleClassReference")).first(), "styleClass", false));
+            ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, 2491174914159330058l, "dominatesStyleClassList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137422349l, "jetbrains.mps.lang.editor.structure.StyleClassReference"))).first(), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137422349l, 3383245079137422350l, "styleClass")));
             ListSequence.fromList(childNums).insertElement(0, 0);
           }
         } else {
@@ -53,12 +55,12 @@ public class StyleClass_Behavior {
           break;
         }
         int newIndex = ListSequence.fromList(childNums).first() + 1;
-        assert newIndex <= ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).getElement(1), "dominates", true), "dominatesStyleClassList", true), "element", true)).count();
+        assert newIndex <= ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).getElement(1), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, 2491174914159330058l, "dominatesStyleClassList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element"))).count();
         MapSequence.fromMap(priorities).put(ListSequence.fromList(extendsTree).getElement(1), Math.max(MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).first()) + 1, MapSequence.fromMap(priorities).get(ListSequence.fromList(extendsTree).getElement(1))));
         ListSequence.fromList(extendsTree).removeElementAt(0);
         ListSequence.fromList(childNums).removeElementAt(0);
-        if (newIndex < ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "dominates", true), "dominatesStyleClassList", true), "element", true)).count()) {
-          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), "dominates", true), "dominatesStyleClassList", true), "element", true)).getElement(newIndex), "jetbrains.mps.lang.editor.structure.StyleClassReference"), "styleClass", false));
+        if (newIndex < ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, 2491174914159330058l, "dominatesStyleClassList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element"))).count()) {
+          ListSequence.fromList(extendsTree).insertElement(0, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(extendsTree).first(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, 2491174914159330058l, "dominatesStyleClassList")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element"))).getElement(newIndex), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137422349l, "jetbrains.mps.lang.editor.structure.StyleClassReference")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137422349l, 3383245079137422350l, "styleClass")));
           ListSequence.fromList(childNums).insertElement(0, newIndex);
           down = true;
         }
@@ -76,13 +78,13 @@ public class StyleClass_Behavior {
       ListSequence.fromList(dependencies).addSequence(ListSequence.fromList(adding));
       adding = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(adding).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getTargets(it, "styleItem", true);
+          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"));
         }
-      }), "jetbrains.mps.lang.editor.structure.ApplyStyleClass")).select(new ISelector<SNode, SNode>() {
+      }), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1950447826681509042l, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "target", true), "style", false);
+          return SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1950447826681509042l, 1950447826683828796l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797312246523l, 9122903797312247166l, "style"));
         }
-      }), "jetbrains.mps.lang.editor.structure.StyleClass"));
+      }), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, "jetbrains.mps.lang.editor.structure.StyleClass")));
     }
     return false;
   }

@@ -30,7 +30,7 @@ public class UnresolvedNameReference_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

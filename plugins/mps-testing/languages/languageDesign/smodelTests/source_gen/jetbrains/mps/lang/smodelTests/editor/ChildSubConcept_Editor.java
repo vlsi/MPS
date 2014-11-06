@@ -39,7 +39,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_d4chl0_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_d4chl0_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_d4chl0_b0(editorContext, node));
@@ -52,7 +52,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d4chl0_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_d4chl0_a0a(editorContext, node));
     if (renderingCondition_d4chl0_a1a0(node, editorContext)) {
@@ -94,9 +94,9 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_d4chl0_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +108,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d4chl0_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_d4chl0_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_d4chl0_b1a(editorContext, node));
@@ -137,7 +137,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializedGrandChild_0_1:");
     editorCell.setCellId("Constant_d4chl0_a0b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -165,7 +165,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "grandChild_0_n:");
     editorCell.setCellId("Constant_d4chl0_b1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -174,7 +174,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d4chl0_c1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_d4chl0_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_d4chl0_b2b1a(editorContext, node));
@@ -229,7 +229,7 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_d4chl0_a1c1b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -239,9 +239,9 @@ public class ChildSubConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_d4chl0_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 
@@ -29,13 +31,13 @@ public class ChildrenTableRow extends AbstractTableRow {
   @Override
   public void createNewCell(int index) {
     assert index <= ListSequence.fromList(getChildren()).count();
-    SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
+    SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null);
     insertNewCell(newCellNode, index);
   }
   protected void insertNewCell(SNode newCellNode, int index) {
     // subclasses may implement this method in a different way 
     if (index == ListSequence.fromList(getChildren()).count()) {
-      myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, "role"), newCellNode);
+      myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), newCellNode);
     } else {
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(getChildren()).getElement(index), newCellNode);
     }

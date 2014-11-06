@@ -7,6 +7,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BaseLanguageUtil {
   public BaseLanguageUtil() {
@@ -24,11 +26,11 @@ public class BaseLanguageUtil {
     return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(fromClassifier)).contains(toClassifier);
   }
   public static SNode getSuperclass(SNode subClass) {
-    return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, "superclass", true)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   private static SNode check_b9g70l_a0a0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
+      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     }
     return null;
   }

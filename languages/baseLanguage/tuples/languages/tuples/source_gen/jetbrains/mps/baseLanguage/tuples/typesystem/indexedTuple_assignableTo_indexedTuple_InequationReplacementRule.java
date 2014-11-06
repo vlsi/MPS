@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,7 +24,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
   public indexedTuple_assignableTo_indexedTuple_InequationReplacementRule() {
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count() == ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", null, errorTarget);
       HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
@@ -30,8 +32,8 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
     {
       SNode lmt;
       SNode rmt;
-      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
-      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
+      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).iterator();
+      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).iterator();
       while (true) {
         if (!(lmt_iterator.hasNext())) {
           break;
@@ -52,14 +54,14 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
   }
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count() == ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count())) {
       result_14532009 = false;
     }
     {
       SNode lmt;
       SNode rmt;
-      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).iterator();
-      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).iterator();
+      Iterator<SNode> lmt_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).iterator();
+      Iterator<SNode> rmt_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).iterator();
       while (true) {
         if (!(lmt_iterator.hasNext())) {
           break;

@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,7 +19,7 @@ public class typeof_ModelScopeLiteral_InferenceRule extends AbstractInferenceRul
   public typeof_ModelScopeLiteral_InferenceRule() {
   }
   public void applyRule(final SNode modelScopeLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode elem : ListSequence.fromList(SLinkOperations.getTargets(modelScopeLiteral, "model", true))) {
+    for (SNode elem : ListSequence.fromList(SLinkOperations.getChildren(modelScopeLiteral, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 3492877759608408142l, 3492877759608408143l, "model")))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = elem;

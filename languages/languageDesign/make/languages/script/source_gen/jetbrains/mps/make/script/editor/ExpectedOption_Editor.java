@@ -67,7 +67,7 @@ public class ExpectedOption_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_97k2fj_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_97k2fj_a2a(editorContext, node));
     return editorCell;
@@ -82,9 +82,9 @@ public class ExpectedOption_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_97k2fj_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_97k2fj_a3a(editorContext, node));
     return editorCell;

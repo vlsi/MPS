@@ -11,6 +11,8 @@ import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -52,7 +54,7 @@ public class ExecuteCalculator_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.calculator.structure.Calculator"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2788808807702744790l, -8953487104835967071l), 1241362555920l, "jetbrains.mps.calculator.structure.Calculator")))) {
           node = null;
         }
       }
@@ -89,7 +91,7 @@ public class ExecuteCalculator_Action extends BaseAction {
     }
   }
   private Class getCalcClass(final Map<String, Object> _params) {
-    String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
+    String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode")))) + "." + className;
     return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModule(), fqClassName);
   }

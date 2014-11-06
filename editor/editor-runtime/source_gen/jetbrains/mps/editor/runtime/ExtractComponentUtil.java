@@ -5,6 +5,8 @@ package jetbrains.mps.editor.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -22,7 +24,7 @@ public class ExtractComponentUtil {
   public ExtractComponentUtil() {
   }
   public static void extractComponent(final SNode node, EditorContext editorContext) {
-    final SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
+    final SNode container = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false, false);
     final String componentName = Messages.showInputDialog(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()), "Enter a component name:", "", null);
     if (componentName == null) {
       return;
@@ -32,11 +34,11 @@ public class ExtractComponentUtil {
       public void run() {
         SModel model = SNodeOperations.getModel(node);
         SNode component = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", null);
-        SPropertyOperations.set(component, "name", componentName);
-        SLinkOperations.setTarget(component, "conceptDeclaration", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), container, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), false);
-        SLinkOperations.setTarget(component, "cellModel", SNodeOperations.copyNode(node), true);
+        SPropertyOperations.set(component, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), componentName);
+        SLinkOperations.setTarget(component, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration"), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), container, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
+        SLinkOperations.setTarget(component, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"), SNodeOperations.copyNode(node));
         SNode toReplace = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Component", null);
-        SLinkOperations.setTarget(toReplace, "editorComponent", component, false);
+        SLinkOperations.setTarget(toReplace, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, 1078939183255l, "editorComponent"), component);
         SNodeOperations.replaceWithAnother(node, toReplace);
       }
     });

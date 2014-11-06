@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -65,14 +67,14 @@ public class BuildMps_ModuleJarRuntime_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hazz8z_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hazz8z_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hazz8z_b2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_hazz8z_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customLocation", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200804496l, 2798275735916344702l, "customLocation")) != null);
   }
   private EditorCell createConstant_hazz8z_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");

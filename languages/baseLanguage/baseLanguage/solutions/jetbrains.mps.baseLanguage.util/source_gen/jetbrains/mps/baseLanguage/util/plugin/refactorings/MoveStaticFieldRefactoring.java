@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -15,28 +17,28 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   @Override
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
-    if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
+    if (SNodeOperations.getNodeAncestor(usage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == this.myDestination) {
       SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a1a1(this.myReplacing));
     } else {
       SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a0b0b(this.myDestination, this.myReplacing));
     }
   }
   protected boolean goodDestination() {
-    return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.isInstanceOf(this.myDestination, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
   private static SNode _quotation_createNode_fls06q_a0a0a0b0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_2);
     return quotedNode_3;
   }
   private static SNode _quotation_createNode_fls06q_a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

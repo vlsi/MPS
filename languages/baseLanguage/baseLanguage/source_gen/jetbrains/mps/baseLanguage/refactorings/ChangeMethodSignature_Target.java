@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.refactorings;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 
 public class ChangeMethodSignature_Target implements IRefactoringTarget {
@@ -17,7 +19,7 @@ public class ChangeMethodSignature_Target implements IRefactoringTarget {
     return false;
   }
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
   }
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {

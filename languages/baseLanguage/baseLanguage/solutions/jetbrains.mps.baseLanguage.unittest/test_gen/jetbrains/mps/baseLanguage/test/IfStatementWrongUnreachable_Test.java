@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
@@ -30,15 +32,15 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck1217864879944() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864879944"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864879944"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215601147424l, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1217861284985")});
     }
     public void test_NodeUnreachableNodeErrorCheck6923385624927388248() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927388248"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927388248"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215601147424l, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228077")});
     }
     public void test_ErrorMessagesCheck1217864892290() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864892290"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864892290"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215601147424l, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1217864474226")});
     }
   }

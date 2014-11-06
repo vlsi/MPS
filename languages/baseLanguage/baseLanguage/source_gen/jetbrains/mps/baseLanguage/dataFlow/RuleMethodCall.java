@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
@@ -23,12 +25,12 @@ public class RuleMethodCall extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     SNode m = node;
     SNode targetNode = node;
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.DotExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true) == targetNode) {
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")) == targetNode) {
       targetNode = SNodeOperations.getParent(targetNode);
     }
-    if (SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true) != null) {
-      for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true)) {
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(m, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation")) != null) {
+      for (SNode annotation : SLinkOperations.getChildren(SLinkOperations.getTarget(m, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))) {
+        if (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
             Object object = node;
             if (((Program) o).contains(object)) {
@@ -41,7 +43,7 @@ public class RuleMethodCall extends DataFlowConstructor {
             }
           }
         }
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
+        if (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             Object object = node;
             if (((Program) o).contains(object)) {

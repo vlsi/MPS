@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.generationContext.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -24,9 +25,30 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 5:
         return new GenerationContextOp_VarRef_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 4589968773278056990l) {
+      return new GenerationContextOp_NodePatternRef_Constraints();
+    }
+    if (id == 5190093307972723402l) {
+      return new GenerationContextOp_ParameterRef_Constraints();
+    }
+    if (id == 1758784108619220823l) {
+      return new GenerationContextOp_LinkPatternRef_Constraints();
+    }
+    if (id == 1758784108619220824l) {
+      return new GenerationContextOp_PropertyPatternRef_Constraints();
+    }
+    if (id == 2507865635201615235l) {
+      return new GenerationContextOp_GenParameterRef_Constraints();
+    }
+    if (id == 2721957369897614808l) {
+      return new GenerationContextOp_VarRef_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};
 }

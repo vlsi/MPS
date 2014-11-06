@@ -17,6 +17,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,8 +42,8 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "select");
     editorCell.setCellId("Constant_gmlwwp_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -50,9 +52,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_gmlwwp_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "bracket");
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "bracket");
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -61,8 +63,8 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in:");
     editorCell.setCellId("Constant_gmlwwp_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -77,7 +79,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
       editorCell.setRole("editorContext");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     SelectInEditorOperation_editorContextActions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -94,7 +96,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gmlwwp_a4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b4a(editorContext, node));
@@ -105,15 +107,15 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_gmlwwp_a4a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "cellSelector", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector")) != null);
   }
   private EditorCell createConstant_gmlwwp_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a4a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     CellSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -123,7 +125,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell:");
     editorCell.setCellId("Constant_gmlwwp_b4a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     CellSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -153,7 +155,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_d4a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gmlwwp_a3e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b3e0(editorContext, node));
@@ -164,15 +166,15 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_gmlwwp_a3e0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "selectionStart", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 3604384757217586546l, "selectionStart")) != null);
   }
   private EditorCell createConstant_gmlwwp_a3e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a3e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     SelectionStartSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -182,7 +184,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selectionStart:");
     editorCell.setCellId("Constant_gmlwwp_b3e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     SelectionStartSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -198,7 +200,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
       editorCell.setRole("selectionStart");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     SelectInEditorOperation_selectionStartActions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -215,7 +217,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_d3e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gmlwwp_a3d4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b3d4a(editorContext, node));
@@ -223,15 +225,15 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "selectionEnd", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd")) != null;
   }
   private EditorCell createConstant_gmlwwp_a3d4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a3d4a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     SelectionEndSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -241,7 +243,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selectionEnd:");
     editorCell.setCellId("Constant_gmlwwp_b3d4a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     SelectionEndSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -257,7 +259,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
       editorCell.setRole("selectionEnd");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -273,10 +275,10 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("closingBracket");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "bracket");
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "bracket");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

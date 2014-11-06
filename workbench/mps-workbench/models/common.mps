@@ -25,9 +25,11 @@
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.plaf.basic(JDK/javax.swing.plaf.basic@java_stub)" name="javax.swing.plaf.basic@java_stub" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" name="javax.swing@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -57,20 +59,24 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" />
@@ -78,30 +84,26 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1075300953594" name="abstractClass" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1111509017652/1113006610751" name="value" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1176718929932" name="isFinal" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165/1178608670077" name="isAbstract" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1181808852946" name="isFinal" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1221565133444" name="isFinal" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
-    <property id="f2801650-65d5-424e-bb1b-463a8781b786/8970989240999019143/8970989240999019144" name="text" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1083260308426" name="enumConstantDeclaration" />
@@ -110,7 +112,6 @@
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214555875" name="key" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886295" name="lValue" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886297" name="rValue" />
@@ -135,29 +136,20 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1082485599094" name="ifFalseStatement" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095/1082485599096" name="statements" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539/1144226360166" name="iterable" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926/1144230900587" name="variable" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996/1151689745422" name="elementType" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1165602531693" name="superclass" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1173175405605/1173175577737" name="index" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1173175405605/1173175590490" name="array" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402/1188208488637" name="annotation" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214607812" name="value" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188214630783" name="value" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
     <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569906740" name="parameter" />
     <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442/1204796294226" name="closure" />
-    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
-    <childRole id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395/8465538089690331502" name="body" />
-    <childRole id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500/8970989240999019149" name="part" />
   </debugInfo>
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
@@ -186,151 +178,10 @@
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
-    <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <contents>
-    <node concept="vg0i.1068390468198" id="144575100359734006" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="JavaConsoleCreator" />
-      <node concept="vg0i.1146644602865" id="144575100359734207" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="vg0i.1188207840427" id="7236226861153265874" role="vg0i.1188208481402.1188208488637" info="nn">
-        <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
-      </node>
-      <node concept="vg0i.1188207840427" id="7236226861153265878" role="vg0i.1188208481402.1188208488637" info="nn">
-        <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
-        <node concept="vg0i.1188214545140" id="7236226861153265879" role="vg0i.1188207840427.1188214630783" info="ng">
-          <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
-          <node concept="vg0i.1111509017652" id="7236226861153265882" role="vg0i.1188214545140.1188214607812" info="nn">
-            <property role="vg0i.1111509017652.1113006610751" value="2.0" />
-          </node>
-        </node>
-      </node>
-      <node concept="26qq.2068944020170241612" id="7236226861153265875" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <node concept="26qq.8465538089690331500" id="7236226861153265876" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="7236226861153265877" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Use ConsoleCreator from j.m.e.configurations to create console and JavaStackTraceFilter from j.m.execution.lib to highlight stacktraces." />
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123140" id="4599671019557403091" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <node concept="vg0i.1068581517677" id="4599671019557403092" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1146644602865" id="4599671019557403093" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="4599671019557403094" role="vg0i.1068580123132.1068580123135" info="sn" />
-      </node>
-      <node concept="vg0i.1081236700938" id="144575100359734185" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="createConsoleView" />
-        <node concept="vg0i.1107535904670" id="144575100359734186" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="8ilk.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
-        </node>
-        <node concept="vg0i.1146644602865" id="144575100359734187" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="144575100359734188" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="8549696200078009601" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="8549696200078009602" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="builder" />
-              <property role="vg0i.1068431474542.1176718929932" value="true" />
-              <node concept="vg0i.1107535904670" id="8549696200078010992" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="gs1f.~TextConsoleBuilder" resolveInfo="TextConsoleBuilder" />
-              </node>
-              <node concept="vg0i.1197027756228" id="8549696200078009604" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1081236700937" id="8549696200078010993" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="gs1f.~TextConsoleBuilderFactory%dgetInstance()%ccom%dintellij%dexecution%dfilters%dTextConsoleBuilderFactory" resolveInfo="getInstance" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="gs1f.~TextConsoleBuilderFactory" resolveInfo="TextConsoleBuilderFactory" />
-                </node>
-                <node concept="vg0i.1202948039474" id="8549696200078009606" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="gs1f.~TextConsoleBuilderFactory%dcreateBuilder(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dexecution%dfilters%dTextConsoleBuilder" resolveInfo="createBuilder" />
-                  <node concept="vg0i.1068498886296" id="3021153905151785412" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="144575100359734204" resolveInfo="project" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1144226303539" id="8549696200078009578" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="8549696200078009595" role="vg0i.1144226303539.1144226360166" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="mo84.~Extensions" resolveInfo="Extensions" />
-              <reference role="vg0i.1204053956946.1068499141037" target="mo84.~Extensions%dgetExtensions(com%dintellij%dopenapi%dextensions%dExtensionPointName,com%dintellij%dopenapi%dextensions%dAreaInstance)%cjava%dlang%dObject[]" resolveInfo="getExtensions" />
-              <node concept="vg0i.1070533707846" id="8549696200078009597" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1070533707846.1144433057691" target="s1g8.~AnalyzeStacktraceUtil" resolveInfo="AnalyzeStacktraceUtil" />
-                <reference role="vg0i.1068498886296.1068581517664" target="s1g8.~AnalyzeStacktraceUtil%dEP_NAME" resolveInfo="EP_NAME" />
-              </node>
-              <node concept="vg0i.1068498886296" id="3021153905151785743" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="144575100359734204" resolveInfo="project" />
-              </node>
-            </node>
-            <node concept="vg0i.1068581242863" id="8549696200078009584" role="vg0i.1144230876926.1144230900587" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="filter" />
-              <property role="vg0i.1068431474542.1176718929932" value="false" />
-              <node concept="vg0i.1107535904670" id="8549696200078009592" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="gs1f.~Filter" resolveInfo="Filter" />
-              </node>
-            </node>
-            <node concept="vg0i.1068580123136" id="8549696200078009586" role="vg0i.1154032098014.1154032183016" info="sn">
-              <node concept="vg0i.1068580123155" id="8549696200078009587" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="8549696200078009588" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <node concept="vg0i.1068498886296" id="4265636116363088350" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="8549696200078009602" resolveInfo="builder" />
-                  </node>
-                  <node concept="vg0i.1202948039474" id="8549696200078009590" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="gs1f.~TextConsoleBuilder%daddFilter(com%dintellij%dexecution%dfilters%dFilter)%cvoid" resolveInfo="addFilter" />
-                    <node concept="vg0i.1068498886296" id="4265636116363092297" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="8549696200078009584" resolveInfo="filter" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242864" id="7192713018949592260" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="7192713018949592261" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="console" />
-              <node concept="vg0i.1107535904670" id="7192713018949592262" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="8ilk.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
-              </node>
-              <node concept="vg0i.1070534934090" id="7192713018949592263" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1107535904670" id="7192713018949592264" role="vg0i.1070534934090.1070534934091" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="8ilk.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
-                </node>
-                <node concept="vg0i.1197027756228" id="7192713018949592265" role="vg0i.1070534934090.1070534934092" info="nn">
-                  <node concept="vg0i.1068498886296" id="4265636116363068486" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="8549696200078009602" resolveInfo="builder" />
-                  </node>
-                  <node concept="vg0i.1202948039474" id="7192713018949592267" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="gs1f.~TextConsoleBuilder%dgetConsole()%ccom%dintellij%dexecution%dui%dConsoleView" resolveInfo="getConsole" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.6329021646629104954" id="7192713018949617749" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.6329021646629104957" id="7192713018949617750" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
-              <property role="vg0i.6329021646629104957.6329021646629104958" value="next line is to fix MPS-16030" />
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="7192713018949592270" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1197027756228" id="7192713018949592286" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1068498886296" id="4265636116363071520" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="7192713018949592261" resolveInfo="console" />
-              </node>
-              <node concept="vg0i.1202948039474" id="7192713018949609735" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="8ilk.~ConsoleViewImpl%dgetComponent()%cjavax%dswing%dJComponent" resolveInfo="getComponent" />
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242878" id="7192713018949609737" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="4265636116363107737" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="7192713018949592261" resolveInfo="console" />
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="144575100359734204" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="project" />
-          <node concept="vg0i.1107535904670" id="144575100359734205" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="b2mh.~Project" resolveInfo="Project" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="vg0i.1068390468198" id="8606486054003576517" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="LayoutUtil" />
       <node concept="vg0i.1146644602865" id="8606486054003576593" role="vg0i.1178549954367.1178549979242" info="nn" />

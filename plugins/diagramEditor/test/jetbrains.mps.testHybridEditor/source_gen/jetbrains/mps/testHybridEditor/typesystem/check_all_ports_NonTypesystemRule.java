@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,17 +22,17 @@ public class check_all_ports_NonTypesystemRule extends AbstractNonTypesystemRule
   }
   public void applyRule(final SNode block, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     boolean result = true;
-    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(block, "inputPorts", true))) {
+    for (SNode port : ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451800l, 725186580883451902l, "inputPorts")))) {
       boolean portResult = false;
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(block), "jetbrains.mps.testHybridEditor.structure.Diagram"), "connectors", true))) {
-        portResult = portResult || eq_p42nu0_a0a0a0b0b0b(SLinkOperations.getTarget(connector, "inputPort", false), port);
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(block), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 725186580883451866l, "connectors")))) {
+        portResult = portResult || eq_p42nu0_a0a0a0b0b0b(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451809l, 725186580883451928l, "inputPort")), port);
       }
       result = result && portResult;
     }
-    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(block, "outputPorts", true))) {
+    for (SNode port : ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451800l, 725186580883451904l, "outputPorts")))) {
       boolean portResult = false;
-      for (SNode connector : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(block), "jetbrains.mps.testHybridEditor.structure.Diagram"), "connectors", true))) {
-        portResult = portResult || eq_p42nu0_a0a0a0b0c0b(SLinkOperations.getTarget(connector, "outputPort", false), port);
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(block), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 725186580883451866l, "connectors")))) {
+        portResult = portResult || eq_p42nu0_a0a0a0b0c0b(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451809l, 725186580883451924l, "outputPort")), port);
       }
       result = result && portResult;
     }

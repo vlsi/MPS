@@ -35,8 +35,8 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "composite");
     editorCell.setCellId("Constant_ayfre3_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.5, Measure.SPACES));
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0.5, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.5, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -64,8 +64,8 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with parent scope");
     editorCell.setCellId("Constant_ayfre3_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.5, Measure.SPACES));
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0.5, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.5, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

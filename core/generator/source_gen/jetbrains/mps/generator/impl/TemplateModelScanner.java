@@ -9,9 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -38,14 +40,14 @@ public class TemplateModelScanner {
       if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
         scanControlNode(root);
       } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
-        scanControlNode(SNodeOperations.cast(root, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
+        scanControlNode(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch")));
       } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
-        scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "contentNode", true));
-        for (SNode n : SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "parameter", true)) {
+        scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")));
+        for (SNode n : SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))) {
           scanControlNode(n);
         }
       } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript"))) {
-        scanQueryNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.generator.structure.MappingScript"), "codeBlock", true), "body", true));
+        scanQueryNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, "jetbrains.mps.lang.generator.structure.MappingScript")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195501105008l, "codeBlock")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")));
       } else {
         if ((safeNodeAttribute(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
           scanTemplateNode(root);
@@ -64,10 +66,10 @@ public class TemplateModelScanner {
     SetSequence.fromSet(myTargetLanguages).addElement(node.getConcept().getLanguage().getQualifiedName());
     for (SNode n : node.getChildren()) {
       if (safeIsInstanceOf(n, concept_IfMacro)) {
-        if (SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true) != null) {
-          scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "alternativeConsequence", true));
+        if (SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, "jetbrains.mps.lang.generator.structure.IfMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1194989344771l, "alternativeConsequence")) != null) {
+          scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, "jetbrains.mps.lang.generator.structure.IfMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1194989344771l, "alternativeConsequence")));
         }
-        scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.generator.structure.IfMacro"), "conditionFunction", true));
+        scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, "jetbrains.mps.lang.generator.structure.IfMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1167945861827l, "conditionFunction")));
       } else if (safeIsInstanceOf(n, concept_NodeMacro) || safeIsInstanceOf(n, concept_RootTemplateAnnotation) || safeIsInstanceOf(n, concept_PropertyMacro) || safeIsInstanceOf(n, concept_ReferenceMacro) || safeIsInstanceOf(n, concept_TemplateFragment)) {
         scanQueryNode(n);
       } else {
@@ -89,14 +91,14 @@ public class TemplateModelScanner {
   }
   private void scanControlNode(SNode node) {
     if (safeIsInstanceOf(node, concept_rc_InlineTemplateWithContext)) {
-      scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), "contentNode", true));
+      scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode")));
     } else if (safeIsInstanceOf(node, concept_rc_InlineTemplate)) {
-      scanTemplateNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), "templateNode", true));
+      scanTemplateNode(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode")));
     } else if (safeIsInstanceOf(node, concept_rule_PatternReduction)) {
       // ignore pattern 
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.pattern");
-      scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "ruleConsequence", true));
-      scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));
+      scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516024l, "ruleConsequence")));
+      scanQueryNode(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516021l, "conditionFunction")));
     } else {
       if ("jetbrains.mps.lang.generator".equals(node.getConcept().getLanguage().getQualifiedName())) {
         for (SNode child : node.getChildren()) {
@@ -126,14 +128,14 @@ public class TemplateModelScanner {
     // so isInstanceOf limited only to generator language concepts 
     // todo: extending generator macroses impossible anymore, is it ok? 
     if (node != null && eq_8grp5z_a0a3a02(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
-      return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept));
+      return SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
     } else {
       return false;
     }
   }
   private SNode safeNodeAttribute(SNode node, final SNode attribute) {
     // todo: basically for this we need everything castable to BaseConcept 
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return safeIsInstanceOf(it, attribute);
       }

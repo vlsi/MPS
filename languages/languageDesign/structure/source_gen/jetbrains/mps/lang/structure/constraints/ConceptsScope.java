@@ -19,7 +19,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -64,17 +66,17 @@ public class ConceptsScope extends SimpleScope {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(metaConcept));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) metaConcept));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"));
       }
     });
   }
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{});
   }
 }

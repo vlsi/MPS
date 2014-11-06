@@ -112,26 +112,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1217892542812">
     <file name="GenerationContextOp_UserObjectAccessBase_Behavior.java">
-      <node id="1217892577742" at="12,81,13,91" concept="3" />
-      <node id="1217892577754" at="15,193,16,20" concept="4" />
-      <node id="1217892577768" at="18,5,19,17" concept="4" />
-      <node id="1217892542812" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1217892577752" at="14,117,17,7" concept="2" />
-      <node id="1217892577750" at="13,91,18,5" concept="2" />
-      <node id="1217892542812" at="12,0,21,0" concept="5" trace="call_isLValueInAssignment_1217892546644#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1217892542814" at="10,43,10,43" />
-      <scope id="1217892577753" at="15,193,16,20" />
-      <scope id="1217892542812" at="10,0,12,0">
+      <node id="1217892577742" at="14,81,15,91" concept="3" />
+      <node id="1217892577754" at="17,415,18,20" concept="4" />
+      <node id="1217892577768" at="20,5,21,17" concept="4" />
+      <node id="1217892542812" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1217892577752" at="16,219,19,7" concept="2" />
+      <node id="1217892577750" at="15,91,20,5" concept="2" />
+      <node id="1217892542812" at="14,0,23,0" concept="5" trace="call_isLValueInAssignment_1217892546644#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1217892542814" at="12,43,12,43" />
+      <scope id="1217892577753" at="17,415,18,20" />
+      <scope id="1217892542812" at="12,0,14,0">
         <var name="thisNode" id="1217892542812" />
       </scope>
-      <scope id="1217892577751" at="14,117,17,7" />
-      <scope id="1217892546646" at="12,81,19,17">
+      <scope id="1217892577751" at="16,219,19,7" />
+      <scope id="1217892546646" at="14,81,21,17">
         <var name="mayBeAssignment" id="1217892577743" />
       </scope>
-      <scope id="1217892542812" at="12,0,21,0">
+      <scope id="1217892542812" at="14,0,23,0">
         <var name="thisNode" id="1217892542812" />
       </scope>
-      <unit id="1217892542812" at="9,0,22,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
+      <unit id="1217892542812" at="11,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1262430001741641975">
@@ -194,71 +194,71 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115398">
     <file name="GenerationContextOp_LinkPatternRef_Behavior.java">
-      <node id="1758784108620115427" at="11,77,12,72" concept="4" />
-      <node id="1758784108620254546" at="14,90,15,71" concept="1" />
-      <node id="1758784108620115398" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115398" at="11,0,14,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115398" at="14,0,17,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1758784108620115400" at="9,43,9,43" />
-      <scope id="1758784108620115403" at="11,77,12,72" />
-      <scope id="1758784108620254542" at="14,90,15,71" />
-      <scope id="1758784108620115398" at="9,0,11,0">
+      <node id="1758784108620115427" at="13,77,14,202" concept="4" />
+      <node id="1758784108620254546" at="16,90,17,201" concept="1" />
+      <node id="1758784108620115398" at="11,0,13,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115398" at="13,0,16,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115398" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1758784108620115400" at="11,43,11,43" />
+      <scope id="1758784108620115403" at="13,77,14,202" />
+      <scope id="1758784108620254542" at="16,90,17,201" />
+      <scope id="1758784108620115398" at="11,0,13,0">
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <scope id="1758784108620115398" at="11,0,14,0">
+      <scope id="1758784108620115398" at="13,0,16,0">
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <scope id="1758784108620115398" at="14,0,17,0">
+      <scope id="1758784108620115398" at="16,0,19,0">
         <var name="target" id="1758784108620254543" />
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <unit id="1758784108620115398" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_Behavior" />
+      <unit id="1758784108620115398" at="10,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115413">
     <file name="GenerationContextOp_NodePatternRef_Behavior.java">
-      <node id="1758784108620115420" at="11,77,12,72" concept="4" />
-      <node id="1758784108620254563" at="14,90,15,71" concept="1" />
-      <node id="1758784108620115413" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115413" at="11,0,14,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115413" at="14,0,17,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1758784108620115415" at="9,43,9,43" />
-      <scope id="1758784108620115418" at="11,77,12,72" />
-      <scope id="1758784108620254559" at="14,90,15,71" />
-      <scope id="1758784108620115413" at="9,0,11,0">
+      <node id="1758784108620115420" at="13,77,14,202" concept="4" />
+      <node id="1758784108620254563" at="16,90,17,201" concept="1" />
+      <node id="1758784108620115413" at="11,0,13,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115413" at="13,0,16,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115413" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1758784108620115415" at="11,43,11,43" />
+      <scope id="1758784108620115418" at="13,77,14,202" />
+      <scope id="1758784108620254559" at="16,90,17,201" />
+      <scope id="1758784108620115413" at="11,0,13,0">
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <scope id="1758784108620115413" at="11,0,14,0">
+      <scope id="1758784108620115413" at="13,0,16,0">
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <scope id="1758784108620115413" at="14,0,17,0">
+      <scope id="1758784108620115413" at="16,0,19,0">
         <var name="target" id="1758784108620254560" />
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <unit id="1758784108620115413" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_Behavior" />
+      <unit id="1758784108620115413" at="10,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115429">
     <file name="GenerationContextOp_PropertyPatternRef_Behavior.java">
-      <node id="1758784108620115436" at="11,77,12,76" concept="4" />
-      <node id="1758784108620254584" at="14,90,15,75" concept="1" />
-      <node id="1758784108620115429" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115429" at="11,0,14,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115429" at="14,0,17,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1758784108620115431" at="9,43,9,43" />
-      <scope id="1758784108620115434" at="11,77,12,76" />
-      <scope id="1758784108620254580" at="14,90,15,75" />
-      <scope id="1758784108620115429" at="9,0,11,0">
+      <node id="1758784108620115436" at="13,77,14,206" concept="4" />
+      <node id="1758784108620254584" at="16,90,17,205" concept="1" />
+      <node id="1758784108620115429" at="11,0,13,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115429" at="13,0,16,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115429" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1758784108620115431" at="11,43,11,43" />
+      <scope id="1758784108620115434" at="13,77,14,206" />
+      <scope id="1758784108620254580" at="16,90,17,205" />
+      <scope id="1758784108620115429" at="11,0,13,0">
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <scope id="1758784108620115429" at="11,0,14,0">
+      <scope id="1758784108620115429" at="13,0,16,0">
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <scope id="1758784108620115429" at="14,0,17,0">
+      <scope id="1758784108620115429" at="16,0,19,0">
         <var name="target" id="1758784108620254581" />
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <unit id="1758784108620115429" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_Behavior" />
+      <unit id="1758784108620115429" at="10,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/5452844340287052613">

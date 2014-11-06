@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -31,23 +33,23 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
   public typeof_NamedTupleLiteral_InferenceRule() {
   }
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == (int) ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
+    if (!(ListSequence.fromList(SLinkOperations.getChildren(literal, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560910577l, "componentRef"))).count() == (int) ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560008022l, "tupleDeclaration")))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
       public Integer combine(Integer s, SNode ntd) {
-        return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
+        return s + ListSequence.fromList(SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"))).count();
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", null, errorTarget);
     }
 
-    SNode tdecl = SLinkOperations.getTarget(literal, "tupleDeclaration", false);
+    SNode tdecl = SLinkOperations.getTarget(literal, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560008022l, "tupleDeclaration"));
     if ((tdecl == null)) {
       return;
     }
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     // all generics are inferred in a tuple literal 
-    List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getTargets(tdecl, "typeVariableDeclaration", true)).select(new ISelector<SNode, SNode>() {
+    List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getChildren(tdecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode tp) {
         final SNode TP_typevar_4340163696368051056 = typeCheckingContext.createNewRuntimeTypesVariable();
         SNode tmp = typeCheckingContext.getRepresentative(TP_typevar_4340163696368051056);
@@ -57,13 +59,13 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     SNode newType = _quotation_createNode_bcpcms_a0i0b(tdecl, typeParam);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
-    for (SNode cref : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
-      SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(cref, "componentDeclaration", false), "type", true);
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+    for (SNode cref : ListSequence.fromList(SLinkOperations.getChildren(literal, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560910577l, "componentRef")))) {
+      SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(cref, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560595302l, "componentDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1239462974287l, "type"));
+      if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+        type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
       }
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cref, "value", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cref, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560837729l, "value"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "5117625608861536660", 0, null);
         typeCheckingContext.createGreaterThanInequality((SNode) type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "5117625608861536693", true), false, true, _info_12389875345);
       }
@@ -91,11 +93,11 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_3;

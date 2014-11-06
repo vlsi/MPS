@@ -64,4 +64,9 @@ public final class SReferenceLinkId {
     long ref = Long.parseLong(s.substring(split + 1));
     return new SReferenceLinkId(concept, ref);
   }
+
+  @Override
+  public String toString() {
+    return serialize();
+  }
 }

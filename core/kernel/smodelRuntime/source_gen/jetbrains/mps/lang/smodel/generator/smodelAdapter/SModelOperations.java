@@ -17,8 +17,9 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -26,6 +27,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SModelOperations {
   public SModelOperations() {
@@ -96,7 +99,7 @@ public class SModelOperations {
       } else if (roots) {
         ListSequence.fromList(resultNodes).addSequence(Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(((SNode) it), NameUtil.nodeFQName(concept));
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
           }
         }));
       } else {
@@ -172,9 +175,9 @@ public class SModelOperations {
         return null;
       }
       SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
-      return (l == null ? null : ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
+      return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540898l, "uuid")), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {

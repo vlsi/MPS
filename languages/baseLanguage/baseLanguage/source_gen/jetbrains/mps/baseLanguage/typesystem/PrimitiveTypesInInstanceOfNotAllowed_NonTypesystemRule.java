@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule extends Abst
   public PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule() {
   }
   public void applyRule(final SNode instanceOfExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOfExpression, "classType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")))) {
+    if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993305l, "classType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType"))))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instanceOfExpression, "primitive types in instanceof are not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1260930188116719807", null, errorTarget);
     }

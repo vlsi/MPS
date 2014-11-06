@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DeleteLogicalOperatorFromBehind {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -24,7 +26,7 @@ public class DeleteLogicalOperatorFromBehind {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "right", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right")));
     }
   }
   public static class DeleteLogicalOperatorFromBehind_BACKSPACE extends AbstractCellAction {
@@ -36,7 +38,7 @@ public class DeleteLogicalOperatorFromBehind {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "right", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right")));
     }
   }
 }

@@ -31,6 +31,8 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorVi
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 
@@ -44,7 +46,7 @@ public class Diagram1_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yfdxtz_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_yfdxtz_a0(editorContext, node));
     return editorCell;
@@ -53,7 +55,7 @@ public class Diagram1_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfdxtz_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createDiagram_yfdxtz_a0a(editorContext, node));
     return editorCell;
@@ -145,7 +147,7 @@ public class Diagram1_Editor extends DefaultNodeEditor {
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
       ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
-      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "rectangles", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getChildren(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 511002117671747962l, 511002117671748022l, "rectangles")), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }

@@ -16,6 +16,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class EmitInstruction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -61,14 +63,14 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tx9kns_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_tx9kns_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tx9kns_b2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_tx9kns_a2a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.pattern.structure.Pattern", false, false) == null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037775l, "jetbrains.mps.lang.pattern.structure.Pattern"), false, false) == null;
   }
   private EditorCell createRefNode_tx9kns_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

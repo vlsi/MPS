@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -47,11 +46,7 @@ public class CloneRoot_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -81,8 +76,8 @@ public class CloneRoot_Action extends BaseAction {
         SNode root = SNodeOperations.getContainingRoot(node);
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, true, true);
-        NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
+        NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, true, true);
+        NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, false);
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

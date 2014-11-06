@@ -6,6 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -13,7 +15,7 @@ public class any_type_comparable_with_nulltype_ComparisonRule extends Comparison
   public any_type_comparable_with_nulltype_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(node1, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
+    if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164118113764l, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) || SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268590033l, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor"))) {
       return false;
     }
     return true;

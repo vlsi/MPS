@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -21,7 +23,7 @@ public class check_ClassLikeProperty_NonTypesystemRule extends AbstractNonTypesy
   public check_ClassLikeProperty_NonTypesystemRule() {
   }
   public void applyRule(final SNode classLikeProperty, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(classLikeProperty, "type", true), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeProperty, "decl", false), "type", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{})))) {
+    if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(classLikeProperty, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeProperty, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308708689l, 8585153554445465961l, "decl")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010631473l, 5155329496663029311l, "type")), "virtual_toBaseLanguageType_1213877229718", new Object[]{})))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");

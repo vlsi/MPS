@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DivExpressionFraction_DataFlow extends DataFlowBuilder {
   public DivExpressionFraction_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "numerator", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "denominator", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1237100849157l, 1237102925695l, "numerator")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1237100849157l, 1237102926618l, "denominator")));
   }
 }

@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -52,7 +54,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
   private EditorCell createComponent_n84rmm_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAliasAndParms_Comp.ReplaceWith_SNodeOperation_cellMenu_n84rmm_a0a0()}));
     return editorCell;
@@ -68,8 +70,8 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n84rmm_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_n84rmm_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_n84rmm_b1a(editorContext, node));
@@ -77,18 +79,18 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).isNotEmpty();
   }
   private EditorCell createConstant_n84rmm_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_n84rmm_a1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracet");
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -151,10 +153,10 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no params");
       editorCell.setCellId("Constant_n84rmm_a1b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
-      style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+      style.set(StyleAttributes.DEFAULT_CARET_POSITION, 0, CaretPosition.FIRST);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -165,9 +167,9 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
     editorCell.setCellId("Constant_n84rmm_c1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracet");
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

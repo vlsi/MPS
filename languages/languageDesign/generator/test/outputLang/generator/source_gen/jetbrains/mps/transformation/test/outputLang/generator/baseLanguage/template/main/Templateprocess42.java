@@ -15,6 +15,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
@@ -43,7 +45,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039163");
-          SNodeAccessUtil.setProperty(tnode2, "value", "58");
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "58");
         } finally {
         }
         if (tnode2 != null) {
@@ -63,7 +65,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
                 final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                 try {
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
-                  SNodeAccessUtil.setProperty(tnode5, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(new PropertyMacroContext(context, null, propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0b0e))));
+                  SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(new PropertyMacroContext(context, null, propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0b0e))));
                 } finally {
                 }
                 if (tnode5 != null) {
@@ -75,7 +77,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
                 final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                 try {
                   environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039206");
-                  tnode6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode6, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~String.length():int")));
+                  tnode6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~String.length():int")));
                 } finally {
                 }
                 if (tnode6 != null) {

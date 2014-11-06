@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -39,7 +41,7 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zc016d_a0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.console.base.structure.History", false, false) == null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, "jetbrains.mps.console.base.structure.History"), false, false) == null;
   }
   private EditorCell createCollection_zc016d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -54,7 +56,7 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_zc016d_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -69,8 +71,8 @@ public class BLCommand_Editor extends DefaultNodeEditor {
       editorCell.setRole("body");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

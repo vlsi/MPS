@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -48,7 +50,7 @@ public class Add_Comparator_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "copyFrom", true) == null) && (SLinkOperations.getTarget(node, "initSize", true) == null) && (SLinkOperations.getTarget(node, "comparator", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom")) == null) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1562299158920737514l, "initSize")) == null) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1240247536947l, 2261417478148778174l, "comparator")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2261417478149151571");
@@ -69,7 +71,7 @@ public class Add_Comparator_Intention implements IntentionFactory {
       return "Specify Comparator";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "comparator", _quotation_createNode_1k32yi_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1240247536947l, 2261417478148778174l, "comparator"), _quotation_createNode_1k32yi_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"))), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType")))));
     }
     public IntentionDescriptor getDescriptor() {
       return Add_Comparator_Intention.this;
@@ -85,21 +87,21 @@ public class Add_Comparator_Intention implements IntentionFactory {
     SNode quotedNode_8 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "name", "a");
+    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "a");
     quotedNode_7 = (SNode) parameter_1;
     if (quotedNode_7 != null) {
-      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_7));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), HUtil.copyIfNecessary(quotedNode_7));
     }
-    quotedNode_3.addChild("parameter", quotedNode_4);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_5, "name", "b");
+    SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "b");
     quotedNode_8 = (SNode) parameter_2;
     if (quotedNode_8 != null) {
-      quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_8));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), HUtil.copyIfNecessary(quotedNode_8));
     }
-    quotedNode_3.addChild("parameter", quotedNode_5);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
-    quotedNode_3.addChild("body", quotedNode_6);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), quotedNode_6);
     return quotedNode_3;
   }
 }

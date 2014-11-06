@@ -5,32 +5,34 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlExternalId_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (SPropertyOperations.getBoolean(node, "isPublic")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029125l, "isPublic"))) {
       this.append("PUBLIC");
       this.append(" ");
-      if (isNotEmptyString(SPropertyOperations.getString(node, "publicId")) && SPropertyOperations.getString(node, "publicId").contains("'")) {
+      if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")).contains("'")) {
         this.append("\"");
-        this.append(SPropertyOperations.getString(node, "publicId"));
+        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")));
         this.append("\"");
       } else {
         this.append("'");
-        this.append(SPropertyOperations.getString(node, "publicId"));
+        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")));
         this.append("'");
       }
     } else {
       this.append("SYSTEM");
     }
     this.append(" ");
-    if (isNotEmptyString(SPropertyOperations.getString(node, "systemId")) && SPropertyOperations.getString(node, "systemId").contains("'")) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")).contains("'")) {
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, "systemId"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")));
       this.append("\"");
     } else {
       this.append("'");
-      this.append(SPropertyOperations.getString(node, "systemId"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")));
       this.append("'");
     }
 

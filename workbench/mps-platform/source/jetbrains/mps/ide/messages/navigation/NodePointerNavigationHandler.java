@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -37,9 +35,10 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
   @Override
   public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
-    SModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModule();
-    ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));
-
-    NavigationSupport.getInstance().openNode(context, node.resolve(MPSModuleRepository.getInstance()), focus, select);
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    final SNode resolved = node.resolve(mpsProject.getRepository());
+    if (resolved != null) {
+      NavigationSupport.getInstance().openNode(mpsProject, resolved, focus, select);
+    }
   }
 }

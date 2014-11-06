@@ -189,6 +189,16 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
         return;
       }
+      if ("content".equals(name)) {
+        if ("header".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_HEADER);
+        } else if ("root".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_ROOT);
+        } else {
+          throw new SAXException("unknown content attribute value: " + value);
+        }
+        return;
+      }
       super.handleAttribute(resultObject, name, value);
     }
     @Override
@@ -618,7 +628,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
       // can be root 
-      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), (attrs.getValue("role") == null ? null : fieldhelper.readNodeRole(attrs.getValue("role"))));
+      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), fieldhelper.readNodeRole(attrs.getValue("role")));
     }
     @Override
     protected String[] requiredAttributes() {

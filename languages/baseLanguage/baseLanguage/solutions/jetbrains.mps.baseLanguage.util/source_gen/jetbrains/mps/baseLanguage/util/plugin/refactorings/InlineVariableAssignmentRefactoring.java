@@ -14,6 +14,9 @@ import java.util.HashSet;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,9 +47,9 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     SNode newSelection = null;
     for (SNode sourceNode : this.getNodesToRefactor()) {
       // <node> 
-      for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
-        if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == myVariable) {
-          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, "initializer", true)));
+      for (SNode reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(sourceNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SConcept[]{}))) {
+        if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == myVariable) {
+          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
         }
       }
     }
@@ -57,18 +60,18 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     List<SNode> result = new ArrayList<SNode>();
     for (ReadInstruction read : SetSequence.fromSet(this.myReadInstructions)) {
       SNode node = (SNode) read.getSource();
-      if (!((SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.UnaryMinus")))) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"))) {
+      if (!((SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8064396509828172209l, "jetbrains.mps.baseLanguage.structure.UnaryMinus"))))) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4957392803029437192l, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression")))) {
         ListSequence.fromList(result).addElement((node));
       }
     }
     return result;
   }
   public static SNode findStatementList(SNode node) {
-    SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-    if (SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
+    SNode body = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
+    if (SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) == null) {
       return body;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Object[]{}))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(body), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")), "virtual_isExecuteSynchronous_1230212745736", new Object[]{}))) {
       return body;
     }
     return findStatementList(body);

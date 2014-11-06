@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -14,16 +16,16 @@ public class IBLDeprecatable_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "isDeprecated")) {
+    if (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"))) {
       return true;
     }
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation")) {
-      for (SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
-        SNode annotationLink = SLinkOperations.getTarget(annotation, "annotation", false);
-        if ((annotation == null) || (annotationLink == null) || SPropertyOperations.getString(annotationLink, "name") == null) {
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, "jetbrains.mps.baseLanguage.structure.HasAnnotation"))) {
+      for (SNode annotation : SLinkOperations.getChildren(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, "jetbrains.mps.baseLanguage.structure.HasAnnotation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))) {
+        SNode annotationLink = SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
+        if ((annotation == null) || (annotationLink == null) || SPropertyOperations.getString(annotationLink, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null) {
           continue;
         }
-        if (SPropertyOperations.getString(annotationLink, "name").equals("Deprecated")) {
+        if (SPropertyOperations.getString(annotationLink, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("Deprecated")) {
           return true;
         }
       }
@@ -31,13 +33,13 @@ public class IBLDeprecatable_Behavior {
     return false;
   }
   public static boolean call_shouldDeprecatedDocBeVisible_8362517669638582065(SNode thisNode) {
-    return (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null));
+    return (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")) && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null));
   }
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "isDeprecated", "" + (true));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (true));
   }
   public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "isDeprecated", "" + (false));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
   }
   public static String virtual_getMessage_1225207468592(SNode thisNode) {
     StringBuilder result = new StringBuilder();

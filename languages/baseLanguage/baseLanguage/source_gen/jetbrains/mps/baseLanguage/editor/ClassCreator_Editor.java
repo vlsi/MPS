@@ -23,6 +23,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -50,7 +52,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_53xyyk_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_53xyyk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_53xyyk_b0(editorContext, node));
@@ -63,7 +65,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_53xyyk_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -79,7 +81,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       editorCell.setRole("baseMethodDeclaration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ClassCreator_Editor.ReplaceWith_DefaultClassCreator_cellMenu_53xyyk_a0b0(), new ClassCreator_Editor.ClassCreator_constructorDeclaration_cellMenu_53xyyk_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -122,7 +124,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_53xyyk_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_53xyyk_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_53xyyk_b2a(editorContext, node));
@@ -130,16 +132,16 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_53xyyk_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter"))).isNotEmpty();
   }
   private EditorCell createConstant_53xyyk_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_53xyyk_a2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -201,8 +203,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_53xyyk_c2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -210,7 +212,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_53xyyk_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -224,7 +226,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_53xyyk_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{}) : "<unknown>");
+        return ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "virtual_getFqName_1213877404258", new Object[]{}) : "<unknown>");
       }
       public void setText(String s) {
       }

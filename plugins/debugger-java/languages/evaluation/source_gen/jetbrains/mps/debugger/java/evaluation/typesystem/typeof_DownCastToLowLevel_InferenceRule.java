@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -19,7 +21,7 @@ public class typeof_DownCastToLowLevel_InferenceRule extends AbstractInferenceRu
   }
   public void applyRule(final SNode downCastToLowLevel, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      final SNode e = typeCheckingContext.typeOf(SLinkOperations.getTarget(downCastToLowLevel, "expression", true), "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)", "7915630211773500867", true);
+      final SNode e = typeCheckingContext.typeOf(SLinkOperations.getTarget(downCastToLowLevel, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 7915630211773477333l, 7915630211773477790l, "expression")), "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)", "7915630211773500867", true);
       typeCheckingContext.whenConcrete(e, new Runnable() {
         public void run() {
           {
@@ -29,7 +31,7 @@ public class typeof_DownCastToLowLevel_InferenceRule extends AbstractInferenceRu
               {
                 SNode _nodeToCheck_1029348928467 = downCastToLowLevel;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)", "7915630211773498604", 0, null);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)", "7915630211773498601", true), (SNode) SLinkOperations.getTarget(coercedNode_pc09cd_a0a0, "lowType", true), _info_12389875345);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)", "7915630211773498601", true), (SNode) SLinkOperations.getTarget(coercedNode_pc09cd_a0a0, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691673l, "lowType")), _info_12389875345);
               }
             } else {
             }

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -21,12 +23,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     super(parameters);
     List<SNode> output = this.myAnalyzer.getOutputVariables();
     if (ListSequence.fromList(output).isNotEmpty()) {
-      this.myOutputVariable = SNodeOperations.cast(ListSequence.fromList(output).first(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+      this.myOutputVariable = SNodeOperations.cast(ListSequence.fromList(output).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     }
     for (SNode statement : ListSequence.fromList(this.myStatements)) {
-      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        SNode tmp = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-        if (SLinkOperations.getTarget(tmp, "localVariableDeclaration", true) == this.myOutputVariable) {
+      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))) {
+        SNode tmp = SNodeOperations.cast(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+        if (SLinkOperations.getTarget(tmp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")) == this.myOutputVariable) {
           this.myDeclarationStatement = tmp;
         }
       }
@@ -35,12 +37,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   @Override
   protected void modifyPartToExtract() {
     SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-    SLinkOperations.setTarget(returnStatement, "expression", this.createReference(this.myOutputVariable), true);
+    SLinkOperations.setTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), this.createReference(this.myOutputVariable));
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
   @Override
   public SNode getMethodType() {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, "type", true));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
   }
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
@@ -49,10 +51,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         SNode methodCall = ExtractMethodWithOutputVariable.this.createMethodCall(match, methodDeclaration);
         List<SNode> statements = match.getNodes();
         if ((ExtractMethodWithOutputVariable.this.myDeclarationStatement != null)) {
-          SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), methodCall);
         } else {
           SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-          SLinkOperations.setTarget(newStatement, "expression", _quotation_createNode_n3576q_a0b0a2a0a0a0f(methodCall, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{})), true);
+          SLinkOperations.setTarget(newStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), _quotation_createNode_n3576q_a0b0a2a0a0a0f(methodCall, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{})));
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }
         for (SNode statement : ListSequence.fromList(statements)) {
@@ -71,11 +73,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("rValue", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("lValue", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

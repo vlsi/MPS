@@ -30,8 +30,8 @@ public class ActionTestSidetransformAnotherAbstractChild_Editor extends DefaultN
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sidetransform another abstract child");
     editorCell.setCellId("Constant_oo5wc4_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

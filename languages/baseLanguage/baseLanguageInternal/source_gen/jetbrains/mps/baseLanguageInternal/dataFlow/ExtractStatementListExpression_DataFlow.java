@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ExtractStatementListExpression_DataFlow extends DataFlowBuilder {
   public ExtractStatementListExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "stmts", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "innerExpr", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3196918548952765095l, 3196918548952767737l, "stmts")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3196918548952765095l, 3196918548952839504l, "innerExpr")));
   }
 }

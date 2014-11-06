@@ -5,6 +5,8 @@ package jetbrains.mps.samples.heating.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,14 +19,14 @@ public class MoveItemToTheRightPositionWithinDailyPlan_QuickFix extends QuickFix
     return "Move the item to the correct position within the daily plan";
   }
   public void execute(SNode node) {
-    final SNode item = SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot");
-    if (SPropertyOperations.getInteger(item, "start") < 0) {
+    final SNode item = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot"));
+    if (SPropertyOperations.getInteger(item, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) < 0) {
       return;
     }
-    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(item), "jetbrains.mps.samples.heating.structure.DailyPlan");
-    SNode nextSibling = ListSequence.fromList(SLinkOperations.getTargets(dailyPlan, "items", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(item), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan"));
+    SNode nextSibling = ListSequence.fromList(SLinkOperations.getChildren(dailyPlan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, "start") > SPropertyOperations.getInteger(item, "start");
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) > SPropertyOperations.getInteger(item, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"));
       }
     });
     if ((nextSibling != null)) {

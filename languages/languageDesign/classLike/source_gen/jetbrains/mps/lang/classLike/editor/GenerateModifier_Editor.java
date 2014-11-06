@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -39,7 +41,7 @@ public class GenerateModifier_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q4qyfk_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_q4qyfk_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_q4qyfk_b1a(editorContext, node));
@@ -47,14 +49,14 @@ public class GenerateModifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_q4qyfk_a1a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMember", false, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, "jetbrains.mps.lang.classLike.structure.ClassLikeMember"), false, false), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010631473l, "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"));
   }
   private EditorCell createConstant_q4qyfk_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_q4qyfk_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -80,7 +82,7 @@ public class GenerateModifier_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_q4qyfk_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

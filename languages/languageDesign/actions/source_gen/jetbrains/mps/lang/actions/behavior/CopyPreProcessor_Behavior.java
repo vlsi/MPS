@@ -5,12 +5,14 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CopyPreProcessor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getClassName_5948027493682347861(SNode thisNode) {
     SNode parent = (SNode) SNodeOperations.getParent(thisNode);
-    return SPropertyOperations.getString(parent, "name") + "_CopyPreProcessor_" + SNodeOperations.getIndexInParent(thisNode);
+    return SPropertyOperations.getString(parent, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_CopyPreProcessor_" + SNodeOperations.getIndexInParent(thisNode);
   }
 }

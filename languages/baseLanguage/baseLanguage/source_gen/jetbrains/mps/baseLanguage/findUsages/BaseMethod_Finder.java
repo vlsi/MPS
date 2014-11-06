@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -39,10 +41,10 @@ public class BaseMethod_Finder extends GeneratedFinder {
   }
   @Override
   public boolean isApplicable(SNode node) {
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) == null && SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"), false, false) == null) {
       return false;
     }
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")))) {
       return false;
     }
     return true;
@@ -53,9 +55,9 @@ public class BaseMethod_Finder extends GeneratedFinder {
       monitor.start("Base method", 3);
       List<SNode> allAncestors = new ArrayList<SNode>();
       SNode method = node;
-      boolean isStatic = SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-      SNode classNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      SNode interfaceNode = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Interface", false, false);
+      boolean isStatic = SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+      SNode classNode = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+      SNode interfaceNode = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"), false, false);
       if (classNode != null) {
         ListSequence.fromList(allAncestors).addElement(classNode);
         ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder", classNode, scope, monitor.subTask(1))));
@@ -69,14 +71,14 @@ public class BaseMethod_Finder extends GeneratedFinder {
       for (SNode ancestor : ListSequence.fromList(allAncestors)) {
         Iterable<SNode> classMethods = null;
         if (isStatic) {
-          if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            classMethods = ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+          if (SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+            classMethods = ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
           }
         } else {
-          if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+          if (SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
           } else {
-            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"));
+            classMethods = Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")));
           }
         }
         for (SNode classMethod : Sequence.fromIterable(classMethods)) {

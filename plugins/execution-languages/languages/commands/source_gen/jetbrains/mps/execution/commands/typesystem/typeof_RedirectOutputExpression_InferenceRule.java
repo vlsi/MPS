@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,19 +20,19 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
   }
   public void applyRule(final SNode redirectOutputExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, "processHandler", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281812l, 856705193941281813l, "processHandler"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863838", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863844", true), (SNode) _quotation_createNode_91b0fg_a0a0b(), false, false, _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, "listener", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(redirectOutputExpression, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281812l, 856705193941281814l, "listener"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863848", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863854", true), (SNode) _quotation_createNode_91b0fg_a0b0b(), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = redirectOutputExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127559580", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127559530", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(redirectOutputExpression, "processHandler", true), "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127610317", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127559530", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(redirectOutputExpression, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281812l, 856705193941281813l, "processHandler")), "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127610317", true), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -55,7 +57,7 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)"), facade.createNodeId("~ProcessListener")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)"), facade.createNodeId("~ProcessListener")));
     return quotedNode_1;
   }
 }

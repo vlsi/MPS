@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -46,7 +48,7 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     return editorCell;
   }
   private static boolean renderingCondition_8khnja_a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "name", true) != null) || (SLinkOperations.getTarget(node, "value", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960369l, "name")) != null) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960370l, "value")) != null);
   }
   private EditorCell createRefNode_8khnja_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -58,8 +60,8 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
       editorCell.setRole("name");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
@@ -78,8 +80,8 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8khnja_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -110,6 +112,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     return editorCell;
   }
   private static boolean renderingCondition_8khnja_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "name", true) == null) && (SLinkOperations.getTarget(node, "value", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960369l, "name")) == null) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960370l, "value")) == null);
   }
 }

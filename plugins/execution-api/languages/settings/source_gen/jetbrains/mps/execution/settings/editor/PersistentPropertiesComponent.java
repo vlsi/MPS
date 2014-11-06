@@ -56,7 +56,7 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_42zii1_b0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_42zii1_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_42zii1_b1a0(editorContext, node));
@@ -77,7 +77,7 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_42zii1_b1a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_42zii1_a1b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_42zii1_b1b0a(editorContext, node));
@@ -130,7 +130,7 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_42zii1_c1a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -139,7 +139,7 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_42zii1_d1a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_42zii1_a3b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_42zii1_b3b0a(editorContext, node));

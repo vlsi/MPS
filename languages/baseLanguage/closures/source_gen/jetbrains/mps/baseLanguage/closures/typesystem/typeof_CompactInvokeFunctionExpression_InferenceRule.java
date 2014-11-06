@@ -11,6 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +24,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
   }
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
+    for (SNode p : SLinkOperations.getChildren(invoke, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1235746970280l, 1235747002942l, "parameter"))) {
       final SNode T_typevar_668767903263948977 = typeCheckingContext.createNewRuntimeTypesVariable();
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
@@ -35,7 +37,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     }
     final SNode ret_typevar_668767903263948995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1235746970280l, 1235746996653l, "function"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127231", 0, null);
       typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_ojnxkp_a0d0b(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127233", true), false, true, _info_12389875345);
     }
@@ -57,7 +59,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
                 {
                   SNode _nodeToCheck_1029348928467 = invoke;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720529", 0, null);
-                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720538", true), (SNode) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(typeCheckingContext.getExpandedNode(reifiedRet), "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)).first(), _info_12389875345);
+                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720538", true), (SNode) ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(typeCheckingContext.getExpandedNode(reifiedRet), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).first(), _info_12389875345);
                 }
               } else {
                 SNode _nodeToCheck_1029348928467 = invoke;
@@ -91,12 +93,12 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("resultType", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

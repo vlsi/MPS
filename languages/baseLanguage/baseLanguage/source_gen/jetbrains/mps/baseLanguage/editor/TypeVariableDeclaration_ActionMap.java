@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,7 +30,7 @@ public class TypeVariableDeclaration_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.setNewChild(node, "bound", "jetbrains.mps.baseLanguage.structure.Type");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"), "jetbrains.mps.baseLanguage.structure.Type");
     }
   }
   public static class TypeVariableDeclaration_ActionMap_DELETE extends AbstractCellAction {
@@ -40,9 +42,9 @@ public class TypeVariableDeclaration_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
-      if (ListSequence.fromList(SLinkOperations.getTargets(parent, "typeVariableDeclaration", true)).isEmpty()) {
-        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"));
+      if (ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isEmpty()) {
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")), "TYPE_VARIABLES_ANCHOR");
       }
     }
   }
@@ -55,9 +57,9 @@ public class TypeVariableDeclaration_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
-      if (ListSequence.fromList(SLinkOperations.getTargets(parent, "typeVariableDeclaration", true)).isEmpty()) {
-        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"));
+      if (ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isEmpty()) {
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, "jetbrains.mps.baseLanguage.structure.GenericDeclaration")), "TYPE_VARIABLES_ANCHOR");
       }
     }
   }

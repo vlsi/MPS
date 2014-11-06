@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,7 +16,7 @@ public class Node_GetChildrenOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getLinkQualifier_3476105411552591984(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier")), "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier");
+    return SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 5168775467716640652l, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"));
   }
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;

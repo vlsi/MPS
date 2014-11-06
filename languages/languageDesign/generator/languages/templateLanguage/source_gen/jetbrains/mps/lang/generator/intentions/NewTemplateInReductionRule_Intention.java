@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -58,7 +60,7 @@ public class NewTemplateInReductionRule_Intention implements IntentionFactory {
     if (editorCell == null) {
       return false;
     }
-    return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence")) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence"))), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216320260188");
@@ -79,21 +81,21 @@ public class NewTemplateInReductionRule_Intention implements IntentionFactory {
       return "New Template";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode applicableConcept = SLinkOperations.getTarget(node, "applicableConcept", false);
+      SNode applicableConcept = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
       String name = CreateFromUsageUtil.getText(editorContext);
       if (name == null || name.length() == 0) {
         name = "reduce_";
         if (applicableConcept != null) {
-          name += SPropertyOperations.getString(applicableConcept, "name");
+          name += SPropertyOperations.getString(applicableConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       }
       SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
-      SPropertyOperations.set(t, "name", name);
-      SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
+      SPropertyOperations.set(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
+      SLinkOperations.setTarget(t, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"), applicableConcept);
       MacroIntentionsUtil.copyVirtualPackage(t, node);
       // make reference 
-      SNode tr = SNodeFactoryOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
-      SLinkOperations.setTarget(tr, "template", t, false);
+      SNode tr = SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence"), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+      SLinkOperations.setTarget(tr, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), t);
       SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
     public IntentionDescriptor getDescriptor() {

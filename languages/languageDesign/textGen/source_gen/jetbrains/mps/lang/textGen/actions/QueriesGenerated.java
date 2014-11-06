@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -32,7 +34,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          List<SNode> langTextGenComponents = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", false);
+          List<SNode> langTextGenComponents = SNodeOperations.getNodeAncestors(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false);
           SNode langTextGen = ListSequence.fromList(langTextGenComponents).first();
           if (langTextGen != null) {
             return LanguageTextGenDeclaration_Behavior.call_getParameters_1234799367488(langTextGen);
@@ -58,7 +60,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "value", NameUtil.stripQuotes(pattern, "\"", "\""));
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, 1237305576108l, "value"), NameUtil.stripQuotes(pattern, "\"", "\""));
             return result;
           }
           public boolean hasSubstitute() {
@@ -82,7 +84,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "withSeparator", "" + (true));
+        SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, "jetbrains.mps.lang.textGen.structure.CollectionAppendPart")), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -102,6 +104,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1237983685138(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"));
   }
 }

@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,8 +21,8 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   public typeof_TemplateFunctionParameter_outputNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
-    if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
+    SNode parentMacro = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")}, false, false);
+    if (SNodeOperations.isInstanceOf(parentMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, "jetbrains.mps.lang.generator.structure.ReferenceMacro"))) {
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099240563", 0, null);
@@ -28,10 +31,10 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
       return;
     }
     SNode mapperFunc;
-    if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
+    if (SNodeOperations.isInstanceOf(parentMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"))) {
+      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, 1170725844563l, "mapperFunction"));
     } else {
-      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
+      mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, 1170871384825l, "mapperFunction"));
     }
     //  ---- 
     if (mapperFunc != null) {
@@ -72,7 +75,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

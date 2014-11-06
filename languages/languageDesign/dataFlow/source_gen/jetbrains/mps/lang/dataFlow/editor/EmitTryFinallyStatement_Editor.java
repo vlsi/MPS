@@ -36,7 +36,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rf0pho_a0");
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_Instruction(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -51,8 +51,8 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("tryPart");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -69,7 +69,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rf0pho_c0");
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_Instruction(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -84,8 +84,8 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("finallyPart");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -102,7 +102,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rf0pho_e0");
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_Instruction(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

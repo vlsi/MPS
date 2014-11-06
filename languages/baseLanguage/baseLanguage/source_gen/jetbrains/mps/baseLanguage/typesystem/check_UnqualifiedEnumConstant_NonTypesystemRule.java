@@ -10,13 +10,15 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -39,7 +41,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
 
     // FIXME: duplicate code with JavaToMpsConverter 
 
-    SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+    SReference ref = SNodeOperations.getReference(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
     if (!(ref instanceof DynamicReference)) {
       return;
     }
@@ -50,10 +52,10 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     // now we can try to search 
     final String enumConstName = ((DynamicReference) ref).getResolveInfo();
 
-    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getAncestors(varRef, "jetbrains.mps.baseLanguage.structure.EnumClass", false))) {
+    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getNodeAncestors(varRef, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false))) {
       SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(enclosingEnum)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+          return enumConstName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
       if ((enumConst == null)) {
@@ -61,8 +63,8 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       }
 
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", enclosingEnum, false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), enclosingEnum);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -76,10 +78,10 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     }
 
     SNode root = SNodeOperations.getContainingRoot(varRef);
-    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+    if (!(SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
       return;
     }
-    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"));
+    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"));
     if ((javaImports == null)) {
       return;
     }
@@ -97,14 +99,14 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
         // if we meet <ourName> in java code then it must strictly reference this import, not any other 
         return;
       }
-      if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+      if (!(SNodeOperations.isInstanceOf(enumClassCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
         return;
       }
 
       // Q: maybe not findFirst, but rather fail if there are more than one... 
-      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))).findFirst(new IWhereFilter<SNode>() {
+      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(enumClassCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+          return enumConstName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
 
@@ -114,8 +116,8 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
 
       // success 
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(enumClassCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -130,17 +132,17 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     }
 
     for (SNode onDemandImport : Sequence.fromIterable(JavaImports_Behavior.call_staticOnDemand_5230012391903366883(javaImports))) {
-      SNode claz = ResolveUnknownUtil.findClass(varRef, SPropertyOperations.getString(onDemandImport, "tokens"));
+      SNode claz = ResolveUnknownUtil.findClass(varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")));
       if ((claz == null)) {
         continue;
       }
-      if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+      if (!(SNodeOperations.isInstanceOf(claz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
         continue;
       }
 
-      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))).findFirst(new IWhereFilter<SNode>() {
+      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(claz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+          return enumConstName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
       if ((enumConst == null)) {
@@ -148,8 +150,8 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       }
 
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(claz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
       {
         MessageTarget errorTarget = new NodeMessageTarget();

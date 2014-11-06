@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -19,6 +21,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SReference;
@@ -28,8 +31,8 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
   public void applyRule(final SNode foreachStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode iterableType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true));
-    if (SNodeOperations.isInstanceOf(iterableType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+    SNode iterableType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144226303539l, 1144226360166l, "iterable")));
+    if (SNodeOperations.isInstanceOf(iterableType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
       return;
     }
     {
@@ -37,12 +40,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       SNode coercedNode_gn1qzs_c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_c0);
       if (coercedNode_gn1qzs_c0 != null) {
       } else {
-        SNode variableType = SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true);
+        SNode variableType = SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
         // not an iterable or an erasure 
         if (!((MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a0c0a2a2a1())))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ? variableType : SLinkOperations.getTarget(foreachStatement, "variable", true)), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ? variableType : SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable"))), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
           }
         }
       }
@@ -72,12 +75,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
         }
         {
           SNodeReference pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0b0a0a0a0a0c0b;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gn1qzs_a0a2a.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_gn1qzs_a0a2a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
         {
-          String childRole_gn1qzs_ = "parameter";
+          SContainmentLink childRole_gn1qzs_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           if (!(PatternUtil.hasNChildren(nodeToMatch_gn1qzs_a0a2a, childRole_gn1qzs_, 1))) {
             return false;
           }
@@ -110,7 +113,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
   private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0b0a0a0a0a0c0b = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");

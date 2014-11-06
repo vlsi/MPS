@@ -13,9 +13,10 @@
           <sourceRoot location="." />
         </modelRoot>
       </models>
-      <external-templates>
-        <generator generatorUID="83dcee1d-5200-4734-aa72-fc872db9c947(jetbrains.mps.samples.generator_demo.demoLang5#3978102045101384263)" />
-      </external-templates>
+      <external-templates />
+      <dependencies>
+        <dependency reexport="false" scope="design">83dcee1d-5200-4734-aa72-fc872db9c947(jetbrains.mps.samples.generator_demo.demoLang5#3978102045101384263)</dependency>
+      </dependencies>
       <usedLanguages>
         <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
         <usedLanguage>d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)</usedLanguage>

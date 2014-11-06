@@ -19,6 +19,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
@@ -89,7 +91,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_n0gj60_a2a(SNode node, EditorContext editorContext) {
-    return neq_n0gj60_a0a0g(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
+    return neq_n0gj60_a0a0g(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
   public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0() {
@@ -101,9 +103,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
       if (eq_n0gj60_a0b0d7(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
-        SLinkOperations.setTarget(node, "query", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null));
       }
     }
     public boolean isReferentPresentation() {
@@ -136,7 +138,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_n0gj60_a3a(SNode node, EditorContext editorContext) {
-    return eq_n0gj60_a0a0j(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
+    return eq_n0gj60_a0a0j(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
   public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0 extends AbstractCellMenuPart_Generic_Group {
     public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0() {
@@ -148,8 +150,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query")));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;

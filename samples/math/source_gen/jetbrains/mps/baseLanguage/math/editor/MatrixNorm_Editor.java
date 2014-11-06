@@ -71,8 +71,8 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_deg");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_SIZE, 10);
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.FONT_SIZE, 0, 10);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

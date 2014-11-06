@@ -82,10 +82,10 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_clzyhh_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+      style.set(StyleAttributes.UNDERLINED, 0, true);
+      style.set(StyleAttributes.EDITABLE, 0, false);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
@@ -105,7 +105,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_clzyhh_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

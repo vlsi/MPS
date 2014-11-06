@@ -15,6 +15,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
@@ -52,14 +54,14 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x6ljyw_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_x6ljyw_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_x6ljyw_b1a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext) {
-    return neq_x6ljyw_a0a0e(SPropertyOperations.getString(node, "modelUID"), "*");
+    return neq_x6ljyw_a0a0e(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")), "*");
   }
   private EditorCell createConstant_x6ljyw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");

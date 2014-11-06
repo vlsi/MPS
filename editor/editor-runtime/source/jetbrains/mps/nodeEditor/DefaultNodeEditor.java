@@ -20,9 +20,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -42,7 +42,7 @@ public class DefaultNodeEditor implements ConceptEditor {
 
   @Override
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new DefaultInspectorCell(editorContext, node, SNodeUtil.getDebugText(node), true);
+    return new DefaultInspectorCell(editorContext, node, SNodeOperations.getDebugText(node), true);
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {

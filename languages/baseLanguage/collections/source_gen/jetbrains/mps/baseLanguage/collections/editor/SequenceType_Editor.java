@@ -20,6 +20,8 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,9 +46,9 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceType_Editor.SequenceType_component_cellMenu_z5ycp4_a0a0()}));
     return editorCell;
@@ -64,7 +66,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_z5ycp4_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_z5ycp4_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z5ycp4_b1a(editorContext, node));
@@ -72,14 +74,14 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_z5ycp4_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "elementType", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType")) != null);
   }
   private EditorCell createConstant_z5ycp4_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_z5ycp4_a1a");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_LeftAngleBracket(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +110,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_z5ycp4_c1a");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_RightAngleBracket(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

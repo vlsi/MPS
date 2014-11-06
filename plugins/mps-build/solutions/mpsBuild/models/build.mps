@@ -8,6 +8,8 @@
     <lang id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" name="jetbrains.mps.ide.build" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/202934866059043946" name="jetbrains.mps.build.structure.BuildLayout_EchoProperties" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/202934866059043959" name="jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/244868996532454372" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithDate" />
@@ -16,6 +18,7 @@
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/322010710375805242" name="jetbrains.mps.build.mps.structure.BuildMps_DevKitRef" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/322010710375832938" name="jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/322010710375832954" name="jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution" />
+    <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" />
@@ -55,6 +58,7 @@
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4380385936562003279" name="jetbrains.mps.build.structure.BuildString" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183250894" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary" />
@@ -62,6 +66,7 @@
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904287794596" name="jetbrains.mps.build.structure.BuildInputFiles" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051100" name="jetbrains.mps.build.structure.BuildFileIncludeSelector" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051111" name="jetbrains.mps.build.structure.BuildFileExcludeSelector" />
+    <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5253498789149585690" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5253498789149588970" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" />
@@ -88,7 +93,9 @@
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683370806" name="jetbrains.mps.build.structure.BuildLayout_FileStub" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/7259033139236285166" name="jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050074" name="jetbrains.mps.build.structure.BuildLayout_Jar" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" />
@@ -396,7 +403,7 @@
         <node concept="219m.3717132724152913083" id="2867287323691438271" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="2867287323691438272" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="2867287323691438274" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="7181125477683295472" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="7181125477683295472" resolveInfo="lib" />
             </node>
           </node>
         </node>
@@ -406,7 +413,7 @@
         <node concept="219m.3717132724152913083" id="2867287323691438276" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="2867287323691438277" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="2867287323691438279" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="7181125477683417237" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="7181125477683417237" resolveInfo="lib" />
             </node>
           </node>
         </node>
@@ -2146,18 +2153,6 @@
             </node>
             <node concept="bxtc.1265949165890536423" id="2540145662854758351" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <reference role="bxtc.1265949165890536423.1265949165890536425" target="8939513996048535701" resolveInfo="jetbrains.mps.baseLanguage.logging" />
-              <node concept="bxtc.4356762679305675652" id="4356762679305971795" role="bxtc.1265949165890536423.4356762679305730677" info="ng">
-                <property role="bxtc.4356762679305675652.4356762679305675654" value="/lib/commons-logging-1.1.1.jar" />
-                <node concept="219m.7389400916848153117" id="4356762679305971797" role="bxtc.4356762679305675652.4356762679305675653" info="ng">
-                  <reference role="219m.7389400916848153117.7389400916848153130" target="1277685309310599419" resolveInfo="mps_home" />
-                  <node concept="219m.8618885170173601777" id="4356762679305971798" role="219m.7321017245476976379.7321017245477039051" info="nn">
-                    <property role="219m.8618885170173601777.8618885170173601779" value="lib" />
-                    <node concept="219m.8618885170173601777" id="4356762679305971799" role="219m.8618885170173601777.8618885170173601778" info="nn">
-                      <property role="219m.8618885170173601777.8618885170173601779" value="commons-logging-1.1.1.jar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
             <node concept="bxtc.1265949165890536423" id="3551700539768569628" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <reference role="bxtc.1265949165890536423.1265949165890536425" target="3551700539768510065" resolveInfo="jetbrains.mps.baseLanguage.logging.runtime" />
@@ -3767,6 +3762,12 @@
             <node concept="bxtc.5253498789149585690" id="1881779774793000362" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1881779774792679190" resolveInfo="jetbrains.mps.lang.migration" />
+            </node>
+          </node>
+          <node concept="bxtc.7259033139236285166" id="2039428400891215432" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="2039428400891215433" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536322" resolveInfo="jetbrains.mps.lang.typesystem" />
             </node>
           </node>
           <node concept="219m.7389400916848153117" id="7507666976388975029" role="bxtc.322010710375871467.322010710375956261" info="ng">
@@ -5787,12 +5788,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705590" resolveInfo="MPS.Core" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060833484" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060833485" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379914" resolveInfo="jetbrains.mps.baseLanguageInternal#1238251529692" />
-              </node>
-            </node>
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612484956" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.4278635856200794926" id="2488570609612484955" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
@@ -6046,12 +6041,6 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506380167" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536566" resolveInfo="jetbrains.mps.kernel" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060829770" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060829771" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
               </node>
             </node>
           </node>
@@ -6898,18 +6887,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536584" resolveInfo="jetbrains.mps.runtime" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060826052" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060826053" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060826054" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060826055" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506381025" resolveInfo="jetbrains.mps.lang.smodel#1139186730696" />
-              </node>
-            </node>
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612483162" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612483161" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
@@ -7135,12 +7112,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="9200313594506415364" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="9200313594506415365" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379795" resolveInfo="jetbrains.mps.baseLanguage#1129914002933" />
-              </node>
-            </node>
           </node>
           <node concept="bxtc.3189788309731981027" id="2488570609612484005" role="bxtc.3189788309731840248.3189788309731917348" info="ng">
             <reference role="bxtc.3189788309731981027.3189788309731981028" target="8939513996048536560" resolveInfo="jetbrains.mps.dataFlow.runtime" />
@@ -7255,12 +7226,6 @@
               <node concept="bxtc.5253498789149585690" id="4511456881918828445" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535488" resolveInfo="jetbrains.mps.baseLanguageInternal" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060822334" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060822335" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
               </node>
             </node>
           </node>
@@ -7484,7 +7449,7 @@
             <property role="bxtc.5253498789149381388.1500819558096356884" value="false" />
             <node concept="bxtc.7259033139236285166" id="9200313594506380495" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
               <node concept="bxtc.5253498789149585690" id="9200313594506380496" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+                <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705590" resolveInfo="MPS.Core" />
               </node>
             </node>
@@ -7498,12 +7463,6 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506380500" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536126" resolveInfo="jetbrains.mps.lang.project" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="6441320829764811827" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="6441320829764811828" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
               </node>
             </node>
             <node concept="bxtc.7259033139236285166" id="6441320829764811829" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
@@ -7716,12 +7675,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535976" resolveInfo="jetbrains.mps.lang.generator" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="5940629734060806071" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="5940629734060806072" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506380726" resolveInfo="jetbrains.mps.lang.pattern#1174810948060" />
-              </node>
-            </node>
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612483543" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612483542" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
@@ -7912,6 +7865,12 @@
               <node concept="bxtc.5253498789149585690" id="6620885790437825987" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379795" resolveInfo="jetbrains.mps.baseLanguage#1129914002933" />
+              </node>
+            </node>
+            <node concept="bxtc.7259033139236285166" id="2338220375237947977" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+              <node concept="bxtc.5253498789149585690" id="2338220375237947978" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506381025" resolveInfo="jetbrains.mps.lang.smodel#1139186730696" />
               </node>
             </node>
           </node>
@@ -8167,12 +8126,6 @@
             <property role="asn4.1169194658468.1169194664001" value="jetbrains.mps.lang.classLike#3751132065236752909" />
             <property role="bxtc.322010710375871467.322010710375892619" value="cedbe277-2e6e-42bf-ae23-90ac9db5a8e3" />
             <property role="bxtc.5253498789149381388.1500819558096356884" value="false" />
-            <node concept="bxtc.7259033139236285166" id="1881779774792793129" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="1881779774792793130" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379914" resolveInfo="jetbrains.mps.baseLanguageInternal#1238251529692" />
-              </node>
-            </node>
             <node concept="bxtc.7259033139236285166" id="1881779774792793131" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
               <node concept="bxtc.5253498789149585690" id="1881779774792793132" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
@@ -8186,6 +8139,9 @@
           <property role="asn4.1169194658468.1169194664001" value="jetbrains.mps.lang.migration" />
           <property role="bxtc.322010710375871467.322010710375892619" value="90746344-04fd-4286-97d5-b46ae6a81709" />
           <property role="bxtc.5253498789149381388.1500819558096356884" value="false" />
+          <node concept="bxtc.3189788309731981027" id="5992093632073327205" role="bxtc.3189788309731840248.3189788309731917348" info="ng">
+            <reference role="bxtc.3189788309731981027.3189788309731981028" target="5992093632073277155" resolveInfo="jetbrains.mps.lang.migration.runtime" />
+          </node>
           <node concept="219m.7389400916848153117" id="1881779774792698749" role="bxtc.322010710375871467.322010710375956261" info="ng">
             <reference role="219m.7389400916848153117.7389400916848153130" target="1277685309310599419" resolveInfo="mps_home" />
             <node concept="219m.8618885170173601777" id="1881779774792706114" role="219m.7321017245476976379.7321017245477039051" info="nn">
@@ -8323,6 +8279,17 @@
               <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
             </node>
           </node>
+          <node concept="bxtc.7259033139236285166" id="5992093632073327203" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="5992093632073327204" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="5992093632073277155" resolveInfo="jetbrains.mps.lang.migration.runtime" />
+            </node>
+          </node>
+          <node concept="bxtc.7259033139236285166" id="3135188134673730529" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.4278635856200794926" id="3135188134673730530" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048536140" resolveInfo="jetbrains.mps.lang.quotation" />
+            </node>
+          </node>
           <node concept="bxtc.5507251971038816436" id="1881779774792934192" role="bxtc.3189788309731840248.9200313594498201639" info="ng">
             <property role="asn4.1169194658468.1169194664001" value="jetbrains.mps.lang.migration#3735414794051522719" />
             <property role="bxtc.322010710375871467.322010710375892619" value="1500dd24-6c0b-4efb-bf73-cc8384a27d84" />
@@ -8345,12 +8312,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536090" resolveInfo="jetbrains.mps.lang.pattern" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="1881779774792934199" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="1881779774792934200" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379826" resolveInfo="jetbrains.mps.baseLanguage.closures#1199623535494" />
-              </node>
-            </node>
             <node concept="bxtc.7259033139236285166" id="1881779774792934201" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
               <node concept="bxtc.5253498789149585690" id="1881779774792934202" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
@@ -8361,12 +8322,6 @@
               <node concept="bxtc.5253498789149585690" id="1881779774792934204" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="1881779774792727436" resolveInfo="jetbrains.mps.lang.classLike" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="1881779774792934205" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="1881779774792934206" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
               </node>
             </node>
             <node concept="bxtc.7259033139236285166" id="1881779774792934207" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
@@ -8399,12 +8354,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="1966103100308041248" resolveInfo="MPS.OpenAPI" />
               </node>
             </node>
-            <node concept="bxtc.7259033139236285166" id="1881779774792934217" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="1881779774792934218" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506380525" resolveInfo="jetbrains.mps.lang.descriptor#9020561928507175817" />
-              </node>
-            </node>
             <node concept="bxtc.7259033139236285166" id="1881779774792934219" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
               <node concept="bxtc.5253498789149585690" id="1881779774792934220" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
@@ -8417,15 +8366,6 @@
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
               </node>
             </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="5992093632073327203" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="5992093632073327204" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="5992093632073277155" resolveInfo="jetbrains.mps.lang.migration.runtime" />
-            </node>
-          </node>
-          <node concept="bxtc.3189788309731981027" id="5992093632073327205" role="bxtc.3189788309731840248.3189788309731917348" info="ng">
-            <reference role="bxtc.3189788309731981027.3189788309731981028" target="5992093632073277155" resolveInfo="jetbrains.mps.lang.migration.runtime" />
           </node>
         </node>
         <node concept="bxtc.3189788309731840248" id="7771377617298925680" role="bxtc.1500819558095907805.1500819558095907806" info="ng">
@@ -8509,6 +8449,12 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506380738" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536584" resolveInfo="jetbrains.mps.runtime" />
+              </node>
+            </node>
+            <node concept="bxtc.7259033139236285166" id="2338220375237960965" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+              <node concept="bxtc.5253498789149585690" id="2338220375237960966" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506381025" resolveInfo="jetbrains.mps.lang.smodel#1139186730696" />
               </node>
             </node>
           </node>
@@ -8831,24 +8777,6 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506380808" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705599" resolveInfo="MPS.Editor" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="6441320829764799274" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="6441320829764799275" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506380089" resolveInfo="jetbrains.mps.baseLanguage.logging#1167240554582" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="6441320829764799276" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="6441320829764799277" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379826" resolveInfo="jetbrains.mps.baseLanguage.closures#1199623535494" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="6441320829764799278" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="6441320829764799279" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506379869" resolveInfo="jetbrains.mps.baseLanguage.collections#1151699677197" />
               </node>
             </node>
           </node>
@@ -9182,6 +9110,12 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506380907" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536584" resolveInfo="jetbrains.mps.runtime" />
+              </node>
+            </node>
+            <node concept="bxtc.7259033139236285166" id="2038730469960055039" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+              <node concept="bxtc.5253498789149585690" id="2038730469960055040" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506381025" resolveInfo="jetbrains.mps.lang.smodel#1139186730696" />
               </node>
             </node>
           </node>
@@ -9644,11 +9578,6 @@
               <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048535420" resolveInfo="jetbrains.mps.lang.core" />
             </node>
           </node>
-          <node concept="bxtc.7259033139236285166" id="2488570609612484203" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.4278635856200794926" id="2488570609612484202" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048535532" resolveInfo="jetbrains.mps.baseLanguage.closures" />
-            </node>
-          </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612484205" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.4278635856200794926" id="2488570609612484204" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
@@ -9663,12 +9592,6 @@
             <node concept="bxtc.5253498789149585690" id="1815373261973632095" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1388241112193809767" resolveInfo="jetbrains.mps.lang.scopes.runtime" />
-            </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="4259795947145385004" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="4259795947145385005" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
             </node>
           </node>
           <node concept="219m.7389400916848153117" id="7507666976388975371" role="bxtc.322010710375871467.322010710375956261" info="ng">
@@ -9696,6 +9619,12 @@
             <node concept="bxtc.5253498789149585690" id="1067500960172922305" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536174" resolveInfo="jetbrains.mps.lang.sharedConcepts" />
+            </node>
+          </node>
+          <node concept="bxtc.7259033139236285166" id="910113892395163649" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="910113892395163650" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535532" resolveInfo="jetbrains.mps.baseLanguage.closures" />
             </node>
           </node>
         </node>
@@ -10082,12 +10011,6 @@
               <node concept="bxtc.5253498789149585690" id="9200313594506381200" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
                 <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
                 <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536647" resolveInfo="jetbrains.mps.typesystemEngine" />
-              </node>
-            </node>
-            <node concept="bxtc.7259033139236285166" id="6620885790437813393" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-              <node concept="bxtc.5253498789149585690" id="6620885790437813394" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-                <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-                <reference role="bxtc.5253498789149585690.5253498789149547705" target="9200313594506380895" resolveInfo="jetbrains.mps.lang.quotation#1196351859310" />
               </node>
             </node>
             <node concept="bxtc.7259033139236285166" id="6620885790437813395" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
@@ -11213,10 +11136,10 @@
       <node concept="bxtc.6592112598314498932" id="4973949960459706697" role="219m.5617550519002745363.7389400916848080626" info="ng">
         <property role="bxtc.6592112598314498932.6592112598314498927" value="com.intellij.modules.mps" />
         <node concept="bxtc.6592112598314499027" id="4973949960459706716" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="618786790402455451" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" resolveInfo="jetbrains.mps.testing" />
         </node>
         <node concept="219m.841011766566059607" id="4973949960459706698" role="bxtc.6592112598314498932.6592112598314499021" info="ng">
           <node concept="219m.4903714810883702019" id="4973949960459706705" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -12747,14 +12670,14 @@
         <node concept="219m.3717132724152913083" id="5148601452480520751" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="5148601452480520752" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="5148601452480520754" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520744" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520744" resolveInfo="lib" />
             </node>
           </node>
         </node>
         <node concept="219m.3717132724152913083" id="5148601452480520756" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="5148601452480520757" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="5148601452480520759" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520730" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520730" resolveInfo="lib" />
             </node>
           </node>
         </node>
@@ -13222,13 +13145,13 @@
       <node concept="219m.5617550519002745364" id="5148601452480491526" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="219m.7389400916848036984" id="5148601452480491535" role="219m.4701820937132344003.7389400916848037006" info="ng">
           <node concept="219m.841011766565753074" id="5934217578753788848" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="618786790401954552" />
+            <reference role="219m.841011766565753074.841011766565753076" target="618786790401954552" resolveInfo="languages" />
           </node>
           <node concept="219m.841011766565753074" id="618786790404214435" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="1265949165890610427" />
+            <reference role="219m.841011766565753074.841011766565753076" target="1265949165890610427" resolveInfo="languages" />
           </node>
           <node concept="219m.841011766565753074" id="618786790404214605" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="7926701909975931707" />
+            <reference role="219m.841011766565753074.841011766565753076" target="7926701909975931707" resolveInfo="lib" />
           </node>
           <node concept="219m.841011766566059607" id="5148601452480491536" role="219m.7389400916848050060.4380385936562148502" info="ng">
             <node concept="219m.4903714810883702019" id="5148601452480491537" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -13454,7 +13377,7 @@
           </node>
         </node>
         <node concept="219m.841011766565753074" id="618786790402233795" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="219m.841011766565753074.841011766565753076" target="618786790401897005" />
+          <reference role="219m.841011766565753074.841011766565753076" target="618786790401897005" resolveInfo="mps-testing" />
         </node>
         <node concept="219m.7389400916848036984" id="5148601452480491539" role="219m.4701820937132344003.7389400916848037006" info="ng">
           <node concept="219m.841011766566059607" id="5148601452480491540" role="219m.7389400916848050060.4380385936562148502" info="ng">
@@ -13652,7 +13575,7 @@
           </node>
         </node>
         <node concept="219m.841011766565753074" id="7401958389410706541" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="219m.841011766565753074.841011766565753076" target="7117056644539732844" />
+          <reference role="219m.841011766565753074.841011766565753076" target="7117056644539732844" resolveInfo="mps-build" />
         </node>
       </node>
       <node concept="219m.6647099934206700647" id="5148601452480491534" role="219m.5617550519002745363.6647099934206700656" info="ng" />
@@ -15283,7 +15206,7 @@
             </node>
           </node>
           <node concept="219m.5610619299013057363" id="4301118715654325731" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033161" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033161" resolveInfo="languages" />
           </node>
         </node>
         <node concept="219m.7389400916848036984" id="4301118715654325704" role="219m.4701820937132344003.7389400916848037006" info="ng">
@@ -15293,7 +15216,7 @@
             </node>
           </node>
           <node concept="219m.5610619299013057363" id="1392391688313556043" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033167" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033167" resolveInfo="lib" />
           </node>
           <node concept="219m.7389400916848050074" id="7753544965996745406" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="7753544965996745407" role="219m.7389400916848050060.4380385936562148502" info="ng">
@@ -15350,7 +15273,7 @@
             </node>
           </node>
           <node concept="219m.5610619299013057363" id="1348803421063031340" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="1348803421063031332" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="1348803421063031332" resolveInfo="license" />
           </node>
         </node>
         <node concept="219m.7389400916848036984" id="4301118715654325697" role="219m.4701820937132344003.7389400916848037006" info="ng">
@@ -15372,10 +15295,10 @@
         </node>
         <node concept="219m.7389400916848036984" id="4301118715654325713" role="219m.4701820937132344003.7389400916848037006" info="ng">
           <node concept="219m.841011766565753074" id="7401958389410693290" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="7117056644539732844" />
+            <reference role="219m.841011766565753074.841011766565753076" target="7117056644539732844" resolveInfo="mps-build" />
           </node>
           <node concept="219m.841011766565753074" id="7401958389410739394" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="4034578608468328728" />
+            <reference role="219m.841011766565753074.841011766565753076" target="4034578608468328728" resolveInfo="mps-trove" />
           </node>
           <node concept="219m.841011766566059607" id="4301118715654325714" role="219m.7389400916848050060.4380385936562148502" info="ng">
             <node concept="219m.4903714810883702019" id="4301118715654325715" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -15383,10 +15306,10 @@
             </node>
           </node>
           <node concept="219m.5610619299013057363" id="614687982853436673" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033194" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="1392391688313033194" resolveInfo="plugins" />
           </node>
           <node concept="219m.841011766565753074" id="2298500495070900144" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="5548512857136492258" />
+            <reference role="219m.841011766565753074.841011766565753076" target="5548512857136492258" resolveInfo="mps-devkit" />
           </node>
           <node concept="219m.5610619299013057363" id="2298500495070900720" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <reference role="219m.5610619299013057363.5610619299013057365" target="6361939271669846763" />
@@ -15398,10 +15321,10 @@
             <reference role="219m.5610619299013057363.5610619299013057365" target="6391307088354381123" />
           </node>
           <node concept="219m.841011766565753074" id="2298500495070900241" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="1545517825663017462" />
+            <reference role="219m.841011766565753074.841011766565753076" target="1545517825663017462" resolveInfo="mps-vcs" />
           </node>
           <node concept="219m.841011766565753074" id="2298500495070900260" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="8227093612176368036" />
+            <reference role="219m.841011766565753074.841011766565753076" target="8227093612176368036" resolveInfo="mps-build" />
           </node>
           <node concept="219m.5610619299013057363" id="2352867215839130973" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <reference role="219m.5610619299013057363.5610619299013057365" target="2405506926871158468" />
@@ -15413,7 +15336,7 @@
             <reference role="219m.5610619299013057363.5610619299013057365" target="6164334420696839316" />
           </node>
           <node concept="219m.841011766565753074" id="6351096925857354050" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="618786790401897005" />
+            <reference role="219m.841011766565753074.841011766565753076" target="618786790401897005" resolveInfo="mps-testing" />
           </node>
         </node>
         <node concept="219m.7389400916848050071" id="1890976590445582744" role="219m.4701820937132344003.7389400916848037006" info="ng">
@@ -15591,7 +15514,7 @@
           <reference role="bxtc.6592112598314499036.6592112598314499037" target="5875180246329181253" resolveInfo="collections_trove.runtime" />
         </node>
         <node concept="bxtc.6592112598314499027" id="5548512857137206921" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.7832771629084799699" id="7832771629085176130" role="bxtc.6592112598314498932.7832771629084912518" info="ng">
           <property role="bxtc.7832771629084799699.7832771629084799702" value="JetBrains" />
@@ -15647,7 +15570,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="4301118715654819485" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="4034578608468328728" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="5548512857137206913" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="5548512857137206913" resolveInfo="jetbrains.mps.trove" />
           <node concept="219m.7389400916848036984" id="4034578608468328729" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="4034578608468328730" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="4034578608468328731" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -17815,7 +17738,7 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="4973949960459706695" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="219m.841011766566059607" id="6592112598314886993" role="bxtc.6592112598314498932.6592112598314855574" info="ng">
           <node concept="219m.4903714810883702019" id="6592112598314886995" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -17837,7 +17760,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="8524659923334108615" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="7117056644539732844" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6592112598314738250" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6592112598314738250" resolveInfo="jetbrains.mps.build" />
         </node>
       </node>
       <node concept="219m.6647099934206700647" id="8524659923334108703" role="219m.5617550519002745363.6647099934206700656" info="ng" />
@@ -18346,14 +18269,14 @@
         <node concept="219m.3717132724152913083" id="1545517825663091863" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="1545517825663091864" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="1545517825663091866" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520744" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520744" resolveInfo="lib" />
             </node>
           </node>
         </node>
         <node concept="219m.3717132724152913083" id="1545517825663091867" role="219m.6057319140845467763.6057319140845478673" info="ng">
           <node concept="219m.5610619299014531832" id="1545517825663091868" role="219m.3717132724152913083.3717132724152913085" info="ng">
             <node concept="219m.5610619299014531647" id="1545517825663091870" role="219m.5610619299014531832.5610619299014531834" info="ng">
-              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520730" />
+              <reference role="219m.5610619299014531647.5610619299014531648" target="5148601452480520730" resolveInfo="lib" />
             </node>
           </node>
         </node>
@@ -19346,11 +19269,6 @@
           <node concept="bxtc.3189788309731981027" id="2488570609612486036" role="bxtc.3189788309731840248.3189788309731917348" info="ng">
             <reference role="bxtc.3189788309731981027.3189788309731981028" target="8362449620019856285" resolveInfo="jetbrains.mps.debugger.api.api" />
           </node>
-          <node concept="bxtc.7259033139236285166" id="2488570609612486038" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.4278635856200794926" id="2488570609612486037" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <reference role="bxtc.4278635856200794926.4278635856200794928" target="2569834391839970927" resolveInfo="jetbrains.mps.lang.plugin.standalone" />
-            </node>
-          </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612486040" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.4278635856200794926" id="2488570609612486039" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048535701" resolveInfo="jetbrains.mps.baseLanguage.logging" />
@@ -19375,6 +19293,12 @@
             <node concept="bxtc.5253498789149585690" id="7764087766386383491" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1480008320050917282" resolveInfo="MPS.IDEA" />
+            </node>
+          </node>
+          <node concept="bxtc.7259033139236285166" id="910113892395205359" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="910113892395205360" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="2569834391839970927" resolveInfo="jetbrains.mps.lang.plugin.standalone" />
             </node>
           </node>
         </node>
@@ -20048,22 +19972,22 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977866993683" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="8846523041691954965" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
       </node>
       <node concept="bxtc.6592112598314498932" id="6497499977866930931" role="219m.5617550519002745363.7389400916848080626" info="ng">
         <property role="bxtc.6592112598314498932.6592112598314498927" value="jetbrains.mps.debugger.api" />
         <node concept="bxtc.6592112598314499027" id="6497499977866987377" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" resolveInfo="jetbrains.mps.execution.api" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977866993680" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867082914" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
         <node concept="bxtc.6592112598314586625" id="6497499977866971567" role="bxtc.6592112598314498932.6592112598314499050" info="ng">
           <reference role="bxtc.6592112598314586625.6592112598314586626" target="6497499977866944299" resolveInfo="mps-debugger-api" />
@@ -20186,13 +20110,13 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977866977865" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866930931" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866930931" resolveInfo="jetbrains.mps.debugger.api" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977866993688" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867083112" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
       </node>
       <node concept="219m.5481553824944787378" id="6164334420696839315" role="219m.5617550519002745363.4796668409958418110" info="ng">
@@ -20202,7 +20126,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="6164334420696839316" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="6497499977866923968" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977862772373" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977862772373" resolveInfo="jetbrains.mps.execution.api" />
           <node concept="219m.7389400916848036984" id="8922140744663447402" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="8922140744663447404" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="8922140744663447607" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -20232,7 +20156,7 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314498926" id="6497499977867089530" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977866930931" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977866930931" resolveInfo="jetbrains.mps.debugger.api" />
           <node concept="219m.7389400916848036984" id="6164334420696870919" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="6164334420696870920" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="6164334420696870921" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -20265,7 +20189,7 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314498926" id="6497499977867090078" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977866957420" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977866957420" resolveInfo="jetbrains.mps.debugger.java" />
           <node concept="219m.7389400916848036984" id="6164334420696870948" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="6164334420696870949" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="6164334420696870950" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -21944,10 +21868,10 @@
       <node concept="bxtc.6592112598314498932" id="6497499977867873493" role="219m.5617550519002745363.7389400916848080626" info="ng">
         <property role="bxtc.6592112598314498932.6592112598314498927" value="jetbrains.mps.execution.languages" />
         <node concept="bxtc.6592112598314499027" id="6497499977867906077" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866930931" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866930931" resolveInfo="jetbrains.mps.debugger.api" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867906088" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866957420" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977866957420" resolveInfo="jetbrains.mps.debugger.java" />
         </node>
         <node concept="bxtc.6592112598314586625" id="6497499977867899137" role="bxtc.6592112598314498932.6592112598314499050" info="ng">
           <reference role="bxtc.6592112598314586625.6592112598314586626" target="6361939271669846572" resolveInfo="mps-execution-languages" />
@@ -21962,16 +21886,16 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867873494" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" resolveInfo="jetbrains.mps.execution.api" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867873495" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="618786790402120404" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" resolveInfo="jetbrains.mps.testing" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867873496" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
         <node concept="219m.7389400916848153117" id="6497499977867873500" role="bxtc.6592112598314498932.1238980147629899306" info="ng">
           <reference role="219m.7389400916848153117.7389400916848153130" target="4301118715654684528" resolveInfo="mps_home" />
@@ -22043,19 +21967,19 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867899433" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977862772373" resolveInfo="jetbrains.mps.execution.api" />
         </node>
         <node concept="bxtc.6592112598314499027" id="3558426974110676825" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977867873493" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6497499977867873493" resolveInfo="jetbrains.mps.execution.languages" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867899434" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6497499977867899435" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
         <node concept="bxtc.6592112598314499027" id="6816456863519540458" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6592112598314738250" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="6592112598314738250" resolveInfo="jetbrains.mps.build" />
         </node>
         <node concept="219m.7389400916848153117" id="6497499977867899436" role="bxtc.6592112598314498932.1238980147629899306" info="ng">
           <reference role="219m.7389400916848153117.7389400916848153130" target="4301118715654684528" resolveInfo="mps_home" />
@@ -22120,7 +22044,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="6361939271669846763" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="3558426974110689577" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977867873493" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="6497499977867873493" resolveInfo="jetbrains.mps.execution.languages" />
           <node concept="219m.7389400916848036984" id="6361939271669846526" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="6361939271669846527" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="6361939271669846528" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -23650,13 +23574,13 @@
           <reference role="bxtc.6592112598314499036.6592112598314499037" target="6275906111973508557" resolveInfo="jetbrains.mps.ide.mpsdevkit" />
         </node>
         <node concept="bxtc.6592112598314499027" id="5548512857136492271" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314499027" id="618786790402322261" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="618786790401873532" resolveInfo="jetbrains.mps.testing" />
         </node>
         <node concept="bxtc.6592112598314499027" id="5548512857136492269" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
       </node>
       <node concept="219m.927724900262033858" id="7322192058491640277" role="219m.5617550519002745363.7389400916848080626" info="ng">
@@ -24554,7 +24478,7 @@
             <reference role="219m.5610619299013057363.5610619299013057365" target="6361939271669594330" resolveInfo="languages" />
           </node>
           <node concept="219m.5610619299013057363" id="2298500495077071694" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="1265949165890610427" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="1265949165890610427" resolveInfo="languages" />
           </node>
         </node>
         <node concept="219m.7389400916848036984" id="1392391688313033167" role="219m.4701820937132344003.7389400916848037006" info="ng">
@@ -24576,7 +24500,7 @@
             </node>
           </node>
           <node concept="219m.5610619299013057363" id="2298500495077071832" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.5610619299013057363.5610619299013057365" target="7926701909975931707" />
+            <reference role="219m.5610619299013057363.5610619299013057365" target="7926701909975931707" resolveInfo="lib" />
           </node>
           <node concept="219m.5610619299013057363" id="1392391688313033174" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <reference role="219m.5610619299013057363.5610619299013057365" target="6361939271669594326" resolveInfo="lib" />
@@ -24598,7 +24522,7 @@
         </node>
         <node concept="219m.7389400916848036984" id="1392391688313033194" role="219m.4701820937132344003.7389400916848037006" info="ng">
           <node concept="219m.841011766565753074" id="2174034644394315680" role="219m.4701820937132344003.7389400916848037006" info="ng">
-            <reference role="219m.841011766565753074.841011766565753076" target="618786790401954546" />
+            <reference role="219m.841011766565753074.841011766565753076" target="618786790401954546" resolveInfo="mps-core" />
           </node>
           <node concept="219m.841011766566059607" id="1392391688313033195" role="219m.7389400916848050060.4380385936562148502" info="ng">
             <node concept="219m.4903714810883702019" id="1392391688313033196" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -24846,7 +24770,7 @@
           <reference role="bxtc.6592112598314499036.6592112598314499037" target="8091498511486549337" resolveInfo="jetbrains.mps.ide.make" />
         </node>
         <node concept="bxtc.6592112598314499027" id="7688489240247976451" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459706697" resolveInfo="com.intellij.modules.mps" />
         </node>
       </node>
       <node concept="219m.7389400916848136194" id="6265574260762011071" role="219m.5617550519002745363.5617550519002745378" info="ng">
@@ -25924,7 +25848,7 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="618786790401873545" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
         <node concept="bxtc.6592112598314586625" id="618786790401925311" role="bxtc.6592112598314498932.6592112598314499050" info="ng">
           <reference role="bxtc.6592112598314586625.6592112598314586626" target="618786790401875986" resolveInfo="baseLanguage" />
@@ -25985,7 +25909,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="618786790401813712" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="618786790401897005" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="618786790401873532" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="618786790401873532" resolveInfo="jetbrains.mps.testing" />
           <node concept="219m.7389400916848036984" id="4708596075987841430" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="4708596075987841431" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="4708596075987841434" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -26710,7 +26634,7 @@
       <node concept="bxtc.6592112598314498932" id="4305752832750046832" role="219m.5617550519002745363.7389400916848080626" info="ng">
         <property role="bxtc.6592112598314498932.6592112598314498927" value="jetbrains.mps.editor.diagram" />
         <node concept="bxtc.6592112598314499027" id="2405506926871230820" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="2405506926871158422" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="2405506926871158422" resolveInfo="jetbrains.jetpad" />
         </node>
         <node concept="219m.841011766566059607" id="4305752832750046834" role="bxtc.6592112598314498932.6592112598314499021" info="ng">
           <node concept="219m.4903714810883702019" id="4305752832750055957" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -26761,7 +26685,7 @@
           </node>
         </node>
         <node concept="bxtc.6592112598314499027" id="4305752832750119568" role="bxtc.6592112598314498932.6592112598314499028" info="ng">
-          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" />
+          <reference role="bxtc.6592112598314499027.6592112598314499066" target="4973949960459588488" resolveInfo="jetbrains.mps.core" />
         </node>
       </node>
       <node concept="219m.7389400916848136194" id="4305752832749986249" role="219m.5617550519002745363.5617550519002745378" info="ng">
@@ -26780,7 +26704,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="4305752832749937832" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="1574749242079303259" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="4305752832750046832" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="4305752832750046832" resolveInfo="jetbrains.mps.editor.diagram" />
           <node concept="219m.7389400916848036984" id="1574749242079303955" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.841011766566059607" id="1574749242079303956" role="219m.7389400916848050060.4380385936562148502" info="ng">
               <node concept="219m.4903714810883702019" id="1574749242079304303" role="219m.4380385936562003279.4903714810883783243" info="ng">
@@ -27267,7 +27191,7 @@
       </node>
       <node concept="219m.5617550519002745364" id="2405506926871158468" role="219m.5617550519002745363.5617550519002745372" info="ng">
         <node concept="bxtc.6592112598314498926" id="2405506926871158469" role="219m.4701820937132344003.7389400916848037006" info="ng">
-          <reference role="bxtc.6592112598314498926.6592112598314801433" target="2405506926871158422" />
+          <reference role="bxtc.6592112598314498926.6592112598314801433" target="2405506926871158422" resolveInfo="jetbrains.jetpad" />
           <node concept="219m.7389400916848036984" id="2405506926871158474" role="219m.4701820937132344003.7389400916848037006" info="ng">
             <node concept="219m.2750015747481074431" id="728845856152070157" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <node concept="219m.7389400916848153117" id="728845856152070304" role="219m.2750015747481074431.2750015747481074432" info="ng">

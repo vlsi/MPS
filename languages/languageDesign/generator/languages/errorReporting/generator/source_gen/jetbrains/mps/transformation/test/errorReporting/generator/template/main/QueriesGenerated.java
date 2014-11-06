@@ -5,6 +5,8 @@ package jetbrains.mps.transformation.test.errorReporting.generator.template.main
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -12,7 +14,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7287346816896135373(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "intval") == 42;
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-7375342023419084600l, -9083228953980739588l), 7287346816896104019l, 7287346816896111112l, "intval")) == 42;
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_7287346816896128676(final WeavingMappingRuleContext _context) {
     return null;

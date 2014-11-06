@@ -23,9 +23,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Logger;
@@ -90,7 +93,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
             final Set<SNode> classifiers = SetSequence.fromSet(new HashSet<SNode>());
             SetSequence.fromSet(classifiers).addSequence(ListSequence.fromList(types.value).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, "classifier", false);
+                return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -139,10 +142,10 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     context.checkRoot();
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
-    for (SNode node : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getDescendants(rootNode, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{})) {
+    for (SNode node : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SConcept[]{})) {
       SNode type = context.typeOf(node);
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        ListSequence.fromList(result).addElement(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+        ListSequence.fromList(result).addElement(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
     }
     context.dispose();

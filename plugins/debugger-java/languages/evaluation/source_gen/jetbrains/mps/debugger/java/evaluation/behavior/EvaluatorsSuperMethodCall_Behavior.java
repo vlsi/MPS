@@ -5,11 +5,13 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class EvaluatorsSuperMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
-    return DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true), "debuggedType", true));
+    return DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 4544608336420681235l, "thisNode")), MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, 4544608336420717468l, "debuggedType")));
   }
 }

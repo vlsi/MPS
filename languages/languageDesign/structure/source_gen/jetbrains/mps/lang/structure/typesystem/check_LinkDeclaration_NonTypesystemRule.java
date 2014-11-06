@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -29,10 +31,10 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
   }
   public void applyRule(final SNode linkToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // link role shouldn't hide roles in super-concepts 
-    if (SPropertyOperations.getString(linkToCheck, "role") == null) {
+    if (SPropertyOperations.getString(linkToCheck, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) == null) {
       return;
     }
-    SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    SNode declaringConcept = SNodeOperations.getNodeAncestor(linkToCheck, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
     List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, true);
     Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode concept) {
@@ -63,7 +65,7 @@ __switch__:
                       this.yield(_4_link);
                       return true;
                     case 0:
-                      this._3_links = SLinkOperations.getTargets(concept, "linkDeclaration", true);
+                      this._3_links = SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"));
                       this.__CP__ = 4;
                       break;
                     case 6:
@@ -84,15 +86,15 @@ __switch__:
       }
     });
     for (SNode link : Sequence.fromIterable(linksInSupers)) {
-      if (linkToCheck != link && SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
+      if (linkToCheck != link && SPropertyOperations.getString(linkToCheck, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")).equals(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"))) && SLinkOperations.getTarget(linkToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink")) != link) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkToCheck, "link '" + SPropertyOperations.getString(link, "role") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(link, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1212181840083", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkToCheck, "link '" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getNodeAncestor(link, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1212181840083", null, errorTarget);
         }
       }
     }
-    if (SPropertyOperations.getBoolean(linkToCheck, "unordered") && LinkDeclaration_Behavior.call_isSingular_1213877254557(linkToCheck)) {
-      if (SPropertyOperations.hasValue(linkToCheck, "metaClass", "reference", "reference")) {
+    if (SPropertyOperations.getBoolean(linkToCheck, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 2395585628928459314l, "unordered")) && LinkDeclaration_Behavior.call_isSingular_1213877254557(linkToCheck)) {
+      if (SPropertyOperations.hasValue(linkToCheck, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("sourceCardinality");

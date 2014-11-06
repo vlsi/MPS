@@ -28,6 +28,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -109,8 +111,8 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286748");
-                tnode3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
-                tnode3.setReference("classConcept", SReference.create("classConcept", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
                 {
                   Collection<SNode> tlist4 = null;
                   final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context, copySrcMacro_pbbzd9_b0a0c0d0b0c0b0b0c0c51));

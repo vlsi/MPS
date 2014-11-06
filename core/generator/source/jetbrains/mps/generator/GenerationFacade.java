@@ -59,6 +59,11 @@ import java.util.Set;
  */
 public final class GenerationFacade {
 
+  /**
+   * @deprecated Use smodel language to access typed node&lt;MappingConfiguration&gt; (filter values from {@link jetbrains.mps.smodel.Generator#getOwnTemplateModels()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();

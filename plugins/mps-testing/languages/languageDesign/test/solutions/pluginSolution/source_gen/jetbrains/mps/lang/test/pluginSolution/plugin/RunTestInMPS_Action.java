@@ -9,6 +9,8 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,7 +45,7 @@ public class RunTestInMPS_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase");
+    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -87,7 +89,7 @@ public class RunTestInMPS_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"), "virtual_getTestSet_1216130724401", new Object[]{})).toListSequence());
+      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase")), "virtual_getTestSet_1216130724401", new Object[]{})).toListSequence());
       for (SNode test : SetSequence.fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test, _params);
       }

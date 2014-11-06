@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.refactorings;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConvertAnonymousClass_Target implements IRefactoringTarget {
   public ConvertAnonymousClass_Target() {
@@ -16,12 +18,12 @@ public class ConvertAnonymousClass_Target implements IRefactoringTarget {
     return false;
   }
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    return SNodeOperations.isInstanceOf(((SNode) entity), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return (SNodeOperations.getAncestor(((SNode) entity), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+    return (SNodeOperations.getNodeAncestor(((SNode) entity), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) != null);
   }
 }

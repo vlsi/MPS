@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
@@ -37,7 +39,7 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8989zw_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_8989zw_a0(editorContext, node));
     return editorCell;
@@ -51,7 +53,7 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     editorCell.setCellId("methodName");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
-    style.set(StyleAttributes.STRIKE_OUT, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.STRIKE_OUT, 0, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -64,14 +66,14 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(EditorContext editorContext, SNode node) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{});
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{});
   }
   public static class BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0() {
     }
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
-      SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
+      SNode nodeType = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
       if (nodeType != null) {
         result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       } else {

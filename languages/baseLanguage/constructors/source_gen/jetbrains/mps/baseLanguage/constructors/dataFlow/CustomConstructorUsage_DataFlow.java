@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CustomConstructorUsage_DataFlow extends DataFlowBuilder {
   public CustomConstructorUsage_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode el : SLinkOperations.getTargets(_context.getNode(), "element", true)) {
+    for (SNode el : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569344l, "element"))) {
       _context.getBuilder().build((SNode) el);
     }
   }

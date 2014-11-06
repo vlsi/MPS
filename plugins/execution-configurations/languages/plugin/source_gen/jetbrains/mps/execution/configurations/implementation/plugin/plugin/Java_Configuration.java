@@ -13,6 +13,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -46,11 +48,11 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
   private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.baseLanguage.structure.ClassConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) != null);
+      return (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) != null);
     }
   }), MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.execution.util.structure.IMainClass", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(node);
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(5525638636287967733l, -8459132261929236328l), 4666195181811081429l, "jetbrains.mps.execution.util.structure.IMainClass")), "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(node);
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
@@ -61,8 +63,8 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            hasMainMethod.value = (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null);
+          if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+            hasMainMethod.value = (BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null);
           }
         }
       });

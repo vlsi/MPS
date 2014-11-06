@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_UnarySimpleMathExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,7 +20,7 @@ public class typeof_UnarySimpleMathExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = unary;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208525522", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208525525", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(unary, "original", true), "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208525573", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208525525", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(unary, MetaAdapterFactory.getContainmentLink(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467207935099l, 2073504467207935100l, "original")), "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208525573", true), false, true, _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

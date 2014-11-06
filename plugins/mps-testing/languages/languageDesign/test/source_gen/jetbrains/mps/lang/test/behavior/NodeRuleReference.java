@@ -4,6 +4,8 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeRuleReference {
   private SNode ruleNode;
@@ -25,15 +27,15 @@ public class NodeRuleReference {
   }
 
   private boolean isTypeSystem() {
-    return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
+    return SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"));
   }
 
   private boolean isConstraints() {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(ruleNode), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(ruleNode), MetaAdapterFactory.getConcept(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
   }
 
   private boolean isMessageStatement() {
-    return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.MessageStatement");
+    return SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"));
   }
 
 }

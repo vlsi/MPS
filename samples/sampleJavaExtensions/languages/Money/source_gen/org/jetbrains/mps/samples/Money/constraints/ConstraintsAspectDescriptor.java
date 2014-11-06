@@ -5,6 +5,7 @@ package org.jetbrains.mps.samples.Money.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -20,9 +21,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new MoneyLiteral_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 5447719361346519865l) {
+      return new GetAmount_Constraints();
+    }
+    if (id == 1790427706118304177l) {
+      return new GetCurrency_Constraints();
+    }
+    if (id == 1790427706118381722l) {
+      return new ConvertTo_Constraints();
+    }
+    if (id == 5447719361346490674l) {
+      return new MoneyLiteral_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"};
 }

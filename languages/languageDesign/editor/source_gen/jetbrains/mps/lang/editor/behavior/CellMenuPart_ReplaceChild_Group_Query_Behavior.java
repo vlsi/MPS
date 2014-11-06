@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -17,8 +19,8 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group");
-    SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
+    SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1165270418989l, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"));
+    SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, 1165253890469l, "parameterObjectType"));
     if (parameterObjectType == null) {
       return _quotation_createNode_ygqhl6_a0a2a0();
     }
@@ -38,7 +40,7 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, false);
-    quotedNode_1.addChild("elementType", quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"), quotedNode_2);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_ygqhl6_a0d0a(Object parameter_1) {
@@ -48,7 +50,7 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

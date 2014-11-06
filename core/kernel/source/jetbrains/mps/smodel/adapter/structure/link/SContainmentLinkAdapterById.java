@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;

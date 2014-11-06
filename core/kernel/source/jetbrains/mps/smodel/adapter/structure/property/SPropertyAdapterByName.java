@@ -19,7 +19,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -66,9 +67,9 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
+    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration);
     for (SNode p : props) {
-      if (p.getProperty(SNodeUtil.property_INamedConcept_name).equals(myPropertyName)) return p;
+      if (p.getProperty(SNodeUtil.propertyName_INamedConcept_name).equals(myPropertyName)) return p;
     }
     return null;
   }

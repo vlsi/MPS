@@ -11,10 +11,15 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
-import jetbrains.mps.generator.GenerationFacade;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.CollectionUtil;
@@ -29,18 +34,23 @@ public class MappingConfigFinder implements IFinder {
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
-    List<SNode> mappingConfigs = (List<SNode>) GenerationFacade.getOwnMappings(myGenerator);
+    Iterable<SModel> ownTemplateModels = myGenerator.getOwnTemplateModels();
+    Iterable<SNode> mappingConfigs = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SModelOperations.getRoots(it, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+      }
+    });
     List<SNode> nodesToCheck = new ArrayList<SNode>();
     for (SNode mappingConfig : mappingConfigs) {
       for (SNode rule : ListSequence.fromList(SNodeOperations.getChildren(mappingConfig)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule");
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"));
         }
       })) {
         nodesToCheck.add(rule);
         collectChildrenThatMayHaveReferenceOnTemplate(rule, nodesToCheck);
       }
-      nodesToCheck.addAll(SLinkOperations.getTargets(mappingConfig, "createRootRule", true));
+      nodesToCheck.addAll(SLinkOperations.getChildren(mappingConfig, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167088157977l, "createRootRule")));
     }
     for (SNode node : nodesToCheck) {
       for (SReference reference : node.getReferences()) {
@@ -56,7 +66,7 @@ public class MappingConfigFinder implements IFinder {
   private void collectChildrenThatMayHaveReferenceOnTemplate(SNode parent, List<SNode> result) {
     List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(parent, false);
     for (SNode child : children) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
+      if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
         continue;
       }
       result.add(child);

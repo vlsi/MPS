@@ -12,6 +12,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -25,9 +27,9 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_x1gmbt_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     HandleEnterInTheEnd_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));
@@ -36,10 +38,10 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_x1gmbt_a0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(node, "text");
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"));
       }
       public void setText(String text) {
-        SPropertyOperations.set(node, "text", text);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), text);
         TextCommentPartUtil.processCellText(editorContext, node, text);
       }
       public boolean isValidText(String text) {

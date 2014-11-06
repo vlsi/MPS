@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -20,7 +22,7 @@ public class PropertiesFile_TextGen extends SNodeTextGen {
     }
     getBuffer().putUserObject(TextGen.OUTPUT_ENCODING, "ISO-8859-1");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390517588l, 3961775458390522563l, "lines"));
       for (SNode item : collection) {
         appendNode(item);
       }
@@ -29,7 +31,7 @@ public class PropertiesFile_TextGen extends SNodeTextGen {
       {
         String unitName = null;
         try {
-          unitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
+          unitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369892l, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate unit name for a node " + node + ".", t);

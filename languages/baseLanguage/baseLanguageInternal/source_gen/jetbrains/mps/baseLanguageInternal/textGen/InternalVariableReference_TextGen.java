@@ -5,9 +5,11 @@ package jetbrains.mps.baseLanguageInternal.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InternalVariableReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(SPropertyOperations.getString(node, "name"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1176743162354l, 1176743296073l, "name")));
   }
 }

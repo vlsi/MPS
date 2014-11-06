@@ -27,6 +27,8 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -61,8 +63,8 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_className");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UnknownNew_Editor.UnknownNew_generic_cellMenu_lvgr57_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -81,7 +83,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       }).toListSequence();
 
@@ -91,7 +93,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode choosen = parameterObject;
-      SPropertyOperations.set(node, "className", BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3304084122476667220l, 3304084122476721463l, "className"), BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
     }
     public boolean isReferentPresentation() {
       return false;

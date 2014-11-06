@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -89,13 +91,13 @@ public class AddNodeMacroParam_copySrcMacro_Intention implements IntentionFactor
       SNode referentValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery", null);
       SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode linkAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
-      SLinkOperations.setTarget(linkAccess, "link", myParameter, false);
-      SLinkOperations.setTarget(dotExpression, "operation", linkAccess, true);
-      SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
+      SLinkOperations.setTarget(linkAccess, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link"), myParameter);
+      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), linkAccess);
+      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null));
       SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
-      SLinkOperations.setTarget(copySrcMacro, "sourceNodeQuery", referentValue, true);
+      SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), dotExpression);
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(referentValue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(expressionStatement);
+      SLinkOperations.setTarget(copySrcMacro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114706874351l, 1168024447342l, "sourceNodeQuery"), referentValue);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, copySrcMacro, SelectionManager.FIRST_CELL, 1);
     }

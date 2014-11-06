@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +22,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
@@ -48,50 +49,50 @@ public class MetadataUtil {
   private static SNode createModelRoot(SModel model) {
     SModelBase modelBase = (SModelBase) model;
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
-    SPropertyOperations.set(root, "longname", SModelOperations.getModelName(model));
+    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355110l, "longname"), SModelOperations.getModelName(model));
     // <node> 
-    SPropertyOperations.set(root, "version", "" + (modelBase.getVersion()));
+    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355115l, "version"), "" + (modelBase.getVersion()));
     if (model instanceof GeneratableSModel) {
-      SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0f0d(((GeneratableSModel) model))));
+      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355124l, "donotgenerate"), "" + (check_ca1g54_a0a0f0d(((GeneratableSModel) model))));
     }
     for (SModuleReference language : ListSequence.fromList(modelBase.importedLanguages())) {
-      ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
+      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720950l, "language"))).addElement(createModuleRefNode(language));
     }
     for (SModuleReference genlanguage : ListSequence.fromList(modelBase.engagedOnGenerationLanguages())) {
-      ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).addElement(createModuleRefNode(genlanguage));
+      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720952l, "languageEngagedOnGeneration"))).addElement(createModuleRefNode(genlanguage));
     }
     for (SModuleReference devkit : ListSequence.fromList(modelBase.importedDevkits())) {
-      ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).addElement(createModuleRefNode(devkit));
+      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720955l, "devkit"))).addElement(createModuleRefNode(devkit));
     }
     for (jetbrains.mps.smodel.SModel.ImportElement impmodel : ListSequence.fromList(modelBase.importedModels())) {
-      ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).addElement(createModelRefNode(impmodel));
+      ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720959l, "import"))).addElement(createModelRefNode(impmodel));
     }
 
-    SPropertyOperations.set(root, "name", "Model Properties");
+    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "Model Properties");
     ((jetbrains.mps.smodel.SNode) root).setId(SNodeId.fromString("~root"));
     return root;
   }
   private static SNode createModuleRefNode(SModuleReference module) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
-    SPropertyOperations.set(node, "qualifiedName", module.getModuleName());
-    SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
-    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName"), module.getModuleName());
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"), module.getModuleId().toString());
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"))));
     return node;
   }
   private static SModuleReference getModuleReference(SNode node) {
-    return new ModuleReference(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "uuid"));
+    return new ModuleReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid")));
   }
   private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
-    SPropertyOperations.set(node, "qualifiedName", SModelStereotype.withoutStereotype(impModel.getModelReference().getModelName()));
-    SPropertyOperations.set(node, "uuid", impModel.getModelReference().getModelId().toString());
-    SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(impModel.getModelReference().getModelName()));
-    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName"), SModelStereotype.withoutStereotype(impModel.getModelReference().getModelName()));
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"), impModel.getModelReference().getModelId().toString());
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype"), SModelStereotype.getStereotype(impModel.getModelReference().getModelName()));
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"))));
     return node;
   }
   private static SModelReference getModelReference(SNode node) {
-    String fullName = new SModelFqName(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype")).getModelName();
-    return new jetbrains.mps.smodel.SModelReference(null, SModelId.fromString(SPropertyOperations.getString(node, "uuid")), fullName);
+    String fullName = SModelStereotype.withStereotype(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype")));
+    return new jetbrains.mps.smodel.SModelReference(null, SModelId.fromString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"))), fullName);
   }
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
     if (!(((EditableSModel) metadataModel).isChanged())) {
@@ -100,13 +101,13 @@ public class MetadataUtil {
 
     final SModelBase modelBase = (SModelBase) model;
     SNode root = ListSequence.fromList(SModelOperations.getRoots(metadataModel, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")).first();
-    modelBase.setVersion(SPropertyOperations.getInteger(root, "version"));
+    modelBase.setVersion(SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355115l, "version")));
     if (model instanceof GeneratableSModel) {
       check_ca1g54_a0a5a8(((GeneratableSModel) model), root);
     }
 
     Set<SModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), modelBase.importedLanguages());
-    Set<SModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, SModuleReference>() {
+    Set<SModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720950l, "language"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode it) {
         return getModuleReference(it);
       }
@@ -123,7 +124,7 @@ public class MetadataUtil {
     });
 
     Set<SModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), modelBase.engagedOnGenerationLanguages());
-    Set<SModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).select(new ISelector<SNode, SModuleReference>() {
+    Set<SModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720952l, "languageEngagedOnGeneration"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode it) {
         return getModuleReference(it);
       }
@@ -140,7 +141,7 @@ public class MetadataUtil {
     });
 
     Set<SModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), modelBase.importedDevkits());
-    Set<SModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).select(new ISelector<SNode, SModuleReference>() {
+    Set<SModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720955l, "devkit"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode it) {
         return getModuleReference(it);
       }
@@ -161,7 +162,7 @@ public class MetadataUtil {
         return it.getModelReference();
       }
     }));
-    Set<SModelReference> imports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).select(new ISelector<SNode, SModelReference>() {
+    Set<SModelReference> imports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 4685150495576720959l, "import"))).select(new ISelector<SNode, SModelReference>() {
       public SModelReference select(SNode it) {
         return getModelReference(it);
       }
@@ -187,7 +188,7 @@ public class MetadataUtil {
   }
   private static void check_ca1g54_a0a5a8(GeneratableSModel checkedDotOperand, SNode root) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.setDoNotGenerate(SPropertyOperations.getBoolean(root, "donotgenerate"));
+      checkedDotOperand.setDoNotGenerate(SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355124l, "donotgenerate")));
     }
 
   }

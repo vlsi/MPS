@@ -5,6 +5,8 @@ package jetbrains.mps.editor.runtime.impl;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -14,13 +16,13 @@ public class CellUtil {
   public CellUtil() {
   }
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
-    SNode deprecatable = SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.IDeprecatable");
+    SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable"));
     if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(deprecatable), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }
   public static SNode getNodeToDelete(SNode node) {
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.IWrapper")) {
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1221647093812l, "jetbrains.mps.lang.core.structure.IWrapper"))) {
       node = SNodeOperations.getParent(node);
     }
     return node;
@@ -29,9 +31,9 @@ public class CellUtil {
    * TODO: think of moving jetbrains.mps.lang.editor.generator.internal into MPS
    */
   public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
-    return SLinkOperations.getTarget(linkDeclaration, "target", false);
+    return SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
   }
   public static String getLinkDeclarationRole(SNode linkDeclaration) {
-    return SPropertyOperations.getString(linkDeclaration, "role");
+    return SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
 }

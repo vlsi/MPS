@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -43,7 +45,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "classifier", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, 1218736638915l, "classifier")) != null;
   }
   private EditorCell createCollection_kpqhey_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -120,7 +122,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_kpqhey_c0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -130,7 +132,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_kpqhey_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

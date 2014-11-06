@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -57,17 +59,17 @@ public class UseIndentLayoutInRefNodeList_Intention implements IntentionFactory 
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")))) {
         return "Use Indent Layout";
       } else {
         return "Use Horizontal Layout";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
-        SNodeFactoryOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")))) {
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout"), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
       } else {
-        SNodeFactoryOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout"), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
       }
     }
     public IntentionDescriptor getDescriptor() {

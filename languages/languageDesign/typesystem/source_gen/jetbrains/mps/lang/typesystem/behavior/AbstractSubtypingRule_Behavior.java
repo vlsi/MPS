@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -16,7 +18,7 @@ public class AbstractSubtypingRule_Behavior {
     return new ArrayList<SNode>();
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "body", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1175147569072l, 1175147624276l, "body"));
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return _quotation_createNode_23rmn4_a0a2();
@@ -28,9 +30,9 @@ public class AbstractSubtypingRule_Behavior {
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    quotedNode_1.addChild("argument", quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
-    quotedNode_1.addChild("argument", quotedNode_3);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), quotedNode_3);
     return quotedNode_1;
   }
 }

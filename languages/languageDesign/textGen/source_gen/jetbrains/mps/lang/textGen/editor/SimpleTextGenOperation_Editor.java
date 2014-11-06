@@ -37,8 +37,8 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_yb6w4b_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(-1.0, Measure.SPACES));
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

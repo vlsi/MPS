@@ -7,6 +7,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -27,15 +29,15 @@ public class FloatConstantType_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_testTypes() throws Exception {
       this.addNodeById("5868639094257179247");
-      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257266015"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
-      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257283261"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
-      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257285927"), "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant");
-      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257266015"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant")), "jetbrains.mps.baseLanguage.structure.DoubleType");
-      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257283261"), "jetbrains.mps.baseLanguage.structure.FloatingPointConstant")), "jetbrains.mps.baseLanguage.structure.DoubleType");
-      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257285927"), "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant")), "jetbrains.mps.baseLanguage.structure.FloatType");
+      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257266015"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"));
+      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257283261"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"));
+      assert SNodeOperations.isInstanceOf(SNodeOperations.cast(this.getNodeById("5868639094257285927"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5279705229678483897l, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5279705229678483897l, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"));
+      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257266015"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534513062l, "jetbrains.mps.baseLanguage.structure.DoubleType"));
+      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257283261"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534513062l, "jetbrains.mps.baseLanguage.structure.DoubleType"));
+      assert SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(this.getNodeById("5868639094257285927"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5279705229678483897l, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534436861l, "jetbrains.mps.baseLanguage.structure.FloatType"));
     }
     public void test_ErrorMessagesCheck5868639094267614275() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("5868639094267614275"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("5868639094267614275"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215601147424l, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("5868639094257179249")});
     }
   }

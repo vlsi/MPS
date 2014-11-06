@@ -15,6 +15,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ModelRoot_Editor extends DefaultNodeEditor {
@@ -52,7 +54,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gn5t9c_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gn5t9c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gn5t9c_b1a(editorContext, node));
@@ -60,7 +62,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "path"));
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, 1855399583446017567l, "path")));
   }
   private EditorCell createConstant_gn5t9c_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
@@ -89,7 +91,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_gn5t9c_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

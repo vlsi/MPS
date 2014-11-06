@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class PoundExpression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IPropertyAccessQualifier_BehaviorDescriptor, IPropertyQualifier_BehaviorDescriptor, ILinkAccessQualifier_BehaviorDescriptor, ILinkQualifier_BehaviorDescriptor, IRefConceptArg_BehaviorDescriptor {
+public class PoundExpression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IPropertyQualifier_BehaviorDescriptor, ILinkAccessQualifier_BehaviorDescriptor, ILinkQualifier_BehaviorDescriptor, IRefConceptArg_BehaviorDescriptor {
   public PoundExpression_BehaviorDescriptor() {
   }
   @Override

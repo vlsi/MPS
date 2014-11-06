@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
@@ -48,7 +50,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
               final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
               try {
                 environment.nodeCopied(context2, tnode4, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422212");
-                SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(new PropertyMacroContext(context2, "42", propertyMacro_wjpymb_c0a0c0b0b0b0d0c0b0b0c))));
+                SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(new PropertyMacroContext(context2, "42", propertyMacro_wjpymb_c0a0c0b0b0b0d0c0b0b0c))));
               } finally {
               }
               if (tnode4 != null) {
@@ -89,14 +91,14 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
         final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.nodeCopied(context, tnode10, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065051160");
-          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
-          tnode10.setReference("classConcept", SReference.create("classConcept", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays")));
+          tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
+          tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays")));
           {
             final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression");
             try {
               environment.nodeCopied(context, tnode11, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083856");
-              SNodeAccessUtil.setProperty(tnode11, "makeUnique", "true");
-              SNodeAccessUtil.setProperty(tnode11, "fieldName", "stringSwitchCases");
+              SNodeAccessUtil.setProperty(tnode11, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1238251434034l, 8835849473318867199l, "makeUnique"), "true");
+              SNodeAccessUtil.setProperty(tnode11, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1238251434034l, 1238251449050l, "fieldName"), "stringSwitchCases");
               {
                 final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
                 try {

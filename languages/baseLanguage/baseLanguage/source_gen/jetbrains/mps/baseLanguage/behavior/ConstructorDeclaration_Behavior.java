@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,7 +19,7 @@ public class ConstructorDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_isDeprecated_1224609060727", new Object[]{}) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", new Object[]{}));
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_isDeprecated_1224609060727", new Object[]{}) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")), "virtual_isDeprecated_1224609060727", new Object[]{}));
   }
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
@@ -30,7 +32,7 @@ public class ConstructorDeclaration_Behavior {
   }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
     return result;
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -38,20 +40,20 @@ public class ConstructorDeclaration_Behavior {
   }
   public static String call_getPresentationInContext_983626226385657373(SNode thisNode, SNode context) {
     StringBuilder result = new StringBuilder();
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      result.append(Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"), context));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      result.append(Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), context));
     } else {
       result.append(".ctor");
     }
     result.append("(");
     boolean first = true;
-    for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode parm : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
       if (!(first)) {
         result.append(",");
       }
       first = false;
-      if (SLinkOperations.getTarget(parm, "type", true) != null) {
-        result.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(parm, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+      if (SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")) != null) {
+        result.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         result.append("???");
       }
@@ -62,46 +64,46 @@ public class ConstructorDeclaration_Behavior {
   public static String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     sb.append("(");
-    for (SNode p : SLinkOperations.getTargets(thisNode, "parameter", true)) {
-      sb.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(p, "type", true), "virtual_jniSignature_8847328628797633411", new Object[]{}));
+    for (SNode p : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
+      sb.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(p, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_jniSignature_8847328628797633411", new Object[]{}));
     }
     sb.append(")");
     sb.append("V");
     return sb.toString();
   }
   public static boolean call_containsImplicitSuperConstructorCall_7152041109751551503(SNode thisNode) {
-    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
-    return !(SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"));
+    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
+    return !(SNodeOperations.isInstanceOf(firstStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1241540912639l, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")));
   }
   public static SNode call_getThisConstructorInvocation_6018737561676809124(SNode thisNode) {
-    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
-    if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"), "baseMethodDeclaration", false);
+    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
+    if (SNodeOperations.isInstanceOf(firstStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1241540912639l, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1241540912639l, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     }
     return null;
   }
   public static SNode call_getSuperDefaultConstructor_7152041109751601013(SNode thisNode) {
-    SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+    SNode classConcept = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+    SNode classifierType = SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
     if (classifierType == null) {
       return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
     }
-    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-    if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    SNode classifier = SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    if (!(SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
       return null;
     }
-    SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode superclass = SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     if (superclass != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
       Iterable<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+          return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
         }
       });
       if (Sequence.fromIterable(constructors).isEmpty()) {
         return null;
       }
       for (SNode constructor : constructors) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isEmpty()) {
           return constructor;
         }
       }
@@ -111,16 +113,16 @@ public class ConstructorDeclaration_Behavior {
     }
   }
   public static boolean call_hasImplicitSuperDefaultConstructor_6155185097898257848(SNode thisNode) {
-    SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+    SNode classConcept = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+    SNode classifierType = SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
     if (classifierType == null) {
       return true;
     }
-    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-    if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    SNode classifier = SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    if (!(SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
       return false;
     }
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isEmpty();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))).isEmpty();
   }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     if (SNodeOperations.getParent(thisNode) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{})) {

@@ -17,12 +17,14 @@ import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Level;
-import java.util.UUID;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -98,8 +100,10 @@ public class ReadHelper9 {
   }
 
   public SConcept getStubConcept(SConceptId type) {
-    // todo 
-    return null;
+    String cname = DebugRegistry.getInstance().getConceptName(type);
+    String ns = NameUtil.namespaceFromLongName(cname);
+    String sname = NameUtil.shortNameFromLongName(cname);
+    return new SConceptAdapterByName(ns + ((ns.equals("") ? "" : ".")) + "Stub" + sname);
   }
 
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
@@ -159,20 +163,23 @@ public class ReadHelper9 {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       }
-      return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+      return MetaIdFactory.INVALID_CONCEPT_ID;
     }
     SLanguageId langId = MapSequence.fromMap(myLanguageByIx).get(s.substring(0, ix));
     if (langId == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
       }
-      return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+      return MetaIdFactory.INVALID_CONCEPT_ID;
     } else {
       return new SConceptId(langId, Long.parseLong(s.substring(ix + 1)));
     }
   }
 
   public SContainmentLinkId readNodeRole(String s) {
+    if (s == null) {
+      return null;
+    }
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
     return new SContainmentLinkId(concept, Long.parseLong(s.substring(ix + 1)));

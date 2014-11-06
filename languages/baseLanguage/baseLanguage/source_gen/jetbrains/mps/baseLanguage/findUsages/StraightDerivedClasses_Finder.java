@@ -11,6 +11,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
@@ -34,9 +36,9 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     monitor.start(getDescription(), 1);
     try {
       for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1))) {
-        if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
+        if (SNodeOperations.hasRole(nodeUsage, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"))) {
           ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
-        } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        } else if (SNodeOperations.isInstanceOf(nodeUsage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
           ListSequence.fromList(_results).addElement(nodeUsage);
         }
       }

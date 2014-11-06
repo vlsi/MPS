@@ -12,6 +12,8 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -53,20 +55,20 @@ public abstract class ProjectStructureBuilder {
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + (true));
-    SPropertyOperations.set(result, "genPath", source.getGenPath());
-    SPropertyOperations.set(result, "languagePath", myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (true));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145296906l, "genPath"), source.getGenPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6835717623312062005l, "languagePath"), myFile.getPath());
     for (SModelReference ref : source.getAccessoryModels()) {
-      SLinkOperations.getTargets(result, "accessoryModels", true).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263488l, "accessoryModels")).add(convert(ref));
     }
     for (GeneratorDescriptor descriptor : source.getGenerators()) {
-      SLinkOperations.getTargets(result, "generator", true).add(convert(descriptor));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator")).add(convert(descriptor));
     }
     for (SModuleReference ref : source.getExtendedLanguages()) {
-      SLinkOperations.getTargets(result, "extendedLanguages", true).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263489l, "extendedLanguages")).add(convert(ref));
     }
     for (SModuleReference dep : source.getRuntimeModules()) {
-      SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263490l, "runtimeModules")).add(convert(dep));
     }
     collectModels(result, source);
     return result;
@@ -76,9 +78,9 @@ public abstract class ProjectStructureBuilder {
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + (source.getCompileInMPS()));
-    SPropertyOperations.set(result, "outputPath", source.getOutputPath());
-    SPropertyOperations.set(result, "solutionPath", myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (source.getCompileInMPS()));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540896l, 269654322145299054l, "outputPath"), source.getOutputPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540896l, 6835717623312030364l, "solutionPath"), myFile.getPath());
     collectModels(result, source);
     return result;
   }
@@ -87,86 +89,86 @@ public abstract class ProjectStructureBuilder {
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + (false));
-    SPropertyOperations.set(result, "devkitPath", myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (false));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784808l, "devkitPath"), myFile.getPath());
     for (SModuleReference ref : source.getExtendedDevkits()) {
-      SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784807l, "extendedDevkits")).add(convert(ref));
     }
     for (SModuleReference ref : source.getExportedLanguages()) {
-      SLinkOperations.getTargets(result, "exportedLanguages", true).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784805l, "exportedLanguages")).add(convert(ref));
     }
     for (SModuleReference ref : source.getExportedSolutions()) {
-      SLinkOperations.getTargets(result, "exportedSolutions", true).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784806l, "exportedSolutions")).add(convert(ref));
     }
     return result;
   }
   private SNode convert(SModelReference source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
-    SPropertyOperations.set(result, "uuid", source.getModelId().toString());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"), source.getModelId().toString());
     String modelName = source.getModelName();
     int atIndex = modelName.indexOf('@');
-    SPropertyOperations.set(result, "qualifiedName", (atIndex == -1 ? modelName : modelName.substring(0, atIndex)));
-    SPropertyOperations.set(result, "stereotype", (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName"), (atIndex == -1 ? modelName : modelName.substring(0, atIndex)));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype"), (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
     return result;
   }
   private void fill(SNode module, ModuleDescriptor source) {
-    SPropertyOperations.set(module, "uuid", (source.getId() == null ? null : source.getId().toString()));
-    SPropertyOperations.set(module, "namespace", source.getNamespace());
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540898l, "uuid"), (source.getId() == null ? null : source.getId().toString()));
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"), source.getNamespace());
 
     for (ModelRootDescriptor root : source.getModelRootDescriptors()) {
-      SLinkOperations.getTargets(module, "modelRoots", true).add(convert(root));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017057l, "modelRoots")).add(convert(root));
     }
     for (Dependency mdep : source.getDependencies()) {
-      SLinkOperations.getTargets(module, "dependencies", true).add(convert(mdep));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540908l, "dependencies")).add(convert(mdep));
     }
     for (SModuleReference ref : source.getUsedDevkits()) {
-      SLinkOperations.getTargets(module, "usedDevkits", true).add(convert(ref));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017056l, "usedDevkits")).add(convert(ref));
     }
     for (SModuleReference ref : source.getUsedLanguages()) {
-      SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017055l, "usedLanguages")).add(convert(ref));
     }
     for (String path : source.getAdditionalJavaStubPaths()) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.StubEntry", null);
-      SPropertyOperations.set(node, "path", path);
-      SLinkOperations.getTargets(module, "stubModels", true).add(node);
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017058l, 1855399583446017059l, "path"), path);
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017641l, "stubModels")).add(node);
     }
     for (String s : source.getSourcePaths()) {
-      SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 269654322145263551l, "sourcePaths")).add(convertSourcePath(s));
     }
   }
   private SNode convert(ModelRootDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelRoot", null);
-    SPropertyOperations.set(result, "type", source.getType());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, 1666927970458410904l, "type"), source.getType());
     String path = source.getMemento().get("path");
     if ((path != null && path.length() > 0)) {
-      SPropertyOperations.set(result, "path", path);
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, 1855399583446017567l, "path"), path);
     }
     return result;
   }
   private SNode convertSourcePath(String s) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.SourcePath", null);
-    SPropertyOperations.set(result, "value", s);
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 269654322145263543l, 269654322145263544l, "value"), s);
     return result;
   }
   private SNode convert(Dependency source) {
     SNode dep = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleDependency", null);
-    SPropertyOperations.set(dep, "reexport", "" + (source.isReexport()));
-    SLinkOperations.setTarget(dep, "moduleRef", convert(source.getModuleRef()), true);
+    SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540904l, 6370754048397540905l, "reexport"), "" + (source.isReexport()));
+    SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540904l, 1855399583446017054l, "moduleRef"), convert(source.getModuleRef()));
     return dep;
   }
   private SNode convert(GeneratorDescriptor source) {
     SNode generator = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Generator", null);
     fill(generator, source);
-    SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
-    SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "needOperationContext", "" + (source.needsOperationContext()));
-    SPropertyOperations.set(generator, "reflectiveQueries", "" + (source.isReflectiveQueries()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 269654322145299012l, "generatorUID"), source.getGeneratorUID());
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 3000929436959691392l, "generateTemplates"), "" + (source.isGenerateTemplates()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 7252918371708012025l, "needOperationContext"), "" + (source.needsOperationContext()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 7252918371708011942l, "reflectiveQueries"), "" + (source.isReflectiveQueries()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"), (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
-      SLinkOperations.getTargets(generator, "priorityRules", true).add(convert(rule));
+      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 1855399583446016267l, "priorityRules")).add(convert(rule));
     }
     for (SModuleReference ref : source.getDepGenerators()) {
-      SLinkOperations.getTargets(generator, "depGenerators", true).add(convert(ref));
+      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 1855399583446016271l, "depGenerators")).add(convert(ref));
     }
     collectModels(generator, source);
     return generator;
@@ -175,22 +177,22 @@ public abstract class ProjectStructureBuilder {
     SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingPriorityRule", null);
     switch (source.getType()) {
       case BEFORE_OR_TOGETHER:
-        SPropertyOperations.set(rule, "type", "before_or_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "before_or_together");
         break;
       case STRICTLY_BEFORE:
-        SPropertyOperations.set(rule, "type", "strictly_before");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_before");
         break;
       case STRICTLY_AFTER:
-        SPropertyOperations.set(rule, "type", "strictly_after");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_after");
         break;
       case AFTER_OR_TOGETHER:
-        SPropertyOperations.set(rule, "type", "after_or_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "after_or_together");
         break;
       default:
-        SPropertyOperations.set(rule, "type", "strictly_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_together");
     }
-    SLinkOperations.setTarget(rule, "left", convert(source.getLeft()), true);
-    SLinkOperations.setTarget(rule, "right", convert(source.getRight()), true);
+    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 2721285250110391021l, "left"), convert(source.getLeft()));
+    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 2721285250110391022l, "right"), convert(source.getRight()));
     return rule;
   }
   private SNode convert(SModuleReference ref) {
@@ -198,8 +200,8 @@ public abstract class ProjectStructureBuilder {
       return null;
     }
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
-    SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ? ref.getModuleId().toString() : null));
-    SPropertyOperations.set(result, "qualifiedName", ref.getModuleName());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"), (ref.getModuleId() != null ? ref.getModuleId().toString() : null));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName"), ref.getModuleName());
     return result;
   }
   private SNode convert(MappingConfig_AbstractRef source) {
@@ -210,25 +212,25 @@ public abstract class ProjectStructureBuilder {
     } else if (source instanceof MappingConfig_RefSet) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingConfigRefSet", null);
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) source).getMappingConfigs()) {
-        SLinkOperations.getTargets(result, "refs", true).add(convert(ref));
+        SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110391051l, 2721285250110391052l, "refs")).add(convert(ref));
       }
       return result;
     } else if (source instanceof MappingConfig_ExternalRef) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", null);
-      SLinkOperations.setTarget(result, "generator", convert(((MappingConfig_ExternalRef) source).getGenerator()), true);
-      SLinkOperations.setTarget(result, "innerRef", convert(((MappingConfig_ExternalRef) source).getMappingConfig()), true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400483l, "generator"), convert(((MappingConfig_ExternalRef) source).getGenerator()));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400482l, "innerRef"), convert(((MappingConfig_ExternalRef) source).getMappingConfig()));
       return result;
     } else if (source instanceof MappingConfig_SimpleRef) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingConfigNormalRef", null);
-      SPropertyOperations.set(result, "modelUID", ((MappingConfig_SimpleRef) source).getModelUID());
-      SPropertyOperations.set(result, "nodeID", ((MappingConfig_SimpleRef) source).getNodeID());
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID"), ((MappingConfig_SimpleRef) source).getModelUID());
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400377l, "nodeID"), ((MappingConfig_SimpleRef) source).getNodeID());
       return result;
     }
     return null;
   }
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
     for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
-      ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
+      ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540907l, "model"))).addElement(convert(ref));
     }
   }
   public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);

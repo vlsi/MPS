@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -48,7 +50,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention implements Int
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1235748072133");
@@ -69,8 +71,8 @@ public class replace_invokeOperation_with_compactInvoke_Intention implements Int
       return "Replace with Compact Invoke Expression";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNodeOperations.replaceWithAnother(parent, _quotation_createNode_7ste6_a0a1a0(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
+      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+      SNodeOperations.replaceWithAnother(parent, _quotation_createNode_7ste6_a0a1a0(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1225797177491l, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1225797177491l, 1225797361612l, "parameter")), SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))));
     }
     public IntentionDescriptor getDescriptor() {
       return replace_invokeOperation_with_compactInvoke_Intention.this;
@@ -85,12 +87,12 @@ public class replace_invokeOperation_with_compactInvoke_Intention implements Int
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1235746970280l, 1235747002942l, "parameter"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("function", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1235746970280l, 1235746996653l, "function"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

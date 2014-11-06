@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractionVarRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,7 +20,7 @@ public class typeof_AbstractionVarRef_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = abstractionVarRef;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6997567109318694523", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6997567109318694520", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(abstractionVarRef, "variable", false), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6997567109318694528", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6997567109318694520", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(abstractionVarRef, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6997567109318694528", true), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

@@ -17,6 +17,8 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.Language;
@@ -80,8 +82,8 @@ public class CheckingTestsUtil {
     if (container == null) {
       return true;
     }
-    for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
+    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
         return false;
       }
     }
@@ -200,25 +202,25 @@ public class CheckingTestsUtil {
     for (final SNode node : SNodeUtil.getDescendants(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
-        result.add("unknown concept of node: " + SNodeUtil.getDebugText(node));
+        result.add("unknown concept of node: " + SNodeOperations.getDebugText(node));
         continue;
       }
       for (String name : node.getPropertyNames()) {
         if (concept.getProperty(name) == null) {
-          result.add("unknown property: `" + name + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown property: `" + name + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
       for (SReference ref : node.getReferences()) {
         SAbstractLink link = concept.getLink(ref.getRole());
         if (link == null || !(link.isReference())) {
-          result.add("unknown link role: `" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown link role: `" + ref.getRole() + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
       for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
         SAbstractLink link = concept.getLink(role);
         if (link == null || link.isReference()) {
-          result.add("unknown child role: `" + role + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown child role: `" + role + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
     }

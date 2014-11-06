@@ -18,6 +18,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -92,8 +94,8 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bap4zq_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bap4zq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bap4zq_b1a(editorContext, node));
@@ -101,7 +103,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_bap4zq_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
+    return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1240322303006l, 1240322663260l, "linkDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1240322303006l, 1240322663260l, "linkDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1..n", "0..1");
   }
   private EditorCell createConstant_bap4zq_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");

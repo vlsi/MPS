@@ -20,7 +20,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7h2wce_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("  ");
     return editorCell;

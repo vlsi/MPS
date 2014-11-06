@@ -64,4 +64,9 @@ public final class SContainmentLinkId  {
     long ref = Long.parseLong(s.substring(split + 1));
     return new SContainmentLinkId(concept, ref);
   }
+
+  @Override
+  public String toString() {
+    return serialize();
+  }
 }

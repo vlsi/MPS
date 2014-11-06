@@ -19,6 +19,8 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
@@ -67,7 +69,7 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
               if (descendantMapper == null) {
                 return null;
               }
-              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "metaPort", false));
+              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort")));
               if (mappers.size() > 0) {
                 return (View) mappers.iterator().next().getTarget();
               }
@@ -87,7 +89,7 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
               if (descendantMapper == null) {
                 return null;
               }
-              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "metaPort", false));
+              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort")));
               if (mappers.size() > 0) {
                 return (View) mappers.iterator().next().getTarget();
               }
@@ -169,8 +171,8 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "metaPort", false)));
-      myOutputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "metaPort", false)));
+      myInputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block")), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort"))));
+      myOutputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block")), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort"))));
     }
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();

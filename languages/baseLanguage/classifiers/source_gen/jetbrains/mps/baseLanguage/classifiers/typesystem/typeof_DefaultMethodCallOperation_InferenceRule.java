@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -23,13 +25,13 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769679712", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769685435", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "returnType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769685435", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), _info_12389875345);
     }
     {
       SNode parameter;
       SNode argument;
-      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).iterator();
-      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).iterator();
+      Iterator<SNode> parameter_iterator = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).iterator();
+      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, 1205770614681l, "actualArgument"))).iterator();
       while (true) {
         if (!(parameter_iterator.hasNext())) {
           break;
@@ -42,11 +44,11 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = argument;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854571586", 0, null);
-          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode) SLinkOperations.getTarget(parameter, "type", true), false, true, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode) SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), false, true, _info_12389875345);
         }
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, 1205770614681l, "actualArgument"))).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854659855", null, errorTarget);

@@ -4,11 +4,13 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class WithIndentOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_inLangConcept_1236188788769(SNode thisNode) {
-    return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+    return SNodeOperations.isInstanceOf((SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1234281982537l, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), false, false)), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
   }
 }

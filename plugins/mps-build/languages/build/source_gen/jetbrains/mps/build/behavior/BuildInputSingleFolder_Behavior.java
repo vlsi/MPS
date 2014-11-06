@@ -5,11 +5,13 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildInputSingleFolder_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
   }
 }

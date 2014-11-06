@@ -4,6 +4,8 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,13 +19,13 @@ public class OperationParm_LinkQualifier_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getOperation_5815925154349134240(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.SNodeOperation");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
   public static Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode) {
-    final boolean acceptAggregations = SNodeOperations.isInstanceOf(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode), "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation");
-    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), "concept", false))).where(new IWhereFilter<SNode>() {
+    final boolean acceptAggregations = SNodeOperations.isInstanceOf(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1171500988903l, "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation"));
+    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (acceptAggregations ? SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") : SPropertyOperations.hasValue(it, "metaClass", "reference", "reference"));
+        return (acceptAggregations ? SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference") : SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference"));
       }
     });
   }

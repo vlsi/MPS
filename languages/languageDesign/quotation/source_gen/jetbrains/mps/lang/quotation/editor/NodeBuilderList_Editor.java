@@ -14,6 +14,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -42,20 +44,20 @@ public class NodeBuilderList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_yzuegq_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, NodeBuilderList_Editor._StyleParameter_QueryFunction_yzuegq_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, NodeBuilderList_Editor._StyleParameter_QueryFunction_yzuegq_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_yzuegq_a0a0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).count() > 1;
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709738802l, 8182547171709738803l, "nodes"))).count() > 1;
   }
   private EditorCell createRefNodeList_yzuegq_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new NodeBuilderList_Editor.nodesListHandler_yzuegq_b0(node, "nodes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_nodes");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -112,7 +114,7 @@ public class NodeBuilderList_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_yzuegq_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

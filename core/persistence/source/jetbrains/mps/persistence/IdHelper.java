@@ -53,7 +53,9 @@ public class IdHelper {
     } else if (c instanceof SInterfaceConceptAdapterById) {
       return ((SInterfaceConceptAdapterById) c).getId();
     } else {
-      return MetaIdByDeclaration.getConceptId(((SNode) c.getDeclarationNode()));
+      org.jetbrains.mps.openapi.model.SNode dn = c.getDeclarationNode();
+      if (dn == null) return null;
+      return MetaIdByDeclaration.getConceptId(((SNode) dn));
     }
   }
 

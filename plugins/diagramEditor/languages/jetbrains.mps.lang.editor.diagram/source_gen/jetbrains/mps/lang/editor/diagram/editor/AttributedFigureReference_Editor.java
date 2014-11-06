@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -68,7 +70,7 @@ public class AttributedFigureReference_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_hdcr7q_a0a0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return SPropertyOperations.getString(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(node), "name");
+          return SPropertyOperations.getString(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
         public void setText(String s) {
         }
@@ -80,7 +82,7 @@ public class AttributedFigureReference_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hdcr7q_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -57,7 +59,7 @@ public class SortKeymapMembers_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")))) {
           node = null;
         }
       }

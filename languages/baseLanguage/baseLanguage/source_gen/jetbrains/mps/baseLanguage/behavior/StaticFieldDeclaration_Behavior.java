@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.project.Project;
@@ -40,12 +42,12 @@ public class StaticFieldDeclaration_Behavior {
   }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-    SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
+    SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), thisNode);
     return ref;
   }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
     return result;
   }
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
@@ -73,24 +75,24 @@ public class StaticFieldDeclaration_Behavior {
   }
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
+    if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null) {
       return;
     }
-    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
-    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+    context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
+    context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
   }
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return _quotation_createNode_ge0l0h_a0a11(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
+    return _quotation_createNode_ge0l0h_a0a11(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), thisNode);
   }
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
     if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) {
       SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
     }
-    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "deprecated", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
     AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
   public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
@@ -102,8 +104,8 @@ public class StaticFieldDeclaration_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_2);
     return quotedNode_3;
   }
 }

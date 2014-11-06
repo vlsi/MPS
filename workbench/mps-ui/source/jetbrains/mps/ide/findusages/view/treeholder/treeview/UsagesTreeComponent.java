@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,6 @@ import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -72,7 +71,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
+public class UsagesTreeComponent extends JPanel implements IChangeListener {
   private static final Logger LOG = LogManager.getLogger(UsagesTreeComponent.class);
 
   private static final String CONTENTS = "contents";
@@ -80,7 +79,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   private static final String NODE_REPRESENTATOR = "node_representator";
   private static final String CLASS_NAME = "class_name";
 
-  @Nullable
+  private final Project myProject;
   private INodeRepresentator myNodeRepresentator = null;
 
   private UsagesTree myTree;
@@ -95,13 +94,14 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   private boolean mySearchedNodesButtonsVisible = true;
   private boolean myAdditionalInfoButtonVisible = true;
-  private OccurenceNavigatorSupport myOccurenceNavigator;
+  private OccurenceNavigatorSupport myOccurrenceNavigator;
 
-  public UsagesTreeComponent(ViewOptions defaultOptions) {
+  public UsagesTreeComponent(ViewOptions defaultOptions, Project mpsProject) {
     super(new BorderLayout());
+    myProject = mpsProject;
 
-    myTree = new UsagesTree(UsagesTreeComponent.this.getProject());
-    myOccurenceNavigator = new OccurenceNavigatorSupport(myTree) {
+    myTree = new UsagesTree(mpsProject);
+    myOccurrenceNavigator = new OccurenceNavigatorSupport(myTree) {
       @Override
       protected Navigatable createDescriptorForNode(DefaultMutableTreeNode node) {
         if (node.getChildCount() > 0) return null;
@@ -129,7 +129,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
     };
 
-    TreeHighlighterExtension.attachHighlighters(myTree, UsagesTreeComponent.this.getProject());
+    TreeHighlighterExtension.attachHighlighters(myTree, ProjectHelper.toIdeaProject(mpsProject));
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = ScrollPaneFactory.createScrollPane(myTree);
@@ -161,7 +161,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public OccurenceNavigator getOccurenceNavigator() {
-    return myOccurenceNavigator;
+    return myOccurrenceNavigator;
   }
 
   @Override
@@ -275,15 +275,13 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     return myTree;
   }
 
-  public abstract com.intellij.openapi.project.Project getProject();
-
   private Navigatable toNavigatable(BaseNodeData data) {
     if (data instanceof NodeNodeData) {
-      return new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ((NodeNodeData) data).getNodePointer());
+      return new NodeNavigatable(myProject, ((NodeNodeData) data).getNodePointer());
     } else if (data instanceof ModelNodeData) {
-      return new ModelNavigatable(ProjectHelper.toMPSProject(getProject()), ((ModelNodeData) data).getModelReference());
+      return new ModelNavigatable(myProject, ((ModelNodeData) data).getModelReference());
     } else if (data instanceof ModuleNodeData) {
-      return new ModuleNavigatable(ProjectHelper.toMPSProject(getProject()), ((ModuleNodeData) data).getModuleReference());
+      return new ModuleNavigatable(myProject, ((ModuleNodeData) data).getModuleReference());
     }
     return null;
   }

@@ -35,7 +35,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("openParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     DeleteParenthesisLeft_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
@@ -69,8 +69,8 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_hf4h8_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

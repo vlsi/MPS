@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -29,25 +31,25 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_bbraw4_b0a0a0c0b()));
     if (!(noReturnExpected)) {
       final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
-      Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
+      Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")));
       // should return subtypes of the 'expected type' 
       // if 'expected type' is null - should still return some value (of any type) 
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
-        if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
+        if ((SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression")) == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304501", null, errorTarget);
           }
         } else {
           {
-            SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
+            SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"));
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304511", 0, null);
             typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true), false, true, _info_12389875345);
           }
           if ((expectedRetType != null)) {
             if (!(typeCheckingContext.isSingleTypeComputation())) {
               {
-                SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
+                SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"));
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770735", 0, null);
                 typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363166597", true), (SNode) expectedRetType, true, true, _info_12389875345);
               }
@@ -57,8 +59,8 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       }
       // last expression statement can serve as return statement 
       SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getLastStatement_1239354409446", new Object[]{});
-      if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-        final SNode expression = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
+      if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+        final SNode expression = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"));
         {
           SNode _nodeToCheck_1029348928467 = expression;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053063874", 0, null);

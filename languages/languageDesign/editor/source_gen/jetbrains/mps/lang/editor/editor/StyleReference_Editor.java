@@ -64,7 +64,7 @@ public class StyleReference_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "style");
       editorCell.setCellId("ReferencePresentation_d8oyft_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

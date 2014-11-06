@@ -76,10 +76,10 @@ public class Mps_Command {
     return IterableUtils.join(ListSequence.fromList(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1200m", "-XX:MaxPermSize=150m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ? " -Dmps.internal=true" : "")))).getCommandList()), " ");
   }
   public static String getDefaultConfigurationPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/config";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug32/config";
   }
   public static String getDefaultSystemPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/system";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug32/system";
   }
   private static List<File> getClassPath() {
     Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).select(new ISelector<String, String>() {

@@ -64,7 +64,7 @@ public class ScopesExpectedNode_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "ref");
       editorCell.setCellId("ReferencePresentation_pnhdpl_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, false);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

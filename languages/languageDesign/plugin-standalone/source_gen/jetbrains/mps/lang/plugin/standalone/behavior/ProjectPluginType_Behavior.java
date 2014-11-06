@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ProjectPluginType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "plugin", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178856l, 481983775135178858l, "plugin")), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
 }

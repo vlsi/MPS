@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithComment_Intention implements IntentionFactory {
@@ -66,9 +68,9 @@ public class SurroundWithComment_Intention implements IntentionFactory {
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, commentedBlock);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-        ListSequence.fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+        ListSequence.fromList(SLinkOperations.getChildren(commentedBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, 1177326540772l, "statement"))).addElement(SNodeOperations.getNodeAncestor(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true, false));
       }
-      editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).last());
+      editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(commentedBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, 1177326540772l, "statement"))).last());
     }
     public IntentionDescriptor getDescriptor() {
       return SurroundWithComment_Intention.this;

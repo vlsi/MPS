@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,11 +17,11 @@ public class UnrestrictedFunctionType_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
-    for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+    for (SNode pt : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, pt, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ",";
     }
-    sb.append("==>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "terminateType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+    sb.append("==>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType")), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
   }
   public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
@@ -37,7 +39,7 @@ public class UnrestrictedFunctionType_Behavior {
     } else {
       sb.append("_void");
     }
-    sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
+    sb.append("_P").append(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).count());
     sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
   }
@@ -45,11 +47,11 @@ public class UnrestrictedFunctionType_Behavior {
     return "_UnrestrictedClosures";
   }
   public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
-    SNode tt = SLinkOperations.getTarget(thisNode, "terminateType", true);
-    if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
+    SNode tt = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType"));
+    if (SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
+      List<SNode> args = SLinkOperations.getChildren(SNodeOperations.cast(tt, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
       tt = ListSequence.fromList(args).getElement(0);
     }
-    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
+    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) ? tt : null);
   }
 }

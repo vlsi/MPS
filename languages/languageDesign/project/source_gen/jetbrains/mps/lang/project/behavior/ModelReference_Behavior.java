@@ -4,17 +4,19 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getModelReference_6236774123822284799(SNode thisNode) {
-    String result = SPropertyOperations.getString(thisNode, "qualifiedName");
-    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "stereotype"))) {
-      result = result + "@" + SPropertyOperations.getString(thisNode, "stereotype");
+    String result = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName"));
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype")))) {
+      result = result + "@" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype"));
     }
-    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "uuid"))) {
-      result = SPropertyOperations.getString(thisNode, "uuid") + "(" + result + ")";
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid")))) {
+      result = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid")) + "(" + result + ")";
     }
     return result;
   }

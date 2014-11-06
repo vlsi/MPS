@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticFieldRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,12 +31,12 @@ public class MoveStaticFieldWithUsageTest_Test extends BaseTransformationTest {
       this.addNodeById("8495840634675645395");
       this.addNodeById("8495840634675243990");
       this.addNodeById("8495840634675299896");
-      MoveStaticFieldRefactoring refactoring = new MoveStaticFieldRefactoring(SNodeOperations.cast(this.getNodeById("8495840634675243980"), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      MoveStaticFieldRefactoring refactoring = new MoveStaticFieldRefactoring(SNodeOperations.cast(this.getNodeById("8495840634675243980"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), SNodeOperations.cast(this.getNodeById("8495840634675243991"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       refactoring.doRefactoring();
-      refactoring.replaceSingleUsage(SNodeOperations.cast(this.getNodeById("8495840634675645880"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
+      refactoring.replaceSingleUsage(SNodeOperations.cast(this.getNodeById("8495840634675645880"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference")));
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675243991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("8495840634675299897"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675243979"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SNodeOperations.cast(this.getNodeById("8495840634675243991"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8495840634675645396"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SNodeOperations.cast(this.getNodeById("8495840634675299897"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }

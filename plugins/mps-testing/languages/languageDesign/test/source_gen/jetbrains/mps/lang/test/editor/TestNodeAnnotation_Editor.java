@@ -52,7 +52,7 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_NodeAnnotation(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

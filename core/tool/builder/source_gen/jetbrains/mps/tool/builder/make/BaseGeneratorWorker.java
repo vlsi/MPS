@@ -80,6 +80,10 @@ public class BaseGeneratorWorker extends MpsWorker {
     String[] onoff = new String[]{"on", "off"};
     settings.enableInplaceTransformations(inplace);
     settings.setShowBadChildWarning(warnings);
+    // incremental generation for Ant build doesn't make sense as we have no way to ensure 'unchanged' artifacts are still there 
+    settings.setIncremental(false);
+    settings.setIncrementalUseCache(false);
+    settings.setCheckModelsBeforeGeneration(false);
     info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)]));
   }
   @Override

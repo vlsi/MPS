@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -43,7 +45,7 @@ public class AddCustomPackaging_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SLinkOperations.getTargets(node, "customPackaging", true).isEmpty();
+    return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging")).isEmpty();
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "4034578608468929409");
@@ -64,7 +66,7 @@ public class AddCustomPackaging_Intention implements IntentionFactory {
       return "Customize Packaging for modules";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.addNewChild(node, "customPackaging", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
+      SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
     }
     public IntentionDescriptor getDescriptor() {
       return AddCustomPackaging_Intention.this;

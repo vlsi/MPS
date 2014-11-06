@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,12 +47,12 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).isNotEmpty()) {
       return false;
     }
 
-    SNode s1 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true));
-    SNode s2 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+    SNode s1 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")));
+    SNode s2 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")));
     return (s1 != null) && (s2 != null) && IntentionUtils.canBeConvertedToTernary(s1, s2);
   }
   public SNodeReference getIntentionNodeReference() {
@@ -72,7 +74,7 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
       return "Convert If Condition to Ternary Operator";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode result = IntentionUtils.convertToTernary(IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)), SLinkOperations.getTarget(node, "condition", true));
+      SNode result = IntentionUtils.convertToTernary(IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"))), IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"))), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")));
       if (result != null) {
         SNodeOperations.replaceWithAnother(node, result);
       }

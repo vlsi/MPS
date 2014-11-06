@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,7 +25,7 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   public typeof_ActionCallParameter_InferenceRule() {
   }
   public void applyRule(final SNode actionCallParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), actionCallParameter, "virtual_getParameterDeclaration_5582028874769074473", new Object[]{}), "type", true);
+    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), actionCallParameter, "virtual_getParameterDeclaration_5582028874769074473", new Object[]{}), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
         SNode _nodeToCheck_1029348928467 = actionCallParameter;
@@ -31,10 +33,10 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
         typeCheckingContext.createLessThanInequality((SNode) type, (SNode) _quotation_createNode_vuymlq_a0b0b(), true, true, _info_12389875345);
       }
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && eq_vuymlq_a0a0c0b(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SNodeOperations.getNode("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)", "~DataKey")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() == 1) {
-      SNode typeParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")) && eq_vuymlq_a0a0c0b(SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), SNodeOperations.getNode("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)", "~DataKey")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count() == 1) {
+      SNode typeParameter = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).first();
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(actionCallParameter, "value", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(actionCallParameter, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 5582028874769074091l, 5582028874769074092l, "value"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "5582028874769074129", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "5582028874769074131", true), (SNode) typeParameter, false, true, _info_12389875345);
       }
@@ -61,7 +63,7 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)"), facade.createNodeId("~DataKey")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)"), facade.createNodeId("~DataKey")));
     return quotedNode_1;
   }
   private static boolean eq_vuymlq_a0a0c0b(Object a, Object b) {

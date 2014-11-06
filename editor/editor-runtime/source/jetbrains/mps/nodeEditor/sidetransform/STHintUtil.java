@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.sidetransform;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * User: shatalin
@@ -37,28 +36,28 @@ public class STHintUtil {
   private static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
   public static void addRightTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
-    SNodeAccessUtil.setProperty(node, RIGHT_TRANSFORM_HINT, "true");
+    node.setProperty(RIGHT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
   }
 
   public static void addLeftTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
-    SNodeAccessUtil.setProperty(node, LEFT_TRANSFORM_HINT, "true");
+    node.setProperty(LEFT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
   }
 
   public static boolean hasRightTransformHint(SNode node) {
-    return SNodeAccessUtil.getProperty(node, RIGHT_TRANSFORM_HINT) != null;
+    return node.getProperty(RIGHT_TRANSFORM_HINT) != null;
   }
 
   public static boolean hasLeftTransformHint(SNode node) {
-    return SNodeAccessUtil.getProperty(node, LEFT_TRANSFORM_HINT) != null;
+    return node.getProperty(LEFT_TRANSFORM_HINT) != null;
   }
 
   public static void removeTransformHints(SNode node) {
-    SNodeAccessUtil.setProperty(node, LEFT_TRANSFORM_HINT, null);
-    SNodeAccessUtil.setProperty(node, RIGHT_TRANSFORM_HINT, null);
+    node.setProperty(LEFT_TRANSFORM_HINT, null);
+    node.setProperty(RIGHT_TRANSFORM_HINT, null);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, null);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
   }

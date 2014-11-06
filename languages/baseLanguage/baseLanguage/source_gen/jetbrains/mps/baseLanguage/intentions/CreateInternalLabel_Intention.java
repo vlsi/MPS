@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -44,7 +46,7 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")));
+    return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement")) && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label")))) || (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement")) && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")))) || (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label")))) || (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1201381395355l, "label"))));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "9163255059340117948");
@@ -66,14 +68,14 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       String value = "label";
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label", value);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement")) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label", value);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label", value);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label", value);
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement"))) {
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label"), value);
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement"))) {
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label"), value);
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"))) {
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label"), value);
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement"))) {
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, "jetbrains.mps.baseLanguage.structure.SwitchStatement")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1201381395355l, "label"), value);
       }
     }
     public IntentionDescriptor getDescriptor() {

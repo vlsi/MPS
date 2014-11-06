@@ -53,6 +53,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.event.TreeSelectionEvent;
@@ -110,7 +111,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   private void initNodes(SNode node) {
     myNodes = new HashSet<SNode>();
-    myNodes.addAll(SNodeOperations.getDescendants(node, null, false, new String[]{}));
+    myNodes.addAll(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{}));
     myNodes.add(node);
   }
 

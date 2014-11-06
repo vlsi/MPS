@@ -86,9 +86,9 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_g1wmr2_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<choose menu part>");
       return editorCell;

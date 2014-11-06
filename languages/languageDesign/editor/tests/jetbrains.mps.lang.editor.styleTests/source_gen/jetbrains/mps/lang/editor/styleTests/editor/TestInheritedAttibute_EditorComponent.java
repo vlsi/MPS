@@ -29,7 +29,7 @@ public class TestInheritedAttibute_EditorComponent implements ConceptEditorCompo
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4dgohu_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_4dgohu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4dgohu_b0(editorContext, node));

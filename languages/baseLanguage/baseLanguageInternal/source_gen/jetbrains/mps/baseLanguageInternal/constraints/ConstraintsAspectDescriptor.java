@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguageInternal.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -32,9 +33,42 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 8:
         return new InternalSuperMethodCallOperation_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 3585982959253821850l) {
+      return new ExtractStaticMethod_CallExpression_Constraints();
+    }
+    if (id == 3196918548953109193l) {
+      return new ExtractStatementListInnerExpression_Constraints();
+    }
+    if (id == 5822086619725599105l) {
+      return new ExtractStaticInnerClassCreator_Constraints();
+    }
+    if (id == 937236280924494202l) {
+      return new ExtractStaticInnerClassConcept_Constraints();
+    }
+    if (id == 1174294166120l) {
+      return new InternalPartialInstanceMethodCall_Constraints();
+    }
+    if (id == 99767819676010097l) {
+      return new ExtractToConstantRefExpression_Constraints();
+    }
+    if (id == 8791205313600585946l) {
+      return new WeakClassReference_Constraints();
+    }
+    if (id == 3421461530438559753l) {
+      return new InternalAnonymousClass_Constraints();
+    }
+    if (id == 1585405235656310154l) {
+      return new ConstantValue_Constraints();
+    }
+    if (id == 3731567766880819155l) {
+      return new InternalSuperMethodCallOperation_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
 }

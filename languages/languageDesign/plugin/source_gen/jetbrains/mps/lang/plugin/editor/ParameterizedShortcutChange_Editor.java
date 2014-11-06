@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -56,7 +58,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       editorCell.setRole("action");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(3, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -101,7 +103,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ecw4ny_b1a(editorContext, node));
@@ -114,7 +116,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a0b0(editorContext, node));
     if (renderingCondition_ecw4ny_a1a1a(node, editorContext)) {
@@ -132,9 +134,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder params = new StringBuilder();
-        for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true))) {
-          params.append(SPropertyOperations.getString(param, "name"));
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).last() != param) {
+        for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l, "action")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1227008813498l, "constructionParameter")))) {
+          params.append(SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l, "action")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1227008813498l, "constructionParameter"))).last() != param) {
             params.append(", ");
           }
         }
@@ -155,9 +157,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ecw4ny_b0b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -169,7 +171,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_ecw4ny_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ecw4ny_b1b0(editorContext, node));
@@ -202,9 +204,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ecw4ny_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

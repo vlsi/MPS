@@ -56,6 +56,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -65,6 +66,7 @@
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.Mapper" />
     <classNode dependClassName="jetbrains.mps.util.containers.ManyToManyMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />

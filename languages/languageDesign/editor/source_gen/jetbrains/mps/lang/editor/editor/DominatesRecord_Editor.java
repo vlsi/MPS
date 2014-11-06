@@ -24,7 +24,7 @@ public class DominatesRecord_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yrqgnt_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_yrqgnt_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yrqgnt_b0(editorContext, node));

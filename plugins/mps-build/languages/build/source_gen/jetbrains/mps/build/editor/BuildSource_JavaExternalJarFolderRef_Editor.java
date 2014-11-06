@@ -64,7 +64,7 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "folder");
       editorCell.setCellId("ReferencePresentation_cqnk8f_a0a0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

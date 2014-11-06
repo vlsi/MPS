@@ -26,8 +26,8 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_qx06sr_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_qx06sr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qx06sr_b0(editorContext, node));
@@ -73,7 +73,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qx06sr_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

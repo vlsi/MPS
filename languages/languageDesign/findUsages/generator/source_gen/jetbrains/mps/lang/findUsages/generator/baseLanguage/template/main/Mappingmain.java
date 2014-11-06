@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -137,8 +139,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763885");
-        tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
-        tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.getSearchResults(org.jetbrains.mps.openapi.util.ProgressMonitor,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope,java.lang.String...):jetbrains.mps.ide.findusages.model.SearchResults")));
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.getSearchResults(org.jetbrains.mps.openapi.util.ProgressMonitor,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope,java.lang.String...):jetbrains.mps.ide.findusages.model.SearchResults")));
         {
           Collection<SNode> tlist2 = null;
           if (QueriesGenerated.ifMacro_Condition_4192433084863763888(new IfMacroContext(context, ifMacroRef_417xrn_b0a0b0d0c0b12))) {
@@ -154,7 +156,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassCreator");
                 try {
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763898");
-                  tnode5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EmptyProgressMonitor.<init>()")));
+                  tnode5.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EmptyProgressMonitor.<init>()")));
                 } finally {
                 }
                 if (tnode5 != null) {
@@ -191,8 +193,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
             final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
             try {
               environment.nodeCopied(context, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763925");
-              tnode11.setReference("classConcept", SReference.create("classConcept", tnode11, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GlobalScope")));
-              tnode11.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode11, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
+              tnode11.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode11, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GlobalScope")));
+              tnode11.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode11, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
             } finally {
             }
             tlist9 = TemplateUtil.singletonList(tnode11);
@@ -213,7 +215,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
             try {
               environment.nodeCopied(context13, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763933");
-              SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(new PropertyMacroContext(context13, "", propertyMacro_417xrn_c0a0c0b0d0c0g0c0b12))));
+              SNodeAccessUtil.setProperty(tnode14, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(new PropertyMacroContext(context13, "", propertyMacro_417xrn_c0a0c0b0d0c0g0c0b12))));
             } finally {
             }
             if (tnode14 != null) {
@@ -240,8 +242,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517798");
-        tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider")));
-        tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider")));
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
         {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_b0a0a1a3a2a1w));
@@ -253,13 +255,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
             final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
             try {
               environment.nodeCopied(context2, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517848");
-              tnode3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.getFinderByClassName(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder")));
-              tnode3.setReference("classConcept", SReference.create("classConcept", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
+              tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils.getFinderByClassName(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder")));
+              tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
               {
                 final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                 try {
                   environment.nodeCopied(context2, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517849");
-                  SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(new PropertyMacroContext(context2, "", propertyMacro_417xrn_c0a0c0b0b0d0d0c0d0c0b22))));
+                  SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(new PropertyMacroContext(context2, "", propertyMacro_417xrn_c0a0c0b0b0d0d0c0d0c0b22))));
                 } finally {
                 }
                 if (tnode4 != null) {

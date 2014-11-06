@@ -29,7 +29,7 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_74pwef_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_74pwef_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_74pwef_b0(editorContext, node));
@@ -40,7 +40,7 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_74pwef_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -98,10 +98,10 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_74pwef_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.FONT_SIZE, 9);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.FONT_SIZE, 0, 9);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +109,7 @@ public class ExtensionMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_74pwef_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

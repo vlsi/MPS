@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
@@ -38,7 +40,7 @@ public class PasteAsJavaMethods_Action extends BaseAction {
     if (ReadOnlyUtil.isSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))) {
       return false;
     }
-    return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
+    return (SNodeOperations.getNodeAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {

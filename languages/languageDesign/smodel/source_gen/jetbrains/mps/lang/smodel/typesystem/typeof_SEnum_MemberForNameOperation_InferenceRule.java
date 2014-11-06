@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class typeof_SEnum_MemberForNameOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SEnum_MemberForNameOperation_InferenceRule() {
@@ -39,7 +41,7 @@ public class typeof_SEnum_MemberForNameOperation_InferenceRule extends AbstractI
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "enum", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1240170042401l, 1240170836027l, "enum"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

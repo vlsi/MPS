@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -22,8 +21,7 @@ public class Extension_customContainers5633688998557455347_ extends Extension.De
       public List<SNode> invoke() {
         List<SNode> res = new ArrayList<SNode>();
         // Find the model(s) with custom container declarations 
-        SModel desc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.trove.containers"));
-        SModel mdl = desc;
+        SModel mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.collections.trove.containers");
         if (mdl != null) {
           ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
         }

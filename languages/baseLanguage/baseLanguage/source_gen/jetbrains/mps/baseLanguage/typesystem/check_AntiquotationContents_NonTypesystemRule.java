@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -21,12 +23,12 @@ public class check_AntiquotationContents_NonTypesystemRule extends AbstractNonTy
   public check_AntiquotationContents_NonTypesystemRule() {
   }
   public void applyRule(final SNode antiquotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode contentsType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(antiquotation, "expression", true));
-    if (SNodeOperations.isInstanceOf(contentsType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(contentsType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    SNode contentsType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(antiquotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
+    if (SNodeOperations.isInstanceOf(contentsType, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
+      if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(contentsType, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(antiquotation, "expression", true), "Substitution of a classifier here is probably an error", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228301999219", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(antiquotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")), "Substitution of a classifier here is probably an error", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1228301999219", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ReplaceClassAntiquotationWithClassifierType_QuickFix", false);
             intentionProvider.putArgument("antiquotation", antiquotation);

@@ -4,11 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CustomSetterPropertyImplementation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_hasSetter_1213877430658(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "setAccessor", true) != null);
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor")) != null);
   }
 }

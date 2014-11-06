@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,13 +26,13 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
   public typeof_InvokeExpression_InferenceRule() {
   }
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode cl = SNodeOperations.getAncestor(invoke, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
+    final SNode cl = SNodeOperations.getNodeAncestor(invoke, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), false, false);
     if (!((cl != null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(invoke, "Must be within ClosureLiteral", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199711581032", null, errorTarget);
     }
     List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
+    for (SNode p : SLinkOperations.getChildren(invoke, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199711271002l, 1199711344856l, "parameter"))) {
       final SNode ClosureFormalParamType_typevar_7073484723012007681 = typeCheckingContext.createNewRuntimeTypesVariable();
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
@@ -74,12 +76,12 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("parameterType", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("resultType", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

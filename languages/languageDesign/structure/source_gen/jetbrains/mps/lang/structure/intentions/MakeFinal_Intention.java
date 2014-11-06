@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeFinal_Intention implements IntentionFactory {
@@ -55,12 +57,12 @@ public class MakeFinal_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "final") ? "Make Not Final" : "Make Final");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final")) ? "Make Not Final" : "Make Final");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "final", "" + (!(SPropertyOperations.getBoolean(node, "final"))));
-      if (SPropertyOperations.getBoolean(node, "final")) {
-        SPropertyOperations.set(node, "abstract", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final")))));
+      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956807l, "final"))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"), "" + (false));
       }
     }
     public IntentionDescriptor getDescriptor() {

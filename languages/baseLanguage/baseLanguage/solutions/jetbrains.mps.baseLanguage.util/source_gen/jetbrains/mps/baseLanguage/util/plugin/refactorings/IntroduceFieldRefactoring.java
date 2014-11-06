@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -28,18 +30,18 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
       newDeclaration = _quotation_createNode_baxqxe_a0a0a2a1(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     if (myIsFinal) {
-      SPropertyOperations.set(newDeclaration, "isFinal", "" + (true));
+      SPropertyOperations.set(newDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
     }
-    SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classConcept = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     MemberInsertingUtils.insertClassifierMemberInBestPlace(classConcept, newDeclaration);
     SNode assignStatement = _quotation_createNode_baxqxe_a0g0b(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
-      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
+      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), SNodeOperations.copyNode(assignStatement));
     }
     if (this.myFieldInitialization == FieldInitializationPlace.CONSTRUCTOR) {
-      SNode declaration = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode declaration = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
       for (SNode constructor : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), declaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{}))) {
-        List<SNode> statement = SLinkOperations.getTargets(SLinkOperations.getTarget(constructor, "body", true), "statement", true);
+        List<SNode> statement = SLinkOperations.getChildren(SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
         if (ListSequence.fromList(statement).isNotEmpty()) {
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statement).first(), SNodeOperations.copyNode(assignStatement));
         } else {
@@ -66,18 +68,18 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_4);
+    SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_4);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
-      quotedNode_5.addChild("visibility", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), HUtil.copyIfNecessary(quotedNode_6));
     }
     quotedNode_7 = (SNode) parameter_2;
     if (quotedNode_7 != null) {
-      quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_7));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), HUtil.copyIfNecessary(quotedNode_7));
     }
     quotedNode_8 = (SNode) parameter_3;
     if (quotedNode_8 != null) {
-      quotedNode_5.addChild("initializer", HUtil.copyIfNecessary(quotedNode_8));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), HUtil.copyIfNecessary(quotedNode_8));
     }
     return quotedNode_5;
   }
@@ -87,14 +89,14 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_3);
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
-      quotedNode_4.addChild("visibility", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), HUtil.copyIfNecessary(quotedNode_5));
     }
     quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
-      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), HUtil.copyIfNecessary(quotedNode_6));
     }
     return quotedNode_4;
   }
@@ -110,16 +112,16 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, null, false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, false);
-    quotedNode_5.addChild("operand", quotedNode_7);
+    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_8, "fieldDeclaration", (SNode) parameter_1);
-    quotedNode_5.addChild("operation", quotedNode_8);
-    quotedNode_4.addChild("lValue", quotedNode_5);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_8, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"), (SNode) parameter_1);
+    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), quotedNode_8);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), quotedNode_5);
     quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
-      quotedNode_4.addChild("rValue", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_3.addChild("expression", quotedNode_4);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), quotedNode_4);
     return quotedNode_3;
   }
   private static SNode _quotation_createNode_baxqxe_a0a0a2(Object parameter_1) {
@@ -129,10 +131,10 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, false);
-    quotedNode_2.addChild("operand", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "fieldDeclaration", (SNode) parameter_1);
-    quotedNode_2.addChild("operation", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"), (SNode) parameter_1);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), quotedNode_4);
     return quotedNode_2;
   }
 }

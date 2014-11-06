@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -234,7 +235,7 @@ import java.util.Set;
       return getType(initialNode);
     }
 
-    TypeSystemComponent.LOG.debug("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
+    TypeSystemComponent.LOG.debug("No typesystem rule for " + SNodeOperations.getDebugText(initialNode) + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new jetbrains.mps.smodel.SNodePointer(initialNode));
     return null;
   }
 

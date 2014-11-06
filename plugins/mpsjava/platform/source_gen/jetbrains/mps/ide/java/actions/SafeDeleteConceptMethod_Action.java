@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -56,7 +58,7 @@ public class SafeDeleteConceptMethod_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")))) {
           node = null;
         }
       }

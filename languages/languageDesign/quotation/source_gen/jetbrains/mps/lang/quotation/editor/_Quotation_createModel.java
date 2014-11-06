@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class _Quotation_createModel extends KeyMapImpl {
@@ -48,10 +50,10 @@ public class _Quotation_createModel extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return SLinkOperations.getTarget(node, "modelToCreate", true) == null;
+      return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate")) == null;
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewChild(node, "modelToCreate", "jetbrains.mps.baseLanguage.structure.Expression");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate"), "jetbrains.mps.baseLanguage.structure.Expression");
     }
     public String getKeyStroke() {
       return " [";

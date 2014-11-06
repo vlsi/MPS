@@ -45,7 +45,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_i3f4o0_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +108,7 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_i3f4o0_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

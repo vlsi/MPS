@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 
@@ -27,15 +29,15 @@ public class DataFlow {
     for (Instruction i : unreachable) {
       if (!(DataFlow.mayBeUnreachable(i)) && i.getSource() != null) {
         SNode unreachableNode = (SNode) i.getSource();
-        if (SNodeOperations.isInstanceOf(unreachableNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+        if (SNodeOperations.isInstanceOf(unreachableNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"))) {
           unreachableNodes.add((SNode) i.getSource());
         } else {
-          if (SNodeOperations.isInstanceOf(unreachableNode, "jetbrains.mps.baseLanguage.structure.StatementList")) {
-            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(unreachableNode), "jetbrains.mps.baseLanguage.structure.Statement"))) {
+          if (SNodeOperations.isInstanceOf(unreachableNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(unreachableNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")))) {
               unreachableNodes.add((SNode) i.getSource());
             }
           } else {
-            unreachableNodes.add(SNodeOperations.getAncestor(unreachableNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+            unreachableNodes.add(SNodeOperations.getNodeAncestor(unreachableNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true, false));
           }
         }
       }

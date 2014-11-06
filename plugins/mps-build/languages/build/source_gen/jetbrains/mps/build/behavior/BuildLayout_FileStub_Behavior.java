@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildLayout_FileStub_Behavior {
@@ -13,19 +15,19 @@ public class BuildLayout_FileStub_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    helper.locations().put(thisNode, parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "fileName", true), helper.getMacroHelper()));
+    helper.locations().put(thisNode, parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683370806l, 7181125477683370900l, "fileName")), helper.getMacroHelper()));
   }
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Container")) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
-    sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "fileName", true), null));
+    sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683370806l, 7181125477683370900l, "fileName")), null));
 
   }
   public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "fileName", true), null);
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683370806l, 7181125477683370900l, "fileName")), null);
   }
 }

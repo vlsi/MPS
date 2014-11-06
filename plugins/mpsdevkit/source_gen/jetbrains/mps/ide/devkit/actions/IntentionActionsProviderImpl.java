@@ -11,7 +11,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,14 +31,14 @@ public class IntentionActionsProviderImpl implements IntentionActionsProvider {
       protected void doExecute(final AnActionEvent e, Map<String, Object> params) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+            Project mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
             SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
             SNode intentionNode = (nodeRef == null ? null : nodeRef.resolve(MPSModuleRepository.getInstance()));
             if (intentionNode == null) {
-              Messages.showErrorDialog(ProjectHelper.toIdeaProject(context.getProject()), "Could not find declaration for " + intention.getClass().getSimpleName() + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
+              Messages.showErrorDialog(ProjectHelper.toIdeaProject(mpsProject), "Could not find declaration for " + intention.getClass().getSimpleName() + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
             } else {
-              NavigationSupport.getInstance().openNode(context, intentionNode, true, true);
-              NavigationSupport.getInstance().selectInTree(context, intentionNode, false);
+              NavigationSupport.getInstance().openNode(mpsProject, intentionNode, true, true);
+              NavigationSupport.getInstance().selectInTree(mpsProject, intentionNode, false);
             }
           }
         });

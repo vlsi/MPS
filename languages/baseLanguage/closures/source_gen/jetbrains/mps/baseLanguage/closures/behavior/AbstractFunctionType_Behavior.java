@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractFunctionType_Behavior {
@@ -12,11 +14,11 @@ public class AbstractFunctionType_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
-    for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+    for (SNode pt : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 5612111951671407997l, 5612111951671407998l, "parameterType"))) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, pt, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ",";
     }
-    sb.append("~~>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "resultType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+    sb.append("~~>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 5612111951671407997l, 5612111951671407999l, "resultType")), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
   }
 }

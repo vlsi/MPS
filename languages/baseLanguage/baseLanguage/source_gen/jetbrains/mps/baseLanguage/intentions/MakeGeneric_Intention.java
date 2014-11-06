@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -47,7 +49,7 @@ public class MakeGeneric_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // todo: maybe not "everything except" but "just something"? 
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isEmpty() && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1203413213560");
@@ -68,7 +70,7 @@ public class MakeGeneric_Intention implements IntentionFactory {
       return "Add Type Variable";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
     }
     public IntentionDescriptor getDescriptor() {
       return MakeGeneric_Intention.this;

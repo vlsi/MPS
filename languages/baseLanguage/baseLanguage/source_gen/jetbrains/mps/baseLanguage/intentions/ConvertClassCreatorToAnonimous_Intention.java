@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -46,7 +48,7 @@ public class ConvertClassCreatorToAnonimous_Intention implements IntentionFactor
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) != null;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1214431614908");
@@ -68,12 +70,12 @@ public class ConvertClassCreatorToAnonimous_Intention implements IntentionFactor
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode anonimousClassCreator = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
-      SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
-      for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, 1182160096073l, "cls")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier"), SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      for (SNode typeParm : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter")))) {
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(anonimousClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, 1182160096073l, "cls")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).addElement(typeParm);
       }
-      for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
+      for (SNode typeParm : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter")))) {
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(anonimousClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, 1182160096073l, "cls")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).addElement(typeParm);
       }
     }
     public IntentionDescriptor getDescriptor() {

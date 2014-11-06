@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.InstructionUtil;
 
@@ -14,15 +16,15 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
   public TryCatchStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode catchClause : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
+    for (SNode catchClause : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))) {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7970753809667931499");
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
-    for (final Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body")));
+    for (final Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body")))) {
       if (InstructionUtil.isRet(instruction) || InstructionUtil.isJump(instruction) || InstructionUtil.isNop(instruction)) {
         continue;
       }
-      for (final SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
+      for (final SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause")))) {
         _context.getBuilder().emitMayBeUnreachable(new Runnable() {
           public void run() {
             _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024527756");
@@ -35,7 +37,7 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
         _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207218496728");
       }
     });
-    for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
+    for (SNode c : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))) {
       _context.getBuilder().build((SNode) c);
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {

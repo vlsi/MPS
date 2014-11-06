@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -59,7 +61,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9mcqjq_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -158,7 +160,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9mcqjq_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -167,7 +169,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_h0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_9mcqjq_a7a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9mcqjq_b7a(editorContext, node));
@@ -176,15 +178,15 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_9mcqjq_a7a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1233670257997l, "conceptDeclaration")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1233670257997l, "conceptDeclaration")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
   }
   private EditorCell createCollection_9mcqjq_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_a7a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_9mcqjq_a0h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_b0h0(editorContext, node));
@@ -196,7 +198,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9mcqjq_a0h0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -233,9 +235,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_b7a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_9mcqjq_a1h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_b1h0(editorContext, node));
@@ -247,7 +249,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9mcqjq_a1h0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -284,9 +286,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_c7a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_9mcqjq_a2h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_b2h0(editorContext, node));
@@ -331,7 +333,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c2h0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
     }
     public String getMatchingText() {
       return "<query>";
@@ -347,8 +349,8 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingLiteral");
-      SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(node, "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), "encoding", parameterObject);
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), "jetbrains.mps.lang.textGen.structure.EncodingLiteral");
+      SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding")), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, "jetbrains.mps.lang.textGen.structure.EncodingLiteral")), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, 7166719696753421197l, "encoding"), parameterObject);
     }
     public boolean isReferentPresentation() {
       return false;
@@ -364,9 +366,9 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9mcqjq_i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_9mcqjq_a8a(editorContext, node));
     return editorCell;
@@ -381,7 +383,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setRole("textGenBlock");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -398,7 +400,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9mcqjq_j0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

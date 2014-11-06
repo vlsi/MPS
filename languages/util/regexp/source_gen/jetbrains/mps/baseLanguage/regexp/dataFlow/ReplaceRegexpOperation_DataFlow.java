@@ -7,14 +7,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceRegexpOperation_DataFlow extends DataFlowBuilder {
   public ReplaceRegexpOperation_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "search", true));
-    for (SNode r : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "replacement", true))) {
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search")));
+    for (SNode r : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137086347l, "replacement")))) {
       _context.getBuilder().build((SNode) r);
     }
   }

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -63,13 +65,13 @@ public class AddContext_Intention implements IntentionFactory {
       return "Convert to Inline Template with Context";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode tNode = SLinkOperations.getTarget(node, "templateNode", true);
-      SLinkOperations.setTarget(node, "templateNode", null, true);
+      SNode tNode = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"), null);
       SNode result = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
-      if (SNodeOperations.isInstanceOf(tNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SLinkOperations.setTarget(result, "contentNode", _quotation_createNode_4m6r5j_a0a0d0a(tNode), true);
+      if (SNodeOperations.isInstanceOf(tNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))) {
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), _quotation_createNode_4m6r5j_a0a0d0a(tNode));
       } else {
-        SLinkOperations.setTarget(result, "contentNode", tNode, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), tNode);
       }
       EditingUtil.createTemplateFragment(tNode);
     }
@@ -88,10 +90,10 @@ public class AddContext_Intention implements IntentionFactory {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
-      quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), HUtil.copyIfNecessary(quotedNode_5));
     }
-    quotedNode_3.addChild("statement", quotedNode_4);
-    quotedNode_2.addChild("statements", quotedNode_3);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), quotedNode_4);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), quotedNode_3);
     return quotedNode_2;
   }
 }

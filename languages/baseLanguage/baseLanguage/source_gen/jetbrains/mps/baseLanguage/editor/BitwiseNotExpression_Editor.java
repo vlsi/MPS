@@ -35,8 +35,8 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
     editorCell.setCellId("Constant_9r01ax_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     BitwiseNotExpression_Parens_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -75,7 +75,7 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9r01ax_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     NotExpression_Parens_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

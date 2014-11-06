@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,31 +65,31 @@ public class FlipInequality_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663239020l, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"))) {
         newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")) {
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"))) {
         newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", null);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement")) {
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 3585736512129529703l, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"))) {
         newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", null);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement")) {
+      } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179832490862l, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"))) {
         newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", null);
       } else {
         return;
       }
-      SLinkOperations.setTarget(newNode, "rightExpression", SLinkOperations.getTarget(node, "leftExpression", true), true);
-      SLinkOperations.setTarget(newNode, "leftExpression", SLinkOperations.getTarget(node, "rightExpression", true), true);
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "afterEquations", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "afterEquations", true)));
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "afterGroups", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "afterGroups", true)));
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "beforeEquations", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "beforeEquations", true)));
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "beforeGroups", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)));
-      SPropertyOperations.set(newNode, "checkOnly", "" + (SPropertyOperations.getBoolean(node, "checkOnly")));
-      SLinkOperations.setTarget(newNode, "errorString", SLinkOperations.getTarget(node, "errorString", true), true);
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)));
-      SLinkOperations.setTarget(newNode, "inequationGroup", SLinkOperations.getTarget(node, "inequationGroup", true), true);
-      SPropertyOperations.set(newNode, "inequationPriority", "" + (SPropertyOperations.getInteger_def(node, "inequationPriority", "0")));
-      SPropertyOperations.set(newNode, "label", SPropertyOperations.getString(node, "label"));
-      SLinkOperations.setTarget(newNode, "nodeToCheck", SLinkOperations.getTarget(node, "nodeToCheck", true), true);
-      ListSequence.fromList(SLinkOperations.getTargets(newNode, "rulesToSkip", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783414l, "rightExpression"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression")));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783414l, "rightExpression")));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551695629l, "afterEquations"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551695629l, "afterEquations"))));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677672382l, "afterGroups"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677672382l, "afterGroups"))));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551695630l, "beforeEquations"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551695630l, "beforeEquations"))));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677672383l, "beforeGroups"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677672383l, "beforeGroups"))));
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"))));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString")));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677695199l, "inequationGroup"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1320713984677695199l, "inequationGroup")));
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1212056105818l, "inequationPriority"), "" + (SPropertyOperations.getInteger_def(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 1212056105818l, "inequationPriority"), "0")));
+      SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551686273l, "label"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551686273l, "label")));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck")));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 5548354512157832020l, "rulesToSkip"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 5548354512157832020l, "rulesToSkip"))));
       SNodeOperations.replaceWithAnother(node, newNode);
     }
     public IntentionDescriptor getDescriptor() {

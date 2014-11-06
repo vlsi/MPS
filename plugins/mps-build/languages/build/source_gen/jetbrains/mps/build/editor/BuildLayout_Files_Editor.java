@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -89,7 +91,7 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qm6fq6_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).isEmpty();
   }
   private EditorCell createRefNodeList_qm6fq6_a2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildLayout_Files_Editor.parametersListHandler_qm6fq6_a2a(node, "parameters", editorContext);
@@ -136,8 +138,8 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_qm6fq6_a0c0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -148,9 +150,9 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameters_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

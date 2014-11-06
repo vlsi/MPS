@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import javax.swing.JPopupMenu;
 
@@ -15,7 +17,7 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
   private Condition<EditorCell> myReturnTypeCellCondition;
   public AbstractOverrideEditorMessage(SNode node, EditorMessageOwner owner, String tooltip) {
     super(node, owner, tooltip);
-    final SNode returnTypeNode = SLinkOperations.getTarget(node, "returnType", true);
+    final SNode returnTypeNode = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
     this.myReturnTypeCellCondition = new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {

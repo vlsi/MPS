@@ -21,7 +21,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_7tiwfz_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

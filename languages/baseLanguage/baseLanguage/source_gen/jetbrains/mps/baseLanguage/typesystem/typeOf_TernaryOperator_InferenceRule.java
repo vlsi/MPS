@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,16 +19,16 @@ public class typeOf_TernaryOperator_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode toe, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(toe, "condition", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(toe, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175522890409", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175522892380", true), (SNode) _quotation_createNode_n8o2jn_a0a0b(), false, true, _info_12389875345);
     }
     {
-      final SNode iftrue = typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, "ifTrue", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3096905448806653315", true);
+      final SNode iftrue = typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3096905448806653315", true);
       typeCheckingContext.whenConcrete(iftrue, new Runnable() {
         public void run() {
           {
-            final SNode iffalse = typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, "ifFalse", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3096905448806666273", true);
+            final SNode iffalse = typeCheckingContext.typeOf(SLinkOperations.getTarget(toe, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3096905448806666273", true);
             typeCheckingContext.whenConcrete(iffalse, new Runnable() {
               public void run() {
                 {

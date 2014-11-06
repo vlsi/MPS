@@ -18,18 +18,19 @@ package jetbrains.mps.smodel.adapter.ids;
 import java.util.UUID;
 
 public abstract class MetaIdFactory {
-  public static final SLanguageId INVALID_LANGUAGE_ID = MetaIdFactory.langId(new UUID(-1, -1));
-  public static final SConceptId INVALID_CONCEPT_ID = MetaIdFactory.conceptId(new UUID(-1, -1), -1);
-  public static final SPropertyId INVALID_PROP_ID = MetaIdFactory.propId(new UUID(-1, -1), -1, -1);
-  public static final SReferenceLinkId INVALID_REF_ID = MetaIdFactory.refId(new UUID(-1, -1), -1, -1);
-  public static final SContainmentLinkId INVALID_LINK_ID = MetaIdFactory.linkId(new UUID(-1, -1), -1, -1);
+  public static final SLanguageId INVALID_LANGUAGE_ID = new SLanguageId(new UUID(0, 0));
+  public static final SConceptId INVALID_CONCEPT_ID = new SConceptId(INVALID_LANGUAGE_ID, 0);
+  public static final SPropertyId INVALID_PROP_ID = new SPropertyId(INVALID_CONCEPT_ID, 0);
+  public static final SReferenceLinkId INVALID_REF_ID = new SReferenceLinkId(INVALID_CONCEPT_ID, 0);
+  public static final SContainmentLinkId INVALID_LINK_ID = new SContainmentLinkId(INVALID_CONCEPT_ID, 0);
+  public static final String INVALID_CONCEPT_NAME = "$UnknownConceptName$";
 
   public static SLanguageId langId(UUID lang) {
     return new SLanguageId(lang);
   }
 
   public static SConceptId conceptId(UUID lang, long concept) {
-    return new SConceptId(new SLanguageId(lang), concept);
+    return new SConceptId(langId(lang), concept);
   }
 
   public static SPropertyId propId(UUID lang, long concept, long prop) {

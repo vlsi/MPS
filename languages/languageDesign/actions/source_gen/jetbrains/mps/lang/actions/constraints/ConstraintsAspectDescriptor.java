@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -34,9 +35,45 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 0:
         return new CopyPasteHandlers_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1178541723620l) {
+      return new SubstituteNodeBuilderVariableReference_Constraints();
+    }
+    if (id == 1203348041101l) {
+      return new SideTransformVariableReference_Constraints();
+    }
+    if (id == 1158700725281l) {
+      return new NodeFactory_Constraints();
+    }
+    if (id == 1158700664498l) {
+      return new NodeFactories_Constraints();
+    }
+    if (id == 1112056943463l) {
+      return new NodeSubstituteActions_Constraints();
+    }
+    if (id == 1221135252814l) {
+      return new PasteWrappers_Constraints();
+    }
+    if (id == 1138079416598l) {
+      return new SideTransformHintSubstituteActions_Constraints();
+    }
+    if (id == 1235053713157l) {
+      return new SmartActionParameterReference_Constraints();
+    }
+    if (id == 1177496137779l) {
+      return new SideTransformMenuPart_Constraints();
+    }
+    if (id == 1177323652379l) {
+      return new SubstituteMenuPart_Constraints();
+    }
+    if (id == 5948027493682789918l) {
+      return new CopyPasteHandlers_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"};
 }

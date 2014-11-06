@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,10 +20,10 @@ public class typeof_MultiForEachVariable_InferenceRule extends AbstractInference
   public typeof_MultiForEachVariable_InferenceRule() {
   }
   public void applyRule(final SNode mfv, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(mfv), "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(mfv), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair"))) {
       final SNode INPUT_typevar_8293956702610254515 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(mfv), "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair"), "input", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(mfv), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair")), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099735l, "input"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120466", 0, null);
         typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_gk7o1k_a0b0a0b(typeCheckingContext.getRepresentative(INPUT_typevar_8293956702610254515)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "8293956702610249719", true), false, true, _info_12389875345);
       }
@@ -51,7 +53,7 @@ public class typeof_MultiForEachVariable_InferenceRule extends AbstractInference
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

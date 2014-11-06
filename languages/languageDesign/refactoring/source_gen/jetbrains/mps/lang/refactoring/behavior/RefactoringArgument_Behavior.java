@@ -4,20 +4,23 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class RefactoringArgument_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isTransient_478744034994716004(SNode thisNode) {
-    SNode refactoring = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
+    SNode refactoring = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, "jetbrains.mps.lang.refactoring.structure.Refactoring"), false, false);
     if (!(Refactoring_Behavior.call_isLoggable_1347577327951509202(refactoring))) {
       return true;
     }
 
-    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelBlock", true), "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", false, new String[]{});
+    List<SNode> references = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(refactoring, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 1347577327951503400l, "updateModelBlock")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 478744034994716100l, "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"), false, new SConcept[]{});
     for (SNode reference : references) {
       for (SReference sreference : reference.getReferences()) {
         if (sreference.getTargetNode() == thisNode) {

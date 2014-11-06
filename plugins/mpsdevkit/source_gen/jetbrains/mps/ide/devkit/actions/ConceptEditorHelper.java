@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -28,9 +30,9 @@ public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(SModel structureModel, SNode node) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode root : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      if (SConceptOperations.isSubConceptOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect") && SPropertyOperations.getBoolean(root, "rootable")) {
+      if (SConceptOperations.isSubConceptOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect") && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"))) {
         SNode candidate = (SNode) root;
-        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(candidate), null), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }

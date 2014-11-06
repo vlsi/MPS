@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MathSymbolFromToIndex_DataFlow extends DataFlowBuilder {
@@ -14,7 +16,7 @@ public class MathSymbolFromToIndex_DataFlow extends DataFlowBuilder {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:48b4a246-e052-4ee3-ba92-1505c2e94044(jetbrains.mps.baseLanguage.math.dataFlow)/1236595061381");
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "from", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), "upperBound", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, 1236589606450l, "from")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, "jetbrains.mps.baseLanguage.math.structure.MathSymbol")), MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236594888470l, "upperBound")));
   }
 }

@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +42,7 @@ public class QueriesGenerated {
               smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
             }
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", null);
-            SPropertyOperations.set(result, "value", smallPattern);
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762696l, 4022026349914762697l, "value"), smallPattern);
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -66,7 +68,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", null);
-            SPropertyOperations.set(result, "value", "" + (Integer.parseInt(pattern)));
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, 4022026349914762710l, "value"), "" + (Integer.parseInt(pattern)));
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -133,7 +135,7 @@ public class QueriesGenerated {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode application = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), application);
-        SLinkOperations.setTarget(application, "function", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(application, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"), _context.getSourceNode());
         return application;
       }
       public String getMatchingText(String pattern) {
@@ -162,7 +164,7 @@ public class QueriesGenerated {
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 1934341835352312155l, 1934341835352312156l, "left"), _context.getSourceNode());
           return result;
         }
       }, operationContext);
@@ -184,7 +186,7 @@ public class QueriesGenerated {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode multiple = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), multiple);
-        ListSequence.fromList(SLinkOperations.getTargets(multiple, "expressions", true)).insertElement(0, _context.getSourceNode());
+        ListSequence.fromList(SLinkOperations.getChildren(multiple, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, 1564819815921013156l, "expressions"))).insertElement(0, _context.getSourceNode());
         return multiple;
       }
       public String getMatchingText(String pattern) {

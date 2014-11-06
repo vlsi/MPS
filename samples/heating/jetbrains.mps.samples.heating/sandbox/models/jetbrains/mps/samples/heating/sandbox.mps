@@ -5,6 +5,7 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" />
     <lang id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" name="jetbrains.mps.samples.heating.tabular" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/935069066462619696" name="jetbrains.mps.samples.heating.structure.DailyPlanReference" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170436346" name="jetbrains.mps.samples.heating.structure.WeekendDay" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605733" name="jetbrains.mps.samples.heating.structure.WeekDays" />

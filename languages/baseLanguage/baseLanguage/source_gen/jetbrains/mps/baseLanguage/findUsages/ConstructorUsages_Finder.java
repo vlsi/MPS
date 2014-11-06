@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -14,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -36,7 +39,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
   @Override
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null;
   }
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
@@ -48,20 +51,20 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
         ListSequence.fromList(_results).addElement(nodeUsage);
       }
       // WORKAROUND - FIND SUPER() CALLS 
-      for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, monitor.subTask(1)))) {
-        for (SNode constructorNode : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(subclassResult, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
-          for (SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
+      for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), scope, monitor.subTask(1)))) {
+        for (SNode constructorNode : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(subclassResult, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))))) {
+          for (SNode invocation : ListSequence.fromList(SNodeOperations.getNodeDescendants(constructorNode, null, false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
+              return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475587102l, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"));
             }
           })) {
             boolean thisConstructor = true;
-            SNode invocationNode = SNodeOperations.cast(invocation, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
-            if (ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
-              for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).count(); i++) {
-                SNode actualArgument = ListSequence.fromList(SLinkOperations.getTargets(invocationNode, "actualArgument", true)).getElement(i);
-                SNode formalArgument = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
-                if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+            SNode invocationNode = SNodeOperations.cast(invocation, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475587102l, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"));
+            if (ListSequence.fromList(SLinkOperations.getChildren(invocationNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).count() == ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count()) {
+              for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(invocationNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).count(); i++) {
+                SNode actualArgument = ListSequence.fromList(SLinkOperations.getChildren(invocationNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).getElement(i);
+                SNode formalArgument = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i);
+                if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))))) {
                   thisConstructor = false;
                 }
               }
@@ -73,15 +76,15 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
         }
       }
       // search for enum constants creation 
-      SNode enumNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false), "jetbrains.mps.baseLanguage.structure.EnumClass");
+      SNode enumNode = SNodeOperations.cast(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"));
       if (enumNode != null) {
-        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {
+        for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getChildren(enumNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant")))) {
           boolean thisConstructor = true;
-          if (ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count()) {
-            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).count(); i++) {
-              SNode actualArgument = ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "actualArgument", true)).getElement(i);
-              SNode formalArgument = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).getElement(i);
-              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, "type", true)))) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).count() == ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count()) {
+            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).count(); i++) {
+              SNode actualArgument = ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).getElement(i);
+              SNode formalArgument = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i);
+              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(actualArgument), SLinkOperations.getTarget(formalArgument, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))))) {
                 thisConstructor = false;
               }
             }

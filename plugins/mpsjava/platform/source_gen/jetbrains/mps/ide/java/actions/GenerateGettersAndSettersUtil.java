@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
@@ -30,7 +32,7 @@ public class GenerateGettersAndSettersUtil {
   }
   public static String getFieldGetterName(SNode fieldDeclaration, Project project) {
     String get = "get";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534644030l, "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
       get = "is";
     }
     return get + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
@@ -52,13 +54,13 @@ public class GenerateGettersAndSettersUtil {
     } else {
       paramName = prefix + preparedFieldName + suffix;
     }
-    if (paramName.equals(SPropertyOperations.getString(field, "name"))) {
+    if (paramName.equals(SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
       paramName = paramName + "1";
     }
     return paramName;
   }
   public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {
-    String rawName = SPropertyOperations.getString(fieldDeclaration, "name");
+    String rawName = SPropertyOperations.getString(fieldDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     if (rawName == null || rawName.length() == 0) {
       return "unnamedField";
     }

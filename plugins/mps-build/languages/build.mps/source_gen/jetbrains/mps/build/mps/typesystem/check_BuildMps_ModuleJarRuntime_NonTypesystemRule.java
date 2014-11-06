@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class check_BuildMps_ModuleJarRuntime_NonTypesystemRule extends AbstractN
   public check_BuildMps_ModuleJarRuntime_NonTypesystemRule() {
   }
   public void applyRule(final SNode jarEntry, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(jarEntry, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
+    String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(jarEntry, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200804496l, 4278635856200804500l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{});
     if (!(relativePath.endsWith("}")) && !(relativePath.endsWith(".jar"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

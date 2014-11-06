@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -20,7 +22,7 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
   public check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule() {
   }
   public void applyRule(final SNode debuggerReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562217892l, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"))) {
       Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(throwables).addElement(_quotation_createNode_fpej4j_a0a1a0a1());
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, debuggerReference);
@@ -42,7 +44,7 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), facade.createNodeId("4474271214082915164")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), facade.createNodeId("4474271214082915164")));
     return quotedNode_1;
   }
 }

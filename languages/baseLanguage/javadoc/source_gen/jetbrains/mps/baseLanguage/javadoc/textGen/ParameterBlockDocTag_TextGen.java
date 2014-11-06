@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ParameterBlockDocTag_TextGen extends SNodeTextGen {
@@ -12,8 +14,8 @@ public class ParameterBlockDocTag_TextGen extends SNodeTextGen {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
     this.append("@param ");
-    appendNode(SLinkOperations.getTarget(node, "parameter", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, 6832197706140518123l, "parameter")));
     this.append(" ");
-    this.append(SPropertyOperations.getString(node, "text"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, 8465538089690881934l, "text")));
   }
 }

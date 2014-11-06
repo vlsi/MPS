@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,10 +22,10 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
   }
   public void applyRule(final SNode determinant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "param", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
+      final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1238343594087l, 1238343896784l, "param")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
       typeCheckingContext.whenConcrete(detmat, new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(detmat), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(detmat), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
             {
               SNode _nodeToCheck_1029348928467 = determinant;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969892", 0, null);
@@ -32,7 +34,7 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
           } else {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(determinant, "param", true), "Expression should be subtype of matrix", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969905", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(determinant, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1238343594087l, 1238343896784l, "param")), "Expression should be subtype of matrix", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969905", null, errorTarget);
             }
           }
         }

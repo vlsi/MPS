@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,15 +23,15 @@ public class check_LinkRefExpression_NonTypesystemRule extends AbstractNonTypesy
   public check_LinkRefExpression_NonTypesystemRule() {
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode concept = SLinkOperations.getTarget(expr, "conceptDeclaration", false);
-    SNode link = SLinkOperations.getTarget(expr, "linkDeclaration", false);
+    SNode concept = SLinkOperations.getTarget(expr, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1226359078165l, 1226359078166l, "conceptDeclaration"));
+    SNode link = SLinkOperations.getTarget(expr, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1226359078165l, 1226359192215l, "linkDeclaration"));
     if (concept == null || link == null) {
       return;
     }
     List<SNode> declaredLinks = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
     if (!(ListSequence.fromList(declaredLinks).contains(link))) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expr, "link '" + SPropertyOperations.getString(link, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226360207686", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expr, "link '" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226360207686", null, errorTarget);
     }
   }
   public String getApplicableConceptFQName() {

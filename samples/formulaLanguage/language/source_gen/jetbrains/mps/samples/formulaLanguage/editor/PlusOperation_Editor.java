@@ -57,7 +57,7 @@ public class PlusOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "+");
     editorCell.setCellId("Constant_306krj_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

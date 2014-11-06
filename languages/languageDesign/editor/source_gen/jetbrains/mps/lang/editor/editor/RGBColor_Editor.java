@@ -37,8 +37,8 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7cvrmj_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

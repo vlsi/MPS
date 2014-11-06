@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -20,22 +22,22 @@ public class check_StringSwitchStatement_NonTypesystemRule extends AbstractNonTy
   public check_StringSwitchStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode arg = SLinkOperations.getTarget(switchStatement, "expression", true);
+    SNode arg = SLinkOperations.getTarget(switchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670766145l, "expression"));
     if (arg == null) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.StringType")) {
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271177708l, "jetbrains.mps.baseLanguage.structure.StringType"))) {
       return;
     }
 
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }
 
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4609636120081351393l, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"))) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4609636120081351393l, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }

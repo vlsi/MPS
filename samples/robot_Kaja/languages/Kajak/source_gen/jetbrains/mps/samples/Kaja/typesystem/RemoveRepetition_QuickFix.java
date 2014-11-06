@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,9 +20,9 @@ public class RemoveRepetition_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     SNode repeat = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.samples.Kaja.structure.Repeat");
-    SLinkOperations.setTarget(repeat, "body", SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.CommandList", null), true);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(repeat, "body", true), "commands", true)).addElement(SNodeOperations.as(node, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"));
-    SPropertyOperations.set(repeat, "count", "" + (2));
+    SLinkOperations.setTarget(repeat, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660367l, "body"), SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.CommandList", null));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(repeat, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660367l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).addElement(SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559114l, "jetbrains.mps.samples.Kaja.structure.AbstractCommand")));
+    SPropertyOperations.set(repeat, MetaAdapterFactory.getProperty(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660366l, "count"), "" + (2));
     SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(repeat));
   }
 }

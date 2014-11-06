@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -46,7 +48,7 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode debuggerReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.DebuggerReference", null);
-                SPropertyOperations.set(debuggerReference, "debuggerName", (item));
+                SPropertyOperations.set(debuggerReference, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, 1104094430779068757l, "debuggerName"), (item));
                 return debuggerReference;
               }
               public String getMatchingText(String pattern) {
@@ -73,9 +75,9 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<IBreakpointKind> queryResult = new Computable<Iterable<IBreakpointKind>>() {
           public Iterable<IBreakpointKind> compute() {
-            SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-            if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, "name"))) {
-              IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
+            SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
+            if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779063683l, 2569394751388009837l, "name")))) {
+              IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779063683l, 2569394751388009837l, "name"))).getBreakpointsProvider();
               if (provider != null) {
                 return (List<IBreakpointKind>) provider.getAllKinds();
               }
@@ -88,8 +90,8 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode createBreakpointOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", null);
-                SPropertyOperations.set(createBreakpointOperation, "kindName", (item).getName());
-                SPropertyOperations.set(createBreakpointOperation, "kindPresentation", (item).getPresentation());
+                SPropertyOperations.set(createBreakpointOperation, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978475l, "kindName"), (item).getName());
+                SPropertyOperations.set(createBreakpointOperation, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978476l, "kindPresentation"), (item).getPresentation());
                 return createBreakpointOperation;
               }
               public String getMatchingText(String pattern) {

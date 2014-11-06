@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class delete_reexport_inJavaDependencyImportedJar {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +25,7 @@ public class delete_reexport_inJavaDependencyImportedJar {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "reexport", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 6859736767834557908l, 6859736767834590422l, "reexport"), "" + (false));
     }
   }
   public static class delete_reexport_inJavaDependencyImportedJar_BACKSPACE extends AbstractCellAction {
@@ -35,7 +37,7 @@ public class delete_reexport_inJavaDependencyImportedJar {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "reexport", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 6859736767834557908l, 6859736767834590422l, "reexport"), "" + (false));
     }
   }
 }

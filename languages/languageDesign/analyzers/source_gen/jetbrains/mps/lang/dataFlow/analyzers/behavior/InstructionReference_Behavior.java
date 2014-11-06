@@ -5,12 +5,14 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InstructionReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getPresentation_8656002014371076042(SNode thisNode) {
-    String result = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "instruction", false), "name");
+    String result = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4217760266503638748l, 4217760266503638757l, "instruction")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     return result;
   }
 }

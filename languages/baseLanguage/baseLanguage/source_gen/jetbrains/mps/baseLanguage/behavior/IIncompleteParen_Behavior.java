@@ -4,18 +4,20 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IIncompleteParen_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "count", "" + (1));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count"), "" + (1));
   }
   public static void call_increaseCount_1071364028373835874(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "count", "" + (SPropertyOperations.getInteger(thisNode, "count") + 1));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count"), "" + (SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count")) + 1));
   }
   public static void call_decreaseCount_1071364028373841783(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "count", "" + (SPropertyOperations.getInteger(thisNode, "count") - 1));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count"), "" + (SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count")) - 1));
   }
   public static boolean call_isSingleParen_1071364028373849897(SNode thisNode) {
-    return SPropertyOperations.getInteger(thisNode, "count") == 1;
+    return SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count")) == 1;
   }
 }

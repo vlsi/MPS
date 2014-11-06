@@ -99,7 +99,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
-    myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
+    myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.conceptName_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();

@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -37,8 +39,8 @@ public class OverrideConceptMethodsAction {
 
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        contextClass.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-        contextMethod.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
+        contextClass.value = SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false);
+        contextMethod.value = SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), true, false);
         List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
         methods.value = OverrideConceptMethodsDialog.toNodePointers(OverrideConceptMethodsDialog.sortMethods(contextClass.value, methodsToOverride));
       }
@@ -60,7 +62,7 @@ public class OverrideConceptMethodsAction {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
             }
           }).toListSequence();
           OverrideConceptMethodsHelper helper = new OverrideConceptMethodsHelper(myProject, contextClass.value, contextMethod.value, dialog.isRemoveAttributes(), dialog.isAddReturn());
@@ -73,8 +75,8 @@ public class OverrideConceptMethodsAction {
 
           SNode firstMethod = ListSequence.fromList(insertedMethods).first();
           SNode nodeToSelect;
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).isNotEmpty()) {
-            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).first();
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isNotEmpty()) {
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
           } else {
             nodeToSelect = firstMethod;
           }

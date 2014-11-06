@@ -63,8 +63,8 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7rx7ya_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_7rx7ya_a2a(editorContext, node));
     return editorCell;
@@ -93,7 +93,7 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7rx7ya_d0");
     Style style = new StyleImpl();
     StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(1, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -137,7 +137,7 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7rx7ya_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_7rx7ya_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7rx7ya_b0a(editorContext, node));

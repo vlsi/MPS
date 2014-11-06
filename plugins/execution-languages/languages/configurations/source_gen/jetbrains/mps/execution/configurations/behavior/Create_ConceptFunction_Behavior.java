@@ -5,6 +5,8 @@ package jetbrains.mps.execution.configurations.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,7 +16,7 @@ public class Create_ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", false, false), "configuration", true);
+    return SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration"));
   }
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -66,7 +68,7 @@ public class CreateListAntiquotation_Intention implements IntentionFactory {
       if (contextNode == null) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785118l, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"))) {
         SNode attributedNode = SNodeOperations.getParent(contextNode);
         assert attributedNode != null;
         AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), null);

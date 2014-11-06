@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class EmptyCommentLine extends KeyMapImpl {
   public EmptyCommentLine() {
@@ -53,7 +55,7 @@ public class EmptyCommentLine extends KeyMapImpl {
       editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SNode textPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
-          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), "part", true)).addElement(textPart);
+          ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addElement(textPart);
         }
       });
     }

@@ -25,6 +25,8 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -51,7 +53,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9o2gp8_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -114,9 +116,9 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_9o2gp8_a1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -127,13 +129,13 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9o2gp8_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClosureLiteral_Editor._StyleParameter_QueryFunction_9o2gp8_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClosureLiteral_Editor._StyleParameter_QueryFunction_9o2gp8_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_9o2gp8_a0c0(EditorContext editorContext, SNode node) {
-    return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
+    return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"))));
   }
   private EditorCell createRefNode_9o2gp8_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -145,7 +147,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
       editorCell.setRole("body");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);

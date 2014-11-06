@@ -21,6 +21,8 @@ import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -62,45 +64,45 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
     try {
       SAbstractConcept concept1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation");
       Set<SNode> instances1 = FindUsagesManager.getInstance().findInstances(new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), Collections.singleton(concept1), false, new EmptyProgressMonitor());
-      Sequence.fromIterable(SNodeOperations.ofConcept(instances1, "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation")).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(SNodeOperations.ofConcept(instances1, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1176109685393l, "jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.getModel(it).isReadOnly());
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "scope", true) != null);
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1176109685393l, 1176109762787l, "scope")) != null);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1176109685393l, 1176109762787l, "scope")));
         }
       });
 
       SAbstractConcept concept2 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation");
       Set<SNode> instances2 = FindUsagesManager.getInstance().findInstances(new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), Collections.singleton(concept2), false, new EmptyProgressMonitor());
-      Sequence.fromIterable(SNodeOperations.ofConcept(instances2, "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation")).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(SNodeOperations.ofConcept(instances2, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1182511038748l, "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.getModel(it).isReadOnly());
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "scope", true) != null);
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1182511038748l, 1182511038749l, "scope")) != null);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1182511038748l, 1182511038749l, "scope")));
         }
       });
 
       SAbstractConcept concept3 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts");
       Set<SNode> instances3 = FindUsagesManager.getInstance().findInstances(new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), Collections.singleton(concept3), false, new EmptyProgressMonitor());
-      Sequence.fromIterable(SNodeOperations.ofConcept(instances3, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts")).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(SNodeOperations.ofConcept(instances3, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.getModel(it).isReadOnly());
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, 1182506966389l, "scope")));
         }
       });
     } catch (Throwable t) {

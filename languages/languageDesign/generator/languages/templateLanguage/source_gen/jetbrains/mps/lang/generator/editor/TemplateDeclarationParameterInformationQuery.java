@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,7 +20,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
   public TemplateDeclarationParameterInformationQuery() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, "template", false));
+    return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     this.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext, node), styledText);
@@ -31,35 +33,35 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
     if (selectedNode == null) {
       return null;
     }
-    return ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, "jetbrains.mps.baseLanguage.structure.Expression", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) == templateCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument");
       }
     });
   }
   /*package*/ void fillPresentation(SNode templateDeclaration, SNode selectedActualArgument, StyledTextPrinter styledText) {
-    if (SPropertyOperations.getString(templateDeclaration, "name") != null) {
-      styledText.append(SPropertyOperations.getString(templateDeclaration, "name"));
+    if (SPropertyOperations.getString(templateDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+      styledText.append(SPropertyOperations.getString(templateDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     } else {
       styledText.append("<no name>");
     }
 
     int argumentIndex = (selectedActualArgument != null ? SNodeOperations.getIndexInParent(selectedActualArgument) : -1);
     styledText.append("(");
-    for (SNode param : SLinkOperations.getTargets(templateDeclaration, "parameter", true)) {
+    for (SNode param : SLinkOperations.getChildren(templateDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))) {
       if (SNodeOperations.getIndexInParent(param) > 0) {
         styledText.append(", ");
       }
       if (SNodeOperations.getIndexInParent(param) == argumentIndex) {
         styledText.setBold(true);
       }
-      if (SLinkOperations.getTarget(param, "type", true) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+      if (SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994415891174l, 1805153994415893199l, "type")) != null) {
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994415891174l, 1805153994415893199l, "type")), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }
-      if (SPropertyOperations.getString(param, "name") != null) {
-        styledText.append(" " + SPropertyOperations.getString(param, "name"));
+      if (SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+        styledText.append(" " + SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
       styledText.setBold(false);
     }

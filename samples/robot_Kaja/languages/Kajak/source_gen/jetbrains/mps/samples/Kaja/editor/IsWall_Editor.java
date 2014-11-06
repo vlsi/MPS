@@ -22,8 +22,8 @@ public class IsWall_Editor extends DefaultNodeEditor {
       bigCell.setBig(true);
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

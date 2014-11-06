@@ -5,6 +5,7 @@ package jetbrains.mps.samples.multipleProjections.stateMachine.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -18,9 +19,21 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new StateReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 7943979732673457898l) {
+      return new AbstractStateMachineElement_Constraints();
+    }
+    if (id == 763922957008729158l) {
+      return new EventReference_Constraints();
+    }
+    if (id == 763922957008729156l) {
+      return new StateReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference"};
 }

@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -20,16 +22,16 @@ public class CatchClause_TextGen extends SNodeTextGen {
       TraceInfoGenerationUtil.createScopeInfo(this, node);
     }
     this.appendWithIndent("} catch (");
-    appendNode(SLinkOperations.getTarget(node, "throwable", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")));
     this.append(") {");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "catchBody", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359218l, "catchBody")));
     this.decreaseDepth();
     if (getBuffer().hasPositionsSupport()) {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369890l, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);

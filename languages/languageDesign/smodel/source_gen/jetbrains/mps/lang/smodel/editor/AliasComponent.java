@@ -44,7 +44,7 @@ public class AliasComponent implements ConceptEditorComponent {
   private EditorCell createComponent_ezwpxy_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AliasComponent.ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0()}));
     return editorCell;

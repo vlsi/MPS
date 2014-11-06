@@ -5,11 +5,13 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Root_MappingRule_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTemplateType_1213877498511(SNode thisNode) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "template", false));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template")));
   }
 }

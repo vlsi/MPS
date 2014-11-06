@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
@@ -46,27 +48,27 @@ public class _QueriesUtil {
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(closureAdapterClass)).first();
   }
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
-    SNode var = SLinkOperations.getTarget(localVarDeclStmt, "localVariableDeclaration", true);
+    SNode var = SLinkOperations.getTarget(localVarDeclStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
     if ((var != null)) {
       return (SNode) generator.findOutputNodeByInputNodeAndMappingName(var, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
   public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode varRef, ITemplateGenerator generator) {
-    SNode variableAdapter = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
+    SNode variableAdapter = SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
     if ((variableAdapter != null)) {
       return (SNode) generator.findOutputNodeByInputNodeAndMappingName(variableAdapter, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
-    if (!((SNodeOperations.isInstanceOf(inputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
+    if (!((SNodeOperations.isInstanceOf(inputNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))))) {
       return Collections.emptyList();
     }
     List<SNode> variablesUsedInClosure = ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
     List<SNode> parms = new ArrayList<SNode>();
     for (SNode var : variablesUsedInClosure) {
-      if (SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SNodeOperations.isInstanceOf(var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
         parms.add(var);
       }
     }
@@ -92,7 +94,7 @@ public class _QueriesUtil {
           }
           return false;
         }
-        if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
+        if (SNodeOperations.isInstanceOf(object, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure"))) {
           return true;
         }
         return ClosuresUtil.isClosureContextOwner(((SNode) object));
@@ -102,9 +104,9 @@ public class _QueriesUtil {
     if (enclosingClosureOrContextOwner != null && ClosuresUtil.isClosureContextOwner(enclosingClosureOrContextOwner)) {
       SNode varDeclStmt_output = (SNode) generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
       if ((varDeclStmt_output != null)) {
-        SNode variable = SLinkOperations.getTarget(varDeclStmt_output, "localVariableDeclaration", true);
+        SNode variable = SLinkOperations.getTarget(varDeclStmt_output, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
         SNode variableRef = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.VariableReference");
-        SLinkOperations.setTarget(variableRef, "variableDeclaration", variable, false);
+        SLinkOperations.setTarget(variableRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), variable);
         return variableRef;
       }
     }

@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -22,13 +24,30 @@ import org.jetbrains.mps.openapi.model.SModelReference;
  * Should be used only as find usages search scope
  */
 public interface SearchScope {
+  /**
+   * @return all modules visible in the scope
+   */
+  @NotNull
   Iterable<SModule> getModules();
 
+  /**
+   * @return all models visible in the scope
+   */
+  @NotNull
   Iterable<SModel> getModels();
 
-  @Deprecated
-  SModel resolve(SModelReference reference);
+  /**
+   * @param reference model to look up in the scope
+   * @return model instance, or <code>null</code> if model with specified reference is not visible in the scope
+   */
+  @Nullable
+  SModel resolve(@NotNull SModelReference reference);
 
-  @Deprecated
-  SModule resolve(SModuleReference reference);
+  /**
+   *
+   * @param reference module to look up in the scope
+   * @return module instance, or <code>null</code> if there's no such module in the scope
+   */
+  @Nullable
+  SModule resolve(@NotNull SModuleReference reference);
 }

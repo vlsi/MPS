@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,7 +18,7 @@ public class typeof_VariableDeclaration_InferenceRule extends AbstractInferenceR
   public typeof_VariableDeclaration_InferenceRule() {
   }
   public void applyRule(final SNode variableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(variableDeclaration, "initializer", true) != null)) {
+    if ((SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = variableDeclaration;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820442", 0, null);
@@ -24,17 +26,17 @@ public class typeof_VariableDeclaration_InferenceRule extends AbstractInferenceR
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
           intentionProvider.putArgument("desiredType", variableDeclaration);
-          intentionProvider.putArgument("expression", SLinkOperations.getTarget(variableDeclaration, "initializer", true));
+          intentionProvider.putArgument("expression", SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
           _info_12389875345.addIntentionProvider(intentionProvider);
         }
         {
           BaseQuickFixProvider intentionProvider = null;
           intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ChangeExpectedType_QuickFix", false);
-          intentionProvider.putArgument("desiredType", SLinkOperations.getTarget(variableDeclaration, "initializer", true));
+          intentionProvider.putArgument("desiredType", SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
           intentionProvider.putArgument("expression", variableDeclaration);
           _info_12389875345.addIntentionProvider(intentionProvider);
         }
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(variableDeclaration, "initializer", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820447", false), (SNode) typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820444", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820447", false), (SNode) typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820444", true), false, true, _info_12389875345);
       }
     }
   }

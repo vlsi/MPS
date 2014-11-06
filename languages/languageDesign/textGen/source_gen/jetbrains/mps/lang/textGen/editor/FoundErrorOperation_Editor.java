@@ -37,7 +37,7 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error");
     editorCell.setCellId("Constant_k3sm1x_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -65,8 +65,8 @@ public class FoundErrorOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_k3sm1x_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(-1.0, Measure.SPACES));
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

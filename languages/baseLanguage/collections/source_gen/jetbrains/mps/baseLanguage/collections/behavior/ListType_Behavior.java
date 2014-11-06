@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -22,19 +24,19 @@ public class ListType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "list");
-    if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")) != null)) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType")), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
@@ -46,16 +48,16 @@ public class ListType_Behavior {
   }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
-    SLinkOperations.setTarget(creator, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
+    SLinkOperations.setTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     return creator;
   }
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> res = new ArrayList<SNode>();
     SNode lc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
-    SLinkOperations.setTarget(lc, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
+    SLinkOperations.setTarget(lc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     ListSequence.fromList(res).addElement(lc);
     SNode llc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
-    SLinkOperations.setTarget(llc, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
+    SLinkOperations.setTarget(llc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     ListSequence.fromList(res).addElement(llc);
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return res;
@@ -73,7 +75,7 @@ public class ListType_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
     return quotedNode_1;
   }
 }

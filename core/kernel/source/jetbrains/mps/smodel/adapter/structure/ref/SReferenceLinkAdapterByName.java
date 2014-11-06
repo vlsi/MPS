@@ -19,14 +19,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
@@ -54,13 +54,6 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
-        new SConceptAdapterById(concept.getId(), myConceptName);
-  }
-
-  @Override
   public String getRoleName() {
     return myName;
   }
@@ -77,10 +70,10 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
+    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration);
     for (SNode l : links) {
       if (!SNodeUtil.getLinkDeclaration_IsReference(l)) continue;
-      if (l.getProperty(SNodeUtil.property_LinkDeclaration_role).equals(myName)) return l;
+      if (l.getProperty(SNodeUtil.propertyName_LinkDeclaration_role).equals(myName)) return l;
     }
     return null;
   }

@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -65,7 +67,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "condition", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 4720003541470390117l, "condition")) != null);
   }
   private EditorCell createConstant_wbyfib_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
@@ -77,7 +79,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wbyfib_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_wbyfib_a2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wbyfib_b2a(editorContext, node));
@@ -85,7 +87,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_wbyfib_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140409l, "tagName"))) || SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140379l, "overrideTag")));
   }
   private EditorCell createConstant_wbyfib_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with tag");
@@ -101,7 +103,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_tagName");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -159,8 +161,8 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -177,9 +179,9 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_wbyfib_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "args");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "args");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -242,7 +244,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_wbyfib_a5a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -252,9 +254,9 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_wbyfib_g0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.MATCHING_LABEL, "args");
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "args");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -269,7 +271,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
       editorCell.setRole("handler");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -298,14 +300,14 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wbyfib_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_wbyfib_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wbyfib_b0a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_wbyfib_a0a_0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140409l, "tagName"))) || SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140379l, "overrideTag")));
   }
   private EditorCell createConstant_wbyfib_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tag:");
@@ -334,14 +336,14 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wbyfib_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_wbyfib_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wbyfib_b1a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140409l, "tagName")));
   }
   private EditorCell createConstant_wbyfib_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "override tag:");
@@ -370,7 +372,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wbyfib_c0_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_wbyfib_a2a_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wbyfib_b2a(editorContext, node));
@@ -380,7 +382,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition:");
     editorCell.setCellId("Constant_wbyfib_a2a_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,14 +24,14 @@ public class ActionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_1213877371942(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Action";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_Action";
   }
   public static String call_getGeneratedClassFQName_1213877371952(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
-    SLinkOperations.setTarget(type, "action", thisNode, false);
+    SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1205852320419l, 1205852349655l, "action"), thisNode);
     return type;
   }
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
@@ -40,7 +42,7 @@ public class ActionDeclaration_Behavior {
       SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         }
       });
       return Scopes.forMethods(kind, new MethodsScope(baseActionType, methods), ScopeUtils.lazyParentScope(thisNode, kind));

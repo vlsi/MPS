@@ -33,7 +33,7 @@ public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor 
     editorCell.setCellId("Constant_pemq4k_a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -48,7 +48,7 @@ public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor 
       editorCell.setRole("classpath");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

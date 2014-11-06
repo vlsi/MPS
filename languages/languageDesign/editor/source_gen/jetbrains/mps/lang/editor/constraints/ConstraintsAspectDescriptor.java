@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -64,9 +65,90 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new AttributeStyleClassItem_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1078939183254l) {
+      return new CellModel_Component_Constraints();
+    }
+    if (id == 1166042131867l) {
+      return new CellMenuComponentFeature_Link_Constraints();
+    }
+    if (id == 1088013125922l) {
+      return new CellModel_RefCell_Constraints();
+    }
+    if (id == 1071666914219l) {
+      return new ConceptEditorDeclaration_Constraints();
+    }
+    if (id == 1073389658414l) {
+      return new CellModel_Property_Constraints();
+    }
+    if (id == 1166041748520l) {
+      return new CellMenuComponentFeature_Property_Constraints();
+    }
+    if (id == 1139848536355l) {
+      return new CellModel_WithRole_Constraints();
+    }
+    if (id == 1164914519156l) {
+      return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
+    }
+    if (id == 1073390211982l) {
+      return new CellModel_RefNodeList_Constraints();
+    }
+    if (id == 1073389882823l) {
+      return new CellModel_RefNode_Constraints();
+    }
+    if (id == 1186402475462l) {
+      return new StyleClassItem_Constraints();
+    }
+    if (id == 1216380990741l) {
+      return new CellModel_TransactionalProperty_Constraints();
+    }
+    if (id == 1225456267680l) {
+      return new RGBColor_Constraints();
+    }
+    if (id == 1139535219966l) {
+      return new CellActionMapDeclaration_Constraints();
+    }
+    if (id == 1078938745671l) {
+      return new EditorComponentDeclaration_Constraints();
+    }
+    if (id == 1081293058843l) {
+      return new CellKeyMapDeclaration_Constraints();
+    }
+    if (id == 1166040637528l) {
+      return new CellMenuComponent_Constraints();
+    }
+    if (id == 1186402211651l) {
+      return new StyleSheet_Constraints();
+    }
+    if (id == 1227861515039l) {
+      return new NavigatableReferenceStyleClassItem_Constraints();
+    }
+    if (id == 625126330682908270l) {
+      return new CellModel_ReferencePresentation_Constraints();
+    }
+    if (id == 9122903797320402872l) {
+      return new IStyle_Constraints();
+    }
+    if (id == 5944657839003601246l) {
+      return new ConceptEditorHintDeclaration_Constraints();
+    }
+    if (id == 1166049232041l) {
+      return new AbstractComponent_Constraints();
+    }
+    if (id == 4510086454722552739l) {
+      return new PropertyDeclarationCellSelector_Constraints();
+    }
+    if (id == 4323500428136740385l) {
+      return new CellIdReferenceSelector_Constraints();
+    }
+    if (id == 3982520150122341378l) {
+      return new AttributeStyleClassItem_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleSheet"};
 }

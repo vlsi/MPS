@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -26,9 +28,9 @@ public class BLExpression_Actions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode blCommand = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.BLCommand", null);
-      SLinkOperations.setTarget(blCommand, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      SLinkOperations.addNewChild(SLinkOperations.getTarget(blCommand, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-      SLinkOperations.setTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blCommand, "body", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", SLinkOperations.getTarget(node, "expression", true), true);
+      SLinkOperations.setTarget(blCommand, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 5464054275389846505l, 1769790395579689573l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+      SLinkOperations.addNewChild(SLinkOperations.getTarget(blCommand, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 5464054275389846505l, 1769790395579689573l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+      SLinkOperations.setTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(blCommand, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 5464054275389846505l, 1769790395579689573l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression")));
       SNodeOperations.replaceWithAnother(node, blCommand);
     }
   }

@@ -10,6 +10,8 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -25,7 +27,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -41,7 +42,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -70,10 +71,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.MPS_EDITOR));
     if (MapSequence.fromMap(_params).get("editor") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     {
@@ -119,8 +116,8 @@ public class GoToEditorDeclaration_Action extends BaseAction {
 
       modelAccess.runWriteInEDT(new Runnable() {
         public void run() {
-          NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, true, true);
-          NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, false);
+          NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, true, true);
+          NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, false);
         }
       });
     } catch (Throwable t) {

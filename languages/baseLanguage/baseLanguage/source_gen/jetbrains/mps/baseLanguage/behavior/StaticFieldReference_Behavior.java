@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,14 +19,14 @@ public class StaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    SNode f = SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
+    SNode classifier = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"));
+    SNode f = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
 
     SModule m = check_o8sx3d_a0d0a(SNodeOperations.getModel(f));
     if (m != null) {
       Object c = null;
       try {
-        c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, "name"));
+        c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       } catch (Throwable t) {
         // do nothing 
       }
@@ -32,17 +34,17 @@ public class StaticFieldReference_Behavior {
         return c;
       }
     }
-    return ReflectionUtil.getConstant(module, classifier, SPropertyOperations.getString(f, "name"));
+    return ReflectionUtil.getConstant(module, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "isFinal");
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
   }
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
-    SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
+    SNode classifier = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"));
     if ((classifier != null) && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(SNodeOperations.getModel(classifier).getReference().getModelName()))) {
       return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_eval_1213877519769", new Object[]{module});
     } else {
-      return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
+      return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
     }
   }
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {

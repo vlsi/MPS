@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,8 +21,8 @@ public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_R
   public NamedTuple_subtypeOf_extended_SubtypingRule() {
   }
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_xrnhlx_a0a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false)));
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 322547369016009796l, "extended")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != null)) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_xrnhlx_a0a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 322547369016009796l, "extended")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))));
     }
     return null;
   }
@@ -41,9 +43,9 @@ public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_R
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, false);
-    quotedNode_2.addChild("parameter", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"), quotedNode_3);
     return quotedNode_2;
   }
 }

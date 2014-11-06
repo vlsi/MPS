@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -12,12 +14,12 @@ public class CustomContainerCreator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_createType_1237722437229(final SNode thisNode) {
-    SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
+    SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1331913329176106419l, 1331913329176106420l, "containerDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485216l, 6099516049394485311l, "containerType")));
     //  workaround an SModel's dumbness 
     ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
-        if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+        if (SNodeOperations.isInstanceOf(chld, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+          SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"))));
         }
       }
     });

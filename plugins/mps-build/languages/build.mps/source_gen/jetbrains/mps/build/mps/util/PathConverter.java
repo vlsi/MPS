@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -33,17 +35,17 @@ public class PathConverter {
 
     final List<Tuples._2<String, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, SNode>>());
     final List<SNode> withoutPath = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(SLinkOperations.getTargets(project, "macros", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        String path = normalizePath(BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), Context.defaultContext()), true);
+        String path = normalizePath(BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro")), Context.defaultContext()), true);
         if (path != null && path.length() > 1) {
-          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro")));
+          ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"))));
         } else {
-          ListSequence.fromList(withoutPath).addElement(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"));
+          ListSequence.fromList(withoutPath).addElement(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro")));
         }
       }
     });
@@ -61,7 +63,7 @@ public class PathConverter {
       relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
     } else {
       relPath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath");
-      SLinkOperations.setTarget(SNodeOperations.cast(relPath, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), "macro", macro, false);
+      SLinkOperations.setTarget(SNodeOperations.cast(relPath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro"), macro);
     }
     buildCompositePath(relPath, currPath, model);
     return relPath;
@@ -71,7 +73,7 @@ public class PathConverter {
     String withSlash = normalizePath(path, true);
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<String, SNode> m : Sequence.fromIterable(macros)) {
-      String mdir = (path.startsWith("$") && m._1() != null ? "${" + SPropertyOperations.getString(m._1(), "name") + "}/" : m._0());
+      String mdir = (path.startsWith("$") && m._1() != null ? "${" + SPropertyOperations.getString(m._1(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}/" : m._0());
       String currPath = (path.length() < mdir.length() ? withSlash : path);
 
       if (currPath.startsWith(mdir)) {
@@ -82,7 +84,7 @@ public class PathConverter {
       ListSequence.fromList(result).addElement(buildRelative(currPath, m._1(), model));
     }
     for (SNode m : Sequence.fromIterable(macrosWithoutPath)) {
-      String mdir = "${" + SPropertyOperations.getString(m, "name") + "}/";
+      String mdir = "${" + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}/";
       String currPath = (path.length() < mdir.length() ? withSlash : path);
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
@@ -102,11 +104,11 @@ public class PathConverter {
     for (String fname : path.split("/")) {
       if ((fname != null && fname.length() > 0)) {
         SNode npath = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildCompositePath");
-        SPropertyOperations.set(npath, "head", fname);
+        SPropertyOperations.set(npath, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"), fname);
         if (last == null) {
-          SLinkOperations.setTarget(result, "compositePart", npath, true);
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), npath);
         } else {
-          SLinkOperations.setTarget(last, "tail", npath, true);
+          SLinkOperations.setTarget(last, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"), npath);
         }
         last = npath;
       }

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -18,13 +20,13 @@ public class check_CustomMemberDeclaration_NonTypesystemRule extends AbstractNon
   public check_CustomMemberDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode customMemberDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(customMemberDeclaration, "cncpt", false) == null)) {
+    if ((SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")) == null)) {
       return;
     }
-    if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(customMemberDeclaration, "cncpt", false), "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+    if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")), "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(customMemberDeclaration, "cncpt", false), "custom member should be a subconcept of ClassifierMember", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "330439066007850555", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")), "custom member should be a subconcept of ClassifierMember", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "330439066007850555", null, errorTarget);
       }
     }
   }

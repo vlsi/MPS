@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -48,7 +50,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -89,7 +91,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SModule) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SModule parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "moduleId", parameterObject.getModuleReference().getModuleId().toString());
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId"), parameterObject.getModuleReference().getModuleId().toString());
     }
     public boolean isReferentPresentation() {
       return false;

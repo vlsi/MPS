@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,30 +16,28 @@
 package jetbrains.mps.ide.navigation;
 
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 /**
 * evgeny, 11/6/11
 */
 public class ModuleNavigatable extends BaseNavigatable {
-  private SModuleReference moduleReference;
+  private SModuleReference myModuleReference;
 
-  public ModuleNavigatable(Project project, SModuleReference moduleReference) {
+  public ModuleNavigatable(@NotNull Project project, @NotNull SModuleReference moduleReference) {
     super(project);
-    this.moduleReference = moduleReference;
+    myModuleReference = moduleReference;
   }
 
   @Override
   protected void doNavigate(boolean focus) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-    if (module == null) return;
-
-    ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().selectInTree(context, module, focus);
+    SModule module = myModuleReference.resolve(myProject.getRepository());
+    if (module == null) {
+      return;
+    }
+    NavigationSupport.getInstance().selectInTree(myProject, module, focus);
   }
 }

@@ -17,6 +17,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ClassReference_Editor extends DefaultNodeEditor {
@@ -72,7 +74,7 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_u9fvp8_a0b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
       if (renderingCondition_u9fvp8_a0a0b0(node, editorContext)) {
         editorCell.addEditorCell(this.createConstant_u9fvp8_a0a1a(editorContext, node));
@@ -87,7 +89,7 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private static boolean renderingCondition_u9fvp8_a0a0b0(SNode node, EditorContext editorContext) {
-      return SPropertyOperations.getBoolean(node, "isFinal");
+      return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"));
     }
     private EditorCell createProperty_u9fvp8_b0a1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);

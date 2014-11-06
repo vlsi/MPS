@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ForbidIncomingReferencesInSubconcepts_Intention implements IntentionFactory {
@@ -93,7 +95,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
         for (SNode cd : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           SNode c = cd;
           if (ListSequence.fromList(SConceptOperations.getConceptHierarchy(c)).contains(node)) {
-            SPropertyOperations.set(cd, "staticScope", "none");
+            SPropertyOperations.set(cd, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none");
           }
         }
       }

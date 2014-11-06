@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.Icon;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -26,18 +27,13 @@ public class BaseConcept_Behavior {
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return new ArrayList<Icon>();
   }
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
-    return false;
-  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (name != null) {
         return name;
       }
-      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name") + "]";
+      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "]";
     }
     // -- 
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
@@ -45,12 +41,12 @@ public class BaseConcept_Behavior {
       return smartRefPresentation;
     }
     // -- 
-    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     if (conceptAlias != null) {
       return conceptAlias;
     }
     // -- 
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
@@ -60,7 +56,7 @@ public class BaseConcept_Behavior {
       return 0;
     }
     int metalevel = 0;
-    for (SNode metaLevelChanger : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger", false)) {
+    for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
       metalevel += BehaviorReflection.invokeVirtual(Integer.TYPE, metaLevelChanger, "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
     }
     return metalevel;

@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XmlTextValue_TextGen extends SNodeTextGen {
@@ -15,9 +17,9 @@ public class XmlTextValue_TextGen extends SNodeTextGen {
       this.indentBuffer();
       this.append("\t\t");
     }
-    this.append(SPropertyOperations.getString(node, "text"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart")), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
         return;
       }
       this.appendNewLine();

@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
@@ -27,8 +29,8 @@ public class ParensRegexp_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode nn = SLinkOperations.getTarget(node, "expr", true);
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expr", true));
+      SNode nn = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, 1174491174779l, "expr"));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, 1174491174779l, "expr")));
 
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
@@ -51,8 +53,8 @@ public class ParensRegexp_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode nn = SLinkOperations.getTarget(node, "expr", true);
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expr", true));
+      SNode nn = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, 1174491174779l, "expr"));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, 1174491174779l, "expr")));
 
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();

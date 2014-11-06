@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 
 public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
@@ -49,10 +51,10 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
+        if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == null)) {
           return false;
         }
-        String className = NameUtil.nodeFQName(SLinkOperations.getTarget(node, "classifier", false));
+        String className = NameUtil.nodeFQName(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
         String namespace = NameUtil.namespaceFromLongName(className);
         return namespace.endsWith(".structure");
       }

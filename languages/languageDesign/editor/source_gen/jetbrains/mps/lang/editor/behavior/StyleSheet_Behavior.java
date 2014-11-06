@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class StyleSheet_Behavior {
   public static void init(SNode thisNode) {
@@ -18,6 +20,6 @@ public class StyleSheet_Behavior {
     return namespace + StyleSheet_Behavior.call_getClassName_1213877515618(thisNode);
   }
   public static String call_getClassName_1213877515618(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "_StyleSheet";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_StyleSheet";
   }
 }

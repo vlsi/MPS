@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AddNativeFlagToAllMethods_MigrationScript extends BaseMigrationScript {
   public AddNativeFlagToAllMethods_MigrationScript(IOperationContext operationContext) {
@@ -25,7 +27,7 @@ public class AddNativeFlagToAllMethods_MigrationScript extends BaseMigrationScri
         return node.getProperty("isNative") == null;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, "isNative", "" + (false));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, 8355037393041754995l, "isNative"), "" + (false));
       }
       public boolean isShowAsIntention() {
         return false;

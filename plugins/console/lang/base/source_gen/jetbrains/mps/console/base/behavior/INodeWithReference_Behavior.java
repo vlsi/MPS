@@ -5,6 +5,8 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -16,7 +18,7 @@ public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    SNode targetNode = SLinkOperations.getTarget(thisNode, "target", false);
+    SNode targetNode = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"));
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null) {
       return;
@@ -25,9 +27,9 @@ public class INodeWithReference_Behavior {
     NavigationSupport.getInstance().openNode(context, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "target", false) != null;
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target")) != null;
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "referencePresentation") + " (deleted node)";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation")) + " (deleted node)";
   }
 }

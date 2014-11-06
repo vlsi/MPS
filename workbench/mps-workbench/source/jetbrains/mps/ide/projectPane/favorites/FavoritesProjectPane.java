@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,14 +69,12 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = "Favorites";
   private MPSFavoritesManager myFavoritesManager;
   private MPSFavoritesListener myFavoritesListener;
-  private ProjectView myProjectView;
   private IOperationContext myContext;
   private JScrollPane myScrollPane;
 
   protected FavoritesProjectPane(Project project, MPSFavoritesManager manager, ProjectView projectView) {
-    super(project);
+    super(project, projectView);
     myFavoritesManager = manager;
-    myProjectView = projectView;
     myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
   }
 
@@ -139,15 +137,15 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
       private void refreshMySubIdsAndSelect(String listName) {
         myFavoritesManager.removeListener(myFavoritesListener);
-        myProjectView.removeProjectPane(FavoritesProjectPane.this);
-        myProjectView.addProjectPane(FavoritesProjectPane.this);
+        getProjectView().removeProjectPane(FavoritesProjectPane.this);
+        getProjectView().addProjectPane(FavoritesProjectPane.this);
         myFavoritesManager.addListener(myFavoritesListener);
 
         if (ArrayUtil.find(myFavoritesManager.getFavoriteNames(), listName) == -1) {
-          myProjectView.changeView(ProjectPane.ID);
+          getProjectView().changeView(ProjectPane.ID);
           return;
         }
-        myProjectView.changeView(ID, listName);
+        getProjectView().changeView(ID, listName);
       }
     };
     myFavoritesManager.addListener(myFavoritesListener);
@@ -211,16 +209,6 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   @Override
   public String toString() {
     return "Favorites";
-  }
-
-  @Override
-  public Project getProject() {
-    return myProject;
-  }
-
-  @Override
-  public ProjectView getProjectView() {
-    return myProjectView;
   }
 
   private class MyLogicalViewTree extends MPSTree implements NodeNavigationProvider {

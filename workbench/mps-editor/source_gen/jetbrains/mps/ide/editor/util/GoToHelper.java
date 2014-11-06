@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -112,7 +114,7 @@ public class GoToHelper {
     final String[] methodName = new String[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        methodName[0] = SPropertyOperations.getString(method, "name");
+        methodName[0] = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         assert FindUtils.getFinderByClassName(finderClassName).isApplicable(method);
       }
     });
@@ -183,8 +185,8 @@ public class GoToHelper {
         @Override
         public String compute() {
           SNode labelNode = getLabelNode(element);
-          if (SNodeOperations.isInstanceOf(labelNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(labelNode), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          if (SNodeOperations.isInstanceOf(labelNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(labelNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
               return "Enum constant '" + labelNode.getName() + "' in " + SNodeOperations.getParent(labelNode).getPresentation();
             }
           }

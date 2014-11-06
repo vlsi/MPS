@@ -15,6 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,13 +46,13 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ndq0bl_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_CompactKeyWord(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(TypeOfExpression_Editor._StyleParameter_QueryFunction_ndq0bl_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(TypeOfExpression_Editor._StyleParameter_QueryFunction_ndq0bl_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(EditorContext editorContext, SNode node) {
-    if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1195058053095l, "skipDependencyOnCurrent"))) {
       return Color.GRAY;
     } else {
       return MPSColors.DARK_BLUE;

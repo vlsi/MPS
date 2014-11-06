@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -47,8 +49,8 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
-    if (!((SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule")))) {
+    SNode ruleNode = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), false, false);
+    if (!((SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, "jetbrains.mps.lang.generator.structure.Root_MappingRule")) || SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule")) || SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"))))) {
       return false;
     }
     return true;
@@ -73,14 +75,14 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode templateNode = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
-      SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
-      SLinkOperations.setTarget(templateNode, "applicableConcept", SLinkOperations.getTarget(ruleNode, "applicableConcept", false), false);
-      SPropertyOperations.set(templateNode, "name", "template1");
-      SLinkOperations.setTarget(templateNode, "contentNode", SLinkOperations.getTarget(node, "templateNode", true), true);
-      SPropertyOperations.set(templateNode, "virtualPackage", SPropertyOperations.getString(SNodeOperations.getContainingRoot(node), "virtualPackage"));
+      SNode ruleNode = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), false, false);
+      SLinkOperations.setTarget(templateNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"), SLinkOperations.getTarget(ruleNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept")));
+      SPropertyOperations.set(templateNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "template1");
+      SLinkOperations.setTarget(templateNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode")));
+      SPropertyOperations.set(templateNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
 
       SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
-      SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
+      SLinkOperations.setTarget(templateRefNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), templateNode);
 
       SelectionUtil.selectNode(editorContext, templateNode);
     }

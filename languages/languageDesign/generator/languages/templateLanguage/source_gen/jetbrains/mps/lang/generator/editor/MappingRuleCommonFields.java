@@ -47,7 +47,7 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3ei7nb_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_3ei7nb_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3ei7nb_b1a(editorContext, node));
@@ -76,7 +76,7 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3ei7nb_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_3ei7nb_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3ei7nb_b2a(editorContext, node));
@@ -123,7 +123,7 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("MRCF_property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

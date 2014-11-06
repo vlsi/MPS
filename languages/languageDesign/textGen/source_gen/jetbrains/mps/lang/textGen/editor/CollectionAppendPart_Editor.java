@@ -16,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -43,8 +45,8 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wfu8o0_a0");
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -72,22 +74,22 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wfu8o0_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_wfu8o0_a2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_wfu8o0_b2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_wfu8o0_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "withSeparator") || isNotEmptyString(SPropertyOperations.getString(node, "separator"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator")) || isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237306003719l, "separator")));
   }
   private EditorCell createConstant_wfu8o0_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_wfu8o0_a2a");
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -115,8 +117,8 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_wfu8o0_d0");
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,13 +137,13 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_wfu8o0_a0");
     editorCell.addEditorCell(this.createConstant_wfu8o0_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wfu8o0_b0a(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "separator")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237306003719l, "separator"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_wfu8o0_c0a(editorContext, node));
     }
     return editorCell;
   }
   private static boolean renderingCondition_wfu8o0_a0a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "separator"));
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237306003719l, "separator")));
   }
   private EditorCell createConstant_wfu8o0_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "separator");

@@ -5,15 +5,17 @@ package jetbrains.mps.lang.script.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DirectClassifierSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207651l, 5434557751112207965l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{});
   }
   public static String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "classifier", false)).getReference().toString();
+    return SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207651l, 5434557751112207965l, "classifier"))).getReference().toString();
   }
 }

@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DeleteMathContext_QuickFix extends QuickFix_Runtime {
   public DeleteMathContext_QuickFix() {
@@ -14,6 +16,6 @@ public class DeleteMathContext_QuickFix extends QuickFix_Runtime {
     return "Use default math context";
   }
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(node, MathUtil.convert1(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation")));
+    SNodeOperations.replaceWithAnother(node, MathUtil.convert1(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1238402702427l, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"))));
   }
 }

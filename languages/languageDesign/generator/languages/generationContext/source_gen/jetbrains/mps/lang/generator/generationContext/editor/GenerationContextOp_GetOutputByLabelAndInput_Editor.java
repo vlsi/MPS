@@ -103,7 +103,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     editorCell.setCellId("Constant_k5omkm_c0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

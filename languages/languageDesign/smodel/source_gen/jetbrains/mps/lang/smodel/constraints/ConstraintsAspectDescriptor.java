@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -80,9 +81,114 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 22:
         return new PropertyIdRefExpression_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1138056022639l) {
+      return new SPropertyAccess_Constraints();
+    }
+    if (id == 1179409122411l) {
+      return new Node_ConceptMethodCall_Constraints();
+    }
+    if (id == 1138056143562l) {
+      return new SLinkAccess_Constraints();
+    }
+    if (id == 1144195091934l) {
+      return new Node_IsRoleOperation_Constraints();
+    }
+    if (id == 1138056282393l) {
+      return new SLinkListAccess_Constraints();
+    }
+    if (id == 1138676077309l) {
+      return new EnumMemberReference_Constraints();
+    }
+    if (id == 1204851882688l) {
+      return new LinkRefQualifier_Constraints();
+    }
+    if (id == 1219352745532l) {
+      return new NodeRefExpression_Constraints();
+    }
+    if (id == 1221163681458l) {
+      return new Node_GetReferentSearchScopeOperation_Constraints();
+    }
+    if (id == 1221170373891l) {
+      return new SearchScope_ContainsOperation_Constraints();
+    }
+    if (id == 1226359078165l) {
+      return new LinkRefExpression_Constraints();
+    }
+    if (id == 1240930444945l) {
+      return new SEnum_MemberOperation_Constraints();
+    }
+    if (id == 1240930118027l) {
+      return new SEnumOperationInvocation_Constraints();
+    }
+    if (id == 1240930395965l) {
+      return new SEnumOperation_Constraints();
+    }
+    if (id == 1241015185235l) {
+      return new SEnumMemberOperation_Constraints();
+    }
+    if (id == 3562215692195599741l) {
+      return new SLinkImplicitSelect_Constraints();
+    }
+    if (id == 1547759872598425074l) {
+      return new IReferenceOperation_Constraints();
+    }
+    if (id == 4357968816427488499l) {
+      return new CheckedModuleReference_Constraints();
+    }
+    if (id == 1883223317721107059l) {
+      return new IfInstanceOfVarReference_Constraints();
+    }
+    if (id == 5253134957341697434l) {
+      return new LinkNameRefExpression_Constraints();
+    }
+    if (id == 5253134957341870583l) {
+      return new PropertyNameRefExpression_Constraints();
+    }
+    if (id == 6407023681583036853l) {
+      return new NodeAttributeQualifier_Constraints();
+    }
+    if (id == 6407023681583036855l) {
+      return new LinkAttributeQualifier_Constraints();
+    }
+    if (id == 6407023681583040953l) {
+      return new PropertyAttributeQualifier_Constraints();
+    }
+    if (id == 2788452359612124333l) {
+      return new PropertyQualifier_Constraints();
+    }
+    if (id == 2788452359612124332l) {
+      return new LinkQualifier_Constraints();
+    }
+    if (id == 4040588429969021681l) {
+      return new ModuleReferenceExpression_Constraints();
+    }
+    if (id == 559557797393017698l) {
+      return new ModelReferenceExpression_Constraints();
+    }
+    if (id == 1828409047608048457l) {
+      return new NodePointerExpression_Constraints();
+    }
+    if (id == 6973815483243445083l) {
+      return new EnumMemberValueRefExpression_Constraints();
+    }
+    if (id == 597763930871270009l) {
+      return new ChildNodeRefExpression_Constraints();
+    }
+    if (id == 6955116391921790598l) {
+      return new CheckedModuleQualifiedName_Constraints();
+    }
+    if (id == 2644386474301421077l) {
+      return new LinkIdRefExpression_Constraints();
+    }
+    if (id == 2644386474302386080l) {
+      return new PropertyIdRefExpression_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName", "jetbrains.mps.lang.smodel.structure.CheckedModuleReference", "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression", "jetbrains.mps.lang.smodel.structure.EnumMemberReference", "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", "jetbrains.mps.lang.smodel.structure.IReferenceOperation", "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference", "jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier", "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression", "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression", "jetbrains.mps.lang.smodel.structure.LinkQualifier", "jetbrains.mps.lang.smodel.structure.LinkRefExpression", "jetbrains.mps.lang.smodel.structure.LinkRefQualifier", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression", "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier", "jetbrains.mps.lang.smodel.structure.NodePointerExpression", "jetbrains.mps.lang.smodel.structure.NodeRefExpression", "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", "jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", "jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier", "jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression", "jetbrains.mps.lang.smodel.structure.PropertyQualifier", "jetbrains.mps.lang.smodel.structure.SEnumMemberOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperation", "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", "jetbrains.mps.lang.smodel.structure.SLinkAccess", "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", "jetbrains.mps.lang.smodel.structure.SLinkListAccess", "jetbrains.mps.lang.smodel.structure.SPropertyAccess", "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation"};
 }

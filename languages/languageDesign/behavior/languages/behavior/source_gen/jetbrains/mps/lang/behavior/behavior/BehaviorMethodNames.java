@@ -4,6 +4,8 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BehaviorMethodNames {
   private BehaviorMethodNames() {
@@ -22,6 +24,6 @@ public class BehaviorMethodNames {
     return "callSuper_" + getMethodName(method);
   }
   private static String getMethodName(SNode method) {
-    return SPropertyOperations.getString(method, "name") + "_" + method.getNodeId().toString();
+    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_" + method.getNodeId().toString();
   }
 }

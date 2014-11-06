@@ -30,7 +30,7 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xt8j9n_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new IsRefactoringApplicableHint());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new IsRefactoringApplicableHint());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_xt8j9n_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xt8j9n_b0(editorContext, node));

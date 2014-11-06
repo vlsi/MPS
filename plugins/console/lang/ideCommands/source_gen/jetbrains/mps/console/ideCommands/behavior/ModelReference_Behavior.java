@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SModel call_getModel_7057947030098579394(SNode thisNode) {
-    return SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(thisNode, "fqName"));
+    return SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393041554l, "fqName")));
   }
 }

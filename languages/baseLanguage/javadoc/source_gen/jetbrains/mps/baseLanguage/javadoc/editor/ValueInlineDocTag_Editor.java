@@ -18,6 +18,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -69,6 +71,6 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_jy8kcg_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "variableReference", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6962838954693748795l, 2565027568480644422l, "variableReference")) != null);
   }
 }

@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class ReturnFromTry_Test extends BaseTransformationTest {
@@ -20,7 +22,7 @@ public class ReturnFromTry_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_ReturnFromTry() throws Exception {
       this.addNodeById("7209837885461546653");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("7209837885461546654"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("7209837885461546654"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false);
     }
   }
 }

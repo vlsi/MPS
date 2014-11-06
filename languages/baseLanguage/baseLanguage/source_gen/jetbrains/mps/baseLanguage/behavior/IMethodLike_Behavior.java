@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -19,14 +21,14 @@ public class IMethodLike_Behavior {
   }
   public static SNode call_getLastStatement_2432385533253965663(SNode thisNode, SNode statementList) {
     List<SNode> statements = new ArrayList<SNode>();
-    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)));
+    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))));
     while (SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
       ListSequence.fromList(statements).removeLastElement();
     }
     SNode lastStatement = ListSequence.fromList(statements).last();
-    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
-      if (ListSequence.fromList(SLinkOperations.getTargets(innerStatementList, "statement", true)).isEmpty()) {
+    if (SNodeOperations.isInstanceOf(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"))) {
+      SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
+      if (ListSequence.fromList(SLinkOperations.getChildren(innerStatementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isEmpty()) {
         return lastStatement;
       } else {
         return IMethodLike_Behavior.call_getLastStatement_2432385533253965663(thisNode, innerStatementList);
@@ -41,7 +43,7 @@ public class IMethodLike_Behavior {
     return true;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors", "virtual_suppress_3393165121846091591", new Object[]{child}) && eq_snrb2w_a0a0a0f(child, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{})) && SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StubStatementList");
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors", "virtual_suppress_3393165121846091591", new Object[]{child}) && eq_snrb2w_a0a0a0f(child, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{})) && SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5293379017992965193l, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
   }
   private static boolean eq_snrb2w_a0a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

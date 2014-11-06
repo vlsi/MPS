@@ -33,7 +33,7 @@ public class BwfProjectPartStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bye224_a0");
     Style style = new StyleImpl();
     workflowStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

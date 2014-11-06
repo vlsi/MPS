@@ -6,6 +6,7 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="3066bc09-2438-4300-a936-5bd59917ae9b" name="jetbrains.mps.samples.componentDependencies" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610283563" name="jetbrains.mps.samples.componentDependencies.structure.ComponentSet" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068" name="jetbrains.mps.samples.componentDependencies.structure.Component" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610762144" name="jetbrains.mps.samples.componentDependencies.structure.Dependency" />

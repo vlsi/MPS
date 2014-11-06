@@ -29,7 +29,7 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vy9fh5_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_vy9fh5_a0(editorContext, node));
     return editorCell;

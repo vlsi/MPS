@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ReplacePlaceholderMethodDeclaration_MigrationScript extends BaseMigrationScript {
   public ReplacePlaceholderMethodDeclaration_MigrationScript(IOperationContext operationContext) {
@@ -22,7 +24,7 @@ public class ReplacePlaceholderMethodDeclaration_MigrationScript extends BaseMig
         return "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface");
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
       }
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlaceholderMember");

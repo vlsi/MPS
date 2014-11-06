@@ -16,6 +16,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.CellAlign;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.ScriptKind;
@@ -52,8 +54,8 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_b0ego6_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -61,8 +63,8 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.HORIZONTAL_ALIGN, 0, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_b0ego6_a0b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b0ego6_a1a(editorContext, node));
@@ -81,7 +83,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
   }
   private EditorCell createRefNode_b0ego6_a0b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -93,7 +95,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       editorCell.setRole("upperBound");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -120,10 +122,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
-    style.set(StyleAttributes.FONT_SIZE, 25);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
+    style.set(StyleAttributes.FONT_SIZE, 0, 25);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -143,7 +145,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       editorCell.setRole("var");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -162,7 +164,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "precondition", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427162021l, "precondition")) != null;
   }
   private EditorCell createRefNode_b0ego6_a3b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -174,7 +176,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       editorCell.setRole("precondition");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -196,7 +198,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       editorCell.setRole("expression");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -214,8 +216,8 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_b0ego6_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

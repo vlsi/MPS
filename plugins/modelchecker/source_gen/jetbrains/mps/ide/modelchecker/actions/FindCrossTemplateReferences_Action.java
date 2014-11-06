@@ -24,7 +24,6 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
-import jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker;
 import jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -72,12 +71,7 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
         }
       }));
 
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder() {
-        @Override
-        protected List<SpecificChecker> getSpecificCheckers() {
-          return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new GeneratorTemplatesChecker());
-        }
-      });
+      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelDescriptors, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new GeneratorTemplatesChecker()));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindCrossTemplateReferences", t);

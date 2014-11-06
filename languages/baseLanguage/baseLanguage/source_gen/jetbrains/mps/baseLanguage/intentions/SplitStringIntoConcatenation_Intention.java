@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -68,11 +70,11 @@ public class SplitStringIntoConcatenation_Intention implements IntentionFactory 
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell_Property cell = ((EditorCell_Property) editorContext.getContextCell());
       int caretPosition = cell.getCaretPosition();
-      String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
-      String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);
+      String s1 = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")).substring(0, caretPosition);
+      String s2 = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")).substring(caretPosition);
       SNode plusExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");
-      SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s1);
-      SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s2);
+      SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), s1);
+      SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), s2);
     }
     public IntentionDescriptor getDescriptor() {
       return SplitStringIntoConcatenation_Intention.this;

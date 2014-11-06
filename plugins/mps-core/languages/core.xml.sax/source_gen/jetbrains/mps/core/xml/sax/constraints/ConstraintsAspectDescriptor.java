@@ -5,6 +5,7 @@ package jetbrains.mps.core.xml.sax.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -24,9 +25,30 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 5:
         return new XMLSAXNodeRuleParamRef_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 2264311582634140361l) {
+      return new XMLSAXAttributeReference_Constraints();
+    }
+    if (id == 2264311582634140384l) {
+      return new XMLSAXFieldReference_Constraints();
+    }
+    if (id == 2264311582634140397l) {
+      return new XMLSAXLocatorExpression_Constraints();
+    }
+    if (id == 2264311582634140367l) {
+      return new XMLSAXBreakStatement_Constraints();
+    }
+    if (id == 2264311582634140376l) {
+      return new XMLSAXChildRule_Constraints();
+    }
+    if (id == 4720003541456852678l) {
+      return new XMLSAXNodeRuleParamRef_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef"};
 }

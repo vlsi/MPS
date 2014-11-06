@@ -37,7 +37,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_1x58an_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

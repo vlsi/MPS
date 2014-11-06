@@ -34,7 +34,7 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9wclje_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new InvokeFunctionOperation_parameters());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new InvokeFunctionOperation_parameters());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_9wclje_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9wclje_b0(editorContext, node));
@@ -45,7 +45,7 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_9wclje_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -119,8 +119,8 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_9wclje_a2a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

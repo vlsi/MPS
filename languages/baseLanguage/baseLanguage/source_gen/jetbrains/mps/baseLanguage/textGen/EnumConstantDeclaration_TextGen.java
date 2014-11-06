@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -12,15 +14,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    if (isEmptyString(SPropertyOperations.getString(node, "name"))) {
+    if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
       this.foundError("enum constant without name");
       this.appendWithIndent("???");
     } else {
-      this.appendWithIndent(SPropertyOperations.getString(node, "name"));
+      this.appendWithIndent(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     }
     this.append("(");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "actualArgument", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
         appendNode(item);
@@ -30,11 +32,11 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       }
     }
     this.append(")");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))).isNotEmpty()) {
       this.append(" {");
       this.appendNewLine();
       this.increaseDepth();
-      for (SNode imd : SLinkOperations.getTargets(node, "method", true)) {
+      for (SNode imd : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))) {
         appendNode(imd);
       }
       this.decreaseDepth();

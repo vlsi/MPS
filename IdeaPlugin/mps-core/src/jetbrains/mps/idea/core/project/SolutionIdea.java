@@ -234,7 +234,7 @@ public class SolutionIdea extends Solution {
           }
         } else if (includeStubs) {
           // try to find stub solution
-          SModule s = MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
+          SModule s = MPSModuleRepository.getInstance().getModule(ModuleId.foreign(library.getName()));
           if (s != null) {
             modules.put(s, loe.isExported());
           }

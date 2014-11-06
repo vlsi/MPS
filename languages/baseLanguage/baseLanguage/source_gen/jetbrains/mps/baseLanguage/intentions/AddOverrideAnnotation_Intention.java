@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -53,13 +55,13 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode classConcept = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode classConcept = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     if (classConcept == null) {
       return false;
     }
-    if (!(OverridingMethodsFinder.canOverride(node)) || ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).any(new IWhereFilter<SNode>() {
+    if (!(OverridingMethodsFinder.canOverride(node)) || ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "java.lang.Override".equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "annotation", false), "virtual_getFqName_1213877404258", new Object[]{}));
+        return "java.lang.Override".equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), "virtual_getFqName_1213877404258", new Object[]{}));
       }
     })) {
       return false;
@@ -86,10 +88,10 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
       return "Add @Override annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       OverridingMethodsFinder finder = new OverridingMethodsFinder(classConcept, Sequence.<SNode>singleton(node));
       for (SNode meth : SetSequence.fromSet(finder.getOverridingMethods())) {
-        ListSequence.fromList(SLinkOperations.getTargets(meth, "annotation", true)).addElement(createAnnotationInstance_4i19oe_a0a0a2a0());
+        ListSequence.fromList(SLinkOperations.getChildren(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).addElement(createAnnotationInstance_4i19oe_a0a0a2a0());
       }
 
     }
@@ -100,7 +102,7 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
   private static SNode createAnnotationInstance_4i19oe_a0a0a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, false);
-    n1.setReference("annotation", SReference.create("annotation", n1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
+    n1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), n1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
     return n1;
   }
 }

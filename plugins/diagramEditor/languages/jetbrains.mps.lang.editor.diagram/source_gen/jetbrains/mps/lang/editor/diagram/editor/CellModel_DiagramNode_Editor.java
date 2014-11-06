@@ -89,7 +89,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameters");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new DiagramNodeParameters());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new DiagramNodeParameters());
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -207,7 +207,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5xszyv_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5xszyv_a0_0(editorContext, node));
     return editorCell;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.annotation.ImmutableObject;
+import org.jetbrains.mps.annotations.Immutable;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Apr 4, 2007
  */
-@ImmutableObject
+@Immutable
 public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.openapi.model.SNodeId {
 
   public static final String TYPE = "default";
@@ -71,7 +71,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
   /**
    * regular id
    */
-  @ImmutableObject
+  @Immutable
   public static class Regular extends SNodeId {
     private final long myId;
 
@@ -104,7 +104,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
   /**
    * foreign id
    */
-  @ImmutableObject
+  @Immutable
   public static class Foreign extends SNodeId {
     public static final String ID_PREFIX = "~";
 

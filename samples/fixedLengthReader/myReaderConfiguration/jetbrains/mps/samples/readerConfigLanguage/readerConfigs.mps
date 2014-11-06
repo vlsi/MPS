@@ -7,6 +7,7 @@
     <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534870455" name="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" />
     <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096" name="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" />
     <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534962441" name="jetbrains.mps.samples.readerConfigLanguage.structure.Field" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116534988614" name="code" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116534997224" name="targetClass" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534962441/1116535027491" name="start" />

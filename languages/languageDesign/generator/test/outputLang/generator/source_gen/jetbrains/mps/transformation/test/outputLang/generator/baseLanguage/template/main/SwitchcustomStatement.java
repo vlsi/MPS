@@ -18,6 +18,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Generated
 public class SwitchcustomStatement implements TemplateSwitchMapping {
@@ -72,7 +74,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090625");
-        SNodeAccessUtil.setProperty(tnode1, "value", "1");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "1");
       } finally {
       }
       return TemplateUtil.singletonList(tnode1);

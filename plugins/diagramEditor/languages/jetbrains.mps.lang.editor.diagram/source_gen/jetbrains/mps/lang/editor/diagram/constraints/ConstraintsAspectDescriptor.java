@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.diagram.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -26,9 +27,33 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new CreationActionReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 285670992217672837l) {
+      return new PropertyArgument_Constraints();
+    }
+    if (id == 285670992213637559l) {
+      return new LinkArgument_Constraints();
+    }
+    if (id == 1094405431463761863l) {
+      return new FigureParameterMapping_Constraints();
+    }
+    if (id == 6306886970791033847l) {
+      return new CellModel_Diagram_Constraints();
+    }
+    if (id == 6382742553261733065l) {
+      return new CellModel_DiagramConnector_Constraints();
+    }
+    if (id == 3229274890673749551l) {
+      return new ThisEditorNodeExpression_Constraints();
+    }
+    if (id == 6619018968335599081l) {
+      return new CreationActionReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

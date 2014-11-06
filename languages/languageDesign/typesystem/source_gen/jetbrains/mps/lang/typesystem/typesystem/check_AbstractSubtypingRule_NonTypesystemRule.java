@@ -9,13 +9,15 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_AbstractSubtypingRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AbstractSubtypingRule_NonTypesystemRule() {
   }
   public void applyRule(final SNode abstractSubtypingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractSubtypingRule, "body", true));
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractSubtypingRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1175147569072l, 1175147624276l, "body")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule";

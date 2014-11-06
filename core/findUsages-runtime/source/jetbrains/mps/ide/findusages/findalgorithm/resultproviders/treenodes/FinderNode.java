@@ -70,6 +70,7 @@ public class FinderNode extends BaseLeaf {
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
     monitor.start(getTaskName(), myFinder instanceof GeneratedFinder ? 2 : 1);
     try {
+      // FIXME why do we wrap each finder.find into model read, and not leave it to outer code (in fact, FindUtils run it inside read action, too)?
       return ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
         @Override
         public SearchResults compute() {

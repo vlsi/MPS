@@ -4,6 +4,8 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -16,14 +18,14 @@ public class Node_ConceptMethodCall_Behavior {
     return (Node_ConceptMethodCall_Behavior.call_getVirtualMethodDeclaration_1213877437832(thisNode) != null);
   }
   public static boolean call_isSuperMethodCall_1521124695248146659(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+    return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
   }
   public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
-    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
-    if ((SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false) != null)) {
-      return SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false);
+    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+    if ((SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")) != null)) {
+      return SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod"));
     } else
-    if (SPropertyOperations.getBoolean(methodDeclaration, "isVirtual")) {
+    if (SPropertyOperations.getBoolean(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"))) {
       return methodDeclaration;
     } else {
       return null;
@@ -31,7 +33,7 @@ public class Node_ConceptMethodCall_Behavior {
   }
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName;
-    variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "name");
+    variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     if (variableExpectedName.startsWith("get")) {
       variableExpectedName = variableExpectedName.substring(3);
     } else

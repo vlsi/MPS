@@ -4,47 +4,49 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public enum BLElementType {
   TYPE() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Classifier");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     }
 
   },
   FIELD() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
     }
 
   },
   METHOD() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     }
 
   },
   PARAMETER() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
     }
 
   },
   CONSTRUCTOR() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     }
 
   },
   LOCAL_VARIABLE() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
     }
 
   },
   ANNOTATION_TYPE() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Annotation");
+      return SNodeOperations.isInstanceOf(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"));
     }
 
   },

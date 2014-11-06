@@ -41,7 +41,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cly5ih_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -103,7 +103,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cly5ih_c0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

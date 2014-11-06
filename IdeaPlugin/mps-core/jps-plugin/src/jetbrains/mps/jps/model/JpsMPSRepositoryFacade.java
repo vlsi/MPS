@@ -261,6 +261,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, "Different SDKs in modules with MPS facets are not supported"));
     }
 
+    // maybe libraries should be put into repository before modules, so that SolutionIdea already has its dependencies at hand
+
     for (JpsLibrary jpsLib : jpsProject.getLibraryCollection().getLibraries()) {
       JpsLibSolution libSolution = createLibSolution(jpsLib, jdk, context);
       JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(libSolution, myProject);

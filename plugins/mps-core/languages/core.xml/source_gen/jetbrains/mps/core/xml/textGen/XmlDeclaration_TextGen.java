@@ -5,6 +5,8 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -13,22 +15,22 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("version");
     this.append(" = ");
     this.append("\"");
-    this.append(SPropertyOperations.getString(node, "version"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 5491461270226117667l, "version")));
     this.append("\"");
-    if (isNotEmptyString(SPropertyOperations.getString(node, "encoding"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925078l, "encoding")))) {
       this.append(" ");
       this.append("encoding");
       this.append(" = ");
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, "encoding"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925078l, "encoding")));
       this.append("\"");
     }
-    if (isNotEmptyString(SPropertyOperations.getString(node, "standalone"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925080l, "standalone")))) {
       this.append(" ");
       this.append("standalone");
       this.append(" = ");
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, "standalone"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925080l, "standalone")));
       this.append("\"");
     }
     this.append("?>");

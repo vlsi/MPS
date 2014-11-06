@@ -32,6 +32,8 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AspectDependenciesChecker extends SpecificChecker {
@@ -154,8 +156,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
       }
       if (moduleFqName.equals("MPS.Classpath")) {
         SNode refTargetRoot = reference.getTargetNode().getContainingRoot();
-        if (SNodeOperations.isInstanceOf(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+        if (SNodeOperations.isInstanceOf(refTargetRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+          String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           String modelName = model.getModelName();
           if (findInModule(coreModule, modelName, cName)) {
             return CORE;
@@ -188,7 +190,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
       if (d.getModelName().equals(modelName)) {
         for (SNode _n : d.getRootNodes()) {
           SNode n = (SNode) _n;
-          if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.Classifier") && SPropertyOperations.getString(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "name").equals(rootName)) {
+          if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")) && SPropertyOperations.getString(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(rootName)) {
             return true;
           }
         }

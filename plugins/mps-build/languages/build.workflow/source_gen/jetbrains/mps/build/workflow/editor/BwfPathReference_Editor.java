@@ -29,8 +29,8 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_75jjqz_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_75jjqz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_75jjqz_b0(editorContext, node));
@@ -43,7 +43,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_75jjqz_a0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -97,7 +97,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -115,7 +115,7 @@ public class BwfPathReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_75jjqz_d0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -20,7 +20,7 @@ public class PlaceholderMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_s75wnn_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

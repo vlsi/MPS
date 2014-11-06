@@ -69,7 +69,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_role");
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_ref_link_role(style, editorCell);
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

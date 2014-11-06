@@ -6,12 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellModel_Component_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
-    return CellIdManager.createComponentId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "editorComponent", false), "name"));
+    return CellIdManager.createComponentId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, 1078939183255l, "editorComponent")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "#";

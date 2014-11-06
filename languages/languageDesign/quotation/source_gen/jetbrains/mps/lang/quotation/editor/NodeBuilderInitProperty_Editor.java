@@ -91,7 +91,7 @@ public class NodeBuilderInitProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_s7nj87_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

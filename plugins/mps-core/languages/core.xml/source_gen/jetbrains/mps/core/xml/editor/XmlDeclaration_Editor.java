@@ -49,8 +49,8 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_a0a");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "openTag");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -60,9 +60,9 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_a0a_0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "openTag");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -89,7 +89,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_axvdb8_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_axvdb8_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_axvdb8_b1b0(editorContext, node));
@@ -118,7 +118,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_c1b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -148,7 +148,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_e1b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -157,7 +157,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_axvdb8_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_axvdb8_a2b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_axvdb8_b2b0(editorContext, node));
@@ -186,7 +186,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_c2b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -217,7 +217,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_e2b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -226,7 +226,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_axvdb8_d1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_axvdb8_a3b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_axvdb8_b3b0(editorContext, node));
@@ -255,7 +255,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_c3b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -286,7 +286,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_e3b0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -310,7 +310,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_a2a");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "openTag");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -320,8 +320,8 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_axvdb8_a2a_0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagPunctuation(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "openTag");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

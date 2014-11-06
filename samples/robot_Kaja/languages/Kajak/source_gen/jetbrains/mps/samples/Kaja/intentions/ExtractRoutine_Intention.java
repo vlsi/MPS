@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -65,12 +67,12 @@ public class ExtractRoutine_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode routineDefinition = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.RoutineDefinition", null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).addElement(routineDefinition);
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, 3265739055509559116l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).addElement(routineDefinition);
       SNode call = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.RoutineCall", null);
-      SLinkOperations.setTarget(call, "definition", routineDefinition, false);
+      SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition"), routineDefinition);
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(selectedNodes).first(), call);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(routineDefinition, "body", true), "commands", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.samples.Kaja.structure.AbstractCommand", true, false));
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(routineDefinition, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700857l, 3308300503039700860l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).addElement(SNodeOperations.getNodeAncestor(selectedNode, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559114l, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"), true, false));
       }
       editorContext.selectWRTFocusPolicy(routineDefinition);
     }

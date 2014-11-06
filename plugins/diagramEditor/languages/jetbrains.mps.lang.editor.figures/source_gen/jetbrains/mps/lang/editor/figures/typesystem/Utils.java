@@ -4,18 +4,20 @@ package jetbrains.mps.lang.editor.figures.typesystem;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Utils {
   /*package*/ static SNode getFirstGenericParameterType(SNode classifierType) {
-    if (classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() > 0) {
-      return ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).first();
+    if (classifierType != null && SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != null && ListSequence.fromList(SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count() > 0) {
+      return ListSequence.fromList(SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).first();
     }
     return null;
   }
   /*package*/ static boolean isSupportedParameterType(SNode classifierType, SNode superClassifier) {
-    return classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(superClassifier);
+    return classifierType != null && SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != null && SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))).contains(superClassifier);
   }
 }

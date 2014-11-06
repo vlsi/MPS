@@ -31,6 +31,8 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -99,7 +101,7 @@ public class PasteNode_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(modelAccess, _params);
       final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
@@ -134,12 +136,13 @@ public class PasteNode_Action extends BaseAction {
           if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
             final SNode root = pasteNodes.get(0).getContainingRoot();
             assert root != null;
-            jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(new Runnable() {
+            ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
               public void run() {
-                NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
-                NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
+                NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), root, true, true);
+                NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), root, false);
               }
             });
+
           }
         }
       });
@@ -163,7 +166,7 @@ public class PasteNode_Action extends BaseAction {
   }
   private String getContextPackage(final Map<String, Object> _params) {
     if (((SNode) MapSequence.fromMap(_params).get("node")) != null) {
-      return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtualPackage");
+      return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"));
     }
     if (((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")) != null && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).size() == 1 && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o1 == ((SModel) MapSequence.fromMap(_params).get("contextModel"))) {
       return ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o2;
