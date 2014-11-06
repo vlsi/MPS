@@ -292,8 +292,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (myPopupActivated) {
         SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
-        getPopupWindow().pack();
         getPopupWindow().scrollToAction(actionToSelect);
+        getPopupWindow().pack();
         getPopupWindow().repaint();
       }
       return true;
@@ -320,9 +320,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (myPopupActivated) {
         SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
+        getPopupWindow().scrollToAction(actionToSelect);
         if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
           getPopupWindow().pack();
-          getPopupWindow().scrollToAction(actionToSelect);
           getPopupWindow().repaint();
         }
       }
