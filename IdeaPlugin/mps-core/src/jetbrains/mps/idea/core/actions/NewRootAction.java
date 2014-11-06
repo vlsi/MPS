@@ -134,6 +134,7 @@ public class NewRootAction extends AnAction {
           String conceptFqName = entry.getKey();
           SNode concept = entry.getValue().resolve(MPSModuleRepository.getInstance());
           dialog.getKindCombo().addItem(NodePresentationUtil.matchingText(concept), IconManager.getIconForConceptFQName(conceptFqName), conceptFqName);
+          dialog.setTemplateKindComponentsVisible(true);
         }
       }
     });
