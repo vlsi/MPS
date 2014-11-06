@@ -232,15 +232,12 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     if (iconNode != null) {
 
       boolean isConcept = SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation());
-      boolean isCached = false;
-      if (isConcept && myConceptIconMap.containsKey(iconNode)) {
-        isCached = true;
+      if (isConcept) {
         icon = myConceptIconMap.get(iconNode);
-      } else if (!isConcept && myNodeIconMap.containsKey(iconNode)) {
-        isCached = true;
+      } else {
         icon = myNodeIconMap.get(iconNode);
       }
-      if (!isCached) {
+      if (icon == null) {
         icon = isConcept ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
         if (isConcept) {
           myConceptIconMap.put(iconNode, icon);
