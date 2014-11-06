@@ -28,10 +28,11 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -251,11 +252,12 @@ class IntelligentNodeMover {
   }
 
   private boolean haveSimilarLink(SNode current) {
-    for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept())) {
-      SAbstractLink currentLink = concept.getLink(myLink.getRole());
-      if (currentLink != null && !currentLink.isReference() && currentLink.isMultiple() &&
-          currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
-        return true;
+    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthConceptHierarchyIterator(current.getConcept()))) {
+      for (SContainmentLink currentLink : concept.getChildren()) {
+        if (currentLink.getRoleName().equals(myLink.getRoleName()) && currentLink.isMultiple() &&
+            currentLink.getTargetConcept().equals(myLink.getTargetConcept())) {
+          return true;
+        }
       }
     }
     return false;
