@@ -18,9 +18,7 @@ package jetbrains.mps.ide.ui.tree;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -315,6 +313,10 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
 
   //updates and refreshes tree
   public void renewPresentation() {
+    final MPSTree tree = getTree();
+    if (tree == null || tree.isDisposed()) {
+      return;
+    }
     updatePresentation();
     updateNodePresentationInTree();
   }
@@ -364,57 +366,49 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }
   }
 
-  private void treeMessagesChanged(boolean updatePresentation) {
-    if (updatePresentation) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              IOperationContext context = getOperationContext();
-              if (context == null) return;
-              if (!context.isValid()) return;
-              Project project = context.getProject();
-              if (project == null) return;
-              if (project.isDisposed()) return;
-
-              renewPresentation();
-            }
-          });
-        }
-      });
-    }
-  }
-
-  public void addTreeMessage(TreeMessage message) {
-    addTreeMessage(message, true);
-  }
-
-  public void addTreeMessage(@NotNull TreeMessage message, boolean updatePresentation) {
+  /**
+   * Attach an extra message to a node. Messages are identified by their {@link jetbrains.mps.ide.ui.tree.TreeMessageOwner owner}.
+   * This method may be invoked from any thread, and doesn't trigger UI update, use {@link #renewPresentation()} from correct (EDT/UI) thread
+   * if needed (e.g. if messages are attached the moment tree is being constructed, there's no reason to renew each node individually,
+   * they get a chance to update them once tree becomes visible)
+   * @param message message to attach
+   */
+  public void addTreeMessage(@NotNull TreeMessage message) {
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages == null) {
         myTreeMessages = new ArrayList<TreeMessage>(1);
       }
       myTreeMessages.add(message);
-      treeMessagesChanged(updatePresentation);
     }
   }
 
-  public Set<TreeMessage> removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
+  /**
+   * Detach all messages of the specified owner.
+   * This method can be invoked from any thread.
+   * To trigger UI update, use {@link #renewPresentation()} from correct (EDT/UI) thread.
+   * @param owner identifies messages to remove
+   * @return set of detached messages, or empty collection if none found
+   */
+  @NotNull
+  public Set<TreeMessage> removeTreeMessages(TreeMessageOwner owner) {
     Set<TreeMessage> result = new HashSet<TreeMessage>(1);
-    if (owner == null) return result;
+    if (owner == null) {
+      return result;
+    }
+    final ArrayList<TreeMessage> copy;
     synchronized (myTreeMessagesLock) {
-      if (myTreeMessages == null) return result;
-      for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
-        if (owner.equals(message.getOwner())) {
-          result.add(message);
-          myTreeMessages.remove(message);
-        }
+      if (myTreeMessages == null) {
+        return result;
+      }
+      copy = new ArrayList<TreeMessage>(myTreeMessages);
+    }
+    for (TreeMessage message : copy) {
+      if (owner.equals(message.getOwner())) {
+        result.add(message);
       }
     }
-    if (!result.isEmpty()) {
-      treeMessagesChanged(updatePresentation);
+    synchronized (myTreeMessagesLock) {
+      myTreeMessages.removeAll(result);
     }
     return result;
   }
