@@ -63,6 +63,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private int myOldStyle = Font.PLAIN;
   private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
+  private static final int MY_MIN_CELL_HEIGHT_TO_ADD = 2;
 
 
   NodeItemCellRenderer(@NotNull NodeSubstitutePatternEditor patternEditor) {
@@ -82,7 +83,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
         setupThis(list, value, isSelected);
       }
     });
-
     return this;
   }
 
@@ -136,7 +136,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     if (descriptionText != null) {
       itemWidth += fontMetrics.stringWidth(descriptionText);
     }
-    itemHeight = Math.max(itemHeight, fontMetrics.getHeight()) + 2;
+    itemHeight = Math.max(itemHeight, fontMetrics.getHeight()) + MY_MIN_CELL_HEIGHT_TO_ADD;
     itemWidth = Math.max(itemWidth, MY_MIN_CELL_WIDTH);
     return new Dimension(itemWidth, itemHeight);
   }

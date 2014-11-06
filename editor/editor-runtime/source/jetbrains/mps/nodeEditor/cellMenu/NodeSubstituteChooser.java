@@ -166,9 +166,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
 
-
   public void setVisible(boolean visible) {
-     if (myChooserActivated != visible) {
+    if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
         myEditorComponent.pushKeyboardHandler(this);
@@ -509,7 +508,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         public Dimension preferredLayoutSize(Container parent) {
           int height = myScroller.getPreferredSize().height;
           int width = myScroller.getPreferredSize().width;
-          if (myList.getModel().getSize() > myList.getVisibleRowCount()) {
+          if (myList.getModel().getSize() > myList.getVisibleRowCount() && myList.getVisibleRowCount() > 1) {
             height -= myList.getFixedCellHeight() / 2;
           }
           return new Dimension(width, height);
@@ -521,9 +520,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
     }
+
     private void done() {
       setRelativeCell(null);
     }
+
     @Override
     public void dispose() {
       getOwner().removeComponentListener(myComponentListener);
@@ -533,7 +534,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public SubstituteAction getCurrentSelectedSubstituteAction() {
       int selectionIndex = getSelectionIndex();
-      if (selectionIndex != -1){
+      if (selectionIndex != -1) {
         return ((SubstituteAction) myList.getModel().getElementAt(selectionIndex));
       } else {
         return null;
@@ -568,14 +569,25 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
       Dimension preferredSize = getPreferredSize();
-      if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150) {
+      if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150 && location.getY() - getPatternEditor().getHeight() / 2 > deviceBounds.y + deviceBounds.height / 2) {
         setPosition(PopupWindowPosition.TOP);
       } else {
         setPosition(PopupWindowPosition.BOTTOM);
       }
 
-      Point newLocation = location;
 
+      if (getPosition() == PopupWindowPosition.TOP && myList.getFixedCellHeight() != 0) {
+        double maxHeight = location.getY() - getPatternEditor().getHeight() - deviceBounds.y;
+        double visibleRowCount = maxHeight / myList.getFixedCellHeight();
+        if (visibleRowCount < myList.getVisibleRowCount()) {
+          if (visibleRowCount <= 1) {
+            myList.setVisibleRowCount(1);
+          } else {
+            myList.setVisibleRowCount((int) visibleRowCount);
+          }
+          preferredSize = getPreferredSize();
+        }
+      }
 
       if (preferredSize.getWidth() >= deviceBounds.width) {
         setSize(deviceBounds.width, preferredSize.height);
@@ -583,9 +595,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         setSize(preferredSize);
       }
 
+      Point newLocation = location;
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - getPatternEditor().getHeight());
       }
 
 
