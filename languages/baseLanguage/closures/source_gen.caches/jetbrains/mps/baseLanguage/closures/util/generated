@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9qz7mggh089crc2j1fyk7gi6qriqkht" />
+<dependencies version="2" modelHash="9qz7mggh089crc2j1fyk7gi6qriqkht">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <common hash="9qz7mggh089crc2j1fyk7gi6qriqkht" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1225980323340" name="Constants">
+    <file name="Constants.java" />
+  </source>
+</dependencies>
 

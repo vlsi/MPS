@@ -67,6 +67,8 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1130859485024" name="attractsFocus" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139535298778" name="actionId" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139537298254" name="description" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1139852716018" name="noTargetText" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140114345053" name="allowEmptyText" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766/1186403771423" name="style" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
@@ -346,6 +348,21 @@
       <property role="asn4.1169194658468.1169194664001" value="BaseKeyPack" />
       <node concept="9wj7.4151393920374910634" id="3013115976262285446" role="9wj7.4151393920374910722.4151393920375014512" info="ng">
         <property role="vg0i.1070475926800.1070475926801" value="LINE_COMMENT" />
+      </node>
+    </node>
+    <node concept="9wj7.1078938745671" id="1960260476749651797" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="VirtualPackage" />
+      <reference role="9wj7.1166049232041.1166049300910" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="9wj7.1073389446423" id="1960260476749653464" role="9wj7.1080736578640.1080736633877" info="sn">
+        <node concept="9wj7.1237303669825" id="1960260476749653465" role="9wj7.1073389446423.1106270802874" info="nn" />
+        <node concept="9wj7.1073389577006" id="1960260476749653468" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="virtual package:" />
+        </node>
+        <node concept="9wj7.1073389658414" id="1960260476749653460" role="9wj7.1073389446423.1073389446424" info="sg">
+          <property role="9wj7.1139848536355.1140114345053" value="true" />
+          <property role="9wj7.1139848536355.1139852716018" value="none" />
+          <reference role="9wj7.1139848536355.1140103550593" target="tpck.1193676396447" resolveInfo="virtualPackage" />
+        </node>
       </node>
     </node>
   </contents>

@@ -486,6 +486,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_955wzk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_955wzk_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_955wzk_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_955wzk_a0(EditorContext editorContext, SNode node) {
@@ -538,5 +539,9 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
+  }
+  private EditorCell createComponent_955wzk_c0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.VirtualPackage");
+    return editorCell;
   }
 }
