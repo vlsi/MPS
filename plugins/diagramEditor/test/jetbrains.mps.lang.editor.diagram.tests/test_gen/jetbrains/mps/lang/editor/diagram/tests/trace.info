@@ -288,46 +288,46 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094084433">
     <file name="DecoratorTestRunner.java">
-      <node id="1560508619094091321" at="23,161,24,212" concept="3" />
-      <node id="2336278055261846156" at="24,212,25,45" concept="3" />
-      <node id="1560508619094091347" at="25,45,26,102" concept="6" />
-      <node id="1560508619094091356" at="27,45,28,46" concept="3" />
-      <node id="1560508619094417168" at="29,5,30,44" concept="7" />
-      <node id="1560508619094392577" at="32,85,33,111" concept="6" />
-      <node id="1560508619094392583" at="33,111,34,0" concept="9" />
-      <node id="1560508619094392584" at="34,0,35,124" concept="6" />
-      <node id="1560508619094405450" at="36,30,37,18" concept="7" />
-      <node id="1560508619094392596" at="40,25,41,97" concept="3" />
-      <node id="1560508619094412711" at="43,7,44,34" concept="7" />
-      <node id="1560508619094171781" at="26,102,29,5" concept="4" />
-      <node id="1560508619094405448" at="35,124,38,5" concept="4" />
-      <node id="1560508619094392594" at="40,0,43,0" concept="5" trace="run#()V" />
-      <node id="1560508619094392593" at="38,5,43,7" concept="3" />
-      <node id="1560508619094087236" at="23,0,32,0" concept="10" trace="prepareAndGetMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Ljava/lang/Class;)Ljetbrains/jetpad/mapper/Mapper;" />
-      <node id="1560508619094391055" at="32,0,46,0" concept="10" trace="getMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/jetpad/mapper/Mapper;" />
-      <scope id="1560508619094171784" at="27,45,28,46" />
-      <scope id="1560508619094405449" at="36,30,37,18" />
-      <scope id="1560508619094392595" at="40,25,41,97" />
-      <scope id="1560508619094392594" at="40,0,43,0" />
-      <scope id="1560508619094087239" at="23,161,30,44">
+      <node id="1560508619094091321" at="24,161,25,212" concept="3" />
+      <node id="2336278055261846156" at="25,212,26,45" concept="3" />
+      <node id="1560508619094091347" at="26,45,27,102" concept="6" />
+      <node id="1560508619094091356" at="28,45,29,136" concept="3" />
+      <node id="1560508619094417168" at="30,5,31,44" concept="7" />
+      <node id="1560508619094392577" at="33,85,34,111" concept="6" />
+      <node id="1560508619094392583" at="34,111,35,0" concept="9" />
+      <node id="1560508619094392584" at="35,0,36,124" concept="6" />
+      <node id="1560508619094405450" at="37,30,38,18" concept="7" />
+      <node id="1560508619094392596" at="41,25,42,97" concept="3" />
+      <node id="1560508619094412711" at="44,7,45,34" concept="7" />
+      <node id="1560508619094171781" at="27,102,30,5" concept="4" />
+      <node id="1560508619094405448" at="36,124,39,5" concept="4" />
+      <node id="1560508619094392594" at="41,0,44,0" concept="5" trace="run#()V" />
+      <node id="1560508619094392593" at="39,5,44,7" concept="3" />
+      <node id="1560508619094087236" at="24,0,33,0" concept="10" trace="prepareAndGetMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Ljava/lang/Class;)Ljetbrains/jetpad/mapper/Mapper;" />
+      <node id="1560508619094391055" at="33,0,47,0" concept="10" trace="getMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/jetpad/mapper/Mapper;" />
+      <scope id="1560508619094171784" at="28,45,29,136" />
+      <scope id="1560508619094405449" at="37,30,38,18" />
+      <scope id="1560508619094392595" at="41,25,42,97" />
+      <scope id="1560508619094392594" at="41,0,44,0" />
+      <scope id="1560508619094087239" at="24,161,31,44">
         <var name="cell" id="1560508619094091348" />
       </scope>
-      <scope id="1560508619094087236" at="23,0,32,0">
+      <scope id="1560508619094087236" at="24,0,33,0">
         <var name="cellClass" id="1560508619094163422" />
         <var name="editorComponent" id="1560508619094099028" />
         <var name="node" id="1560508619094096142" />
       </scope>
-      <scope id="1560508619094391058" at="32,85,44,34">
+      <scope id="1560508619094391058" at="33,85,45,34">
         <var name="descendantMapper" id="1560508619094392578" />
         <var name="diagramCell" id="1560508619094392585" />
       </scope>
-      <scope id="1560508619094391055" at="32,0,46,0">
+      <scope id="1560508619094391055" at="33,0,47,0">
         <var name="editorComponent" id="1560508619094395543" />
         <var name="node" id="1560508619094395541" />
       </scope>
-      <unit id="1560508619094091335" at="24,185,24,208" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$1" />
-      <unit id="1560508619094392594" at="39,45,43,5" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2" />
-      <unit id="1560508619094084433" at="22,0,47,0" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" />
+      <unit id="1560508619094091335" at="25,185,25,208" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$1" />
+      <unit id="1560508619094392594" at="40,45,44,5" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2" />
+      <unit id="1560508619094084433" at="23,0,48,0" name="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094462934">

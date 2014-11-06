@@ -113,6 +113,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" file="DecoratorTestRunner.java">
+    <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Runnable" />
