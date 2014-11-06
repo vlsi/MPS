@@ -2789,13 +2789,8 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="1560508619094091359" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="8jsd.2333520786824485830" resolveInfo="paint" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dpaint(java%dawt%dGraphics)%cvoid" resolveInfo="paint" />
                     <node concept="vg0i.1070534058343" id="1560508619094091360" role="vg0i.1204053956946.1068499141038" info="nn" />
-                    <node concept="vg0i.1145552977093" id="1560508619094091361" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="vg0i.1212685548494" id="1560508619094091362" role="vg0i.1145552977093.1145553007750" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~ParentSettings%d&lt;init&gt;()" resolveInfo="ParentSettings" />
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>

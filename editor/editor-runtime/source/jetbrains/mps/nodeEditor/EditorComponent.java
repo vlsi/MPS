@@ -2220,7 +2220,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
-      myRootCell.paint(g, ParentSettings.createDefaultSetting());
+      myRootCell.paint(g);
     }
 
     for (AdditionalPainter additionalPainter : additionalPainters) {

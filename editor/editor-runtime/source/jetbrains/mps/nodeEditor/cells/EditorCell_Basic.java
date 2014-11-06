@@ -628,17 +628,29 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public void paint(Graphics g) {
-    paint(g, null);
+    paintCell(g, ParentSettings.createDefaultSetting());
+    paintDecorations(g);
+  }
+
+  @Override
+  public void paintCell(Graphics g, ParentSettings parentSettings) {
+    fillBackground(g, parentSettings);
+    paintContent(g, parentSettings);
   }
 
   @Override
   public void paint(Graphics g, ParentSettings parentSettings) {
-    if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
-      paintBackground(g, parentSettings);
+    paintCell(g, parentSettings);
+    paintDecorations(g);
+  }
+
+  protected ParentSettings fillBackground(Graphics g, ParentSettings parentSettings) {
+    ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
+    if (!settings.isSelectionPainted()) {
+      settings = paintBackground(g, parentSettings);
     }
     paintSelectionIfRequired(g, parentSettings);
-    paintContent(g, parentSettings);
-    paintDecorations(g);
+    return settings;
   }
 
   protected ParentSettings isSelectionPaintedOnAncestor(ParentSettings parentSettings) {
@@ -675,7 +687,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public abstract void paintContent(Graphics g, ParentSettings parentSettings);
 
-  protected void paintDecorations(Graphics g) {
+  public void paintDecorations(Graphics g) {
     int effectiveWidth = getEffectiveWidth();
 
     if (isDrawBorder()) {

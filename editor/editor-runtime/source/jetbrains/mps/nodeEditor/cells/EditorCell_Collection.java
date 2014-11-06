@@ -654,20 +654,32 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void paint(Graphics g, ParentSettings parentSettings) {
-    ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
-    if (!settings.isSelectionPainted()) {
-      settings = (paintBackground(g, parentSettings));
-    }
-    paintSelectionIfRequired(g, parentSettings);
+  public void paintCell(Graphics g, ParentSettings parentSettings) {
+    ParentSettings settings = fillBackground(g, parentSettings);
     paintContent(g, parentSettings);
+    paintChildCells(g, settings);
+  }
 
+  protected void paintChildCells(Graphics g, ParentSettings settings) {
     for (EditorCell child : this) {
       if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(g, settings);
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintCell(g, settings);
       }
     }
-    paintDecorations(g);
+  }
+
+  @Override
+  public void paintDecorations(Graphics g) {
+    super.paintDecorations(g);
+    paintChildDecorations(g);
+  }
+
+  protected void paintChildDecorations(Graphics g) {
+    for (EditorCell child : this) {
+      if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintDecorations(g);
+      }
+    }
   }
 
   @Override

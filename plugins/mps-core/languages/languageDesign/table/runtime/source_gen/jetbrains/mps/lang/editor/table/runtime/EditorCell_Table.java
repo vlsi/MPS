@@ -146,9 +146,10 @@ public class EditorCell_Table extends EditorCell_Collection {
     // Necesary for properly painting bottom table line 
     return 1;
   }
+
   @Override
-  public void paint(Graphics graphics, ParentSettings parentSettings) {
-    super.paint(graphics, parentSettings);
+  public void paintCell(Graphics graphics, ParentSettings settings) {
+    super.paintCell(graphics, settings);
     if (myEmpty) {
       return;
     }
@@ -194,6 +195,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       graphics.drawLine(x, firstY, x, lastY);
     }
   }
+
   public int getColumnCount() {
     return myModel.getColumnCount();
   }

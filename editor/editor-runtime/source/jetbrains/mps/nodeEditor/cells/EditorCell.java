@@ -32,6 +32,14 @@ import java.util.List;
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   void paint(Graphics g);
 
+  void paintCell(Graphics g, ParentSettings parentSettings);
+
+  void paintDecorations(Graphics g);
+
+  /**
+   * @deprecated since MPS 3.2 use paintContent() & paintDecorations() instead
+   */
+  @Deprecated
   void paint(Graphics g, ParentSettings parentSettings);
 
   void paintSelection(Graphics g, Color c, boolean drawBorder);
