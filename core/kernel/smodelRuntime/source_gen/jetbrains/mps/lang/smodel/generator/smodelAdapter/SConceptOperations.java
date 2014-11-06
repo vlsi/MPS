@@ -17,9 +17,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -80,6 +83,8 @@ public final class SConceptOperations {
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode) {
     return getDirectSuperConcepts(conceptDeclarationNode, false);
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null || !(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclarationNode))) {
       return Collections.emptyList();
@@ -91,10 +96,19 @@ public final class SConceptOperations {
     }
     return Collections.unmodifiableList(result);
   }
-  @Deprecated
-  public static List<SNode> getAllSuperConcepts(SNode conceptDeclarationNode) {
-    return getAllSuperConcepts(conceptDeclarationNode, false);
+  public static List<SAbstractConcept> getDirectSuperConcepts(SAbstractConcept concept, boolean inclusion) {
+    if (concept == null) {
+      return Collections.<SAbstractConcept>emptyList();
+    }
+    List<SAbstractConcept> result = SModelUtil.getDirectSuperConcepts(concept);
+    if (inclusion) {
+      result = new ArrayList<SAbstractConcept>(result);
+      result.add(0, concept);
+    }
+    return Collections.unmodifiableList(result);
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> getAllSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -106,15 +120,34 @@ public final class SConceptOperations {
     }
     return result;
   }
+  public static List<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean inclusion) {
+    if (concept == null) {
+      return Collections.<SAbstractConcept>emptyList();
+    }
+    List<SAbstractConcept> result = SModelUtil.getConceptAndAllSuperConcepts(concept);
+    if (!(inclusion)) {
+      result = new ArrayList<SAbstractConcept>(result);
+      result.remove(concept);
+    }
+    return Collections.unmodifiableList(result);
+  }
+  @Deprecated
   public static List<SNode> getConceptHierarchy(SNode conceptDeclarationNode) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
+  public static List<SAbstractConcept> getAllSubConcepts(SAbstractConcept conceptDeclarationNode, SModel model) {
+    return getAllSubConcepts(conceptDeclarationNode, new HashSet<SLanguage>(SModelOperations.getSLanguages(model)));
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -124,6 +157,21 @@ public final class SConceptOperations {
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant);
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
+      if (SetSequence.fromSet(availableLanguages).contains(lang)) {
+        result.add(declaration);
+      }
+    }
+    return result;
+  }
+  public static List<SAbstractConcept> getAllSubConcepts(SAbstractConcept concept, Set<SLanguage> availableLanguages) {
+    if (concept == null) {
+      return new ArrayList<SAbstractConcept>();
+    }
+    Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getName());
+    List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
+    for (String descendant : descendants) {
+      SConcept declaration = MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SModelUtil.findConceptDeclaration(descendant));
+      SLanguage lang = declaration.getLanguage();
       if (SetSequence.fromSet(availableLanguages).contains(lang)) {
         result.add(declaration);
       }
@@ -142,8 +190,13 @@ public final class SConceptOperations {
     Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, new EmptyProgressMonitor());
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode createNewNode(String conceptFqName) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
+  }
+  public static SNode createNewNode(SConcept concept) {
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, null, concept);
   }
   @Deprecated
   public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName, SNode prototypeNode) {

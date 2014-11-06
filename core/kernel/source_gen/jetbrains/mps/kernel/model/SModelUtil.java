@@ -27,6 +27,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
@@ -121,6 +125,7 @@ public class SModelUtil {
     }
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
   }
+  @Deprecated
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
@@ -142,6 +147,34 @@ public class SModelUtil {
         }
       }
     }
+    return result;
+  }
+  public static List<SAbstractConcept> getDirectSuperConcepts(SAbstractConcept concept) {
+    List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
+    if (concept instanceof SConcept) {
+      SConcept superConcept = ((SConcept) concept).getSuperConcept();
+      if (superConcept != null) {
+        result.add(superConcept);
+      }
+      result.addAll(IterableUtil.asCollection(((SConcept) concept).getSuperInterfaces()));
+    }
+    if (concept instanceof SInterfaceConcept) {
+      result.addAll(IterableUtil.asCollection(((SInterfaceConcept) concept).getSuperInterfaces()));
+    }
+    return result;
+  }
+  public static List<SAbstractConcept> getConceptAndAllSuperConcepts(SAbstractConcept concept) {
+    Set<SAbstractConcept> resultSet = new LinkedHashSet<SAbstractConcept>();
+    Set<SAbstractConcept> frontier = new LinkedHashSet<SAbstractConcept>();
+    frontier.add(concept);
+    while (resultSet.addAll(frontier)) {
+      Set<SAbstractConcept> newFrontier = new LinkedHashSet<SAbstractConcept>();
+      for (SAbstractConcept elem : SetSequence.fromSet(frontier)) {
+        newFrontier.addAll(getDirectSuperConcepts(elem));
+      }
+      frontier = newFrontier;
+    }
+    List<SAbstractConcept> result = new ArrayList<SAbstractConcept>(resultSet);
     return result;
   }
   public static boolean isAssignableConcept(SNode from, SNode to) {
@@ -166,7 +199,7 @@ public class SModelUtil {
     return isAssignableConcept(fromFqName, toFqName);
   }
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0o(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0q(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -200,7 +233,7 @@ public class SModelUtil {
   public static String getLinkDeclarationRole(SNode link) {
     return SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
-  private static boolean eq_74see4_a0a0o(Object a, Object b) {
+  private static boolean eq_74see4_a0a0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
