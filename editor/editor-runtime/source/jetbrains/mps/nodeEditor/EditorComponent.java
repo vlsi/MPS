@@ -347,9 +347,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
 
-  private Set<String> myEnabledHints = new HashSet<String>();
-  private boolean myUseCustomHints = false;
-
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
   }
@@ -1289,26 +1286,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   protected SRepository getRepository() {
     return myRepository;
-  }
-
-  protected void pushCellContext() {
-    if (myUseCustomHints) {
-      getEditorContext().getCellFactory().pushCellContext();
-      Object[] hints = myEnabledHints.toArray();
-      getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-    } else {
-      getEditorContext().getCellFactory().pushCellContext();
-      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getCurrentProject());
-      HintsState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
-      if (project != null && state != null) {
-        Object[] hints = state.getEnabledHints().toArray();
-        getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-      }
-    }
-  }
-
-  protected void popCellContext() {
-    getEditorContext().getCellFactory().popCellContext();
   }
 
   /**
@@ -2947,33 +2924,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
-  }
-
-  /**
-   * @return true if set of EnabledHints was changed by this operation
-   */
-  public synchronized boolean setEnabledHints(@NotNull Set<String> enabledHints) {
-    boolean result = !myEnabledHints.equals(enabledHints);
-    myEnabledHints = enabledHints;
-    return result;
-  }
-
-  @NotNull
-  public synchronized Set<String> getEnabledHints() {
-    return myEnabledHints;
-  }
-
-  /**
-   * @return true if UseCustomHints value was changed by this operation
-   */
-  public boolean setUseCustomHints(boolean useDefaultsHints) {
-    boolean result = myUseCustomHints != useDefaultsHints;
-    myUseCustomHints = useDefaultsHints;
-    return result;
-  }
-
-  public boolean getUseCustomHints() {
-    return myUseCustomHints;
   }
 
   private class ReferenceUnderliner {

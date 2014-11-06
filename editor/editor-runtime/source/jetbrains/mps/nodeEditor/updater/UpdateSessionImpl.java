@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.SModelModificationsCollector;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
@@ -44,10 +48,13 @@ import java.util.Set;
  * Date: 03/09/14
  */
 public class UpdateSessionImpl implements UpdateSession {
+  private static final String[] EMPTY_HINTS_ARRAY = new String[0];
+
+  @NotNull
   private final UpdaterImpl myUpdater;
   private SNode myNode;
   private List<Pair<SNode, SNodeReference>> myModelModifications;
-
+  private String[] myInitialEditorHints = null;
 
   private Map<SNode, WeakReference<EditorCell>> myBigCellsMap;
   private Map<EditorCell, Set<SNode>> myRelatedNodes;
@@ -58,7 +65,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
   private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
 
-  protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
+  protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
       Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> cleanDependentCells, Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> dirtyDependentCells,
       Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> existenceDependentCells) {
@@ -133,13 +140,34 @@ public class UpdateSessionImpl implements UpdateSession {
   public EditorCell performUpdate() {
     ReferencedNodeContext currentContext = ReferencedNodeContext.createNodeContext(getNode());
     myContextStack.push(currentContext);
+    EditorContext editorContext = getUpdater().getEditorContext();
+    editorContext.getCellFactory().pushCellContext();
     try {
-      EditorContext editorContext = getUpdater().getEditorContext();
+      editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       return EditorManager.getInstanceFromContext(editorContext).createRootCell(editorContext, getNode(), getModelModifications(), currentContext,
           editorContext.isInspector());
     } finally {
+      editorContext.getCellFactory().popCellContext();
       myContextStack.pop();
     }
+  }
+
+  void setInitialEditorHints(String[] initialHints) {
+    myInitialEditorHints = initialHints;
+  }
+
+  @NotNull
+  private String[] getInitialEditorHints(EditorContext editorContext) {
+    if (myInitialEditorHints != null) {
+      return myInitialEditorHints;
+    }
+
+    Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(editorContext.getRepository()));
+    if (project == null) {
+      return EMPTY_HINTS_ARRAY;
+    }
+    HintsState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
+    return state.getEnabledHints().toArray(EMPTY_HINTS_ARRAY);
   }
 
   @Override
@@ -191,6 +219,7 @@ public class UpdateSessionImpl implements UpdateSession {
     return myNode;
   }
 
+  @NotNull
   protected UpdaterImpl getUpdater() {
     return myUpdater;
   }

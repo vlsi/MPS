@@ -30,11 +30,14 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +52,7 @@ import java.util.WeakHashMap;
 public class UpdaterImpl implements Updater, CommandContext {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(UpdaterImpl.class));
 
+  @NotNull
   private final EditorComponent myEditorComponent;
   private UpdateSessionImpl myUpdateSession;
   private final UpdaterModelListenersController myModelListenersController;
@@ -65,8 +69,9 @@ public class UpdaterImpl implements Updater, CommandContext {
       new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
   private boolean myDisposed;
   private int myCommandLevel = 0;
+  private String[] myInitialHints;
 
-  public UpdaterImpl(EditorComponent editorComponent) {
+  public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
     myModelListenersController = new UpdaterModelListenersController(this);
   }
@@ -144,6 +149,24 @@ public class UpdaterImpl implements Updater, CommandContext {
     myListeners.remove(listener);
   }
 
+  @Override
+  public boolean setInitialEditorHints(@Nullable String[] hints) {
+    boolean changed = !Arrays.equals(myInitialHints, hints);
+    myInitialHints = hints;
+    return changed;
+  }
+
+  @Nullable
+  @Override
+  public String[] getInitialEditorHints() {
+    if (myInitialHints == null) {
+      return myInitialHints;
+    }
+    String[] result = new String[myInitialHints.length];
+    System.arraycopy(myInitialHints, 0, result, 0, myInitialHints.length);
+    return result;
+  }
+
   private void fireCellSynchronized(EditorCell cell) {
     for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
       nextListener.cellSynchronizedWithModel(cell);
@@ -157,10 +180,14 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   protected UpdateSessionImpl createUpdateSession(SNode node, List<SModelEvent> events) {
-    return new UpdateSessionImpl(node, events, this, myBigCellsMap, myRelatedNodes, myRelatedRefTargets, myCleanDependentCells, myDirtyDependentCells,
-        myExistenceDependentCells);
+    UpdateSessionImpl result =
+        new UpdateSessionImpl(node, events, this, myBigCellsMap, myRelatedNodes, myRelatedRefTargets, myCleanDependentCells, myDirtyDependentCells,
+            myExistenceDependentCells);
+    result.setInitialEditorHints(myInitialHints);
+    return result;
   }
 
+  @NotNull
   EditorContext getEditorContext() {
     return myEditorComponent.getEditorContext();
   }
@@ -285,6 +312,7 @@ public class UpdaterImpl implements Updater, CommandContext {
     return myCommandLevel != 0;
   }
 
+  @NotNull
   EditorComponent getEditorComponent() {
     return myEditorComponent;
   }

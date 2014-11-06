@@ -89,9 +89,8 @@ public class MPSEditorOpener {
       DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
       FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
       NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
+      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUpdater().getInitialEditorHints());
     }
-
 
 
     final jetbrains.mps.openapi.editor.EditorComponent inspector = getInspectorComponent();
@@ -224,13 +223,17 @@ public class MPSEditorOpener {
   }
 
   private boolean restorePrevSelectionInInspector(Editor nodeEditor, IOperationContext context, InspectorTool inspectorTool) {
-    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) return false;
+    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
+      return false;
+    }
     NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if (nec == null || nec.getLastInspectedNode() == null) return false;
+    if (nec.getLastInspectedNode() == null) {
+      return false;
+    }
 
     DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUpdater().getInitialEditorHints());
     return true;
   }
 }

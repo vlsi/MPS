@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * User: shatalin
  * Date: 03/09/14
@@ -60,4 +62,24 @@ public interface Updater {
    * @param listener - listener to remove
    */
   void removeListener(UpdaterListener listener);
+
+  /**
+   * Use this method to specify initial set of editor hints used by updater process to create
+   * EditorCell tree for the current editor. If null specified then default project-wide hints
+   * settings will be used.
+   * <p/>
+   * Return boolean value reflecting the fact that list of initialEditorHints were updated, so
+   * client should call explicit editor update (rebuild editor) in order to refresh current
+   * editor in accordance.
+   *
+   * @param hints array of hints or null if default settings should be used
+   * @return true if set of initialEditorHints were updated
+   */
+  boolean setInitialEditorHints(@Nullable String[] hints);
+
+  /**
+   * @return Currently used set of initialEditorHints or null if default project-wide settings are used.
+   */
+  @Nullable
+  String[] getInitialEditorHints();
 }

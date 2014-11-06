@@ -20,19 +20,15 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
-import java.util.List;
 
 public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
@@ -82,7 +78,7 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (selectedNode.getModel()==null) return;
+        if (selectedNode.getModel() == null) return;
 
         inspect(selectedNode);
       }
@@ -99,7 +95,7 @@ public class NodeEditorComponent extends EditorComponent {
     if (getInspector() == null) return;
 
     FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSCommonDataKeys.FILE_EDITOR.getName());
-    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, getUseCustomHints() ? getEnabledHints() : null);
+    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, getUpdater().getInitialEditorHints());
   }
 
   protected boolean isValidEditor() {

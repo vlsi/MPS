@@ -44,6 +44,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
@@ -114,6 +115,7 @@
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1075300953594" name="abstractClass" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1111509017652/1113006610751" name="value" />
@@ -1700,6 +1702,29 @@
           <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Override" resolveInfo="Override" />
         </node>
       </node>
+    </node>
+    <node concept="vg0i.1068390468198" id="2935353058677413459" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="cls" />
+      <node concept="vg0i.1068580123165" id="2935353058677510103" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="m" />
+        <node concept="vg0i.1070534370425" id="2935353058677617636" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="2935353058677510106" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="2935353058677510107" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242864" id="2935353058677516259" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="2935353058677516262" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="i" />
+              <node concept="vg0i.1068581517677" id="2935353058677630692" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+            </node>
+          </node>
+          <node concept="vg0i.1068580123157" id="2935353058677616679" role="vg0i.1068580123136.1068581517665" info="nn" />
+          <node concept="vg0i.1068581242878" id="2935353058677619561" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580320020" id="2935353058677625968" role="vg0i.1068581242878.1068581517676" info="nn">
+              <property role="vg0i.1068580320020.1068580320021" value="1" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1146644602865" id="2935353058677413460" role="vg0i.1178549954367.1178549979242" info="nn" />
     </node>
   </contents>
 </model>
