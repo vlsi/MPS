@@ -457,10 +457,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       public void componentMoved(ComponentEvent e) {
         if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
-        getPopupWindow().relayout();
         getPatternEditor().setLocation(myPatternEditorLocation);
-        getPopupWindow().validate();
-        getPopupWindow().repaint();
       }
     };
 
@@ -521,7 +518,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       });
     }
 
-    private void done() {
+    public void done() {
       setRelativeCell(null);
     }
 
@@ -560,7 +557,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
 
-    public void relayout() {
+    private void relayout() {
       if (!myPatternEditor.isActivated()) {
         return;
       }
@@ -665,11 +662,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.ensureIndexIsVisible(getSelectionIndex());
     }
 
-    public PopupWindowPosition getPosition() {
+    private PopupWindowPosition getPosition() {
       return myPosition;
     }
 
-    public void setPosition(PopupWindowPosition position) {
+    private void setPosition(PopupWindowPosition position) {
       myPosition = position;
     }
   }
