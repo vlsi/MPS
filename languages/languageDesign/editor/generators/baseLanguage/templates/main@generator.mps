@@ -1350,7 +1350,7 @@
                   <reference role="vg0i.1068498886296.1068581517664" target="1096648855042" resolveInfo="editorCell" />
                 </node>
                 <node concept="vg0i.1202948039474" id="4212343982984309479" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%dsetCanBeFolded(boolean)%cvoid" resolveInfo="setCanBeFolded" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%dsetFoldable(boolean)%cvoid" resolveInfo="setFoldable" />
                   <node concept="vg0i.1068580123137" id="4212343982984309480" role="vg0i.1204053956946.1068499141038" info="nn">
                     <property role="vg0i.1068580123137.1068580123138" value="true" />
                     <node concept="7gwc.1118773211870" id="4212343982984334754" role="asn4.1133920641626.5169995583184591170" info="ln">
@@ -3185,7 +3185,7 @@
                   <reference role="vg0i.1068498886296.1068581517664" target="1097659587051" resolveInfo="editorCell" />
                 </node>
                 <node concept="vg0i.1202948039474" id="1208995329545" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%dsetCanBeFolded(boolean)%cvoid" resolveInfo="setCanBeFolded" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%dsetFoldable(boolean)%cvoid" resolveInfo="setFoldable" />
                   <node concept="vg0i.1068580123137" id="7533883740976421334" role="vg0i.1204053956946.1068499141038" info="nn">
                     <property role="vg0i.1068580123137.1068580123138" value="true" />
                     <node concept="7gwc.1118773211870" id="4601216887036311768" role="asn4.1133920641626.5169995583184591170" info="ln">

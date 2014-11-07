@@ -630,6 +630,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  /**
+   * @deprecated since MPS 3.2 use setFoldable()
+   */
+  @Deprecated
   public void setCanBeFolded(boolean canBeFolded) {
     setFoldable(canBeFolded);
   }
