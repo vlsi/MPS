@@ -39,6 +39,7 @@
   </source>
   <source id="1560298786499492721" name="ProjectLevelRenderer">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ProjectLevelRenderer.java" />
   </source>
   <source id="1560298786499492799" name="StringPathRenderer">
