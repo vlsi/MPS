@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -710,7 +709,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
   @Override
@@ -733,26 +732,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
-    if (!parentSettings.isSkipBackground()) {
-      if (getCellBackgroundColor() != null) {
-        g.setColor(getCellBackgroundColor());
-        List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
-        for (Rectangle part : selection) {
-          g.fillRect(part.x, part.y, part.width, part.height);
-        }
-      }
+  protected void paintBackground(Graphics g) {
+    List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+    for (Rectangle part : selection) {
+      g.fillRect(part.x, part.y, part.width, part.height);
     }
-    boolean hasMessages = false;
-
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    for (EditorMessage message : messages) {
-      if (message != null && message.isBackground()) {
-        message.paint(g, getEditor(), this);
-        hasMessages = true;
-      }
-    }
-    return ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
   }
 
   @Override
@@ -1060,7 +1044,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public void paintContent(Graphics g, ParentSettings parentSettings) {
+    protected void paintContent(Graphics g, ParentSettings parentSettings) {
       if (!myIsEnabled) return;
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();

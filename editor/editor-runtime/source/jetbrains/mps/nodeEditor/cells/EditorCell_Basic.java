@@ -647,7 +647,21 @@ public abstract class EditorCell_Basic implements EditorCell {
   protected ParentSettings fillBackground(Graphics g, ParentSettings parentSettings) {
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
-      settings = paintBackground(g, parentSettings);
+      if (!parentSettings.isSkipBackground()) {
+        if (getCellBackgroundColor() != null) {
+          g.setColor(getCellBackgroundColor());
+          paintBackground(g);
+        }
+      }
+      boolean hasMessages = false;
+      List<EditorMessage> messages = getMessages(EditorMessage.class);
+      for (EditorMessage message : messages) {
+        if (message != null && message.isBackground()) {
+          message.paint(g, getEditor(), this);
+          hasMessages = true;
+        }
+      }
+      settings = ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
     }
     paintSelectionIfRequired(g, parentSettings);
     return settings;
@@ -657,22 +671,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     return ParentSettings.createSelectedSetting(isSelectionPainted()).combineWith(parentSettings);
   }
 
-  public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
-    if (!parentSettings.isSkipBackground()) {
-      if (getCellBackgroundColor() != null) {
-        g.setColor(getCellBackgroundColor());
-        g.fillRect(getX(), getY(), getWidth(), getHeight());
-      }
-    }
-    boolean hasMessages = false;
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    for (EditorMessage message : messages) {
-      if (message != null && message.isBackground()) {
-        message.paint(g, getEditor(), this);
-        hasMessages = true;
-      }
-    }
-    return ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
+  protected void paintBackground(Graphics g) {
+    g.fillRect(getX(), getY(), getWidth(), getHeight());
   }
 
   protected boolean isSelectionPainted() {
@@ -685,7 +685,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
-  public abstract void paintContent(Graphics g, ParentSettings parentSettings);
+  protected abstract void paintContent(Graphics g, ParentSettings parentSettings);
 
   public void paintDecorations(Graphics g) {
     int effectiveWidth = getEffectiveWidth();

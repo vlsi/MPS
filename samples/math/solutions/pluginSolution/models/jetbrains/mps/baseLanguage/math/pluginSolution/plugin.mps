@@ -45,6 +45,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
@@ -188,7 +189,7 @@
                     <node concept="vg0i.1068580123165" id="5487985028841941407" role="vg0i.1107461130800.5375687026011219971" info="igu">
                       <property role="vg0i.1068580123165.1178608670077" value="false" />
                       <property role="asn4.1169194658468.1169194664001" value="paintContent" />
-                      <node concept="vg0i.1146644602865" id="5487985028841941408" role="vg0i.1178549954367.1178549979242" info="nn" />
+                      <node concept="vg0i.1146644641414" id="7734654896993735027" role="vg0i.1178549954367.1178549979242" info="nn" />
                       <node concept="vg0i.1068581517677" id="5487985028841941409" role="vg0i.1068580123132.1068580123133" info="in" />
                       <node concept="vg0i.1068498886292" id="5487985028841941410" role="vg0i.1068580123132.1068580123134" info="ir">
                         <property role="asn4.1169194658468.1169194664001" value="g" />
@@ -463,7 +464,7 @@
       <node concept="vg0i.1068580123165" id="5487985028841941508" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="vg0i.1068580123165.1178608670077" value="false" />
         <property role="asn4.1169194658468.1169194664001" value="paintContent" />
-        <node concept="vg0i.1146644602865" id="5487985028841941509" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1146644641414" id="5634389620518995749" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068581517677" id="5487985028841941510" role="vg0i.1068580123132.1068580123133" info="in" />
         <node concept="vg0i.1068498886292" id="5487985028841941511" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="g" />

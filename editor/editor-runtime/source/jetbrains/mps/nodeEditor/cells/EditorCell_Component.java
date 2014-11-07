@@ -91,7 +91,7 @@ public class EditorCell_Component extends EditorCell_Basic implements EditorCell
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
   @Override

@@ -81,7 +81,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
     if (myImage == null) return;
     switch (myAlignment) {
       case justify: {

@@ -20,7 +20,7 @@ public class HLineCellProvider extends AbstractCellProvider {
   public EditorCell createEditorCell(EditorContext p0) {
     EditorCell_Basic result = new EditorCell_Basic(p0, this.myNode) {
       @Override
-      public void paintContent(Graphics g, ParentSettings parentSettings) {
+      protected void paintContent(Graphics g, ParentSettings parentSettings) {
         if (this.isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
           g.setColor(Color.WHITE);
         } else {

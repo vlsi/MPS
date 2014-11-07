@@ -26,7 +26,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     this.myTextLine.setCaretEnabled(true);
   }
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
     this.myTextLine.setShowCaret(this.myCaretVisible && this.isWithinSelection() && this.getEditor().hasFocus());
     this.myTextLine.paint(g, this.myX + this.myGapLeft, this.myY);
   }

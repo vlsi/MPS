@@ -27,7 +27,7 @@
       <node id="5487985028841941428" at="26,14,28,9" concept="0" />
       <node id="5487985028841941381" at="16,0,19,0" concept="1" trace="HLineCellProvider#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5487985028841941473" at="35,0,39,0" concept="5" trace="getAscent#()I" />
-      <node id="5487985028841941415" at="23,75,28,9" concept="4" />
+      <node id="5487985028841941415" at="23,78,28,9" concept="4" />
       <node id="5487985028841941485" at="39,0,44,0" concept="5" trace="relayoutImpl#()V" />
       <node id="5487985028841941407" at="22,0,35,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
       <node id="5487985028841941400" at="20,56,44,6" concept="6" />
@@ -42,7 +42,7 @@
       </scope>
       <scope id="5487985028841941473" at="35,0,39,0" />
       <scope id="5487985028841941485" at="39,0,44,0" />
-      <scope id="5487985028841941414" at="23,75,33,49">
+      <scope id="5487985028841941414" at="23,78,33,49">
         <var name="width" id="5487985028841941444" />
         <var name="x" id="5487985028841941436" />
       </scope>
@@ -78,7 +78,7 @@
       <node id="5487985028841941609" at="15,0,18,0" concept="1" trace="EditorCell_VerticalLine#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5487985028841941576" at="31,0,35,0" concept="5" trace="switchCaretVisible#()V" />
       <node id="5487985028841941589" at="35,0,40,0" concept="5" trace="relayoutImpl#()V" />
-      <node id="5487985028841941516" at="19,71,29,5" concept="4" />
+      <node id="5487985028841941516" at="19,74,29,5" concept="4" />
       <node id="5487985028841941508" at="18,0,31,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
       <scope id="5487985028841941612" at="15,69,16,25" />
       <scope id="5487985028841941579" at="32,36,33,45" />
@@ -96,7 +96,7 @@
         <var name="x" id="5487985028841941530" />
         <var name="y" id="5487985028841941536" />
       </scope>
-      <scope id="5487985028841941515" at="19,71,29,5" />
+      <scope id="5487985028841941515" at="19,74,29,5" />
       <scope id="5487985028841941508" at="18,0,31,0">
         <var name="g" id="5487985028841941511" />
         <var name="parentSettings" id="5487985028841941513" />
