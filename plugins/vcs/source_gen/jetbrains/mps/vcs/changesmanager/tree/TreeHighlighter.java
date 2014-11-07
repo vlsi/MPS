@@ -28,9 +28,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.make.IMakeService;
@@ -48,11 +50,9 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelAdapter;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
-import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -128,11 +128,13 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
       myCommandQueue.runTask(new Runnable() {
         public void run() {
+          final boolean featureIsStillThere;
           synchronized (myFeaturesHolder) {
             // check if node isn't already removed from tree 
-            if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
-              rehighlightNode(node, feature);
-            }
+            featureIsStillThere = myFeaturesHolder.getNodesByFeature(feature).contains(node);
+          }
+          if (featureIsStillThere) {
+            rehighlightNode(node, feature);
           }
         }
       });
@@ -158,6 +160,11 @@ public class TreeHighlighter implements TreeMessageOwner {
       updatePresentation(node);
     }
   }
+  /**
+   * This method runs with model read lock, and shall own lock on myFeatureHolder as it might lead 
+   * to a deadlock (MPSTree rebuilds itself in a model read, thus treeNodeAdded and registerNode keep model read + myFeatureHolder, and if this method
+   * is invoked with myFeatureHolder lock, then we get opposite order of the locks)
+   */
   private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull final Feature feature) {
     unhighlightNode(node);
 
@@ -203,7 +210,14 @@ public class TreeHighlighter implements TreeMessageOwner {
     });
   }
   private void rehighlightFeature(@NotNull Feature feature) {
-    for (MPSTreeNode node : CollectionSequence.fromCollection(myFeaturesHolder.getNodesByFeature(feature))) {
+    List<MPSTreeNode> toUpdate = new ArrayList<MPSTreeNode>();
+    synchronized (myFeaturesHolder) {
+      Collection<MPSTreeNode> nodesByFeature = myFeaturesHolder.getNodesByFeature(feature);
+      if (nodesByFeature != null) {
+        toUpdate.addAll(nodesByFeature);
+      }
+    }
+    for (MPSTreeNode node : ListSequence.fromList(toUpdate)) {
       rehighlightNode(node, feature);
     }
   }
@@ -211,18 +225,30 @@ public class TreeHighlighter implements TreeMessageOwner {
     if (myTree.isDisposed()) {
       return;
     }
+    final List<Feature> toCheck = new ArrayList<Feature>();
     synchronized (myFeaturesHolder) {
-      rehighlightFeature(feature);
       SModelReference modelRef = feature.getModelReference();
-      for (Feature anotherFeature : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {
-        if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-          public boolean accept(Feature a) {
-            return feature.equals(a);
+      toCheck.addAll(myFeaturesHolder.getFeaturesByModelReference(modelRef));
+    }
+    final List<Feature> toUpdate = new ArrayList<Feature>();
+    toUpdate.add(feature);
+    final Project mpsProject = ProjectHelper.toMPSProject(myRegistry.getProject());
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        for (Feature anotherFeature : ListSequence.fromList(toCheck)) {
+          // getAncestors might require (see NodeFeature) model read access, which shall not be under myFeaturesHolder lock 
+          if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+            public boolean accept(Feature a) {
+              return feature.equals(a);
+            }
+          })) {
+            toUpdate.add(anotherFeature);
           }
-        })) {
-          rehighlightFeature(anotherFeature);
         }
       }
+    });
+    for (Feature f : ListSequence.fromList(toUpdate)) {
+      rehighlightFeature(f);
     }
   }
 
@@ -245,10 +271,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     myQueue.queue(rehighlightAllFeaturesUpdate);
   }
   private void rehighlightAllFeaturesNow() {
+    List<Feature> toUpdate = new ArrayList<Feature>();
     synchronized (myFeaturesHolder) {
-      for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
-        rehighlightFeatureAndDescendants(f);
-      }
+      toUpdate.addAll(myFeaturesHolder.getAllModelFeatures());
+    }
+    for (Feature f : ListSequence.fromList(toUpdate)) {
+      rehighlightFeatureAndDescendants(f);
     }
   }
 
