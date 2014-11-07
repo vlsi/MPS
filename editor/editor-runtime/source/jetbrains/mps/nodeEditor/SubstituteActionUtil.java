@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +49,7 @@ public class SubstituteActionUtil {
     private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
     private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
     private String myPattern;
+
     public SubstituteActionComparator(String pattern) {
       this.myPattern = pattern;
     }
@@ -76,12 +78,13 @@ public class SubstituteActionUtil {
 
     private boolean canSubstituteStrictly(SubstituteAction action) {
       Boolean result = myCanSubstituteStrictlyMap.get(action);
-      if (result == null)  {
+      if (result == null) {
         result = action.canSubstituteStrictly(myPattern);
         myCanSubstituteStrictlyMap.put(action, result);
       }
       return result;
     }
+
     private int getCachedRate(SubstituteAction action) {
       Integer result = myRateSortPriorities.get(action);
       if (result == null) {
@@ -90,6 +93,7 @@ public class SubstituteActionUtil {
       }
       return result;
     }
+
     private int compareByRate(SubstituteAction firstAction, SubstituteAction secondAction) {
       if (myPattern == null || myPattern.length() == 0) {
         return 0;
@@ -168,23 +172,20 @@ public class SubstituteActionUtil {
       return visibleMatchingText;
     }
     //whitespaces are not highlighted
-    List<Integer> indexes = getIndexes(action, IntelligentInputUtil.trimLeft(pattern), visibleMatchingText);
-    if (indexes.isEmpty()) {
+    List<Integer> indexesOfColoredChars = getIndexes(action, IntelligentInputUtil.trimLeft(pattern), visibleMatchingText);
+    if (indexesOfColoredChars.isEmpty()) {
       return visibleMatchingText;
     }
     StringBuilder builder = new StringBuilder("<html>");
-    int next = 0;
-    int curIndex = indexes.get(next);
-    boolean isColored = false;
+    Iterator<Integer> coloredIndexIterator = indexesOfColoredChars.iterator();
+    int currentColoredIndex = coloredIndexIterator.next();
+    boolean isTextColoredNow = false;
     for (int i = 0; i < visibleMatchingText.length(); i++) {
-      if (i == curIndex && !isColored) {
+      if (i == currentColoredIndex && !isTextColoredNow) {
         builder.append("<font color='");
         builder.append(color);
         builder.append("'>");
-        isColored = true;
-      }
-      if (isColored) {
-        next++;
+        isTextColoredNow = true;
       }
       char c = visibleMatchingText.charAt(i);
       if (c == '<') {
@@ -196,14 +197,18 @@ public class SubstituteActionUtil {
       } else {
         builder.append(c);
       }
-      if (next < indexes.size()) {
-        curIndex = indexes.get(next);
-      }
-      if (next >= indexes.size() || curIndex > i + 1) {
-        builder.append("</font>");
-        isColored = false;
+      if (isTextColoredNow) {
+        boolean hasNext = coloredIndexIterator.hasNext();
+        if (hasNext) {
+          currentColoredIndex = coloredIndexIterator.next();
+        }
+        if (!hasNext || currentColoredIndex > i + 1) {
+          builder.append("</font>");
+          isTextColoredNow = false;
+        }
       }
     }
+    builder.append("</html>");
     return builder.toString();
   }
 

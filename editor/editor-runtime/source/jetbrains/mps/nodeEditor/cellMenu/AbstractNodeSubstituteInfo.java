@@ -179,10 +179,19 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   }
 
   private List<SubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
+    if (pattern == null) {
+      return Collections.unmodifiableList(getActions());
+    }
     if (!strictMatching) {
-      for (; pattern != null && pattern.length() > 0; pattern = pattern.substring(0, pattern.length() - 1)) {
+      if (pattern.isEmpty()) {
         if (myPatternsToActionListsCache.containsKey(pattern)) {
           return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
+        }
+      } else {
+        for (; pattern.length() > 0; pattern = pattern.substring(0, pattern.length() - 1)) {
+          if (myPatternsToActionListsCache.containsKey(pattern)) {
+            return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
+          }
         }
       }
     } else {
