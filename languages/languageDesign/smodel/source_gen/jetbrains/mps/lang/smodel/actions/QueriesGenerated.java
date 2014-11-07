@@ -184,6 +184,9 @@ public class QueriesGenerated {
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
           result.myToConcept = true;
         }
+        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
+          result.myToConcept = true;
+        }
         // is node ? 
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
           result.myToNode = true;
@@ -215,6 +218,9 @@ public class QueriesGenerated {
           }
           // is concept ? 
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
+            result.myToConcept = true;
+          }
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
             result.myToConcept = true;
           }
           // is node ? 
@@ -306,6 +312,9 @@ public class QueriesGenerated {
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
             result.myToConcept = true;
           }
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
+            result.myToConcept = true;
+          }
           // is node ? 
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
             result.myToNode = true;
@@ -329,10 +338,10 @@ public class QueriesGenerated {
           SNode linkAccess = appTypesInfo.myLinkAccess;
           if (linkAccess != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
             //  some operations are only applicable to aggregation links 
-            if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation")) {
+            if (SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138757581985l, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"))) {
               return true;
             }
-            if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Node_DetachOperation")) {
+            if (SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1228341669568l, "jetbrains.mps.lang.smodel.structure.Node_DetachOperation"))) {
               return true;
             }
           }

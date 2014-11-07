@@ -392,6 +392,37 @@
                   <property role="vg0i.6329021646629104957.6329021646629104958" value="is concept ?" />
                 </node>
               </node>
+              <node concept="vg0i.1068580123159" id="991966736889781245" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="991966736889781246" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068580123155" id="991966736889781247" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068498886294" id="991966736889781248" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1068580123137" id="991966736889781249" role="vg0i.1215693861676.1068498886297" info="nn">
+                        <property role="vg0i.1068580123137.1068580123138" value="true" />
+                      </node>
+                      <node concept="vg0i.1197027756228" id="991966736889781250" role="vg0i.1215693861676.1068498886295" info="nn">
+                        <node concept="vg0i.1068498886296" id="991966736889781251" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1206377976331" resolveInfo="result" />
+                        </node>
+                        <node concept="vg0i.1197029447546" id="991966736889781252" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1197029447546.1197029500499" target="1206377822467" resolveInfo="myToConcept" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1073239437375" id="991966736889781253" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1070534058343" id="991966736889781254" role="vg0i.1081773326031.1081773367579" info="nn" />
+                  <node concept="swut.1178871491133" id="991966736889781255" role="vg0i.1081773326031.1081773367580" info="nn">
+                    <node concept="vg0i.1068498886296" id="991966736889781256" role="swut.1178870617262.1178870894645" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1206377950230" resolveInfo="leftType" />
+                    </node>
+                    <node concept="swut.1174642788531" id="991966736889781257" role="swut.1178870617262.1178870894644" info="ig">
+                      <property role="asn4.1169194658468.1169194664001" value="v" />
+                      <reference role="swut.1174642788531.1174642800329" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="vg0i.1068580123159" id="1206377950242" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1068580123136" id="1206377950243" role="vg0i.1068580123159.1068580123161" info="sn">
                   <node concept="vg0i.1068580123155" id="1206378044911" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -417,8 +448,8 @@
                       <reference role="vg0i.1068498886296.1068581517664" target="1206377950230" resolveInfo="leftType" />
                     </node>
                     <node concept="swut.1174642788531" id="1206377950248" role="swut.1178870617262.1178870894644" info="ig">
-                      <property role="asn4.1169194658468.1169194664001" value="v" />
-                      <reference role="swut.1174642788531.1174642800329" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                      <property role="asn4.1169194658468.1169194664001" value="sConceptTypeSConcept" />
+                      <reference role="swut.1174642788531.1174642800329" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
                     </node>
                   </node>
                 </node>
