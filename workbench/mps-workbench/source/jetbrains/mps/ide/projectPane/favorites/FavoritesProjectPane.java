@@ -40,10 +40,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -69,18 +65,17 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = "Favorites";
   private MPSFavoritesManager myFavoritesManager;
   private MPSFavoritesListener myFavoritesListener;
-  private IOperationContext myContext;
   private JScrollPane myScrollPane;
 
   protected FavoritesProjectPane(Project project, MPSFavoritesManager manager, ProjectView projectView) {
     super(project, projectView);
     myFavoritesManager = manager;
-    myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
   }
 
   @Override
   public void rebuild() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         if (isDisposed()) return;
@@ -116,7 +111,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       rebuildTree();
       return myScrollPane;
     }
-    myTree = new MyLogicalViewTree();
+    myTree = new MyLogicalViewTree(ProjectHelper.toMPSProject(getProject()));
     myFavoritesListener = new MPSFavoritesListener() {
       @Override
       public void rootsChanged(String listName) {
@@ -213,6 +208,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   private class MyLogicalViewTree extends MPSTree implements NodeNavigationProvider {
 
+    private final jetbrains.mps.project.Project myProject;
+
+    MyLogicalViewTree(jetbrains.mps.project.Project mpsProject) {
+      myProject = mpsProject;
+    }
 
     @Override
     protected MPSTreeNode rebuild() {
@@ -225,9 +225,9 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         return invisibleRoot;
       }
       for (Object o : new ArrayList(objectList)) {
-        FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
+        FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(myProject, o);
         if (favoritesRoot == null) continue;
-        MPSTreeNode newChild = favoritesRoot.getTreeNode(myContext);
+        MPSTreeNode newChild = favoritesRoot.createTreeNode();
         if (newChild == null) {
           myFavoritesManager.removeRoots(subId, Collections.singletonList(o));
           continue;
@@ -255,24 +255,19 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
     @Override
     protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-      return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
-        @Override
-        public ActionGroup compute() {
-          return ProjectPaneActionGroups.getActionGroup(node);
-        }
-      });
+      return ProjectPaneActionGroups.getActionGroup(node);
     }
 
     @Override
     public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode node = treeNode.getSNode();
           if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null) {
             return;
           }
-          FavoritesProjectPane.this.editNode(node, treeNode.getOperationContext(), wasClicked);
+          FavoritesProjectPane.this.editNode(node, myProject, wasClicked);
         }
       });
     }

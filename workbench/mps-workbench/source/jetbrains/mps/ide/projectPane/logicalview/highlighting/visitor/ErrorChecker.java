@@ -21,6 +21,7 @@ import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
@@ -37,6 +38,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class ErrorChecker extends TreeUpdateVisitor {
+  public ErrorChecker(Project mpsProject) {
+    super(mpsProject);
+  }
+
   @Override
   public void visitModelNode(@NotNull final SModelTreeNode node) {
     scheduleModelRead(node, new Runnable() {
@@ -44,8 +49,6 @@ public class ErrorChecker extends TreeUpdateVisitor {
         final SModel modelDescriptor = node.getModel();
         if (modelDescriptor == null) return Collections.emptyList();
         if (!(modelDescriptor.isLoaded())) return Collections.emptyList();
-        IOperationContext context = node.getOperationContext();
-        if (!context.isValid()) return Collections.emptyList();
         return new ModelValidator(modelDescriptor).validate();
        }
       @Override

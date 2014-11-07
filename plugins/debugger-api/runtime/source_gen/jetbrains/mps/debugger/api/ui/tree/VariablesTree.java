@@ -9,10 +9,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractUiState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
@@ -52,12 +49,10 @@ public class VariablesTree extends MPSTree implements DataProvider {
   @NotNull
   private AbstractUiState myUiState;
   private final Project myProject;
-  private final IOperationContext myContext;
   public VariablesTree(Project project, AbstractUiState state) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     myUiState = state;
     myProject = project;
-    myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(project));
     getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_OPEN_NODE_IN_PROJECT);
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
       @Override
@@ -146,17 +141,17 @@ public class VariablesTree extends MPSTree implements DataProvider {
       for (SNode snode : MapSequence.fromMap(nodeToVarsMap).keySet()) {
         List<IWatchable> watchablesWithNodes = MapSequence.fromMap(nodeToVarsMap).get(snode);
         if (ListSequence.fromList(watchablesWithNodes).count() == 1) {
-          rootTreeNode.add(new WatchableNode(myContext, ListSequence.fromList(watchablesWithNodes).first(), myUiState));
+          rootTreeNode.add(new WatchableNode(ListSequence.fromList(watchablesWithNodes).first(), myUiState));
         } else {
-          NodeTreeNode nodeTreeNode = new NodeTreeNode(myContext, snode);
+          NodeTreeNode nodeTreeNode = new NodeTreeNode(snode);
           for (IWatchable watchable : watchablesWithNodes) {
-            nodeTreeNode.add(new WatchableNode(myContext, watchable, myUiState));
+            nodeTreeNode.add(new WatchableNode(watchable, myUiState));
           }
           rootTreeNode.add(nodeTreeNode);
         }
       }
       for (IWatchable watchable : orphanes) {
-        rootTreeNode.add(new WatchableNode(myContext, watchable, myUiState));
+        rootTreeNode.add(new WatchableNode(watchable, myUiState));
       }
     }
     return rootTreeNode;

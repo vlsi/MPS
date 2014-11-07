@@ -23,31 +23,24 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 
 public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
-  private AbstractModule mySolution;
   private boolean myShortNameOnly;
 
   private boolean myInitialized;
 
   protected ProjectSolutionTreeNode(AbstractModule solution, Project project, boolean shortNameOnly) {
-    super(new ModuleContext(solution, project));
+    super(solution);
     myShortNameOnly = shortNameOnly;
-    mySolution = solution;
 
-    IFile descriptorFile = mySolution.getDescriptorFile();
-    String id = descriptorFile == null ? mySolution.getModuleName() : descriptorFile.getPath();
+    IFile descriptorFile = solution.getDescriptorFile();
+    String id = descriptorFile == null ? solution.getModuleName() : descriptorFile.getPath();
     setNodeIdentifier(id);
     setIcon(IdeIcons.SOLUTION_ICON);
     init();
   }
 
   @Override
-  public AbstractModule getModule() {
-    return mySolution;
-  }
-
-  @Override
   public String getModuleText() {
-    String name = mySolution.getModuleName();
+    String name = getModule().getModuleName();
 
     if (myShortNameOnly) {
       name = NameUtil.shortNameFromLongName(name);
@@ -71,6 +64,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    SModelsSubtree.create(this, getOperationContext());
+    SModelsSubtree.create(this, getModule());
   }
 }

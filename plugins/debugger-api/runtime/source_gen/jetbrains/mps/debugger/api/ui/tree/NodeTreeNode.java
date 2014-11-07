@@ -4,16 +4,12 @@ package jetbrains.mps.debugger.api.ui.tree;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.icons.IdeIcons;
 
 public class NodeTreeNode extends AbstractWatchableNode {
   public NodeTreeNode(@NotNull SNode node) {
-    this(null, node);
-  }
-  public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
-    super(context, node);
-    setNodeIdentifier(myNode.getPresentation());
+    super(node);
+    setNodeIdentifier(node.getPresentation());
     setIcon(IdeIcons.DEFAULT_ICON);
   }
 }

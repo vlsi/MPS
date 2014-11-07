@@ -31,21 +31,15 @@ public class TypeSystemStateTreeNode extends MPSTreeNode {
   protected String myRuleId;
   protected State myState;
 
-  public TypeSystemStateTreeNode(IOperationContext operationContext) {
-    super(operationContext);
+  public TypeSystemStateTreeNode() {
+    super();
   }
 
-  public TypeSystemStateTreeNode(String presentation, IOperationContext operationContext) {
-    super(presentation, operationContext);
-    setNodeIdentifier(userObject.toString());
+  public TypeSystemStateTreeNode(String presentation) {
+    super(presentation);
+    setNodeIdentifier(presentation);
     setIcon(IdeIcons.DEFAULT_ICON);
-    this.setAutoExpandable(true);
-  }
-
-  public void goToRule() {
-    if (myRuleId != null && myRuleModel != null) {
-      GoToTypeErrorRuleUtil.goToRuleById(getOperationContext().getProject(), new Pair<String, String>(myRuleModel, myRuleId));
-    }
+    setAutoExpandable(true);
   }
 
   public List<SNode> getVariables() {

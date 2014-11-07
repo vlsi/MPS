@@ -28,7 +28,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
 
   protected NamespaceTreeBuilder(NamespaceNodeBuilder<T> builder) {
     myBuilder = builder;
-    myRootNamespace = myBuilder.createNamespaceNode("", null);
+    myRootNamespace = myBuilder.createNamespaceNode("");
   }
 
   protected abstract String getNamespace(N node);
@@ -41,7 +41,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       pathElements.remove(0);
     }
 
-    addNode(node, getSubnamespace(myRootNamespace, pathElements, node.getOperationContext()));
+    addNode(node, getSubnamespace(myRootNamespace, pathElements));
   }
 
   protected void addNode(N node, T namespace) {
@@ -118,7 +118,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
   }
 
-  private T getSubnamespace(T sourceNode, List<String> pathElements, IOperationContext context) {
+  private T getSubnamespace(T sourceNode, List<String> pathElements) {
     if (pathElements.size() == 0) return sourceNode;
 
     String first = pathElements.get(0);
@@ -128,21 +128,20 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       if (myBuilder.isNamespaceNode((MPSTreeNode) sourceNode.getChildAt(i))) {
         T child = (T) sourceNode.getChildAt(i);
         if (first.equals(myBuilder.getName(child))) {
-          return getSubnamespace(child, otherElements, context);
+          return getSubnamespace(child, otherElements);
         }
       }
     }
 
-    SModule module = (context != null) ? context.getModule() : null;
-    T newChild = myBuilder.createNamespaceNode(first, new ModuleChangingOperationContext(module, context));
+    T newChild = myBuilder.createNamespaceNode(first);
 
     sourceNode.add(newChild);
 
-    return getSubnamespace(newChild, otherElements, context);
+    return getSubnamespace(newChild, otherElements);
   }
 
   public static interface NamespaceNodeBuilder<N extends MPSTreeNode> {
-    public N createNamespaceNode(String text, IOperationContext context);
+    public N createNamespaceNode(String text);
 
     public abstract String getName(N node);
 

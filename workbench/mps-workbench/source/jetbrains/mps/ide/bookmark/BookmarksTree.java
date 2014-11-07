@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,7 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,7 +57,7 @@ public class BookmarksTree extends MPSTree {
   }
 
   private void rebuildBookmarksTree() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    myProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         BookmarksTree.this.rebuildNow();
@@ -102,7 +99,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(MPSModuleRepository.getInstance()), null, new ProjectOperationContext(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(myProject.getRepository()), null, myProject));
         root.add(textTreeNode);
       }
     }
@@ -112,7 +109,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(MPSModuleRepository.getInstance()), null, new ProjectOperationContext(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.resolve(myProject.getRepository()), null, myProject));
         root.add(textTreeNode);
       }
     }
@@ -125,7 +122,7 @@ public class BookmarksTree extends MPSTree {
   public void gotoSelectedBookmark() {
     final BookmarkNode node = getSelectedBookmarkNode();
     if (node != null) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           node.navigateToBookmark();
@@ -196,32 +193,35 @@ public class BookmarksTree extends MPSTree {
     public void navigateToBookmark() {
       SNode targetNode = myNodePointer.resolve(MPSModuleRepository.getInstance());
       if (targetNode != null) {
-        NavigationSupport.getInstance().openNode(new ProjectOperationContext(myProject), targetNode, true, true);
+        NavigationSupport.getInstance().openNode(myProject, targetNode, true, true);
       }
     }
   }
 
   private static class MySNodeTreeNode extends SNodeTreeNode {
-    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-      super(node, role, operationContext);
+    private final Project myProject;
+
+    public MySNodeTreeNode(SNode node, String role, Project mpsProject) {
+      super(node, role);
+      myProject = mpsProject;
     }
 
     @Override
     public void doubleClick() {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode openNode = getSNode();
           if (openNode == null) return;
-          NavigationSupport.getInstance().openNode(getOperationContext(), openNode, true,
+          NavigationSupport.getInstance().openNode(myProject, openNode, true,
               !(openNode.getModel() != null && openNode.getParent() == null));
         }
       });
     }
 
     @Override
-    protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
-      return new MySNodeTreeNode(childNode, role, operationContext);
+    protected SNodeTreeNode createChildTreeNode(SNode childNode, String role) {
+      return new MySNodeTreeNode(childNode, role, myProject);
     }
   }
 }

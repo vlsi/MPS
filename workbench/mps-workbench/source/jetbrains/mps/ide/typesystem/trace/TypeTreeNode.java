@@ -24,8 +24,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 public class TypeTreeNode extends TypeSystemStateTreeNode {
   private static Color color = new Color(30464);
 
-  public TypeTreeNode(IOperationContext operationContext, SNode node, SNode type, SNode expandedType, EditorComponent editorComponent) {
-    super(operationContext);
+  public TypeTreeNode(SNode node, SNode type, SNode expandedType, EditorComponent editorComponent) {
     myNode = node;
     setNodeIdentifier(PresentationUtil.getNodePresentation(editorComponent, node) + " : " + type);
     setIcon(IdeIcons.DEFAULT_ICON);

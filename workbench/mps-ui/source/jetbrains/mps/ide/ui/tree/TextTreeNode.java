@@ -22,6 +22,7 @@ public class TextTreeNode extends MPSTreeNode {
     this(text, null);
   }
 
+  @Deprecated
   public TextTreeNode(String text, IOperationContext context) {
     super(context);
     setText(text);

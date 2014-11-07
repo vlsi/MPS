@@ -4738,17 +4738,11 @@
                 </node>
               </node>
               <node concept="vg0i.1202948039474" id="8970236339104100132" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="ai6y.~NodeExplorerComponent%dshowNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode,com%dintellij%dopenapi%dproject%dProject)%cvoid" resolveInfo="showNode" />
+                <reference role="vg0i.1204053956946.1068499141037" target="ai6y.~NodeExplorerComponent%dshowNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="showNode" />
                 <node concept="vg0i.1197027756228" id="8970236339104100133" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="1sqg.1205752633985" id="8970236339104100134" role="vg0i.1197027756228.1197027771414" info="nn" />
                   <node concept="79nr.1217252428768" id="8970236339104100135" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="1sqg.1205756064662.1205756909548" target="8970236339104100144" resolveInfo="node" />
-                  </node>
-                </node>
-                <node concept="vg0i.1197027756228" id="8970236339104100136" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="1sqg.1205752633985" id="8970236339104100137" role="vg0i.1197027756228.1197027771414" info="nn" />
-                  <node concept="79nr.1217252428768" id="8970236339104100138" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="1sqg.1205756064662.1205756909548" target="8970236339104100145" resolveInfo="project" />
                   </node>
                 </node>
               </node>

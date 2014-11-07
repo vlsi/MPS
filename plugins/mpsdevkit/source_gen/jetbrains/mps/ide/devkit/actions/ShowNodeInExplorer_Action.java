@@ -59,7 +59,7 @@ public class ShowNodeInExplorer_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NodeExplorer_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(NodeExplorer_Tool.class);
-      tool.getNodeExplorer().showNode(((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
+      tool.getNodeExplorer().showNode(((SNode) MapSequence.fromMap(_params).get("node")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

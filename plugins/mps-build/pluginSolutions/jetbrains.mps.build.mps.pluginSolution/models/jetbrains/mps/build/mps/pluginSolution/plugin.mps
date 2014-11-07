@@ -5541,7 +5541,7 @@
         </node>
       </node>
       <node concept="vg0i.1068390468200" id="8722937377469656710" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="myMpsProject" />
+        <property role="asn4.1169194658468.1169194664001" value="myProject" />
         <property role="vg0i.1068431474542.1176718929932" value="true" />
         <node concept="vg0i.1107535904670" id="944342063939175932" role="vg0i.4972933694980447171.5680397130376446158" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="vsqj.~Project" resolveInfo="Project" />
@@ -5598,7 +5598,7 @@
               </node>
               <node concept="vg0i.1197027756228" id="8722937377469656691" role="vg0i.1215693861676.1068498886295" info="nn">
                 <node concept="vg0i.1197029447546" id="8722937377469656692" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myMpsProject" />
+                  <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myProject" />
                 </node>
                 <node concept="vg0i.1070475354124" id="8722937377469656693" role="vg0i.1197027756228.1197027771414" info="nn" />
               </node>
@@ -5737,7 +5737,7 @@
               <node concept="vg0i.1197027756228" id="8722937377469656254" role="vg0i.1068431474542.1068431790190" info="nn">
                 <node concept="vg0i.1197027756228" id="8722937377469656255" role="vg0i.1197027756228.1197027771414" info="nn">
                   <node concept="vg0i.1197029447546" id="8722937377469656256" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myMpsProject" />
+                    <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myProject" />
                   </node>
                   <node concept="vg0i.1070475354124" id="8722937377469656257" role="vg0i.1197027756228.1197027771414" info="nn" />
                 </node>
@@ -5962,7 +5962,7 @@
                   <reference role="vg0i.1204053956946.1068499141037" target="8722937377469656084" resolveInfo="LanguagesStep.MyTreeBuilder" />
                   <node concept="vg0i.1197027756228" id="8722937377469656346" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1197029447546" id="8722937377469656347" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myMpsProject" />
+                      <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656710" resolveInfo="myProject" />
                     </node>
                     <node concept="vg0i.1070475354124" id="8722937377469656348" role="vg0i.1197027756228.1197027771414" info="nn" />
                   </node>
@@ -6734,7 +6734,8 @@
           </node>
         </node>
         <node concept="vg0i.1068390468200" id="8722937377469656080" role="vg0i.1107461130800.5375687026011219971" info="igu">
-          <property role="asn4.1169194658468.1169194664001" value="myMpsProject" />
+          <property role="asn4.1169194658468.1169194664001" value="myProject" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1107535904670" id="944342063939269840" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="vsqj.~Project" resolveInfo="Project" />
           </node>
@@ -6766,12 +6767,6 @@
                       <node concept="vg0i.1068498886292" id="8722937377469656096" role="vg0i.1068580123132.1068580123134" info="ir">
                         <property role="asn4.1169194658468.1169194664001" value="text" />
                         <node concept="vg0i.1225271177708" id="8722937377469656097" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-                      </node>
-                      <node concept="vg0i.1068498886292" id="8722937377469656098" role="vg0i.1068580123132.1068580123134" info="ir">
-                        <property role="asn4.1169194658468.1169194664001" value="context" />
-                        <node concept="vg0i.1107535904670" id="8722937377469656099" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                          <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~IOperationContext" resolveInfo="IOperationContext" />
-                        </node>
                       </node>
                       <node concept="vg0i.1068580123136" id="8722937377469656100" role="vg0i.1068580123132.1068580123135" info="sn">
                         <node concept="vg0i.1068581242878" id="8722937377469656101" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -6888,11 +6883,8 @@
                 <node concept="vg0i.1068498886296" id="3021153905151605178" role="vg0i.1215693861676.1068498886297" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8722937377469656147" resolveInfo="mpsProject" />
                 </node>
-                <node concept="vg0i.1197027756228" id="8722937377469656144" role="vg0i.1215693861676.1068498886295" info="nn">
-                  <node concept="vg0i.1197029447546" id="8722937377469656145" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656080" resolveInfo="myMpsProject" />
-                  </node>
-                  <node concept="vg0i.1070475354124" id="8722937377469656146" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="vg0i.1068498886296" id="1664413227959951074" role="vg0i.1215693861676.1068498886295" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="8722937377469656080" resolveInfo="myProject" />
                 </node>
               </node>
             </node>
@@ -6991,7 +6983,7 @@
                           <node concept="vg0i.1197027756228" id="8722937377469656190" role="vg0i.1070534934090.1070534934092" info="nn">
                             <node concept="vg0i.1070475354124" id="8722937377469656191" role="vg0i.1197027756228.1197027771414" info="nn" />
                             <node concept="vg0i.1197029447546" id="8722937377469656192" role="vg0i.1197027756228.1197027833540" info="nn">
-                              <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656080" resolveInfo="myMpsProject" />
+                              <reference role="vg0i.1197029447546.1197029500499" target="8722937377469656080" resolveInfo="myProject" />
                             </node>
                           </node>
                         </node>

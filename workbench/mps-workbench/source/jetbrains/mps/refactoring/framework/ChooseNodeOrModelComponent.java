@@ -160,7 +160,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
         if (myMayBeNode) {
           nodeCondition = myCondition;
         }
-        root = new SModelTreeNode(myModel, null, myOperationContext, nodeCondition);
+        root = new SModelTreeNode(myModel, null, nodeCondition);
       } else {
         root = new TextTreeNode("no model is selected");
         root.setIcon(Icons.DEFAULT_ICON);

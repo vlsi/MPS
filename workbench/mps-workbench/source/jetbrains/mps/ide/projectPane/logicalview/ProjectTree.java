@@ -30,7 +30,6 @@ import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -44,13 +43,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class ProjectTree extends MPSTree {
-  private MPSProject myProject;
+  private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
   private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
 
   public ProjectTree(Project project) {
-    myProject = (MPSProject) project;
+    myProject = project;
 
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
@@ -117,14 +116,14 @@ public class ProjectTree extends MPSTree {
     return myModulesPoolTreeNode;
   }
 
-  public MPSProject getProject() {
+  public Project getProject() {
     return myProject;
   }
 
   private static class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     private StandaloneMPSProject myProject;
 
-    protected ModulesNamespaceTreeBuilder(MPSProject project) {
+    protected ModulesNamespaceTreeBuilder(Project project) {
       myProject = (StandaloneMPSProject) project;
     }
 

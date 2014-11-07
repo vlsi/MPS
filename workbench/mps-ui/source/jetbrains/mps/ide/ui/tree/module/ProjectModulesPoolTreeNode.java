@@ -19,7 +19,7 @@ import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
@@ -28,10 +28,10 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectModulesPoolTreeNode extends TextTreeNode {
-  private MPSProject myProject;
+  private Project myProject;
   private boolean myInitialized;
 
-  public ProjectModulesPoolTreeNode(MPSProject project) {
+  public ProjectModulesPoolTreeNode(Project project) {
     super("Modules Pool");
     myProject = project;
 
