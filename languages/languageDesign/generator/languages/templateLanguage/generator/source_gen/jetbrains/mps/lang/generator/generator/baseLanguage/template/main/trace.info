@@ -1946,7 +1946,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)/4914935534438618871">
     <file name="QueriesGenerated.java">
-      <node id="4914935534439454954" at="58,156,59,244" concept="7" />
+      <node id="4914935534439454954" at="58,286,59,244" concept="7" />
       <node id="4914935534439454960" at="61,41,62,195" concept="8" />
       <node id="4914935534439454960" at="65,39,66,185" concept="8" />
       <node id="4914935534439454970" at="69,41,70,36" concept="8" />
@@ -1978,7 +1978,7 @@
       <scope id="4914935534439454968" at="69,0,72,0">
         <var name="it" id="4914935534439454968" />
       </scope>
-      <scope id="4914935534439454953" at="58,156,72,9">
+      <scope id="4914935534439454953" at="58,286,72,9">
         <var name="generatedAnn" id="4914935534439454955" />
       </scope>
       <scope id="4914935534439454951" at="57,104,74,16" />

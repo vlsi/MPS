@@ -563,7 +563,7 @@ public class QueriesGenerated {
           return ListSequence.fromList(regexps).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               for (SNode exclude : ListSequence.fromList(excludeList)) {
-                if (SConceptOperations.isSubConceptOf(it, NameUtil.nodeFQName(exclude))) {
+                if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), SNodeOperations.asSConcept(exclude))) {
                   return false;
                 }
               }

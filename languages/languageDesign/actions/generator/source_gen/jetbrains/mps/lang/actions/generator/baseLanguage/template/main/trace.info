@@ -610,8 +610,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)/6839387317842789764">
     <file name="QueriesGenerated.java">
-      <node id="6839387317842789831" at="62,110,63,330" concept="5" />
-      <scope id="6839387317842789830" at="62,110,63,330" />
+      <node id="6839387317842789831" at="62,110,63,467" concept="5" />
+      <scope id="6839387317842789830" at="62,110,63,467" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)/767145758118881423">

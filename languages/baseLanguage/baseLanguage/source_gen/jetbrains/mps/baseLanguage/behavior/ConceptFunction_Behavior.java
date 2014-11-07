@@ -109,10 +109,10 @@ public class ConceptFunction_Behavior {
     {
       SNode concept_b0m;
       concept_b0m = kind;
-      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_b0m), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_b0m), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
         return new EmptyScope();
       }
     }

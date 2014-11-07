@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -32,7 +31,7 @@ public class LanguageRuntimeGeneratorUtils {
     return (rootConcepts.length == 0 ? ListSequence.fromList(roots).isNotEmpty() : ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         for (SNode rootConcept : rootConcepts) {
-          if (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), NameUtil.nodeFQName(rootConcept))) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), SNodeOperations.asSConcept(rootConcept))) {
             return true;
           }
         }

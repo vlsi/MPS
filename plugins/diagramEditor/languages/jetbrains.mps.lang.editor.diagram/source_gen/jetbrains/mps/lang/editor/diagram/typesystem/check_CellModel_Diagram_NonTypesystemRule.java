@@ -30,7 +30,7 @@ public class check_CellModel_Diagram_NonTypesystemRule extends AbstractNonTypesy
 
     for (SNode nonSynchronizeableCellModel : ListSequence.fromList(SNodeOperations.getNodeDescendants(topLevelCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), true, new SConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.editor.structure.Synchronizeable"));
+        return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
       }
     })) {
       {

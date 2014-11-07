@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Typesystem_TabDescriptor extends RelationDescriptor {
@@ -63,10 +62,10 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
         if (aConceptRef && bConceptRef) {
           SNode aConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(a, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
           SNode bConcept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(b, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, 1174648101952l, "applicableNode")), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174642788531l, 1174642800329l, "concept"));
-          if (SConceptOperations.isSubConceptOf(aConcept, NameUtil.nodeFQName(bConcept))) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(aConcept), SNodeOperations.asSConcept(bConcept))) {
             return 1;
           }
-          if (SConceptOperations.isSubConceptOf(bConcept, NameUtil.nodeFQName(aConcept))) {
+          if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(bConcept), SNodeOperations.asSConcept(aConcept))) {
             return -1;
           }
         }

@@ -285,7 +285,7 @@
     <file name="ClassLikeMethod_Behavior.java">
       <node id="4084841995422374961" at="17,389,18,389" concept="5" />
       <node id="1901572971596239148" at="18,389,19,92" concept="5" />
-      <node id="1901572971596245322" at="20,137,21,20" concept="6" />
+      <node id="1901572971596245322" at="20,267,21,20" concept="6" />
       <node id="4084841995422327265" at="22,7,23,20" concept="6" />
       <node id="4084841995422328416" at="24,5,25,217" concept="6" />
       <node id="9097849371503887946" at="27,82,28,190" concept="6" />
@@ -295,7 +295,7 @@
       <node id="4084841995422313865" at="16,80,24,5" concept="3" />
       <node id="4084841995422312537" at="16,0,27,0" concept="8" trace="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4084841995422312539" at="14,43,14,43" />
-      <scope id="1901572971596241209" at="20,137,21,20" />
+      <scope id="1901572971596241209" at="20,267,21,20" />
       <scope id="9097849371503887511" at="27,82,28,190" />
       <scope id="4084841995422312537" at="14,0,16,0">
         <var name="thisNode" id="4084841995422312537" />

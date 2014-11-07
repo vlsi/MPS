@@ -33,7 +33,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -116,7 +115,7 @@ public class SideTransformUtil {
     if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), "left", null))) {
       return false;
     }
-    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(node), NameUtil.nodeFQName(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept")))))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept")))))) {
       return false;
     }
 

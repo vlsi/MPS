@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class MigrationConfig {
   public final SNode sourceConcept;
@@ -36,6 +36,6 @@ public abstract class MigrationConfig {
     return condition;
   }
   public final boolean isPullUp() {
-    return SConceptOperations.isSubConceptOf(sourceConcept, NameUtil.nodeFQName(targetConcept));
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(sourceConcept), SNodeOperations.asSConcept(targetConcept));
   }
 }

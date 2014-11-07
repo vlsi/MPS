@@ -163,7 +163,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590332(jetbrains.mps.baseLanguage.closures.actions)/1235747431053">
     <file name="QueriesGenerated.java">
       <node id="1235747774816" at="224,94,225,142" concept="6" />
-      <node id="1235747461622" at="246,196,247,1085" concept="6" />
+      <node id="1235747461622" at="246,196,247,1215" concept="6" />
       <node id="1235747781381" at="311,83,312,63" concept="5" />
       <node id="1235747781381" at="312,63,313,30" concept="5" />
       <node id="1235747781381" at="313,30,314,30" concept="5" />
@@ -179,7 +179,7 @@
       <node id="1235747781381" at="314,30,319,5" concept="0" />
       <node id="1235747781381" at="311,0,322,0" concept="8" trace="_quotation_createNode_hyoqyy_a0a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1235747505206" at="224,94,225,142" />
-      <scope id="1235747455804" at="246,196,247,1085" />
+      <scope id="1235747455804" at="246,196,247,1215" />
       <scope id="1235747781381" at="317,31,318,203" />
       <scope id="1235747455803" at="246,0,249,0">
         <var name="_context" id="1235747455803" />

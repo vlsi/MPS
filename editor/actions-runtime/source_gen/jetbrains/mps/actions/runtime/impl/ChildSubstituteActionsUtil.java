@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -66,7 +65,7 @@ public class ChildSubstituteActionsUtil {
       if (applicableConcept == null) {
         continue;
       }
-      if (SConceptOperations.isSubConceptOf(applicableConcept, NameUtil.nodeFQName(childConcept)) || SConceptOperations.isSubConceptOf(childConcept, NameUtil.nodeFQName(applicableConcept))) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(childConcept)) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(applicableConcept))) {
         if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, link, currentChild, wrapped, context)) {
           ListSequence.fromList(allBuilders).addElement(actionsBuilder);
         }

@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
@@ -33,10 +35,10 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "action")) {
-      return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.pattern.structure.ActionStatement");
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4413230749907802464l, "jetbrains.mps.lang.pattern.structure.ActionStatement"));
     }
     if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "position")) {
-      return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.pattern.structure.InsertPosition");
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1649655856141352252l, "jetbrains.mps.lang.pattern.structure.InsertPosition"));
     }
     return false;
   }

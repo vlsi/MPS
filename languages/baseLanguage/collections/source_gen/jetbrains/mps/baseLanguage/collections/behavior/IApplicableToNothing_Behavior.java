@@ -55,7 +55,7 @@ public class IApplicableToNothing_Behavior {
     return result;
   }
   public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
-    return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
   }
   public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);

@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +33,7 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546675l, "jetbrains.mps.build.workflow.structure.BwfTask")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6896005762093571400l, "jetbrains.mps.build.workflow.structure.BwfMacro")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency"));
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "1117643560963285902");
 }

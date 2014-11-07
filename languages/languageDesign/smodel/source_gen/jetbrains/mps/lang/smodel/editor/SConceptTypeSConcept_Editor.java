@@ -38,7 +38,7 @@ public class SConceptTypeSConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_jvmt1w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sconcept");
     editorCell.setCellId("Constant_jvmt1w_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);

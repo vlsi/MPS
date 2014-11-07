@@ -15,7 +15,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -142,7 +141,7 @@ public enum TestNodeWrapperFactory {
   @Nullable
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
   public boolean canWrap(@NotNull SNode node) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) getWrappedConcept()));
+    return SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(getWrappedConcept()));
   }
   public abstract SNode getWrappedConcept();
   public abstract boolean isRoot();
@@ -193,7 +192,7 @@ public enum TestNodeWrapperFactory {
     Iterable<SNode> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, SConcept>() {
       public SConcept select(SNode it) {
-        return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) it);
+        return SNodeOperations.asSConcept(it);
       }
     }).toGenericArray(SConcept.class), true, isRoot);
   }

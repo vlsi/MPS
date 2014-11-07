@@ -1955,39 +1955,39 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/6640659353039802498">
     <file name="MultipleForeachLoop_Behavior.java">
-      <node id="3938050118718700863" at="24,43,25,197" concept="8" />
-      <node id="3938050118718700863" at="28,41,29,187" concept="8" />
-      <node id="7362994916699696730" at="33,5,34,16" concept="8" />
-      <node id="6640659353039802498" at="18,0,20,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3938050118718700863" at="24,0,27,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3938050118718700863" at="28,0,31,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3938050118718700818" at="22,57,31,28" concept="8" />
-      <node id="3938050118718700812" at="21,105,32,7" concept="5" />
-      <node id="7362994916699696713" at="20,101,33,5" concept="5" />
-      <node id="6640659353039802498" at="20,0,36,0" concept="10" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="6640659353039802500" at="18,43,18,43" />
-      <scope id="3938050118718700863" at="24,43,25,197" />
-      <scope id="3938050118718700863" at="28,41,29,187" />
-      <scope id="6640659353039802498" at="18,0,20,0">
+      <node id="3938050118718700863" at="25,43,26,197" concept="8" />
+      <node id="3938050118718700863" at="29,41,30,187" concept="8" />
+      <node id="7362994916699696730" at="34,5,35,16" concept="8" />
+      <node id="6640659353039802498" at="19,0,21,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3938050118718700863" at="25,0,28,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3938050118718700863" at="29,0,32,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3938050118718700818" at="23,57,32,28" concept="8" />
+      <node id="3938050118718700812" at="22,235,33,7" concept="5" />
+      <node id="7362994916699696713" at="21,101,34,5" concept="5" />
+      <node id="6640659353039802498" at="21,0,37,0" concept="10" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="6640659353039802500" at="19,43,19,43" />
+      <scope id="3938050118718700863" at="25,43,26,197" />
+      <scope id="3938050118718700863" at="29,41,30,187" />
+      <scope id="6640659353039802498" at="19,0,21,0">
         <var name="thisNode" id="6640659353039802498" />
       </scope>
-      <scope id="3938050118718700863" at="24,0,27,0">
+      <scope id="3938050118718700863" at="25,0,28,0">
         <var name="it" id="3938050118718700863" />
       </scope>
-      <scope id="3938050118718700863" at="28,0,31,0">
+      <scope id="3938050118718700863" at="29,0,32,0">
         <var name="it" id="3938050118718700863" />
       </scope>
-      <scope id="3938050118718700813" at="22,57,31,28" />
-      <scope id="7362994916699696714" at="21,105,32,7" />
-      <scope id="7362994916699696698" at="20,101,34,16" />
-      <scope id="6640659353039802498" at="20,0,36,0">
+      <scope id="3938050118718700813" at="23,57,32,28" />
+      <scope id="7362994916699696714" at="22,235,33,7" />
+      <scope id="7362994916699696698" at="21,101,35,16" />
+      <scope id="6640659353039802498" at="21,0,37,0">
         <var name="child" id="7362994916699696701" />
         <var name="kind" id="7362994916699696699" />
         <var name="thisNode" id="6640659353039802498" />
       </scope>
-      <unit id="3938050118718700863" at="23,258,27,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
-      <unit id="3938050118718700863" at="27,22,31,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
-      <unit id="6640659353039802498" at="17,0,37,0" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
+      <unit id="3938050118718700863" at="24,258,28,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
+      <unit id="3938050118718700863" at="28,22,32,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
+      <unit id="6640659353039802498" at="18,0,38,0" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/7342618720440051596">

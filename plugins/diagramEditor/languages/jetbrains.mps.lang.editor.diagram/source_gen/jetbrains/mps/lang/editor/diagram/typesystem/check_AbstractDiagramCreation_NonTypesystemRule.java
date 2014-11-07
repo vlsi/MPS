@@ -15,7 +15,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -30,7 +29,7 @@ public class check_AbstractDiagramCreation_NonTypesystemRule extends AbstractNon
       }
     } else {
       SNode containmentLink = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005547l, "query")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"));
-      if (SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept")) != null && SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) != null && !(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept")), NameUtil.nodeFQName(SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")))))) {
+      if (SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept")) != null && SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) != null && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept"))), SNodeOperations.asSConcept(SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")))))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget("concept");

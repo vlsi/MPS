@@ -10,11 +10,12 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
@@ -37,10 +38,10 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     // QueryParameter is abstract, so it is already highlighted as invalid 
-    if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544565l, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
       return true;
     }
-    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544565l, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
       return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
     }
     return true;

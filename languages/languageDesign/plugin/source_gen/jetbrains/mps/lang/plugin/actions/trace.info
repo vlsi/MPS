@@ -17,10 +17,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959035f(jetbrains.mps.lang.plugin.actions)/1217414439967">
     <file name="QueriesGenerated.java">
       <node id="1218630512994" at="52,178,53,258" concept="6" />
-      <node id="1218629864331" at="62,43,63,114" concept="5" />
-      <node id="1218630221013" at="63,114,64,119" concept="5" />
-      <node id="1218630224192" at="64,119,65,116" concept="5" />
-      <node id="1218630305876" at="65,116,66,51" concept="6" />
+      <node id="1218629864331" at="62,43,63,244" concept="5" />
+      <node id="1218630221013" at="63,244,64,249" concept="5" />
+      <node id="1218630224192" at="64,249,65,246" concept="5" />
+      <node id="1218630305876" at="65,246,66,51" concept="6" />
       <node id="1217414480519" at="52,0,55,0" concept="7" trace="nodeSubstituteActionsBuilder_Precondition_Type_1217414480519#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="1217414480520" at="52,178,53,258" />
       <scope id="1217414480519" at="52,0,55,0">

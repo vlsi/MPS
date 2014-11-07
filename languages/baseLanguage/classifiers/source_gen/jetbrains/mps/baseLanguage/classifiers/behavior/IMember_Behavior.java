@@ -30,7 +30,7 @@ public class IMember_Behavior {
     return memberOperationConcept;
   }
   public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asSConcept(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"), thisNode);
     return result;
   }

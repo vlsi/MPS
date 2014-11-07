@@ -107,7 +107,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7923290658387314322(final PropertyMacroContext _context) {
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
 
-    if (SConceptOperations.isExactly(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept")), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept"))), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
       return "jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor";
     }
     if ((extendsNode == null)) {

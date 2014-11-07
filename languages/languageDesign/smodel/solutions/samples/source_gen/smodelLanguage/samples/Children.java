@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Children {
@@ -52,13 +51,13 @@ public class Children {
       }
     });
     SNode abcdef;
-    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
     SNodeOperations.getNodeDescendants(statement, null, false, new SConcept[]{});
-    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(statement)), false, new SConcept[]{});
     SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SConcept[]{});
-    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SConcept[]{});
     SNode aConcept = null;
-    SNodeOperations.getNodeDescendants(statement, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) aConcept), false, new SConcept[]{});
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(aConcept), false, new SConcept[]{});
   }
   public void accessToChildren_4(SNode statement) {
     List<SNode> children1 = SNodeOperations.getNodeDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant")}, false, new SConcept[]{});

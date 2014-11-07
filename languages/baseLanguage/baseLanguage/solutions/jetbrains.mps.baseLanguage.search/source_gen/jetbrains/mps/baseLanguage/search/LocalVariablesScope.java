@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.scope.Scope;
 
 @Deprecated
@@ -183,7 +182,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   private static SNode findThisOrParent(SNode sourceNode, SNode concept) {
     SNode testNode = sourceNode;
     while (testNode != null) {
-      if (SNodeOperations.isInstanceOf(testNode, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept))) {
+      if (SNodeOperations.isInstanceOf(testNode, SNodeOperations.asSConcept(concept))) {
         return testNode;
       }
       if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) && !(SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure")))) {
