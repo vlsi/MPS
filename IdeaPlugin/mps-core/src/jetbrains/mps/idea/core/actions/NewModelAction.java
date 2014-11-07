@@ -163,7 +163,7 @@ public class NewModelAction extends AnAction {
 
             EditableSModel model = null;
             try {
-              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
             } catch (IOException e) {
               LOG.error("Can't create per-root model " + modelName + " under " + path, e);
             }
