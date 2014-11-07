@@ -83,7 +83,7 @@
     <dep model="r:b522c221-948b-4fac-886a-2badf29b5fb4(jetbrains.mps.ide.hierarchy.toggle)" />
     <file name="AbstractHierarchyView.java" />
   </source>
-  <source id="5797068448049411442" name="BaseLanguageHierarchyViewTool" dependsOnCreated="true">
+  <source id="5797068448049411442" name="BaseLanguageHierarchyViewTool">
     <dep root="5797068448049410622" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
