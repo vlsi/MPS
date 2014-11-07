@@ -44,7 +44,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createConstant_uc5iyq_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_b0a(editorContext, node));

@@ -81,7 +81,7 @@ public class StyleKeyPack_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createConstant_cs4e9u_a1a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cs4e9u_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cs4e9u_b1a(editorContext, node));

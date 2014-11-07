@@ -304,7 +304,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lqrwoi_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lqrwoi_b0");
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createComponent_lqrwoi_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lqrwoi_a1a(editorContext, node));
     if (renderingCondition_lqrwoi_a1b0(node, editorContext)) {

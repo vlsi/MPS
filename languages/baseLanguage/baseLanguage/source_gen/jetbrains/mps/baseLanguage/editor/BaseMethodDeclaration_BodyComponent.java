@@ -33,7 +33,7 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createComponent_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fao2ea_b0(editorContext, node));

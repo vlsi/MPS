@@ -225,7 +225,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_leuqor_a4a(editorContext, node));
     if (renderingCondition_leuqor_a1e0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_leuqor_b4a(editorContext, node));
@@ -460,7 +460,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_leuqor_a1a0(editorContext, node));
     if (renderingCondition_leuqor_a1b0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_leuqor_b1a0(editorContext, node));

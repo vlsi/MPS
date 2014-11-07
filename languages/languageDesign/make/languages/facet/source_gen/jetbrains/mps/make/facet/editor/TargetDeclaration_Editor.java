@@ -195,7 +195,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createConstant_xfdsch_a7a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xfdsch_a7a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xfdsch_b7a(editorContext, node));

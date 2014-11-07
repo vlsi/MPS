@@ -76,7 +76,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createCollection_jiwbly_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jiwbly_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jiwbly_c1b0(editorContext, node));

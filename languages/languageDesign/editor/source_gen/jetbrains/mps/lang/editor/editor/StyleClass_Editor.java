@@ -110,7 +110,7 @@ public class StyleClass_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createConstant_zc4y0i_a3a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zc4y0i_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_zc4y0i_b3a(editorContext, node));

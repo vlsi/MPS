@@ -327,7 +327,7 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_955wzk_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_955wzk_i0");
-    editorCell.setCanBeFolded(renderingCondition_955wzk_a8a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_955wzk_a8a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_955wzk_a8a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_955wzk_a8a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_955wzk_b8a(editorContext, node));

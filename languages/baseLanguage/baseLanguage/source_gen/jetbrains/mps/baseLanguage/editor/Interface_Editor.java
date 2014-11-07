@@ -225,7 +225,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_4hcgjd_a8a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_4hcgjd_a8a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_4hcgjd_a8a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4hcgjd_a8a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4hcgjd_b8a(editorContext, node));

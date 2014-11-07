@@ -130,7 +130,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_lq4ak4_a6a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_lq4ak4_a6a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_lq4ak4_a6a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lq4ak4_a6a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lq4ak4_b6a(editorContext, node));

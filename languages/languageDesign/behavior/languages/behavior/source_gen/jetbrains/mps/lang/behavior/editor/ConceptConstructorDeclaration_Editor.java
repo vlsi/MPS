@@ -47,7 +47,7 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createComponent_6lfqqa_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6lfqqa_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6lfqqa_b1a(editorContext, node));

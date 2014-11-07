@@ -369,7 +369,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_msf9u8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_msf9u8_b0");
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createComponent_msf9u8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_msf9u8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_msf9u8_b1a(editorContext, node));

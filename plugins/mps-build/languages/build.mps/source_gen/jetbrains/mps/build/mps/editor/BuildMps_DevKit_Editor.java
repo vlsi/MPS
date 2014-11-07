@@ -194,7 +194,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_pa0pfb_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_pa0pfb_b4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pa0pfb_c4a(editorContext, node));
@@ -410,7 +410,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_pa0pfb_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_pa0pfb_b1a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pa0pfb_c1a0(editorContext, node));

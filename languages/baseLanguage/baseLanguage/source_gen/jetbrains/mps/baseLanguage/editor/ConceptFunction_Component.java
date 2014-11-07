@@ -69,7 +69,7 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createComponent_trik0f_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_trik0f_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_trik0f_b1a(editorContext, node));

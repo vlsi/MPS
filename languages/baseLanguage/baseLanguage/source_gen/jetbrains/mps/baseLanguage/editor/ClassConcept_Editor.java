@@ -315,7 +315,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_uj0cpq_a31a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_uj0cpq_a31a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_uj0cpq_a31a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uj0cpq_a31a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uj0cpq_b31a(editorContext, node));

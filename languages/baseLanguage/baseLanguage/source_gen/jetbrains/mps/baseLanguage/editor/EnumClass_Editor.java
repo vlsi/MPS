@@ -197,7 +197,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_y68cfu_a7a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_y68cfu_a7a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_y68cfu_a7a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y68cfu_a7a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_y68cfu_b7a(editorContext, node));

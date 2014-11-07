@@ -55,7 +55,7 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setFoldedCell(this.createConstant_85xxz0_a0a(editorContext, node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;

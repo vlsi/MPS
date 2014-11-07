@@ -84,7 +84,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(renderingCondition_mr1gse_a4a(node, editorContext));
+    editorCell.setFoldable(renderingCondition_mr1gse_a4a(node, editorContext));
     editorCell.setFoldedCell(this.createComponent_mr1gse_a4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_mr1gse_b4a(editorContext, node));

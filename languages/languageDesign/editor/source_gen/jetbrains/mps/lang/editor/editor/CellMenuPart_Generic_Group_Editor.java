@@ -79,7 +79,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createCollection_ngl4rk_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ngl4rk_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ngl4rk_c1b0(editorContext, node));

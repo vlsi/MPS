@@ -194,7 +194,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_ucemm3_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ucemm3_b4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ucemm3_c4a(editorContext, node));
@@ -477,7 +477,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_ucemm3_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ucemm3_b1a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ucemm3_c1a0(editorContext, node));

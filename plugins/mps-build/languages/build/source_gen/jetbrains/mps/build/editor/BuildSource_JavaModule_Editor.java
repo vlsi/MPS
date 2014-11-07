@@ -96,7 +96,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createConstant_kr3er8_a2a(editorContext, node));
     if (renderingCondition_kr3er8_a1c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_kr3er8_b2a(editorContext, node));
