@@ -29,6 +29,7 @@
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" name="java.awt.event@java_stub" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" name="java.lang@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.commands(MPS.Editor/jetbrains.mps.editor.runtime.commands@java_stub)" name="jetbrains.mps.editor.runtime.commands@java_stub" />
+    <model ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.sidetransform(MPS.Editor/jetbrains.mps.nodeEditor.sidetransform@java_stub)" name="jetbrains.mps.nodeEditor.sidetransform@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
@@ -219,6 +220,7 @@
     <import index="8q6x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="l5gu" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.commands(MPS.Editor/jetbrains.mps.editor.runtime.commands@java_stub)" />
+    <import index="gvbb" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.sidetransform(MPS.Editor/jetbrains.mps.nodeEditor.sidetransform@java_stub)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
@@ -982,19 +984,18 @@
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="8313721352726362901" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1197027756228" id="8313721352726362902" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1197027756228" id="8313721352726362903" role="vg0i.1197027756228.1197027771414" info="nn">
-                <node concept="vg0i.1068498886296" id="3021153905151599300" role="vg0i.1197027756228.1197027771414" info="nn">
+          <node concept="vg0i.1068580123155" id="8288525904960357018" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="8288525904960368528" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1081236700937" id="8288525904960364733" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~STHintUtil%dgetSTHintCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%dnodeEditor%dsidetransform%dEditorCell_STHint" resolveInfo="getSTHintCell" />
+                <reference role="vg0i.1081236700937.1144433194310" target="gvbb.~STHintUtil" resolveInfo="STHintUtil" />
+                <node concept="vg0i.1068498886296" id="8288525904960365078" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362882" resolveInfo="cellForNewNode" />
                 </node>
-                <node concept="vg0i.1202948039474" id="8313721352726362905" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetSTHintCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Label" resolveInfo="getSTHintCell" />
-                </node>
               </node>
-              <node concept="vg0i.1202948039474" id="8313721352726362906" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Label%dchangeText(java%dlang%dString)%cvoid" resolveInfo="changeText" />
-                <node concept="vg0i.1068498886296" id="3021153905151657210" role="vg0i.1204053956946.1068499141038" info="nn">
+              <node concept="vg0i.1202948039474" id="8288525904960371043" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~EditorCell_STHint%dchangeText(java%dlang%dString)%cvoid" resolveInfo="changeText" />
+                <node concept="vg0i.1068498886296" id="8288525904960371044" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362884" resolveInfo="text" />
                 </node>
               </node>
@@ -1002,16 +1003,15 @@
           </node>
           <node concept="vg0i.1068580123155" id="8313721352726362908" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="8313721352726362909" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1197027756228" id="8313721352726362910" role="vg0i.1197027756228.1197027771414" info="nn">
-                <node concept="vg0i.1068498886296" id="3021153905151355018" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362882" resolveInfo="cellForNewNode" />
-                </node>
-                <node concept="vg0i.1202948039474" id="8313721352726362912" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetSTHintCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Label" resolveInfo="getSTHintCell" />
-                </node>
-              </node>
               <node concept="vg0i.1202948039474" id="8313721352726362913" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Label%dend()%cvoid" resolveInfo="end" />
+              </node>
+              <node concept="vg0i.1081236700937" id="8288525904960379856" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~STHintUtil%dgetSTHintCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%dnodeEditor%dsidetransform%dEditorCell_STHint" resolveInfo="getSTHintCell" />
+                <reference role="vg0i.1081236700937.1144433194310" target="gvbb.~STHintUtil" resolveInfo="STHintUtil" />
+                <node concept="vg0i.1068498886296" id="8288525904960379857" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362882" resolveInfo="cellForNewNode" />
+                </node>
               </node>
             </node>
           </node>
@@ -1091,34 +1091,32 @@
           </node>
           <node concept="vg0i.1068580123155" id="8313721352726362938" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="8313721352726362939" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1197027756228" id="8313721352726362940" role="vg0i.1197027756228.1197027771414" info="nn">
-                <node concept="vg0i.1068498886296" id="3021153905151759246" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362919" resolveInfo="cellForNewNode" />
-                </node>
-                <node concept="vg0i.1202948039474" id="8313721352726362942" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetSTHintCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Label" resolveInfo="getSTHintCell" />
-                </node>
-              </node>
               <node concept="vg0i.1202948039474" id="8313721352726362943" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Label%dchangeText(java%dlang%dString)%cvoid" resolveInfo="changeText" />
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~EditorCell_STHint%dchangeText(java%dlang%dString)%cvoid" resolveInfo="changeText" />
                 <node concept="vg0i.1068498886296" id="3021153905151431178" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362921" resolveInfo="text" />
+                </node>
+              </node>
+              <node concept="vg0i.1081236700937" id="8288525904960381915" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~STHintUtil%dgetSTHintCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%dnodeEditor%dsidetransform%dEditorCell_STHint" resolveInfo="getSTHintCell" />
+                <reference role="vg0i.1081236700937.1144433194310" target="gvbb.~STHintUtil" resolveInfo="STHintUtil" />
+                <node concept="vg0i.1068498886296" id="8288525904960381916" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362919" resolveInfo="cellForNewNode" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="vg0i.1068580123155" id="8313721352726362945" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="8313721352726362946" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1197027756228" id="8313721352726362947" role="vg0i.1197027756228.1197027771414" info="nn">
-                <node concept="vg0i.1068498886296" id="3021153905150325506" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362919" resolveInfo="cellForNewNode" />
-                </node>
-                <node concept="vg0i.1202948039474" id="8313721352726362949" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetSTHintCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell_Label" resolveInfo="getSTHintCell" />
-                </node>
-              </node>
               <node concept="vg0i.1202948039474" id="8313721352726362950" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Label%dend()%cvoid" resolveInfo="end" />
+              </node>
+              <node concept="vg0i.1081236700937" id="8288525904960382755" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="gvbb.~STHintUtil%dgetSTHintCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%dnodeEditor%dsidetransform%dEditorCell_STHint" resolveInfo="getSTHintCell" />
+                <reference role="vg0i.1081236700937.1144433194310" target="gvbb.~STHintUtil" resolveInfo="STHintUtil" />
+                <node concept="vg0i.1068498886296" id="8288525904960382756" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="8313721352726362919" resolveInfo="cellForNewNode" />
+                </node>
               </node>
             </node>
           </node>

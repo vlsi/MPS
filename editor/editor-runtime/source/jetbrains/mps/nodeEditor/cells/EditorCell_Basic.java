@@ -35,6 +35,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -654,8 +655,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         }
       }
       boolean hasMessages = false;
-      List<EditorMessage> messages = getMessages(EditorMessage.class);
-      for (EditorMessage message : messages) {
+      for (EditorMessage message : CellMessagesUtil.getMessages(this, EditorMessage.class)) {
         if (message != null && message.isBackground()) {
           message.paint(g, getEditor(), this);
           hasMessages = true;
@@ -712,7 +712,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.fillRect(myX + effectiveWidth - BRACKET_WIDTH + 1, myY + myHeight - 3, BRACKET_WIDTH - 3, 2);
     }
 
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
+    List<EditorMessage> messages = CellMessagesUtil.getMessages(this, EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null && !message.isBackground()) {
         message.paint(g, getEditor(), this);
@@ -721,10 +721,14 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public List<SimpleEditorMessage> getMessages() {
+  public Iterable<SimpleEditorMessage> getMessages() {
     return getEditor().getHighlightManager().getMessages(this);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
+   */
+  @Deprecated
   @Override
   public <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz) {
     List<T> result = new ArrayList<T>();
@@ -736,6 +740,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     return result;
   }
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   @Override
   public List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
     ArrayList<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>(1);
@@ -747,6 +755,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     return result;
   }
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
+   */
+  @Deprecated
   @Override
   public boolean hasErrorMessages() {
     for (SimpleEditorMessage message : getMessages()) {
@@ -757,6 +769,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.STHintUtil} instead
+   */
+  @Deprecated
   @Override
   public EditorCell_Label getSTHintCell() {
     SNode node = getSNode();
@@ -769,9 +785,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (anchorId == null) {
       // TODO: should never be null!..
       if (bigCell != null && bigCell.getParent() != null) {
-        for (jetbrains.mps.openapi.editor.cells.EditorCell child : bigCell.getParent()) {
-          if (child instanceof EditorCell_STHint) {
-            return (EditorCell_Label) child;
+        for (jetbrains.mps.openapi.editor.cells.EditorCell sibling : bigCell.getParent()) {
+          if (sibling instanceof EditorCell_STHint) {
+            return (EditorCell_STHint) sibling;
           }
         }
       }
@@ -786,12 +802,12 @@ public abstract class EditorCell_Basic implements EditorCell {
 
       jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
       if (nextSibling instanceof EditorCell_STHint) {
-        return (EditorCell_Label) nextSibling;
+        return (EditorCell_STHint) nextSibling;
       }
 
       jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
       if (prevSibling instanceof EditorCell_STHint) {
-        return (EditorCell_Label) prevSibling;
+        return (EditorCell_STHint) prevSibling;
       }
 
       return null;

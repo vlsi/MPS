@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.errors.MessageStatus;
 import java.util.LinkedList;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -60,13 +60,10 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
 
   @Override
   public void paintDecorations(Graphics graphics) {
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    for (EditorMessage message : messages) {
-      if (message != null) {
-        if (eq_815jvj_a0a0a0b0j(message.getStatus(), MessageStatus.ERROR)) {
-          myErrorItem.set(true);
-          return;
-        }
+    for (SimpleEditorMessage message : getMessages()) {
+      if (eq_815jvj_a0a0a0j(message.getStatus(), MessageStatus.ERROR)) {
+        myErrorItem.set(true);
+        return;
       }
     }
     myErrorItem.set(false);
@@ -160,7 +157,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     super.setSelected(isSelected);
     mySelectedItem.set(isSelected);
   }
-  private static boolean eq_815jvj_a0a0a0b0j(Object a, Object b) {
+  private static boolean eq_815jvj_a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

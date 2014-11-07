@@ -113,7 +113,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
@@ -215,7 +214,6 @@
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1083260308426" name="enumConstantDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" name="classifier" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" name="concept" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1144432896254" name="enumClass" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
@@ -7224,78 +7222,50 @@
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="6515532108596167767" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="2333520786824485851" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="2333520786824485852" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="vg0i.1068431474542.1176718929932" value="false" />
-              <property role="asn4.1169194658468.1169194664001" value="messages" />
-              <node concept="vg0i.1107535904670" id="2333520786824485853" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
-                <node concept="vg0i.1107535904670" id="2333520786824485854" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="9a8.~EditorMessage" resolveInfo="EditorMessage" />
-                </node>
-              </node>
-              <node concept="vg0i.7812454656619025412" id="2333520786824485855" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetMessages(java%dlang%dClass)%cjava%dutil%dList" resolveInfo="getMessages" />
-                <node concept="vg0i.1116615150612" id="2333520786824485856" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1116615150612.1116615189566" target="9a8.~EditorMessage" resolveInfo="EditorMessage" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="vg0i.1144226303539" id="2333520786824485857" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="2333520786824485858" role="vg0i.1144226303539.1144226360166" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="2333520786824485852" resolveInfo="messages" />
-            </node>
             <node concept="vg0i.1068581242863" id="2333520786824485859" role="vg0i.1144230876926.1144230900587" info="nr">
               <property role="vg0i.1068431474542.1176718929932" value="false" />
               <property role="asn4.1169194658468.1169194664001" value="message" />
-              <node concept="vg0i.1107535904670" id="2333520786824485860" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="9a8.~EditorMessage" resolveInfo="EditorMessage" />
+              <node concept="vg0i.1107535904670" id="4327770314194948104" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="2vit.~SimpleEditorMessage" resolveInfo="SimpleEditorMessage" />
               </node>
             </node>
             <node concept="vg0i.1068580123136" id="2333520786824485861" role="vg0i.1154032098014.1154032183016" info="sn">
-              <node concept="vg0i.1068580123159" id="2333520786828832806" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1068580123136" id="2333520786828832809" role="vg0i.1068580123159.1068580123161" info="sn">
-                  <node concept="vg0i.1068580123159" id="2333520786828763280" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1068580123136" id="2333520786828763283" role="vg0i.1068580123159.1068580123161" info="sn">
-                      <node concept="vg0i.1068580123155" id="4883868441291348706" role="vg0i.1068580123136.1068581517665" info="nn">
-                        <node concept="vg0i.1197027756228" id="4883868441291350740" role="vg0i.1068580123155.1068580123156" info="nn">
-                          <node concept="vg0i.1068498886296" id="4883868441291348705" role="vg0i.1197027756228.1197027771414" info="nn">
-                            <reference role="vg0i.1068498886296.1068581517664" target="4883868441291153940" resolveInfo="myErrorItem" />
-                          </node>
-                          <node concept="vg0i.1202948039474" id="4883868441291363661" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="ctj7.~WritableProperty%dset(java%dlang%dObject)%cvoid" resolveInfo="set" />
-                            <node concept="vg0i.1068580123137" id="4883868441291371057" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <property role="vg0i.1068580123137.1068580123138" value="true" />
-                            </node>
-                          </node>
-                        </node>
+              <node concept="vg0i.1068580123159" id="2333520786828763280" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="2333520786828763283" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068580123155" id="4883868441291348706" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="4883868441291350740" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1068498886296" id="4883868441291348705" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="4883868441291153940" resolveInfo="myErrorItem" />
                       </node>
-                      <node concept="vg0i.1068581242878" id="4883868441291373443" role="vg0i.1068580123136.1068581517665" info="nn" />
-                    </node>
-                    <node concept="vg0i.1225271283259" id="2333520786828797167" role="vg0i.1068580123159.1068580123160" info="nn">
-                      <node concept="vg0i.1083260308424" id="2333520786828815714" role="vg0i.1081773326031.1081773367579" info="nn">
-                        <reference role="vg0i.1083260308424.1144432896254" target="nax5.~MessageStatus" resolveInfo="MessageStatus" />
-                        <reference role="vg0i.1083260308424.1083260308426" target="nax5.~MessageStatus%dERROR" resolveInfo="ERROR" />
-                      </node>
-                      <node concept="vg0i.1197027756228" id="2333520786828782420" role="vg0i.1081773326031.1081773367580" info="nn">
-                        <node concept="vg0i.1068498886296" id="2333520786828774583" role="vg0i.1197027756228.1197027771414" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="2333520786824485859" resolveInfo="message" />
-                        </node>
-                        <node concept="vg0i.1202948039474" id="2333520786828786267" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="2vit.~SimpleEditorMessage%dgetStatus()%cjetbrains%dmps%derrors%dMessageStatus" resolveInfo="getStatus" />
+                      <node concept="vg0i.1202948039474" id="4883868441291363661" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="ctj7.~WritableProperty%dset(java%dlang%dObject)%cvoid" resolveInfo="set" />
+                        <node concept="vg0i.1068580123137" id="4883868441291371057" role="vg0i.1204053956946.1068499141038" info="nn">
+                          <property role="vg0i.1068580123137.1068580123138" value="true" />
                         </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="vg0i.1068581242878" id="4883868441291373443" role="vg0i.1068580123136.1068581517665" info="nn" />
                 </node>
-                <node concept="vg0i.1073239437375" id="2333520786828853444" role="vg0i.1068580123159.1068580123160" info="nn">
-                  <node concept="vg0i.1070534058343" id="2333520786828853495" role="vg0i.1081773326031.1081773367579" info="nn" />
-                  <node concept="vg0i.1068498886296" id="2333520786828844190" role="vg0i.1081773326031.1081773367580" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="2333520786824485859" resolveInfo="message" />
+                <node concept="vg0i.1225271283259" id="2333520786828797167" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1083260308424" id="2333520786828815714" role="vg0i.1081773326031.1081773367579" info="nn">
+                    <reference role="vg0i.1083260308424.1144432896254" target="nax5.~MessageStatus" resolveInfo="MessageStatus" />
+                    <reference role="vg0i.1083260308424.1083260308426" target="nax5.~MessageStatus%dERROR" resolveInfo="ERROR" />
+                  </node>
+                  <node concept="vg0i.1197027756228" id="2333520786828782420" role="vg0i.1081773326031.1081773367580" info="nn">
+                    <node concept="vg0i.1068498886296" id="2333520786828774583" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="2333520786824485859" resolveInfo="message" />
+                    </node>
+                    <node concept="vg0i.1202948039474" id="2333520786828786267" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="2vit.~SimpleEditorMessage%dgetStatus()%cjetbrains%dmps%derrors%dMessageStatus" resolveInfo="getStatus" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="vg0i.7812454656619025412" id="4327770314194942543" role="vg0i.1144226303539.1144226360166" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%dgetMessages()%cjava%dlang%dIterable" resolveInfo="getMessages" />
             </node>
           </node>
           <node concept="vg0i.1068580123155" id="4883868441291380796" role="vg0i.1068580123136.1068581517665" info="nn">

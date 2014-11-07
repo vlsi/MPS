@@ -139,7 +139,7 @@ public interface EditorCell {
 
   Collection<CellActionType> getAvailableActions();
 
-  List<SimpleEditorMessage> getMessages();
+  Iterable<SimpleEditorMessage> getMessages();
 
   void setSubstituteInfo(SubstituteInfo info);
 

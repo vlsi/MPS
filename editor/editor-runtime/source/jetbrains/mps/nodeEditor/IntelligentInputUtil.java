@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -409,7 +410,7 @@ public class IntelligentInputUtil {
   }
 
   private static EditorCell_Label prepareSTCell(jetbrains.mps.openapi.editor.EditorContext context, EditorCell root, String textToSet) {
-    EditorCell_Label rtCell = root.getSTHintCell();
+    EditorCell_Label rtCell = STHintUtil.getSTHintCell(root);
     if (rtCell == null) {
       EditorCell selectedCell = (EditorCell) context.getSelectedCell();
       if (selectedCell != null && selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
@@ -450,7 +451,8 @@ public class IntelligentInputUtil {
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper =
-        new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
+        new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG),
+            cell.getContext().getOperationContext());
     SubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
       @Override
       protected List<SubstituteAction> createActions() {

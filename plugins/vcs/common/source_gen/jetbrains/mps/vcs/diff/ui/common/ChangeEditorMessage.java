@@ -24,8 +24,8 @@ import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -35,7 +35,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -128,9 +127,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     // "conflicted" red frame. In this case, we repaint conflicted red frame again 
     EditorCell_Collection parent = cell.getParent();
     if (parent != null && parent.getCellsCount() == 1) {
-      SimpleEditorMessage messageToRepaint = ListSequence.fromList(((List<SimpleEditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<SimpleEditorMessage>() {
-        public boolean accept(SimpleEditorMessage m) {
-          return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
+      SimpleEditorMessage messageToRepaint = Sequence.fromIterable(((Iterable<ChangeEditorMessage>) CellMessagesUtil.getMessages(parent, ChangeEditorMessage.class))).findFirst(new IWhereFilter<ChangeEditorMessage>() {
+        public boolean accept(ChangeEditorMessage m) {
+          return m.isConflicted();
         }
       });
       if (messageToRepaint != null) {

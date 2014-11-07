@@ -83,15 +83,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -101,6 +98,7 @@ import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -197,7 +195,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -797,10 +794,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     new CellNavigator(this) {
       @Override
       boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        if (APICellAdapter.hasErrorMessages(cell)) {
-          return true;
-        }
-        return false;
+        return CellMessagesUtil.hasErrorMessages(cell);
 
       }
     }.goToNextCell(backwards);
@@ -947,7 +941,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (cell.getBottom() < parent.getBottom() && parent.getSNode() != cell.getSNode()) {
         return Collections.emptyList();
       }
-      List<HighlighterMessage> messages = APICellAdapter.getMessages(parent, HighlighterMessage.class);
+      List<HighlighterMessage> messages = CellMessagesUtil.getMessages(parent, HighlighterMessage.class);
       if (!messages.isEmpty()) {
         return messages;
       }

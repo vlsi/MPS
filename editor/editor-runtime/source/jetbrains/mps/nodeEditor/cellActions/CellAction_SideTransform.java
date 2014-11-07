@@ -17,13 +17,15 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.ModelActions;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -40,33 +42,35 @@ public class CellAction_SideTransform extends AbstractCellAction {
     return context.getSelectedCell() != null && canCreateRightTransformHint(context.getSelectedCell());
   }
 
-  private boolean canCreateRightTransformHint(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell) {
+  private boolean canCreateRightTransformHint(EditorCell selectedCell) {
     EditorContext editorContext = selectedCell.getContext();
     SNode node = selectedCell.getSNode();
-    if (node == null) return false;
-    if (getSideTransformHintAnchorCell(selectedCell, mySide) == null) return false;
+    if (node == null) {
+      return false;
+    }
+    if (getSideTransformHintAnchorCell(selectedCell) == null) {
+      return false;
+    }
     if (selectedCell instanceof EditorCell_Error) return false;
 
-    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
+    String anchorTag = selectedCell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
     return ModelActions.canCreateSideTransformHintSubstituteActions(node, mySide, anchorTag, editorContext.getOperationContext());
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell getSideTransformHintAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell,
-      CellSide side) {
+  private EditorCell getSideTransformHintAnchorCell(EditorCell selectedCell) {
     final SNode node = selectedCell.getSNode();
-    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = null;
-    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
+    EditorCell anchorCell = null;
+    String anchorTag = selectedCell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
     if (anchorTag != null) {
       anchorCell = selectedCell;
     } else {
-      jetbrains.mps.openapi.editor.cells.EditorCell nodeMainCell = ((EditorCell) selectedCell).getContainingBigCell();
-      jetbrains.mps.openapi.editor.cells.EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell,
-          new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-            @Override
-            public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
-              return ((EditorCell) object).hasRightTransformAnchorTag(SideTransformTagUtils.getDefaultSideTransformTag()) && object.getSNode() == node;
-            }
-          }, true, true);
+      EditorCell nodeMainCell = APICellAdapter.getContainingBigCell(selectedCell);
+      EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell, new Condition<EditorCell>() {
+        @Override
+        public boolean met(EditorCell cell) {
+          return SideTransformTagUtils.getDefaultSideTransformTag().equals(cell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG)) && cell.getSNode() == node;
+        }
+      }, true, true);
 
       if (defAnchorCell == null) {
         defAnchorCell = nodeMainCell;
@@ -77,11 +81,11 @@ public class CellAction_SideTransform extends AbstractCellAction {
       }
     }
 
-    if (side == CellSide.RIGHT && anchorCell != null && CellFinderUtil.findLastSelectableLeaf(anchorCell, true) != selectedCell) {
+    if (mySide == CellSide.RIGHT && anchorCell != null && CellFinderUtil.findLastSelectableLeaf(anchorCell, true) != selectedCell) {
       return null;
     }
 
-    if (side == CellSide.LEFT && anchorCell != null && CellFinderUtil.findFirstSelectableLeaf(anchorCell, true) != selectedCell) {
+    if (mySide == CellSide.LEFT && anchorCell != null && CellFinderUtil.findFirstSelectableLeaf(anchorCell, true) != selectedCell) {
       return null;
     }
 
@@ -90,16 +94,16 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = context.getSelectedCell();
+    EditorCell selectedCell = context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
     STHintUtil.removeTransformHints(node);
-    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
+    EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell);
     assert anchorCell.getSNode() == node : "Incorrect anchor cell was located. Original node: " + node + ", anchorCellNode: " + anchorCell.getSNode();
     String anchorCellId = anchorCell.getCellId();
 
     // TODO: shouldn't we call anchorCell.getRightTransformAnchorTag() here?
-    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
+    String anchorTag = selectedCell.getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
     if (mySide == CellSide.LEFT) {
       STHintUtil.addLeftTransformHint(node, anchorCellId, anchorTag);
     } else {
@@ -108,11 +112,11 @@ public class CellAction_SideTransform extends AbstractCellAction {
     context.flushEvents();
 
     jetbrains.mps.openapi.editor.EditorComponent editorComponent = context.getEditorComponent();
-    jetbrains.mps.openapi.editor.cells.EditorCell updatedAnchorCell = editorComponent.findCellWithId(node, anchorCellId);
+    EditorCell updatedAnchorCell = editorComponent.findCellWithId(node, anchorCellId);
     assert
         updatedAnchorCell != null :
         "Can't find updated anchor cell. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId;
-    jetbrains.mps.openapi.editor.cells.EditorCell sideTransformHintCell = ((EditorCell) updatedAnchorCell).getSTHintCell();
+    EditorCell sideTransformHintCell = STHintUtil.getSTHintCell(updatedAnchorCell);
     assert
         sideTransformHintCell != null :
         "STHint cell was not created. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId +

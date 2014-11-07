@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.sidetransform;
 
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -69,4 +71,43 @@ public class STHintUtil {
   public static String getTransformHintAnchorTag(SNode node) {
     return (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
   }
+
+  public static EditorCell_STHint getSTHintCell(EditorCell cell) {
+    SNode node = cell.getSNode();
+    if (node == null) {
+      return null;
+    }
+
+    EditorCell bigCell = cell.getEditorComponent().findNodeCell(node);
+    String anchorId = getTransformHintAnchorCellId(node);
+    if (anchorId == null) {
+      // TODO: should never be null!..
+      if (bigCell != null && bigCell.getParent() != null) {
+        for (EditorCell sibling : bigCell.getParent()) {
+          if (sibling instanceof EditorCell_STHint) {
+            return (EditorCell_STHint) sibling;
+          }
+        }
+      }
+      return null;
+    }
+
+    EditorCell anchorCell = cell.getEditorComponent().findCellWithId(node, anchorId);
+    if (anchorCell == null) {
+      return null;
+    }
+
+    assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
+    EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
+    if (nextSibling instanceof EditorCell_STHint) {
+      return (EditorCell_STHint) nextSibling;
+    }
+
+    EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
+    if (prevSibling instanceof EditorCell_STHint) {
+      return (EditorCell_STHint) prevSibling;
+    }
+    return null;
+  }
+
 }
