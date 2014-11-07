@@ -497,7 +497,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   public void fold(boolean programmaticaly) {
-    if (!canBePossiblyFolded()) return;
+    if (!isFoldable()) return;
     if (isFolded()) {
       // updating editor's myFoldedCells set (sometimes this method is called from Memento) 
       getEditor().setFolded(this, true);
@@ -608,26 +608,30 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public boolean canBePossiblyFolded() {
-    return myCanBeFolded && myCellLayout.canBeFolded();
+    return isFoldable();
   }
 
   @Override
   public boolean isFoldable() {
-    return canBePossiblyFolded();
+    return myCanBeFolded && myCellLayout.canBeFolded();
   }
 
-  public void setCanBeFolded(boolean canBeFolded) {
-    boolean wasPossiblyFolded = canBePossiblyFolded();
-    myCanBeFolded = canBeFolded;
+  public void setFoldable(boolean foldable) {
+    boolean wasPossiblyFolded = isFoldable();
+    myCanBeFolded = foldable;
 
     if (isInTree()) {
-      if (wasPossiblyFolded && !canBePossiblyFolded()) {
+      if (wasPossiblyFolded && !isFoldable()) {
         getEditor().getCellTracker().removeFoldableCell(this);
       }
-      if (!wasPossiblyFolded && canBePossiblyFolded()) {
+      if (!wasPossiblyFolded && isFoldable()) {
         getEditor().getCellTracker().addFoldableCell(this);
       }
     }
+  }
+
+  public void setCanBeFolded(boolean canBeFolded) {
+    setFoldable(canBeFolded);
   }
 
   public void unfold(boolean programmaticaly) {
@@ -895,14 +899,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       getEditor().getSelectionManager().addSelectionListener(myLastCellSelectionListener);
     }
 
-    if (canBePossiblyFolded()) {
+    if (isFoldable()) {
       getEditor().getCellTracker().addFoldableCell(this);
     }
   }
 
   @Override
   public void onRemove() {
-    if (canBePossiblyFolded()) {
+    if (isFoldable()) {
       getEditor().getCellTracker().removeFoldableCell(this);
     }
     removeUnfoldingListener();

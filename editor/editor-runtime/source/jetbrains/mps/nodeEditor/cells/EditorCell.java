@@ -108,15 +108,22 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
-  // TODO: move to EditorCell_Collection & open API
+  /**
+   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean isFolded();
 
   /**
-   * @deprecated since MPS 3.2 not used
+   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
    */
   @Deprecated
   boolean isUnfoldedCollection();
 
+  /**
+   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean canBePossiblyFolded();
 
   boolean isFirstPositionInBigCell();

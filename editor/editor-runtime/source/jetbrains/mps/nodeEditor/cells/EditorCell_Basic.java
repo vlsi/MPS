@@ -968,7 +968,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
-  @Override
+  /**
+   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   public boolean isFolded() {
     return false;
   }
