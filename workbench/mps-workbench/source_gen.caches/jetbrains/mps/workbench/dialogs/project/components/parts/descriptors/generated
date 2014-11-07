@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="hqr7a85oantvu5fqeeqt8heyin79lt" />
+<dependencies version="2" modelHash="hqr7a85oantvu5fqeeqt8heyin79lt">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-dbr2g6jzucxcoqvfqf08v9ihfbxe7mv" />
+  <common hash="hqr7a85oantvu5fqeeqt8heyin79lt" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1560298786499489453" name="EditableStringDescriptor">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="EditableStringDescriptor.java" />
+  </source>
+  <source id="1560298786499491464" name="StringPathDescriptor">
+    <file name="StringPathDescriptor.java" />
+  </source>
+  <source id="1560298786499491489" name="BooleanDescriptor">
+    <file name="BooleanDescriptor.java" />
+  </source>
+  <source id="1560298786499493471" name="ModuleDescriptor">
+    <file name="ModuleDescriptor.java" />
+  </source>
+  <source id="1560298786499495292" name="DepDescriptor">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="DepDescriptor.java" />
+  </source>
+  <source id="1560298786499497407" name="ModelDescriptor">
+    <file name="ModelDescriptor.java" />
+  </source>
+</dependencies>
 

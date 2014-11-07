@@ -4574,57 +4574,6 @@
         </node>
       </node>
     </node>
-    <node concept="5i2a.1229187653856" id="3294454325389348340" info="lg">
-      <property role="asn4.1169194658468.1169194664001" value="IntelligentInputWithSubstitutionChooser" />
-      <node concept="vg0i.1068580123165" id="3294454325389407451" role="5i2a.1229187653856.1229187676388" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="method" />
-        <node concept="vg0i.1068581517677" id="3294454325389407452" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1146644602865" id="3294454325389407453" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="3294454325389407454" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="5i2a.1229194968594" id="2576168041330153201" role="asn4.1133920641626.5169995583184591170" info="ng">
-            <property role="5i2a.1229194968594.6268941039745498165" value="0" />
-            <property role="5i2a.1229194968594.1229194968595" value="Constant_u338ov_a0a" />
-            <property role="5i2a.1229194968594.6268941039745498163" value="0" />
-            <property role="5i2a.1229194968594.1229432188737" value="true" />
-            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="3294454325389407455" role="5i2a.1229187653856.1229187707859" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="method" />
-        <node concept="vg0i.1068581517677" id="3294454325389407456" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1146644602865" id="3294454325389407457" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="3294454325389407458" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="1083877150830981897" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1070533707846" id="1083877150830981898" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1070533707846.1144433057691" target="1t7x.~Color" resolveInfo="Color" />
-              <reference role="vg0i.1068498886296.1068581517664" target="1t7x.~Color%dBLACK" resolveInfo="BLACK" />
-              <node concept="5i2a.1229194968594" id="5391692903113803023" role="asn4.1133920641626.5169995583184591170" info="ng">
-                <property role="5i2a.1229194968594.6268941039745498165" value="5" />
-                <property role="5i2a.1229194968594.1229194968595" value="property_name_1" />
-                <property role="5i2a.1229194968594.6268941039745498163" value="5" />
-                <property role="5i2a.1229194968594.1229432188737" value="true" />
-                <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123136" id="3294454325389417939" role="5i2a.1229187653856.1229187755283" info="sn">
-        <node concept="5i2a.1227182079811" id="3294454325389417940" role="vg0i.1068580123136.1068581517665" info="nn">
-          <property role="5i2a.1227182079811.1227184461946" value="C" />
-        </node>
-        <node concept="5i2a.1228934484974" id="3294454325389417942" role="vg0i.1068580123136.1068581517665" info="nn">
-          <node concept="79nr.1207318242772" id="3294454325389417943" role="5i2a.1228934484974.1228934507814" info="ng">
-            <property role="79nr.1207318242772.1207318242774" value="VK_SPACE" />
-            <property role="79nr.1207318242772.1207318242773" value="ctrl" />
-          </node>
-        </node>
-        <node concept="5i2a.1227182079811" id="3294454325389417946" role="vg0i.1068580123136.1068581517665" info="nn">
-          <property role="5i2a.1227182079811.1227184461946" value="olor.BLACK" />
-        </node>
-      </node>
-    </node>
     <node concept="5i2a.1229187653856" id="1086097794003843976" info="lg">
       <property role="asn4.1169194658468.1169194664001" value="ReplacePlusWithMinus" />
       <property role="asn4.1133920641626.1193676396447" value="bugTest" />
