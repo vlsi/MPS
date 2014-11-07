@@ -229,6 +229,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="1238852221639" info="ig">
@@ -614,6 +615,9 @@
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
           <node concept="9wj7.1237303669825" id="1239529882523" role="9wj7.1140524381322.1140524464360" info="nn" />
+        </node>
+        <node concept="9wj7.1078939183254" id="1960260476750104104" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1078939183254.1078939183255" target="tpco.1960260476749651797" resolveInfo="VirtualPackage" />
         </node>
         <node concept="9wj7.1237303669825" id="1239529835290" role="9wj7.1073389446423.1106270802874" info="nn" />
         <node concept="9wj7.1186414928363" id="1239529840105" role="9wj7.1219418625346.1219418656006" info="ln" />

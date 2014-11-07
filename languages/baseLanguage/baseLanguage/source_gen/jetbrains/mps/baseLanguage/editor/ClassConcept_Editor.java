@@ -1024,6 +1024,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     if (renderingCondition_uj0cpq_a4a_0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_uj0cpq_e0(editorContext, node));
     }
+    editorCell.addEditorCell(this.createComponent_uj0cpq_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_uj0cpq_a0(EditorContext editorContext, SNode node) {
@@ -1112,6 +1113,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+  private EditorCell createComponent_uj0cpq_f0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.VirtualPackage");
     return editorCell;
   }
   private static boolean isEmptyString(String str) {
