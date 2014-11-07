@@ -161,12 +161,13 @@ class Memento {
     }
 
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
-      EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
-      if (cell != null) {
-        String text = cell.getText();
+      EditorCell cell = entry.getKey().findCell(editor);
+      if (cell instanceof EditorCell_Label) {
+        EditorCell_Label cellLabel = (EditorCell_Label) cell;
+        String text = cellLabel.getText();
         String oldText = entry.getValue();
-        if (!EqualUtil.equals(text, oldText) && (!cell.isValidText(oldText) || !cell.isEditable())) {
-          cell.changeText(oldText);
+        if (!EqualUtil.equals(text, oldText) && (!cellLabel.isValidText(oldText) || !cellLabel.isEditable())) {
+          cellLabel.changeText(oldText);
           needsRelayout = true;
         }
       }
