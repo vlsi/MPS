@@ -151,7 +151,7 @@ public class SModelOperations {
     if (concept == null) {
       return null;
     }
-    return createNewNode(model, id, concept.getName());
+    return createNewNode(model, id, concept.getQualifiedName());
   }
   @Deprecated
   public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
