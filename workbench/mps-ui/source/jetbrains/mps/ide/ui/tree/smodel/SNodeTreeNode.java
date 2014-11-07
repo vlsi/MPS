@@ -94,17 +94,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   protected void doUpdatePresentation_internal() {
-//    if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode)) {
-//      return;
-//    }
+    if (myNode == null) {
+      return;
+    }
     if (hasErrors()) {
       setColor(Color.RED);
     } else {
       setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     }
-    if (myNode != null) {
-      setIcon(IconManager.getIconFor(myNode));
-    }
+    setIcon(IconManager.getIconFor(myNode));
 
     if (jetbrains.mps.util.SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
@@ -114,7 +112,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAutoExpandable(myNode != null && !(myNode.getModel() != null && myNode.getParent() == null));
+    setAutoExpandable(myNode.getModel() == null || myNode.getParent() != null);
   }
 
   public SModelTreeNode getSModelModelTreeNode() {

@@ -46,7 +46,9 @@ public class SNodeUtil {
     SRepository mrep = model.getRepository();
     if (mrep == null) return false;
 
-    return inRepository != null;
+    mrep.getModelAccess().checkReadAccess();
+
+    return inRepository == mrep;
   }
 
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
