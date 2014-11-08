@@ -530,15 +530,13 @@
       <node id="8828148184963769620" at="8,0,9,0" concept="3" trace="myToSConcept" />
       <node id="1206377824736" at="11,0,12,0" concept="3" trace="myToNode" />
       <node id="1206377825957" at="12,0,13,0" concept="3" trace="myToModel" />
-      <node id="1240146370519" at="13,0,14,0" concept="3" trace="myToEnum" />
-      <node id="1240170392511" at="14,0,15,0" concept="3" trace="myToEnumMember" />
-      <node id="572489343766100875" at="15,0,16,0" concept="3" trace="myLinkAccess" />
-      <node id="1207689406331" at="16,0,17,0" concept="3" trace="myLinkToConcept" />
+      <node id="572489343766100875" at="13,0,14,0" concept="3" trace="myLinkAccess" />
+      <node id="1207689406331" at="14,0,15,0" concept="3" trace="myLinkToConcept" />
       <node id="1206377822467" at="9,0,11,0" concept="3" trace="myToConcept" />
-      <node id="1206378005506" at="17,0,19,0" concept="1" trace="ApplicableTypesInfo#()V" />
-      <scope id="1206378005509" at="17,32,17,32" />
-      <scope id="1206378005506" at="17,0,19,0" />
-      <unit id="1206377804308" at="7,0,20,0" name="jetbrains.mps.lang.smodel.actions.ApplicableTypesInfo" />
+      <node id="1206378005506" at="15,0,17,0" concept="1" trace="ApplicableTypesInfo#()V" />
+      <scope id="1206378005509" at="15,32,15,32" />
+      <scope id="1206378005506" at="15,0,17,0" />
+      <unit id="1206377804308" at="7,0,18,0" name="jetbrains.mps.lang.smodel.actions.ApplicableTypesInfo" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)/1206996873883">

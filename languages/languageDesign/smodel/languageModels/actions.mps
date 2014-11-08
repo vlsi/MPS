@@ -2579,22 +2579,6 @@
         <node concept="vg0i.1146644602865" id="1206377825958" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1070534644030" id="1206377863920" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
       </node>
-      <node concept="vg0i.1068390468200" id="1240146370519" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="myToEnum" />
-        <node concept="vg0i.1146644602865" id="1240146375865" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123137" id="1240146385285" role="vg0i.1068431474542.1068431790190" info="nn">
-          <property role="vg0i.1068580123137.1068580123138" value="false" />
-        </node>
-        <node concept="vg0i.1070534644030" id="1240146378642" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-      </node>
-      <node concept="vg0i.1068390468200" id="1240170392511" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="myToEnumMember" />
-        <node concept="vg0i.1068580123137" id="1240170392514" role="vg0i.1068431474542.1068431790190" info="nn">
-          <property role="vg0i.1068580123137.1068580123138" value="false" />
-        </node>
-        <node concept="vg0i.1070534644030" id="1240170392513" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-        <node concept="vg0i.1146644602865" id="1240170392512" role="vg0i.1178549954367.1178549979242" info="nn" />
-      </node>
       <node concept="vg0i.1068390468200" id="572489343766100875" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="myLinkAccess" />
         <node concept="4ia1.1138055754698" id="572489343766100936" role="vg0i.4972933694980447171.5680397130376446158" info="in">
