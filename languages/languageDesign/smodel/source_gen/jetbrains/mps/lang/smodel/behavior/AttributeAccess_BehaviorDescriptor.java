@@ -17,6 +17,9 @@ public class AttributeAccess_BehaviorDescriptor extends SNodeOperation_BehaviorD
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return AttributeAccess_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return AttributeAccess_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
+  }
   public SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return AttributeAccess_Behavior.virtual_getTargetConcept_4024382256428848859(thisNode);
   }

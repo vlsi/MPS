@@ -71,7 +71,11 @@ public class SNodeOperation_Behavior {
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return false;
   }
+  @Deprecated
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
+    return false;
+  }
+  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
     return false;
   }
   public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {

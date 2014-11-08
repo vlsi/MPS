@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ApplicableTypesInfo {
+  public boolean myToSConcept = false;
+  @Deprecated
   public boolean myToConcept = false;
   public boolean myToNode = false;
   public boolean myToModel = false;

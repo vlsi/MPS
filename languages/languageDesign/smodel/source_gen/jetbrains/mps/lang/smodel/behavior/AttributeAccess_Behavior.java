@@ -44,6 +44,9 @@ public class AttributeAccess_Behavior {
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }
+  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
+    return true;
+  }
   private static SNode _quotation_createNode_q663c8_a0b0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

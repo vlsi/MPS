@@ -48,7 +48,7 @@ public class RulesUtil {
         isGood = true;
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToSConcept_8828148184963745087", new Object[]{})) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a5a0())) {
         isGood = true;
       }

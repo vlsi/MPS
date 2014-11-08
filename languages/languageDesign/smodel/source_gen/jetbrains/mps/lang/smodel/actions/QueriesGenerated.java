@@ -185,7 +185,7 @@ public class QueriesGenerated {
           result.myToConcept = true;
         }
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
-          result.myToConcept = true;
+          result.myToSConcept = true;
         }
         // is node ? 
         if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
@@ -221,7 +221,7 @@ public class QueriesGenerated {
             result.myToConcept = true;
           }
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
-            result.myToConcept = true;
+            result.myToSConcept = true;
           }
           // is node ? 
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
@@ -276,6 +276,10 @@ public class QueriesGenerated {
           if (appTypesInfo.myToConcept) {
             return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConcept_1262430001741498358", new Object[]{}));
           }
+          // is sconcept ? 
+          if (appTypesInfo.myToSConcept) {
+            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToSConcept_8828148184963745087", new Object[]{}));
+          }
           // is node ? 
           if (appTypesInfo.myToNode) {
             return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToNode_1262430001741498076", new Object[]{}));
@@ -313,7 +317,7 @@ public class QueriesGenerated {
             result.myToConcept = true;
           }
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept"), false) != null) {
-            result.myToConcept = true;
+            result.myToSConcept = true;
           }
           // is node ? 
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {

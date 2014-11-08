@@ -48,6 +48,9 @@ public class Node_ConceptMethodCall_Behavior {
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }
+  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
+    return true;
+  }
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }

@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class AsSConcept_Behavior {
   public static void init(SNode thisNode) {
   }
+  public static boolean virtual_applicableToSConcept_8828148184963745087(SAbstractConcept thisConcept) {
+    return true;
+  }
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }
