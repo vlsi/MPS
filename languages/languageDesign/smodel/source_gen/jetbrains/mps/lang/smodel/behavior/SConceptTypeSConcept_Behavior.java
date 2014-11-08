@@ -18,9 +18,9 @@ public class SConceptTypeSConcept_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode concept = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 6677504323281689838l, 6677504323281689839l, "conceptDeclaraton"));
     if (concept == null) {
-      return "concept< >";
+      return "sconcept< >";
     } else {
-      return "concept<" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ">";
+      return "sconcept<" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ">";
     }
   }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
