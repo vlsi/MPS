@@ -20,11 +20,11 @@
     <file name="Node_GetIndexInParentOperation_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetIndexInParentOperation_BehaviorDescriptor" />
     </file>
-    <file name="Node_GetNextSiblingOperation_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetNextSiblingOperation_BehaviorDescriptor" />
-    </file>
     <file name="Node_ReplaceWithAnotherOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Node_ReplaceWithAnotherOperation_BehaviorDescriptor" />
+    </file>
+    <file name="Node_GetNextSiblingOperation_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetNextSiblingOperation_BehaviorDescriptor" />
     </file>
     <file name="OperationParm_Concept_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.OperationParm_Concept_BehaviorDescriptor" />
@@ -39,7 +39,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.EnumMemberValueRefExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,282,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,284,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Model_RootsOperation_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Model_RootsOperation_BehaviorDescriptor" />
@@ -226,6 +226,9 @@
     </file>
     <file name="LinkAttributeQualifier_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.LinkAttributeQualifier_BehaviorDescriptor" />
+    </file>
+    <file name="Node_GetSConceptOperation_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetSConceptOperation_BehaviorDescriptor" />
     </file>
     <file name="OperationParm_Root_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.OperationParm_Root_BehaviorDescriptor" />
@@ -3001,6 +3004,22 @@
         <var name="thisNode" id="6677504323281693693" />
       </scope>
       <unit id="6677504323281693693" at="15,0,37,0" name="jetbrains.mps.lang.smodel.behavior.SConceptTypeSConcept_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/7453996997717782415">
+    <file name="Node_GetSConceptOperation_Behavior.java">
+      <node id="7453996997717782428" at="11,100,12,16" concept="7" />
+      <node id="7453996997717782415" at="9,0,11,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7453996997717782415" at="11,0,14,0" concept="8" trace="virtual_applicableToNode_1262430001741498076#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="7453996997717782417" at="9,43,9,43" />
+      <scope id="7453996997717782427" at="11,100,12,16" />
+      <scope id="7453996997717782415" at="9,0,11,0">
+        <var name="thisNode" id="7453996997717782415" />
+      </scope>
+      <scope id="7453996997717782415" at="11,0,14,0">
+        <var name="thisConcept" id="7453996997717782415" />
+      </scope>
+      <unit id="7453996997717782415" at="8,0,15,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetSConceptOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/8866923313515896900">
