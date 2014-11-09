@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -30,6 +31,7 @@ import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.Condition;
@@ -61,8 +63,6 @@ import java.util.Set;
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(ClassLoaderManager.class);
 
-  private static final Object CLASS_LOADING_LOCK = new Object();
-
   private static ClassLoaderManager INSTANCE;
 
   public static ClassLoaderManager getInstance() {
@@ -80,21 +80,31 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final ModulesWatcher myModulesWatcher;
 
-  private final ClassLoadingChecker myClassLoadingChecker = new ClassLoadingChecker();
+  private final ClassLoadingBroadCaster myBroadCaster;
 
-  private final ClassLoadingBroadCaster myBroadCaster = new ClassLoadingBroadCaster();
+  private final ClassLoadingChecker myClassLoadingChecker = new ClassLoadingChecker();
 
   private final CLManagerRepositoryListener myRepositoryListener;
 
   public ClassLoaderManager(SRepository repository) {
     myRepository = repository;
-    myModulesWatcher = new ModulesWatcher(repository, myLoadableCondition);
+    myModulesWatcher = new ModulesWatcher(myRepository, myWatchableCondition);
     myClassLoadersHolder = new ClassLoadersHolder(myModulesWatcher);
     myRepositoryListener = new CLManagerRepositoryListener(repository, myModulesWatcher);
+    myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
   }
 
-  public ClassLoadingChecker getClassLoadingChecker() {
+  ClassLoadingChecker getClassLoadingChecker() {
     return myClassLoadingChecker;
+  }
+
+  private void addDumbIdeaPluginFacetFactory() {
+    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
+      @Override
+      public SModuleFacet create() {
+        return new DumbIdeaPluginFacet();
+      }
+    });
   }
 
   @Override
@@ -102,15 +112,10 @@ public class ClassLoaderManager implements CoreComponent {
     ModelAccess.assertLegalWrite();
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
-    myClassLoadersHolder.init(this);
+    myClassLoadersHolder.init();
     myClassLoadingChecker.init(this);
     myRepositoryListener.init(this);
-    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
-      @Override
-      public SModuleFacet create() {
-        return new DumbIdeaPluginFacet();
-      }
-    });
+    addDumbIdeaPluginFacetFactory();
   }
 
   @Override
@@ -122,6 +127,11 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
+  // for tests
+  ModulesWatcher getModulesWatcher() {
+    return myModulesWatcher;
+  }
+
   /**
    * ensure returns true before calling {@link #getClass} method
    * @return true whenever module can be associated with some class loader.
@@ -129,6 +139,8 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @deprecated it is better to check whether the module is an instance of ReloadableModule
    */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public boolean canLoad(@NotNull SModule module) {
     return module instanceof ReloadableModule;
   }
@@ -145,7 +157,7 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -164,7 +176,7 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -186,32 +198,35 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @Nullable
   public ClassLoader getClassLoader(final SModule module) {
     if (!myLoadableCondition.met(module)) return null;
-    if (!myValidCondition.met(module)) return null;
-    doLoadModules(Collections.singleton(module), new EmptyProgressMonitor());
-    return doGetClassLoader(module);
+
+    refresh();
+    ReloadableModule reloadableModule = (ReloadableModule) module;
+    if (!myValidCondition.met(reloadableModule)) return null;
+    doLoadModules(Collections.singleton(reloadableModule), new EmptyProgressMonitor());
+    return doGetClassLoader(reloadableModule);
   }
 
   @Nullable
-  private ClassLoader doGetClassLoader(SModule module) {
+  private ClassLoader doGetClassLoader(@NotNull ReloadableModule module) {
     return myClassLoadersHolder.getClassLoader(module);
   }
 
-  /**
-   * @return current value of loading progress for this module.
-   * @see ClassLoadingProgress
-   */
-  private ClassLoadingProgress getClassLoadingProgress(SModule module) {
-    return myClassLoadersHolder.getClassLoadingProgress(module);
+  private boolean canCreate(@NotNull ReloadableModule module) {
+    return ModuleClassLoaderSupport.canCreate(module);
   }
 
-  private boolean canCreate(SModule module) {
-    return ModuleClassLoaderSupport.canCreate(module);
+  /**
+   * Flushes all delayed notifications to keep up with the module repository state
+   * @see jetbrains.mps.classloading.CLManagerRepositoryListener
+   */
+  private void refresh() {
+    myRepositoryListener.refresh();
   }
 
   /**
@@ -223,28 +238,28 @@ public class ClassLoaderManager implements CoreComponent {
    * These clients need to be rewritten in a lazy way, i.e. using only #getClass [#getClassLoader] method.
    * @deprecated there is an intention to get rid of {@link MPSClassesListener} clients. When it's done we are able to remove this method.
    */
-  void preLoadModules(Iterable<? extends SModule> modules) {
-    Set<SModule> modulesToNotify = filterModules(modules, myLoadableCondition, myValidCondition);
-    if (modulesToNotify.isEmpty()) return;
+  void preLoadModules(Iterable<? extends ReloadableModule> modules) {
+    Set<ReloadableModule> modulesPreLoad = filterModules(modules, myValidCondition);
+    if (modulesPreLoad.isEmpty()) return;
 
     // transitive closure
-    modulesToNotify.addAll(myModulesWatcher.getDependencies(modulesToNotify));
-    modulesToNotify = filterModules(modulesToNotify, myUnloadedCondition, myLoadableCondition, myValidCondition);
-    if (modulesToNotify.isEmpty()) return;
+    modulesPreLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesPreLoad));
+    modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myValidCondition);
+    if (modulesPreLoad.isEmpty()) return;
 
     // add valid back dependencies too; [if now (with new modules) they are fine to load]
-    modulesToNotify.addAll(myModulesWatcher.getBackDependencies(modulesToNotify));
-    modulesToNotify = filterModules(modulesToNotify, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
-    if (modulesToNotify.isEmpty()) return;
+    modulesPreLoad.addAll(myModulesWatcher.getResolvedBackDependencies(modulesPreLoad));
+    modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
+    if (modulesPreLoad.isEmpty()) return;
 
-    modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesToNotify);
+    Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
     myBroadCaster.onLoad(modulesToNotify);
   }
 
   /**
    * @param modules are modules to unload. This method is not lazy.
    */
-  void unloadModules(Iterable<? extends SModule> modules) {
+  void unloadModules(Iterable<? extends SModuleReference> modules) {
     doUnloadModules(modules, new EmptyProgressMonitor());
   }
 
@@ -254,61 +269,58 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #myValidCondition
    */
   @NotNull
-  private Collection<? extends SModule> doLoadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    Condition<SModule> notLoadedCondition = negateCondition(myLoadedCondition);
-    synchronized (CLASS_LOADING_LOCK) {
-      Set<SModule> modulesToLoad = new LinkedHashSet<SModule>(filterModules(modules, myLoadableCondition, myValidCondition));
-      if (modulesToLoad.isEmpty()) return Collections.emptySet();
+  private Collection<? extends ReloadableModule> doLoadModules(Iterable<? extends ReloadableModule> modules, @NotNull ProgressMonitor monitor) {
+    Condition<ReloadableModule> notLoadedCondition = negateCondition(myLoadedCondition);
+    Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
+    if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-      // transitive closure
-      modulesToLoad.addAll(myModulesWatcher.getDependencies(modulesToLoad));
-      modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, notLoadedCondition);
-      if (modulesToLoad.isEmpty()) return Collections.emptySet();
+    // transitive closure
+    modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
+    modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, notLoadedCondition);
+    if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-      LOG.debug("Loading " + modulesToLoad.size() + " modules");
-      Set<SModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-      myBroadCaster.onLoad(modulesToNotify);
+    LOG.debug("Loading " + modulesToLoad.size() + " modules");
+    Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
+    myBroadCaster.onLoad(modulesToNotify);
 
-      return modulesToLoad;
-    }
+    return modulesToLoad;
   }
 
   /**
    * Stops watching at all the {@code modules}, which are MPS-loadable
    * Disposes all class loaders for these modules
+   *
    * @see #myMPSLoadableCondition
    */
   @NotNull
-  private Collection<? extends SModule> doUnloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    synchronized (CLASS_LOADING_LOCK) {
-      monitor.start("Unloading modules...", 1);
-      try {
-        Condition<SModule> loadedCondition = negateCondition(myUnloadedCondition);
-        Set<SModule> modulesToUnload = filterModules(modules, myLoadableCondition);
-        if (modulesToUnload.isEmpty()) return modulesToUnload;
+  private Collection<? extends SModuleReference> doUnloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+    monitor.start("Unloading modules...", 1);
+    try {
+      Condition<SModuleReference> loadedCondition = negateCondition(myUnloadedRefCondition);
+      Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
+      if (modulesToUnload.isEmpty()) return modulesToUnload;
 
-        // transitive closure
-        Collection<? extends SModule> modulesAndBackDeps = myModulesWatcher.getBackDependencies(modulesToUnload);
-        modulesToUnload = filterModules(modulesAndBackDeps, loadedCondition);
-        if (modulesToUnload.isEmpty()) return modulesToUnload;
+      // transitive closure
+      Collection<? extends SModuleReference> modulesAndBackDeps = myModulesWatcher.getBackDependencies(modulesToUnload);
+      modulesToUnload = filterModules(modulesAndBackDeps, loadedCondition);
+      if (modulesToUnload.isEmpty()) return modulesToUnload;
 
-        LOG.debug("Unloading " + modulesToUnload.size() + " modules");
-        monitor.step("Disposing old class loaders...");
-        myBroadCaster.onUnload(modulesToUnload);
-        myClassLoadersHolder.doUnloadModules(modulesToUnload);
-        monitor.advance(1);
+      LOG.debug("Unloading " + modulesToUnload.size() + " modules");
+      monitor.step("Disposing old class loaders...");
+      myBroadCaster.onUnload(modulesToUnload);
+      myClassLoadersHolder.doUnloadModules(modulesToUnload);
+      monitor.advance(1);
 
-        return modulesToUnload;
-      } finally {
-        monitor.done();
-      }
+      return modulesToUnload;
+    } finally {
+      monitor.done();
     }
   }
 
-  private Set<SModule> filterModules(Iterable<? extends SModule> modules, Condition<SModule>... conditions) {
-    CompositeCondition<SModule> compositeCondition = new CompositeCondition<SModule>(conditions);
-    Set<SModule> filteredModules = new LinkedHashSet<SModule>();
-    for (SModule module : modules) {
+  static <M> Set<M> filterModules(Iterable<? extends M> modules, Condition<M>... conditions) {
+    CompositeCondition<M> compositeCondition = new CompositeCondition<M>(conditions);
+    Set<M> filteredModules = new LinkedHashSet<M>();
+    for (M module : modules) {
       if (compositeCondition.met(module)) filteredModules.add(module);
     }
     return filteredModules;
@@ -331,18 +343,30 @@ public class ClassLoaderManager implements CoreComponent {
    * @return modules which were reloaded successfully
    * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule(SModule)}.
    */
-  public Collection<SModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    LOG.info("Reloading modules");
+  public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     if (IterableUtils.isEmpty(modules)) {
       LOG.info("Reloaded 0 modules");
-      return new ArrayList<SModule>();
+      return new ArrayList();
     }
     try {
       monitor.start("Reloading modules' class loaders...", 2);
-      myModulesWatcher.invalidate();
-      Collection<SModule> modulesToReload = new LinkedHashSet<SModule>(doUnloadModules(modules, monitor.subTask(1)));
-      for (SModule module : modules) modulesToReload.add(module);
-      Collection<SModule> loadedModules = new LinkedHashSet<SModule>(doLoadModules(modulesToReload, monitor.subTask(1)));
+      Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
+      for (SModule module : modules) {
+        if (module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
+        if (canLoad(module)) {
+          modulesToReload.add((ReloadableModule) module);
+        }
+      }
+      if (modulesToReload.isEmpty()) return Collections.emptySet();
+
+      LOG.info("Reloading " + modulesToReload.size() + " modules");
+
+      refresh();
+      myModulesWatcher.onModulesReloaded(modulesToReload);
+      Collection<? extends SModuleReference> moduleRefs = myModulesWatcher.getModuleRefs(modulesToReload);
+      Collection<? extends ReloadableModule> unloadedModules = myModulesWatcher.resolveRefs(doUnloadModules(moduleRefs, monitor.subTask(1)));
+      modulesToReload.addAll(unloadedModules);
+      Collection<ReloadableModule> loadedModules = new LinkedHashSet(doLoadModules(modulesToReload, monitor.subTask(1)));
       LOG.info("Reloaded " + loadedModules.size() + " modules");
       return loadedModules;
     } finally {
@@ -350,18 +374,18 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public Collection<SModule> reloadModules(Iterable<? extends SModule> modules) {
+  public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules) {
     return reloadModules(modules, new EmptyProgressMonitor());
   }
 
   /**
    * @deprecated use module-specific method {@link jetbrains.mps.module.ReloadableModule#reload()}
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @ToRemove(version = 3.2)
-  public Collection<SModule> reloadModule(SModule module) {
+  public Collection<ReloadableModule> reloadModule(SModule module) {
     return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
   }
 
@@ -371,7 +395,7 @@ public class ClassLoaderManager implements CoreComponent {
    */
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalRead();
-    reloadModules(myModulesWatcher.getModules(), monitor);
+    reloadModules(myRepository.getModules(), monitor);
   }
 
   // conditions part
@@ -402,12 +426,22 @@ public class ClassLoaderManager implements CoreComponent {
   };
 
   /**
+   * the modules which we want to watch (and trace the dependencies between them)
+   */
+  private final Condition<ReloadableModule> myWatchableCondition = new Condition<ReloadableModule>() {
+    @Override
+    public boolean met(ReloadableModule module) {
+      return module.willLoad();
+    }
+  };
+
+  /**
    * it is possible to create ModuleClassLoader for such module
    */
-  private final Condition<SModule> myMPSLoadableCondition = new Condition<SModule>() {
+  private final Condition<ReloadableModule> myMPSLoadableCondition = new Condition<ReloadableModule>() {
     @Override
-    public boolean met(SModule module) {
-      return canLoad(module) && canCreate(module);
+    public boolean met(ReloadableModule module) {
+      return canCreate(module);
     }
   };
 
@@ -415,24 +449,32 @@ public class ClassLoaderManager implements CoreComponent {
    * status of this module is valid in the dependencies graph
    * @see ModulesWatcher
    */
-  private final Condition<SModule> myValidCondition = new Condition<SModule>() {
+  private final Condition<ReloadableModule> myValidCondition = new Condition<ReloadableModule>() {
     @Override
-    public boolean met(SModule module) {
-      return myModulesWatcher.getStatus(module).isValid();
+    public boolean met(ReloadableModule module) {
+      SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+      return myWatchableCondition.met(module) && myModulesWatcher.getStatus(mRef).isValid();
     }
   };
 
-  private final Condition<SModule> myUnloadedCondition = new Condition<SModule>() {
+  private final Condition<ReloadableModule> myUnloadedCondition = new Condition<ReloadableModule>() {
     @Override
-    public boolean met(SModule module) {
-      return getClassLoadingProgress(module) == ClassLoadingProgress.UNLOADED;
+    public boolean met(ReloadableModule module) {
+      return myClassLoadersHolder.getClassLoadingProgress(module) == ClassLoadingProgress.UNLOADED;
     }
   };
 
-  private final Condition<SModule> myLoadedCondition = new Condition<SModule>() {
+  private final Condition<SModuleReference> myUnloadedRefCondition = new Condition<SModuleReference>() {
     @Override
-    public boolean met(SModule module) {
-      return getClassLoadingProgress(module) == ClassLoadingProgress.LOADED;
+    public boolean met(SModuleReference mRef) {
+      return myClassLoadersHolder.getClassLoadingProgress(mRef) == ClassLoadingProgress.UNLOADED;
+    }
+  };
+
+  private final Condition<ReloadableModule> myLoadedCondition = new Condition<ReloadableModule>() {
+    @Override
+    public boolean met(ReloadableModule module) {
+      return myClassLoadersHolder.getClassLoadingProgress(module) == ClassLoadingProgress.LOADED;
     }
   };
 

@@ -16,6 +16,7 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -28,7 +29,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class ClassLoadingChecker implements MPSClassesListener {
+public class ClassLoadingChecker extends MPSClassesListenerAdapter {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingChecker.class);
 
   // this field for checking classes loading (double load from different modules)
@@ -43,7 +44,7 @@ public class ClassLoadingChecker implements MPSClassesListener {
   }
 
   @Override
-  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
     // update loaded classes checking map
     Set<SModuleReference> moduleReferences = new HashSet<SModuleReference>();
     for (SModule module : unloadedModules) {
@@ -58,11 +59,6 @@ public class ClassLoadingChecker implements MPSClassesListener {
     for (String className : classesToRemove) {
       myLoadedClasses.remove(className);
     }
-  }
-
-  @Override
-  public void afterClassesLoaded(Set<SModule> loadedModules) {
-
   }
 
   /**

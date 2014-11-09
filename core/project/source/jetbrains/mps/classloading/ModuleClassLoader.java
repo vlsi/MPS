@@ -16,6 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
@@ -42,8 +43,6 @@ public class ModuleClassLoader extends ClassLoader {
 
   private static final ClassLoader BOOTSTRAP_CLASSLOADER = Object.class.getClassLoader();
 
-  private final ClassLoaderManager myManager;
-
   private final ModuleClassLoaderSupport mySupport;
 
   private volatile Set<ClassLoader> myDependenciesClassLoaders;
@@ -59,9 +58,8 @@ public class ModuleClassLoader extends ClassLoader {
     if (myDisposed) throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
   }
 
-  public ModuleClassLoader(ClassLoaderManager manager, ModuleClassLoaderSupport classLoaderSupport) {
+  public ModuleClassLoader(ModuleClassLoaderSupport classLoaderSupport) {
     super(getParentPluginClassLoader(classLoaderSupport.getModule()));
-    myManager = manager;
     mySupport = classLoaderSupport;
   }
 
@@ -144,7 +142,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      myManager.getClassLoadingChecker().classLoaded(name, mySupport.getModule().getModuleReference());
+      ClassLoaderManager.getInstance().getClassLoadingChecker().classLoaded(name, mySupport.getModule().getModuleReference());
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
     return null;
@@ -236,9 +234,9 @@ public class ModuleClassLoader extends ClassLoader {
       return myDependenciesClassLoaders;
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
-    for (SModule dep : mySupport.getCompileDependencies()) {
+    for (ReloadableModule dep : mySupport.getCompileDependencies()) {
       if (dep == mySupport.getModule()) continue;
-      ClassLoader classLoader = myManager.getClassLoader(dep);
+      ClassLoader classLoader = dep.getClassLoader();
       if (classLoader == null) LOG.warn("The class loader dependency " + dep + " is not loaded");
       classLoaders.add(classLoader);
     }

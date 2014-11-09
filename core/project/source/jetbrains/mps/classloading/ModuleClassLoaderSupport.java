@@ -15,23 +15,24 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Enumeration;
-import java.util.LinkedHashSet;
 
 public class ModuleClassLoaderSupport {
   private final SModule myModule;
   private final IClassPathItem myClassPathItem;
-  private final Collection<? extends SModule> myCompileDependencies;
+  private final Collection<? extends ReloadableModule> myCompileDependencies;
 
-  private ModuleClassLoaderSupport(SModule module, Collection<? extends SModule> compileDependencies) {
+  private ModuleClassLoaderSupport(@NotNull ReloadableModuleBase module, Collection<? extends ReloadableModule> compileDependencies) {
     assert canCreate(module);
     myModule = module;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
@@ -47,13 +48,15 @@ public class ModuleClassLoaderSupport {
    * TODO: must be just MPS_FACET
    * ext point possible here
    */
-  static boolean canCreate(SModule module) {
+  static boolean canCreate(ReloadableModule module1) {
+    ReloadableModuleBase module = (ReloadableModuleBase) module1;
+    assert module != null;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
-  public static ModuleClassLoaderSupport create(SModule module, Collection<? extends SModule> compileDependencies) {
-    return new ModuleClassLoaderSupport(module, compileDependencies);
+  public static ModuleClassLoaderSupport create(@NotNull ReloadableModule module, Collection<? extends ReloadableModule> compileDependencies) {
+    return new ModuleClassLoaderSupport((ReloadableModuleBase) module, compileDependencies);
   }
 
   public SModule getModule() {
@@ -80,7 +83,7 @@ public class ModuleClassLoaderSupport {
     return myClassPathItem.getResources(name);
   }
 
-  public Collection<? extends SModule> getCompileDependencies() {
+  public Collection<? extends ReloadableModule> getCompileDependencies() {
     return myCompileDependencies;
   }
 }

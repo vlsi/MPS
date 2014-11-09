@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -39,11 +40,9 @@ public class ClassLoadersHolder {
   private static final Logger LOG = LogManager.getLogger(ClassLoadersHolder.class);
 
   private final ModulesWatcher myModulesWatcher;
-  private ClassLoaderManager myManager;
   private MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
 
-  public void init(ClassLoaderManager manager) {
-    myManager = manager;
+  public void init() {
   }
 
   public void dispose() {
@@ -55,23 +54,18 @@ public class ClassLoadersHolder {
   }
 
   @Nullable
-  public ClassLoader getClassLoader(SModule module) {
+  public ClassLoader getClassLoader(ReloadableModule module) {
+    ReloadableModuleBase module1 = (ReloadableModuleBase) module;
     try {
-      return getModuleClassLoader(module);
+      return getModuleClassLoader(module1);
     } catch (ClassLoaderNotFoundException ignored) {
       // do nothing, there is no MPS ModuleClassLoader for this module
     }
 
     try {
-      return getNonReloadableClassLoader(module);
+      return getNonReloadableClassLoader(module1);
     } catch (ClassLoaderNotFoundException ignored) {
       // do nothing, there is no IDEA ClassLoader for this module
-    }
-
-    // TODO: transfer this check
-    if (!javaIsCompiledInMps(module)) {
-      // nobody manages class loading for this module
-      LOG.warn("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
     }
 
     return null;
@@ -92,13 +86,8 @@ public class ClassLoadersHolder {
   }
 
   @Nullable
-  private ClassLoader getModuleClassLoader(SModule module) throws ClassLoaderNotFoundException {
+  private ClassLoader getModuleClassLoader(ReloadableModuleBase module) throws ClassLoaderNotFoundException {
     return myMPSClassLoadersRegistry.getModuleClassLoader(module);
-  }
-
-  private boolean javaIsCompiledInMps(SModule module) {
-    JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
-    return moduleFacet == null || moduleFacet.isCompileInMps();
   }
 
   /**
@@ -106,15 +95,21 @@ public class ClassLoadersHolder {
    * {@link ClassLoadingProgress} for the description of states and a typical lifecycle of module in a repository.
    */
   @NotNull
-  public ClassLoadingProgress getClassLoadingProgress(SModule module) {
-    return myMPSClassLoadersRegistry.getClassLoadingProgress(module);
+  public ClassLoadingProgress getClassLoadingProgress(ReloadableModule module) {
+    SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+    return getClassLoadingProgress(mRef);
+  }
+
+  @NotNull
+  public ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
+    return myMPSClassLoadersRegistry.getClassLoadingProgress(mRef);
   }
 
   /**
    * @param toUnload for these modules ModuleClassLoaders were disposed
    * @return modules which changed their ClassLoadingProgress from LAZY_LOADED or LOADED to UNLOADED.
    */
-  public Set<SModule> doUnloadModules(Set<SModule> toUnload) {
+  public Collection<? extends SModuleReference> doUnloadModules(Set<? extends SModuleReference> toUnload) {
     return myMPSClassLoadersRegistry.doUnloadModules(toUnload);
   }
 
@@ -124,7 +119,7 @@ public class ClassLoadersHolder {
    *                   No actual loading is performed for these modules.
    * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED.
    */
-  public Set<SModule> onLazyLoaded(Set<SModule> toLoadLazy) {
+  public Collection<? extends ReloadableModule> onLazyLoaded(Set<? extends ReloadableModule> toLoadLazy) {
     return myMPSClassLoadersRegistry.onLazyLoaded(toLoadLazy);
   }
 
@@ -132,7 +127,7 @@ public class ClassLoadersHolder {
    * @param toLoad for these modules ModuleClassLoaders were actually created
    * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED or LOADED.
    */
-  public Set<SModule> doLoadModules(Set<SModule> toLoad, ProgressMonitor monitor) {
+  public Collection<? extends ReloadableModule> doLoadModules(Set<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
     return myMPSClassLoadersRegistry.doLoadModules(toLoad, monitor);
   }
 
@@ -142,58 +137,61 @@ public class ClassLoadersHolder {
    * @see ClassLoaderManager#myMPSLoadableCondition
    */
   class MPSClassLoadersRegistry {
-    private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
-    private final Map<SModule, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModule, ClassLoadingProgress>();
+    private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
+    private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
 
     @Nullable
-    private ClassLoader getModuleClassLoader(SModule module) throws ClassLoaderNotFoundException {
-      if (!myClassLoaders.containsKey(module)) throw new ClassLoaderNotFoundException();
-      return myClassLoaders.get(module);
+    private synchronized ClassLoader getModuleClassLoader(ReloadableModuleBase module) throws ClassLoaderNotFoundException {
+      SModuleReference mRef = module.getModuleReference();
+      if (!myClassLoaders.containsKey(mRef)) throw new ClassLoaderNotFoundException();
+      return myClassLoaders.get(mRef);
     }
 
     @NotNull
-    public ClassLoadingProgress getClassLoadingProgress(SModule module) {
-      if (!myMPSLoadableModules.containsKey(module)) return ClassLoadingProgress.UNLOADED;
-      return myMPSLoadableModules.get(module);
+    public synchronized ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
+      if (!myMPSLoadableModules.containsKey(mRef)) return ClassLoadingProgress.UNLOADED;
+      return myMPSLoadableModules.get(mRef);
     }
 
-    public Set<SModule> doUnloadModules(Set<SModule> toUnload) {
-      Set<SModule> unloaded = new LinkedHashSet<SModule>();
-      for (SModule module : toUnload) {
-        if (!myMPSLoadableModules.containsKey(module)) {
-          LOG.error("Illegal state: module was not loaded " + module);
+    public synchronized Collection<? extends SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
+      Collection<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
+      for (SModuleReference mRef : toUnload) {
+        if (!myMPSLoadableModules.containsKey(mRef)) {
+          LOG.error("Illegal state: module was not loaded " + mRef);
         } else {
-          myMPSLoadableModules.remove(module);
-          unloaded.add(module);
+          myMPSLoadableModules.remove(mRef);
+          unloaded.add(mRef);
         }
       }
       removeClassLoaders(unloaded);
       return unloaded;
     }
 
-    public Set<SModule> onLazyLoaded(Set<SModule> toLoadLazy) {
-      Set<SModule> lazyLoaded = new LinkedHashSet<SModule>();
-      for (SModule module : toLoadLazy) {
-        ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(module);
+    public synchronized Collection<? extends ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
+      Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
+      for (ReloadableModule module : toLoadLazy) {
+        SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
+        ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);
         if (classLoadingProgress != null) {
           LOG.error("Illegal state: module is already loaded " + module, new Throwable());
         } else {
-          myMPSLoadableModules.put(module, ClassLoadingProgress.LAZY_LOADED);
+          myMPSLoadableModules.put(mRef, ClassLoadingProgress.LAZY_LOADED);
           lazyLoaded.add(module);
         }
       }
       return lazyLoaded;
     }
 
-    public Set<SModule> doLoadModules(Set<SModule> toLoad, ProgressMonitor monitor) {
-      Set<SModule> loadedModules = new LinkedHashSet<SModule>();
+    public synchronized Collection<? extends ReloadableModule> doLoadModules(Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
+      Collection<ReloadableModule> loadedModules = new LinkedHashSet<ReloadableModule>();
       try {
         monitor.start("Loading modules...", toLoad.size());
-        for (SModule module : toLoad) {
+        for (ReloadableModule module : toLoad) {
           ModuleClassLoader classLoader = createModuleClassLoader(module);
-          putClassLoader(module, classLoader);
-          if (getClassLoadingProgress(module) == ClassLoadingProgress.UNLOADED) loadedModules.add(module);
-          onLoaded(module);
+          SModuleReference moduleReference = ((ReloadableModuleBase) module).getModuleReference();
+          putClassLoader(moduleReference, classLoader);
+          if (getClassLoadingProgress(moduleReference) == ClassLoadingProgress.UNLOADED) loadedModules.add(module);
+          onLoaded(moduleReference);
           monitor.advance(1);
         }
       } finally {
@@ -202,15 +200,14 @@ public class ClassLoadersHolder {
       return loadedModules;
     }
 
-    private ModuleClassLoader createModuleClassLoader(SModule module) {
+    private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
       LOG.debug("Creating ModuleClassLoader for " + module);
-
-      Collection<? extends SModule> deps = myModulesWatcher.getLoadableDependencies(Arrays.asList(module));
+      Collection<? extends ReloadableModuleBase> deps = myModulesWatcher.getResolvedDependencies(Arrays.asList(module));
       ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
-      return new ModuleClassLoader(myManager, support);
+      return new ModuleClassLoader(support);
     }
 
-    private void onLoaded(SModule module) {
+    private void onLoaded(SModuleReference module) {
       assert myClassLoaders.containsKey(module);
       ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(module);
       if (classLoadingProgress == ClassLoadingProgress.LOADED) {
@@ -219,15 +216,15 @@ public class ClassLoadersHolder {
       myMPSLoadableModules.put(module, ClassLoadingProgress.LOADED);
     }
 
-    private void putClassLoader(SModule module, ModuleClassLoader classLoader) {
+    private void putClassLoader(SModuleReference module, ModuleClassLoader classLoader) {
       myClassLoaders.put(module, classLoader);
     }
 
-    private void removeClassLoaders(Iterable<SModule> unloadingModules) {
-      for (SModule module : unloadingModules) {
-        if (myClassLoaders.containsKey(module)) {
-          myClassLoaders.get(module).dispose();
-          myClassLoaders.remove(module);
+    private void removeClassLoaders(Iterable<? extends SModuleReference> unloadingModules) {
+      for (SModuleReference mRef : unloadingModules) {
+        if (myClassLoaders.containsKey(mRef)) {
+          myClassLoaders.get(mRef).dispose();
+          myClassLoaders.remove(mRef);
         }
       }
     }
@@ -242,7 +239,7 @@ public class ClassLoadersHolder {
    * broadcast notification to the clients of {@link jetbrains.mps.classloading.MPSClassesListener}. The state of module is changed to
    * LAZY_LOADED at that moment.
    * When the classes of module are requested the actual ClassLoader construction happens and then the module is marked as LOADED.
-   * When user calls {@link jetbrains.mps.classloading.ClassLoaderManager#unloadModules(Iterable)}, state comes to UNLOADED (no matter what).
+   * When user calls {@link ClassLoaderManager#unloadModules(Iterable)}, state comes to UNLOADED (no matter what).
    * So the state diagram looks like this:
    * UNLOADED -> LAZY_LOADED
    * UNLOADED -> LOADED

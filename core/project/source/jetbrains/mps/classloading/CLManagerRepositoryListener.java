@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
@@ -29,26 +30,28 @@ import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
-class CLManagerRepositoryListener extends SRepositoryListenerBase implements SRepositoryBatchListener {
-  @NotNull
-  private final SRepository myRepository;
+class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myManager;
   private final ModulesWatcher myModulesWatcher;
   private final SRepositoryBatchEventsDispatcher myDispatcher;
+
   // order for modules loading in order to reproduce any error
-  private static final Comparator<SModule> MODULE_COMPARATOR = new Comparator<SModule>() {
+  private static final Comparator<Object> MODULE_COMPARATOR = new Comparator<Object>() {
     @Override
-    public int compare(SModule m1, SModule m2) {
-      return m1.getModuleName().compareTo(m2.getModuleName());
+    public int compare(Object m1, Object m2) {
+      return m1.toString().compareTo(m2.toString());
     }
   };
 
   public CLManagerRepositoryListener(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
-    myRepository = repository;
     myModulesWatcher = modulesWatcher;
     myDispatcher = new SRepositoryBatchEventsDispatcher(repository);
   }
@@ -56,36 +59,31 @@ class CLManagerRepositoryListener extends SRepositoryListenerBase implements SRe
   public void init(ClassLoaderManager classLoaderManager) {
     myManager = classLoaderManager;
     myDispatcher.init();
-    myRepository.addRepositoryListener(this);
     myDispatcher.addRepositoryBatchEventsListener(this);
   }
 
   public void dispose() {
     myDispatcher.removeRepositoryBatchEventsListener(this);
-    myRepository.removeRepositoryListener(this);
     myDispatcher.dispose();
   }
 
-  @Override
-  public void moduleAdded(@NotNull SModule module) {
-    // instant notification here, we want to watch modules right after they added to the repository
-    myModulesWatcher.onModulesAdded(Collections.singleton(module));
+  /**
+   * flushes all the events to get the actual state in the repository
+   */
+  void refresh() {
+    myDispatcher.flush();
   }
 
-  public void modulesRemoved(List<SModule> modules) {
-    // delayed notification here, we want to watch modules dependencies until we actually unload them (then we don't need them)
-    myModulesWatcher.onModulesRemoved(modules);
-  }
-
-  private void loadModules(List<SModule> modules) {
+  private void loadModules(List<ReloadableModule> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
+    myModulesWatcher.onModulesAdded(modules);
     myManager.preLoadModules(modules);
   }
 
-  private void unloadModules(List<SModule> modules) {
+  private void unloadModules(List<SModuleReference> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
     myManager.unloadModules(modules);
-    modulesRemoved(modules);
+    myModulesWatcher.onModuleRemoved(modules);
   }
 
   @Override
@@ -96,39 +94,44 @@ class CLManagerRepositoryListener extends SRepositoryListenerBase implements SRe
       event.accept(visitor);
     }
 
-    List<SModule> modulesToUnload = visitor.getModulesToUnload();
-    List<SModule> modulesToLoad = visitor.getModulesToLoad();
+    List<SModuleReference> modulesToUnload = visitor.getModulesToUnload();
+    List<ReloadableModule> modulesToLoad = visitor.getModulesToLoad();
     if (modulesToUnload.size() > 0) unloadModules(modulesToUnload);
     if (modulesToLoad.size() > 0) loadModules(modulesToLoad);
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
-    private final List<SModule> myModulesToLoad = new ArrayList<SModule>();
-    private final List<SModule> myModulesToUnload = new ArrayList<SModule>();
+    private final List<ReloadableModule> myModulesToLoad = new ArrayList<ReloadableModule>();
+
+    private final List<SModuleReference> myModulesToUnload = new ArrayList<SModuleReference>();
 
     @Override
     public void visit(SModuleAddedEvent event) {
       SModule module = event.getModule();
-      myModulesToLoad.add(module);
-    }
-
-    @Override
-    public void visit(SModuleRemovedEvent event) {
-      // NOP
+      if (module instanceof ReloadableModule) myModulesToLoad.add((ReloadableModule) module);
     }
 
     @Override
     public void visit(SModuleRemovingEvent event) {
-      SModule module = event.getModule();
-      myModulesToLoad.remove(module);
-      myModulesToUnload.add(module);
+//      NOP
     }
 
-    public List<SModule> getModulesToUnload() {
+    @Override
+    public void visit(SModuleRemovedEvent event) {
+      SModuleReference mRef = event.getModuleReference();
+      for (Iterator<ReloadableModule> iterator = myModulesToLoad.iterator(); iterator.hasNext();) {
+        ReloadableModule module = iterator.next();
+        SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
+        if (mRef.equals(ref)) iterator.remove();
+      }
+      myModulesToUnload.add(mRef);
+    }
+
+    public List<SModuleReference> getModulesToUnload() {
       return myModulesToUnload;
     }
 
-    public List<SModule> getModulesToLoad() {
+    public List<ReloadableModule> getModulesToLoad() {
       return myModulesToLoad;
     }
   }
