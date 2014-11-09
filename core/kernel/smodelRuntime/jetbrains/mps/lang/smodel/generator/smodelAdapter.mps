@@ -4062,7 +4062,7 @@
         <node concept="vg0i.1146644602865" id="6599163591527280393" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
       <node concept="vg0i.1081236700938" id="9116031298984644337" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="getRoots" />
+        <property role="asn4.1169194658468.1169194664001" value="roots" />
         <node concept="vg0i.1107535904670" id="9116031298984644338" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
           <node concept="vg0i.1107535904670" id="9116031298984644339" role="vg0i.1107535904670.1109201940907" info="in">
@@ -4325,7 +4325,7 @@
         <node concept="vg0i.1068580123136" id="6599163591527280404" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242878" id="9116031298984900964" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.7812454656619025412" id="9116031298984901128" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984644337" resolveInfo="getRoots" />
+              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984644337" resolveInfo="roots" />
               <node concept="vg0i.1068498886296" id="9116031298984901323" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280400" resolveInfo="model" />
               </node>
@@ -4353,7 +4353,7 @@
         </node>
       </node>
       <node concept="vg0i.1081236700938" id="9116031298984721859" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="getRootsIncludingImported" />
+        <property role="asn4.1169194658468.1169194664001" value="rootsIncludingImported" />
         <node concept="vg0i.1068498886292" id="9116031298984721860" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="model" />
           <node concept="vg0i.1107535904670" id="9116031298984721861" role="vg0i.4972933694980447171.5680397130376446158" info="in">
@@ -4473,7 +4473,7 @@
         <node concept="vg0i.1068580123136" id="6599163591527280518" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242878" id="3902406419449999051" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.7812454656619025412" id="9116031298984768209" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984721859" resolveInfo="getRootsIncludingImported" />
+              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984721859" resolveInfo="rootsIncludingImported" />
               <node concept="vg0i.1068498886296" id="9116031298984768400" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280512" resolveInfo="model" />
               </node>
@@ -4537,7 +4537,7 @@
         <node concept="vg0i.1068580123136" id="9116031298984905442" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242878" id="9116031298984943429" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.7812454656619025412" id="9116031298984944065" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="7146110783104378977" resolveInfo="getNodesIncludingImported" />
+              <reference role="vg0i.1204053956946.1068499141037" target="7146110783104378977" resolveInfo="nodesIncludingImported" />
               <node concept="vg0i.1068498886296" id="9116031298984944392" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="9116031298984905435" resolveInfo="model" />
               </node>
@@ -4565,7 +4565,7 @@
         </node>
       </node>
       <node concept="vg0i.1081236700938" id="7146110783104378977" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="getNodesIncludingImported" />
+        <property role="asn4.1169194658468.1169194664001" value="nodesIncludingImported" />
         <node concept="vg0i.1068498886292" id="7146110783104378978" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="model" />
           <node concept="vg0i.1107535904670" id="7146110783104378979" role="vg0i.4972933694980447171.5680397130376446158" info="in">
@@ -4978,7 +4978,7 @@
         <node concept="vg0i.1068580123136" id="9116031298984946679" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242878" id="9116031298984946716" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.7812454656619025412" id="9116031298984965684" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280778" resolveInfo="getNodes" />
+              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280778" resolveInfo="nodes" />
               <node concept="vg0i.1068498886296" id="9116031298984965920" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="9116031298984946676" resolveInfo="model" />
               </node>
@@ -5013,7 +5013,7 @@
         </node>
       </node>
       <node concept="vg0i.1081236700938" id="6599163591527280778" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="getNodes" />
+        <property role="asn4.1169194658468.1169194664001" value="nodes" />
         <node concept="vg0i.1107535904670" id="6599163591527280780" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
           <node concept="vg0i.1107535904670" id="6599163591527280781" role="vg0i.1107535904670.1109201940907" info="in">
@@ -5946,7 +5946,7 @@
         <node concept="vg0i.1068580123136" id="6599163591527286354" role="vg0i.1068580123132.1068580123135" info="sn" />
       </node>
       <node concept="vg0i.1081236700938" id="6599163591527286355" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="findLinkDelaration" />
+        <property role="asn4.1169194658468.1169194664001" value="findLinkDeclaration" />
         <node concept="vg0i.1146644602865" id="6599163591527286356" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1107535904670" id="6599163591527286357" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />

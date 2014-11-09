@@ -34,7 +34,7 @@ import java.util.UUID;
 public class SModelOperations {
   public SModelOperations() {
   }
-  public static List<SNode> getRoots(SModel model, final SAbstractConcept concept) {
+  public static List<SNode> roots(SModel model, final SAbstractConcept concept) {
     if (model == null) {
       return new ArrayList<SNode>();
     }
@@ -61,9 +61,9 @@ public class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getRoots(SModel model, final String conceptFqName) {
-    return getRoots(model, SNodeOperations.stringToConcept(conceptFqName));
+    return roots(model, SNodeOperations.stringToConcept(conceptFqName));
   }
-  public static List<SNode> getRootsIncludingImported(SModel model, SAbstractConcept concept) {
+  public static List<SNode> rootsIncludingImported(SModel model, SAbstractConcept concept) {
     if (model == null) {
       return Collections.emptyList();
     }
@@ -80,14 +80,14 @@ public class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getRootsIncludingImported(SModel model, String conceptFqName) {
-    return getRootsIncludingImported(model, SNodeOperations.stringToConcept(conceptFqName));
+    return rootsIncludingImported(model, SNodeOperations.stringToConcept(conceptFqName));
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getNodesIncludingImported(SModel model, String conceptFqName) {
-    return getNodesIncludingImported(model, SNodeOperations.stringToConcept(conceptFqName));
+    return nodesIncludingImported(model, SNodeOperations.stringToConcept(conceptFqName));
   }
-  public static List<SNode> getNodesIncludingImported(SModel model, SAbstractConcept concept) {
+  public static List<SNode> nodesIncludingImported(SModel model, SAbstractConcept concept) {
     if (model == null) {
       return Collections.emptyList();
     }
@@ -127,9 +127,9 @@ public class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getNodes(SModel model, final String conceptFqName) {
-    return getNodes(model, SNodeOperations.stringToConcept(conceptFqName));
+    return nodes(model, SNodeOperations.stringToConcept(conceptFqName));
   }
-  public static List<SNode> getNodes(SModel model, final SAbstractConcept concept) {
+  public static List<SNode> nodes(SModel model, final SAbstractConcept concept) {
     if (model == null) {
       return new ArrayList<SNode>();
     }

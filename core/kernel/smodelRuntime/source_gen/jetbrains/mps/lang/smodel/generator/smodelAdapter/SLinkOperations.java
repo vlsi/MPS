@@ -23,7 +23,7 @@ public class SLinkOperations {
   }
   @Deprecated
   @ToRemove(version = 3.2)
-  public static SNode findLinkDelaration(String conceptFqName, String linkRole) {
+  public static SNode findLinkDeclaration(String conceptFqName, String linkRole) {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
@@ -253,5 +253,13 @@ public class SLinkOperations {
       return null;
     }
     return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+  }
+
+  public static SNode setNewChild(SNode ctor, SContainmentLink body, String s) {
+    return setNewChild(ctor, body.getRole(), s);
+  }
+
+  public static SNode addNewChild(SNode child, SContainmentLink ilnk, String conceptFqName) {
+    return addNewChild(child, ilnk.getRole(), conceptFqName);
   }
 }
