@@ -19,6 +19,7 @@ import jetbrains.mps.fs.MPSDirectoryWatcher;
 import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -37,7 +38,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * evgeny, 11/3/12
  */
-class SLibrary implements FileSystemListener, MPSModuleOwner {
+class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
   private final IFile file;
@@ -157,5 +158,10 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
     result = 31 * result + (parent != null ? parent.hashCode() : 0);
     result = 31 * result + (isHidden ? 1 : 0);
     return result;
+  }
+
+  @Override
+  public int compareTo(@NotNull SLibrary another) {
+    return this.getFile().getName().compareTo(another.getFile().getName());
   }
 }

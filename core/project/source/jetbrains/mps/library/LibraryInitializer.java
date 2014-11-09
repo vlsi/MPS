@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LibraryInitializer implements CoreComponent {
@@ -41,8 +42,8 @@ public class LibraryInitializer implements CoreComponent {
     return INSTANCE;
   }
 
-  private Set<SLibrary> myLibraries = new HashSet<SLibrary>();
-  private Map<String, ClassLoader> myParentLoaders = new HashMap<String, ClassLoader>();
+  private Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
+  private Map<String, ClassLoader> myParentLoaders = new ConcurrentHashMap<String, ClassLoader>();
 
   @Override
   public void init() {
@@ -124,11 +125,15 @@ public class LibraryInitializer implements CoreComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (SLibrary unloadLib : toUnload) {
+        ArrayList<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
+        ArrayList<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
+        Collections.sort(toUnloadList);
+        Collections.sort(toLoadList);
+        for (SLibrary unloadLib : toUnloadList) {
           unloadLib.dispose();
         }
 
-        for (SLibrary loadLib : toLoad) {
+        for (SLibrary loadLib : toLoadList) {
           loadLib.attach(refreshFiles);
         }
       }
