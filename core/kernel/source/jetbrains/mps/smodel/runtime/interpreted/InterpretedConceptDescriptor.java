@@ -131,7 +131,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             superConcept = SNodeUtil.conceptName_BaseConcept;
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
-            superConcept = NameUtil.nodeFQName(superConceptNode);
+            superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
             superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
           }
         }
@@ -145,12 +145,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           parentsIdsSet.add(superConceptId);
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-            parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
           for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-            parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         }
@@ -314,7 +314,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myLinks = Collections.unmodifiableMap(linksByIds);
       myLinksByName = Collections.unmodifiableMap(linksByName);
 
-      myIsInitialized = true;
       directProperties = null;
       directReferences = null;
 
@@ -325,6 +324,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       directPropertiesByName = null;
       directReferencesByName = null;
       directLinksByName = null;
+
+      myIsInitialized = true;
     }
   }
 
