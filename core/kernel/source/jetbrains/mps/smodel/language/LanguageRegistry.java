@@ -112,7 +112,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   @Nullable
   private static LanguageRuntime createRuntime(Language l) {
     LanguageRuntime lr = getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l);
-    if (lr!=null) return lr;
+    if (lr != null) return lr;
     return new InterpretedLanguageRuntime(l);
   }
 
@@ -201,7 +201,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
           LanguageRuntime runtime = createRuntime((Language) module);
           if (runtime != null) {
             myLanguages.put(namespace, runtime);
-            myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)),runtime);
+            myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)), runtime);
             loadedRuntimes.add(runtime);
           }
         } else {
