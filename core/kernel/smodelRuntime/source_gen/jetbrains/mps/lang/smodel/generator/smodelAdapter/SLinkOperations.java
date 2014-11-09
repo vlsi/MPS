@@ -256,10 +256,11 @@ public class SLinkOperations {
   }
 
   public static SNode setNewChild(SNode ctor, SContainmentLink body, String s) {
-    return setNewChild(ctor, body.getRole(), s);
+
+  return null;
   }
 
-  public static SNode addNewChild(SNode child, SContainmentLink ilnk, String conceptFqName) {
-    return addNewChild(child, ilnk.getRole(), conceptFqName);
+  public static SNode addNewChild(SNode history, SContainmentLink item, String s) {
+    return null;
   }
 }
