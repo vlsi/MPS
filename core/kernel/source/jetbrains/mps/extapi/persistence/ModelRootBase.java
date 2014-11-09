@@ -145,7 +145,7 @@ public abstract class ModelRootBase implements ModelRoot {
       } else if (loaded.contains(model.getModelId())) {
         LOG.error("loadModels() returned model `" + model.getModelName() + "' twice");
       } else {
-        LOG.warn("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
+        LOG.debug("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
       }
       loaded.add(model.getModelId());
     }
