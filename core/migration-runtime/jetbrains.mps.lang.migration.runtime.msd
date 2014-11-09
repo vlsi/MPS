@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.migration.runtime" uuid="528ff3b9-5fc4-40dd-931f-c6ce3650640e" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+<solution name="jetbrains.mps.lang.migration.runtime" uuid="528ff3b9-5fc4-40dd-931f-c6ce3650640e" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
+  <facets>
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
