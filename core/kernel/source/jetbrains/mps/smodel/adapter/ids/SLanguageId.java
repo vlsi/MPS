@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.UUID;
 
-public final class SLanguageId implements org.jetbrains.mps.openapi.language.SLanguageId {
+public final class SLanguageId {
+  @NotNull
   private final UUID myId;
 
-  public SLanguageId(UUID id) {
+  public SLanguageId(@NotNull UUID id) {
     myId = id;
   }
 
+  @NotNull
   public UUID getId() {
     return myId;
   }
@@ -35,13 +39,19 @@ public final class SLanguageId implements org.jetbrains.mps.openapi.language.SLa
 
     SLanguageId that = (SLanguageId) o;
 
-    if (myId != null ? !myId.equals(that.myId) : that.myId != null) return false;
-
-    return true;
+    return myId.equals(that.myId);
   }
 
   @Override
   public int hashCode() {
-    return myId != null ? myId.hashCode() : 0;
+    return myId.hashCode();
+  }
+
+  public String serialize(){
+    return myId.toString();
+  }
+
+  public static SLanguageId deserialize(String s){
+    return new SLanguageId(UUID.fromString(s));
   }
 }

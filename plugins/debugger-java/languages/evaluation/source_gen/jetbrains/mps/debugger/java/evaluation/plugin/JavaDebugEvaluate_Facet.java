@@ -19,7 +19,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.GResource;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -67,14 +69,19 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
             case 0:
 
               for (GResource res : Sequence.fromIterable(input)) {
-                SModel model = res.status().getOutputModel();
+                final SModel model = res.status().getOutputModel();
                 // The code below was copied from TransformingGenerationHandler 
                 if (model != null) {
-                  final SNode evaluator = SModelOperations.getRootByName(model, Properties.EVALUATOR_NAME);
-                  if (evaluator != null) {
+                  final Wrappers._T<SNode> evaluator = new Wrappers._T<SNode>();
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      evaluator.value = SModelOperations.getRootByName(model, Properties.EVALUATOR_NAME);
+                    }
+                  });
+                  if (evaluator.value != null) {
                     try {
-                      assert SNodeOperations.getModel(evaluator) != null;
-                      TransformatorBuilder.getInstance().build(evaluator, true).transformEvaluator();
+                      assert SNodeOperations.getModel(evaluator.value) != null;
+                      TransformatorBuilder.getInstance().build(evaluator.value, true).transformEvaluator();
                     } catch (Throwable ex) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ex)));
                     }

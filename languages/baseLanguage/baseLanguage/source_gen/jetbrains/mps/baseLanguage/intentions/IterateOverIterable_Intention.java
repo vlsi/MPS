@@ -185,6 +185,6 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

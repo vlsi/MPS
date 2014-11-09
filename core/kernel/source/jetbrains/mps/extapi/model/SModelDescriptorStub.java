@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,12 +29,14 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -187,6 +190,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
+  @Deprecated
   public final List<SModuleReference> importedLanguages() {
     return getSModelInternal().importedLanguages();
   }
@@ -199,6 +203,36 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public final void addLanguage(SModuleReference ref) {
     getSModelInternal().addLanguage(ref);
+  }
+
+  @Override
+  public java.util.Collection<SLanguage> importedLanguageIds() {
+    return getSModelInternal().usedLanguages();
+  }
+
+  @Override
+  public Map<SLanguage, Integer> importedLanguageIdsWithVersions() {
+    return getSModelInternal().usedLanguagesWithVersions();
+  }
+
+  @Override
+  public Map<SLanguage, Integer> implicitLanguageIdsWithVersions() {
+    return getSModelInternal().implicitlyUsedLanguagesWithVersions();
+  }
+
+  @Override
+  public void deleteLanguageId(@NotNull SLanguage ref) {
+    getSModelInternal().deleteLanguage(ref);
+  }
+
+  @Override
+  public void addLanguage(Language language) {
+    getSModelInternal().addLanguage(language);
+  }
+
+  @Override
+  public void addLanguageId(SLanguage ref, int version) {
+    getSModelInternal().addLanguage(ref, version);
   }
 
   @Override
@@ -239,6 +273,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public final void calculateImplicitImports() {
     getSModelInternal().calculateImplicitImports();
+  }
+
+  @Override
+  public void calculateImplicitLanguages() {
+    getSModelInternal().validateImplicitlyUsedLanguages();
   }
 
   @Override

@@ -23,8 +23,8 @@
       <node id="1842653058274902924" at="29,27,30,17" concept="6" />
       <node id="9116681015574412896" at="32,59,33,63" concept="5" />
       <node id="9116681015574412896" at="33,63,34,128" concept="5" />
-      <node id="9116681015574412896" at="35,5,36,219" concept="2" />
-      <node id="9116681015574412896" at="36,219,37,144" concept="5" />
+      <node id="9116681015574412896" at="35,5,36,256" concept="2" />
+      <node id="9116681015574412896" at="36,256,37,144" concept="5" />
       <node id="9116681015574412896" at="37,144,38,35" concept="2" />
       <node id="9116681015574412896" at="39,5,40,14" concept="6" />
       <node id="1842653058274902924" at="15,0,17,0" concept="1" trace="WatchableListIsAListOrWatchables_SubtypingRule#()V" />
@@ -77,13 +77,13 @@
       <node id="1842653058275008955" at="33,63,34,30" concept="5" />
       <node id="1842653058275008955" at="34,30,35,30" concept="5" />
       <node id="1842653058275008955" at="35,30,36,138" concept="2" />
-      <node id="1842653058275008955" at="36,138,37,237" concept="2" />
-      <node id="1842653058275008955" at="37,237,38,136" concept="2" />
+      <node id="1842653058275008955" at="36,138,37,274" concept="2" />
+      <node id="1842653058275008955" at="37,274,38,136" concept="2" />
       <node id="1842653058275008955" at="38,136,39,53" concept="2" />
       <node id="1842653058275008955" at="39,53,40,24" concept="6" />
       <node id="1842653058275008950" at="15,0,17,0" concept="1" trace="WatchableListIsAList_SubtypingRule#()V" />
-      <node id="1842653058275008955" at="37,237,39,53" concept="0" />
-      <node id="1842653058275008955" at="37,237,39,53" concept="0" />
+      <node id="1842653058275008955" at="37,274,39,53" concept="0" />
+      <node id="1842653058275008955" at="37,274,39,53" concept="0" />
       <node id="1842653058275008950" at="17,0,20,0" concept="4" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1842653058275008950" at="20,0,23,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1842653058275008950" at="29,0,32,0" concept="4" trace="isWeak#()Z" />
@@ -100,7 +100,7 @@
       <scope id="1842653058275008950" at="24,5,26,45">
         <var name="b" id="1842653058275008950" />
       </scope>
-      <scope id="1842653058275008955" at="37,237,39,53" />
+      <scope id="1842653058275008955" at="37,274,39,53" />
       <scope id="1842653058275008950" at="17,0,20,0">
         <var name="status" id="1842653058275008950" />
         <var name="typeCheckingContext" id="1842653058275008950" />

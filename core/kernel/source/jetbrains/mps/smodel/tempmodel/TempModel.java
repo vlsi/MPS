@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -33,8 +35,8 @@ class TempModel extends EditableSModelBase {
   private boolean myReadOnly;
   private boolean myTrackUndo;
 
-  protected TempModel(boolean readOnly, boolean trackUndo) {
-    super(createModelRef("TempModel_" + System.nanoTime()), new NullDataSource());
+  protected TempModel(boolean readOnly, boolean trackUndo, SModuleReference moduleReference) {
+    super(createModelRef("TempModel_" + System.nanoTime(), moduleReference), new NullDataSource());
     myReadOnly = readOnly;
     myTrackUndo = trackUndo;
   }
@@ -107,9 +109,9 @@ class TempModel extends EditableSModelBase {
     throw new UnsupportedOperationException();
   }
 
-  private static SModelReference createModelRef(String modelName) {
+  private static SModelReference createModelRef(String modelName, SModuleReference moduleReference) {
     // todo: make TempModel name customizable? like prefix for temporary file
     SModelId id = SModelId.generate();
-    return PersistenceFacade.getInstance().createModelReference(null, id, modelName);
+    return PersistenceFacade.getInstance().createModelReference(moduleReference, id, modelName);
   }
 }

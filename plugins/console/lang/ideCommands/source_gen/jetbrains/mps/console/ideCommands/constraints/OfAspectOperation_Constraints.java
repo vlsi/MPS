@@ -40,7 +40,7 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new NamedElementsScope(SNodeOperations.ofConcept(SNodeOperations.getChildren(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~LanguageAspect")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
+            return new NamedElementsScope(SNodeOperations.ofConcept(SNodeOperations.getChildren(SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~LanguageAspect")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
           }
         };
       }

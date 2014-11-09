@@ -13,9 +13,9 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -94,6 +94,13 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_980633948647704680(final IfMacroContext _context) {
     return false;
   }
+  public static boolean ifMacro_Condition_4685929028540551515(final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, new String[]{})).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "defaultChild", true) != null);
+      }
+    });
+  }
   public static boolean ifMacro_Condition_2264311582634172379(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "globalText", true) != null);
   }
@@ -128,6 +135,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_4720003541464879059(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "rule", false), "params", true)).isEmpty();
   }
+  public static boolean ifMacro_Condition_7357835043236426332(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "defaultChild", true), "handler", true) != null);
+  }
+  public static boolean ifMacro_Condition_6607027903926101426(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "defaultChild", true) != null);
+  }
   public static boolean ifMacro_Condition_2264311582634171982(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).isNotEmpty();
   }
@@ -148,6 +161,13 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_2264311582634172271(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "validator", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "validator", true), "body", true) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "validator", true), "body", true), "statement", true)).isNotEmpty();
+  }
+  public static boolean ifMacro_Condition_4685929028540831224(final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, new String[]{})).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "defaultChild", true) != null);
+      }
+    });
   }
   public static boolean ifMacro_Condition_2264311582634172803(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "result", true) != null);
@@ -306,6 +326,9 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_2264311582634171971(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "children", true);
+  }
+  public static Iterable<SNode> sourceNodesQuery_7357835043236542262(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "defaultChild", true), "handler", true), "body", true), "statement", true);
   }
   public static Iterable<SNode> sourceNodesQuery_4720003541484077956(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).where(new IWhereFilter<SNode>() {

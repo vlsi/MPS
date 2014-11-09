@@ -289,7 +289,7 @@
   <dependency className="jetbrains.mps.closures.test._Adapters" file="_Adapters.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._void_P1_E0" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._void_P1_E0" />
   </dependency>
   <dependency className="jetbrains.mps.closures.test.mps8150" file="mps8150.java">
     <classNode dependClassName="java.lang.Integer" />

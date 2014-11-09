@@ -18,7 +18,7 @@ public class check_FigureParameterAttributeField_NonTypesystemRule extends Abstr
   public check_FigureParameterAttributeField_NonTypesystemRule() {
   }
   public void applyRule(final SNode fieldAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), fieldAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property")))) {
+    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), fieldAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fieldAttribute, "Unsupported attributed field type, jetbrains.jetpad.model.property.Property expected.", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "6568183682644076223", null, errorTarget);

@@ -12,6 +12,7 @@
     <classNode dependClassName="com.intellij.execution.runners.RestartAction" />
     <classNode dependClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode dependClassName="com.intellij.execution.ui.ExecutionConsoleEx" />
+    <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />
     <classNode dependClassName="com.intellij.execution.ui.RunnerLayoutUi" />
     <classNode dependClassName="com.intellij.execution.ui.actions.CloseAction" />
     <classNode dependClassName="com.intellij.execution.ui.layout.PlaceInGrid" />
@@ -38,12 +39,12 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.execution.ui.RunContentDescriptor" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" file="DebuggerToolPanel.java">
     <classNode dependClassName="com.intellij.execution.ui.RunnerLayoutUi" />
     <classNode dependClassName="com.intellij.execution.ui.layout.PlaceInGrid" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -61,14 +62,18 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.AbstractListModel" />
+    <classNode dependClassName="javax.swing.ComboBoxModel" />
     <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.ListSelectionModel" />
     <classNode dependClassName="javax.swing.event.ListSelectionEvent" />
     <classNode dependClassName="javax.swing.event.ListSelectionListener" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
+    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
@@ -80,11 +85,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
-    <classNode extendsClassName="javax.swing.AbstractListModel" />
-    <classNode extendsClassName="javax.swing.ComboBoxModel" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
   </dependency>
 </dependenciesRoot>
 

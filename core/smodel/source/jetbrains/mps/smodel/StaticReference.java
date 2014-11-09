@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,6 +35,25 @@ public final class StaticReference extends SReferenceBase {
   /**
    * create 'young' reference
    */
+  public StaticReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
+    super(role, sourceNode, null, immatureTargetNode);
+  }
+
+  /**
+   * create 'mature' reference
+   */
+  public StaticReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId,
+      @Nullable String resolveInfo) {
+    // 'targetModelReference' can be null only if it is broken external reference
+    super(role, sourceNode, targetModelReference, null);
+    setResolveInfo(resolveInfo);
+    myTargetNodeId = nodeId;
+  }
+
+  /**
+   * create 'young' reference
+   */
+  @Deprecated
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     super(role, sourceNode, null, immatureTargetNode);
   }
@@ -41,6 +61,7 @@ public final class StaticReference extends SReferenceBase {
   /**
    * create 'mature' reference
    */
+  @Deprecated
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId,
       @Nullable String resolveInfo) {
     // 'targetModelReference' can be null only if it is broken external reference

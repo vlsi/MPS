@@ -12,16 +12,13 @@ public class DemoApplication_Configuration_Factory extends ConfigurationFactory 
   public DemoApplication_Configuration_Factory(Demo_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new DemoApplication_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "Demo Application";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

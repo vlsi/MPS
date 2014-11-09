@@ -71,5 +71,5 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SModelType", null, null, false);
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_fggx2c_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SModel");
+  private static SNodePointer SNODE_POINTER_fggx2c_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SModel");
 }

@@ -20,6 +20,8 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.BinaryModelPersistence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -52,7 +54,13 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
   }
 
   @Override
-  protected Map<String, String> calculateDigest(byte[] content) {
-    return BinaryModelPersistence.getDigestMap(content);
+  protected Map<String, String> calculateDigest(final byte[] content) {
+    //todo remove this read after 3.2. Needed to get concept fq name from id in 3.2
+    return ModelAccess.instance().runReadAction(new Computable<Map<String, String>>() {
+      @Override
+      public Map<String, String> compute() {
+        return BinaryModelPersistence.getDigestMap(content);
+      }
+    });
   }
 }

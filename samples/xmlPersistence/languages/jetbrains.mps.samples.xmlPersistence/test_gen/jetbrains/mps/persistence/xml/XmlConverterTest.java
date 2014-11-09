@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStreamReader;
@@ -48,7 +49,7 @@ public class XmlConverterTest extends CoreMpsTest {
       @Override
       public void run() {
         try {
-          SModelData model = pers.readModel(new SModelReference(null, SModelId.generate(), "xmlfile"), source);
+          SModelData model = pers.readModel(new SModelReference(new ModuleReference("mockModule"), SModelId.generate(), "xmlfile"), source);
           pers.writeModel(model, sbds);
         } catch (IOException e) {
           throw new RuntimeException(e);

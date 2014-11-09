@@ -245,9 +245,9 @@
       <node id="1645752949772912952" at="65,42,66,20" concept="9" />
       <node id="1645752949777350409" at="70,68,71,63" concept="8" />
       <node id="1645752949777350409" at="71,63,72,132" concept="8" />
-      <node id="1645752949777350409" at="72,132,73,221" concept="0" />
-      <node id="1645752949777350409" at="72,132,73,221" concept="3" />
-      <node id="1645752949777350409" at="73,221,74,14" concept="9" />
+      <node id="1645752949777350409" at="72,132,73,258" concept="0" />
+      <node id="1645752949777350409" at="72,132,73,258" concept="3" />
+      <node id="1645752949777350409" at="73,258,74,14" concept="9" />
       <node id="1645752949772912952" at="25,0,28,0" concept="7" trace="getName#()Ljava/lang/String;" />
       <node id="1645752949772912952" at="28,0,31,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
       <node id="1645752949772912952" at="31,0,34,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
@@ -276,7 +276,7 @@
       <scope id="1645752949777015861" at="54,47,55,205" />
       <scope id="1645752949777081750" at="61,79,62,142" />
       <scope id="1645752949772912952" at="65,42,66,20" />
-      <scope id="1645752949777350409" at="72,132,73,221" />
+      <scope id="1645752949777350409" at="72,132,73,258" />
       <scope id="1645752949772912952" at="25,0,28,0" />
       <scope id="1645752949772912952" at="28,0,31,0" />
       <scope id="1645752949772912952" at="31,0,34,0" />
@@ -1648,10 +1648,10 @@
       <node id="4900012836837561428" at="131,63,132,63" concept="8" />
       <node id="4900012836837561428" at="132,63,133,30" concept="8" />
       <node id="4900012836837561428" at="133,30,134,138" concept="3" />
-      <node id="4900012836837561428" at="134,138,135,239" concept="3" />
-      <node id="4900012836837561428" at="135,239,136,24" concept="9" />
-      <node id="4900012836837561428" at="133,30,135,239" concept="0" />
-      <node id="4900012836837561428" at="133,30,135,239" concept="0" />
+      <node id="4900012836837561428" at="134,138,135,276" concept="3" />
+      <node id="4900012836837561428" at="135,276,136,24" concept="9" />
+      <node id="4900012836837561428" at="133,30,135,276" concept="0" />
+      <node id="4900012836837561428" at="133,30,135,276" concept="0" />
       <node id="4900012836837561039" at="21,0,24,0" concept="7" trace="getName#()Ljava/lang/String;" />
       <node id="4900012836837561039" at="24,0,27,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
       <node id="4900012836837561039" at="27,0,30,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
@@ -1716,7 +1716,7 @@
       <scope id="4900012836837561424" at="120,59,121,158" />
       <scope id="4900012836837561418" at="123,52,124,101" />
       <scope id="4900012836837561416" at="126,42,127,21" />
-      <scope id="4900012836837561428" at="133,30,135,239" />
+      <scope id="4900012836837561428" at="133,30,135,276" />
       <scope id="4900012836837561039" at="21,0,24,0" />
       <scope id="4900012836837561039" at="24,0,27,0" />
       <scope id="4900012836837561039" at="27,0,30,0" />
@@ -1828,7 +1828,7 @@
       <node id="4683244688938112457" at="110,36,111,53" concept="8" />
       <node id="4683244688938111717" at="111,53,112,0" concept="11" />
       <node id="4683244688938122284" at="113,172,114,18" concept="9" />
-      <node id="4683244688938123031" at="116,430,117,18" concept="9" />
+      <node id="4683244688938123031" at="116,467,117,18" concept="9" />
       <node id="4683244688938124472" at="118,5,119,0" concept="11" />
       <node id="4683244688937957289" at="119,0,120,17" concept="9" />
       <node id="7303989191347664479" at="122,70,123,139" concept="8" />
@@ -1941,7 +1941,7 @@
       <scope id="5435616686801765162" at="101,194,102,20" />
       <scope id="4683244688938001840" at="106,327,107,18" />
       <scope id="61463667895065705" at="113,172,114,18" />
-      <scope id="5909355414809178812" at="116,430,117,18" />
+      <scope id="5909355414809178812" at="116,467,117,18" />
       <scope id="7303989191347669109" at="132,43,133,164" />
       <scope id="7303989191347669131" at="135,13,136,22" />
       <scope id="7303989191347669157" at="141,243,142,20" />
@@ -2038,7 +2038,7 @@
         <var name="nodeUsage" id="4683244688937904277" />
       </scope>
       <unit id="4683244688937824005" at="53,331,57,5" name="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder$1" />
-      <unit id="7303989191347669108" at="131,233,135,9" name="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder$2" />
+      <unit id="7303989191347669108" at="131,270,135,9" name="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder$2" />
       <unit id="4683244688930795258" at="22,0,218,0" name="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder" />
     </file>
   </root>

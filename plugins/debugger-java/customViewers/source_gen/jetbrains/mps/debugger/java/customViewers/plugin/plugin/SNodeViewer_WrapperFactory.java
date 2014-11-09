@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
@@ -66,13 +67,13 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       result.add(new SNodeWatchables.MyWatchable_text(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
       result.add(new SNodeWatchables.MyWatchable_model(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myConceptFqName")).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_concept(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myConcept")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "concept"));
       if (!(ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null))) {
         result.add(new SNodeWatchables.MyWatchable_parent(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));
       }
 
-      IArrayValueProxy properties = ((IArrayValueProxy) node.getFieldValue("myProperties"));
-      if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
+      IObjectValueProxy properties = ((IObjectValueProxy) node.invokeMethod("getPropertyNames", "()Ljava/util/Collection;", getThreadReference()));
+      if (!((Boolean) ((((PrimitiveValueProxy) properties.invokeMethod("isEmpty", "()Z", getThreadReference())))).getJavaValue())) {
         for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.util.SNodeOperations", "getProperties", "(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;", getThreadReference(), value)).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
           result.add(new SNodeWatchables.MyWatchable_property(CustomViewersManager.getInstance().fromJdi(property.getJDIValue(), getThreadReference()), "property"));
         }
@@ -106,7 +107,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy node = (IObjectValueProxy) value;
 
-      IObjectValueProxy containingRole = ((IObjectValueProxy) node.getFieldValue("myRoleInParent"));
+      IObjectValueProxy containingRole = ((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myRoleInParent")).invokeMethod("getRoleName", "()Ljava/lang/String;", getThreadReference()));
       if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
         containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" in role: " + (String) (containingRole).getJavaValue(), getVM()));
       } else {
@@ -115,7 +116,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
           containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" (root)", getVM()));
         }
       }
-      return "node<" + (String) (((IObjectValueProxy) node.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
+      return "node<" + (String) (((IObjectValueProxy) ((IObjectValueProxy) node.getFieldValue("myConcept")).invokeMethod("getName", "()Ljava/lang/String;", getThreadReference()))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }
   }
 

@@ -88,8 +88,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" file="Filter.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.junit.internal.AssumptionViolatedException" />
     <classNode dependClassName="org.junit.runner.Request" />
-    <classNode extendsClassName="org.junit.internal.AssumptionViolatedException" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.IgnoringStoppableRunner" file="IgnoringStoppableRunner.java">
     <classNode dependClassName="java.lang.Exception" />
@@ -137,10 +137,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
-    <classNode extendsClassName="org.junit.runner.Request" />
-    <classNode extendsClassName="org.junit.runner.Runner" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.StoppableRunner" file="StoppableRunner.java">
     <classNode dependClassName="java.lang.Object" />
@@ -155,6 +155,7 @@
     <classNode dependClassName="com.intellij.util.WaitFor" />
     <classNode dependClassName="java.io.IOError" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Error" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -180,7 +181,6 @@
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode dependClassName="org.junit.runner.notification.RunListener" />
     <classNode dependClassName="org.junit.runner.notification.StoppedByUserException" />
-    <classNode extendsClassName="java.lang.Error" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightRunListener" file="TestLightRunListener.java">

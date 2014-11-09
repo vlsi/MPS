@@ -23,6 +23,37 @@ import org.jetbrains.mps.openapi.model.SNode;
  * physically lie anywhere in the AST (even in a different model).
  */
 public interface SReferenceLink extends SAbstractLink {
+  String getRoleName();
+
+  SAbstractConcept getContainingConcept();
+
+  /**
+   * The concept for the nodes that this link points to.
+   */
+  SAbstractConcept getTargetConcept();
+
+  /**
+   * True for references, false for containment relationships.
+   */
+  @Deprecated
+  boolean isReference();
+
+  /**
+   * This link may contain no elements.
+   */
+  boolean isOptional();
+
+  /**
+   * Instance nodes can contain more than one target element.
+   */
+  @Deprecated //always false
+  boolean isMultiple();
+
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
+  @Nullable
+  SNode getDeclarationNode();
 
   /**
    * Builds and returns a scope for this reference in the given context.
@@ -30,7 +61,6 @@ public interface SReferenceLink extends SAbstractLink {
    * @param referenceNode node containing the reference, registered in the repository
    */
   SScope getScope(SNode referenceNode);
-
 
   /**
    * This method allows to build a scope for the reference before its node has been registered in the repository.

@@ -31,7 +31,9 @@ import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
+import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
@@ -73,7 +75,6 @@ public class ModelPersistence {
   public static final String NAME = "name";
   public static final String NAME_ID = "nameId";
   public static final String NAMESPACE = "namespace";  // v0
-  public static final String EXT_RESOLVE_INFO = "extResolveInfo"; //v0
   public static final String NODE = "node";
   public static final String TYPE = "type";
   public static final String TYPE_ID = "typeId";
@@ -91,7 +92,6 @@ public class ModelPersistence {
   public static final String LANGUAGE_ASPECT = "languageAspect";
   public static final String LANGUAGE_ENGAGED_ON_GENERATION = "language-engaged-on-generation";
   public static final String DEVKIT = "devkit";
-  public static final String STEREOTYPE = "stereotype";
   public static final String MODEL_UID = "modelUID";
   public static final String FILE_CONTENT = "content";
   public static final String VERSION = "version";
@@ -106,7 +106,7 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  public static final int LAST_VERSION = 8;
+  public static final int LAST_VERSION = 9;
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
       null,
@@ -117,7 +117,8 @@ public class ModelPersistence {
       new ModelPersistence5(),
       new ModelPersistence6(),
       new ModelPersistence7(),
-      new ModelPersistence8()
+      new ModelPersistence8(),
+      new ModelPersistence9()
   };
 
   @NotNull
@@ -435,6 +436,8 @@ public class ModelPersistence {
           String name = attributes.getQName(idx);
           String value = attributes.getValue(idx);
           if (MODEL_UID.equals(name)) {
+            myResult.setUID(value);
+          } else if (ModelPersistence9.REF.equals(name)) {
             myResult.setUID(value);
           } else if (SModelHeader.VERSION.equals(name)) {
             try {

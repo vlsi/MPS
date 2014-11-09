@@ -90,7 +90,8 @@ public class MetadataUtil {
     return node;
   }
   private static SModelReference getModelReference(SNode node) {
-    return new jetbrains.mps.smodel.SModelReference(new SModelFqName(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype")), SModelId.fromString(SPropertyOperations.getString(node, "uuid")));
+    String fullName = new SModelFqName(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype")).getModelName();
+    return new jetbrains.mps.smodel.SModelReference(null, SModelId.fromString(SPropertyOperations.getString(node, "uuid")), fullName);
   }
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
     if (!(((EditableSModel) metadataModel).isChanged())) {

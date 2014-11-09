@@ -47,6 +47,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.GenericTypesUtil" />
     <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
+    <classNode dependClassName="jetbrains.mps.cache.DataSet" />
     <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -63,7 +64,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
-    <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" file="ClassifierAndSuperClassifiersScope.java">
     <classNode dependClassName="java.lang.Class" />
@@ -333,6 +333,7 @@
     <classNode dependClassName="jetbrains.mps.project.dependency.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -345,7 +346,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" file="StaticMethodReferenceInfoResolver.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -410,6 +410,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierReferenceInfoResolver" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
@@ -427,7 +428,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierReferenceInfoResolver" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" file="VisibleClassifiersScope.java">

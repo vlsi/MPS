@@ -1946,7 +1946,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)/4914935534438618871">
     <file name="QueriesGenerated.java">
-      <node id="4914935534439454954" at="53,156,54,207" concept="7" />
+      <node id="4914935534439454954" at="53,156,54,244" concept="7" />
       <node id="4914935534439454960" at="56,41,57,78" concept="8" />
       <node id="4914935534439454960" at="60,39,61,68" concept="8" />
       <node id="4914935534439454970" at="64,41,65,36" concept="8" />
@@ -1959,7 +1959,7 @@
       <node id="4914935534439454960" at="56,0,59,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4914935534439454960" at="60,0,63,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4914935534439454968" at="64,0,67,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4914935534439454958" at="54,207,67,9" concept="8" />
+      <node id="4914935534439454958" at="54,244,67,9" concept="8" />
       <node id="4914935534439454952" at="52,104,68,5" concept="5" />
       <scope id="4914935534439454960" at="56,41,57,78" />
       <scope id="4914935534439454960" at="60,39,61,68" />

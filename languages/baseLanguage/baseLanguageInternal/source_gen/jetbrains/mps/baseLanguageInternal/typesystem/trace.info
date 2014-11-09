@@ -31,8 +31,8 @@
       <node id="1100832983841501782" at="47,64,48,63" concept="7" />
       <node id="1100832983841501782" at="48,63,49,30" concept="7" />
       <node id="1100832983841501782" at="49,30,50,138" concept="3" />
-      <node id="1100832983841501782" at="50,138,51,239" concept="3" />
-      <node id="1100832983841501782" at="51,239,52,24" concept="8" />
+      <node id="1100832983841501782" at="50,138,51,276" concept="3" />
+      <node id="1100832983841501782" at="51,276,52,24" concept="8" />
       <node id="1100832983841501794" at="54,99,55,63" concept="7" />
       <node id="1100832983841501794" at="55,63,56,30" concept="7" />
       <node id="1100832983841501794" at="56,30,57,154" concept="3" />
@@ -41,8 +41,8 @@
       <node id="1100832983841501794" at="59,88,60,24" concept="8" />
       <node id="1100832983841501763" at="20,0,22,0" concept="2" trace="typeof_InternalClassCreator_InferenceRule#()V" />
       <node id="1100832983841501777" at="26,10,28,5" concept="0" />
-      <node id="1100832983841501782" at="49,30,51,239" concept="0" />
-      <node id="1100832983841501782" at="49,30,51,239" concept="0" />
+      <node id="1100832983841501782" at="49,30,51,276" concept="0" />
+      <node id="1100832983841501782" at="49,30,51,276" concept="0" />
       <node id="1100832983841501763" at="35,0,38,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1100832983841501763" at="44,0,47,0" concept="6" trace="overrides#()Z" />
       <node id="1100832983841501794" at="56,30,59,88" concept="0" />
@@ -63,7 +63,7 @@
       <scope id="1100832983841501763" at="39,5,41,45">
         <var name="b" id="1100832983841501763" />
       </scope>
-      <scope id="1100832983841501782" at="49,30,51,239" />
+      <scope id="1100832983841501782" at="49,30,51,276" />
       <scope id="1100832983841501789" at="29,5,32,483">
         <var name="_info_12389875345" id="1100832983841501789" />
         <var name="_nodeToCheck_1029348928467" id="1100832983841501789" />
@@ -114,8 +114,8 @@
       <node id="1196525371889" at="49,64,50,63" concept="7" />
       <node id="1196525371889" at="50,63,51,30" concept="7" />
       <node id="1196525371889" at="51,30,52,138" concept="3" />
-      <node id="1196525371889" at="52,138,53,239" concept="3" />
-      <node id="1196525371889" at="53,239,54,24" concept="8" />
+      <node id="1196525371889" at="52,138,53,276" concept="3" />
+      <node id="1196525371889" at="53,276,54,24" concept="8" />
       <node id="3102959500546034593" at="56,119,57,63" concept="7" />
       <node id="3102959500546034593" at="57,63,58,30" concept="7" />
       <node id="3102959500546034593" at="58,30,59,30" concept="7" />
@@ -127,8 +127,8 @@
       <node id="3102959500546034593" at="68,5,69,24" concept="8" />
       <node id="1196525371871" at="22,0,24,0" concept="2" trace="typeof_InternalNewExpression_InferenceRule#()V" />
       <node id="1196525371884" at="28,10,30,5" concept="0" />
-      <node id="1196525371889" at="51,30,53,239" concept="0" />
-      <node id="1196525371889" at="51,30,53,239" concept="0" />
+      <node id="1196525371889" at="51,30,53,276" concept="0" />
+      <node id="1196525371889" at="51,30,53,276" concept="0" />
       <node id="1196525371871" at="37,0,40,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1196525371871" at="46,0,49,0" concept="6" trace="overrides#()Z" />
       <node id="3102959500546034593" at="64,52,67,7" concept="4" />
@@ -153,7 +153,7 @@
       <scope id="1196525371871" at="41,5,43,45">
         <var name="b" id="1196525371871" />
       </scope>
-      <scope id="1196525371889" at="51,30,53,239" />
+      <scope id="1196525371889" at="51,30,53,276" />
       <scope id="1196525371896" at="31,5,34,606">
         <var name="_info_12389875345" id="1196525371896" />
         <var name="_nodeToCheck_1029348928467" id="1196525371896" />
@@ -253,8 +253,8 @@
       <node id="1196525371918" at="40,63,41,30" concept="7" />
       <node id="1196525371918" at="41,30,42,30" concept="7" />
       <node id="1196525371918" at="42,30,43,138" concept="3" />
-      <node id="1196525371918" at="43,138,44,238" concept="3" />
-      <node id="1196525371918" at="44,238,45,39" concept="3" />
+      <node id="1196525371918" at="43,138,44,275" concept="3" />
+      <node id="1196525371918" at="44,275,45,39" concept="3" />
       <node id="1196525371918" at="46,31,47,78" concept="3" />
       <node id="1196525371918" at="48,5,49,24" concept="8" />
       <node id="1196525371911" at="18,0,20,0" concept="2" trace="typeof_InternalClassExpression_InferenceRule#()V" />
@@ -262,8 +262,8 @@
       <node id="1196525371911" at="36,0,39,0" concept="6" trace="overrides#()Z" />
       <node id="1196525371918" at="45,39,48,5" concept="5" />
       <node id="1196525371911" at="30,68,34,5" concept="0" />
-      <node id="1196525371918" at="44,238,48,5" concept="0" />
-      <node id="1196525371918" at="44,238,48,5" concept="0" />
+      <node id="1196525371918" at="44,275,48,5" concept="0" />
+      <node id="1196525371918" at="44,275,48,5" concept="0" />
       <node id="1196525371913" at="20,114,25,5" concept="0" />
       <node id="1196525371911" at="30,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1196525371918" at="42,30,48,5" concept="0" />
@@ -285,7 +285,7 @@
       <scope id="1196525371911" at="27,0,30,0" />
       <scope id="1196525371911" at="36,0,39,0" />
       <scope id="1196525371911" at="30,68,34,5" />
-      <scope id="1196525371918" at="44,238,48,5" />
+      <scope id="1196525371918" at="44,275,48,5" />
       <scope id="1196525371912" at="20,114,25,5" />
       <scope id="1196525371911" at="30,0,36,0">
         <var name="argument" id="1196525371911" />

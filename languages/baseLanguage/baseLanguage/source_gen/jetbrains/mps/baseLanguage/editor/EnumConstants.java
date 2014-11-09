@@ -57,7 +57,7 @@ public class EnumConstants extends KeyMapImpl {
       SNode constant = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
       SNode constructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(node)).first();
       if ((constructor == null)) {
-        constructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
+        constructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
       }
       SLinkOperations.setTarget(constant, "baseMethodDeclaration", constructor, false);
       ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).addElement(constant);

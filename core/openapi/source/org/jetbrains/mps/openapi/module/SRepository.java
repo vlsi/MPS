@@ -50,8 +50,6 @@ public interface SRepository {
   @Deprecated
   RepositoryAccess getRepositoryAccess();
 
-  DebugRegistry getDebugRegistry();
-
   void saveAll();
 
   /**

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.sourceStubs;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModelId;
 
 public class Util {
@@ -18,9 +17,7 @@ public class Util {
     String stereotype = "java_stub";
     String mpsModuleId = mpsModule.getModuleId().toString();
 
-    SModelFqName fqName = new SModelFqName(packageName, stereotype);
-    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), mpsModuleId, fqName.getLongName());
-
-    return new jetbrains.mps.smodel.SModelReference(fqName, modelId);
+    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereotype, mpsModuleId, packageName);
+    return new jetbrains.mps.smodel.SModelReference(mpsModule.getModuleReference(), modelId, packageName + "@" + stereotype);
   }
 }

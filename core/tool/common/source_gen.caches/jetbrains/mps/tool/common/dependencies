@@ -38,12 +38,12 @@
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
     <classNode dependClassName="org.jdom.output.Format" />
+    <classNode dependClassName="org.jdom.output.XMLOutputter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.xml.sax.EntityResolver" />
     <classNode dependClassName="org.xml.sax.InputSource" />
     <classNode dependClassName="org.xml.sax.SAXException" />
-    <classNode extendsClassName="org.jdom.output.XMLOutputter" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.Script" file="Script.java">
     <classNode dependClassName="java.io.File" />

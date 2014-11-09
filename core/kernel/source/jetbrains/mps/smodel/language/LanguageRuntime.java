@@ -71,9 +71,7 @@ public abstract class LanguageRuntime {
 
   public abstract String getNamespace();
 
-  public SLanguageId getId(){
-    return null;
-  }
+  public abstract SLanguageId getId();
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
@@ -131,7 +129,7 @@ public abstract class LanguageRuntime {
     if (compiled instanceof StructureAspectDescriptor) {
       return (StructureAspectDescriptor) compiled;
     } else {
-      return StructureAspectInterpreted.getInstance();
+      return new StructureAspectInterpreted(getLanguage());
     }
   }
 

@@ -18,6 +18,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -65,6 +68,14 @@ public class ForcedSaveAll_Action extends BaseAction {
           return SModelStereotype.isUserModel(it);
         }
       }).toListSequence();
+
+      for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
+        for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
+          generator.updateModuleReferences();
+        }
+        language.updateSModelReferences();
+        language.save();
+      }
 
       for (EditableSModel model : ListSequence.fromList(allModels)) {
         if (model.isReadOnly()) {

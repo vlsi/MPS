@@ -149,33 +149,28 @@ import java.util.Map;
 
     final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
 
-    ModelAccess.instance().runIndexing(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          final SModel model = RootNodeNameIndex.doModelParsing(inputData);
-          final SModelReference modelRef = model.getReference();
-          getObjectsToIndex(model, new Consumer<S>() {
-            @Override
-            public void consume(S object) {
-              String[] keys = getKeys(model, object);
+    try {
+      final SModel model = RootNodeNameIndex.doModelParsing(inputData);
+      final SModelReference modelRef = model.getReference();
+      getObjectsToIndex(model, new Consumer<S>() {
+        @Override
+        public void consume(S object) {
+          String[] keys = getKeys(model, object);
 
-              for (String key : keys) {
-                Collection<E> collection = map.get(key);
-                if (collection == null) {
-                  collection = new ArrayList<E>();
-                  map.put(key, collection);
-                }
-
-                updateCollection(modelRef, object, collection);
-              }
+          for (String key : keys) {
+            Collection<E> collection = map.get(key);
+            if (collection == null) {
+              collection = new ArrayList<E>();
+              map.put(key, collection);
             }
-          });
-        } catch (Exception e) {
-          LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
+
+            updateCollection(modelRef, object, collection);
+          }
         }
-      }
-    });
+      });
+    } catch (Exception e) {
+      LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
+    }
 
     return map;
   }

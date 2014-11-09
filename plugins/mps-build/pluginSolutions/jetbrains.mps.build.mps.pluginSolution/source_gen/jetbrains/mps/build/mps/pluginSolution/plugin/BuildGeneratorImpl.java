@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
 import java.util.List;
@@ -170,7 +169,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((SModelInternal) smodel).addLanguage(PersistenceFacade.getInstance().createModuleReference("0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)"));
 
     moduleDescriptor.getDependencies().add(new Dependency(PersistenceFacade.getInstance().createModuleReference("422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)"), false));
-    ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getReference(), false);
+    ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.build").getReference(), false);
   }
   public SModel getSModelDescriptor(ProgressIndicator indicator) {
     if (getCreateModel()) {

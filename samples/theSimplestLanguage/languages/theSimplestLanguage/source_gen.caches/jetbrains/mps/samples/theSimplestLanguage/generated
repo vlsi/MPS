@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8hbwzw99z626i33wiuo9v64lgkkt2ey">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+<dependencies version="2" modelHash="99j5joewinal0o10tpikiwgq5qx7isy">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:25af3fd1-3d94-4038-a53f-6ee55f9c8ef2(jetbrains.mps.samples.theSimplestLanguage.constraints)" hash="6lrdei1das82jcrt5dom61wehe232k7" />
   <dep model="r:3cc15c8e-8ba1-435f-9f7c-97e6b1b0f0e5(jetbrains.mps.samples.theSimplestLanguage.behavior)" hash="8u7os7kmhwiqhojkwngli92v2j76dgu" />
@@ -10,7 +10,7 @@
   <dep model="r:e4c3371f-743b-4590-b521-03a11e9bad7f(jetbrains.mps.samples.theSimplestLanguage.editor)" hash="5zy1lpi8w5qvbcc39vbmoqi8ka93uel" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:25af3fd1-3d94-4038-a53f-6ee55f9c8ef2(jetbrains.mps.samples.theSimplestLanguage.constraints)" />
     <dep model="r:3cc15c8e-8ba1-435f-9f7c-97e6b1b0f0e5(jetbrains.mps.samples.theSimplestLanguage.behavior)" />

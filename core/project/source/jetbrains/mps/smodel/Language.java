@@ -121,8 +121,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       }
     }
 
-    if(BootstrapLanguages.coreLanguage() != null) {
-      dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
+    Language core = BootstrapLanguages.coreLanguage();
+    if (core != null) {
+      dependencies.add(new SDependencyImpl(core, SDependencyScope.DEFAULT, true));
     }
 
     return dependencies;
@@ -229,8 +230,13 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
   }
 
+  @Deprecated
   public int getVersion() {
     return ((RefactorableSModelDescriptor) getStructureModelDescriptor()).getVersion();
+  }
+
+  public int getLanguageVersion() {
+    return getModuleDescriptor().getVersion();
   }
 
   public Collection<Generator> getGenerators() {
@@ -270,7 +276,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   /**
-   * @deprecated  Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
+   * @deprecated Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
    */
   @Deprecated
   @ToRemove(version = 3.2)

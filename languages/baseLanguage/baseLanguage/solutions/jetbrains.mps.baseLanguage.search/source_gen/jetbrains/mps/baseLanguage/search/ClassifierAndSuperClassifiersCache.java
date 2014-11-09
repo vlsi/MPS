@@ -199,7 +199,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(classifier, set, null, typeByTypeVar);
       List<SNode> result = new ArrayList<SNode>();
       ListSequence.fromList(result).addSequence(SetSequence.fromSet(set));
-      SNode objectClass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+      SNode objectClass = SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
       if (objectClass != null && !(SetSequence.fromSet(set).contains(objectClass))) {
         int indexOfFirstInterface = 0;
         for (SNode classifierInResult : set) {
@@ -247,7 +247,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
           ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SLinkOperations.getTarget(classifierType1, "classifier", false), result, SLinkOperations.getTargets(classifierType1, "parameter", true), typeByTypeVar);
         }
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-          ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), result, null, typeByTypeVar);
+          ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), result, null, typeByTypeVar);
         }
       } else
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {

@@ -821,7 +821,7 @@
       <node id="1213104847625" at="78,7,79,22" concept="6" />
       <node id="1213104847625" at="81,0,82,0" concept="9" trace="breakingNode_3muhb7_a0a0a0a0a3" />
       <node id="1213104847625" at="24,0,27,0" concept="1" trace="ClassConcept_Constraints#()V" />
-      <node id="5363084893386562003" at="28,247,31,7" concept="3" />
+      <node id="5363084893386562003" at="28,284,31,7" concept="3" />
       <node id="1382946559831559076" at="33,5,36,5" concept="3" />
       <node id="1213104847625" at="39,0,43,0" concept="4" trace="hasOwnDefaultScopeProvider#()Z" />
       <node id="1213104847625" at="46,0,50,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -854,7 +854,7 @@
         <var name="propertyName" id="1213104847625" />
       </scope>
       <scope id="1213104847625" at="24,0,27,0" />
-      <scope id="5363084893386560589" at="28,247,32,63" />
+      <scope id="5363084893386560589" at="28,284,32,63" />
       <scope id="1213104847625" at="39,0,43,0" />
       <scope id="1213104847625" at="46,0,50,0" />
       <scope id="1213104847625" at="50,0,54,0">

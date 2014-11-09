@@ -26,6 +26,7 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.persistence.xml.XmlConverter;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import java.io.InputStream;
 import org.xml.sax.InputSource;
 import java.io.InputStreamReader;
@@ -157,7 +158,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       name = FileUtil.getNameWithoutExtension(((SModelId.RelativePathSModelId) reference.getModelId()).getFileName());
     }
     SNode xmlFile = XmlConverter.newDocument(name);
-    sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
+    sModel.addLanguage(MetaIdByDeclaration.ref2Id(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)")), 0);
     sModel.addRootNode(xmlFile);
     return sModel;
   }

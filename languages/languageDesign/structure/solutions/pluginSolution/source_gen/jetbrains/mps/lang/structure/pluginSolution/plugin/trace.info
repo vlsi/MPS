@@ -1574,78 +1574,36 @@
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7972144475523810178">
     <file name="CommitUtil.java">
-      <node id="5938312768535788107" at="21,114,22,49" concept="8" />
-      <node id="6352952732708955312" at="22,49,23,59" concept="8" />
-      <node id="6352952732709078036" at="23,59,24,58" concept="8" />
-      <node id="6352952732709097302" at="24,58,25,0" concept="11" />
-      <node id="7972144475523810186" at="27,25,28,29" concept="3" />
-      <node id="7972144475523810222" at="30,7,31,0" concept="11" />
-      <node id="1161420610164881191" at="33,25,34,33" concept="8" />
-      <node id="2630603470921110152" at="34,33,35,745" concept="8" />
-      <node id="2630603470921132322" at="35,745,36,215" concept="3" />
-      <node id="7972144475523810218" at="37,34,38,17" concept="9" />
-      <node id="1161420610164881190" at="39,9,40,0" concept="11" />
-      <node id="7972144475523810223" at="40,0,41,99" concept="8" />
-      <node id="7972144475523810229" at="41,99,42,63" concept="3" />
-      <node id="7972144475523810234" at="42,63,43,49" concept="3" />
-      <node id="7972144475523810242" at="43,49,44,76" concept="3" />
-      <node id="7972144475523810252" at="44,76,45,66" concept="3" />
-      <node id="7972144475523810266" at="45,66,46,0" concept="11" />
-      <node id="7972144475523810267" at="46,0,47,73" concept="10" />
-      <node id="7972144475523810269" at="47,73,48,60" concept="3" />
-      <node id="7450078596028252305" at="48,60,49,54" concept="8" />
-      <node id="7972144475523810286" at="49,54,50,56" concept="3" />
-      <node id="2630603470921057366" at="50,56,51,91" concept="3" />
-      <node id="7972144475523810619" at="56,27,57,19" concept="9" />
-      <node id="7972144475523810316" at="59,36,60,18" concept="9" />
-      <node id="7972144475523810321" at="61,5,62,299" concept="8" />
-      <node id="7972144475523810354" at="63,40,64,78" concept="3" />
-      <node id="7972144475523810409" at="65,5,66,78" concept="9" />
-      <node id="6352952732709111565" at="27,0,30,0" concept="7" trace="run#()V" />
-      <node id="7972144475523810216" at="36,215,39,9" concept="6" />
-      <node id="7972144475523810608" at="55,113,58,5" concept="6" />
-      <node id="7972144475523810314" at="58,5,61,5" concept="6" />
-      <node id="7972144475523810568" at="62,299,65,5" concept="6" />
-      <node id="6352952732709101768" at="25,0,30,7" concept="3" />
-      <node id="7972144475523810304" at="55,0,68,0" concept="13" trace="commitRename#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
-      <node id="5938312768535821840" at="33,0,53,0" concept="7" trace="run#()V" />
-      <node id="5938312768535815807" at="31,0,53,7" concept="3" />
-      <node id="7972144475523810179" at="21,0,55,0" concept="13" trace="refactorRenameNode#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <scope id="6352952732709111566" at="27,25,28,29" />
-      <scope id="7972144475523810217" at="37,34,38,17" />
-      <scope id="7972144475523810609" at="56,27,57,19" />
-      <scope id="7972144475523810315" at="59,36,60,18" />
-      <scope id="7972144475523810569" at="63,40,64,78" />
-      <scope id="6352952732709111565" at="27,0,30,0" />
-      <scope id="7972144475523810307" at="55,113,66,78">
-        <var name="res" id="7972144475523810322" />
+      <node id="1824198750917202066" at="16,113,17,62" concept="8" />
+      <node id="1824198750917217535" at="18,87,19,19" concept="9" />
+      <node id="8378841623797640841" at="21,114,22,314" concept="3" />
+      <node id="8378841623797653255" at="24,107,25,126" concept="3" />
+      <node id="8378841623797655215" at="28,168,29,124" concept="3" />
+      <node id="8378841623797675253" at="30,14,31,126" concept="3" />
+      <node id="1824198750917222976" at="33,5,34,17" concept="9" />
+      <node id="8378841623797674732" at="30,12,32,7" concept="0" />
+      <node id="1824198750917211366" at="17,62,20,5" concept="6" />
+      <node id="8948371856304138265" at="20,5,23,5" concept="6" />
+      <node id="8948371856304127220" at="23,5,26,5" concept="6" />
+      <node id="8378841623797658097" at="27,103,32,7" concept="6" />
+      <node id="8948371856304141626" at="26,5,33,5" concept="6" />
+      <node id="7972144475523810304" at="16,0,36,0" concept="13" trace="commitRename#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
+      <scope id="1824198750917211369" at="18,87,19,19" />
+      <scope id="8948371856304138266" at="21,114,22,314" />
+      <scope id="8948371856304127223" at="24,107,25,126" />
+      <scope id="8378841623797658100" at="28,168,29,124" />
+      <scope id="8378841623797674733" at="30,14,31,126" />
+      <scope id="8948371856304141627" at="27,103,32,7" />
+      <scope id="7972144475523810307" at="16,113,34,17">
+        <var name="lang" id="1824198750917202067" />
       </scope>
-      <scope id="7972144475523810304" at="55,0,68,0">
+      <scope id="7972144475523810304" at="16,0,36,0">
         <var name="editorContext" id="7972144475523810391" />
         <var name="newValue" id="7972144475523810397" />
         <var name="node" id="7972144475523810393" />
         <var name="oldValue" id="7972144475523810395" />
       </scope>
-      <scope id="5938312768535821841" at="33,25,51,91">
-        <var name="fRefactoring" id="7450078596028252306" />
-        <var name="refactoring" id="1161420610164881192" />
-        <var name="refactoringContext" id="7972144475523810224" />
-        <var name="refactoringNode" id="2630603470921110153" />
-      </scope>
-      <scope id="5938312768535821840" at="33,0,53,0" />
-      <scope id="7972144475523810182" at="21,114,53,7">
-        <var name="modelAccess" id="6352952732709078037" />
-        <var name="project" id="5938312768535788108" />
-        <var name="repository" id="6352952732708955313" />
-      </scope>
-      <scope id="7972144475523810179" at="21,0,55,0">
-        <var name="context" id="7972144475523810298" />
-        <var name="newName" id="7972144475523810302" />
-        <var name="node" id="7972144475523810300" />
-      </scope>
-      <unit id="6352952732709111565" at="26,35,30,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$1" />
-      <unit id="5938312768535821840" at="32,33,53,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$2" />
-      <unit id="7972144475523810178" at="20,0,69,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" />
+      <unit id="7972144475523810178" at="15,0,37,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" />
     </file>
   </root>
 </debug-info>

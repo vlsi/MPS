@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" file="BaseMpsBeforeTaskProvider.java">
+    <classNode dependClassName="com.intellij.execution.BeforeRunTask" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
@@ -23,7 +24,6 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.execution.BeforeRunTask" />
     <classNode extendsClassName="com.intellij.execution.BeforeRunTaskProvider" />
   </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.BaseMpsProducer" file="BaseMpsProducer.java">

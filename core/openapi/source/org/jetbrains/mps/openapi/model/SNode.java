@@ -18,6 +18,9 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /**
  * NODE STATES
@@ -48,12 +51,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * SEE ALSO SNodeUtil, SNodeAccessUtil
  */
 public interface SNode {
-
-  //common properties
-
   /**
    * Containing model or null if the node is not contained in any model
    * Does not produce node read event as the function depending on model is not a pure node function.
+   *
    * @see SModelAccessListener
    */
   SModel getModel();
@@ -90,7 +91,7 @@ public interface SNode {
 
   // tree operation
 
-  void addChild(String role, SNode child);
+  void addChild(SContainmentLink role, SNode child);
 
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
@@ -100,7 +101,7 @@ public interface SNode {
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
    *               a new child is inserted as a last child
    */
-  void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
+  void insertChildBefore(SContainmentLink role, SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
@@ -118,6 +119,7 @@ public interface SNode {
   /**
    * Returns the parent of this node
    * Does not produce read on current as current is already obtained
+   *
    * @return parent of this node
    */
   SNode getParent();
@@ -135,7 +137,7 @@ public interface SNode {
   /**
    * Returns role of this node in parent node
    */
-  String getRoleInParent();
+  SContainmentLink getContainmentLink();
 
   SNode getFirstChild();
 
@@ -158,7 +160,7 @@ public interface SNode {
    * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
    * does not produce read accesses for skipped children
    */
-  Iterable<? extends SNode> getChildren(String role);
+  Iterable<? extends SNode> getChildren(SContainmentLink role);
 
   /**
    * Returns an immutable collection of all children.
@@ -171,12 +173,12 @@ public interface SNode {
   /**
    * Sets a reference of the given role to a particular node
    */
-  void setReferenceTarget(String role, @Nullable SNode target);
+  void setReferenceTarget(SReferenceLink role, @Nullable SNode target);
 
   /**
    * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
    */
-  SNode getReferenceTarget(String role);
+  SNode getReferenceTarget(SReferenceLink role);
 
   // SReferences
 
@@ -185,14 +187,14 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target node even when working with invalid code.
    */
-  SReference getReference(String role);
+  SReference getReference(SReferenceLink role);
 
   /**
    * Sets a reference of the given role to a node that is resolved from the SReference.
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
    * the target node even when working with invalid code.
    */
-  void setReference(String role, SReference reference);
+  void setReference(SReferenceLink role, SReference reference);
 
   /**
    * Retrieves all SReferences from the node.
@@ -206,16 +208,16 @@ public interface SNode {
 
   // props
 
-  boolean hasProperty(String propertyName);
-
-  String getProperty(String propertyName);
-
-  void setProperty(String propertyName, String propertyValue);
-
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
-  Iterable<String> getPropertyNames();
+  Iterable<SProperty> getProperties();
+
+  boolean hasProperty(SProperty property);
+
+  String getProperty(SProperty property);
+
+  void setProperty(SProperty property, String propertyValue);
 
   // user objects
 
@@ -224,4 +226,66 @@ public interface SNode {
   void putUserObject(Object key, @Nullable Object value);
 
   Iterable<Object> getUserObjectKeys();
+
+  //------------deprecated, remove after 3.2-----------
+
+  /**
+   * Returns role of this node in parent node
+   */
+  @Deprecated
+  String getRoleInParent();
+
+  @Deprecated
+  boolean hasProperty(String propertyName);
+
+  @Deprecated
+  String getProperty(String propertyName);
+
+  @Deprecated
+  void setProperty(String propertyName, String propertyValue);
+
+  /**
+   * Retrieves keys of all properties. The returned collection is immutable.
+   */
+  @Deprecated
+  Iterable<String> getPropertyNames();
+
+  /**
+   * Sets a reference of the given role to a particular node
+   */
+  @Deprecated
+  void setReferenceTarget(String role, @Nullable SNode target);
+
+  /**
+   * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
+   */
+  @Deprecated
+  SNode getReferenceTarget(String role);
+
+  // SReferences
+
+  /**
+   * Retrieves an SReference of the given role to a node.
+   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
+   * the target node even when working with invalid code.
+   */
+  @Deprecated
+  SReference getReference(String role);
+
+  /**
+   * Sets a reference of the given role to a node that is resolved from the SReference.
+   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
+   * the target node even when working with invalid code.
+   */
+  @Deprecated
+  void setReference(String role, SReference reference);
+
+  @Deprecated
+  void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
+
+  @Deprecated
+  void addChild(String role, SNode child);
+
+  @Deprecated
+  Iterable<? extends SNode> getChildren(String role);
 }

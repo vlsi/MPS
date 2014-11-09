@@ -49,9 +49,9 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
         }
         Iterable<SNode> superTypes = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(myClassifier);
 
-        if (!((eq_l20hbd_a0a0a0e0a0a0a0i0b(myClassifier, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
+        if (!((eq_l20hbd_a0a0a0e0a0a0a0i0b(myClassifier, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(it, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException"));
+            return eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(it, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException"));
           }
         }))) && !(ListSequence.fromList(superThrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

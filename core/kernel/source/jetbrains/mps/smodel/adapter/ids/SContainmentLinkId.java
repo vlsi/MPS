@@ -15,18 +15,22 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.annotations.NotNull;
 
-public final class SContainmentLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SContainmentLinkId {
-  private final int myLinkId;
+public final class SContainmentLinkId  {
+  protected final SConceptId myConceptId;
+  private final long myLinkId;
 
-  public SContainmentLinkId(SConceptId conceptId, long linkId) {
-    super(conceptId);
-    myLinkId = (int) linkId;
+  public SContainmentLinkId(@NotNull SConceptId conceptId, long linkId) {
+    myConceptId = conceptId;
+    myLinkId = linkId;
   }
 
-  @Override
-  public int getContainmentLinkId() {
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
+
+  public long getContainmentLinkId() {
     return myLinkId;
   }
 
@@ -38,12 +42,26 @@ public final class SContainmentLinkId extends SAbstractLinkIdImpl implements org
     SContainmentLinkId that = (SContainmentLinkId) o;
 
     if (myLinkId != that.myLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    return myLinkId;
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myLinkId ^ (myLinkId >>> 32));
+    return result;
+  }
+
+  public String serialize() {
+    return myConceptId.serialize() + "/" + myLinkId;
+  }
+
+  public static SContainmentLinkId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    long ref = Long.parseLong(s.substring(split + 1));
+    return new SContainmentLinkId(concept, ref);
   }
 }

@@ -35,20 +35,16 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   private final DemoApplication_Configuration myConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public DemoApplication_Configuration_RunProfileState(@NotNull DemoApplication_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
@@ -63,7 +59,6 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
       }));
     }
   }
-
   @NotNull
   public IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
@@ -71,13 +66,11 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
       public IDebuggerSettings createDebuggerSettings() {
         return new LocalConnectionSettings(true);
       }
-
       public IDebugger getDebugger() {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

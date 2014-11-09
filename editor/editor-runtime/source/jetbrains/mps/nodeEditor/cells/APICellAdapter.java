@@ -75,7 +75,8 @@ public class APICellAdapter {
       return target;
     }
     SNode node = cell.getSNode();
-    SNode referentNode = node.getReferenceTarget(cell.getRole());
+    String role = cell.getRole();
+    SNode referentNode = role == null ? null : node.getReferenceTarget(role);
     return referentNode != null ? referentNode : node;
   }
 

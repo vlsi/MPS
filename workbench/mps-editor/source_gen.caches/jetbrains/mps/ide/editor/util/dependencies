@@ -71,6 +71,8 @@
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.DefaultNodeNavigationItemCellRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
@@ -93,10 +95,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.editor.util.DefaultNodeNavigationItemCellRenderer" />
-    <classNode extendsClassName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.util.NodeListCellRenderer" file="NodeListCellRenderer.java">
+    <classNode dependClassName="com.intellij.ui.ColoredListCellRenderer" />
     <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -112,7 +113,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.ui.ColoredListCellRenderer" />
     <classNode extendsClassName="javax.swing.JPanel" />
     <classNode extendsClassName="javax.swing.ListCellRenderer" />
   </dependency>

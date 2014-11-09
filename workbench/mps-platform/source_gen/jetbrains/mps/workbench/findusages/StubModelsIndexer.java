@@ -49,8 +49,8 @@ public class StubModelsIndexer implements ApplicationComponent {
       try {
         reader = new ClassReader(bytes);
       } catch (Throwable t) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("bytes length: " + bytes.length, t);
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn(inputData.getFileName() + " can't be parsed by ASM and will not be indexed. This can be caused by corrupted classfile or a classfile with a version not yet parsable by bundled ASM library");
         }
         return Collections.emptyMap();
       }

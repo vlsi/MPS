@@ -11,7 +11,6 @@ import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import java.util.List;
 import junit.framework.Assert;
@@ -62,7 +61,7 @@ public class Utils {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
+      mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.placeholder");
       FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
       List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);

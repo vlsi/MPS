@@ -40,9 +40,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private boolean myIsError = false;
 
   public BaseQuickFixProvider(String classFQName) {
-    myClassFQName = SModelStereotype.withoutStereotype(
-        PersistenceFacade.getInstance().createModelReference(NameUtil.namespaceFromLongName(classFQName)).getModelName()) +
-        "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
+    myClassFQName = classFQName;
     myQuickFix = null;
     myQuickFixTaken = false;
   }

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
@@ -51,7 +50,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
       this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public SModel getMyModel() {
-      return SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.editorTest", "tests"));
+      return SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.editorTest@tests");
     }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {

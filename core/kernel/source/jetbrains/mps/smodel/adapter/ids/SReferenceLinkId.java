@@ -15,18 +15,53 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.annotations.NotNull;
 
-public class SReferenceLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SReferenceLinkId {
-  private final int myRefLinkId;
+public final class SReferenceLinkId {
+  protected final SConceptId myConceptId;
+  private final long myRefLinkId;
 
-  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
-    super(conceptId);
-    myRefLinkId = (int) refLinkId;
+  public SReferenceLinkId(@NotNull SConceptId conceptId, long refLinkId) {
+    myConceptId =conceptId;
+    myRefLinkId = refLinkId;
+  }
+
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
+
+  public long getReferenceLinkId() {
+    return myRefLinkId;
   }
 
   @Override
-  public int getReferenceLinkId() {
-    return myRefLinkId;
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SReferenceLinkId that = (SReferenceLinkId) o;
+
+    if (myRefLinkId != that.myRefLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myRefLinkId ^ (myRefLinkId >>> 32));
+    return result;
+  }
+
+  public String serialize() {
+    return myConceptId.serialize() + "/" + myRefLinkId;
+  }
+
+  public static SReferenceLinkId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    long ref = Long.parseLong(s.substring(split + 1));
+    return new SReferenceLinkId(concept, ref);
   }
 }

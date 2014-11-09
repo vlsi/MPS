@@ -122,6 +122,7 @@ public class ImportHelper {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
+        SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
         return new AddLanguageItem(project, ref, contextModule, model);
       }
 
@@ -220,19 +221,19 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
+            Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+            if (lang == null) continue;
             if (myContextModule instanceof DevKit) {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
             } else {
-              Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-              if (lang == null) continue;
               if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
                 ((AbstractModule) myContextModule).addUsedLanguage(ref);
                 reload = true;
               }
             }
             if (myModel != null) {
-              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(ref);
+              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(lang);
             }
           }
           if (reload) {

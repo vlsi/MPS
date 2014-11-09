@@ -26,7 +26,7 @@ public class MigrateIModuleCastToAbstractModuleCast_MigrationScript extends Base
         return false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~AbstractModule"), false);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)", "~AbstractModule"), false);
       }
       public boolean isShowAsIntention() {
         return false;

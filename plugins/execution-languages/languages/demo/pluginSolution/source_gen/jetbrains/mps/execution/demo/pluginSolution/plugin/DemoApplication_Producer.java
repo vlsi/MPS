@@ -16,25 +16,20 @@ import com.intellij.execution.impl.RunManagerImpl;
 
 public class DemoApplication_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Factory";
-
   public DemoApplication_Producer() {
   }
-
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-
   public static class ProducerPart_NodeSomeConcept_rh22bz_a extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeSomeConcept_rh22bz_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.demo.structure.SomeConcept");
     }
-
     protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if (!(SPropertyOperations.getBoolean(source, "valid"))) {
@@ -44,7 +39,6 @@ public class DemoApplication_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
-
     @Override
     public DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a clone() {
       return (DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a) super.clone();

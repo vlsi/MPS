@@ -28,13 +28,12 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.repository.CommandListener;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -62,8 +61,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     }
   };
 
-  private final DebugRegistry myDebugRegistry = new DebugRegistryImpl();
-
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
   private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
@@ -75,6 +72,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   public MPSModuleRepository() {
     myGlobalModelAccess = new GlobalModelAccess();
+
   }
 
   @Override
@@ -288,11 +286,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     myFqNameToModulesMap.put(module.getModuleName(), module);
   }
 
-  @Override
-  public DebugRegistry getDebugRegistry() {
-    return myDebugRegistry;
-  }
-//-------------------DEPRECATED
+  //-------------------DEPRECATED
 
   @Deprecated //use ModuleRepositoryFacade instead
   public SModule getModule(@NotNull SModuleReference ref) {

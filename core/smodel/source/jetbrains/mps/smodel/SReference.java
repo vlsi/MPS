@@ -31,101 +31,38 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
-/**
- * User: Sergey Dmitriev
- * Date: Aug 2, 2003
- */
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
-
-  private String myRole;
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+  private static boolean ourLoggingOff = false;
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
-
+  private SReferenceLink myRoleId;
   private volatile String myResolveInfo;
 
   /**
    * role must be "genuine", interned
    */
+  @Deprecated
   protected SReference(String role, SNode sourceNode) {
-    myRole = role;
+    mySourceNode = sourceNode;
+    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
+      throw new IllegalStateException();
+    }
+    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(sourceNode.getConcept().getQualifiedName(), role);
+  }
+
+  protected SReference(SReferenceLink role, SNode sourceNode) {
+    myRoleId = role;
     mySourceNode = sourceNode;
   }
 
-  @Override
-  public String getRole() {
-    return myRole;
+  public static SReference create(SReferenceLink id, SNode sourceNode, SNode targetNode) {
+    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
+      // 'mature' reference
+      return new StaticReference(id, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
+    }
+    return new StaticReference(id, sourceNode, targetNode);
   }
-
-  @Override
-  public SNode getSourceNode() {
-    return mySourceNode;
-  }
-
-  @Override
-  public final SNode getTargetNode() {
-    return getTargetNode_internal();
-  }
-
-  @Override
-  public SReferenceLink getLink() {
-    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
-  }
-
-  @Override
-  public SNodeReference getTargetNodeReference() {
-    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
-  }
-
-  @Override
-  @Nullable
-  public abstract SModelReference getTargetSModelReference();
-
-  @Override
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
-
-  public void makeDirect() {
-
-  }
-
-  public boolean makeIndirect() {
-    return false;
-  }
-
-  public String getResolveInfo() {
-    return myResolveInfo;
-  }
-
-  public void setResolveInfo(String info) {
-    myResolveInfo = InternUtil.intern(info);
-  }
-
-  public void setRole(String newRole) {
-    myRole = InternUtil.intern(newRole);
-  }
-
-  //-------------------------
-
-  @Deprecated
-  /**
-   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
-   * @Deprecated in 3.0
-   */
-  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  protected abstract SNode getTargetNode_internal();
-
-  @Deprecated
-  /**
-   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
-   * @Deprecated in 3.0
-   */
-  public abstract boolean isExternal();
-
-  //-------- factory methods -----------
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -153,11 +90,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  //-------- error logging -----------
-
-  private static boolean ourLoggingOff = false;
-  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
-
   public static void disableLogging() {
     ourLoggingOff = true;
   }
@@ -174,6 +106,92 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       enableLogging();
     }
   }
+
+  @Override
+  public String getRole() {
+    return myRoleId.getRoleName();
+  }
+
+  public void setRole(String newRole) {
+    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
+      throw new IllegalStateException();
+    }
+    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(mySourceNode.getConcept().getQualifiedName(), newRole);
+  }
+
+  @Override
+  public SReferenceLink getReferenceLink() {
+    return myRoleId;
+  }
+
+  @Override
+  public SNode getSourceNode() {
+    return mySourceNode;
+  }
+
+  //-------------------------
+
+  @Override
+  public final SNode getTargetNode() {
+    return getTargetNode_internal();
+  }
+
+  @Override
+  public SReferenceLink getLink() {
+    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
+  }
+
+  @Override
+  public SNodeReference getTargetNodeReference() {
+    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
+  }
+
+  //-------- factory methods -----------
+
+  @Override
+  @Nullable
+  public abstract SModelReference getTargetSModelReference();
+
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
+
+  @Override
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
+  }
+
+  public void makeDirect() {
+
+  }
+
+  public boolean makeIndirect() {
+    return false;
+  }
+
+  public String getResolveInfo() {
+    return myResolveInfo;
+  }
+
+  //-------- error logging -----------
+
+  public void setResolveInfo(String info) {
+    myResolveInfo = InternUtil.intern(info);
+  }
+
+  protected abstract SNode getTargetNode_internal();
+
+  @Deprecated
+  /**
+   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
+   * @Deprecated in 3.0
+   */
+  public abstract boolean isExternal();
 
   protected final void error(String message, ProblemDescription... problems) {
     if (ourLoggingOff) return;

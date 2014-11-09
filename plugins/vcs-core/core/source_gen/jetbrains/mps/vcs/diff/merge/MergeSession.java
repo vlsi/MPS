@@ -18,6 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
@@ -66,10 +67,11 @@ public class MergeSession {
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
     jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
-    MergeTemporaryModel mergeModel = new MergeTemporaryModel(resModel, false);
-    int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
-    mergeModel.setPersistenceVersion(pv);
-    return new MergeSession(base, mine, repository, mergeModel);
+    if (resModel instanceof DefaultSModel) {
+      int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+      ((DefaultSModel) resModel).setPersistenceVersion(pv);
+    }
+    return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));
   }
 
   public MergeSession(final SModel base, final SModel mine, final SModel repository, final SModel result) {

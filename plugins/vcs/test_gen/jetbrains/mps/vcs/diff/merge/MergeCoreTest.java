@@ -32,7 +32,7 @@ public class MergeCoreTest extends WorkbenchMpsTest {
   @Test
   public void testMerge() {
     try {
-      Assert.assertTrue(new MergeData(new File(TESTDATA_HOME, myZipName)).check());
+      Assert.assertTrue(myZipName, new MergeData(new File(TESTDATA_HOME, myZipName)).check());
     } catch (Exception e) {
       e.printStackTrace();
       Assert.fail();

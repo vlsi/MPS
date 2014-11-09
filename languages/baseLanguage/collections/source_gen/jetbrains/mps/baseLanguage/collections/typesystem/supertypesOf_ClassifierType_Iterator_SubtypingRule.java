@@ -95,5 +95,5 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
     }
     return quotedNode_2;
   }
-  private static SNodePointer SNODE_POINTER_36aa7y_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
+  private static SNodePointer SNODE_POINTER_36aa7y_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
 }

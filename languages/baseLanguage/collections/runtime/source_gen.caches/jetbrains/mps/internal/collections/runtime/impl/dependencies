@@ -22,23 +22,23 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.CardinalityMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.ConcatingSequence" file="ConcatingSequence.java">
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator" file="EnumeratorIterator.java">
@@ -58,11 +58,11 @@
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.HasNextState" file="HasNextState.java">
@@ -72,11 +72,11 @@
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.AbstractSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.CardinalityMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter" file="NegateWhereFilter.java">
@@ -131,11 +131,11 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.ListIterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode extendsClassName="java.util.List" />
-    <classNode extendsClassName="java.util.ListIterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IListSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
   </dependency>
@@ -170,10 +170,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" file="NullSetSequence.java">
@@ -210,11 +210,11 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ClassUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" file="PagingSequence.java">
@@ -225,30 +225,30 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.AbstractSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.ReversingSequence" file="ReversingSequence.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.ListIterator" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.SelectingSequence" file="SelectingSequence.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" file="SortingSequence.java">
@@ -259,6 +259,8 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Comparator" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ListIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -266,8 +268,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SelectComparator" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Comparator" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence" file="TranslatingSequence.java">
@@ -275,6 +275,7 @@
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -282,7 +283,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.TranslatorAdapter" file="TranslatorAdapter.java">

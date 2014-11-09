@@ -52,6 +52,14 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0e0c0b.setGenPath(result_v3r4p8_a0a5a0a0e0c0b);
           }
 
+          String version = languageElement.getAttributeValue("version");
+          if (version != null) {
+            try {
+              result_v3r4p8_a0a0e0c0b.setVersion(Integer.parseInt(version));
+            } catch (NumberFormatException ignored) {
+            }
+          }
+
           Element modelsTag = XmlUtil.first(languageElement, "models");
           if (modelsTag != null) {
             result_v3r4p8_a0a0e0c0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), contentRoot, macroHelper));
@@ -124,6 +132,7 @@ public class LanguageDescriptorPersistence {
     if (descriptor.getGenPath() != null) {
       languageElement.setAttribute("generatorOutputPath", macroHelper.shrinkPath(descriptor.getGenPath()));
     }
+    languageElement.setAttribute("version", Integer.toString(descriptor.getVersion()));
 
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);

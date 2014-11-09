@@ -215,10 +215,10 @@
       <node id="3421461530438560202" at="57,60,58,63" concept="5" />
       <node id="3421461530438560202" at="58,63,59,30" concept="5" />
       <node id="3421461530438560202" at="59,30,60,138" concept="1" />
-      <node id="3421461530438560202" at="60,138,61,239" concept="1" />
-      <node id="3421461530438560202" at="61,239,62,24" concept="6" />
-      <node id="3421461530438560202" at="59,30,61,239" concept="0" />
-      <node id="3421461530438560202" at="59,30,61,239" concept="0" />
+      <node id="3421461530438560202" at="60,138,61,276" concept="1" />
+      <node id="3421461530438560202" at="61,276,62,24" concept="6" />
+      <node id="3421461530438560202" at="59,30,61,276" concept="0" />
+      <node id="3421461530438560202" at="59,30,61,276" concept="0" />
       <node id="3421461530438560191" at="16,0,19,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3421461530438560191" at="19,0,22,0" concept="7" trace="virtual_getUnitName_5067982036267369911#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="3421461530438560410" at="23,123,26,5" concept="3" />
@@ -244,7 +244,7 @@
       <scope id="3421461530438560305" at="45,72,47,446">
         <var name="containingClassifier" id="3421461530438560307" />
       </scope>
-      <scope id="3421461530438560202" at="59,30,61,239" />
+      <scope id="3421461530438560202" at="59,30,61,276" />
       <scope id="3421461530438560191" at="16,0,19,0">
         <var name="thisNode" id="3421461530438560191" />
       </scope>

@@ -28,22 +28,22 @@
   <dependency className="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableArrayProxy" file="IterableArrayProxy.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableProxy" file="IterableProxy.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy" />
     <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil" file="MirrorUtil.java">
     <classNode dependClassName="com.sun.jdi.Value" />

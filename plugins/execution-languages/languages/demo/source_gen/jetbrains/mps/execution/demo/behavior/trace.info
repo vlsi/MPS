@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.demo.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="SomeConcept_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.demo.behavior.SomeConcept_BehaviorDescriptor" />
-  <root nodeRef="r:07978ce6-64b4-421f-b466-c3c0460eccb2(jetbrains.mps.execution.demo.behavior)/8398535532016756708">
-    <nodeInfo nodeId="8398535532016761775" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isNodeRunnable_4666195181811081448#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="8398535532016756710" fileName="SomeConcept_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8398535532016756713" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="61" />
-    <scopeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="8398535532016756708" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8398535532016756708" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.demo.behavior.SomeConcept_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="SomeConcept_BehaviorDescriptor.java">
+      <unit at="12,0,29,0" name="jetbrains.mps.execution.demo.behavior.SomeConcept_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.execution.demo.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:07978ce6-64b4-421f-b466-c3c0460eccb2(jetbrains.mps.execution.demo.behavior)/8398535532016756708">
+    <file name="SomeConcept_Behavior.java">
+      <node id="8398535532016761775" at="11,84,12,61" concept="0" />
+      <node id="8398535532016756708" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8398535532016756708" at="11,0,14,0" concept="1" trace="virtual_isNodeRunnable_4666195181811081448#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="8398535532016756710" at="9,43,9,43" />
+      <scope id="8398535532016756713" at="11,84,12,61" />
+      <scope id="8398535532016756708" at="9,0,11,0">
+        <var name="thisNode" id="8398535532016756708" />
+      </scope>
+      <scope id="8398535532016756708" at="11,0,14,0">
+        <var name="thisNode" id="8398535532016756708" />
+      </scope>
+      <unit id="8398535532016756708" at="8,0,15,0" name="jetbrains.mps.execution.demo.behavior.SomeConcept_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

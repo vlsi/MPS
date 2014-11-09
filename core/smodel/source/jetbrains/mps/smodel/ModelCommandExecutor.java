@@ -97,8 +97,6 @@ public interface ModelCommandExecutor {
 
   boolean isInsideCommand();
 
-  void runIndexing(Runnable r);
-
   /**
    * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#addCommandListener} instead.
    */

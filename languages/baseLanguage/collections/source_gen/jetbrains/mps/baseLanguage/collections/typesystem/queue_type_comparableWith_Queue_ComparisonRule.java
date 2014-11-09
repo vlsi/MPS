@@ -90,5 +90,5 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_ma7wq5_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
+  private static SNodePointer SNODE_POINTER_ma7wq5_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
 }

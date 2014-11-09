@@ -299,11 +299,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runIndexing(Runnable r) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public void addCommandListener(CommandListener l) {
     LOG.warn("Adding command listener to DefaultModelAccess: can't run commands and listen to them");
   }

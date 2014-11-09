@@ -142,7 +142,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       String pack = prefix + ((eq_jzcn2m_a0a0a0a3a1a9(prefix, "") ? "" : ".")) + subdir.getName();
 
       if (Sequence.fromIterable(rootClasses).isNotEmpty() && neq_jzcn2m_a0a5a1a9(pack, "")) {
-        final SModelReference modelReference = StubHelper.uidForPackageInStubs(pack, languageId, module.getModuleReference());
+        final SModelReference modelReference = StubHelper.uidForPackageInStubs(module.getModuleReference(), pack);
         JavaClassStubModelDescriptor smd;
         // FIXME: hack, see comment below 
         SModel modelDescriptor = getModelAlreadyRegistered(module, modelReference);
@@ -152,12 +152,12 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           ListSequence.fromList(result).addElement(modelDescriptor);
         } else if (ListSequence.fromList(result).any(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return it.getReference().equals(modelReference);
+            return it.getModelId().equals(modelReference.getModelId());
           }
         })) {
           modelDescriptor = ListSequence.fromList(result).findFirst(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return it.getReference().equals(modelReference);
+              return it.getModelId().equals(modelReference.getModelId());
             }
           });
           assert modelDescriptor instanceof JavaClassStubModelDescriptor;

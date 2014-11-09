@@ -1,3 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ao5hgymrf2mtoa8bpl8fz0hmd0bp0gz" />
+<dependencies version="2" modelHash="-ao5hgymrf2mtoa8bpl8fz0hmd0bp0gz">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-5fkv9ssxi10e4ocy6c9it6sq9alrciy" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="6877931680625740132" name="Controller" hash="-2aftt0cn1vyrhpsfdqu5c8djwa97qqk">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="Controller.java" />
+  </source>
+  <source id="6877931680625740198" name="CommandChannel" hash="-2v4dvgws45f3iqpv3n27wo2vqw7j65v">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="CommandChannel.java" />
+  </source>
+  <source id="6877931680625740260" name="AbstractEvent" hash="cjwqhvgkc8jxprfrsac71useaa7f05o">
+    <file name="AbstractEvent.java" />
+  </source>
+  <source id="6877931680625740350" name="Event" hash="e4ndt6jjfre1yl11ake1nz1m27sokmu">
+    <file name="Event.java" />
+  </source>
+  <source id="6877931680625740406" name="State" hash="-2x65efj8nckdcrtcuxxwg4yxn6l1qnl">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <file name="State.java" />
+  </source>
+  <source id="6877931680625740838" name="StateMachine" hash="-4xv7868wcav40mbj548s6f7b7rgumtk">
+    <dep root="6877931680625740406" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <file name="StateMachine.java" />
+  </source>
+  <source id="6877931680625741136" name="Command" hash="5vjajjrfinm29cstwdwv07592o7av78">
+    <file name="Command.java" />
+  </source>
+  <source id="6877931680625741150" name="StateMachineTest" hash="-7aa5u9b8tvwsghrjj5p1jrs28xqd1i2">
+    <file name="StateMachineTest.java" />
+  </source>
+  <source id="6877931680625741186" name="Notification" hash="-39esv7ztxev4gmyjv8l2pzfm89lm5i9">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <file name="Notification.java" />
+  </source>
+  <source id="6877931680625741402" name="StateMachineFactory" hash="-4f9096vtghjssh2pfuxj8ret4ut3wm6">
+    <file name="StateMachineFactory.java" />
+  </source>
+</dependencies>
 

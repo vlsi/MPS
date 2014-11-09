@@ -18,9 +18,10 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +36,7 @@ import java.util.Set;
 public final class ModelDependencyScanner {
 
   private final Set<SLanguage> myUsedLanguages;
-  private final Set<SModelReference> myCrossModelReferences;
+  private final Set<org.jetbrains.mps.openapi.model.SModelReference> myCrossModelReferences;
   private final Set<SConcept> myConcepts;
   private boolean myNeedLanguages = true;
   private boolean myNeedCrossModel = true;
@@ -43,7 +44,7 @@ public final class ModelDependencyScanner {
 
   public ModelDependencyScanner() {
     myUsedLanguages = new HashSet<SLanguage>();
-    myCrossModelReferences = new HashSet<SModelReference>();
+    myCrossModelReferences = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     myConcepts = new HashSet<SConcept>();
   }
 
@@ -77,7 +78,7 @@ public final class ModelDependencyScanner {
   }
 
   @NotNull
-  public Set<SModelReference> getCrossModelReferences() {
+  public Set<org.jetbrains.mps.openapi.model.SModelReference> getCrossModelReferences() {
     return myCrossModelReferences;
   }
 
@@ -90,11 +91,11 @@ public final class ModelDependencyScanner {
     return walk(SNodeUtil.getDescendants(model));
   }
 
-  public ModelDependencyScanner walk(@NotNull Iterable<SNode> nodes) {
-    HashSet<SModelReference> allRefTargets = new HashSet<SModelReference>();
+  public ModelDependencyScanner walk(@NotNull Iterable<org.jetbrains.mps.openapi.model.SNode> nodes) {
+    HashSet<org.jetbrains.mps.openapi.model.SModelReference> allRefTargets = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     // collection of input nodes is not restricted to come from a single model,
     // hence we track models of nodes we iterate through to exclude them later from the set of cross-model.
-    HashSet<SModelReference> sourceModels = new HashSet<SModelReference>();
+    HashSet<org.jetbrains.mps.openapi.model.SModelReference> sourceModels = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     for (SNode n : nodes) {
       if (myNeedConcepts) {
         myConcepts.add(n.getConcept());
@@ -103,12 +104,12 @@ public final class ModelDependencyScanner {
         myUsedLanguages.add(n.getConcept().getLanguage());
       }
       if (myNeedCrossModel) {
-        final SModel sourceModel = n.getModel();
+        final org.jetbrains.mps.openapi.model.SModel sourceModel = n.getModel();
         if (sourceModel != null) {
           sourceModels.add(sourceModel.getReference());
         }
         for (SReference ref : n.getReferences()) {
-          final SModelReference targetModel = ref.getTargetSModelReference();
+          final org.jetbrains.mps.openapi.model.SModelReference targetModel = ref.getTargetSModelReference();
           if (targetModel != null) {
             allRefTargets.add(targetModel);
           }

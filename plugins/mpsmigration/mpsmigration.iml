@@ -28,6 +28,8 @@
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="console" />
   </component>
 </module>
 

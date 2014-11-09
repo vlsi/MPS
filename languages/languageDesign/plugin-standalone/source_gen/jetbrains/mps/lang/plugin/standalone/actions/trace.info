@@ -27,10 +27,10 @@
       <node id="1227641889577" at="57,66,58,63" concept="5" />
       <node id="1227641889577" at="58,63,59,30" concept="5" />
       <node id="1227641889577" at="59,30,60,138" concept="1" />
-      <node id="1227641889577" at="60,138,61,282" concept="1" />
-      <node id="1227641889577" at="61,282,62,24" concept="6" />
-      <node id="1227641889577" at="59,30,61,282" concept="0" />
-      <node id="1227641889577" at="59,30,61,282" concept="0" />
+      <node id="1227641889577" at="60,138,61,319" concept="1" />
+      <node id="1227641889577" at="61,319,62,24" concept="6" />
+      <node id="1227641889577" at="59,30,61,319" concept="0" />
+      <node id="1227641889577" at="59,30,61,319" concept="0" />
       <node id="6062029294752720940" at="35,0,38,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
       <node id="6062029294752720940" at="47,0,50,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="6062029294752720940" at="33,98,38,20" concept="5" />
@@ -45,7 +45,7 @@
       <node id="6062029294752720940" at="28,0,57,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_ActionParameter_6062029294752720940#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="6062029294752720940" at="35,44,36,243" />
       <scope id="1218969641798" at="47,64,48,288" />
-      <scope id="1227641889577" at="59,30,61,282" />
+      <scope id="1227641889577" at="59,30,61,319" />
       <scope id="6062029294752720940" at="35,0,38,0" />
       <scope id="1218808193367" at="42,98,45,30">
         <var name="result" id="1218808212951" />

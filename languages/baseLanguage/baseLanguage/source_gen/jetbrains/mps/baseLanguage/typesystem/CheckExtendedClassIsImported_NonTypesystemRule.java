@@ -32,7 +32,7 @@ public class CheckExtendedClassIsImported_NonTypesystemRule extends AbstractNonT
     Collection<SModule> deps = depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
     for (SNode extendedClassifierType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
       SNode extendedClassifier = SLinkOperations.getTarget(extendedClassifierType, "classifier", false);
-      if (extendedClassifier == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")) {
+      if (extendedClassifier == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")) {
         continue;
       }
       SModule classifierModule = extendedClassifier.getModel().getModule();

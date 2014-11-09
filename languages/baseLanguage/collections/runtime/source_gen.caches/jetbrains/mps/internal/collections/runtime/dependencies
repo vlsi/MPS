@@ -43,18 +43,18 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.AbstractCollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode extendsClassName="java.io.Serializable" />
-    <classNode extendsClassName="java.util.Iterator" />
     <classNode extendsClassName="java.util.Map" />
-    <classNode extendsClassName="java.util.Set" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractCollectionSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.AbstractQueueSequence" file="AbstractQueueSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -134,10 +134,10 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.lang.reflect.Array" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
-    <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison" file="CaseInsensitiveStringComparison.java">
     <classNode dependClassName="java.lang.Comparable" />
@@ -220,7 +220,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IEnumerator" file="IEnumerator.java">
-    <classNode extendsClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ILeftCombinator" file="ILeftCombinator.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -456,13 +456,13 @@
     <classNode dependClassName="java.util.TreeMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequenceInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence" />
     <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="java.util.SortedMap" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractMapSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISortedMapSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.MapSequenceInitializer" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.SortedSetSequence" file="SortedSetSequence.java">
     <classNode dependClassName="java.lang.Iterable" />

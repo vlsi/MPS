@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,7 +28,6 @@ import java.util.Collections;
  * evgeny, 5/9/13
  */
 public class ProjectRepository extends SRepositoryBase {
-
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
 
@@ -60,12 +58,7 @@ public class ProjectRepository extends SRepositoryBase {
 
   @Override
   public RepositoryAccess getRepositoryAccess() {
-    return null;
-  }
-
-  @Override
-  public DebugRegistry getDebugRegistry() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override

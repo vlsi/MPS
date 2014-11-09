@@ -15,24 +15,22 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.annotations.NotNull;
 
-public final class SPropertyId implements org.jetbrains.mps.openapi.language.SPropertyId {
+public final class SPropertyId {
   private final SConceptId myConceptId;
-  private final int myPropertyId;
+  private final long myPropertyId;
 
-  public SPropertyId(SConceptId conceptId, long propertyId) {
+  public SPropertyId(@NotNull SConceptId conceptId, long propertyId) {
     myConceptId = conceptId;
-    myPropertyId = (int) propertyId;
+    myPropertyId = propertyId;
   }
 
-  @Override
   public SConceptId getConceptId() {
     return myConceptId;
   }
 
-  @Override
-  public int getPropertyId() {
+  public long getPropertyId() {
     return myPropertyId;
   }
 
@@ -44,15 +42,26 @@ public final class SPropertyId implements org.jetbrains.mps.openapi.language.SPr
     SPropertyId that = (SPropertyId) o;
 
     if (myPropertyId != that.myPropertyId) return false;
-    if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId != null ? myConceptId.hashCode() : 0;
-    result = 31 * result + myPropertyId;
+    int result = myConceptId.hashCode();
+    result = (int) (31 * result + myPropertyId);
     return result;
+  }
+
+  public String serialize() {
+    return myConceptId.serialize() + "/" + myPropertyId;
+  }
+
+  public static SPropertyId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    long prop = Long.parseLong(s.substring(split + 1));
+    return new SPropertyId(concept, prop);
   }
 }

@@ -42,6 +42,7 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
+  @Deprecated
   public ModuleReference(String moduleName) {
     this(moduleName, (SModuleId) null);
   }

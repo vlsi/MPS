@@ -22,11 +22,11 @@
       <node id="481983775135178862" at="32,60,33,63" concept="4" />
       <node id="481983775135178862" at="33,63,34,30" concept="4" />
       <node id="481983775135178862" at="34,30,35,138" concept="2" />
-      <node id="481983775135178862" at="35,138,36,304" concept="2" />
-      <node id="481983775135178862" at="36,304,37,24" concept="5" />
+      <node id="481983775135178862" at="35,138,36,341" concept="2" />
+      <node id="481983775135178862" at="36,341,37,24" concept="5" />
       <node id="481983775135178859" at="15,0,17,0" concept="1" trace="Typeof_ProjectPluginType_SubtypingRule#()V" />
-      <node id="481983775135178862" at="34,30,36,304" concept="0" />
-      <node id="481983775135178862" at="34,30,36,304" concept="0" />
+      <node id="481983775135178862" at="34,30,36,341" concept="0" />
+      <node id="481983775135178862" at="34,30,36,341" concept="0" />
       <node id="481983775135178859" at="17,0,20,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178859" at="20,0,23,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="481983775135178859" at="29,0,32,0" concept="3" trace="isWeak#()Z" />
@@ -41,7 +41,7 @@
       <scope id="481983775135178859" at="24,5,26,45">
         <var name="b" id="481983775135178859" />
       </scope>
-      <scope id="481983775135178862" at="34,30,36,304" />
+      <scope id="481983775135178862" at="34,30,36,341" />
       <scope id="481983775135178859" at="17,0,20,0">
         <var name="pluginType" id="481983775135178859" />
         <var name="status" id="481983775135178859" />
@@ -71,11 +71,11 @@
       <node id="481983775135178868" at="32,60,33,63" concept="4" />
       <node id="481983775135178868" at="33,63,34,30" concept="4" />
       <node id="481983775135178868" at="34,30,35,138" concept="2" />
-      <node id="481983775135178868" at="35,138,36,308" concept="2" />
-      <node id="481983775135178868" at="36,308,37,24" concept="5" />
+      <node id="481983775135178868" at="35,138,36,345" concept="2" />
+      <node id="481983775135178868" at="36,345,37,24" concept="5" />
       <node id="481983775135178865" at="15,0,17,0" concept="1" trace="Typeof_ApplicationPluginType_SubtypingRule#()V" />
-      <node id="481983775135178868" at="34,30,36,308" concept="0" />
-      <node id="481983775135178868" at="34,30,36,308" concept="0" />
+      <node id="481983775135178868" at="34,30,36,345" concept="0" />
+      <node id="481983775135178868" at="34,30,36,345" concept="0" />
       <node id="481983775135178865" at="17,0,20,0" concept="3" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="481983775135178865" at="20,0,23,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="481983775135178865" at="29,0,32,0" concept="3" trace="isWeak#()Z" />
@@ -90,7 +90,7 @@
       <scope id="481983775135178865" at="24,5,26,45">
         <var name="b" id="481983775135178865" />
       </scope>
-      <scope id="481983775135178868" at="34,30,36,308" />
+      <scope id="481983775135178868" at="34,30,36,345" />
       <scope id="481983775135178865" at="17,0,20,0">
         <var name="customApplicationPluginType" id="481983775135178865" />
         <var name="status" id="481983775135178865" />

@@ -254,7 +254,7 @@ public class GenerateToString_Action extends BaseAction {
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_2.addChild("body", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, false);
-    quotedNode_6.setReference("annotation", SReference.create("annotation", quotedNode_6, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
+    quotedNode_6.setReference("annotation", SReference.create("annotation", quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
     quotedNode_2.addChild("annotation", quotedNode_6);
     return quotedNode_2;
   }
