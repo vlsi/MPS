@@ -20,10 +20,6 @@ import jetbrains.mps.util.PathManager;
 import java.io.File;
 
 public class WorkbenchPathManager {
-  public static String getLanguagesPath() {
-    return PathManager.getHomePath() + File.separator + "languages";
-  }
-
   public static String getUserHome() {
     return System.getProperty("user.home");
   }

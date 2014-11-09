@@ -6,10 +6,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class ConflictableModuleAdapter extends Conflictable {
   private final AbstractModule myModule;
@@ -29,14 +26,15 @@ public class ConflictableModuleAdapter extends Conflictable {
   @Override
   public void reloadFromDisk() {
     SModuleOperations.reloadFromDisk(myModule);
-    ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
   @Override
   public boolean needReloading() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return SModuleOperations.needReloading(myModule);
+    final Wrappers._boolean result = new Wrappers._boolean(false);
+    myModule.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result.value = SModuleOperations.needReloading(myModule);
       }
     });
+    return result.value;
   }
 }

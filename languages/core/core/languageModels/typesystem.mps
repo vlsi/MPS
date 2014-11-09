@@ -1378,38 +1378,6 @@
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242864" id="3147046286622514098" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="3147046286622514099" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="unloaded" />
-              <node concept="vg0i.1107535904670" id="3147046286622514072" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~Set" resolveInfo="Set" />
-                <node concept="vg0i.1107535904670" id="3147046286622514075" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
-                </node>
-              </node>
-              <node concept="vg0i.1197027756228" id="3147046286622514100" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1081236700937" id="3147046286622514101" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolveInfo="getInstance" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
-                </node>
-                <node concept="vg0i.1202948039474" id="3147046286622514102" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dunloadClasses(java%dlang%dIterable,org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cjava%dutil%dSet" resolveInfo="unloadClasses" />
-                  <node concept="vg0i.1081236700937" id="3147046286622514103" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%dsingleton(java%dlang%dObject)%cjava%dutil%dSet" resolveInfo="singleton" />
-                    <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
-                    <node concept="vg0i.1068498886296" id="3147046286622514104" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="6268689888343063964" resolveInfo="languageModule" />
-                    </node>
-                  </node>
-                  <node concept="vg0i.1145552977093" id="3147046286622514105" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1212685548494" id="3147046286622514106" role="vg0i.1145552977093.1145553007750" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolveInfo="EmptyProgressMonitor" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="vg0i.1068580123157" id="3147046286622521038" role="vg0i.1068580123136.1068581517665" info="nn" />
           <node concept="vg0i.6329021646629104954" id="6268689888343096107" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.6329021646629104957" id="6268689888343098204" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
@@ -1485,14 +1453,9 @@
                 <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
               </node>
               <node concept="vg0i.1202948039474" id="3147046286622529582" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dloadClasses(java%dlang%dIterable,org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cjava%dutil%dSet" resolveInfo="loadClasses" />
-                <node concept="vg0i.1068498886296" id="3147046286622529670" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="3147046286622514099" resolveInfo="unloaded" />
-                </node>
-                <node concept="vg0i.1145552977093" id="3147046286622530396" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1212685548494" id="3147046286622531798" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolveInfo="EmptyProgressMonitor" />
-                  </node>
+                <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dreloadModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cjava%dutil%dCollection" resolveInfo="reloadModule" />
+                <node concept="vg0i.1068498886296" id="6498522368442090603" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="6268689888343063964" resolveInfo="languageModule" />
                 </node>
               </node>
             </node>

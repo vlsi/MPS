@@ -24,6 +24,8 @@
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" name="jetbrains.mps.classloading@java_stub" />
     <model ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" name="jetbrains.mps.baseLanguage.scopes" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency(MPS.Core/jetbrains.mps.project.dependency@java_stub)" name="jetbrains.mps.project.dependency@java_stub" />
+    <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" name="jetbrains.mps.project@java_stub" />
+    <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(jetbrains.mps.module@java_stub)" name="jetbrains.mps.module@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
@@ -235,6 +237,8 @@
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="gqu6" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.dependency(MPS.Core/jetbrains.mps.project.dependency@java_stub)" />
+    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
+    <import index="42ru" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(jetbrains.mps.module@java_stub)" />
     <import index="tp1t" ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" implicit="true" />
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -947,16 +951,12 @@
             </node>
             <node concept="vg0i.1068580123136" id="8857655676208055033" role="vg0i.1154032098014.1154032183016" info="sn">
               <node concept="vg0i.1068580123159" id="8857655676208057679" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="6785477015317723796" role="vg0i.1068580123159.1068580123160" info="nn">
-                  <node concept="vg0i.1202948039474" id="6785477015317728669" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dcanLoad(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cboolean" resolveInfo="canLoad" />
-                    <node concept="j0ph.1153944233411" id="6785477015317729220" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="j0ph.1153944233411.1153944258490" target="8857655676208055029" resolveInfo="module" />
-                    </node>
+                <node concept="vg0i.1081256982272" id="6017196368158291446" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1107535904670" id="6017196368158296142" role="vg0i.1081256982272.1081256993305" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="42ru.~ReloadableModule" resolveInfo="ReloadableModule" />
                   </node>
-                  <node concept="vg0i.1081236700937" id="6785477015317723010" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolveInfo="getInstance" />
-                    <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+                  <node concept="j0ph.1153944233411" id="6017196368158288864" role="vg0i.1081256982272.1081256993304" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="8857655676208055029" resolveInfo="module" />
                   </node>
                 </node>
                 <node concept="vg0i.1068580123136" id="8857655676208057681" role="vg0i.1068580123159.1068580123161" info="sn">

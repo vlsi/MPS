@@ -4951,6 +4951,9 @@
       <property role="asn4.1169194658468.1169194664001" value="EnumClass_Editor" />
       <property role="asn4.1133920641626.1193676396447" value="classifiers.classifiers" />
       <reference role="9wj7.1166049232041.1166049300910" target="tpee.1083245097125" resolveInfo="EnumClass" />
+      <node concept="9wj7.1078939183254" id="1960260476750096781" role="9wj7.1071666914219.1078153129734" info="sg">
+        <reference role="9wj7.1078939183254.1078939183255" target="tpco.1960260476749651797" resolveInfo="VirtualPackage" />
+      </node>
       <node concept="9wj7.1073389446423" id="1085483277583" role="9wj7.1080736578640.1080736633877" info="sn">
         <property role="9wj7.1073389446423.1073389446425" value="true" />
         <node concept="9wj7.1078939183254" id="5310874912466348405" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -5316,9 +5319,6 @@
         </node>
         <node concept="9wj7.1237303669825" id="1237717726364" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
-      <node concept="9wj7.1078939183254" id="1960260476750096781" role="9wj7.1071666914219.1078153129734" info="sg">
-        <reference role="9wj7.1078939183254.1078939183255" target="tpco.1960260476749651797" resolveInfo="VirtualPackage" />
-      </node>
     </node>
     <node concept="9wj7.1071666914219" id="1085485112422" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="EnumConstantDeclaration_Editor" />
@@ -5447,6 +5447,9 @@
       <property role="asn4.1169194658468.1169194664001" value="Interface_Editor" />
       <property role="asn4.1133920641626.1193676396447" value="classifiers.classifiers" />
       <reference role="9wj7.1166049232041.1166049300910" target="tpee.1107796713796" resolveInfo="Interface" />
+      <node concept="9wj7.1078939183254" id="1960260476750093220" role="9wj7.1071666914219.1078153129734" info="sg">
+        <reference role="9wj7.1078939183254.1078939183255" target="tpco.1960260476749651797" resolveInfo="VirtualPackage" />
+      </node>
       <node concept="9wj7.1073389446423" id="1107796852505" role="9wj7.1080736578640.1080736633877" info="sn">
         <property role="9wj7.1073389446423.1073389446425" value="true" />
         <node concept="9wj7.1078939183254" id="8856861289653948854" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -5810,9 +5813,6 @@
           </node>
         </node>
         <node concept="9wj7.1237303669825" id="1237717833589" role="9wj7.1073389446423.1106270802874" info="nn" />
-      </node>
-      <node concept="9wj7.1078939183254" id="1960260476750093220" role="9wj7.1071666914219.1078153129734" info="sg">
-        <reference role="9wj7.1078939183254.1078939183255" target="tpco.1960260476749651797" resolveInfo="VirtualPackage" />
       </node>
     </node>
     <node concept="9wj7.1078938745671" id="1109280020740" info="ig">

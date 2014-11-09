@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -171,7 +172,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   // MPSClassesListener part
   @Override
-  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SModule module : unloadedModules) {
       if (module instanceof Language) {
@@ -192,21 +193,17 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   @Override
-  public void afterClassesLoaded(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
-        if (!myLanguages.containsKey(namespace)) {
-          LanguageRuntime runtime = createRuntime((Language) module);
-          if (runtime != null) {
-            myLanguages.put(namespace, runtime);
-            myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)),runtime);
-            loadedRuntimes.add(runtime);
-          }
-        } else {
-          // todo: move this check to ClassLoaderManager
-          throw new IllegalStateException();
+        assert (!myLanguages.containsKey(namespace));
+        LanguageRuntime runtime = createRuntime((Language) module);
+        if (runtime != null) {
+          myLanguages.put(namespace, runtime);
+          myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)),runtime);
+          loadedRuntimes.add(runtime);
         }
       }
     }

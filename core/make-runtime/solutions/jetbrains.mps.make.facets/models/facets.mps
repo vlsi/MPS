@@ -1273,33 +1273,12 @@
                     <node concept="cakq.1199569711397" id="4555842806672775724" role="vg0i.1204053956946.1068499141038" info="nn">
                       <property role="cakq.1199569711397.890797661671409019" value="true" />
                       <node concept="vg0i.1068580123136" id="4555842806672775725" role="cakq.1199569711397.1199569916463" info="sn">
-                        <node concept="vg0i.1068580123155" id="6429080500447299416" role="vg0i.1068580123136.1068581517665" info="nn">
-                          <node concept="vg0i.1197027756228" id="6429080500447300675" role="vg0i.1068580123155.1068580123156" info="nn">
-                            <node concept="vg0i.1202948039474" id="6429080500447305107" role="vg0i.1197027756228.1197027833540" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dunloadClasses(java%dlang%dIterable,org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cjava%dutil%dSet" resolveInfo="unloadClasses" />
-                              <node concept="vg0i.1068498886296" id="6429080500447306215" role="vg0i.1204053956946.1068499141038" info="nn">
-                                <reference role="vg0i.1068498886296.1068581517664" target="1488384656848138788" resolveInfo="toReload" />
-                              </node>
-                              <node concept="vg0i.1145552977093" id="6429080500447307433" role="vg0i.1204053956946.1068499141038" info="nn">
-                                <node concept="vg0i.1212685548494" id="6429080500447310466" role="vg0i.1145552977093.1145553007750" info="nn">
-                                  <reference role="vg0i.1204053956946.1068499141037" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolveInfo="EmptyProgressMonitor" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="vg0i.1081236700937" id="6429080500447300383" role="vg0i.1197027756228.1197027771414" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolveInfo="getInstance" />
-                              <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
-                            </node>
-                          </node>
-                        </node>
                         <node concept="vg0i.1068580123155" id="6429080500447314117" role="vg0i.1068580123136.1068581517665" info="nn">
                           <node concept="vg0i.1197027756228" id="6429080500447316809" role="vg0i.1068580123155.1068580123156" info="nn">
                             <node concept="vg0i.1202948039474" id="6429080500447321488" role="vg0i.1197027756228.1197027833540" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dloadAllPossibleClasses(org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cvoid" resolveInfo="loadAllPossibleClasses" />
-                              <node concept="vg0i.1145552977093" id="6429080500447322731" role="vg0i.1204053956946.1068499141038" info="nn">
-                                <node concept="vg0i.1212685548494" id="6429080500447325142" role="vg0i.1145552977093.1145553007750" info="nn">
-                                  <reference role="vg0i.1204053956946.1068499141037" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolveInfo="EmptyProgressMonitor" />
-                                </node>
+                              <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dreloadModules(java%dlang%dIterable)%cjava%dutil%dCollection" resolveInfo="reloadModules" />
+                              <node concept="vg0i.1068498886296" id="5210394311214893376" role="vg0i.1204053956946.1068499141038" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1488384656848138788" resolveInfo="toReload" />
                               </node>
                             </node>
                             <node concept="vg0i.1081236700937" id="6429080500447315325" role="vg0i.1197027756228.1197027771414" info="nn">

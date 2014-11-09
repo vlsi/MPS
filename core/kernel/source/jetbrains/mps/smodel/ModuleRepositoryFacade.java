@@ -26,6 +26,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -41,6 +43,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ModuleRepositoryFacade implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
@@ -131,16 +134,6 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return result;
   }
 
-  public void unregisterModules(MPSModuleOwner owner, Condition<SModule> condition) {
-    Collection<SModule> modulesToRemove = new ArrayList<SModule>();
-    for (SModule module : REPO.getModules(owner)) {
-      if (condition.met(module)) {
-        modulesToRemove.add(module);
-      }
-    }
-    REPO.unregisterModules(modulesToRemove, owner);
-  }
-
   public void unregisterModules(MPSModuleOwner owner) {
     REPO.unregisterModules(new HashSet<SModule>(REPO.getModules(owner)), owner);
   }
@@ -165,7 +158,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
-//    LOG.debug("Creating a module " + handle);
+    LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
@@ -201,11 +194,6 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    T registered = MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
-    if (registered == module) {
-      // we can't do it in AbstractModule#attach because we need module without models in SRepositoryListener#moduleAdded event
-      registered.reloadAfterDescriptorChange();
-    }
-    return registered;
+    return MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
   }
 }

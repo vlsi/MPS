@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,14 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class BootstrapLibContributor implements LibraryContributor, ApplicationComponent {
 
-  private final MPSModuleRepository myRepository;
+  private final SRepository myRepository;
 
   public BootstrapLibContributor(MPSWorkbenchComponents dep) {
     myRepository = dep.getMPSCoreComponents().getModuleRepository();
@@ -49,12 +50,15 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
     return true;
   }
 
+  /**
+   * FIXME: investigate VirtualFile#refresh behaviour
+   * do not block application loading sequence, initialize languages from another thread.
+   * however, LibraryInitializer reads files (VirtualFile.refresh) and needs IDEA's write
+   * which is available in EDT thread only.
+   */
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
-    // do not block application loading sequence, initialize languages from another thread.
-    // however, LibraryInitializer reads files (VirtualFile.refresh) and needs IDEA's write
-    // which is available in EDT thread only.
     myRepository.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
@@ -63,8 +67,14 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
     });
   }
 
+  /**
+   * FIXME
+   * Cannot perform update because with "invokeLaterInEDT" LibraryInitializer gets disposed!
+   * Maybe we need to update only at initComponent, but still.
+   */
   @Override
   public void disposeComponent() {
+    LibraryInitializer.getInstance().removeContributor(this);
   }
 
   @Override

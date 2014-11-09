@@ -26,10 +26,12 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -146,11 +148,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
     LinkedHashSet<SModel> models = new LinkedHashSet<SModel>();
     collectFromModuleFiles(modules);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {
@@ -159,7 +156,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       doneSomething = true;
     }
     if (!(doneSomething)) {
-
       error("Could not find anything to generate.");
     }
 
@@ -167,16 +163,18 @@ public class BaseGeneratorWorker extends MpsWorker {
     showStatistic();
   }
   protected void makeProject() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+    final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+      public MPSCompilationResult compute() {
+        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
+    if (mpsCompilationResult.isReloadingNeeded()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
+        }
+      });
+    }
   }
   private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {

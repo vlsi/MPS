@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.tuples.test" uuid="993e3b08-9f44-43cf-b983-e474ac66855b" compileInMPS="true">
+<solution name="jetbrains.mps.baseLanguage.tuples.test" uuid="993e3b08-9f44-43cf-b983-e474ac66855b" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />

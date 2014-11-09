@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.make.MPSCompilationResult;
 
 public class ContextProjectSupport {
   public static final String PROJECT_PATH_PROPERTY = "mps.junit.project";
@@ -140,9 +141,9 @@ public class ContextProjectSupport {
   @NotNull
   private static Project makeOnFirstTimeOpened(@NotNull Project project) {
     // todo: check result of making, throw checked MakeException 
-    MpsTestsSupport.makeAllInCreatedEnvironment();
+    MPSCompilationResult mpsCompilationResult = MpsTestsSupport.makeAllInCreatedEnvironment();
     try {
-      MpsTestsSupport.reloadAllAfterMake();
+      MpsTestsSupport.reloadAllAfterMake(mpsCompilationResult);
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

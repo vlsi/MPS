@@ -244,7 +244,7 @@ public class ModelDependenciesManager {
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       invalidateIfWatching(module);
     }
 

@@ -47,6 +47,7 @@ public interface SRepository {
 
   ModelAccess getModelAccess();
 
+  @Deprecated
   RepositoryAccess getRepositoryAccess();
 
   void saveAll();

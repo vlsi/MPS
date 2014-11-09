@@ -23,13 +23,18 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.project.ProjectLibraryManager;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -39,6 +44,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
+  private static final Logger LOG = LogManager.getLogger(StartupModuleMaker.class);
   private final ReloadManagerComponent myReloadManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
@@ -68,37 +74,38 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
     final ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
 
+    LOG.info("Making modules on startup");
     monitor.start("Making modules", 10);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
-      ModelAccess.instance().runReadAction(new Runnable() {
+      MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
         @Override
-        public void run() {
+        public MPSCompilationResult compute() {
           monitor.advance(1);
 
           MessagesViewTool mvt = myProject.getComponent(MessagesViewTool.class);
           final ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
-
-          myReloadManager.computeNoReload(new Computable<Object>() {
+          return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
             @Override
-            public Object compute() {
-              maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
-              return null;
+            public MPSCompilationResult compute() {
+              return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
             }
           });
         }
       });
-      reloadClasses(indicator, early);
+      if (mpsCompilationResult.isReloadingNeeded()) reloadClasses(mpsCompilationResult, indicator, early);
     } finally {
       monitor.done();
     }
+    LOG.info("Compilation on startup is finished");
   }
 
-  private void reloadClasses(final ProgressIndicator indicator, boolean asPreStartup) {
+  private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {
     final Runnable reloadTask = new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
+        ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
+        ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules(), monitor);
       }
     };
     if (asPreStartup) {

@@ -22,7 +22,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.DefaultModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStream;
@@ -51,7 +50,6 @@ public class IdeaEnvironment implements Environment {
     ActiveEnvironment.activateEnvironment(this);
     EnvironmentUtils.setSystemProperties(true);
     EnvironmentUtils.setIdeaPluginsToLoad(config);
-    // <node> 
 
     myIdeaApplication = createIdeaTestApp();
     myLibContributor = initLibraries(config);
@@ -66,8 +64,8 @@ public class IdeaEnvironment implements Environment {
   }
 
   private void initMacros(EnvironmentConfig config) {
-    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
-      setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
+    for (String macro : MapSequence.fromMap(config.getMacros()).keySet()) {
+      setMacro(macro, MapSequence.fromMap(config.getMacros()).get(macro));
     }
   }
 
@@ -83,7 +81,7 @@ public class IdeaEnvironment implements Environment {
       LOG.info("Initializing libraries");
     }
 
-    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(false, config.libs());
+    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(config.getLibs());
     LibraryInitializer.getInstance().addContributor(libContributor);
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
@@ -153,7 +151,6 @@ public class IdeaEnvironment implements Environment {
       public void run() {
         myContainer.disposeProject(project);
         IdeEventQueue.getInstance().flushQueue();
-        System.gc();
       }
     });
   }
@@ -175,9 +172,6 @@ public class IdeaEnvironment implements Environment {
       disposeProject(project.getProjectFile());
     }
 
-    // todo: fix it in right way 
-    ModelAccess.setInstance(new DefaultModelAccess());
-
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
@@ -188,6 +182,8 @@ public class IdeaEnvironment implements Environment {
         });
       }
     });
+
+    ModelAccess.instance().flushEventQueue();
 
     ActiveEnvironment.deactivateEnvironment(this);
   }
@@ -233,7 +229,7 @@ public class IdeaEnvironment implements Environment {
         }
       }
     });
-    if (project[0] == null) {
+    if (exc[0] != null) {
       // this actually happens 
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }

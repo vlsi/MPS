@@ -108,10 +108,10 @@
       <node id="535979196343168494" at="29,0,30,0" concept="11" trace="INDENT_INNER_XML" />
       <node id="6690493898470434345" at="30,46,31,20" concept="13" />
       <node id="6690493898470442090" at="33,74,34,28" concept="13" />
-      <node id="6690493898470434385" at="43,22,44,23" concept="1" />
-      <node id="6690493898470434387" at="44,23,45,49" concept="7" />
-      <node id="6690493898470434391" at="45,49,46,13" concept="1" />
-      <node id="6690493898470434393" at="46,13,47,57" concept="7" />
+      <node id="1656094017803901190" at="40,34,41,0" concept="10" />
+      <node id="6690493898470434385" at="44,22,45,23" concept="1" />
+      <node id="6690493898470434387" at="45,23,46,49" concept="7" />
+      <node id="6690493898470434393" at="46,49,47,57" concept="7" />
       <node id="6690493898470434404" at="48,41,49,43" concept="1" />
       <node id="6690493898470434408" at="50,5,51,14" concept="1" />
       <node id="6690493898470434410" at="51,14,52,20" concept="1" />
@@ -147,25 +147,25 @@
       <node id="6690493898470434341" at="30,0,33,0" concept="0" trace="GenModuleXmlWorker#(Ljetbrains/mps/tool/common/Script;)V" />
       <node id="6690493898470441742" at="33,0,36,0" concept="0" trace="GenModuleXmlWorker#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;)V" />
       <node id="6690493898470434350" at="36,0,39,0" concept="6" trace="executeTask#(Ljetbrains/mps/project/Project;Ljetbrains/mps/tool/builder/MpsWorker/ObjectsToProcess;)V" />
-      <node id="6690493898470434358" at="39,0,42,0" concept="6" trace="showStatistic#()V" />
       <node id="6690493898470439154" at="47,57,50,5" concept="4" />
       <node id="6690493898470434452" at="59,0,62,0" concept="6" trace="compute#()Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="6690493898470501160" at="79,7,82,7" concept="4" />
       <node id="2856694665814330893" at="93,68,96,5" concept="5" />
       <node id="2034046503361589156" at="99,0,102,0" concept="6" trace="run#()V" />
       <node id="6690493898470439677" at="105,0,108,0" concept="12" trace="main#([Ljava/lang/String;)V" />
+      <node id="6690493898470434358" at="39,0,43,0" concept="6" trace="showStatistic#()V" />
       <node id="6690493898470434446" at="57,110,62,7" concept="7" />
       <node id="6690493898470501136" at="74,64,79,7" concept="5" />
       <node id="2034046503361589152" at="97,88,102,7" concept="1" />
-      <node id="6690493898470434381" at="42,0,54,0" concept="6" trace="work#()V" />
+      <node id="6690493898470434381" at="43,0,54,0" concept="6" trace="work#()V" />
       <node id="5738701198683707483" at="93,0,105,0" concept="6" trace="getDepenencies#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/util/Collection;" />
       <node id="6690493898470434413" at="54,0,67,0" concept="6" trace="processParameter#(Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
       <node id="6690493898470503441" at="68,0,91,5" concept="15" />
       <node id="6690493898470501074" at="67,0,93,0" concept="6" trace="writeFile#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)V" />
       <scope id="6690493898470434357" at="37,78,37,78" />
-      <scope id="6690493898470434361" at="40,34,40,34" />
       <scope id="6690493898470434344" at="30,46,31,20" />
       <scope id="6690493898470441745" at="33,74,34,28" />
+      <scope id="6690493898470434361" at="40,34,41,0" />
       <scope id="6690493898470439155" at="48,41,49,43" />
       <scope id="6690493898470434453" at="59,32,60,73" />
       <scope id="6690493898470501161" at="80,38,81,111" />
@@ -187,7 +187,6 @@
         <var name="go" id="6690493898470434355" />
         <var name="project" id="6690493898470434353" />
       </scope>
-      <scope id="6690493898470434358" at="39,0,42,0" />
       <scope id="6690493898470439154" at="47,57,50,5">
         <var name="parameter" id="6690493898470439157" />
       </scope>
@@ -200,20 +199,21 @@
       <scope id="6690493898470439677" at="105,0,108,0">
         <var name="args" id="6690493898470439682" />
       </scope>
-      <scope id="6690493898470434384" at="43,22,52,20">
+      <scope id="6690493898470434358" at="39,0,43,0" />
+      <scope id="6690493898470434384" at="44,22,52,20">
         <var name="parameters" id="6690493898470434394" />
         <var name="project" id="6690493898470434388" />
       </scope>
       <scope id="5738701198683707486" at="93,68,103,21">
         <var name="res" id="2856694665814340581" />
       </scope>
+      <scope id="6690493898470434381" at="43,0,54,0" />
       <scope id="6690493898470434416" at="54,67,65,94">
         <var name="module" id="6690493898470434447" />
         <var name="moduleRef" id="6690493898470434440" />
         <var name="params" id="6690493898470495662" />
         <var name="xmlfile" id="6690493898470434466" />
       </scope>
-      <scope id="6690493898470434381" at="42,0,54,0" />
       <scope id="5738701198683707483" at="93,0,105,0">
         <var name="module" id="5738701198683707507" />
       </scope>

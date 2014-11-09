@@ -16,7 +16,6 @@
 package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;

@@ -28469,7 +28469,7 @@
                             </node>
                           </node>
                           <node concept="vg0i.1202948039474" id="8667201949509390720" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                             <node concept="4ia1.4357968816427488499" id="8667201949509455323" role="vg0i.1204053956946.1068499141038" info="nn">
                               <property role="4ia1.4357968816427488499.4357968816427488500" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
                             </node>
@@ -28811,7 +28811,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="vg0i.1068580123157" id="8751504818642218358" role="vg0i.1068580123136.1068581517665" info="nn" />
                 </node>
               </node>
             </node>

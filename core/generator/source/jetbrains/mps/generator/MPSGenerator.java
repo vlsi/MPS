@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
@@ -38,11 +38,10 @@ public final class MPSGenerator extends ComponentPlugin {
     super.init();
     // XXX revisit once we got honest per-project repositories. It's not clear which project to take here
     SRepository repository = MPSModuleRepository.getInstance();
-    final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
-
-    init(new TraceInfoCache(repository));
+    CleanupManager cleanupManager = CleanupManager.getInstance();
+    init(new TraceInfoCache(repository, cleanupManager));
     final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager());
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, mgsm));
+    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, cleanupManager, mgsm));
     mgsm.setModelHashSource(depsCache);
     init(new GeneratorPathsComponent());
     init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));

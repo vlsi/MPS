@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.textgen.trace;
 
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -50,8 +51,8 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
-  public TraceInfoCache(SRepository repository) {
-    super(repository);
+  public TraceInfoCache(SRepository repository, CleanupManager cleanupManager) {
+    super(repository, cleanupManager);
   }
 
   @Override

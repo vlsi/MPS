@@ -15,48 +15,24 @@
  */
 package jetbrains.mps.ide.depanalyzer;
 
-import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.TestLanguage;
+import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.testbench.WriteAction;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ModuleDependenciesTest extends WorkbenchMpsTest {
-  private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner() {
-  };
-
+public class ModuleDependenciesTest extends ModuleMpsTest {
   @Rule
   public WriteAction wa = new WriteAction();
-
-  @After
-  public void afterTest() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
-    CleanupManager.getInstance().cleanup();
-  }
 
   //------------module depends on solution------------
 
@@ -256,31 +232,5 @@ public class ModuleDependenciesTest extends WorkbenchMpsTest {
     testDependency(solutions[0], languages[1], false, 0);  // extends is re-exported dependency, cannot go through nonexported dependency
 
     testDependency(solutions[0], languages[1], true, 1);  // runtime dependencies can go through other dependencies
-  }
-
-  //----------------------------------------------
-
-  private Solution createSolution() {
-    SolutionDescriptor d = new SolutionDescriptor();
-    String uuid = UUID.randomUUID().toString();
-    d.setNamespace(uuid);
-    d.setId(ModuleId.fromString(uuid));
-    return StubSolution.newInstance(d, OWNER);
-  }
-
-  private Language createLanguage() {
-    LanguageDescriptor d = new LanguageDescriptor();
-    String uuid = UUID.randomUUID().toString();
-    d.setNamespace(uuid);
-    d.setId(ModuleId.fromString(uuid));
-    return TestLanguage.newInstance(d, OWNER);
-  }
-
-  private DevKit createDevKit() {
-    DevkitDescriptor d = new DevkitDescriptor();
-    String uuid = UUID.randomUUID().toString();
-    d.setNamespace(uuid);
-    d.setId(ModuleId.fromString(uuid));
-    return (DevKit) ModuleRepositoryFacade.createModule(new ModuleHandle(null, d), OWNER);
   }
 }

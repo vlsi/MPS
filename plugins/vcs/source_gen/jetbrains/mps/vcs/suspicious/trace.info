@@ -291,39 +291,42 @@
   </root>
   <root nodeRef="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)/4093906047203396210">
     <file name="ConflictableModuleAdapter.java">
-      <node id="4093906047203396213" at="15,0,16,0" concept="4" trace="myModule" />
-      <node id="4093906047203396216" at="16,0,17,0" concept="4" trace="myIsConflictDetected" />
-      <node id="4093906047203396227" at="17,80,18,39" concept="3" />
-      <node id="4093906047203396231" at="18,39,19,46" concept="3" />
-      <node id="4093906047203396239" at="22,39,23,32" concept="9" />
-      <node id="4093906047203396245" at="26,26,27,40" concept="9" />
-      <node id="1722433917940771635" at="30,32,31,47" concept="3" />
-      <node id="1722433917940798135" at="31,47,32,88" concept="3" />
-      <node id="1722433917939876960" at="37,32,38,57" concept="9" />
-      <node id="1722433917939874914" at="37,0,40,0" concept="7" trace="compute#()Ljava/lang/Boolean;" />
-      <node id="4093906047203396219" at="17,0,21,0" concept="1" trace="ConflictableModuleAdapter#(Lorg/jetbrains/mps/openapi/module/SModule;Z)V" />
-      <node id="4093906047203396235" at="21,0,25,0" concept="7" trace="isConflictDetected#()Z" />
-      <node id="4093906047203396241" at="25,0,29,0" concept="7" trace="getFile#()Ljetbrains/mps/vfs/IFile;" />
-      <node id="4093906047203396249" at="29,0,34,0" concept="7" trace="reloadFromDisk#()V" />
-      <node id="1722433917939854440" at="35,34,40,7" concept="9" />
-      <node id="4093906047203396258" at="34,0,42,0" concept="7" trace="needReloading#()Z" />
-      <scope id="4093906047203396238" at="22,39,23,32" />
-      <scope id="4093906047203396244" at="26,26,27,40" />
-      <scope id="1722433917939874915" at="37,32,38,57" />
-      <scope id="4093906047203396226" at="17,80,19,46" />
-      <scope id="4093906047203396252" at="30,32,32,88" />
-      <scope id="1722433917939874914" at="37,0,40,0" />
-      <scope id="4093906047203396219" at="17,0,21,0">
+      <node id="4093906047203396213" at="12,0,13,0" concept="4" trace="myModule" />
+      <node id="4093906047203396216" at="13,0,14,0" concept="4" trace="myIsConflictDetected" />
+      <node id="4093906047203396227" at="14,80,15,39" concept="3" />
+      <node id="4093906047203396231" at="15,39,16,46" concept="3" />
+      <node id="4093906047203396239" at="19,39,20,32" concept="9" />
+      <node id="4093906047203396245" at="23,26,24,40" concept="9" />
+      <node id="1722433917940771635" at="27,32,28,47" concept="3" />
+      <node id="6005918561010497392" at="31,34,32,66" concept="8" />
+      <node id="1722433917939876960" at="34,25,35,65" concept="3" />
+      <node id="6005918561010499767" at="37,7,38,24" concept="9" />
+      <node id="1722433917939874914" at="34,0,37,0" concept="7" trace="run#()V" />
+      <node id="4093906047203396219" at="14,0,18,0" concept="1" trace="ConflictableModuleAdapter#(Lorg/jetbrains/mps/openapi/module/SModule;Z)V" />
+      <node id="4093906047203396235" at="18,0,22,0" concept="7" trace="isConflictDetected#()Z" />
+      <node id="4093906047203396241" at="22,0,26,0" concept="7" trace="getFile#()Ljetbrains/mps/vfs/IFile;" />
+      <node id="4093906047203396249" at="26,0,30,0" concept="7" trace="reloadFromDisk#()V" />
+      <node id="1722433917939854440" at="32,66,37,7" concept="3" />
+      <node id="4093906047203396258" at="30,0,40,0" concept="7" trace="needReloading#()Z" />
+      <scope id="4093906047203396238" at="19,39,20,32" />
+      <scope id="4093906047203396244" at="23,26,24,40" />
+      <scope id="4093906047203396252" at="27,32,28,47" />
+      <scope id="1722433917939874915" at="34,25,35,65" />
+      <scope id="4093906047203396226" at="14,80,16,46" />
+      <scope id="1722433917939874914" at="34,0,37,0" />
+      <scope id="4093906047203396219" at="14,0,18,0">
         <var name="isConflictDetected" id="4093906047203396224" />
         <var name="module" id="4093906047203396222" />
       </scope>
-      <scope id="4093906047203396235" at="21,0,25,0" />
-      <scope id="4093906047203396241" at="25,0,29,0" />
-      <scope id="4093906047203396249" at="29,0,34,0" />
-      <scope id="4093906047203396261" at="35,34,40,7" />
-      <scope id="4093906047203396258" at="34,0,42,0" />
-      <unit id="1722433917939874914" at="36,52,40,5" name="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter$1" />
-      <unit id="4093906047203396210" at="14,0,43,0" name="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter" />
+      <scope id="4093906047203396235" at="18,0,22,0" />
+      <scope id="4093906047203396241" at="22,0,26,0" />
+      <scope id="4093906047203396249" at="26,0,30,0" />
+      <scope id="4093906047203396261" at="31,34,38,24">
+        <var name="result" id="6005918561010497395" />
+      </scope>
+      <scope id="4093906047203396258" at="30,0,40,0" />
+      <unit id="1722433917939874914" at="33,64,37,5" name="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter$1" />
+      <unit id="4093906047203396210" at="11,0,41,0" name="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter" />
     </file>
   </root>
   <root nodeRef="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)/4707157387247635635">

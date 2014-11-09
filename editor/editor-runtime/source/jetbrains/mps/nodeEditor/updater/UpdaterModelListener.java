@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
-import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -25,7 +25,7 @@ import java.util.List;
  * User: shatalin
  * Date: 09/09/14
  */
-class UpdaterModelListener extends EventsCollector {
+class UpdaterModelListener extends ModelsEventsCollector {
   private final UpdaterImpl myUpdater;
 
   UpdaterModelListener(UpdaterImpl updater) {

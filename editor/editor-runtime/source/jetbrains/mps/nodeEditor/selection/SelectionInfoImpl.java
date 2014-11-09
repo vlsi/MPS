@@ -103,7 +103,7 @@ public class SelectionInfoImpl implements SelectionInfo {
           LOG.error("Specified selection class module was not Language: " + myModuleID);
           return null;
         }
-        selectionClass = ClassLoaderManager.getInstance().getClass(module, mySelectionClassName);
+        selectionClass = (Class<Selection>) ((Language) module).getClass(mySelectionClassName);
       } else {
         selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
       }

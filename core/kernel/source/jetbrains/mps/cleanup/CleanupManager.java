@@ -15,18 +15,23 @@
  */
 package jetbrains.mps.cleanup;
 
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-public class CleanupManager implements CoreComponent{
+public class CleanupManager implements CoreComponent {
   private static CleanupManager INSTANCE;
   private ClassLoaderManager myManager;
-  private ReloadAdapter myHandler;
+  private MPSClassesListener myClassesListener;
+  private final Object myLock = new Object();
+  private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
 
   public static CleanupManager getInstance() {
     return INSTANCE;
@@ -35,26 +40,23 @@ public class CleanupManager implements CoreComponent{
   @Override
   public void init() {
     if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
+      throw new IllegalStateException("CleanupManager is already initialized");
     }
-    myHandler = new ReloadAdapter() {
+    myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void unload() {
+      public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
         cleanup();
       }
     };
-    myManager.addReloadHandler(myHandler);
     INSTANCE = this;
+    myManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
+    myManager.removeClassesHandler(myClassesListener);
     INSTANCE = null;
-    myManager.removeReloadHandler(myHandler);
   }
-
-  private final Object myLock = new Object();
-  private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
 
   public CleanupManager(ClassLoaderManager manager) {
     myManager = manager;

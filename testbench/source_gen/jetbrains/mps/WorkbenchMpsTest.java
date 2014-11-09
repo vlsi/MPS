@@ -11,6 +11,10 @@ import jetbrains.mps.project.Project;
 import java.io.File;
 
 public class WorkbenchMpsTest {
+
+  /**
+   * TODO: move these classes from jetbrains.mps package!
+   */
   private static Environment CREATED_ENV;
 
   @BeforeClass

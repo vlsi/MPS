@@ -38,12 +38,12 @@ public class GenModuleXmlWorker extends MpsWorker {
   }
   @Override
   protected void showStatistic() {
+
   }
   @Override
   public void work() {
     setupEnvironment();
     final Project project = createDummyProject();
-    reload();
     List<String> parameters = myWhatToDo.getParameters();
     for (String parameter : parameters) {
       processParameter(project, parameter);

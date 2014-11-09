@@ -1920,7 +1920,7 @@
                 <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
               </node>
               <node concept="vg0i.1070475926800" id="8306023725008094465" role="vg0i.1068431474542.1068431790190" info="nn">
-                <property role="vg0i.1070475926800.1070475926801" value="MyVeryGoodConcept2" />
+                <property role="vg0i.1070475926800.1070475926801" value="MyVeryGoodConcept1" />
               </node>
             </node>
           </node>

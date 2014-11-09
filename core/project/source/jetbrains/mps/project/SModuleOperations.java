@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
+import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -200,14 +204,18 @@ public class SModuleOperations {
   }
 
   /**
-   * Unload classes of module. If you want load classes back call ClassLoaderManager#loadAllPossibleClasses
+   * Reads module from file and reloads it
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
+    if (module.getRepository() == null) throw new IllegalArgumentException("Module " + module + " is disposed");
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor, false);
+      module.setModuleDescriptor(descriptor);
+      if (module instanceof ReloadableModule) {
+        ((ReloadableModule) module).reload();
+      }
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

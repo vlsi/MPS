@@ -1582,12 +1582,9 @@
           <node concept="vg0i.1068580123155" id="4315758333761728129" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="4315758333761729176" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1202948039474" id="4315758333761737842" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~Language%dsetLanguageDescriptor(jetbrains%dmps%dproject%dstructure%dmodules%dLanguageDescriptor,boolean)%cvoid" resolveInfo="setLanguageDescriptor" />
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~Language%dsetLanguageDescriptor(jetbrains%dmps%dproject%dstructure%dmodules%dLanguageDescriptor)%cvoid" resolveInfo="setLanguageDescriptor" />
                 <node concept="vg0i.1068498886296" id="4315758333761741346" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="2273513587775220580" resolveInfo="descriptor" />
-                </node>
-                <node concept="vg0i.1068580123137" id="4315758333761753271" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580123137.1068580123138" value="false" />
                 </node>
               </node>
               <node concept="vg0i.1068498886296" id="4315758333761728128" role="vg0i.1197027756228.1197027771414" info="nn">

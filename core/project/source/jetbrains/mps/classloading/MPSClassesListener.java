@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collection;
 import java.util.Set;
 
 public interface MPSClassesListener {
-  void beforeClassesUnloaded(Set<SModule> unloadedModules);
+  void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules);
 
-  void afterClassesLoaded(Set<SModule> loadedModules);
+  void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules);
 }

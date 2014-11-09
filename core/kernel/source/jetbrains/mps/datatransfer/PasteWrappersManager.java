@@ -15,23 +15,26 @@
  */
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.module.ReloadableModuleBase;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
 import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class PasteWrappersManager implements CoreComponent {
 
@@ -41,9 +44,9 @@ public class PasteWrappersManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(PasteWrappersManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       clear();
     }
   };
@@ -67,12 +70,12 @@ public class PasteWrappersManager implements CoreComponent {
     }
 
     INSTANCE = this;
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     INSTANCE = null;
   }
 
