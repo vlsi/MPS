@@ -19,7 +19,7 @@ import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.module.ReloadableAbstractModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -31,6 +31,8 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -43,7 +45,8 @@ import java.util.Set;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends ReloadableAbstractModule {
+public class Solution extends ReloadableModuleBase {
+  private static final Logger LOG = LogManager.getLogger(Solution.class);
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -184,35 +187,19 @@ public class Solution extends ReloadableAbstractModule {
     return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 
-  private boolean canLoad() {
-    // TODO mps facet from this [like IDEA plugin facet]
-    return getKind() != SolutionKind.NONE || getFacet(CustomClassLoadingFacet.class) != null;
-  }
-
-  @Nullable
-  @Override
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
-    if (!canLoad()) return null;
-    return super.getClass(classFqName);
-  }
-
-  @Nullable
-  @Override
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
-    if (!canLoad()) return null;
-    return super.getOwnClass(classFqName);
-  }
-
   @Nullable
   @Override
   public ClassLoader getClassLoader() {
-    if (!canLoad()) return null;
+    if (!willLoad()) {
+      LOG.warn("The solution " + this + " is asked for classloader. [Try changing solution kind in the properties dialog]");
+      return null;
+    }
     return super.getClassLoader();
   }
 
   @Override
-  public void reload() {
-    if (!canLoad()) return;
-    super.reload();
+  public boolean willLoad() {
+    // TODO mps facet from this [like IDEA plugin facet]
+    return getKind() != SolutionKind.NONE || getFacet(CustomClassLoadingFacet.class) != null;
   }
 }

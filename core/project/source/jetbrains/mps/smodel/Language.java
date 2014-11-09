@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.module.ReloadableAbstractModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -64,7 +63,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Language extends ReloadableAbstractModule implements MPSModuleOwner, ReloadableModule {
+public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
 
   private static final Logger LOG = LogManager.getLogger(Language.class);
 
@@ -194,8 +193,8 @@ public class Language extends ReloadableAbstractModule implements MPSModuleOwner
 
   @Override
   public void dispose() {
-    super.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    super.dispose();
   }
 
   @Override
