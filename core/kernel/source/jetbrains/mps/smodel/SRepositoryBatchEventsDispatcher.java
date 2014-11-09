@@ -41,8 +41,7 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
 
   private final BatchEventsProcessor myBatchEventsProcessor;
 
-  private final List<SRepositoryBatchListener> myListeners =
-      new CopyOnWriteArrayList<SRepositoryBatchListener>();
+  private final List<SRepositoryBatchListener> myListeners = new CopyOnWriteArrayList<SRepositoryBatchListener>();
 
   private final SRepository myRepository;
 
@@ -62,6 +61,17 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   @Override
   public void actionStarted() {
     myBatchEventsProcessor.startBatching();
+  }
+
+  public void flush() {
+    final List<SRepositoryEvent> batchedEvents = myBatchEventsProcessor.flush();
+    if (batchedEvents.isEmpty()) return;
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        fireModuleEvents(batchedEvents);
+      }
+    });
   }
 
   @Override

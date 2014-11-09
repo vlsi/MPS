@@ -65,4 +65,11 @@ public interface ReloadableModule {
    * check {@link jetbrains.mps.classloading.ClassLoaderManager#reloadModules(Iterable)} methods.
    */
   public void reload();
+
+  /**
+   * @return true, if it will load classes. For some subclasses it is possible to disable class loading
+   * for ReloadableModule.
+   * @see jetbrains.mps.project.Solution
+   */
+  public boolean willLoad();
 }
