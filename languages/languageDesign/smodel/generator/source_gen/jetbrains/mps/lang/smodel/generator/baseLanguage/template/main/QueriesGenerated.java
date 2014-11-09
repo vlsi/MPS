@@ -1145,7 +1145,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1195664793985(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1180636770613l, "jetbrains.mps.lang.smodel.structure.SNodeCreator")), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1180636770613l, 1181937442359l, "prototypeNode"));
   }
-  public static SNode sourceNodeQuery_1917749888335123765(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_742658975218956046(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
   public static SNode sourceNodeQuery_1182511526041(final SourceSubstituteMacroNodeContext _context) {

@@ -398,8 +398,8 @@
       <node concept="7gwc.1167327847730" id="6677504323281737541" role="7gwc.1095416546421.1167328349397" info="lg">
         <reference role="7gwc.1167169308231.1167169349424" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
         <node concept="7gwc.1177093525992" id="6677504323281737542" role="7gwc.1167327847730.1169672767469" info="lg">
-          <node concept="vg0i.1107535904670" id="4876532271860890443" role="7gwc.1177093525992.1177093586806" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975218146853" role="7gwc.1177093525992.1177093586806" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
@@ -6431,19 +6431,19 @@
       <node concept="vg0i.1081236700937" id="1181950938879" role="7gwc.1092059087312.1092060348987" info="nn">
         <reference role="vg0i.1081236700937.1144433194310" target="i8bi.6599163591527270726" resolveInfo="SConceptOperations" />
         <reference role="vg0i.1204053956946.1068499141037" target="i8bi.1917749888335174992" resolveInfo="createNewNode" />
-        <node concept="vg0i.1081236700937" id="1917749888335123762" role="vg0i.1204053956946.1068499141038" info="nn">
-          <reference role="vg0i.1204053956946.1068499141037" target="i8bi.6677504323281452765" resolveInfo="asSConcept" />
+        <node concept="vg0i.1081236700937" id="742658975218956043" role="vg0i.1204053956946.1068499141038" info="nn">
+          <reference role="vg0i.1204053956946.1068499141037" target="i8bi.742658975218862661" resolveInfo="asInstanceConcept" />
           <reference role="vg0i.1081236700937.1144433194310" target="i8bi.6599163591527286941" resolveInfo="SNodeOperations" />
-          <node concept="vg0i.1070534058343" id="1917749888335123763" role="vg0i.1204053956946.1068499141038" info="nn">
-            <node concept="7gwc.1114706874351" id="1917749888335123764" role="asn4.1133920641626.5169995583184591170" info="ln">
-              <node concept="7gwc.1168024337012" id="1917749888335123765" role="7gwc.1114706874351.1168024447342" info="in">
-                <node concept="vg0i.1068580123136" id="1917749888335123766" role="vg0i.1137021947720.1137022507850" info="sn">
-                  <node concept="vg0i.1068580123155" id="1917749888335123767" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1197027756228" id="1917749888335123768" role="vg0i.1068580123155.1068580123156" info="nn">
-                      <node concept="4ia1.1179409122411" id="1917749888335123769" role="vg0i.1197027756228.1197027833540" info="nn">
+          <node concept="vg0i.1070534058343" id="742658975218956044" role="vg0i.1204053956946.1068499141038" info="nn">
+            <node concept="7gwc.1114706874351" id="742658975218956045" role="asn4.1133920641626.5169995583184591170" info="ln">
+              <node concept="7gwc.1168024337012" id="742658975218956046" role="7gwc.1114706874351.1168024447342" info="in">
+                <node concept="vg0i.1068580123136" id="742658975218956047" role="vg0i.1137021947720.1137022507850" info="sn">
+                  <node concept="vg0i.1068580123155" id="742658975218956048" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="742658975218956049" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="4ia1.1179409122411" id="742658975218956050" role="vg0i.1197027756228.1197027833540" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="tpeu.1213877508894" resolveInfo="getLeftExpression" />
                       </node>
-                      <node concept="7gwc.1167169188348" id="1917749888335123770" role="vg0i.1197027756228.1197027771414" info="nn" />
+                      <node concept="7gwc.1167169188348" id="742658975218956051" role="vg0i.1197027756228.1197027771414" info="nn" />
                     </node>
                   </node>
                 </node>

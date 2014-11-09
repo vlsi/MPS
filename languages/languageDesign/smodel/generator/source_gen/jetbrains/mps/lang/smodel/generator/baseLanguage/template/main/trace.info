@@ -829,8 +829,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1181950938878">
     <file name="QueriesGenerated.java">
-      <node id="1917749888335123767" at="1148,108,1149,92" concept="4" />
-      <scope id="1917749888335123766" at="1148,108,1149,92" />
+      <node id="742658975218956048" at="1148,107,1149,92" concept="4" />
+      <scope id="742658975218956047" at="1148,107,1149,92" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1182511526037">

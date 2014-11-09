@@ -759,7 +759,7 @@ public class SNodeOperations {
     }
     return (SNode) concept.getDeclarationNode();
   }
-  public static SConcept asSConcept(SNode node) {
+  public static SAbstractConcept asSConcept(SNode node) {
     if (node == null) {
       return null;
     }
@@ -769,8 +769,18 @@ public class SNodeOperations {
    * this method is used where both concept and declaration should be acceptable
    */
   @Deprecated
-  public static <T extends SAbstractConcept> T asSConcept(T concept) {
+  public static SAbstractConcept asSConcept(SAbstractConcept concept) {
     return concept;
+  }
+  @Deprecated
+  public static SConcept asInstanceConcept(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+  }
+  public static SConcept asInstanceConcept(SAbstractConcept concept) {
+    return asInstanceConcept(asNode(concept));
   }
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {
