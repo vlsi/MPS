@@ -17,6 +17,7 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
@@ -30,7 +31,10 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.tool.builder.util.PathManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.junit.Test;
 
 import java.io.File;
@@ -42,7 +46,19 @@ import java.util.TreeMap;
 
 import static org.junit.Assert.fail;
 
-public class GlobalReloadTest extends WorkbenchMpsTest {
+public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
+  private final static SRepositoryListener CRAZY_LISTENER = new SRepositoryListenerBase() {
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      ClassLoaderManager.getInstance().reloadModule(module);
+    }
+
+    @Override
+    public void beforeModuleRemoved(@NotNull SModule module) {
+      ClassLoaderManager.getInstance().reloadModule(module);
+    }
+  };
+
   private static final String PROJECT_PATH = PathManager.getHomePath();
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
 
@@ -66,13 +82,22 @@ public class GlobalReloadTest extends WorkbenchMpsTest {
         }
       }
     });
+    disposeProject(project);
+  }
+
+  @Test
+  public void ClassesAreLoadedStress() {
+    MPSModuleRepository.getInstance().addRepositoryListener(CRAZY_LISTENER);
+    ClassesAreLoaded();
+    MPSModuleRepository.getInstance().removeRepositoryListener(CRAZY_LISTENER);
   }
 
   private boolean checkModule(SModule module) {
     if (isIgnored(module.toString())) return true;
     ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
     if (classLoaderManager.canLoad(module)) {
-      if (classLoaderManager.getClassLoader(module) == null) {
+      ReloadableModule reloadableModule = (ReloadableModule) module;
+      if (reloadableModule.willLoad() && reloadableModule.getClassLoader() == null) {
         myModuleNamesToErrors.put(module.toString(), "No class loader for the module");
         return false;
       }

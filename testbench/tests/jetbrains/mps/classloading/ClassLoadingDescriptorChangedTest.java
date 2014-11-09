@@ -51,13 +51,12 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
         assert language1 != null;
         final Language language2 = ProjectTestsSupport.getLanguage("L2");
         assert language2 != null;
+        Generator generator1 = language1.getGenerators().iterator().next();
+        performCheck(generator1);
 
         reloadAfterDescriptorChange(language2);
 
-        Generator generator1 = language1.getGenerators().iterator().next();
-        assert generator1 != null;
-        Generator generator2 = language2.getGenerators().iterator().next();
-        assert generator2 != null;
+        generator1 = language1.getGenerators().iterator().next();
         performCheck(generator1);
         return true;
       }

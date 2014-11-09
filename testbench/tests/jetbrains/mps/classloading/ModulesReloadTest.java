@@ -22,14 +22,12 @@ import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.junit.AfterClass;
@@ -47,11 +45,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModulesReloadTest extends ModuleMpsTest {
+  private static FacetFactory ourOldFacetFactory;
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
 
   private static final String CLASS_TO_LOAD = "Test";
   private static final File TEMP_DIR = createTempDir();
   private static final String TEMP_DIR_PATH = getTempDirPath();
+  private static final FacetFactory FACET_FACTORY = new FacetFactory() {
+    @Override
+    public SModuleFacet create() {
+      return new TestJavaModuleFacet();
+    }
+  };
 
   private static File createTempDir() {
     File tempDir = FileUtil.createTmpDir();
@@ -68,23 +73,26 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @BeforeClass
-  public static void createClassesDir() {
+  public static void setUp() {
     new TestClassFileCreator(CLASS_TO_LOAD, TEMP_DIR_PATH).create();
     attachTestJavaFacetFactory();
   }
 
   @AfterClass
-  public static void removeClassesDir() {
+  public static void tearDown() {
     FileUtil.delete(TEMP_DIR);
+    detachTestJavaFacetFactory();
   }
 
   private static void attachTestJavaFacetFactory() {
-    FacetsFacade.getInstance().addFactory(TestJavaModuleFacet.FACET_TYPE, new FacetFactory() {
-      @Override
-      public SModuleFacet create() {
-        return new TestJavaModuleFacet();
-      }
-    });
+    ourOldFacetFactory = FacetsFacade.getInstance().getFacetFactory(JavaModuleFacet.FACET_TYPE);
+    FacetsFacade.getInstance().removeFactory(ourOldFacetFactory);
+    FacetsFacade.getInstance().addFactory(JavaModuleFacet.FACET_TYPE, FACET_FACTORY);
+  }
+
+  private static void detachTestJavaFacetFactory() {
+    FacetsFacade.getInstance().removeFactory(FACET_FACTORY);
+    FacetsFacade.getInstance().addFactory(JavaModuleFacet.FACET_TYPE, ourOldFacetFactory);
   }
 
   @Test
@@ -132,6 +140,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
       public void run() {
         l1.addDependency(l2.getModuleReference(), false);
         addClassTo(l2);
+        l1.reload();
         l2.reload();
         Assert.assertTrue(classIsLoadableFromModule(l1)); // the class must be available already here
       }
@@ -139,7 +148,54 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @Test
-  public void testUnload() {
+  public void testBackDepsReload() {
+    final Language l1 = createLanguage();
+    final Language l2 = createLanguage();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l1.addDependency(l2.getModuleReference(), false);
+        l1.reload();
+      }
+    });
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        addClassTo(l2);
+        l2.reload();
+        Assert.assertTrue(classIsLoadableFromModule(l1));
+        Assert.assertTrue(classIsLoadableFromModule(l2));
+      }
+    });
+  }
+
+  @Test
+  public void testLanguageAddRemove() {
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        final Language language = createLanguage();
+        removeModule(language);
+      }
+    });
+  }
+
+  @Test
+  public void testUnload1() {
+    final Language l1 = createLanguage();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        removeModule(l1);
+        Assert.assertTrue(l1.getClassLoader() == null);
+        Assert.assertTrue(!myManager.getModulesWatcher().isModuleWatched(l1));
+      }
+    });
+    Assert.assertTrue(l1.getClassLoader() == null);
+  }
+
+  @Test
+  public void testUnload2() {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
     final Language l3 = createLanguage();
@@ -151,7 +207,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
         addClassTo(l3);
         l3.reload();
         Assert.assertTrue(classIsLoadableFromModule(l1));
-        myManager.unloadModules(Collections.singleton(l3));
+        myManager.unloadModules(Collections.singleton(l3.getModuleReference()));
         Assert.assertTrue(classIsLoadableFromModule(l1)); // lazy mechanism implies a new load
       }
     });
@@ -172,10 +228,81 @@ public class ModulesReloadTest extends ModuleMpsTest {
         l2.reload();
         Assert.assertTrue(classIsLoadableFromModule(l1));
         removeModule(l3);
-        Assert.assertTrue(classIsLoadableFromModule(l1)); // delayed notification (!)
+        Assert.assertTrue(!classIsLoadableFromModule(l1));
+        Assert.assertTrue(!myManager.getModulesWatcher().isModuleWatched(l3));
       }
     });
-    Assert.assertTrue(!classIsLoadableFromModule(l1)); // and now it's gone!
+    Assert.assertTrue(!classIsLoadableFromModule(l1));
+  }
+
+  @Test
+  public void testModuleRecreation() {
+    final Language l1 = createLanguage();
+    final Language[] l2 = new Language[1];
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        addClassTo(l1);
+        l1.reload();
+        Assert.assertTrue(classIsLoadableFromModule(l1));
+        removeModule(l1);
+        l2[0] = createLanguage(l1.getModuleDescriptor().getId(), l1.getModuleName()); // the same
+        Assert.assertTrue(l2[0].getClassLoader() != null);
+      }
+    });
+    Assert.assertTrue(l2[0].getClassLoader() != null);
+  }
+
+  @Test
+  public void testModuleRecreation2() {
+    final Language[] l = new Language[1];
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l[0] = createLanguage();
+        addClassTo(l[0]);
+        l[0].reload();
+        Assert.assertTrue(classIsLoadableFromModule(l[0]));
+        removeModule(l[0]);
+      }
+    });
+    Assert.assertTrue(l[0].getClassLoader() == null);
+  }
+
+  @Test
+  public void testModuleRecreation3() {
+    final Language[] l = new Language[3];
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l[0] = createLanguage();
+        l[1] = createLanguage();
+        l[0].addDependency(l[1].getModuleReference(), false);
+        removeModule(l[1]);
+        l[2] = createLanguage(l[1].getModuleDescriptor().getId(), l[1].getModuleName()); // the same
+        addClassTo(l[2]);
+        l[2].reload();
+        Assert.assertTrue(classIsLoadableFromModule(l[0]));
+      }
+    });
+    Assert.assertTrue(classIsLoadableFromModule(l[0]));
+  }
+
+  @Test
+  public void testModuleDeps() {
+    final Language[] l = new Language[2];
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l[0] = createLanguage();
+        l[1] = createLanguage();
+        l[0].addDependency(l[1].getModuleReference(), false);
+        addClassTo(l[1]);
+        l[1].reload();
+        Assert.assertTrue(classIsLoadableFromModule(l[0]));
+      }
+    });
+    Assert.assertTrue(classIsLoadableFromModule(l[0]));
   }
 
   @Test
@@ -191,7 +318,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
       public void run() {
         dep12.setValue(l1.addDependency(l2.getModuleReference(), false));
         dep13.setValue(l1.addDependency(l3.getModuleReference(), false));
-        l1.reload();
       }
     });
     Assert.assertTrue(classIsLoadableFromModule(l1));
@@ -211,7 +337,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
       @Override
       public void run() {
         l1.removeDependency(dep13.getValue());
-        l1.reload();
       }
     });
     Assert.assertTrue(classIsLoadableFromModule(l1));
