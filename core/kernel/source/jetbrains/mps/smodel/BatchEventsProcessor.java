@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
+import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,6 +38,8 @@ import java.util.List;
  */
 public class BatchEventsProcessor {
   private volatile boolean myBatchStarted = false;
+
+  private static final Object LOCK = new Object();
 
   private final List<SRepositoryEvent> myEvents = new ArrayList<SRepositoryEvent>();
 
@@ -45,12 +51,12 @@ public class BatchEventsProcessor {
     myRepository = repository;
   }
 
-  public boolean isBatchStarted() {
-    return myBatchStarted;
-  }
-
   public void startBatching() {
-    if (myBatchStarted) throw new IllegalStateException("Batching has been already started");
+    if (myBatchStarted) {
+      myBatchStarted = false;
+      myEvents.clear();
+      throw new IllegalStateException("Batching has been already started; Clearing the queue...");
+    }
     if (!myEvents.isEmpty()) throw new IllegalStateException("Events have not been flushed");
     myBatchStarted = true;
     myRepository.addRepositoryListener(mySRepositoryListener);
@@ -62,14 +68,22 @@ public class BatchEventsProcessor {
    * @return result of batching: a list of SRepositoryEvents
    */
   public List<SRepositoryEvent> tryFinishBatching() {
-    if (!myBatchStarted)
-      throw new IllegalStateException("Batching has not been even started");
-    List<SRepositoryEvent> result = new ArrayList<SRepositoryEvent>(myEvents);
-    myEvents.clear();
-    if (result.isEmpty()) {
-      finishBatching();
-    }
+    if (!myBatchStarted) throw new IllegalStateException("Batching has not been even started");
+    List<SRepositoryEvent> result = flush();
+    if (result.isEmpty()) finishBatching();
     return result;
+  }
+
+  public List<SRepositoryEvent> flush() {
+    synchronized (LOCK) {
+      if (!myBatchStarted) {
+        assert myEvents.isEmpty();
+        return Collections.emptyList();
+      }
+      List<SRepositoryEvent> result = new ArrayList<SRepositoryEvent>(myEvents);
+      myEvents.clear();
+      return result;
+    }
   }
 
   private void finishBatching() {
@@ -80,7 +94,9 @@ public class BatchEventsProcessor {
   // repository listener picks only two events
   private class MySRepositoryListener extends SRepositoryListenerBase {
     private void addEventToList(@NotNull SRepositoryEvent event) {
-      myEvents.add(event);
+      synchronized (LOCK) {
+        myEvents.add(event);
+      }
     }
 
     @Override
@@ -89,8 +105,8 @@ public class BatchEventsProcessor {
     }
 
     @Override
-    public void beforeModuleRemoved(@NotNull SModule module) {
-      addEventToList(new SModuleRemovingEvent(module));
+    public void moduleRemoved(@NotNull SModuleReference mRef) {
+      addEventToList(new SModuleRemovedEvent(mRef, myRepository));
     }
   }
 }
