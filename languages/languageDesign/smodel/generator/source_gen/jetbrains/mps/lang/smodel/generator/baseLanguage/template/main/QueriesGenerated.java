@@ -783,7 +783,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1203104890038(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
   }
-  public static SNode sourceNodeQuery_8866923313516048823(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8828148184965735876(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
   public static SNode sourceNodeQuery_6677504323280518779(final SourceSubstituteMacroNodeContext _context) {
