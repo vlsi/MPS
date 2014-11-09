@@ -1824,7 +1824,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8204202203348315628" resolveInfo="l" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5907139912107933385" nodeInfo="nn">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="42ru.~ReloadableAbstractModule%dgetOwnClass(java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getOwnClass" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="42ru.~ReloadableModuleBase%dgetOwnClass(java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getOwnClass" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5907139912107934585" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8204202203348315630" resolveInfo="dfaBuildersClassName" />
                                 </node>

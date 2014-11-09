@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -52,7 +53,7 @@ public class QueryMethodGenerated implements CoreComponent {
   private final ClassLoaderManager myClassLoaderManager;
   private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       clearCaches();
     }
   };

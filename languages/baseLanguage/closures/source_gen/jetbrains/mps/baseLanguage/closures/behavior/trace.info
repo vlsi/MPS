@@ -1174,11 +1174,11 @@
       <node id="1231426126521" at="28,0,31,0" concept="13" trace="getRuntimeModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="3977399551044671207" at="31,0,34,0" concept="13" trace="getStaticRuntimeModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1231429332115" at="37,80,40,9" concept="6" />
-      <node id="1231426699852" at="44,67,47,13" concept="14" />
+      <node id="1231426699852" at="44,90,47,13" concept="14" />
       <node id="1802011204845758185" at="60,0,63,0" concept="8" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1802011204845851454" at="64,0,67,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1802011204845920466" at="68,0,71,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3977399551044677872" at="76,67,79,13" concept="14" />
+      <node id="3977399551044677872" at="76,90,79,13" concept="14" />
       <node id="1231426655274" at="43,0,50,0" concept="8" trace="beforeClassesUnloaded#(Ljava/util/Set;)V" />
       <node id="3977399551044677868" at="75,0,82,0" concept="8" trace="beforeClassesUnloaded#(Ljava/util/Set;)V" />
       <node id="1231426655266" at="41,27,50,11" concept="3" />
@@ -1215,8 +1215,8 @@
       <scope id="1802011204845920466" at="68,0,71,0">
         <var name="it" id="1802011204845920466" />
       </scope>
-      <scope id="1231426655277" at="44,67,48,72" />
-      <scope id="3977399551044677871" at="76,67,80,72" />
+      <scope id="1231426655277" at="44,90,48,72" />
+      <scope id="3977399551044677871" at="76,90,80,72" />
       <scope id="1231426655274" at="43,0,50,0">
         <var name="modules" id="4056393811838853006" />
       </scope>

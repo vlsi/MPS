@@ -36,6 +36,7 @@ import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -50,7 +51,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
@@ -277,7 +277,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private class EditorWarningsListenerAdapter extends MPSClassesListenerAdapter {
     @Override
-    public void afterClassesLoaded(Set<SModule> modules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {

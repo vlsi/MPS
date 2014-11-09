@@ -61,7 +61,7 @@ public class Generator extends TemplateModuleBase {
       try {
         clazz = (Class<TemplateModel>) module.getClass(modelName);
       } catch (ClassNotFoundException e) {
-        e.printStackTrace();
+        throw new IllegalStateException("", e);
       }
     }
     if (clazz == null) {

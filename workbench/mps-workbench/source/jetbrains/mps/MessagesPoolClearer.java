@@ -21,8 +21,8 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.util.Set;
@@ -46,7 +46,7 @@ public class MessagesPoolClearer implements ApplicationComponent {
   public void initComponent() {
     myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void beforeClassesUnloaded(Set<SModule> modules) {
+      public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {

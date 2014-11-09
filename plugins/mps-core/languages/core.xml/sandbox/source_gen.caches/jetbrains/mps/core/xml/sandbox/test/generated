@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9cypxp1nyfgr267ai6patxxwwukilvo" />
+<dependencies version="2" modelHash="9cypxp1nyfgr267ai6patxxwwukilvo">
+  <common hash="-dico3nn4mp6h8w8cjfna0e1kwg3mqtp" />
+  <source id="6666499814681526040" name="test1" hash="-atbfj1n3yc57uqardzjc7xgrp3i3swq">
+    <file name="test1.xml" />
+  </source>
+  <source id="175285232894469943" name="test2" hash="bxcqh0pw3vt9tte3aeu5tyezetztajf">
+    <file name="test2.xml" />
+  </source>
+  <source id="7385586609667787292" name="test3" hash="avi8tec1v2jwnvb9r5katjk1oold75u">
+    <file name="test3.xml" />
+  </source>
+</dependencies>
 

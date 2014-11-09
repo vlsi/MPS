@@ -23,6 +23,7 @@ import com.intellij.openapi.project.ProjectManagerListener;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.plugins.PluginUtil.ModulePluginContributor;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -205,7 +206,7 @@ public class PluginReloader implements ApplicationComponent {
     private Map<SModule, ModuleLoadingState> states = new HashMap<SModule, ModuleLoadingState>();
 
     @Override
-    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       Set<SModule> significantModules = getSignificantModules(unloadedModules);
       for (SModule module : significantModules) {
         ModuleLoadingState state = states.get(module);
@@ -228,7 +229,7 @@ public class PluginReloader implements ApplicationComponent {
     }
 
     @Override
-    public void afterClassesLoaded(Set<SModule> loadedModules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       Set<SModule> significantModules = getSignificantModules(loadedModules);
       for (SModule module : significantModules) {
         ModuleLoadingState state = states.get(module);
@@ -250,7 +251,7 @@ public class PluginReloader implements ApplicationComponent {
       }
     }
 
-    private Set<SModule> getSignificantModules(Set<SModule> modules) {
+    private Set<SModule> getSignificantModules(Collection<? extends SModule> modules) {
       Set<SModule> result = new HashSet<SModule>();
 
       for (SModule module : modules) {

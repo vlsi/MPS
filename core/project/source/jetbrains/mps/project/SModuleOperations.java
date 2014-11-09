@@ -21,15 +21,13 @@ import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -215,7 +213,9 @@ public class SModuleOperations {
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
       module.setModuleDescriptor(descriptor);
-      ClassLoaderManager.getInstance().reloadModule(module);
+      if (module instanceof ReloadableModule) {
+        ((ReloadableModule) module).reload();
+      }
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

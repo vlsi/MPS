@@ -19,8 +19,8 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ public class CleanupManager implements CoreComponent {
     }
     myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void beforeClassesUnloaded(Set<SModule> modules) {
+      public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
         cleanup();
       }
     };

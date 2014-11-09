@@ -18,6 +18,7 @@ package jetbrains.mps.cache;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -25,7 +26,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,7 @@ public class CachesManager implements CoreComponent {
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> modules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       removeAllCaches();
     }
   };

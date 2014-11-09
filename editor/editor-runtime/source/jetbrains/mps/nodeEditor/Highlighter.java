@@ -30,6 +30,7 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
@@ -61,7 +62,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -110,7 +110,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> modules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       addPendingAction(new Runnable() {
         @Override
         public void run() {

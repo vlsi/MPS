@@ -25,7 +25,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.tools.BaseProjectTool;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
@@ -65,7 +65,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
     if (forceCloseOnReload()) {
       myClassesListener = new MPSClassesListenerAdapter() {
         @Override
-        public void beforeClassesUnloaded(Set<SModule> modules) {
+        public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
           SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

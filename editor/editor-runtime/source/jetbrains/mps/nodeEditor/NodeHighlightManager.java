@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.util.containers.SortedList;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -29,7 +30,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.awt.Color;
@@ -61,7 +61,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private volatile boolean myRebuildMessagesCache = false;
   public MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> modules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       clear();
     }
   };

@@ -33,11 +33,11 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.Set;
@@ -51,7 +51,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   private Set<VirtualFile> myRootFiles = null;
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> modules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       myRootFiles = null;
     }
   };

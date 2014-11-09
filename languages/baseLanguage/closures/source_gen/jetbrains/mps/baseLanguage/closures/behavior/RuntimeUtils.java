@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,7 +41,7 @@ public class RuntimeUtils {
         // FIXME looks bad 
         ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void beforeClassesUnloaded(Set<SModule> modules) {
+          public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
             synchronized (RuntimeUtils.class) {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
@@ -73,7 +73,7 @@ public class RuntimeUtils {
         }
         ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void beforeClassesUnloaded(Set<SModule> modules) {
+          public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
             synchronized (RuntimeUtils.class) {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }

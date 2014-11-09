@@ -53,6 +53,7 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -99,7 +100,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void afterClassesLoaded(Set<SModule> modules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
       rebuild();
     }
   };

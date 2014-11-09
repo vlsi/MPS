@@ -18,13 +18,13 @@ package jetbrains.mps.datatransfer;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModuleBase;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,7 +41,7 @@ public class PasteWrappersManager implements CoreComponent {
   private ClassLoaderManager myClassLoaderManager;
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> modules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       clear();
     }
   };

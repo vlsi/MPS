@@ -8,7 +8,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.SModelRepository;
@@ -54,7 +54,9 @@ public class MissingDependenciesFixer {
         fixImports(module, existingImports);
         fixLangs(module);
         fixDevKits(module);
-        ClassLoaderManager.getInstance().reloadModule(module);
+        if (module instanceof ReloadableModule) {
+          ((ReloadableModule) module).reload();
+        }
       }
     });
   }

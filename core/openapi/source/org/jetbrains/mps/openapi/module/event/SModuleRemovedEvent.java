@@ -23,9 +23,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public class SModuleRemovedEvent extends SRepositoryEvent {
   private SModuleReference myModuleReference;
 
-  public SModuleRemovedEvent(@NotNull SModuleReference module, SRepository repository) {
+  public SModuleRemovedEvent(@NotNull SModuleReference mRef, SRepository repository) {
     super(repository);
-    myModuleReference = module;
+    myModuleReference = mRef;
   }
 
   @Override
