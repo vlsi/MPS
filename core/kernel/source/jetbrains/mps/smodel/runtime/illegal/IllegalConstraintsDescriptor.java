@@ -64,16 +64,15 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return false;
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(SPropertyId property) {
-    return new IllegalPropertyConstraintsDescriptor(property, null, this);
+    return null;
   }
 
   @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
-    return new IllegalPropertyConstraintsDescriptor(null, name, this);
+    return null;
   }
 
   @NotNull

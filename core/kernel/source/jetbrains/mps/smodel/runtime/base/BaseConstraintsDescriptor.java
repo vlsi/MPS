@@ -21,13 +21,12 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
-import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -260,17 +259,14 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     throw new UnsupportedOperationException();
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String propertyName) {
     PropertyDescriptor propertyDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName);
-    if (propertyDescriptor == null) {
-      return new IllegalPropertyConstraintsDescriptor(null, propertyName, this);
-    }
+    if (propertyDescriptor == null) return null;
+
     return getProperty(propertyDescriptor.getId());
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(SPropertyId property) {
     if (propertiesConstraints.containsKey(property)) {
@@ -278,7 +274,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     }
 
     if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(property) == null) {
-      return new IllegalPropertyConstraintsDescriptor(property, null, this);
+      return null;
     }
 
     propertiesConstraints.put(property, new BasePropertyConstraintsDescriptor(property, this));

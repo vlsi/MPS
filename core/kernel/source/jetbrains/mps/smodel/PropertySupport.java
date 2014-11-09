@@ -16,16 +16,15 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.kernel.model.SModelUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -42,7 +41,12 @@ public abstract class PropertySupport {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(propertyName);
+    PropertyConstraintsDescriptor descriptor =
+        ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(propertyName);
+    if (descriptor==null){
+      LOG.error("No property constraints are available for property "+propertyName+" in node "+ node.getPresentation());
+      return false;
+    }
     return canSetValue(descriptor, node, propertyName, value);
   }
 

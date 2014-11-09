@@ -41,11 +41,9 @@ public interface ConstraintsDescriptor {
 
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
-  @NotNull
   PropertyConstraintsDescriptor getProperty(SPropertyId property);
 
   @Deprecated
-  @NotNull
   PropertyConstraintsDescriptor getProperty(String name);
 
   @NotNull

@@ -137,7 +137,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));
       final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
-      boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canSetValue = propertyDescriptor==null?false:component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ps.canSetValue(propertyDescriptor, node, propertyName, value);
         }
