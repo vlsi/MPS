@@ -2,14 +2,15 @@
 <!DOCTYPE log4j:configuration SYSTEM "file:$APPLICATION_DIR$/bin/log4j.dtd">
 
 <log4j:configuration>
-    <appender name="CONSOLE-WARN" class="org.apache.log4j.ConsoleAppender">
+
+    <appender name="CONSOLE-TRACE" class="org.apache.log4j.ConsoleAppender">
         <param name="follow" value="true"/>
-        <param name="target" value="System.err"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
         </layout>
         <filter class="org.apache.log4j.varia.LevelRangeFilter">
-            <param name="LevelMin" value="WARN"/>
+            <param name="LevelMin" value="TRACE"/>
+            <param name="LevelMax" value="TRACE"/>
         </filter>
     </appender>
 
@@ -24,13 +25,6 @@
         </filter>
     </appender>
 
-    <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender" >
-        <param name="follow" value="true"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
-        </layout>
-    </appender>
-
     <appender name="CONSOLE-INFO" class="org.apache.log4j.ConsoleAppender" >
         <param name="follow" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -41,6 +35,25 @@
             <param name="LevelMin" value="INFO"/>
         </filter>
     </appender>
+    
+    <appender name="CONSOLE-WARN" class="org.apache.log4j.ConsoleAppender">
+        <param name="follow" value="true"/>
+        <param name="target" value="System.err"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="WARN"/>
+        </filter>
+    </appender>
+
+    <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender" >
+        <param name="follow" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+    </appender>
+
 
     <appender name="DIALOG" class="jetbrains.mps.diagnostic.DialogAppender">
         <filter class="org.apache.log4j.varia.LevelRangeFilter">
@@ -105,15 +118,16 @@
       <appender-ref ref="CONSOLE-INFO"/>
     </category>
 
-    <category name="jetbrains.mps.classloading" additivity="true">
-      <priority value="DEBUG"/>
-      <appender-ref ref="CONSOLE-DEBUG"/>
-    </category>
+    <!--<category name="jetbrains.mps.classloading" additivity="true">-->
+      <!--<priority value="TRACE"/>-->
+      <!--<appender-ref ref="CONSOLE-TRACE"/>-->
+      <!--<appender-ref ref="CONSOLE-DEBUG"/>-->
+    <!--</category>-->
 
-    <category name="jetbrains.mps.library" additivity="true">
-      <priority value="DEBUG"/>
-      <appender-ref ref="CONSOLE-DEBUG"/>
-    </category>
+    <!--<category name="jetbrains.mps.library" additivity="true">-->
+      <!--<priority value="DEBUG"/>-->
+      <!--<appender-ref ref="CONSOLE-DEBUG"/>-->
+    <!--</category>-->
 
     <category name="#com.intellij" additivity="false">
         <priority value="WARN"/>
