@@ -53,13 +53,13 @@ public class SNodeOperations {
   /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
   public SNodeOperations() {
   }
-  private static SConcept stringToConcept(String conceptFqName) {
+  /*package*/ static SConcept stringToConcept(String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
     return SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
   }
-  private static SConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
+  /*package*/ static SConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
     int n = conceptFqNames.length;
     SConcept[] result = new SConcept[n];
     for (int i = 0; i < n; i++) {
@@ -475,6 +475,22 @@ public class SNodeOperations {
     }
     return result;
   }
+  public static SNode insertNewNextSiblingChild(SNode node, SConcept conceptFQName) {
+    if (node == null || node.getParent() == null) {
+      return null;
+    }
+    SNode parent = node.getParent();
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, conceptFQName);
+    if (newChild == null) {
+      return null;
+    }
+    SContainmentLink role = node.getContainmentLink();
+    assert parent != null && role != null;
+    jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
+    return newChild;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
     if (node == null || node.getParent() == null) {
       return null;
@@ -489,6 +505,25 @@ public class SNodeOperations {
     jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
     return newChild;
   }
+  public static SNode insertNewPrevSiblingChild(SNode node, SConcept concept) {
+    if (node == null) {
+      return null;
+    }
+    SNode parent = node.getParent();
+    if (parent == null) {
+      return null;
+    }
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, concept);
+    if (newChild == null) {
+      return null;
+    }
+    SContainmentLink role = node.getContainmentLink();
+    assert role != null;
+    parent.insertChildBefore(role, newChild, node);
+    return newChild;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode insertNewPrevSiblingChild(SNode node, String conceptFqName) {
     if (node == null) {
       return null;
@@ -540,6 +575,23 @@ public class SNodeOperations {
     nodeParent.insertChildBefore(role, siblingNode, node);
     return siblingNode;
   }
+  public static SNode replaceWithNewChild(SNode oldChild, SConcept concept) {
+    assert oldChild != null : "can't replace node. node is NULL";
+    SNode oldChildParent = oldChild.getParent();
+    if (oldChildParent == null && (oldChild.getModel() == null || oldChild.getParent() != null)) {
+      return null;
+    }
+    SModel model = oldChild.getModel();
+    SNode newChild = SModelOperations.createNewNode(model, null, concept);
+    if (newChild == null) {
+      return null;
+    }
+    SNodeUtil.replaceWithAnother(oldChild, newChild);
+    SNodeOperations.copyAllAttributes(oldChild, newChild);
+    return newChild;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();

@@ -129,7 +129,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -179,7 +178,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumMemberType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
@@ -322,8 +320,6 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494/1212687122400" name="typeParameter" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926/1224414456414" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824/1226511765987" name="elementType" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435807" name="elementType" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237731803878" name="copyFrom" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177/1239714902950" name="expression" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280/4693937538533538124" name="requestedConcept" />
@@ -3952,156 +3948,6 @@
           </node>
         </node>
       </node>
-      <node concept="vg0i.1081236700938" id="6599163591527271074" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="findConceptInstances" />
-        <node concept="vg0i.1068580123136" id="6599163591527271082" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123159" id="6599163591527271083" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123152" id="6599163591527271084" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1068498886296" id="3021153905151609868" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527271078" resolveInfo="conceptDeclarationNode" />
-              </node>
-              <node concept="vg0i.1070534058343" id="6599163591527271086" role="vg0i.1081773326031.1081773367579" info="nn" />
-            </node>
-            <node concept="vg0i.1068580123136" id="6599163591527271087" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242878" id="6599163591527271088" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1145552977093" id="6599163591527271089" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <node concept="vg0i.1212685548494" id="6599163591527271090" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                    <node concept="vg0i.1107535904670" id="6599163591527271091" role="vg0i.1212685548494.1212687122400" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123159" id="6599163591527271092" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123136" id="6599163591527271096" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068580123155" id="6599163591527271097" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1068498886294" id="6599163591527271098" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <node concept="vg0i.1068498886296" id="3021153905151615339" role="vg0i.1215693861676.1068498886295" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527271080" resolveInfo="scope" />
-                  </node>
-                  <node concept="vg0i.1081236700937" id="6599163591527271100" role="vg0i.1215693861676.1068498886297" info="nn">
-                    <reference role="vg0i.1081236700937.1144433194310" target="vsqj.~GlobalScope" resolveInfo="GlobalScope" />
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1068580123152" id="6599163591527271093" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1068498886296" id="3021153905151600798" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527271080" resolveInfo="scope" />
-              </node>
-              <node concept="vg0i.1070534058343" id="6599163591527271095" role="vg0i.1081773326031.1081773367579" info="nn" />
-            </node>
-          </node>
-          <node concept="vg0i.1068581242864" id="885133290400016110" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="885133290400016109" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="cId" />
-              <property role="vg0i.1068431474542.1176718929932" value="false" />
-              <node concept="vg0i.1081236700937" id="885133290400043893" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="msyo.~NameUtil" resolveInfo="NameUtil" />
-                <reference role="vg0i.1204053956946.1068499141037" target="msyo.~NameUtil%dnodeFQName(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
-                <node concept="vg0i.1068498886296" id="885133290400016114" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527271078" resolveInfo="conceptDeclarationNode" />
-                </node>
-              </node>
-              <node concept="vg0i.1107535904670" id="885133290400016111" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242864" id="885133290400016116" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="885133290400016115" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="concept" />
-              <property role="vg0i.1068431474542.1176718929932" value="false" />
-              <node concept="vg0i.1107535904670" id="5583638145578439880" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
-              </node>
-              <node concept="vg0i.1197027756228" id="885133290400016118" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1081236700937" id="885133290400030847" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetInstance()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptRepository" resolveInfo="getInstance" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="t3eg.~SConceptRepository" resolveInfo="SConceptRepository" />
-                </node>
-                <node concept="vg0i.1202948039474" id="885133290400016121" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                  <node concept="vg0i.1068498886296" id="885133290400016122" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="885133290400016109" resolveInfo="cId" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242864" id="885133290400052850" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="885133290400052851" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="usages" />
-              <node concept="vg0i.1197027756228" id="885133290400054809" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1202948039474" id="885133290400054810" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="88zw.~FindUsagesFacade%dfindInstances(org%djetbrains%dmps%dopenapi%dmodule%dSearchScope,java%dutil%dSet,boolean,org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cjava%dutil%dSet" resolveInfo="findInstances" />
-                  <node concept="vg0i.1068498886296" id="3021153905151608336" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527271080" resolveInfo="scope" />
-                  </node>
-                  <node concept="vg0i.1081236700937" id="885133290400054811" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%dsingleton(java%dlang%dObject)%cjava%dutil%dSet" resolveInfo="singleton" />
-                    <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
-                    <node concept="vg0i.1068498886296" id="885133290400054812" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="885133290400016115" resolveInfo="concept" />
-                    </node>
-                  </node>
-                  <node concept="vg0i.1068580123137" id="7788826991538549460" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="false" />
-                  </node>
-                  <node concept="vg0i.1145552977093" id="7788826991538563341" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1212685548494" id="7788826991538575969" role="vg0i.1145552977093.1145553007750" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolveInfo="EmptyProgressMonitor" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="vg0i.1081236700937" id="885133290400054816" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1081236700937.1144433194310" target="88zw.~FindUsagesFacade" resolveInfo="FindUsagesFacade" />
-                  <reference role="vg0i.1204053956946.1068499141037" target="88zw.~FindUsagesFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dmodule%dFindUsagesFacade" resolveInfo="getInstance" />
-                </node>
-              </node>
-              <node concept="vg0i.1107535904670" id="885133290400052838" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~Set" resolveInfo="Set" />
-                <node concept="vg0i.1107535904670" id="8263687154139937380" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242878" id="6599163591527271101" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="3706536190188848160" role="vg0i.1068581242878.1068581517676" info="nn">
-              <node concept="j0ph.1160600644654" id="3706536190188848165" role="vg0i.1145552977093.1145553007750" info="nn">
-                <node concept="vg0i.1068498886296" id="885133290400052860" role="j0ph.1237721394592.1237731803878" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="885133290400052851" resolveInfo="usages" />
-                </node>
-                <node concept="4ia1.1138055754698" id="3706536190188848167" role="j0ph.1237721394592.1237721435807" info="in" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1146644602865" id="6599163591527271075" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1107535904670" id="6599163591527271076" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
-          <node concept="vg0i.1107535904670" id="6599163591527271077" role="vg0i.1107535904670.1109201940907" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="6599163591527271078" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptDeclarationNode" />
-          <node concept="vg0i.1107535904670" id="6599163591527271079" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="6599163591527271080" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="scope" />
-          <node concept="vg0i.1107535904670" id="6747225861372327139" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SearchScope" resolveInfo="SearchScope" />
-          </node>
-        </node>
-      </node>
       <node concept="vg0i.1081236700938" id="6599163591527271107" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="createNewNode" />
         <node concept="vg0i.1068580123136" id="6599163591527271112" role="vg0i.1068580123132.1068580123135" info="sn">
@@ -4215,6 +4061,245 @@
         <node concept="vg0i.1068580123136" id="6599163591527280395" role="vg0i.1068580123132.1068580123135" info="sn" />
         <node concept="vg0i.1146644602865" id="6599163591527280393" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
+      <node concept="vg0i.1081236700938" id="9116031298984644337" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="getRoots" />
+        <node concept="vg0i.1107535904670" id="9116031298984644338" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
+          <node concept="vg0i.1107535904670" id="9116031298984644339" role="vg0i.1107535904670.1109201940907" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298984644340" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068498886292" id="9116031298984644341" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="model" />
+          <node concept="vg0i.1107535904670" id="9116031298984644342" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298984644343" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1107535904670" id="9116031298984656215" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
+          </node>
+        </node>
+        <node concept="vg0i.1068580123136" id="9116031298984644345" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="9116031298984644346" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298984644347" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298984644348" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1145552977093" id="9116031298984644349" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <node concept="vg0i.1212685548494" id="9116031298984644350" role="vg0i.1145552977093.1145553007750" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                    <node concept="vg0i.1107535904670" id="9116031298984644351" role="vg0i.1212685548494.1212687122400" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298984644352" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298984644353" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298984644354" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644341" resolveInfo="model" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298984644355" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123152" id="9116031298984644356" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298984644357" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644343" resolveInfo="concept" />
+              </node>
+              <node concept="vg0i.1070534058343" id="9116031298984644358" role="vg0i.1081773326031.1081773367579" info="nn" />
+            </node>
+            <node concept="vg0i.1068580123136" id="9116031298984644359" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242864" id="9116031298984644360" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="9116031298984644361" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="result" />
+                  <node concept="vg0i.1107535904670" id="9116031298984644362" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~ArrayList" resolveInfo="ArrayList" />
+                    <node concept="vg0i.1107535904670" id="9116031298984644363" role="vg0i.1107535904670.1109201940907" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1145552977093" id="9116031298984644364" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <node concept="vg0i.1212685548494" id="9116031298984644365" role="vg0i.1145552977093.1145553007750" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                      <node concept="vg0i.1107535904670" id="9116031298984644366" role="vg0i.1212685548494.1212687122400" info="in">
+                        <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1144226303539" id="9116031298984644367" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1197027756228" id="9116031298984644368" role="vg0i.1144226303539.1144226360166" info="nn">
+                  <node concept="vg0i.1068498886296" id="9116031298984644369" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644341" resolveInfo="model" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="9116031298984644370" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
+                  </node>
+                </node>
+                <node concept="vg0i.1068581242863" id="9116031298984644371" role="vg0i.1144230876926.1144230900587" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="root" />
+                  <node concept="vg0i.1107535904670" id="9116031298984644372" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                  </node>
+                </node>
+                <node concept="vg0i.1068580123136" id="9116031298984644373" role="vg0i.1154032098014.1154032183016" info="sn">
+                  <node concept="vg0i.1068580123155" id="9116031298984644374" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="9116031298984644375" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1068498886296" id="9116031298984644376" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644361" resolveInfo="result" />
+                      </node>
+                      <node concept="vg0i.1202948039474" id="9116031298984644377" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                        <node concept="vg0i.1068498886296" id="9116031298984644378" role="vg0i.1204053956946.1068499141038" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644371" resolveInfo="root" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068581242878" id="9116031298984644379" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298984644380" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644361" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298984644381" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298984644382" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="list" />
+              <node concept="vg0i.1145552977093" id="9116031298984644383" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1212685548494" id="9116031298984644384" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                  <node concept="vg0i.1107535904670" id="9116031298984644385" role="vg0i.1212685548494.1212687122400" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298984644386" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
+                <node concept="vg0i.1107535904670" id="9116031298984644387" role="vg0i.1107535904670.1109201940907" info="in">
+                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298984644388" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298984644389" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="cond" />
+              <node concept="vg0i.1145552977093" id="9116031298984644390" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1182160077978" id="9116031298984644391" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1170345865475" id="9116031298984644392" role="vg0i.1182160077978.1182160096073" info="ig">
+                    <property role="asn4.1169194658468.1169194664001" value="Condition$anonymous" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                    <reference role="vg0i.1170345865475.1170346070688" target="r9fo.~Condition" resolveInfo="Condition" />
+                    <node concept="vg0i.1068580123165" id="9116031298984644393" role="vg0i.1107461130800.5375687026011219971" info="igu">
+                      <property role="asn4.1169194658468.1169194664001" value="met" />
+                      <node concept="vg0i.1068580123136" id="9116031298984644394" role="vg0i.1068580123132.1068580123135" info="sn">
+                        <node concept="vg0i.1068580123155" id="9116031298984644395" role="vg0i.1068580123136.1068581517665" info="nn">
+                          <node concept="vg0i.1081236700937" id="9116031298984644396" role="vg0i.1068580123155.1068580123156" info="nn">
+                            <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%disInstanceOf(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)%cboolean" resolveInfo="isInstanceOf" />
+                            <node concept="vg0i.1068498886296" id="9116031298984644397" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644400" resolveInfo="node" />
+                            </node>
+                            <node concept="vg0i.1068498886296" id="9116031298984697194" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644343" resolveInfo="concept" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="vg0i.1068498886292" id="9116031298984644400" role="vg0i.1068580123132.1068580123134" info="ir">
+                        <property role="asn4.1169194658468.1169194664001" value="node" />
+                        <node concept="4ia1.1138055754698" id="9116031298984644401" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                      </node>
+                      <node concept="vg0i.1070534644030" id="9116031298984644402" role="vg0i.1068580123132.1068580123133" info="in" />
+                      <node concept="vg0i.1146644602865" id="9116031298984644403" role="vg0i.1178549954367.1178549979242" info="nn" />
+                      <node concept="vg0i.1188207840427" id="9116031298984644404" role="vg0i.1188208481402.1188208488637" info="nn">
+                        <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Override" resolveInfo="Override" />
+                      </node>
+                    </node>
+                    <node concept="vg0i.1107535904670" id="9116031298984644405" role="vg0i.1170345865475.1201186121363" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298984644406" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="r9fo.~Condition" resolveInfo="Condition" />
+                <node concept="vg0i.1107535904670" id="9116031298984644407" role="vg0i.1107535904670.1109201940907" info="in">
+                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298984644408" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298984644409" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="iterable" />
+              <node concept="vg0i.1145552977093" id="9116031298984644410" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1212685548494" id="9116031298984644411" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="msyo.~ConditionalIterable%d&lt;init&gt;(java%dlang%dIterable,org%djetbrains%dmps%dutil%dCondition)" resolveInfo="ConditionalIterable" />
+                  <node concept="vg0i.1197027756228" id="9116031298984644412" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="9116031298984644413" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644341" resolveInfo="model" />
+                    </node>
+                    <node concept="vg0i.1202948039474" id="9116031298984644414" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1107535904670" id="9116031298984644415" role="vg0i.1212685548494.1212687122400" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                  </node>
+                  <node concept="vg0i.1068498886296" id="9116031298984644416" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644389" resolveInfo="cond" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298984644417" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Iterable" resolveInfo="Iterable" />
+                <node concept="vg0i.1107535904670" id="9116031298984644418" role="vg0i.1107535904670.1109201940907" info="in">
+                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1144226303539" id="9116031298984644419" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298984644420" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="9116031298984644421" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1197027756228" id="9116031298984644422" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1202948039474" id="9116031298984644423" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                    <node concept="vg0i.1068498886296" id="9116031298984644424" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644427" resolveInfo="node" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068498886296" id="9116031298984644425" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644382" resolveInfo="list" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="vg0i.1068498886296" id="9116031298984644426" role="vg0i.1144226303539.1144226360166" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644409" resolveInfo="iterable" />
+            </node>
+            <node concept="vg0i.1068581242863" id="9116031298984644427" role="vg0i.1144230876926.1144230900587" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="node" />
+              <node concept="vg0i.1107535904670" id="9116031298984644428" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="9116031298984644429" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298984644430" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298984644382" resolveInfo="list" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="vg0i.1081236700938" id="6599163591527280396" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="getRoots" />
         <node concept="vg0i.1107535904670" id="6599163591527280398" role="vg0i.1068580123132.1068580123133" info="in">
@@ -4238,223 +4323,142 @@
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="6599163591527280404" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123159" id="6599163591527280405" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123136" id="6599163591527280409" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242878" id="6599163591527280410" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1145552977093" id="6599163591527280411" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <node concept="vg0i.1212685548494" id="6599163591527280412" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                    <node concept="vg0i.1107535904670" id="6599163591527280413" role="vg0i.1212685548494.1212687122400" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1068580123152" id="6599163591527280406" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1070534058343" id="6599163591527280408" role="vg0i.1081773326031.1081773367579" info="nn" />
-              <node concept="vg0i.1068498886296" id="3021153905151726712" role="vg0i.1081773326031.1081773367580" info="nn">
+          <node concept="vg0i.1068581242878" id="9116031298984900964" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="9116031298984901128" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984644337" resolveInfo="getRoots" />
+              <node concept="vg0i.1068498886296" id="9116031298984901323" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280400" resolveInfo="model" />
               </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123159" id="6599163591527280414" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123152" id="6599163591527280415" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1068498886296" id="3021153905151701720" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280402" resolveInfo="conceptFqName" />
-              </node>
-              <node concept="vg0i.1070534058343" id="6599163591527280417" role="vg0i.1081773326031.1081773367579" info="nn" />
-            </node>
-            <node concept="vg0i.1068580123136" id="6599163591527280418" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242864" id="6599163591527280419" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1068581242863" id="6599163591527280420" role="vg0i.1068581242864.1068581242865" info="nr">
-                  <property role="asn4.1169194658468.1169194664001" value="result" />
-                  <node concept="vg0i.1107535904670" id="6599163591527280421" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~ArrayList" resolveInfo="ArrayList" />
-                    <node concept="vg0i.1107535904670" id="6599163591527280422" role="vg0i.1107535904670.1109201940907" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                  <node concept="vg0i.1145552977093" id="6599163591527280423" role="vg0i.1068431474542.1068431790190" info="nn">
-                    <node concept="vg0i.1212685548494" id="6599163591527280424" role="vg0i.1145552977093.1145553007750" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                      <node concept="vg0i.1107535904670" id="6599163591527280425" role="vg0i.1212685548494.1212687122400" info="in">
-                        <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="vg0i.1144226303539" id="6599163591527280426" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="6599163591527280427" role="vg0i.1144226303539.1144226360166" info="nn">
-                  <node concept="vg0i.1068498886296" id="3021153905151599754" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280400" resolveInfo="model" />
-                  </node>
-                  <node concept="vg0i.1202948039474" id="6599163591527280429" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
-                  </node>
-                </node>
-                <node concept="vg0i.1068581242863" id="6599163591527280430" role="vg0i.1144230876926.1144230900587" info="nr">
-                  <property role="asn4.1169194658468.1169194664001" value="root" />
-                  <node concept="vg0i.1107535904670" id="6599163591527280431" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                  </node>
-                </node>
-                <node concept="vg0i.1068580123136" id="6599163591527280432" role="vg0i.1154032098014.1154032183016" info="sn">
-                  <node concept="vg0i.1068580123155" id="6599163591527280433" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1197027756228" id="6599163591527280434" role="vg0i.1068580123155.1068580123156" info="nn">
-                      <node concept="vg0i.1068498886296" id="4265636116363065054" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280420" resolveInfo="result" />
-                      </node>
-                      <node concept="vg0i.1202948039474" id="6599163591527280436" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                        <node concept="vg0i.1068498886296" id="4265636116363108315" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280430" resolveInfo="root" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="vg0i.1068581242878" id="6599163591527280438" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363096368" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280420" resolveInfo="result" />
+              <node concept="vg0i.1081236700937" id="9116031298984901933" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="3902354333654811570" resolveInfo="stringToConcept" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527286941" resolveInfo="SNodeOperations" />
+                <node concept="vg0i.1068498886296" id="9116031298984902399" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280402" resolveInfo="conceptFqName" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242864" id="6599163591527280459" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="6599163591527280460" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="list" />
-              <node concept="vg0i.1145552977093" id="6599163591527280463" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="6599163591527280464" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                  <node concept="vg0i.1107535904670" id="6599163591527280465" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                  </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984657362" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984659098" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298984660835" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298984660897" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298984721859" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="getRootsIncludingImported" />
+        <node concept="vg0i.1068498886292" id="9116031298984721860" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="model" />
+          <node concept="vg0i.1107535904670" id="9116031298984721861" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+        <node concept="vg0i.1068580123136" id="9116031298984721862" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="9116031298984721863" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298984721864" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298984721865" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="9116031298984721866" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolveInfo="emptyList" />
+                  <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
                 </node>
               </node>
-              <node concept="vg0i.1107535904670" id="6599163591527280461" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
-                <node concept="vg0i.1107535904670" id="6599163591527280462" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298984721867" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298984721868" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298984721869" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721860" resolveInfo="model" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298984721870" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123152" id="9116031298984721871" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298984721872" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721901" resolveInfo="concept" />
+              </node>
+              <node concept="vg0i.1070534058343" id="9116031298984721873" role="vg0i.1081773326031.1081773367579" info="nn" />
+            </node>
+            <node concept="vg0i.1068580123136" id="9116031298984721874" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298984721875" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.7812454656619025412" id="9116031298984721876" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280634" resolveInfo="allNodesIncludingImported" />
+                  <node concept="vg0i.1068498886296" id="9116031298984721877" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721860" resolveInfo="model" />
+                  </node>
+                  <node concept="vg0i.1068580123137" id="9116031298984721878" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <property role="vg0i.1068580123137.1068580123138" value="true" />
+                  </node>
+                  <node concept="vg0i.1070534058343" id="9116031298984721879" role="vg0i.1204053956946.1068499141038" info="nn" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242864" id="6599163591527280466" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="6599163591527280467" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="cond" />
-              <node concept="vg0i.1145552977093" id="6599163591527280470" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1182160077978" id="6599163591527280471" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <node concept="vg0i.1170345865475" id="6599163591527280472" role="vg0i.1182160077978.1182160096073" info="ig">
-                    <property role="asn4.1169194658468.1169194664001" value="Condition$anonymous" />
-                    <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
-                    <reference role="vg0i.1170345865475.1170346070688" target="r9fo.~Condition" resolveInfo="Condition" />
-                    <node concept="vg0i.1068580123165" id="6599163591527280474" role="vg0i.1107461130800.5375687026011219971" info="igu">
-                      <property role="asn4.1169194658468.1169194664001" value="met" />
-                      <node concept="vg0i.1068580123136" id="6599163591527280479" role="vg0i.1068580123132.1068580123135" info="sn">
-                        <node concept="vg0i.1068580123155" id="6812226693096439319" role="vg0i.1068580123136.1068581517665" info="nn">
-                          <node concept="vg0i.1081236700937" id="6812226693096439398" role="vg0i.1068580123155.1068580123156" info="nn">
-                            <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
-                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%disInstanceOf(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)%cboolean" resolveInfo="isInstanceOf" />
-                            <node concept="vg0i.1068498886296" id="6812226693096439447" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280477" resolveInfo="node" />
-                            </node>
-                            <node concept="vg0i.1081236700937" id="6812226693096439908" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="unno.2089287822043606740" resolveInfo="getConcept" />
-                              <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
-                              <node concept="vg0i.1068498886296" id="6812226693096440084" role="vg0i.1204053956946.1068499141038" info="nn">
-                                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280402" resolveInfo="conceptFqName" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="vg0i.1068498886292" id="6599163591527280477" role="vg0i.1068580123132.1068580123134" info="ir">
-                        <property role="asn4.1169194658468.1169194664001" value="node" />
-                        <node concept="4ia1.1138055754698" id="6812226693096438819" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-                      </node>
-                      <node concept="vg0i.1070534644030" id="6599163591527280476" role="vg0i.1068580123132.1068580123133" info="in" />
-                      <node concept="vg0i.1146644602865" id="6599163591527280475" role="vg0i.1178549954367.1178549979242" info="nn" />
-                      <node concept="vg0i.1188207840427" id="3998760702351477230" role="vg0i.1188208481402.1188208488637" info="nn">
-                        <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Override" resolveInfo="Override" />
-                      </node>
-                    </node>
-                    <node concept="vg0i.1107535904670" id="6599163591527280473" role="vg0i.1170345865475.1201186121363" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                    </node>
+          <node concept="vg0i.1068581242864" id="9116031298984721880" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298984721881" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="conceptNode" />
+              <node concept="4ia1.1172420572800" id="9116031298984721882" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1070534934090" id="9116031298984748834" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1197027756228" id="9116031298984731952" role="vg0i.1070534934090.1070534934092" info="nn">
+                  <node concept="vg0i.1068498886296" id="9116031298984731512" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721901" resolveInfo="concept" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="9116031298984732750" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetDeclarationNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getDeclarationNode" />
                   </node>
                 </node>
+                <node concept="4ia1.1172420572800" id="9116031298984748835" role="vg0i.1070534934090.1070534934091" info="in" />
               </node>
-              <node concept="vg0i.1107535904670" id="6599163591527280468" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="r9fo.~Condition" resolveInfo="Condition" />
-                <node concept="vg0i.1107535904670" id="6599163591527280469" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298984721885" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123152" id="9116031298984721886" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298984721887" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721881" resolveInfo="conceptNode" />
+              </node>
+              <node concept="vg0i.1070534058343" id="9116031298984721888" role="vg0i.1081773326031.1081773367579" info="nn" />
+            </node>
+            <node concept="vg0i.1068580123136" id="9116031298984721889" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298984721890" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="9116031298984721891" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolveInfo="emptyList" />
+                  <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242864" id="6599163591527280485" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="6599163591527280486" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="iterable" />
-              <node concept="vg0i.1145552977093" id="6599163591527280489" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="6599163591527280490" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="msyo.~ConditionalIterable%d&lt;init&gt;(java%dlang%dIterable,org%djetbrains%dmps%dutil%dCondition)" resolveInfo="ConditionalIterable" />
-                  <node concept="vg0i.1197027756228" id="6599163591527280492" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1068498886296" id="3021153905151559660" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280400" resolveInfo="model" />
-                    </node>
-                    <node concept="vg0i.1202948039474" id="6599163591527280494" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
-                    </node>
-                  </node>
-                  <node concept="vg0i.1107535904670" id="6599163591527280491" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                  </node>
-                  <node concept="vg0i.1068498886296" id="4265636116363083703" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280467" resolveInfo="cond" />
-                  </node>
-                </node>
+          <node concept="vg0i.1068580123157" id="9116031298984721892" role="vg0i.1068580123136.1068581517665" info="nn" />
+          <node concept="vg0i.1068581242878" id="9116031298984721893" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="9116031298984721894" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280634" resolveInfo="allNodesIncludingImported" />
+              <node concept="vg0i.1068498886296" id="9116031298984721895" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721860" resolveInfo="model" />
               </node>
-              <node concept="vg0i.1107535904670" id="6599163591527280487" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Iterable" resolveInfo="Iterable" />
-                <node concept="vg0i.1107535904670" id="6599163591527280488" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-                </node>
+              <node concept="vg0i.1068580123137" id="9116031298984721896" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580123137.1068580123138" value="true" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298984767249" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984721881" resolveInfo="conceptNode" />
               </node>
             </node>
           </node>
-          <node concept="vg0i.1144226303539" id="6599163591527280496" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123136" id="6599163591527280500" role="vg0i.1154032098014.1154032183016" info="sn">
-              <node concept="vg0i.1068580123155" id="6599163591527280501" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="6599163591527280502" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <node concept="vg0i.1202948039474" id="6599163591527280504" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                    <node concept="vg0i.1068498886296" id="4265636116363111864" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280498" resolveInfo="node" />
-                    </node>
-                  </node>
-                  <node concept="vg0i.1068498886296" id="4265636116363090811" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280460" resolveInfo="list" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1068498886296" id="4265636116363093227" role="vg0i.1144226303539.1144226360166" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280486" resolveInfo="iterable" />
-            </node>
-            <node concept="vg0i.1068581242863" id="6599163591527280498" role="vg0i.1144230876926.1144230900587" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="node" />
-              <node concept="vg0i.1107535904670" id="6599163591527280499" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-              </node>
-            </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298984721898" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1107535904670" id="9116031298984721899" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
+          <node concept="vg0i.1107535904670" id="9116031298984721900" role="vg0i.1107535904670.1109201940907" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
           </node>
-          <node concept="vg0i.1068581242878" id="6599163591527280506" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="4265636116363108454" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280460" resolveInfo="list" />
-            </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298984721901" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <node concept="vg0i.1107535904670" id="9116031298984727344" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
@@ -4467,85 +4471,18 @@
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="6599163591527280518" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123159" id="6599163591527280519" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123136" id="6599163591527280523" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242878" id="6599163591527280524" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1081236700937" id="5253134957342021767" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolveInfo="emptyList" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1068580123152" id="6599163591527280520" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1070534058343" id="6599163591527280522" role="vg0i.1081773326031.1081773367579" info="nn" />
-              <node concept="vg0i.1068498886296" id="3021153905151601240" role="vg0i.1081773326031.1081773367580" info="nn">
+          <node concept="vg0i.1068581242878" id="3902406419449999051" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="9116031298984768209" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="9116031298984721859" resolveInfo="getRootsIncludingImported" />
+              <node concept="vg0i.1068498886296" id="9116031298984768400" role="vg0i.1204053956946.1068499141038" info="nn">
                 <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280512" resolveInfo="model" />
               </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123159" id="6599163591527280526" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123152" id="6599163591527280527" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1068498886296" id="3021153905151402756" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280516" resolveInfo="conceptFqName" />
-              </node>
-              <node concept="vg0i.1070534058343" id="6599163591527280529" role="vg0i.1081773326031.1081773367579" info="nn" />
-            </node>
-            <node concept="vg0i.1068580123136" id="6599163591527280530" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242878" id="6599163591527280531" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.7812454656619025412" id="4923130412071517677" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280634" resolveInfo="allNodesIncludingImported" />
-                  <node concept="vg0i.1068498886296" id="3021153905151600040" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280512" resolveInfo="model" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="3902406419449999034" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                  <node concept="vg0i.1070534058343" id="3902406419449999036" role="vg0i.1204053956946.1068499141038" info="nn" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068581242864" id="6599163591527280535" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="6599163591527280536" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="concept" />
-              <node concept="4ia1.1172420572800" id="9052580757326154459" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-              <node concept="vg0i.1081236700937" id="9052580757326154460" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
-                <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <node concept="vg0i.1068498886296" id="3021153905151662691" role="vg0i.1204053956946.1068499141038" info="nn">
+              <node concept="vg0i.1081236700937" id="9116031298984855294" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="3902354333654811570" resolveInfo="stringToConcept" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527286941" resolveInfo="SNodeOperations" />
+                <node concept="vg0i.1068498886296" id="9116031298984855798" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280516" resolveInfo="conceptFqName" />
                 </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123159" id="6599163591527280541" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068580123152" id="6599163591527280542" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1068498886296" id="4265636116363091174" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280536" resolveInfo="concept" />
-              </node>
-              <node concept="vg0i.1070534058343" id="6599163591527280544" role="vg0i.1081773326031.1081773367579" info="nn" />
-            </node>
-            <node concept="vg0i.1068580123136" id="6599163591527280545" role="vg0i.1068580123159.1068580123161" info="sn">
-              <node concept="vg0i.1068581242878" id="6599163591527280546" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1081236700937" id="5253134957342021768" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolveInfo="emptyList" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123157" id="3902406419449999053" role="vg0i.1068580123136.1068581517665" info="nn" />
-          <node concept="vg0i.1068581242878" id="3902406419449999051" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.7812454656619025412" id="4923130412071496872" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280634" resolveInfo="allNodesIncludingImported" />
-              <node concept="vg0i.1068498886296" id="3021153905150340808" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280512" resolveInfo="model" />
-              </node>
-              <node concept="vg0i.1068580123137" id="3902406419449999038" role="vg0i.1204053956946.1068499141038" info="nn">
-                <property role="vg0i.1068580123137.1068580123138" value="true" />
-              </node>
-              <node concept="vg0i.1068498886296" id="4265636116363109610" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280536" resolveInfo="concept" />
               </node>
             </node>
           </node>
@@ -4563,6 +4500,69 @@
             <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
           </node>
         </node>
+        <node concept="vg0i.1188207840427" id="9116031298984894398" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984894653" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298984895461" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298984895523" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298984905434" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="getNodesIncludingImported" />
+        <node concept="vg0i.1068498886292" id="9116031298984905435" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="model" />
+          <node concept="vg0i.1107535904670" id="9116031298984905436" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298984905437" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
+          <node concept="vg0i.1107535904670" id="9116031298984905438" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1107535904670" id="9116031298984905439" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
+          <node concept="vg0i.1107535904670" id="9116031298984905440" role="vg0i.1107535904670.1109201940907" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298984905441" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="9116031298984905442" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242878" id="9116031298984943429" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="9116031298984944065" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="7146110783104378977" resolveInfo="getNodesIncludingImported" />
+              <node concept="vg0i.1068498886296" id="9116031298984944392" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984905435" resolveInfo="model" />
+              </node>
+              <node concept="vg0i.1081236700937" id="9116031298984945066" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="3902354333654811570" resolveInfo="stringToConcept" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527286941" resolveInfo="SNodeOperations" />
+                <node concept="vg0i.1068498886296" id="9116031298984945679" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298984905437" resolveInfo="conceptFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984945911" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984946154" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298984946411" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298984946473" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="vg0i.1081236700938" id="7146110783104378977" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="getNodesIncludingImported" />
@@ -4573,9 +4573,9 @@
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="7146110783104378980" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
-          <node concept="vg0i.1107535904670" id="7146110783104378981" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <node concept="vg0i.1107535904670" id="9116031298984913597" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1107535904670" id="7146110783104378982" role="vg0i.1068580123132.1068580123133" info="in">
@@ -4620,21 +4620,25 @@
             <node concept="vg0i.1068580123152" id="7146110783104379000" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1070534058343" id="7146110783104379001" role="vg0i.1081773326031.1081773367579" info="nn" />
               <node concept="vg0i.1068498886296" id="7146110783104379002" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104378980" resolveInfo="conceptFqName" />
+                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104378980" resolveInfo="concept" />
               </node>
             </node>
           </node>
           <node concept="vg0i.1068581242864" id="7146110783104379003" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="7146110783104379004" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="concept" />
+              <property role="asn4.1169194658468.1169194664001" value="conceptNode" />
               <property role="vg0i.1068431474542.1176718929932" value="true" />
               <node concept="4ia1.1172420572800" id="7146110783104379005" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-              <node concept="vg0i.1081236700937" id="7146110783104379006" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
-                <node concept="vg0i.1068498886296" id="7146110783104379007" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="7146110783104378980" resolveInfo="conceptFqName" />
+              <node concept="vg0i.1070534934090" id="9116031298984938020" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1197027756228" id="9116031298984934367" role="vg0i.1070534934090.1070534934092" info="nn">
+                  <node concept="vg0i.1068498886296" id="9116031298984936485" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="7146110783104378980" resolveInfo="concept" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="9116031298984937256" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetDeclarationNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getDeclarationNode" />
+                  </node>
                 </node>
+                <node concept="4ia1.1172420572800" id="9116031298984938021" role="vg0i.1070534934090.1070534934091" info="in" />
               </node>
             </node>
           </node>
@@ -4642,7 +4646,7 @@
             <node concept="vg0i.1068580123152" id="7146110783104379010" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1070534058343" id="7146110783104379011" role="vg0i.1081773326031.1081773367579" info="nn" />
               <node concept="vg0i.1068498886296" id="7146110783104379012" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104379004" resolveInfo="concept" />
+                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104379004" resolveInfo="conceptNode" />
               </node>
             </node>
             <node concept="vg0i.1068580123136" id="7146110783104379013" role="vg0i.1068580123159.1068580123161" info="sn">
@@ -4664,7 +4668,7 @@
                 <property role="vg0i.1068580123137.1068580123138" value="false" />
               </node>
               <node concept="vg0i.1068498886296" id="7146110783104379020" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104379004" resolveInfo="concept" />
+                <reference role="vg0i.1068498886296.1068581517664" target="7146110783104379004" resolveInfo="conceptNode" />
               </node>
             </node>
           </node>
@@ -4953,7 +4957,59 @@
           <node concept="vg0i.1188207840427" id="3902406419449999737" role="vg0i.1188208481402.1188208488637" info="nn">
             <reference role="vg0i.1188207840427.1188208074048" target="as9o.~Nullable" resolveInfo="Nullable" />
           </node>
-          <node concept="4ia1.1172420572800" id="3902406419449999736" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="4ia1.1172420572800" id="9116031298984755102" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+        </node>
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298984946673" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="getNodes" />
+        <node concept="vg0i.1107535904670" id="9116031298984946674" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
+          <node concept="vg0i.1107535904670" id="9116031298984946675" role="vg0i.1107535904670.1109201940907" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298984946676" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="model" />
+          <node concept="vg0i.1107535904670" id="9116031298984946677" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298984946678" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="9116031298984946679" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242878" id="9116031298984946716" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="9116031298984965684" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280778" resolveInfo="getNodes" />
+              <node concept="vg0i.1068498886296" id="9116031298984965920" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298984946676" resolveInfo="model" />
+              </node>
+              <node concept="vg0i.1081236700937" id="9116031298984967188" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="3902354333654811570" resolveInfo="stringToConcept" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527286941" resolveInfo="SNodeOperations" />
+                <node concept="vg0i.1068498886296" id="9116031298984967816" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298984946718" resolveInfo="conceptFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298984946718" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1107535904670" id="9116031298984946719" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984968572" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984968815" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298984969098" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298984969382" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="vg0i.1081236700938" id="6599163591527280778" role="vg0i.1107461130800.5375687026011219971" info="igu">
@@ -4996,7 +5052,7 @@
             <node concept="vg0i.1073239437375" id="6599163591527280797" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1070534058343" id="6599163591527280799" role="vg0i.1081773326031.1081773367579" info="nn" />
               <node concept="vg0i.1068498886296" id="3021153905150321781" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280784" resolveInfo="conceptFqName" />
+                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280784" resolveInfo="concept" />
               </node>
             </node>
             <node concept="vg0i.1068580123136" id="6599163591527280800" role="vg0i.1068580123159.1068580123161" info="sn">
@@ -5007,8 +5063,13 @@
                   <node concept="vg0i.1068498886296" id="1630277016590214855" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280782" resolveInfo="model" />
                   </node>
-                  <node concept="vg0i.1068498886296" id="1630277016590216305" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280784" resolveInfo="conceptFqName" />
+                  <node concept="vg0i.1197027756228" id="9116031298984963077" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="1630277016590216305" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280784" resolveInfo="concept" />
+                    </node>
+                    <node concept="vg0i.1202948039474" id="9116031298984964405" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetQualifiedName()%cjava%dlang%dString" resolveInfo="getQualifiedName" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5070,10 +5131,10 @@
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527280784" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
-          <node concept="vg0i.1107535904670" id="6599163591527280785" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          <node concept="vg0i.1107535904670" id="9116031298984952862" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
@@ -5107,6 +5168,18 @@
           <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
           <node concept="vg0i.1107535904670" id="6599163591527280836" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984192954" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298984200959" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298984201281" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298984201343" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
           </node>
         </node>
       </node>
@@ -5353,107 +5426,134 @@
           </node>
         </node>
       </node>
-      <node concept="vg0i.1081236700938" id="6599163591527280883" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="createNewNode" />
-        <node concept="vg0i.1107535904670" id="7779215190998478302" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-        </node>
-        <node concept="vg0i.1188207840427" id="6599163591527280897" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
-        </node>
-        <node concept="vg0i.1068580123136" id="6599163591527280892" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242878" id="6599163591527282009" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.7812454656619025412" id="4923130412071464438" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
-              <node concept="vg0i.1068498886296" id="3021153905151398740" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280886" resolveInfo="model" />
-              </node>
-              <node concept="vg0i.1068498886296" id="3021153905150327587" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280888" resolveInfo="conceptFqName" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280886" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="model" />
-          <node concept="vg0i.1107535904670" id="6599163591527280887" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280888" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
-          <node concept="vg0i.1107535904670" id="6599163591527280889" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280890" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="prototypeNode" />
-          <node concept="vg0i.1107535904670" id="6599163591527280891" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
-          </node>
-        </node>
-        <node concept="vg0i.1146644602865" id="6599163591527280884" role="vg0i.1178549954367.1178549979242" info="nn" />
-      </node>
-      <node concept="vg0i.1081236700938" id="6599163591527280898" role="vg0i.1107461130800.5375687026011219971" info="igu">
+      <node concept="vg0i.1081236700938" id="9116031298985583863" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="createNewRootNode" />
-        <node concept="vg0i.1107535904670" id="7779215190998471564" role="vg0i.1068580123132.1068580123133" info="in">
+        <node concept="vg0i.1107535904670" id="9116031298985583864" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
         </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280901" role="vg0i.1068580123132.1068580123134" info="ir">
+        <node concept="vg0i.1068498886292" id="9116031298985583865" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="model" />
-          <node concept="vg0i.1107535904670" id="6599163591527280902" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+          <node concept="vg0i.1107535904670" id="9116031298985583866" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
           </node>
         </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280903" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
-          <node concept="vg0i.1107535904670" id="6599163591527280904" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+        <node concept="vg0i.1068498886292" id="9116031298985583867" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <node concept="vg0i.1107535904670" id="9116031298985591356" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>
         </node>
-        <node concept="vg0i.1146644602865" id="6599163591527280899" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="6599163591527280907" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="6599163591527280908" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="6599163591527280909" role="vg0i.1068581242864.1068581242865" info="nr">
+        <node concept="vg0i.1146644602865" id="9116031298985583869" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="9116031298985583870" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242864" id="9116031298985583871" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985583872" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="newNode" />
-              <node concept="vg0i.1107535904670" id="7779215190998478488" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+              <node concept="vg0i.1107535904670" id="9116031298985583873" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
               </node>
-              <node concept="vg0i.7812454656619025412" id="4923130412071521143" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
-                <node concept="vg0i.1068498886296" id="3021153905151338379" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280901" resolveInfo="model" />
+              <node concept="vg0i.7812454656619025412" id="9116031298985583874" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
+                <node concept="vg0i.1068498886296" id="9116031298985583875" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985583865" resolveInfo="model" />
                 </node>
-                <node concept="vg0i.1068498886296" id="3021153905151608209" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280903" resolveInfo="conceptFqName" />
+                <node concept="vg0i.1070534058343" id="9116031298985638847" role="vg0i.1204053956946.1068499141038" info="nn" />
+                <node concept="vg0i.1068498886296" id="9116031298985583876" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985583867" resolveInfo="concept" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="6599163591527280914" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1197027756228" id="6599163591527280915" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1068498886296" id="3021153905151416014" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280901" resolveInfo="model" />
+          <node concept="vg0i.1068580123155" id="9116031298985583877" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="9116031298985583878" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298985583879" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985583865" resolveInfo="model" />
               </node>
-              <node concept="vg0i.1202948039474" id="6599163591527280917" role="vg0i.1197027756228.1197027833540" info="nn">
+              <node concept="vg0i.1202948039474" id="9116031298985583880" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%daddRootNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="addRootNode" />
-                <node concept="vg0i.1068498886296" id="4265636116363067405" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280909" resolveInfo="newNode" />
+                <node concept="vg0i.1068498886296" id="9116031298985583881" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985583872" resolveInfo="newNode" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242878" id="6599163591527280919" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="4265636116363110115" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="6599163591527280909" resolveInfo="newNode" />
+          <node concept="vg0i.1068581242878" id="9116031298985583882" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298985583883" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298985583872" resolveInfo="newNode" />
             </node>
           </node>
-          <node concept="vg0i.1068580123157" id="613146731766720055" role="vg0i.1068580123136.1068581517665" info="nn" />
         </node>
-        <node concept="vg0i.1068498886292" id="6599163591527280905" role="vg0i.1068580123132.1068580123134" info="ir">
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298985629061" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="createNewRootNode" />
+        <node concept="vg0i.1107535904670" id="9116031298985629062" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985629063" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="model" />
+          <node concept="vg0i.1107535904670" id="9116031298985629064" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985629065" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
+          <node concept="vg0i.1107535904670" id="9116031298985637300" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298985629067" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="9116031298985629068" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242864" id="9116031298985629069" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985629070" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="newNode" />
+              <node concept="vg0i.1107535904670" id="9116031298985629071" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+              <node concept="vg0i.7812454656619025412" id="9116031298985629072" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
+                <node concept="vg0i.1068498886296" id="9116031298985629073" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985629063" resolveInfo="model" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985629074" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985629065" resolveInfo="conceptFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="9116031298985629075" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="9116031298985629076" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298985629077" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985629063" resolveInfo="model" />
+              </node>
+              <node concept="vg0i.1202948039474" id="9116031298985629078" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%daddRootNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="addRootNode" />
+                <node concept="vg0i.1068498886296" id="9116031298985629079" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985629070" resolveInfo="newNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="9116031298985629080" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298985629081" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298985629070" resolveInfo="newNode" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985629082" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="prototypeNode" />
-          <node concept="vg0i.1107535904670" id="6599163591527280906" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+          <node concept="vg0i.1107535904670" id="9116031298985629083" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985636251" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985636435" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298985637226" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298985637288" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
           </node>
         </node>
       </node>
@@ -5846,7 +5946,7 @@
         <node concept="vg0i.1068580123136" id="6599163591527286354" role="vg0i.1068580123132.1068580123135" info="sn" />
       </node>
       <node concept="vg0i.1081236700938" id="6599163591527286355" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="findLinkDeclaration" />
+        <property role="asn4.1169194658468.1169194664001" value="findLinkDelaration" />
         <node concept="vg0i.1146644602865" id="6599163591527286356" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1107535904670" id="6599163591527286357" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
@@ -5900,6 +6000,18 @@
           <node concept="vg0i.1068581242878" id="6599163591527286375" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068498886296" id="4265636116363087356" role="vg0i.1068581242878.1068581517676" info="nn">
               <reference role="vg0i.1068498886296.1068581517664" target="6599163591527286370" resolveInfo="linkDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985997000" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985997314" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298985998087" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298985998121" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
             </node>
           </node>
         </node>
@@ -6561,9 +6673,9 @@
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="4585658144689928123" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="childConceptFQName" />
-          <node concept="vg0i.1107535904670" id="4585658144689928124" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          <property role="asn4.1169194658468.1169194664001" value="childConcept" />
+          <node concept="vg0i.1107535904670" id="9116031298985783067" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="4585658144689928125" role="vg0i.1068580123132.1068580123135" info="sn">
@@ -6582,8 +6694,8 @@
                     <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
                   </node>
                   <node concept="vg0i.1081236700937" id="4585658144689928134" role="vg0i.1068431474542.1068431790190" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
                     <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
                     <node concept="vg0i.1197027756228" id="4585658144689928135" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1068498886296" id="4585658144689928136" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="4585658144689928119" resolveInfo="node" />
@@ -6592,8 +6704,9 @@
                         <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                       </node>
                     </node>
+                    <node concept="vg0i.1070534058343" id="9116031298985783928" role="vg0i.1204053956946.1068499141038" info="nn" />
                     <node concept="vg0i.1068498886296" id="4585658144689928138" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="4585658144689928123" resolveInfo="childConceptFQName" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="4585658144689928123" resolveInfo="childConcept" />
                     </node>
                   </node>
                 </node>
@@ -6885,9 +6998,9 @@
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="4585658144692566214" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="childConceptFQName" />
-          <node concept="vg0i.1107535904670" id="4585658144692566215" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          <property role="asn4.1169194658468.1169194664001" value="childConcept" />
+          <node concept="vg0i.1107535904670" id="9116031298985784445" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="4585658144692566216" role="vg0i.1068580123132.1068580123135" info="sn">
@@ -6906,8 +7019,8 @@
                     <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
                   </node>
                   <node concept="vg0i.1081236700937" id="4585658144692566225" role="vg0i.1068431474542.1068431790190" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
                     <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
                     <node concept="vg0i.1197027756228" id="4585658144692566226" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1068498886296" id="4585658144692566227" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="4585658144692566210" resolveInfo="node" />
@@ -6916,8 +7029,9 @@
                         <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                       </node>
                     </node>
+                    <node concept="vg0i.1070534058343" id="9116031298985785319" role="vg0i.1204053956946.1068499141038" info="nn" />
                     <node concept="vg0i.1068498886296" id="4585658144692566229" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="4585658144692566214" resolveInfo="childConceptFQName" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="4585658144692566214" resolveInfo="childConcept" />
                     </node>
                   </node>
                 </node>
@@ -8105,7 +8219,6 @@
         <node concept="vg0i.1107535904670" id="3902354333654811572" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
         </node>
-        <node concept="vg0i.1146644623116" id="3902354333654811573" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="3902354333654811574" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068580123159" id="3902354333654858580" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068580123136" id="3902354333654858583" role="vg0i.1068580123159.1068580123161" info="sn">
@@ -8149,7 +8262,6 @@
             <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>
         </node>
-        <node concept="vg0i.1146644623116" id="3902354333650568843" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="3902354333650383960" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242864" id="3902354333650401785" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="3902354333650401786" role="vg0i.1068581242864.1068581242865" info="nr">
@@ -12095,18 +12207,19 @@
               <node concept="vg0i.1107535904670" id="6599163591527294445" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
               </node>
-              <node concept="vg0i.1081236700937" id="6599163591527298496" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
+              <node concept="vg0i.1081236700937" id="9116031298985458129" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
                 <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
-                <node concept="vg0i.1197027756228" id="6599163591527298497" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1068498886296" id="3021153905151423430" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="vg0i.1197027756228" id="9116031298985458130" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1068498886296" id="9116031298985458131" role="vg0i.1197027756228.1197027771414" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294419" resolveInfo="node" />
                   </node>
-                  <node concept="vg0i.1202948039474" id="6599163591527298499" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="vg0i.1202948039474" id="9116031298985458132" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                   </node>
                 </node>
-                <node concept="vg0i.1068498886296" id="3021153905151597627" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985458133" role="vg0i.1204053956946.1068499141038" info="nn" />
+                <node concept="vg0i.1068498886296" id="9116031298985458134" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294421" resolveInfo="conceptFQName" />
                 </node>
               </node>
@@ -12192,11 +12305,177 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527294421" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="conceptFQName" />
-          <node concept="vg0i.1107535904670" id="6599163591527294422" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          <node concept="vg0i.1107535904670" id="9116031298985459121" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="6599163591527294417" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298985249712" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="insertNewNextSiblingChild" />
+        <node concept="vg0i.1068580123136" id="9116031298985249713" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="9116031298985249714" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298985249715" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985249716" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985249717" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1080223426719" id="9116031298985249718" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1068580123152" id="9116031298985249719" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985249720" role="vg0i.1081773326031.1081773367579" info="nn" />
+                <node concept="vg0i.1197027756228" id="9116031298985249721" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <node concept="vg0i.1202948039474" id="9116031298985249722" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetParent()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getParent" />
+                  </node>
+                  <node concept="vg0i.1068498886296" id="9116031298985249723" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123152" id="9116031298985249724" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985249725" role="vg0i.1081773326031.1081773367579" info="nn" />
+                <node concept="vg0i.1068498886296" id="9116031298985249726" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985249727" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985249728" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="parent" />
+              <node concept="vg0i.1107535904670" id="9116031298985249729" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+              <node concept="vg0i.1197027756228" id="9116031298985249730" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298985249731" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+                </node>
+                <node concept="vg0i.1202948039474" id="9116031298985249732" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetParent()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getParent" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985249733" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985249734" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="newChild" />
+              <node concept="vg0i.1107535904670" id="9116031298985249735" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+              <node concept="vg0i.1081236700937" id="9116031298985249736" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
+                <node concept="vg0i.1197027756228" id="9116031298985249737" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1068498886296" id="9116031298985249738" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="9116031298985249739" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
+                  </node>
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985249740" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249773" resolveInfo="conceptFQName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298985249741" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123152" id="9116031298985249742" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298985249743" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249734" resolveInfo="newChild" />
+              </node>
+              <node concept="vg0i.1070534058343" id="9116031298985249744" role="vg0i.1081773326031.1081773367579" info="nn" />
+            </node>
+            <node concept="vg0i.1068580123136" id="9116031298985249745" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985249746" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985249747" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985249748" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985249749" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="role" />
+              <node concept="vg0i.1197027756228" id="9116031298985249750" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298985249751" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+                </node>
+                <node concept="vg0i.1202948039474" id="9116031298985249752" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetContainmentLink()%corg%djetbrains%dmps%dopenapi%dlanguage%dSContainmentLink" resolveInfo="getContainmentLink" />
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298985249753" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SContainmentLink" resolveInfo="SContainmentLink" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1160998861373" id="9116031298985249754" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1080120340718" id="9116031298985249755" role="vg0i.1160998861373.1160998896846" info="nn">
+              <node concept="vg0i.1073239437375" id="9116031298985249756" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985249757" role="vg0i.1081773326031.1081773367579" info="nn" />
+                <node concept="vg0i.1068498886296" id="9116031298985249758" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249749" resolveInfo="role" />
+                </node>
+              </node>
+              <node concept="vg0i.1073239437375" id="9116031298985249759" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298985249760" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249728" resolveInfo="parent" />
+                </node>
+                <node concept="vg0i.1070534058343" id="9116031298985249761" role="vg0i.1081773326031.1081773367579" info="nn" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="9116031298985249762" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="9116031298985249763" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="msyo.~SNodeOperations%dinsertChild(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dlanguage%dSContainmentLink,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="insertChild" />
+              <reference role="vg0i.1081236700937.1144433194310" target="msyo.~SNodeOperations" resolveInfo="SNodeOperations" />
+              <node concept="vg0i.1068498886296" id="9116031298985249764" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249728" resolveInfo="parent" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298985249765" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249749" resolveInfo="role" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298985249766" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249734" resolveInfo="newChild" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298985249767" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249771" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="9116031298985249768" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298985249769" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298985249734" resolveInfo="newChild" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1107535904670" id="9116031298985249770" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985249771" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="node" />
+          <node concept="vg0i.1107535904670" id="9116031298985249772" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985249773" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="conceptFQName" />
+          <node concept="vg0i.1107535904670" id="9116031298985249774" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298985249775" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1188207840427" id="9116031298985267542" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985268152" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298985268763" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298985268867" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="vg0i.1081236700938" id="6599163591527294482" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="insertNewPrevSiblingChild" />
@@ -12251,7 +12530,7 @@
               </node>
               <node concept="vg0i.1081236700937" id="6599163591527298505" role="vg0i.1068431474542.1068431790190" info="nn">
                 <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
-                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
+                <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
                 <node concept="vg0i.1197027756228" id="6599163591527298506" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="vg0i.1202948039474" id="6599163591527298508" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
@@ -12260,8 +12539,9 @@
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294485" resolveInfo="node" />
                   </node>
                 </node>
+                <node concept="vg0i.1070534058343" id="9116031298985473344" role="vg0i.1204053956946.1068499141038" info="nn" />
                 <node concept="vg0i.1068498886296" id="3021153905151599642" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294487" resolveInfo="conceptFqName" />
+                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294487" resolveInfo="concept" />
                 </node>
               </node>
             </node>
@@ -12339,9 +12619,168 @@
         </node>
         <node concept="vg0i.1146644602865" id="6599163591527294483" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068498886292" id="6599163591527294487" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <node concept="vg0i.1107535904670" id="9116031298985470692" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1081236700938" id="9116031298985460459" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="insertNewPrevSiblingChild" />
+        <node concept="vg0i.1068580123136" id="9116031298985460460" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="9116031298985460461" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298985460462" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985460463" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985460464" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298985460465" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298985460466" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298985460467" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460515" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985460468" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985460469" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="parent" />
+              <node concept="vg0i.1197027756228" id="9116031298985460470" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1202948039474" id="9116031298985460471" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetParent()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getParent" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985460472" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460515" resolveInfo="node" />
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298985460473" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298985460474" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298985460475" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985460476" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985460477" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298985460478" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298985460479" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298985460480" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460469" resolveInfo="parent" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985460481" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985460482" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="newChild" />
+              <node concept="vg0i.1107535904670" id="9116031298985460483" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+              <node concept="vg0i.1081236700937" id="9116031298985460484" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="6599163591527280830" resolveInfo="createNewNode" />
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
+                <node concept="vg0i.1197027756228" id="9116031298985460485" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1202948039474" id="9116031298985460486" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
+                  </node>
+                  <node concept="vg0i.1068498886296" id="9116031298985460487" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460515" resolveInfo="node" />
+                  </node>
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985460488" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460519" resolveInfo="conceptFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298985460489" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298985460490" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985460491" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985460492" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298985460493" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298985460494" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298985460495" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460482" resolveInfo="newChild" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985460496" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985460497" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="role" />
+              <node concept="vg0i.1197027756228" id="9116031298985460498" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1202948039474" id="9116031298985460499" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetContainmentLink()%corg%djetbrains%dmps%dopenapi%dlanguage%dSContainmentLink" resolveInfo="getContainmentLink" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985460500" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460515" resolveInfo="node" />
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298985460501" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SContainmentLink" resolveInfo="SContainmentLink" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1160998861373" id="9116031298985460502" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1073239437375" id="9116031298985460503" role="vg0i.1160998861373.1160998896846" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298985460504" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460497" resolveInfo="role" />
+              </node>
+              <node concept="vg0i.1070534058343" id="9116031298985460505" role="vg0i.1081773326031.1081773367579" info="nn" />
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="9116031298985460506" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="9116031298985460507" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="9116031298985460508" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460469" resolveInfo="parent" />
+              </node>
+              <node concept="vg0i.1202948039474" id="9116031298985460509" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dinsertChildBefore(org%djetbrains%dmps%dopenapi%dlanguage%dSContainmentLink,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="insertChildBefore" />
+                <node concept="vg0i.1068498886296" id="9116031298985460510" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460497" resolveInfo="role" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985460511" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460482" resolveInfo="newChild" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985460512" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460515" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="9116031298985460513" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298985460514" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298985460482" resolveInfo="newChild" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985460515" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="node" />
+          <node concept="vg0i.1107535904670" id="9116031298985460516" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1107535904670" id="9116031298985460517" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+        </node>
+        <node concept="vg0i.1146644602865" id="9116031298985460518" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068498886292" id="9116031298985460519" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="conceptFqName" />
-          <node concept="vg0i.1107535904670" id="6599163591527294488" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+          <node concept="vg0i.1107535904670" id="9116031298985460520" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985505734" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985506384" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298985507259" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298985507359" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
+            </node>
           </node>
         </node>
       </node>
@@ -12684,6 +13123,172 @@
           </node>
         </node>
       </node>
+      <node concept="vg0i.1081236700938" id="9116031298985481260" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="replaceWithNewChild" />
+        <node concept="vg0i.1146644602865" id="9116031298985481261" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068498886292" id="9116031298985481262" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="oldChild" />
+          <node concept="vg0i.1107535904670" id="9116031298985481263" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+        <node concept="vg0i.1068498886292" id="9116031298985481264" role="vg0i.1068580123132.1068580123134" info="ir">
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
+          <node concept="vg0i.1107535904670" id="9116031298985500029" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          </node>
+        </node>
+        <node concept="vg0i.1107535904670" id="9116031298985481266" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+        </node>
+        <node concept="vg0i.1068580123136" id="9116031298985481267" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1160998861373" id="9116031298985481268" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1073239437375" id="9116031298985481269" role="vg0i.1160998861373.1160998896846" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298985481270" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298985481271" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+              </node>
+            </node>
+            <node concept="vg0i.1070475926800" id="9116031298985481272" role="vg0i.1160998861373.1160998916832" info="nn">
+              <property role="vg0i.1070475926800.1070475926801" value="can't replace node. node is NULL" />
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985481273" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985481274" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="oldChildParent" />
+              <node concept="vg0i.1197027756228" id="9116031298985481275" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298985481276" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+                </node>
+                <node concept="vg0i.1202948039474" id="9116031298985481277" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetParent()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getParent" />
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298985481278" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298985481279" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1080120340718" id="9116031298985481280" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1079359253375" id="9116031298985481281" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1080223426719" id="9116031298985481282" role="vg0i.1079359253375.1079359253376" info="nn">
+                  <node concept="vg0i.1073239437375" id="9116031298985481283" role="vg0i.1081773326031.1081773367579" info="nn">
+                    <node concept="vg0i.1070534058343" id="9116031298985481284" role="vg0i.1081773326031.1081773367579" info="nn" />
+                    <node concept="vg0i.1197027756228" id="9116031298985481285" role="vg0i.1081773326031.1081773367580" info="nn">
+                      <node concept="vg0i.1202948039474" id="9116031298985481286" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetParent()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getParent" />
+                      </node>
+                      <node concept="vg0i.1068498886296" id="9116031298985481287" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068580123152" id="9116031298985481288" role="vg0i.1081773326031.1081773367580" info="nn">
+                    <node concept="vg0i.1197027756228" id="9116031298985481289" role="vg0i.1081773326031.1081773367580" info="nn">
+                      <node concept="vg0i.1202948039474" id="9116031298985481290" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
+                      </node>
+                      <node concept="vg0i.1068498886296" id="9116031298985481291" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+                      </node>
+                    </node>
+                    <node concept="vg0i.1070534058343" id="9116031298985481292" role="vg0i.1081773326031.1081773367579" info="nn" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123152" id="9116031298985481293" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="vg0i.1068498886296" id="9116031298985481294" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481274" resolveInfo="oldChildParent" />
+                </node>
+                <node concept="vg0i.1070534058343" id="9116031298985481295" role="vg0i.1081773326031.1081773367579" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123136" id="9116031298985481296" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985481297" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985481298" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985481299" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985481300" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="model" />
+              <node concept="vg0i.1197027756228" id="9116031298985481301" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1202948039474" id="9116031298985481302" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298985481303" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+                </node>
+              </node>
+              <node concept="vg0i.1107535904670" id="9116031298985481304" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="9116031298985481305" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="9116031298985481306" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="newChild" />
+              <node concept="vg0i.1107535904670" id="9116031298985481307" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
+              </node>
+              <node concept="vg0i.1081236700937" id="9116031298985481308" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1081236700937.1144433194310" target="6599163591527280390" resolveInfo="SModelOperations" />
+                <reference role="vg0i.1204053956946.1068499141037" target="1917749888335241872" resolveInfo="createNewNode" />
+                <node concept="vg0i.1068498886296" id="9116031298985481309" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481300" resolveInfo="model" />
+                </node>
+                <node concept="vg0i.1070534058343" id="9116031298985503279" role="vg0i.1204053956946.1068499141038" info="nn" />
+                <node concept="vg0i.1068498886296" id="9116031298985481310" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481264" resolveInfo="concept" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123159" id="9116031298985481311" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="9116031298985481312" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="9116031298985481313" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070534058343" id="9116031298985481314" role="vg0i.1068581242878.1068581517676" info="nn" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123152" id="9116031298985481315" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1070534058343" id="9116031298985481316" role="vg0i.1081773326031.1081773367579" info="nn" />
+              <node concept="vg0i.1068498886296" id="9116031298985481317" role="vg0i.1081773326031.1081773367580" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481306" resolveInfo="newChild" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="9116031298985481318" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="9116031298985481319" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
+              <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%dreplaceWithAnother(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="replaceWithAnother" />
+              <node concept="vg0i.1068498886296" id="9116031298985481320" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298985481321" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481306" resolveInfo="newChild" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="9116031298985481322" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="9116031298985481323" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="6599163591527286941" resolveInfo="SNodeOperations" />
+              <reference role="vg0i.1204053956946.1068499141037" target="6599163591527294770" resolveInfo="copyAllAttributes" />
+              <node concept="vg0i.1068498886296" id="9116031298985481324" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481262" resolveInfo="oldChild" />
+              </node>
+              <node concept="vg0i.1068498886296" id="9116031298985481325" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481306" resolveInfo="newChild" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="9116031298985481326" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068498886296" id="9116031298985481327" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="9116031298985481306" resolveInfo="newChild" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="vg0i.1081236700938" id="6599163591527294690" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="replaceWithNewChild" />
         <node concept="vg0i.1146644602865" id="6599163591527294691" role="vg0i.1178549954367.1178549979242" info="nn" />
@@ -12845,6 +13450,18 @@
           <node concept="vg0i.1068581242878" id="6599163591527294768" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068498886296" id="4265636116363081626" role="vg0i.1068581242878.1068581517676" info="nn">
               <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294728" resolveInfo="newChild" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985504357" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
+        <node concept="vg0i.1188207840427" id="9116031298985504818" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="eunx.~ToRemove" resolveInfo="ToRemove" />
+          <node concept="vg0i.1188214545140" id="9116031298985505618" role="vg0i.1188207840427.1188214630783" info="ng">
+            <reference role="vg0i.1188214545140.1188214555875" target="eunx.~ToRemove%dversion()" resolveInfo="version" />
+            <node concept="vg0i.1111509017652" id="9116031298985505722" role="vg0i.1188214545140.1188214607812" info="nn">
+              <property role="vg0i.1111509017652.1113006610751" value="3.2" />
             </node>
           </node>
         </node>

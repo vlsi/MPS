@@ -23,12 +23,6 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -185,18 +179,6 @@ public final class SConceptOperations {
       }
     }
     return result;
-  }
-  public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, SearchScope scope) {
-    if (conceptDeclarationNode == null) {
-      return new ArrayList<SNode>();
-    }
-    if (scope == null) {
-      scope = GlobalScope.getInstance();
-    }
-    String cId = NameUtil.nodeFQName(conceptDeclarationNode);
-    SAbstractConcept concept = SConceptRepository.getInstance().getConcept(cId);
-    Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, new EmptyProgressMonitor());
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
   @Deprecated
   @ToRemove(version = 3.2)
