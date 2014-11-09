@@ -3840,8 +3840,8 @@
                     <node concept="vg0i.1068498886296" id="1917749888334980311" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="1917749888334820890" resolveInfo="concept" />
                     </node>
-                    <node concept="vg0i.1202948039474" id="1917749888334982621" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                    <node concept="vg0i.1202948039474" id="7453996997717493410" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetQualifiedName()%cjava%dlang%dString" resolveInfo="getQualifiedName" />
                     </node>
                   </node>
                 </node>
