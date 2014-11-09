@@ -9,8 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -35,7 +33,7 @@ public class BuildLayout_Node_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node"))), thisNode, sb);
+    BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node")), thisNode, sb);
     return sb.toString();
   }
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
@@ -47,7 +45,7 @@ public class BuildLayout_Node_Behavior {
   public static void call_appendName_internal_1368030936106708110(SAbstractConcept thisConcept, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
     if (parent != null) {
-      BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node"))), parent, sb);
+      BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node")), parent, sb);
     }
     BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
   }

@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -39,6 +37,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -80,7 +79,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_spngij_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -103,9 +102,9 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node)))) {
+      for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node)))) {
         if (!(SPropertyOperations.getBoolean(a, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(a), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"))) {
-          ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")));
+          ListSequence.fromList(result).addElement(SNodeOperations.cast(a, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")));
         }
       }
       return result;
@@ -123,7 +122,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
     public String getMatchingText_internal(SNode parameterObject) {
-      return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterObject)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+      return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(parameterObject), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
     }
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SNode) parameterObject);

@@ -970,8 +970,8 @@
       <node id="1744445256079578595" at="84,5,85,16" concept="11" />
       <node id="5624975557544115440" at="88,9,89,96" concept="5" />
       <node id="1071422968910333554" at="91,35,92,140" concept="11" />
-      <node id="1744445256079578615" at="95,22,96,367" concept="5" />
-      <node id="1744445256079578631" at="96,367,97,15" concept="11" />
+      <node id="1744445256079578615" at="95,22,96,391" concept="5" />
+      <node id="1744445256079578631" at="96,391,97,15" concept="11" />
       <node id="5996241366559640441" at="98,7,99,157" concept="10" />
       <node id="5996241366559717453" at="99,157,100,43" concept="10" />
       <node id="5996241366559768421" at="102,27,103,108" concept="5" />
@@ -3135,7 +3135,7 @@
     <file name="ConceptEditorHelper.java">
       <node id="2970389781193035665" at="30,91,31,71" concept="10" />
       <node id="2970389781193035678" at="33,418,34,39" concept="10" />
-      <node id="2970389781193035687" at="35,386,36,62" concept="5" />
+      <node id="2970389781193035687" at="35,393,36,62" concept="5" />
       <node id="2970389781193035710" at="39,5,40,18" concept="11" />
       <node id="2970389781193035719" at="42,91,43,71" concept="10" />
       <node id="2970389781193035726" at="43,71,44,105" concept="10" />
@@ -3181,7 +3181,7 @@
       <node id="2970389781193035619" at="91,0,100,0" concept="9" trace="met#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="2970389781193035787" at="56,0,66,0" concept="15" trace="createNewConceptAspectInstance#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2970389781193035660" at="30,0,42,0" concept="15" trace="getAvailableConceptAspects#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="2970389781193035686" at="35,386,36,62" />
+      <scope id="2970389781193035686" at="35,393,36,62" />
       <scope id="2970389781193035812" at="61,21,62,38" />
       <scope id="2970389781193035577" at="82,48,83,134" />
       <scope id="2970389781193035649" at="88,50,89,33" />

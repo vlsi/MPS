@@ -15199,14 +15199,14 @@
       <node id="1139533461943" at="30,227,31,55" concept="5" />
       <node id="1139533461943" at="31,55,32,40" concept="5" />
       <node id="1139533461943" at="32,40,33,22" concept="12" />
-      <node id="7708826200307371072" at="35,108,36,157" concept="12" />
+      <node id="7708826200307371072" at="35,108,36,181" concept="12" />
       <node id="1139533461943" at="18,0,21,0" concept="10" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1139533461943" at="23,67,26,5" concept="9" />
       <node id="7708826200307368716" at="35,0,38,0" concept="15" trace="_StyleParameter_QueryFunction_q0ga01_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1139533461943" at="21,0,35,0" concept="10" trace="createComponent_q0ga01_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1139533461943" at="18,79,19,62" />
       <scope id="1139533461943" at="24,26,25,27" />
-      <scope id="7708826200307370227" at="35,108,36,157" />
+      <scope id="7708826200307370227" at="35,108,36,181" />
       <scope id="1139533461943" at="18,0,21,0">
         <var name="editorContext" id="1139533461943" />
         <var name="node" id="1139533461943" />

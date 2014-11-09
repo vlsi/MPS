@@ -25,7 +25,7 @@ public class ScopeResolver implements IResolver {
   }
   @Override
   public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final SRepository repository) {
-    SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(sourceNode), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});
+    SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(sourceNode)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});
     if (linkDeclaration == null) {
       return false;
     }

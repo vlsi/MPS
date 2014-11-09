@@ -24,7 +24,7 @@ public class HierarchycalTableModel extends AbstractTableModel {
   public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration) {
     myTableNode = tableNode;
     myRowsLinkDeclaration = rowsLinkDeclaration;
-    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(myTableNode))).contains(myRowsLinkDeclaration);
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(myTableNode)))).contains(myRowsLinkDeclaration);
     myColumnsLinkDeclaration = cellsLinkDeclaration;
     assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(myRowsLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")))).contains(myColumnsLinkDeclaration);
     myRowCount = ListSequence.fromList(getRows()).count();

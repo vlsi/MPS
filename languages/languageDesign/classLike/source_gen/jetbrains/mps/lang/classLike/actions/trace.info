@@ -109,8 +109,8 @@
       <node id="3751132065236797750" at="94,0,97,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="510971631003422246" at="106,0,109,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3751132065236797750" at="112,32,115,9" concept="2" />
-      <node id="3751132065236797750" at="47,98,52,20" concept="5" />
-      <node id="3751132065236797750" at="76,98,81,20" concept="5" />
+      <node id="3751132065236797750" at="47,133,52,20" concept="5" />
+      <node id="3751132065236797750" at="76,133,81,20" concept="5" />
       <node id="510971631003414974" at="104,42,109,13" concept="6" />
       <node id="3751132065236797750" at="111,18,116,7" concept="3" />
       <node id="3751132065236797750" at="104,0,111,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
@@ -195,10 +195,10 @@
         <var name="item" id="3751132065236797750" />
       </scope>
       <scope id="3751132065236797750" at="101,5,117,5" />
-      <scope id="3751132065236797750" at="47,98,70,9">
+      <scope id="3751132065236797750" at="47,133,70,9">
         <var name="queryResult" id="3751132065236797750" />
       </scope>
-      <scope id="3751132065236797750" at="76,98,99,9">
+      <scope id="3751132065236797750" at="76,133,99,9">
         <var name="queryResult" id="3751132065236797750" />
       </scope>
       <scope id="3751132065236797750" at="44,5,71,7">

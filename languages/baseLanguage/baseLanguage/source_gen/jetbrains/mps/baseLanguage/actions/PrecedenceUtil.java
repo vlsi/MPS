@@ -11,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 
 public class PrecedenceUtil {
@@ -113,7 +111,7 @@ public class PrecedenceUtil {
   }
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(expression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.castConcept(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
+      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.castConcept(expression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
         case 2:
           // || 
           return PrecedenceUtil.Precedence.J_13;

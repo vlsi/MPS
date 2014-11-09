@@ -28,7 +28,7 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(conceptToAdd), SNodeOperations.asSConcept(substituteConcept)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + BehaviorReflection.invokeVirtual(String.class, substituteConcept, "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1197896061431", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(substituteConcept), "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1197896061431", null, errorTarget);
       }
     }
   }

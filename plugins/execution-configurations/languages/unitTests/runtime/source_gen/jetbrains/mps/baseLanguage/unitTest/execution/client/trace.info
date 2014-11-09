@@ -620,7 +620,7 @@
       <node id="2024340988248532508" at="179,61,180,32" concept="9" />
       <node id="2024340988248532523" at="186,61,187,35" concept="9" />
       <node id="2024340988248532538" at="191,75,192,143" concept="8" />
-      <node id="2024340988248532555" at="194,40,195,46" concept="9" />
+      <node id="2024340988248532555" at="194,48,195,46" concept="9" />
       <node id="2024340988248532694" at="200,36,201,196" concept="9" />
       <node id="2024340988248532694" at="202,5,203,16" concept="9" />
       <node id="2024340988248532705" at="205,63,206,46" concept="9" />
@@ -654,7 +654,7 @@
       <node id="2024340988248532491" at="172,0,175,0" concept="7" trace="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
       <node id="2024340988248532506" at="179,0,182,0" concept="7" trace="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
       <node id="2024340988248532521" at="186,0,189,0" concept="7" trace="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-      <node id="2024340988248532553" at="194,0,197,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
+      <node id="2024340988248532553" at="194,0,197,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="2024340988248532694" at="199,73,202,5" concept="6" />
       <node id="2024340988248532705" at="205,0,208,0" concept="13" trace="eq_kl7j79_a0a0b2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2024340988248532792" at="208,0,211,0" concept="13" trace="eq_kl7j79_a0a0b4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -667,7 +667,7 @@
       <node id="2024340988248532489" at="170,54,175,7" concept="9" />
       <node id="2024340988248532504" at="177,58,182,7" concept="9" />
       <node id="2024340988248532519" at="184,61,189,7" concept="9" />
-      <node id="2024340988248532546" at="192,143,197,53" concept="9" />
+      <node id="2024340988248532546" at="192,143,197,61" concept="9" />
       <node id="2024340988248532781" at="107,0,113,0" concept="7" trace="canWrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2024340988248532694" at="199,0,205,0" concept="13" trace="check_kl7j79_a0a0d0a0b2#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2024340988248532486" at="170,0,177,0" concept="13" trace="getWrappedConcepts#()Ljava/lang/Iterable;" />
@@ -715,7 +715,7 @@
       <scope id="2024340988248532492" at="172,61,173,20" />
       <scope id="2024340988248532507" at="179,61,180,32" />
       <scope id="2024340988248532522" at="186,61,187,35" />
-      <scope id="2024340988248532554" at="194,40,195,46" />
+      <scope id="2024340988248532554" at="194,48,195,46" />
       <scope id="2024340988248532694" at="200,36,201,196" />
       <scope id="2024340988248532705" at="205,63,206,46" />
       <scope id="2024340988248532792" at="208,63,209,46" />
@@ -798,7 +798,7 @@
         <var name="node" id="2024340988248532782" />
       </scope>
       <scope id="2024340988248532429" at="150,65,156,16" />
-      <scope id="2024340988248532537" at="191,75,197,53">
+      <scope id="2024340988248532537" at="191,75,197,61">
         <var name="concepts" id="2024340988248532539" />
       </scope>
       <scope id="2024340988248532694" at="199,0,205,0">

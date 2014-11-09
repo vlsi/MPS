@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -30,7 +29,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       SNode link = SNodeOperations.getContainingLinkDeclaration(child);
       if (link != null && SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
         component.addDependency(link);
-        if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))))) {
+        if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child))))) {
           component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLinkRole(child) + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) + "\" expected, \"" + SNodeOperations.getConceptDeclaration(child) + "\" found", null);
         }
       }
@@ -46,7 +45,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
         continue;
       }
       component.addDependency(link);
-      if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))))) {
+      if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(target))))) {
         component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) + "\" expected, \"" + SNodeOperations.getConceptDeclaration(target) + "\" found", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"))));
       }
     }

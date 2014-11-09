@@ -49,7 +49,7 @@ public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               SNode scopesTest = SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest"));
-              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(_context.getModel(), false, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(scopesTest, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"))), "virtual_getFqName_1213877404258", new Object[]{}));
+              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(_context.getModel(), false, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(scopesTest, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")))), "virtual_getFqName_1213877404258", new Object[]{}));
               return modelPlusImportedScope;
             }
           }

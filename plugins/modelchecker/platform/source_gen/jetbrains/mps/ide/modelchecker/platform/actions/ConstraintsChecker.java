@@ -40,7 +40,7 @@ public class ConstraintsChecker extends SpecificChecker {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
       // Check links 
-      for (final SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
+      for (final SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asNode(concept), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
         if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isAtLeastOneCardinality_3386205146660812199", new Object[]{})) {
           if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {

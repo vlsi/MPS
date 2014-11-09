@@ -15,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -55,7 +53,7 @@ public class ExecuteCommandPart_Behavior {
     return _quotation_createNode_qal9w4_a0a5();
   }
   public static String call_getSuffix_3754131050835940463(SNode thisNode) {
-    return "_" + IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), thisNode.getNodeId().toString());
+    return "_" + IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass")), thisNode.getNodeId().toString());
   }
   private static SNode _quotation_createNode_qal9w4_a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -19,8 +19,6 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
@@ -84,7 +82,7 @@ public class QueriesGenerated {
         }
       }
     });
-    return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript"))));
+    return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")));
   }
   public static Object propertyMacro_GetPropertyValue_5387853834547028838(final PropertyMacroContext _context) {
     SModule module = _context.getNode().getModel().getModule();

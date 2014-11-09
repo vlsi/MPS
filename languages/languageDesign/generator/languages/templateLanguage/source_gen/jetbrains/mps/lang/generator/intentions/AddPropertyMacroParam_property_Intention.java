@@ -86,7 +86,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.getConceptDeclaration(node))).where(new IWhereFilter<SNode>() {
+    SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return propertyName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
@@ -95,7 +95,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
       return result;
     }
     SNode property = SLinkOperations.getTarget(propertyDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
-    for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNodeConcept)) {
+    for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(sourceNodeConcept))) {
       if (property == SLinkOperations.getTarget(propertySource, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"))) {
         ListSequence.fromList(result).addElement(propertySource);
       }

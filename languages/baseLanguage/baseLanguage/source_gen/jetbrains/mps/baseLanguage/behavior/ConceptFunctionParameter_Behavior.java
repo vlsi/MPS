@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,7 +23,7 @@ public class ConceptFunctionParameter_Behavior {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, ConceptFunctionParameter_Behavior.call_findConceptFunction_1213877522934(thisNode), "virtual_usesParameterObjectFor_1213877374432", new Object[]{thisNode});
   }
   public static boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
+    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
   }
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
     List<SNode> functions = SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);

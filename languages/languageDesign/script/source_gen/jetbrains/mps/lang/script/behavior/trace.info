@@ -79,8 +79,8 @@
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914717773">
     <file name="MigrationScriptPart_Instance_Updater_Behavior.java">
-      <node id="3044950653914717752" at="15,125,16,261" concept="2" />
-      <node id="3044950653914717767" at="16,261,17,166" concept="1" />
+      <node id="3044950653914717752" at="15,125,16,289" concept="2" />
+      <node id="3044950653914717767" at="16,289,17,166" concept="1" />
       <node id="3044950653914717771" at="17,166,18,18" concept="3" />
       <node id="3044950653914717773" at="13,0,15,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3044950653914717773" at="15,0,20,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
@@ -99,8 +99,8 @@
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914725604">
     <file name="MigrationScriptPart_Instance_Predicate_Behavior.java">
-      <node id="3044950653914725583" at="17,125,18,261" concept="2" />
-      <node id="3044950653914725598" at="18,261,19,166" concept="1" />
+      <node id="3044950653914725583" at="17,125,18,289" concept="2" />
+      <node id="3044950653914725598" at="18,289,19,166" concept="1" />
       <node id="3044950653914725602" at="19,166,20,18" concept="3" />
       <node id="658365993681975429" at="22,83,23,47" concept="3" />
       <node id="658365993681975271" at="25,60,26,63" concept="2" />

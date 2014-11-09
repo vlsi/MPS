@@ -15,8 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
@@ -38,15 +36,15 @@ public class HelpCommand_Behavior {
     if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 473081947980701568l, 6928665434433788203l, "target")) == null)) {
       Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleTab().getConsoleModel())).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(it);
+          return SNodeOperations.isInstanceOf(SNodeOperations.asNode(it), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.asNode(it));
         }
       }).sort(new ISelector<SNode, String>() {
         public String select(SNode it) {
-          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getGroup_6928665434441162387", new Object[]{});
+          return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getGroup_6928665434441162387", new Object[]{});
         }
       }, true).alsoSort(new ISelector<SNode, String>() {
         public String select(SNode it) {
-          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{});
+          return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getKind_7006261637493126084", new Object[]{});
         }
       }, true).alsoSort(new ISelector<SNode, String>() {
         public String select(SNode it) {
@@ -55,7 +53,7 @@ public class HelpCommand_Behavior {
       }, true);
       Deque<SNode> groupedConstructions = LinkedListSequence.fromLinkedList(new LinkedList<SNode>());
       for (SNode e : Sequence.fromIterable(constructions)) {
-        if (BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(e)), "virtual_getGroup_6928665434441162387", new Object[]{}) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedList(groupedConstructions).last())) {
+        if (BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(e), "virtual_getGroup_6928665434441162387", new Object[]{}) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedList(groupedConstructions).last())) {
           LinkedListSequence.fromLinkedList(groupedConstructions).addElement(null);
         }
         LinkedListSequence.fromLinkedList(groupedConstructions).addElement(e);
@@ -63,15 +61,15 @@ public class HelpCommand_Behavior {
       List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedList(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
         public IListSequence<String> select(SNode it) {
           try {
-            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getShortHelp_473081947982699339", new Object[]{}));
           } catch (RuntimeException e) {
             if (LOG.isEnabledFor(Level.WARN)) {
-              LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
+              LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(it), "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
             }
             try {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(it), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.asNode(it), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "");
             }
           }
         }
@@ -114,8 +112,8 @@ public class HelpCommand_Behavior {
       String helpPage;
       try {
         SNode chp = (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 473081947980701568l, 6928665434433788203l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 6928665434433761801l, 6928665434433779926l, "command"));
-        helpPage = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getHelpPage_7006261637493125297", new Object[]{});
-        String helpHead = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{});
+        helpPage = BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(chp), "virtual_getHelpPage_7006261637493125297", new Object[]{});
+        String helpHead = BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(chp), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(chp), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(chp), "virtual_getShortHelp_473081947982699339", new Object[]{});
         if ((helpPage != null && helpPage.length() > 0)) {
           console.addText(helpHead + "\n\n" + helpPage);
         } else {
@@ -134,7 +132,7 @@ public class HelpCommand_Behavior {
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
   private static String check_x46ur7_a0a0c0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(checkedDotOperand)), "virtual_getGroup_6928665434441162387", new Object[]{});
+      return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(checkedDotOperand), "virtual_getGroup_6928665434441162387", new Object[]{});
     }
     return null;
   }

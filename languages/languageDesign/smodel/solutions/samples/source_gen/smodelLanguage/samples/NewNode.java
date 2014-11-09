@@ -28,7 +28,7 @@ public class NewNode {
   public void newNode3(SNode sample) {
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode ifStatement1 = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", sample);
-    SNode ifStatement2 = SConceptOperations.createNewNode(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
+    SNode ifStatement2 = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
     SNode ifStatement3 = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
   }
 }

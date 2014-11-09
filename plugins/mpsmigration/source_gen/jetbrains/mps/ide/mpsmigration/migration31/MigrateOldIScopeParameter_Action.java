@@ -102,7 +102,7 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, 1182506966389l, "scope")));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it));
         }
       });
     } catch (Throwable t) {

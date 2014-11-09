@@ -51,7 +51,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   public void createNewRow(int index) {
     int rowCount = getRowCount();
     assert index <= rowCount;
-    SNode newRowNode = SConceptOperations.createNewNode(SNodeOperations.asSConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
+    SNode newRowNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
     if (index == rowCount) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), newRowNode);
     } else {

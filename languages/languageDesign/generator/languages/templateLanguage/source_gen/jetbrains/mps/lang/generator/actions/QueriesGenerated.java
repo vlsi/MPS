@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -91,7 +90,7 @@ public class QueriesGenerated {
 
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }

@@ -22,7 +22,7 @@ public class Model {
     SNode new_stmt = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode new_class = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     SModelOperations.addRootNode(model, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
-    SModelOperations.addRootNode(model, SConceptOperations.createNewNode(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))));
+    SModelOperations.addRootNode(model, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))));
   }
   public void new_node_2(SModel model) {
     SNode named = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassConcept");

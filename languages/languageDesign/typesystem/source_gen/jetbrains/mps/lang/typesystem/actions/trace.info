@@ -72,7 +72,7 @@
     <file name="QueriesGenerated.java">
       <node id="1175609466956" at="147,187,148,93" concept="5" />
       <node id="1199876270870" at="151,42,152,206" concept="5" />
-      <node id="1227876798671" at="154,45,155,222" concept="6" />
+      <node id="1227876798671" at="154,45,155,246" concept="6" />
       <node id="1199876619383" at="163,100,164,101" concept="5" />
       <node id="1199876647027" at="164,101,165,256" concept="5" />
       <node id="1199876674375" at="166,38,167,28" concept="6" />
@@ -99,7 +99,7 @@
       <node id="1175609466956" at="148,93,185,5" concept="0" />
       <node id="1175609466956" at="148,93,185,5" concept="0" />
       <node id="1175609466956" at="147,0,188,0" concept="8" trace="sideTransform_ActionsFactory_Expression_1175609466956#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
-      <scope id="1227876798670" at="154,45,155,222" />
+      <scope id="1227876798670" at="154,45,155,246" />
       <scope id="1199876662632" at="166,38,167,28" />
       <scope id="1227876798667" at="154,0,157,0">
         <var name="it" id="1227876798667" />
@@ -149,7 +149,7 @@
       <node id="1185801400389" at="71,203,72,93" concept="5" />
       <node id="1185801400389" at="73,5,74,130" concept="5" />
       <node id="1185801400389" at="74,130,75,62" concept="5" />
-      <node id="1185801400389" at="76,98,77,124" concept="5" />
+      <node id="1185801400389" at="76,133,77,124" concept="5" />
       <node id="1185801738882" at="79,105,80,147" concept="5" />
       <node id="1185801885485" at="80,147,81,208" concept="1" />
       <node id="1185801917263" at="81,208,82,36" concept="6" />
@@ -195,7 +195,7 @@
         <var name="oc" id="1185801400389" />
         <var name="pn" id="1185801400389" />
       </scope>
-      <scope id="1185801400389" at="76,98,94,221">
+      <scope id="1185801400389" at="76,133,94,221">
         <var name="setter" id="1185801400389" />
         <var name="wrappedConcept" id="1185801400389" />
       </scope>

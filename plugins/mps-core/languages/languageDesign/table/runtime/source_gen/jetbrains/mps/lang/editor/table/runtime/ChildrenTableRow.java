@@ -30,7 +30,7 @@ public class ChildrenTableRow extends AbstractTableRow {
   @Override
   public void createNewCell(int index) {
     assert index <= ListSequence.fromList(getChildren()).count();
-    SNode newCellNode = SConceptOperations.createNewNode(SNodeOperations.asSConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
+    SNode newCellNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
     insertNewCell(newCellNode, index);
   }
   protected void insertNewCell(SNode newCellNode, int index) {

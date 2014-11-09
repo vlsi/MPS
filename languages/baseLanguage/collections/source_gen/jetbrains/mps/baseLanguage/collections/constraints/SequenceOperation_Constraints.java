@@ -15,8 +15,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -43,7 +41,7 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
       SNode opnd = SLinkOperations.getTarget(SNodeOperations.as(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
       if ((opnd != null)) {
         SNode opndtype = TypeChecker.getInstance().getTypeOf(opnd);
-        for (SNode exptype : (IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.castConcept(((SNode) childConcept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"))))))) {
+        for (SNode exptype : (IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SNodeOperations.asSConcept(SNodeOperations.castConcept(((SNode) childConcept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")))))) {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(opndtype, exptype, false)) {
             return true;
           }

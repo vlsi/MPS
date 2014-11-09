@@ -815,7 +815,7 @@
       <node id="3719390199793467376" at="54,184,66,11" concept="7" />
       <node id="3719390199793467469" at="74,11,86,9" concept="7" />
       <node id="3719390199793467452" at="69,0,87,7" concept="6" />
-      <node id="3719390199793467303" at="43,272,67,9" concept="7" />
+      <node id="3719390199793467303" at="43,296,67,9" concept="7" />
       <node id="3719390199793467301" at="42,21,68,7" concept="6" />
       <node id="3719390199793467281" at="35,53,99,5" concept="6" />
       <node id="3719390199793467253" at="31,0,104,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
@@ -857,7 +857,7 @@
       <scope id="3719390199793467452" at="69,0,87,7">
         <var name="child" id="3719390199793467453" />
       </scope>
-      <scope id="3719390199793467302" at="43,272,67,9" />
+      <scope id="3719390199793467302" at="43,296,67,9" />
       <scope id="3719390199793467301" at="42,21,68,7">
         <var name="link" id="3719390199793467450" />
       </scope>
@@ -927,7 +927,7 @@
       <node id="3719390199793467731" at="23,0,24,45" concept="4" />
       <node id="3719390199793467747" at="26,33,27,14" concept="1" />
       <node id="3719390199793467751" at="28,7,29,66" concept="9" />
-      <node id="3719390199793467762" at="30,28,31,248" concept="4" />
+      <node id="3719390199793467762" at="30,28,31,272" concept="4" />
       <node id="3719390199793467782" at="33,5,34,19" concept="4" />
       <node id="3719390199793467786" at="34,19,35,0" concept="12" />
       <node id="3719390199793467787" at="35,0,36,19" concept="10" />
@@ -938,7 +938,7 @@
       <node id="3719390199793467716" at="20,0,38,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
       <scope id="3719390199793467715" at="18,39,18,39" />
       <scope id="3719390199793467746" at="26,33,27,14" />
-      <scope id="3719390199793467761" at="30,28,31,248" />
+      <scope id="3719390199793467761" at="30,28,31,272" />
       <scope id="3719390199793467712" at="18,0,20,0" />
       <scope id="3719390199793467744" at="25,86,32,7">
         <var name="concept" id="3719390199793467752" />
