@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.smodel.CopyUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.ArrayList;
@@ -34,7 +35,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -85,7 +85,7 @@ public class SNodeOperations {
     }
     return node.getParent();
   }
-  public static SNode getNodeAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root) {
+  public static SNode getNodeAncestor(SNode node, SAbstractConcept ancestorConcept, boolean inclusion, boolean root) {
     return SNodeOperations.getNodeAncestor(node, ancestorConcept, inclusion, root, false);
   }
   @Deprecated
@@ -93,7 +93,7 @@ public class SNodeOperations {
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestor(node, ancestorConceptFqName, inclusion, root, false);
   }
-  public static SNode getNodeAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root, boolean sameMetaLevel) {
+  public static SNode getNodeAncestor(SNode node, SAbstractConcept ancestorConcept, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
     }
@@ -139,13 +139,13 @@ public class SNodeOperations {
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root, boolean sameMetaLevel) {
     return SNodeOperations.getNodeAncestor(node, stringToConcept(ancestorConceptFqName), inclusion, root, sameMetaLevel);
   }
-  private static boolean nullSafeInstanceOf(SNode node, SConcept concept) {
+  private static boolean nullSafeInstanceOf(SNode node, SAbstractConcept concept) {
     if (concept == null) {
       return true;
     }
     return SNodeOperations._isInstanceOf(node, concept);
   }
-  public static SNode getNodeAncestorWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion, boolean root) {
+  public static SNode getNodeAncestorWhereConceptInList(SNode node, SAbstractConcept[] ancestorConcepts, boolean inclusion, boolean root) {
     return SNodeOperations.getNodeAncestorWhereConceptInList(node, ancestorConcepts, inclusion, root, false);
   }
   @Deprecated
@@ -153,7 +153,7 @@ public class SNodeOperations {
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestorWhereConceptInList(node, ancestorConceptFqNames, inclusion, root, false);
   }
-  public static SNode getNodeAncestorWhereConceptInList(SNode node, SConcept[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
+  public static SNode getNodeAncestorWhereConceptInList(SNode node, SAbstractConcept[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
     }
@@ -200,7 +200,7 @@ public class SNodeOperations {
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
     return getNodeAncestorWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion, root, sameMetaLevel);
   }
-  public static List<SNode> getNodeAncestors(SNode node, SConcept ancestorConcept, boolean inclusion) {
+  public static List<SNode> getNodeAncestors(SNode node, SAbstractConcept ancestorConcept, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -221,7 +221,7 @@ public class SNodeOperations {
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
     return getNodeAncestors(node, stringToConcept(ancestorConceptFqName), inclusion);
   }
-  public static List<SNode> getNodeAncestorsWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion) {
+  public static List<SNode> getNodeAncestorsWhereConceptInList(SNode node, SAbstractConcept[] ancestorConcepts, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -242,7 +242,7 @@ public class SNodeOperations {
   public static List<SNode> getAncestorsWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion) {
     return getNodeAncestorsWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion);
   }
-  public static List<SNode> getNodeDescendants(SNode node, final SConcept childConcept, boolean inclusion) {
+  public static List<SNode> getNodeDescendants(SNode node, final SAbstractConcept childConcept, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -253,7 +253,7 @@ public class SNodeOperations {
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
     return getNodeDescendants(node, stringToConcept(childConceptFqName), inclusion);
   }
-  public static List<SNode> getNodeDescendants(SNode node, final SConcept childConcept, boolean inclusion, final SConcept[] stopConceptFqNames) {
+  public static List<SNode> getNodeDescendants(SNode node, final SAbstractConcept childConcept, boolean inclusion, final SAbstractConcept[] stopConceptFqNames) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -272,7 +272,7 @@ public class SNodeOperations {
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
     return getNodeDescendants(node, stringToConcept(childConceptFqName), inclusion, stringArrayToConceptArray(stopConceptFqNames));
   }
-  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion) {
+  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SAbstractConcept[] descendantConcepts, boolean inclusion) {
     if (node == null || descendantConcepts.length == 0) {
       return EMPTY_LIST;
     }
@@ -283,7 +283,7 @@ public class SNodeOperations {
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion) {
     return getNodeDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion);
   }
-  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion, final SConcept[] stopConcepts) {
+  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SAbstractConcept[] descendantConcepts, boolean inclusion, final SAbstractConcept[] stopConcepts) {
     if (node == null || descendantConcepts.length == 0) {
       return EMPTY_LIST;
     }
@@ -315,8 +315,8 @@ public class SNodeOperations {
     }
     return rv;
   }
-  private static boolean _isInstanceOf(SNode node, SConcept[] concepts) {
-    for (SConcept concept : concepts) {
+  private static boolean _isInstanceOf(SNode node, SAbstractConcept[] concepts) {
+    for (SAbstractConcept concept : concepts) {
       if (concept == null) {
         continue;
       }
@@ -326,7 +326,7 @@ public class SNodeOperations {
     }
     return false;
   }
-  private static boolean _isInstanceOf(SNode node, SConcept concept) {
+  private static boolean _isInstanceOf(SNode node, SAbstractConcept concept) {
     if (node == null) {
       return false;
     }
@@ -359,7 +359,7 @@ public class SNodeOperations {
     }
     return node.getModel();
   }
-  public static boolean isInstanceOf(SNode node, SConcept concept) {
+  public static boolean isInstanceOf(SNode node, SAbstractConcept concept) {
     if (node == null) {
       return false;
     }
@@ -663,7 +663,7 @@ public class SNodeOperations {
     }
     return new ScopeAdapter(scope);
   }
-  public static SNode cast(SNode node, SConcept castTo) {
+  public static SNode cast(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;
     }
@@ -690,7 +690,7 @@ public class SNodeOperations {
     }
     return node;
   }
-  public static SNode as(SNode node, SConcept castTo) {
+  public static SNode as(SNode node, SAbstractConcept castTo) {
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       return null;
     }
@@ -712,7 +712,7 @@ public class SNodeOperations {
     }
     return node;
   }
-  public static SNode castConcept(SNode node, SConcept castTo) {
+  public static SNode castConcept(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;
     }
@@ -737,7 +737,7 @@ public class SNodeOperations {
     }
     return node;
   }
-  public static SNode asConcept(SNode node, SConcept castTo) {
+  public static SNode asConcept(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;
     }
@@ -759,7 +759,7 @@ public class SNodeOperations {
     }
     return (SNode) concept.getDeclarationNode();
   }
-  public static SAbstractConcept asSConcept(SNode node) {
+  public static SConcept asSConcept(SNode node) {
     if (node == null) {
       return null;
     }
@@ -769,7 +769,7 @@ public class SNodeOperations {
    * this method is used where both concept and declaration should be acceptable
    */
   @Deprecated
-  public static SAbstractConcept asSConcept(SAbstractConcept concept) {
+  public static <T extends SAbstractConcept> T asSConcept(T concept) {
     return concept;
   }
   public static SNode getContainingLinkDeclaration(SNode childNode) {
@@ -823,7 +823,7 @@ public class SNodeOperations {
     Iterable<SNode> rv = new ConditionalIterable<SNode>(nodes, condition);
     return rv;
   }
-  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, SConcept concept) {
+  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, SAbstractConcept concept) {
     if (concept == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }

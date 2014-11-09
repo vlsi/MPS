@@ -320,6 +320,7 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898/1206060619838" name="condition" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898/1206060644605" name="statementList" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494/1212687122400" name="typeParameter" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828/1214996921760" name="bound" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926/1224414456414" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824/1226511765987" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435807" name="elementType" />
@@ -8330,8 +8331,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293246" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConcept" />
-          <node concept="vg0i.1107535904670" id="3902354333650121103" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217219895" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293248" role="vg0i.1068580123132.1068580123134" info="ir">
@@ -8709,8 +8710,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293265" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConcept" />
-          <node concept="vg0i.1107535904670" id="3902354333650180360" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217220400" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293267" role="vg0i.1068580123132.1068580123134" info="ir">
@@ -8835,8 +8836,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293393" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concept" />
-          <node concept="vg0i.1107535904670" id="3902354333650299122" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217221297" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1070534644030" id="6599163591527293390" role="vg0i.1068580123132.1068580123133" info="in" />
@@ -8875,8 +8876,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293413" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConcepts" />
           <node concept="vg0i.1070534760951" id="6599163591527293414" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650341768" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217222012" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -8969,8 +8970,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293433" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConceptFqNames" />
           <node concept="vg0i.1070534760951" id="6599163591527293434" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650564730" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217222563" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -9486,8 +9487,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293569" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConcept" />
-          <node concept="vg0i.1107535904670" id="3902354333650604822" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217223664" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1107535904670" id="6599163591527293565" role="vg0i.1068580123132.1068580123133" info="in">
@@ -9694,8 +9695,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293632" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="ancestorConcepts" />
           <node concept="vg0i.1070534760951" id="6599163591527293633" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650645286" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217224353" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -9808,7 +9809,7 @@
                   <node concept="vg0i.1070534058343" id="6884940444633345738" role="vg0i.1163668896201.1163668922816" info="nn" />
                   <node concept="vg0i.1145552977093" id="6884940444633346223" role="vg0i.1163668896201.1163668934364" info="nn">
                     <node concept="vg0i.1212685548494" id="6884940444633397451" role="vg0i.1145552977093.1145553007750" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept)" resolveInfo="InstanceOfCondition" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)" resolveInfo="InstanceOfCondition" />
                       <node concept="vg0i.1068498886296" id="6884940444633397527" role="vg0i.1204053956946.1068499141038" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293697" resolveInfo="childConcept" />
                       </node>
@@ -9831,8 +9832,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293697" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="childConcept" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
-          <node concept="vg0i.1107535904670" id="3902354333650690518" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217225124" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527293699" role="vg0i.1068580123132.1068580123134" info="ir">
@@ -9909,8 +9910,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293718" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="childConcept" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
-          <node concept="vg0i.1107535904670" id="3902354333650806495" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217226793" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1107535904670" id="6599163591527293714" role="vg0i.1068580123132.1068580123133" info="in">
@@ -10016,7 +10017,7 @@
               </node>
               <node concept="vg0i.1145552977093" id="6884940444633585352" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1212685548494" id="6884940444633589278" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept)" resolveInfo="InstanceOfCondition" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)" resolveInfo="InstanceOfCondition" />
                   <node concept="vg0i.1068498886296" id="6884940444633591707" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293718" resolveInfo="childConcept" />
                   </node>
@@ -10024,7 +10025,7 @@
               </node>
               <node concept="vg0i.1145552977093" id="6884940444633596575" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1212685548494" id="6884940444633600539" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept[])" resolveInfo="InstanceOfCondition" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept[])" resolveInfo="InstanceOfCondition" />
                   <node concept="vg0i.1068498886296" id="6884940444633603034" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293722" resolveInfo="stopConceptFqNames" />
                   </node>
@@ -10041,8 +10042,8 @@
           <property role="asn4.1169194658468.1169194664001" value="stopConceptFqNames" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1070534760951" id="6599163591527293723" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650810178" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217227990" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -10163,7 +10164,7 @@
                 </node>
                 <node concept="vg0i.1145552977093" id="6884940444633621668" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="vg0i.1212685548494" id="6884940444633623687" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept[])" resolveInfo="InstanceOfCondition" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept[])" resolveInfo="InstanceOfCondition" />
                     <node concept="vg0i.1068498886296" id="6884940444633624224" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293832" resolveInfo="descendantConcepts" />
                     </node>
@@ -10186,8 +10187,8 @@
           <property role="asn4.1169194658468.1169194664001" value="descendantConcepts" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1070534760951" id="6599163591527293833" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650872702" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217229255" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -10275,8 +10276,8 @@
           <property role="asn4.1169194658468.1169194664001" value="descendantConcepts" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1070534760951" id="6599163591527293855" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650937465" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217231032" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -10364,7 +10365,7 @@
               </node>
               <node concept="vg0i.1145552977093" id="6884940444633660318" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1212685548494" id="6884940444633663342" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept[])" resolveInfo="InstanceOfCondition" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept[])" resolveInfo="InstanceOfCondition" />
                   <node concept="vg0i.1068498886296" id="6884940444633664931" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293854" resolveInfo="descendantConcepts" />
                   </node>
@@ -10372,7 +10373,7 @@
               </node>
               <node concept="vg0i.1145552977093" id="6884940444633670410" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1212685548494" id="6884940444633673554" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept[])" resolveInfo="InstanceOfCondition" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept[])" resolveInfo="InstanceOfCondition" />
                   <node concept="vg0i.1068498886296" id="6884940444633675206" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="6599163591527293859" resolveInfo="stopConcepts" />
                   </node>
@@ -10389,8 +10390,8 @@
           <property role="asn4.1169194658468.1169194664001" value="stopConcepts" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1070534760951" id="6599163591527293860" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650939836" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217232257" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -10688,8 +10689,8 @@
           <node concept="vg0i.1144226303539" id="6599163591527294001" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="6599163591527294003" role="vg0i.1144230876926.1144230900587" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="concept" />
-              <node concept="vg0i.1107535904670" id="3902354333650089258" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+              <node concept="vg0i.1107535904670" id="742658975217234820" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
               </node>
             </node>
             <node concept="vg0i.1068498886296" id="3021153905151454076" role="vg0i.1144226303539.1144226360166" info="nn">
@@ -10735,8 +10736,8 @@
         <node concept="vg0i.1068498886292" id="6599163591527293997" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concepts" />
           <node concept="vg0i.1070534760951" id="6599163591527293998" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="vg0i.1107535904670" id="3902354333650080352" role="vg0i.1070534760951.1070534760952" info="in">
-              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+            <node concept="vg0i.1107535904670" id="742658975217233560" role="vg0i.1070534760951.1070534760952" info="in">
+              <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
             </node>
           </node>
         </node>
@@ -10753,8 +10754,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="3555950063898491263" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concept" />
-          <node concept="vg0i.1107535904670" id="3902354333650016589" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217235254" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="3555950063898491199" role="vg0i.1068580123132.1068580123135" info="sn">
@@ -11056,8 +11057,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527294106" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concept" />
-          <node concept="vg0i.1107535904670" id="3902354333650979175" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217237075" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
@@ -13631,7 +13632,7 @@
             <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
           </node>
         </node>
-        <node concept="vg0i.1107535904670" id="35891383368766426" role="vg0i.1068580123132.1068580123133" info="in">
+        <node concept="vg0i.1107535904670" id="742658975217530956" role="vg0i.1068580123132.1068580123133" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
         </node>
         <node concept="vg0i.1146644602865" id="35891383368744691" role="vg0i.1178549954367.1178549979242" info="nn" />
@@ -13990,8 +13991,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527295254" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="castTo" />
-          <node concept="vg0i.1107535904670" id="3902354333651225309" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217238927" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1068580123136" id="6599163591527295256" role="vg0i.1068580123132.1068580123135" info="sn">
@@ -14254,8 +14255,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="3902354333651304682" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="castTo" />
-          <node concept="vg0i.1107535904670" id="3902354333651320078" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217239604" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="3902354333651304684" role="vg0i.1178549954367.1178549979242" info="nn" />
@@ -14551,8 +14552,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="3902354333651329045" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="castTo" />
-          <node concept="vg0i.1107535904670" id="3902354333651345032" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217239911" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="4ia1.1138055754698" id="3902354333651329047" role="vg0i.1068580123132.1068580123133" info="in" />
@@ -14684,8 +14685,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527295393" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="castTo" />
-          <node concept="vg0i.1107535904670" id="3902354333651365658" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217195392" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="6599163591527295389" role="vg0i.1178549954367.1178549979242" info="nn" />
@@ -14803,8 +14804,8 @@
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="6677504323280309892" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1107535904670" id="5376843797189170806" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
+        <node concept="vg0i.1107535904670" id="742658975217240235" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
         </node>
       </node>
       <node concept="vg0i.1081236700938" id="6677504323281452765" role="vg0i.1107461130800.5375687026011219971" info="igu">
@@ -14818,13 +14819,13 @@
         </node>
         <node concept="vg0i.1068498886292" id="6677504323281452779" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concept" />
-          <node concept="vg0i.1107535904670" id="5376843797189162030" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
+          <node concept="vg0i.1109283449304" id="742658975217244409" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1109283449304.1109283546497" target="742658975217242078" resolveInfo="T" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="6677504323281452781" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1107535904670" id="5376843797189170408" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
+        <node concept="vg0i.1109283449304" id="742658975217242881" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1109283449304.1109283546497" target="742658975217242078" resolveInfo="T" />
         </node>
         <node concept="vg0i.1188207840427" id="1461238478128277172" role="vg0i.1188208481402.1188208488637" info="nn">
           <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
@@ -14834,6 +14835,12 @@
             <node concept="26qq.8970989240999019143" id="1461238478128280023" role="26qq.8465538089690331500.8970989240999019149" info="ng">
               <property role="26qq.8970989240999019143.8970989240999019144" value="this method is used where both concept and declaration should be acceptable" />
             </node>
+          </node>
+        </node>
+        <node concept="vg0i.1109279763828" id="742658975217242078" role="vg0i.1109279851642.1109279881614" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="T" />
+          <node concept="vg0i.1107535904670" id="742658975217242425" role="vg0i.1109279763828.1214996921760" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
@@ -15296,7 +15303,7 @@
               <node concept="vg0i.1197027756228" id="3902354333651384609" role="vg0i.1068431474542.1068431790190" info="nn">
                 <node concept="vg0i.1145552977093" id="3902354333651384610" role="vg0i.1197027756228.1197027771414" info="nn">
                   <node concept="vg0i.1212685548494" id="3902354333651384611" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSConcept)" resolveInfo="InstanceOfCondition" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="r9fo.~InstanceOfCondition%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)" resolveInfo="InstanceOfCondition" />
                     <node concept="vg0i.1068498886296" id="3902354333651384612" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="3902354333651384631" resolveInfo="concept" />
                     </node>
@@ -15350,8 +15357,8 @@
         </node>
         <node concept="vg0i.1068498886292" id="3902354333651384631" role="vg0i.1068580123132.1068580123134" info="ir">
           <property role="asn4.1169194658468.1169194664001" value="concept" />
-          <node concept="vg0i.1107535904670" id="3902354333651402127" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+          <node concept="vg0i.1107535904670" id="742658975217218999" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
           </node>
         </node>
       </node>
