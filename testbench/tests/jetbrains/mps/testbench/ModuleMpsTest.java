@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.TestLanguage;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.After;
-import org.junit.Rule;
 
 import java.util.UUID;
 
@@ -56,6 +55,7 @@ public class ModuleMpsTest extends CoreMpsTest {
 
   @After
   public void afterTest() {
+    org.apache.log4j.LogManager.getLogger(ModuleMpsTest.class).info("Cleaning up after the test");
     myAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -87,14 +87,18 @@ public class ModuleMpsTest extends CoreMpsTest {
   }
 
   protected Language createLanguage() {
+    String id = UUID.randomUUID().toString();
+    return createLanguage(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id);
+  }
+
+  protected Language createLanguage(final ModuleId id, final String name) {
     final Language[] languages = new Language[1];
     myAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
         LanguageDescriptor d = new LanguageDescriptor();
-        String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX_LANG + "_" + getNewId() + "_" + uuid);
-        d.setId(ModuleId.fromString(uuid));
+        d.setNamespace(name);
+        d.setId(id);
         languages[0] = TestLanguage.newInstance(d, OWNER);
       }
     });

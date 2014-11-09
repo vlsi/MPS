@@ -1763,7 +1763,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8306023725008094465" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="MyVeryGoodConcept2" />
+              <property name="value" nameId="tpee.1070475926801" value="MyVeryGoodConcept1" />
             </node>
           </node>
         </node>

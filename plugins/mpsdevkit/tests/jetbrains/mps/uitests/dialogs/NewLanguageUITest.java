@@ -19,13 +19,13 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.eventdata.StringEventData;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -58,7 +58,7 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
     final boolean[] loaded = new boolean[1];
     ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
       @Override
-      public void afterClassesLoaded(Set<SModule> modules) {
+      public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
         loaded[0] = true;
         ClassLoaderManager.getInstance().removeClassesHandler(this);
       }
