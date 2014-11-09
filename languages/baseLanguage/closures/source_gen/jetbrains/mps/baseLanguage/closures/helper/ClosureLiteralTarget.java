@@ -32,7 +32,7 @@ public class ClosureLiteralTarget {
     this.genContext = genContext;
   }
   public void setTarget(SNode literal, SNode targetIface) {
-    SNode targetIfaceErase = SConceptOperations.createNewNode(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(targetIface)));
+    SNode targetIfaceErase = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SNodeOperations.getConceptDeclaration(targetIface)));
     SLinkOperations.setTarget(targetIfaceErase, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(targetIface, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     matchTypeParameters(literal, targetIfaceErase, SLinkOperations.getChildren(targetIface, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter")));
     Values.LITERAL.set(genContext, targetIfaceErase, literal);
