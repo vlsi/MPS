@@ -54,12 +54,20 @@ public final class SConceptOperations {
     }
     return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(fromConceptDeclarationNode), NameUtil.nodeFQName(conceptDeclarationNode));
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static boolean isSuperConceptOf(SNode superConcept, String subConceptFQName) {
     if (superConcept == null) {
       return false;
     }
     String superConceptFQName = NameUtil.nodeFQName(superConcept);
     return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
+  }
+  public static boolean isSuperConceptOf(SAbstractConcept superConcept, SAbstractConcept subConcept) {
+    if (superConcept == null || subConcept == null) {
+      return false;
+    }
+    return subConcept.isSubConceptOf(superConcept);
   }
   @Deprecated
   @ToRemove(version = 3.2)

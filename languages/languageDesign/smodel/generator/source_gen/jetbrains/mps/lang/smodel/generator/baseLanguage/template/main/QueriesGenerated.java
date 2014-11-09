@@ -1073,10 +1073,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1172323662440(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
-  public static SNode sourceNodeQuery_1206655208616(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7453996997714666012(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
   }
-  public static SNode sourceNodeQuery_1206655208624(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7453996997714666020(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1180028149140l, 1180028346304l, "conceptArgument"));
   }
   public static SNode sourceNodeQuery_1461238478128498765(final SourceSubstituteMacroNodeContext _context) {
