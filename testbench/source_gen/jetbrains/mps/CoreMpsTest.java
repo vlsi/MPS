@@ -11,7 +11,7 @@ public class CoreMpsTest {
   private static Environment CREATED_ENV;
 
   @BeforeClass
-  public static void setUpEnvironment() {
+  public static void setup() {
     CREATED_ENV = MpsTestsSupport.initEnv(false);
     if (CREATED_ENV != null) {
       MpsTestsSupport.makeAllInCreatedEnvironment();
@@ -19,7 +19,7 @@ public class CoreMpsTest {
   }
 
   @AfterClass
-  public static void cleanUpEnvironment() {
+  public static void cleanup() {
     if (CREATED_ENV != null) {
       // FIXME in suites we need this environment later, cannot dispose it 
       // <node> 

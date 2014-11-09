@@ -152,12 +152,12 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           ListSequence.fromList(result).addElement(modelDescriptor);
         } else if (ListSequence.fromList(result).any(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return it.getModelId().equals(modelReference.getModelId());
+            return it.getReference().equals(modelReference);
           }
         })) {
           modelDescriptor = ListSequence.fromList(result).findFirst(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return it.getModelId().equals(modelReference.getModelId());
+              return it.getReference().equals(modelReference);
             }
           });
           assert modelDescriptor instanceof JavaClassStubModelDescriptor;

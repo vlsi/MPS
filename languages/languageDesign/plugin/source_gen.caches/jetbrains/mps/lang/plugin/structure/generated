@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-ax958icxnmf4iavp1o0564hxonzdx8">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="asr5cx3a2t742wnhd54bmw5nnorf27b" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="51czmcvmqguwso03bswxptnnv1cngvj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ao0l10z0f2wkpgbk7im0sm0thsegm6l" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="detd1ziqskg7dbnc0pibtezhcafegwq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-90afcjskaub6qwg6co75ussxythgj4i" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="c70or7sjxdaau2rmejhnmdp1tg6dumj" />
+  <dep model="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" hash="-6l7nve1jjsc8b6rnw0m78196951ty8s" />
+  <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="163prgoxy4o32crnmu4pvccja2mjr1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="38r3raexgu59nqkszt3w5pcueyx37lt" />
+  <common hash="-ax958icxnmf4iavp1o0564hxonzdx8" dependsOnNodes="true">
+    <dep root="1050311802978903937" />
+    <dep root="1203071646776" />
+    <dep root="1203071677434" />
+    <dep root="1203082695294" />
+    <dep root="1203082903663" />
+    <dep root="1203083511112" />
+    <dep root="1203087890642" />
+    <dep root="1203088046679" />
+    <dep root="1203092361741" />
+    <dep root="1203680534665" />
+    <dep root="1203851983563" />
+    <dep root="1203852029150" />
+    <dep root="1203853034639" />
+    <dep root="1204039194827" />
+    <dep root="1204383956737" />
+    <dep root="1204391079391" />
+    <dep root="1204397573187" />
+    <dep root="1204471433283" />
+    <dep root="1204477852167" />
+    <dep root="1204478074808" />
+    <dep root="1204908117386" />
+    <dep root="1205676676847" />
+    <dep root="1205679047295" />
+    <dep root="1205681149025" />
+    <dep root="1205681243813" />
+    <dep root="1205852320419" />
+    <dep root="1206092561075" />
+    <dep root="1207145102141" />
+    <dep root="1207145163717" />
+    <dep root="1207145360364" />
+    <dep root="1207145475354" />
+    <dep root="1207318242772" />
+    <dep root="1207490810216" />
+    <dep root="1208528650020" />
+    <dep root="1209911036758" />
+    <dep root="1210179134063" />
+    <dep root="1210179190070" />
+    <dep root="1210180874794" />
+    <dep root="1210184105060" />
+    <dep root="1210676672555" />
+    <dep root="1210676879526" />
+    <dep root="1210684385183" />
+    <dep root="1210686882550" />
+    <dep root="1210686969356" />
+    <dep root="1210690798207" />
+    <dep root="1210763550007" />
+    <dep root="1212578595463" />
+    <dep root="1213888653896" />
+    <dep root="1213888677711" />
+    <dep root="1213888797251" />
+    <dep root="1214307303872" />
+    <dep root="1217252042208" />
+    <dep root="1217252428768" />
+    <dep root="1217413147516" />
+    <dep root="1227008846812" />
+    <dep root="1227008925923" />
+    <dep root="1227013049127" />
+    <dep root="1227019068586" />
+    <dep root="1227019310584" />
+    <dep root="1239975356883" />
+    <dep root="1239975436002" />
+    <dep root="1239975563668" />
+    <dep root="1512255007353869532" />
+    <dep root="1512255007353869535" />
+    <dep root="1562714432501166197" />
+    <dep root="1562714432501166198" />
+    <dep root="1562714432501166200" />
+    <dep root="1640281869714699879" />
+    <dep root="1821622352985038318" />
+    <dep root="1862809785209122566" />
+    <dep root="1988288734101108470" />
+    <dep root="1988288734101112747" />
+    <dep root="1988288734101112751" />
+    <dep root="203415309825565488" />
+    <dep root="2450897840534683973" />
+    <dep root="2450897840534683975" />
+    <dep root="2450897840534683979" />
+    <dep root="2450897840534688273" />
+    <dep root="2498620720770664567" />
+    <dep root="3205675194086589964" />
+    <dep root="3205675194086686068" />
+    <dep root="3205778618063718746" />
+    <dep root="331224023792854814" />
+    <dep root="331224023792854815" />
+    <dep root="331224023792855166" />
+    <dep root="3339131993542057767" />
+    <dep root="3743831881070611750" />
+    <dep root="3743831881070611759" />
+    <dep root="3743831881070612962" />
+    <dep root="3743831881070613135" />
+    <dep root="3743831881070657672" />
+    <dep root="3743831881070657680" />
+    <dep root="394857668356997867" />
+    <dep root="394857668356997868" />
+    <dep root="394857668357022342" />
+    <dep root="394857668357342104" />
+    <dep root="485694842828664424" />
+    <dep root="5023285075122009364" />
+    <dep root="5538333046911298739" />
+    <dep root="5538333046911348647" />
+    <dep root="5538333046911348652" />
+    <dep root="5538333046911348654" />
+    <dep root="5678361901872075170" />
+    <dep root="5818192529492099570" />
+    <dep root="5854436268949437205" />
+    <dep root="5854436268949437211" />
+    <dep root="5864553086652219113" />
+    <dep root="5864553086652219116" />
+    <dep root="5896642449625981893" />
+    <dep root="5896642449625987000" />
+    <dep root="6193305307616715384" />
+    <dep root="6193305307616734266" />
+    <dep root="6547237850567458268" />
+    <dep root="6938053545825350222" />
+    <dep root="7692832593197705758" />
+    <dep root="7692832593197710972" />
+    <dep root="7692832593197710975" />
+    <dep root="8096638938275438668" />
+    <dep root="8131292300541727132" />
+    <dep root="8817525066851790100" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
+    <dep model="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
+    <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1203071677434" name="ToolDeclaration" />
+  <source id="1203082695294" name="DoUpdateBlock" />
+  <source id="1203082903663" name="ConceptFunctionParameter_AnActionEvent" />
+  <source id="1203083511112" name="ExecuteBlock" />
+  <source id="1203087890642" name="ActionGroupDeclaration" />
+  <source id="1203088046679" name="ActionInstance" />
+  <source id="1203092361741" name="ModificationStatement" />
+  <source id="1203680534665" name="GroupAnchor" />
+  <source id="1203851983563" name="GetNodeBlock" />
+  <source id="1203852029150" name="GetNodesBlock" />
+  <source id="1203853034639" name="ConceptFunctionParameter_node" />
+  <source id="1204039194827" name="ConceptFunctionParameter_OperationContext" />
+  <source id="1204383956737" name="InterfaceGroup" />
+  <source id="1204391079391" name="ActionGroupMember" />
+  <source id="1204397573187" name="InterfaceExtentionPoint" />
+  <source id="1204471433283" name="ToolInstanceExpression" />
+  <source id="1204477852167" name="ConceptFunctionParameter_IModule" />
+  <source id="1204478074808" name="ConceptFunctionParameter_MPSProject" />
+  <source id="1204908117386" name="Separator" />
+  <source id="1205676676847" name="mnemonic">
+    <file name="mnemonic_PropertySupport.java" />
+  </source>
+  <source id="1205679047295" name="ActionParameterDeclaration" />
+  <source id="1205681149025" name="UpdateBlock" />
+  <source id="1205681243813" name="IsApplicableBlock" />
+  <source id="1205852320419" name="ActionType" />
+  <source id="1206092561075" name="ActionParameterReferenceOperation" />
+  <source id="1207145102141" name="GroupContents" />
+  <source id="1207145360364" name="BuildGroupBlock" />
+  <source id="1207145163717" name="ElementListContents" />
+  <source id="1207318242772" name="KeyMapKeystroke" />
+  <source id="1207490810216" name="GroupType" />
+  <source id="1208528650020" name="ToolType" />
+  <source id="1209911036758" name="GetGroupOperation" />
+  <source id="1210179134063" name="PreferencesComponentDeclaration" />
+  <source id="1210179190070" name="PersistentPropertyDeclaration" />
+  <source id="1210180874794" name="PersistentPropertyReference" />
+  <source id="1210184105060" name="PreferencesComponentType" />
+  <source id="1210676672555" name="OnBeforeWriteBlock" />
+  <source id="1210676879526" name="OnAfterReadBlock" />
+  <source id="1210684385183" name="PreferencePage" />
+  <source id="1210686882550" name="PreferencePageResetBlock" />
+  <source id="1210686969356" name="PreferencePageCommitBlock" />
+  <source id="1210690798207" name="ConceptFunctionParameter_PreferencePage_component" />
+  <source id="1210763550007" name="PreferencePageIsModifiedBlock" />
+  <source id="1212578595463" name="digit">
+    <file name="digit_PropertySupport.java" />
+  </source>
+  <source id="1213888653896" name="InitBlock" />
+  <source id="1213888677711" name="DisposeBlock" />
+  <source id="1213888797251" name="ConceptFunctionParameter_Project" />
+  <source id="1214307303872" name="GetComponentBlock" />
+  <source id="1217252042208" name="ActionDataParameterDeclaration" />
+  <source id="1217252428768" name="ActionDataParameterReferenceOperation" />
+  <source id="1217413147516" name="ActionParameter" />
+  <source id="1227008846812" name="ActionConstructionParameterDeclaration" />
+  <source id="1227008925923" name="ActionConstructorParameterReferenceOperation" />
+  <source id="1227013049127" name="AddStatement" />
+  <source id="1227019068586" name="ToStringConceptFunction" />
+  <source id="1227019310584" name="ToStringParameter" />
+  <source id="1239975356883" name="UpdateGroupBlock" />
+  <source id="1239975436002" name="UpdateGroupFunction" />
+  <source id="1239975563668" name="EnumerateChildrenFunction" />
+  <source id="1562714432501166197" name="KeymapChangesDeclaration" />
+  <source id="1562714432501166198" name="SimpleShortcutChange" />
+  <source id="1562714432501166200" name="Keymap">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="Keymap.java" />
+    <file name="Keymap_PropertySupport.java" />
+  </source>
+  <source id="6193305307616715384" name="ShortcutChange" />
+  <source id="6193305307616734266" name="ParameterizedShortcutChange" />
+  <source id="394857668356997867" name="SimpleActionPlace" />
+  <source id="394857668356997868" name="ActionPlaceSpecification" />
+  <source id="394857668357022342" name="ToolActionPlace" />
+  <source id="394857668357342104" name="EverywhereActionPlace" />
+  <source id="5854436268949437205" name="ConceptFunctionParameter_Model" />
+  <source id="5854436268949437211" name="ConceptFunctionParameter_CreatorType" />
+  <source id="6547237850567458268" name="BaseToolDeclaration" />
+  <source id="5896642449625981893" name="TabbedToolDeclaration" />
+  <source id="5896642449625987000" name="AddTabOperation" />
+  <source id="5818192529492099570" name="CloseTabOperation" />
+  <source id="1862809785209122566" name="GetSelectedTabOperation" />
+  <source id="8096638938275438668" name="TabbedToolOperation" />
+  <source id="485694842828664424" name="SmartDisposeClosureParameterDeclaration" />
+  <source id="6938053545825350222" name="ToolTab" />
+  <source id="7692832593197705758" name="GetConceptsBlock" />
+  <source id="7692832593197710972" name="NewCreateBlock" />
+  <source id="7692832593197710975" name="ConceptFunctionParameter_Concept" />
+  <source id="3339131993542057767" name="BaseProjectOperation" />
+  <source id="3205675194086589964" name="ActionAccessOperation" />
+  <source id="3205675194086686068" name="GroupAccessOperation" />
+  <source id="5023285075122009364" name="IdeaInitializerDescriptor" />
+  <source id="8817525066851790100" name="KeyStrokeType" />
+  <source id="1821622352985038318" name="ActionParameterReference" />
+  <source id="8131292300541727132" name="AddKeystrokeStatement" />
+  <source id="3743831881070611750" name="CreateNodeAspectBlock" />
+  <source id="3743831881070611759" name="EditorTab" />
+  <source id="3743831881070612962" name="NodesBlock" />
+  <source id="3743831881070613135" name="IsApplicableTabBlock" />
+  <source id="3743831881070657672" name="BaseNodeBlock" />
+  <source id="3743831881070657680" name="ListenBlock" />
+  <source id="2450897840534683973" name="OrderConstraints" />
+  <source id="2450897840534683975" name="Order" />
+  <source id="2450897840534683979" name="EditorTabReference" />
+  <source id="2450897840534688273" name="OrderReference" />
+  <source id="1203071646776" name="ActionDeclaration" />
+  <source id="2498620720770664567" name="ToolPosition">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="ToolPosition.java" />
+    <file name="ToolPosition_PropertySupport.java" />
+  </source>
+  <source id="1988288734101112751" name="ButtonCreator" />
+  <source id="1988288734101112747" name="PopupCreator" />
+  <source id="1988288734101108470" name="ToolbarCreator" />
+  <source id="1640281869714699879" name="CreateTabBlock" />
+  <source id="5538333046911298739" name="CustomCondition" />
+  <source id="5538333046911348647" name="ParameterCondition_ConceptFunctionParameter" />
+  <source id="5538333046911348652" name="ActionParameterCondition" />
+  <source id="5538333046911348654" name="RequiredCondition" />
+  <source id="5678361901872075170" name="EditableModel" />
+  <source id="5864553086652219113" name="PluginDependency" />
+  <source id="5864553086652219116" name="IdeaPluginDependency" />
+  <source id="203415309825565488" name="MPSPluginDependency" />
+  <source id="331224023792854814" name="IdeaActionsDescriptor" />
+  <source id="331224023792854815" name="ActionGroupRef" />
+  <source id="331224023792855166" name="KeymapRef" />
+  <source id="3205778618063718746" name="IdeaConfigurationXml" />
+  <source id="1050311802978903937" name="ConceptCondition" />
+  <source id="1207145475354" name="AddElementStatement" />
+  <source id="1512255007353869532" name="NonDumbAwareActions" />
+  <source id="1512255007353869535" name="ActionReference" />
+</dependencies>
+

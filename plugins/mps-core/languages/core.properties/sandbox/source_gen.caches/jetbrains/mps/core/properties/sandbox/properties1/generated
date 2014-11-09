@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2o33pur2pklbynd5b2u8pbposmcbjhs">
-  <common hash="4gkcafp2is49l7k0wcbsxifvrlu2f8x" />
-  <source id="6896005762093430084" name="build1" hash="4tptl2u5jc3ihd1nhrzd9yd63ehp7eb">
+<dependencies version="2" modelHash="aqro4mkn1poncgbc8lgdalj9f6q1b9d">
+  <common hash="aqro4mkn1poncgbc8lgdalj9f6q1b9d" />
+  <source id="6896005762093430084" name="build1">
     <file name="build1.properties" />
   </source>
 </dependencies>

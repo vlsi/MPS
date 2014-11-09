@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-59zywl0e5bss9z19t6ttszr7wuoxbzv">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.tool.gentest.plugin)" hash="3sstfgntli5t9pvjnsfqnw1ggg33gmc" />
-  <dep model="r:93613883-34e2-4927-9e2d-f313b1765e59(jetbrains.mps.tool.gentest.behavior)" hash="e9rampeksef109p5zo9f8zo7sw4eoec" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c56ba017-82fd-4a83-9d89-b84ea6875cf5(jetbrains.mps.tool.gentest.structure)" hash="dya7zf2smlydy0t44jvdvjmhcmnrkmw" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+<dependencies version="2" modelHash="66x5q6yq43yi3g0gq36813j3nzkafp">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.tool.gentest.plugin)" hash="-1je7wxhpz301euiq30147xv3f05fnzz" />
+  <dep model="r:93613883-34e2-4927-9e2d-f313b1765e59(jetbrains.mps.tool.gentest.behavior)" hash="-a3noy2eo6v90263epmv46imlg5g7v3g" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:c56ba017-82fd-4a83-9d89-b84ea6875cf5(jetbrains.mps.tool.gentest.structure)" hash="df7gjdtyu0xqnldr2ueowglb16bx4c5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.tool.gentest.plugin)" />

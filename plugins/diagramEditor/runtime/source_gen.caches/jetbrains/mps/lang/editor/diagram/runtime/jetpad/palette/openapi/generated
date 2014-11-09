@@ -1,3 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4jwxrks3awn16nw3ot4q1fy9fv1oqqw" />
+<dependencies version="2" modelHash="-ciwp1xfx6v37k7dglib42lnhtfmhpg9">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <common hash="-ciwp1xfx6v37k7dglib42lnhtfmhpg9" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="121824560294376345" name="PaletteElement">
+    <file name="PaletteElement.java" />
+  </source>
+  <source id="121824560294376355" name="PaletteActionGroup">
+    <file name="PaletteActionGroup.java" />
+  </source>
+  <source id="121824560294376372" name="PaletteAction">
+    <file name="PaletteAction.java" />
+  </source>
+  <source id="121824560294376375" name="PaletteSimpleAction">
+    <file name="PaletteSimpleAction.java" />
+  </source>
+  <source id="121824560294376382" name="PaletteToggleAction">
+    <file name="PaletteToggleAction.java" />
+  </source>
+  <source id="4394877045815025858" name="PaletteSeparator">
+    <file name="PaletteSeparator.java" />
+  </source>
+</dependencies>
 

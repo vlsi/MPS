@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bpmavb0kwhky8oluldbhdowji152tcp" />
+<dependencies version="2" modelHash="961i3ixcejkbzk4tn6byw4mboxac92g">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <common hash="961i3ixcejkbzk4tn6byw4mboxac92g" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1440921264474787839" name="Class3">
+    <file name="Class3.java" />
+  </source>
+</dependencies>
 
