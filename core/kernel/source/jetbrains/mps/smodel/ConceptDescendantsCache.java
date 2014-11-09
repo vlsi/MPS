@@ -54,7 +54,9 @@ public class ConceptDescendantsCache implements CoreComponent {
     public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
-        for (ConceptDescriptor concept : myLoadedLanguageToConceptsMap.get(language)) {
+        Set<ConceptDescriptor> concepts = myLoadedLanguageToConceptsMap.get(language);
+        if (concepts == null) throw new IllegalArgumentException("No concepts registered for the language " + language);
+        for (ConceptDescriptor concept : concepts) {
           unloadConcept(concept);
         }
         myLoadedLanguageToConceptsMap.remove(language);
