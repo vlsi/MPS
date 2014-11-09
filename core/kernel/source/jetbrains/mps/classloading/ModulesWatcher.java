@@ -67,7 +67,7 @@ public class ModulesWatcher {
   private final Condition<ReloadableModule> myWatchableCondition;
 
   // change the boolean property to the list of "dirty" modules
-  private boolean myChanged = false;
+  private volatile boolean myChanged = false;
   private final ReferenceStorage<ReloadableModuleBase> myRefStorage = new ReferenceStorage<ReloadableModuleBase>();
   private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<ReloadableModule>();
   private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<SModuleReference>();
@@ -154,11 +154,12 @@ public class ModulesWatcher {
    * @see #isChanged()
    */
   private void recountStatus() {
+    if (!isChanged()) return;
     myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         synchronized (LOCK) {
-          assert isChanged();
+          if (!isChanged()) return;
           LOG.debug("Recount status map for modules");
           myChanged = false;
           final Collection<? extends SModuleReference>[] invalidModules = new Collection[1];
