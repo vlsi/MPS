@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class DefaultModelAccess extends ModelAccess {
+
   public DefaultModelAccess() {
   }
 
@@ -239,7 +240,6 @@ public class DefaultModelAccess extends ModelAccess {
   public boolean tryWriteInCommand(Runnable r, Project p) {
     return tryWrite(r);
   }
-
 
   @Override
   public <T> T tryWriteInCommand(Computable<T> r, Project p) {
