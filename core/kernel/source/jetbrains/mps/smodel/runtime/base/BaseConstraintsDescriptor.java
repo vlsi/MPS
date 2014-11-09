@@ -21,13 +21,11 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -282,7 +280,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return propertiesConstraints.get(property);
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
     if (referencesConstraints.containsKey(referenceLink)) {
@@ -291,7 +288,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
 
     if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getRefDescriptor(referenceLink) == null) {
-      return new IllegalReferenceConstraintsDescriptor(referenceLink, null, this);
+      return null;
     }
 
     referencesConstraints.put(referenceLink, new BaseReferenceConstraintsDescriptor(referenceLink, this));
@@ -299,12 +296,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return referencesConstraints.get(referenceLink);
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String role) {
     ReferenceDescriptor refDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getRefDescriptor(role);
     if (refDescriptor == null) {
-      return new IllegalReferenceConstraintsDescriptor(null, role, this);
+      return null;
     }
     return getReference(refDescriptor.getId());
   }

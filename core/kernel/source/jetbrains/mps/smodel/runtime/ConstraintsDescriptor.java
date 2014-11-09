@@ -46,11 +46,9 @@ public interface ConstraintsDescriptor {
   @Deprecated
   PropertyConstraintsDescriptor getProperty(String name);
 
-  @NotNull
   ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink);
 
   @Deprecated
-  @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
   @Nullable

@@ -69,22 +69,19 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return null;
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
     return null;
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
-    return new IllegalReferenceConstraintsDescriptor(referenceLink, null, this);
+    return null;
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
-    return new IllegalReferenceConstraintsDescriptor(null, refName, this);
+    return null;
   }
 
   @Override

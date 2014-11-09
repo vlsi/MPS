@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -165,7 +164,9 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
     ReferenceConstraintsDescriptor descriptor = getReferenceConstraintsDescriptor(node, referenceLink);
 
-    if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
+    if (descriptor == null) {
+      LOG.error(
+          "Can't find reference constraints while trying to set a reference. Ref role: " + referenceLink.getRoleName() + ", node: " + node.getPresentation());
       node.setReferenceTarget(referenceLink, target);
       return;
     }
