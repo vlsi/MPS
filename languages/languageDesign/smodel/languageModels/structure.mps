@@ -959,15 +959,6 @@
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
       </node>
-      <node concept="4jta.1071489288298" id="1182506966389" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="scope" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <node concept="4jta.1224240836180" id="6325651360498329118" role="asn4.1133920641626.5169995583184591170" info="ig">
-          <property role="4jta.1224240836180.1225118933224" value="rudimental, remove after 3.1" />
-        </node>
-      </node>
     </node>
     <node concept="4jta.1071489090640" id="1182511038748" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
