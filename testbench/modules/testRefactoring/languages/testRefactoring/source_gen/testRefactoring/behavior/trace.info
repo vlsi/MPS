@@ -7,8 +7,8 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,24,0" name="testRefactoring.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="MyVeryGoodConcept2_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="testRefactoring.behavior.MyVeryGoodConcept2_BehaviorDescriptor" />
+    <file name="MyVeryGoodConcept1_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="testRefactoring.behavior.MyVeryGoodConcept1_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>
