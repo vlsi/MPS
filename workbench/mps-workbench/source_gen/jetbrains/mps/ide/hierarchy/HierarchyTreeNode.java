@@ -4,21 +4,22 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private SNode myNode;
+  private final SNodeReference myNodeRef;
   protected AbstractHierarchyTree myHierarchyTree;
   public HierarchyTreeNode(@NotNull SNode declaration, AbstractHierarchyTree tree) {
     super(declaration);
+    // FIXME drop myNode in favor of myNodeRef 
     myNode = declaration;
+    myNodeRef = declaration.getReference();
     myHierarchyTree = tree;
     setNodeIdentifier(calculateNodeIdentifier());
   }
@@ -72,18 +73,9 @@ public class HierarchyTreeNode extends MPSTreeNode {
     if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
       return;
     }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (!(SNodeUtil.isAccessible(myNode, MPSModuleRepository.getInstance())) || !((myNode.getModel() != null)) || myNode.getModel() == null) {
-          return;
-        }
-        AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
-        if (hierarchyView != null) {
-          // TODO: use node pointers here 
-          hierarchyView.openNode(myNode, getOperationContext());
-        }
-      }
-    });
+    AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
+    if (hierarchyView != null) {
+      hierarchyView.openNode(myNodeRef);
+    }
   }
 }
