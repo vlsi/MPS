@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
@@ -93,10 +94,14 @@ public class NodePointerPresentation extends BasePresentation {
   }
 
   private Icon calculateIconInternal() {
+    if (myNode == null) {
+      return null;
+    }
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        return myNode != null ? IconManager.getIconFor(myNode.resolve(MPSModuleRepository.getInstance())) : null;
+        final SNode resolved = myNode.resolve(MPSModuleRepository.getInstance());
+        return resolved != null ? IconManager.getIconFor(resolved) : null;
       }
     });
   }
