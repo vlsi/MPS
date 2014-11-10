@@ -54,6 +54,8 @@ public interface ConceptDescriptor {
 
   List<SConceptId> getParentsIds();
 
+  Set<SConceptId> getAncestorsIds();
+
   @Deprecated
   @Nullable
   String getSuperConcept();

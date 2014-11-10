@@ -60,6 +60,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private List<SConceptId> parentsIds;
 
   private Set<String> ancestors;
+  private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> myProperties;
   private Map<String, PropertyDescriptor> myPropertiesByName;
   private Map<SReferenceLinkId, ReferenceDescriptor> myReferences;
@@ -236,9 +237,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       }
 
       // ancestors
+      ancestorsIds = new HashSet<SConceptId>(parentsIds);
       ancestors = new HashSet<String>(parents);
+      ancestorsIds.add(myId);
       ancestors.add(myName);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+        ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
         ancestors.addAll(parentDescriptor.getAncestorsNames());
       }
 
@@ -429,6 +433,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   public List<SConceptId> getParentsIds() {
     init();
     return parentsIds;
+  }
+
+  @Override
+  public Set<SConceptId> getAncestorsIds() {
+    init();
+    return ancestorsIds;
   }
 
   @Override
