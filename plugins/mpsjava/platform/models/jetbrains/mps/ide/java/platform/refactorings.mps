@@ -235,7 +235,6 @@
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" name="fieldDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1201385106094/1201385237847" name="property" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639/1241540960362" name="constructorDeclaration" />
     <refRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029895/8974276187400029896" name="declaration" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886295" name="lValue" />
@@ -11416,7 +11415,6 @@
         <node concept="vg0i.1146644602865" id="2370003301081661" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="2370003301081662" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="2370003301081663" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="2370003301082352" resolveInfo="IntroduceVariableDialog" />
             <reference role="vg0i.1204053956946.1068499141037" target="2370003301082352" resolveInfo="IntroduceVariableDialog" />
             <node concept="vg0i.1068498886296" id="3021153905151614400" role="vg0i.1204053956946.1068499141038" info="nn">
               <reference role="vg0i.1068498886296.1068581517664" target="2370003301081673" resolveInfo="project" />
