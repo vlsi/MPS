@@ -23,18 +23,17 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.common.LayoutUtil;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.StandaloneMPSProject;
 
 public class LanguagesStep extends AbstractStep {
   private final AbstractBuildGenerator myGenerator;
   private CheckBoxTree myCheckTree;
-  private final Project myMpsProject;
+  private final Project myProject;
   private final IErrorHandler myHandler;
   public LanguagesStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     this.myGenerator = generator;
-    this.myMpsProject = project;
+    this.myProject = project;
     this.myHandler = handler;
   }
   @Override
@@ -52,7 +51,7 @@ public class LanguagesStep extends AbstractStep {
     return this.myCheckTree;
   }
   public CheckBoxTree createCheckTree() {
-    Iterable<? extends SModule> allModules = this.myMpsProject.getModules();
+    Iterable<? extends SModule> allModules = this.myProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
     ListSequence.fromList(children).sort(new Comparator<ModuleData>() {
@@ -71,7 +70,7 @@ public class LanguagesStep extends AbstractStep {
         return 1;
       }
     }, true);
-    NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
+    NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myProject);
     for (ModuleData moduleData : ListSequence.fromList(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
     }
@@ -142,11 +141,11 @@ public class LanguagesStep extends AbstractStep {
     return true;
   }
   public static class MyTreeBuilder extends NamespaceTreeBuilder<CheckBoxNode, CheckBoxNamespaceNode> {
-    private Project myMpsProject;
+    private final Project myProject;
     public MyTreeBuilder(Project mpsProject) {
       super(new NamespaceTreeBuilder.NamespaceNodeBuilder<CheckBoxNamespaceNode>() {
         @Override
-        public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
+        public CheckBoxNamespaceNode createNamespaceNode(String text) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
         }
         @Override
@@ -162,7 +161,7 @@ public class LanguagesStep extends AbstractStep {
           p0.setName(p1);
         }
       });
-      this.myMpsProject = mpsProject;
+      myProject = mpsProject;
     }
     @Override
     protected String getNamespace(CheckBoxNode node) {
@@ -170,7 +169,7 @@ public class LanguagesStep extends AbstractStep {
       String namespace = "";
       if (data instanceof ModuleData) {
         ModuleData moduleData = (ModuleData) data;
-        namespace = ((StandaloneMPSProject) this.myMpsProject).getFolderFor(moduleData.getModule());
+        namespace = ((StandaloneMPSProject) this.myProject).getFolderFor(moduleData.getModule());
       }
       if (namespace == null) {
         return "";

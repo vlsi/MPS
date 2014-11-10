@@ -18,27 +18,24 @@ package jetbrains.mps.ide.devkit.components;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
 public class NodeExplorerComponent {
-  private MyTree myTree = new MyTree();
+  private final MyTree myTree = new MyTree();
   private SNodeReference myNode;
   private JScrollPane myScrollPane;
 
@@ -51,9 +48,8 @@ public class NodeExplorerComponent {
     return myScrollPane;
   }
 
-  public void showNode(SNode node, Project project) {
+  public void showNode(SNode node) {
     myNode = node == null ? null : new jetbrains.mps.smodel.SNodePointer(node);
-    myTree.setOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     myTree.rebuildNow();
   }
 
@@ -63,8 +59,6 @@ public class NodeExplorerComponent {
   }
 
   private class MyTree extends MPSTree {
-    private IOperationContext myOperationContext;
-
     @Override
     protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
       return null;
@@ -76,27 +70,21 @@ public class NodeExplorerComponent {
         return new TextTreeNode("no node");
       } else {
         TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(MPSModuleRepository.getInstance()), myOperationContext);
+        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(MPSModuleRepository.getInstance()));
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
     }
-
-    public void setOperationContext(IOperationContext operationContext) {
-      myOperationContext = operationContext;
-    }
-
-
   }
 
   private class MySNodeTreeNode extends SNodeTreeNode {
 
-    public MySNodeTreeNode(SNode node, IOperationContext operationContext) {
-      super(node, operationContext);
+    public MySNodeTreeNode(SNode node) {
+      super(node);
     }
 
-    public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-      super(node, role, operationContext);
+    public MySNodeTreeNode(SNode node, String role) {
+      super(node, role);
     }
 
     @Override
@@ -118,10 +106,10 @@ public class NodeExplorerComponent {
       add(new TextTreeNode("Concept = " + getSNode().getConcept().getQualifiedName()));
 
       for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRoleInParent(), getOperationContext()));
+        add(new MySNodeTreeNode(childNode, childNode.getRoleInParent()));
       }
-      add(new MyPropertiesNode(getSNode(), getOperationContext()));
-      add(new MyReferentsNode(getSNode(), getOperationContext()));
+      add(new MyPropertiesNode(getSNode()));
+      add(new MyReferentsNode(getSNode()));
       myInitialized = true;
     }
   }
@@ -130,8 +118,8 @@ public class NodeExplorerComponent {
     private SNodeReference myNode;
     private boolean myIsInitialized = false;
 
-    public MyReferentsNode(SNode node, IOperationContext operationContext) {
-      super("referents", operationContext);
+    public MyReferentsNode(SNode node) {
+      super("referents");
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 
@@ -145,7 +133,7 @@ public class NodeExplorerComponent {
       for (SReference reference : jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
-          add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));
+          add(new MySNodeTreeNode(referent, reference.getRole()));
         }
       }
       myIsInitialized = true;
@@ -161,8 +149,8 @@ public class NodeExplorerComponent {
     private SNodeReference myNode;
     private boolean myIsInitialized = false;
 
-    public MyPropertiesNode(SNode node, IOperationContext operationContext) {
-      super("properties", operationContext);
+    public MyPropertiesNode(SNode node) {
+      super("properties");
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 

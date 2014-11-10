@@ -50,13 +50,12 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.NamespaceTextNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.PackageNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

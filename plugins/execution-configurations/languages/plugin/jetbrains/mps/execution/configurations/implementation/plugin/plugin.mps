@@ -1744,19 +1744,6 @@
                   <node concept="1sqg.1205752633985" id="1353230511309486359" role="vg0i.1197027756228.1197027771414" info="nn" />
                   <node concept="xlfr.5453800039284219178" id="1353230511309487457" role="vg0i.1197027756228.1197027833540" info="nn" />
                 </node>
-                <node concept="vg0i.1145552977093" id="1353230511309436001" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1212685548494" id="1353230511309436002" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~ProjectOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dProject)" resolveInfo="ProjectOperationContext" />
-                    <node concept="vg0i.1081236700937" id="1353230511309436003" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="pt5l.~ProjectHelper%dtoMPSProject(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%dproject%dProject" resolveInfo="toMPSProject" />
-                      <node concept="vg0i.1197027756228" id="1353230511309488073" role="vg0i.1204053956946.1068499141038" info="nn">
-                        <node concept="1sqg.1205752633985" id="1353230511309487821" role="vg0i.1197027756228.1197027771414" info="nn" />
-                        <node concept="xlfr.5453800039284219178" id="1353230511309488885" role="vg0i.1197027756228.1197027833540" info="nn" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="vg0i.1068498886296" id="1353230511309436005" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="1353230511309435984" resolveInfo="console" />
                 </node>

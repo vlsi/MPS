@@ -6,10 +6,11 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
@@ -18,16 +19,12 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.icons.IconManager;
@@ -39,7 +36,6 @@ import java.util.UUID;
 import org.jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.Icon;
 
 public class MappingDialog extends DialogWrapper {
@@ -53,10 +49,10 @@ public class MappingDialog extends DialogWrapper {
       return MappingDialog.this.rebuildTree();
     }
   };
-  public MappingDialog(final Project project, Language language) {
+  public MappingDialog(final com.intellij.openapi.project.Project project, Language language) {
     super(project);
     setTitle("Choose Mapping Configuration");
-    myProject = project;
+    myProject = ProjectHelper.toMPSProject(project);
     myLanguage = language;
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myMainComponent.add(scrollPane, BorderLayout.CENTER);
@@ -77,15 +73,15 @@ public class MappingDialog extends DialogWrapper {
           return;
         }
         final SNodeTreeNode treeNode = (SNodeTreeNode) node;
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        myProject.getModelAccess().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
             SNode node = treeNode.getSNode();
-            if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+            if (!(SNodeUtil.isAccessible(node, myProject.getRepository()))) {
               return;
             }
             // TODO: use node pointers here 
-            NavigationSupport.getInstance().openNode(treeNode.getOperationContext(), node, true, true);
+            NavigationSupport.getInstance().openNode(myProject, node, true, true);
           }
         });
       }
@@ -106,20 +102,14 @@ public class MappingDialog extends DialogWrapper {
     }
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
-      ModuleContext moduleContext = new ModuleContext(generator, ProjectHelper.toMPSProject(myProject));
-      MPSTreeNode generatorTreeNode = newTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModel md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = newTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
+        MPSTreeNode modelTreeNode = newTreeNode(IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md;
         for (SNode node : SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
-          SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
-            @Override
-            public boolean met(SNode p0) {
-              return false;
-            }
-          });
+          SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, Condition.FALSE_CONDITION);
           modelTreeNode.add(nodeTreeNode);
         }
       }
@@ -150,8 +140,8 @@ public class MappingDialog extends DialogWrapper {
     myTree.dispose();
     super.doCancelAction();
   }
-  private static MPSTreeNode newTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
-    MPSTreeNode n = new MPSTreeNode(context);
+  private static MPSTreeNode newTreeNode(Icon icon, String nodeIdentifier, String text) {
+    MPSTreeNode n = new MPSTreeNode();
     n.setNodeIdentifier(nodeIdentifier);
     n.setText(text);
     n.setIcon(icon);

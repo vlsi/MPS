@@ -5,12 +5,11 @@ package jetbrains.mps.ide.platform.dependencyViewer;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TextMPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -31,16 +30,16 @@ public class DependencyTree extends MPSTree {
   }
   @Override
   protected MPSTreeNode rebuild() {
-    TextMPSTreeNode root = new TextMPSTreeNode("root", null);
+    TextTreeNode root = new TextTreeNode("root");
     for (SModule module : myScope.getModules()) {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode(model, null, new ModuleContext(model.getModule(), myProject));
+      SModelTreeNode node = new SModelTreeNode(model, null);
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {
-      SNodeTreeNode treeNode = new SNodeTreeNode(node, null, new ModuleContext(node.getModel().getModule(), myProject));
+      SNodeTreeNode treeNode = new SNodeTreeNode(node, null);
       root.add(treeNode);
     }
     setRootVisible(false);
@@ -56,7 +55,7 @@ public class DependencyTree extends MPSTree {
     myProject = project;
     rebuildLater();
   }
-  public class MyTreeSelectionListener implements TreeSelectionListener {
+  private class MyTreeSelectionListener implements TreeSelectionListener {
     public MyTreeSelectionListener() {
     }
     @Override

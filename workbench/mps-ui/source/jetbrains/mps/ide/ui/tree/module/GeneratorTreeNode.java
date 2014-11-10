@@ -16,35 +16,29 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvider {
-  private final Generator myGenerator;
   private boolean myInitialized;
 
   public GeneratorTreeNode(Generator generator, Project project) {
-    super(new ModuleContext(generator, project));
-    myGenerator = generator;
+    super(generator);
     setNodeIdentifier(generator.getModuleName());
     setIcon(IdeIcons.GENERATOR_ICON);
     init();
   }
 
   @Override
-  public String getModuleText() {
-    return calculateText();
+  public Generator getModule() {
+    return (Generator) super.getModule();
   }
 
   @Override
-  public Generator getModule() {
-    return getGenerator();
-  }
-
-  public Generator getGenerator() {
-    return myGenerator;
+  public String getModuleText() {
+    return calculateText();
   }
 
   @Override
@@ -59,11 +53,11 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   }
 
   private void populate() {
-    SModelsSubtree.create(this, getOperationContext());
+    SModelsSubtree.create(this, getModule());
   }
 
   public String calculateText() {
-    String name = getGenerator().getName();
+    String name = ((Generator) getModule()).getName();
     return "generator/" + (name == null ? "<no name>" : name);
   }
 

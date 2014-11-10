@@ -4,7 +4,6 @@ package jetbrains.mps.ide.hierarchy;
 
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashSet;
 import java.awt.Color;
 import jetbrains.mps.smodel.ModelAccess;
@@ -18,8 +17,8 @@ import jetbrains.mps.util.StringUtil;
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   private boolean myInitialized = false;
   private Set<SNode> myVisited;
-  public ChildHierarchyTreeNode(SNode declaration, IOperationContext operationContext, AbstractHierarchyTree tree, Set<SNode> visited) {
-    super(declaration, operationContext, tree);
+  public ChildHierarchyTreeNode(SNode declaration, AbstractHierarchyTree tree, Set<SNode> visited) {
+    super(declaration, tree);
     myVisited = new HashSet<SNode>(visited);
     setColor(new Color(64, 0, 144));
     setText(calculateText());
@@ -45,13 +44,13 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
           Set<SNode> visited = new HashSet<SNode>(myVisited);
           visited.add(node);
           for (SNode descendant : descendants) {
-            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree, visited);
+            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, myHierarchyTree, visited);
             add(childHierarchyTreeNode);
           }
         } catch (CircularHierarchyException ex) {
           SNode errorNode = (SNode) ex.getRepeatedObject();
           final String message = ex.getMessage();
-          HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, getOperationContext(), myHierarchyTree) {
+          HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree) {
             @Override
             protected void doUpdatePresentation() {
               super.doUpdatePresentation();

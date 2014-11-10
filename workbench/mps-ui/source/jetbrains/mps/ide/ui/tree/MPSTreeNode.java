@@ -71,10 +71,25 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private Map<TextAttribute, Object> myFontAttributes = new HashMap<TextAttribute, Object>();
   private int myToggleClickCount = 2;
 
+  public MPSTreeNode() {
+    this(null, null);
+  }
+
+  public MPSTreeNode(Object userObject) {
+    this(userObject, null);
+  }
+
+  /**
+   * @deprecated use cons without IOperationContext parameter
+   */
+  @Deprecated
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
-
+  /**
+   * @deprecated use cons without IOperationContext parameter
+   */
+  @Deprecated
   public MPSTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject);
     myOperationContext = operationContext;
@@ -93,7 +108,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public MPSTree getTree() {
-    if (myTree == null && getParent() != null) {
+    if (myTree == null && getParent() instanceof MPSTreeNode) {
       return ((MPSTreeNode) getParent()).getTree();
     }
     return myTree;

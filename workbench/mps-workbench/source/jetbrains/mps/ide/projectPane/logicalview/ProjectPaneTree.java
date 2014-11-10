@@ -132,14 +132,14 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    getProject().getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode node = treeNode.getSNode();
         if (node.getModel() == null) {
           return;
         }
-        myProjectPane.editNode(node, treeNode.getOperationContext(), wasClicked);
+        myProjectPane.editNode(node, getProject(), wasClicked);
       }
     });
   }
@@ -170,9 +170,9 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       SNode n = treeNode.getSNode();
       if (n == null || n.getModel() == null) return;
 
-      treeNode.add(new ConceptTreeNode(treeNode.getOperationContext(), n));
-      treeNode.add(new PropertiesTreeNode(treeNode.getOperationContext(), n));
-      treeNode.add(new ReferencesTreeNode(treeNode.getOperationContext(), n));
+      treeNode.add(new ConceptTreeNode(getProject(), n));
+      treeNode.add(new PropertiesTreeNode(n));
+      treeNode.add(new ReferencesTreeNode(getProject(), n));
     }
   }
 
@@ -231,7 +231,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
       final List<Pair<SNodeReference, String>> result = new ArrayList<Pair<SNodeReference, String>>();
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getProject().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {

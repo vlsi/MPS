@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -30,7 +31,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    return new SupertypesTree(this);
+    return new SupertypesTree(ProjectHelper.toMPSProject(getProject()), this);
   }
 
   protected DefaultActionGroup createButtonsGroup() {

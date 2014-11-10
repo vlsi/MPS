@@ -4,24 +4,23 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestMethod;
-  public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
-    super(operationContext);
+  public TestMethodTreeNode(@NotNull Project project, @NotNull ITestNodeWrapper testMethod) {
+    super(project);
+    setUserObject(testMethod);
     myTestMethod = testMethod;
-    setNodeIdentifier(((SNodePointer) myTestMethod.getNodePointer()).toString());
+    setNodeIdentifier(myTestMethod.getNodePointer().toString());
     setText(myTestMethod.getName());
   }
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ITestNodeWrapper testCase = myTestMethod.getTestCase();
         if (testCase != null) {
@@ -33,7 +32,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   }
   public String getMethodName() {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         methodName.value = myTestMethod.getName();
       }
@@ -49,15 +48,9 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     Runnable nav = new Runnable() {
       @Override
       public void run() {
-        NavigationSupport.getInstance().openNode(getOperationContext(), myTestMethod.getNode(), true, true);
+        NavigationSupport.getInstance().openNode(myProject, myTestMethod.getNode(), true, true);
       }
     };
-    if (!(ModelAccess.instance().tryWrite(nav))) {
-      ModelAccess.instance().runWriteInEDT(nav);
-    }
-  }
-  @Override
-  public Object getUserObject() {
-    return myTestMethod;
+    myProject.getModelAccess().runWriteInEDT(nav);
   }
 }

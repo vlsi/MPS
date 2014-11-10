@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
@@ -26,6 +27,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.*;
 
 public class ModifiedMarker extends TreeUpdateVisitor {
+  public ModifiedMarker(Project mpsProject) {
+    super(mpsProject);
+  }
+
   @Override
   public void visitModelNode(@NotNull final SModelTreeNode node) {
     scheduleModelRead(node, new Runnable() {

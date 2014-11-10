@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,52 +15,47 @@
  */
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
-  public ModuleFavoritesRoot(SModuleReference value) {
-    super(value);
+  public ModuleFavoritesRoot(Project project, SModuleReference value) {
+    super(project, value);
   }
 
   @Override
-  public MPSTreeNode getTreeNode(IOperationContext context) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(getValue());
+  public MPSTreeNode createTreeNode() {
+    SModule module = getValue().resolve(myProject.getRepository());
     if (module == null) return null;
-    Project mpsProject = context.getProject();
-    if (mpsProject == null) return null;
-    ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
+    ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(myProject, module);
     return moduleTreeNode;
   }
 
   @Override
   public List<SNode> getAvailableNodes() {
-    List<SNode> result = new ArrayList<SNode>();
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(getValue());
-    if (module == null) return result;
-    for (final SModel md : module.getModels()) {
-      SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        @Override
-        public SModel compute() {
-          return md;
+    final List<SNode> result = new ArrayList<SNode>();
+    myProject.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SModule module = getValue().resolve(myProject.getRepository());
+        if (module == null) {
+          return;
         }
-      });
-      if (model == null) continue;
-
-      for (SNode node : model.getRootNodes()) {
-        result.add(node);
+        for (final SModel model : module.getModels()) {
+          for (SNode node : model.getRootNodes()) {
+            result.add(node);
+          }
+        }
       }
-    }
+    });
     return result;
   }
 }

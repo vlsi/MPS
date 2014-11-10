@@ -5,8 +5,7 @@ package jetbrains.mps.debugger.api.ui.tree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -14,10 +13,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 /*package*/ abstract class AbstractWatchableNode extends MPSTreeNode {
   protected final SNode myNode;
   public AbstractWatchableNode(@Nullable SNode node) {
-    this(null, node);
-  }
-  public AbstractWatchableNode(@Nullable IOperationContext context, @Nullable SNode node) {
-    super(context);
     myNode = node;
   }
   @Nullable
@@ -28,22 +23,20 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
     if (myNode == null) {
       return;
     }
-    final Project project = getProject();
-    final IOperationContext context = getOperationContext();
-    if (project != null && context != null) {
-      // [artem] why does it open node with a command?! 
-      ProjectHelper.getModelAccess(project).executeCommand(new Runnable() {
+    final Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    if (mpsProject != null) {
+      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          NavigationSupport.getInstance().openNode(context, myNode, focus, select);
+          NavigationSupport.getInstance().openNode(mpsProject, myNode, focus, select);
         }
       });
     }
   }
   @Nullable
-  private Project getProject() {
+  private com.intellij.openapi.project.Project getProject() {
     MPSTree tree = getTree();
-    if (tree != null && tree instanceof VariablesTree) {
+    if (tree instanceof VariablesTree) {
       return ((VariablesTree) tree).getProject();
     }
     return null;

@@ -36,8 +36,8 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
   public static NamespaceNodeBuilder<NamespaceTextNode> getBuilder() {
     return new NamespaceNodeBuilder<NamespaceTextNode>() {
       @Override
-      public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
-        return new NamespaceTextNode(text, context);
+      public NamespaceTextNode createNamespaceNode(String text) {
+        return new NamespaceTextNode(text);
       }
 
       @Override
@@ -59,8 +59,8 @@ public class NamespaceTextNode extends TextTreeNode implements TreeElement {
 
   private String myName;
 
-  public NamespaceTextNode(String name, IOperationContext context) {
-    super(name = InternUtil.intern(name), context);
+  public NamespaceTextNode(String name) {
+    super(name = InternUtil.intern(name));
     setName(name);
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -26,8 +25,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
   private boolean myInitialized = false;
 
-  public PropertiesTreeNode(IOperationContext operationContext, SNode node) {
-    super(operationContext);
+  public PropertiesTreeNode(SNode node) {
     myNode = node;
 
     setIcon(Icons.PROPERTY_ICON);
@@ -49,7 +47,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     super.doInit();
 
     for (String name : myNode.getPropertyNames()) {
-      add(new PropertyTreeNode(getOperationContext(), myNode, name));
+      add(new PropertyTreeNode(myNode, name));
     }
 
     myInitialized = true;

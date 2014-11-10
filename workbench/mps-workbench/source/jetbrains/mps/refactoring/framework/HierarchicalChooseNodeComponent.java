@@ -82,7 +82,6 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
   }
 
   private void showHierarchy(SNode node, IOperationContext operationContext) {
-    myHierarchyTree.setOperationContext(operationContext);
     myHierarchyTree.setHierarchyNode(node);
     SwingUtilities.invokeLater(new Runnable() {
       @Override

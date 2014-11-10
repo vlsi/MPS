@@ -20,11 +20,13 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Computable;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
@@ -36,7 +38,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private JComponent mySupertypesViewComponent;
 
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
-    super(getTitle(node), operationContext);
+    super(operationContext.getProject(), getTitle(node));
 
     SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 
@@ -46,11 +48,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     myMainComponent.setSecondComponent(mySupertypesViewComponent);
 
     myType = type;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myModel = myType.getModel();
-      }
-    });
+    myModel = myType.getModel();
 
     myError = error;
     supertypesView.showItemInHierarchy(myType, operationContext);
@@ -81,7 +79,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext().getProject(), myError);
+              GoToTypeErrorRuleUtil.goToTypeErrorRule(getProject(), myError);
             }
           });
         }
@@ -100,7 +98,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     if (mySupertypesViewComponent != null && mySupertypesViewComponent.getParent() != null) {
       mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getProject().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
           myModel.removeRootNode(myType.getContainingRoot());

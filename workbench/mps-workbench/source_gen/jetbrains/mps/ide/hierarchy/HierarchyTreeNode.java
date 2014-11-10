@@ -5,7 +5,6 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -17,11 +16,10 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 public class HierarchyTreeNode extends MPSTreeNode {
   private SNode myNode;
   protected AbstractHierarchyTree myHierarchyTree;
-  public HierarchyTreeNode(@NotNull SNode declaration, IOperationContext operationContext, AbstractHierarchyTree tree) {
-    super(operationContext);
+  public HierarchyTreeNode(@NotNull SNode declaration, AbstractHierarchyTree tree) {
+    super(declaration);
     myNode = declaration;
     myHierarchyTree = tree;
-    setUserObject(declaration);
     setNodeIdentifier(calculateNodeIdentifier());
   }
   @Override

@@ -17,7 +17,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   private final boolean myIsUsedLang;
   /*package*/ ModuleDependencyNode(SModule module, Iterable<DepLink> relations, boolean isUsedLanguage) {
     // module serves as dependency target (dependencies are captured with relations sequence) 
-    super(Sequence.fromIterable(relations).toListSequence(), null);
+    super(Sequence.fromIterable(relations).toListSequence());
     myModule = module;
     myIsUsedLang = isUsedLanguage;
     setIcon(IconManager.getIconFor(module));
