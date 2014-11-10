@@ -592,7 +592,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 8709572687796959088l, "usesFoldingCondition"), "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 8709572687796959088l, "usesFoldingCondition"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1142886221719l, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
     }
     public String getMatchingText() {
       return "query";

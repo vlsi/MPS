@@ -74,7 +74,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
       return "Convert to Non-Typesystem Rule";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", null);
+      SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1195214364922l, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"), null);
       SPropertyOperations.set(nonTypesystemRule, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213689297l, "overrides"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213689297l, "overrides"))));
       SPropertyOperations.set(nonTypesystemRule, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SLinkOperations.setTarget(nonTypesystemRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body"))));

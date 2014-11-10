@@ -528,7 +528,7 @@
       <node id="2336278055264560079" at="42,9,43,380" concept="7" />
       <node id="2336278055264516579" at="44,67,45,99" concept="2" />
       <node id="2336278055264545031" at="46,7,47,90" concept="2" />
-      <node id="2336278055263153141" at="49,68,50,259" concept="2" />
+      <node id="2336278055263153141" at="49,68,50,345" concept="2" />
       <node id="8174815986114409771" at="51,5,52,91" concept="2" />
       <node id="2336278055263244245" at="52,91,53,78" concept="8" />
       <node id="2336278055262911933" at="55,28,56,17" concept="8" />
@@ -546,7 +546,7 @@
       <scope id="2336278055261475345" at="31,53,32,32" />
       <scope id="2336278055263049047" at="39,39,40,211" />
       <scope id="2336278055263126255" at="44,67,45,99" />
-      <scope id="2336278055264591078" at="49,68,50,259" />
+      <scope id="2336278055264591078" at="49,68,50,345" />
       <scope id="2336278055262911931" at="55,28,56,17" />
       <scope id="2336278055262911939" at="58,25,59,16" />
       <scope id="2336278055262911947" at="61,27,62,14" />
@@ -1577,17 +1577,17 @@
       <node id="6306886970791123511" at="108,103,109,46" concept="2" />
       <node id="6306886970791123511" at="109,46,110,22" concept="8" />
       <node id="6306886970791123511" at="113,80,114,33" concept="11" />
-      <node id="7801692200918133088" at="116,62,117,256" concept="2" />
-      <node id="7801692200918193985" at="117,256,118,258" concept="2" />
-      <node id="8570854907292899725" at="118,258,119,186" concept="2" />
+      <node id="7801692200918133088" at="116,62,117,364" concept="2" />
+      <node id="7801692200918193985" at="117,364,118,366" concept="2" />
+      <node id="8570854907292899725" at="118,366,119,186" concept="2" />
       <node id="8570854907292908822" at="119,186,120,186" concept="2" />
       <node id="7801692200918036549" at="123,81,124,413" concept="8" />
       <node id="7801692200918050207" at="127,90,128,382" concept="2" />
       <node id="7801692200918068309" at="128,382,129,378" concept="2" />
       <node id="6306886970791123511" at="131,12,132,20" concept="2" />
-      <node id="7801692200918133088" at="137,62,138,256" concept="2" />
-      <node id="7801692200918193985" at="138,256,139,258" concept="2" />
-      <node id="8570854907292899725" at="139,258,140,186" concept="2" />
+      <node id="7801692200918133088" at="137,62,138,364" concept="2" />
+      <node id="7801692200918193985" at="138,364,139,366" concept="2" />
+      <node id="8570854907292899725" at="139,366,140,186" concept="2" />
       <node id="8570854907292908822" at="140,186,141,186" concept="2" />
       <node id="7801692200918036549" at="147,81,148,413" concept="8" />
       <node id="7801692200918050207" at="151,90,152,382" concept="2" />
@@ -1625,7 +1625,7 @@
       <node id="8570854907291458610" at="245,62,246,366" concept="2" />
       <node id="8570854907291418902" at="246,366,247,376" concept="2" />
       <node id="8570854907291453626" at="247,376,248,376" concept="2" />
-      <node id="939897302409707329" at="251,81,252,675" concept="8" />
+      <node id="939897302409707329" at="251,81,252,760" concept="8" />
       <node id="939897302409686555" at="255,90,256,226" concept="7" />
       <node id="939897302409687194" at="256,226,257,564" concept="2" />
       <node id="939897302414252848" at="257,564,258,46" concept="7" />
@@ -1637,7 +1637,7 @@
       <node id="8570854907291458610" at="274,62,275,366" concept="2" />
       <node id="8570854907291418902" at="275,366,276,376" concept="2" />
       <node id="8570854907291453626" at="276,376,277,376" concept="2" />
-      <node id="939897302409707329" at="283,81,284,673" concept="8" />
+      <node id="939897302409707329" at="283,81,284,758" concept="8" />
       <node id="939897302409686555" at="287,90,288,226" concept="7" />
       <node id="939897302409687194" at="288,226,289,564" concept="2" />
       <node id="939897302414252848" at="289,564,290,46" concept="7" />
@@ -1785,9 +1785,9 @@
       <scope id="6306886970791123511" at="187,83,188,56" />
       <scope id="6306886970791123511" at="203,85,204,85" />
       <scope id="6306886970791123511" at="208,85,209,89" />
-      <scope id="939897302409476767" at="251,81,252,675" />
+      <scope id="939897302409476767" at="251,81,252,760" />
       <scope id="939897302409885541" at="260,45,261,69" />
-      <scope id="939897302409476767" at="283,81,284,673" />
+      <scope id="939897302409476767" at="283,81,284,758" />
       <scope id="939897302409885541" at="292,45,293,67" />
       <scope id="6306886970791123511" at="307,85,308,75" />
       <scope id="6306886970791123511" at="312,91,313,79" />
@@ -2099,15 +2099,15 @@
       <scope id="6306886970791123511" at="301,0,341,0">
         <var name="node" id="6306886970791123511" />
       </scope>
-      <unit id="7801692200918031065" at="122,259,126,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$2" />
-      <unit id="7801692200918031065" at="146,290,150,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$5" />
+      <unit id="7801692200918031065" at="122,344,126,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$2" />
+      <unit id="7801692200918031065" at="146,375,150,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$5" />
       <unit id="6306886970791123511" at="162,114,166,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
       <unit id="6306886970791123511" at="167,109,171,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
       <unit id="6306886970791123511" at="202,123,206,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$9" />
       <unit id="6306886970791123511" at="207,132,211,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$9" />
-      <unit id="939897302409476764" at="250,270,254,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$2" />
+      <unit id="939897302409476764" at="250,356,254,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$2" />
       <unit id="939897302409885540" at="259,964,263,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$4" />
-      <unit id="939897302409476764" at="282,301,286,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$5" />
+      <unit id="939897302409476764" at="282,387,286,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$5" />
       <unit id="939897302409885540" at="291,964,295,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$7" />
       <unit id="6306886970791123511" at="306,114,310,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
       <unit id="6306886970791123511" at="311,109,315,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
@@ -2115,10 +2115,10 @@
       <unit id="6306886970791123511" at="351,132,355,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$9" />
       <unit id="7801692200918031065" at="126,13,131,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$3" />
       <unit id="7801692200918031065" at="150,13,155,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$6" />
-      <unit id="8570854907291277223" at="244,370,250,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$1" />
-      <unit id="8570854907291277223" at="273,288,279,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$4" />
-      <unit id="8570854907292894775" at="115,359,122,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$1" />
-      <unit id="8570854907292894775" at="136,277,143,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$4" />
+      <unit id="8570854907291277223" at="244,456,250,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$1" />
+      <unit id="8570854907291277223" at="273,374,279,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$4" />
+      <unit id="8570854907292894775" at="115,444,122,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$1" />
+      <unit id="8570854907292894775" at="136,362,143,7" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$4" />
       <unit id="6306886970791123511" at="172,83,180,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
       <unit id="6306886970791123511" at="316,83,324,11" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$8" />
       <unit id="2981172682493798335" at="373,0,381,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor$DiagramCellImpl_32adaa_e0$DiagramPaletteImpl_32adaa_a4a" />
@@ -2434,7 +2434,7 @@
       <node id="4394877045819837745" at="59,11,60,53" concept="2" />
       <node id="7882925886021799444" at="60,53,61,94" concept="7" />
       <node id="8174815986114868960" at="61,94,62,72" concept="7" />
-      <node id="8174815986114882049" at="65,821,66,36" concept="2" />
+      <node id="8174815986114882049" at="65,906,66,36" concept="2" />
       <node id="8174815986114903208" at="70,32,71,19" concept="8" />
       <node id="8174815986113670419" at="74,31,75,244" concept="7" />
       <node id="8174815986115648351" at="75,244,76,416" concept="2" />
@@ -2478,7 +2478,7 @@
       <node id="4394877045818107934" at="40,0,92,0" concept="6" trace="getTrait#()Ljetbrains/jetpad/projectional/view/ViewTrait;" />
       <scope id="526297864813399060" at="47,132,48,21" />
       <scope id="526297864814119646" at="57,61,58,19" />
-      <scope id="8174815986113898078" at="65,821,66,36" />
+      <scope id="8174815986113898078" at="65,906,66,36" />
       <scope id="8174815986114897379" at="70,32,71,19" />
       <scope id="8174815986113549383" at="94,25,95,47" />
       <scope id="8174815986113549392" at="97,25,98,18" />

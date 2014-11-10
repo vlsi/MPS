@@ -89,7 +89,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
       SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
       SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"));
       SNodeOperations.deleteNode(TFtoDelete);
-      SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+      SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
       SLinkOperations.setTarget(inlineTemplate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"), fragmentToSet);
       // ------ 
       int option = JOptionPane.showConfirmDialog(null, "Delete old template?", "", JOptionPane.YES_NO_OPTION);

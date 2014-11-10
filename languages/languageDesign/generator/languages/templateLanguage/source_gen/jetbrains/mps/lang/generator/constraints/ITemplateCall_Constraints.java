@@ -10,9 +10,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ITemplateCall_Constraints extends BaseConstraintsDescriptor {
@@ -34,7 +34,7 @@ public class ITemplateCall_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument")) {
+    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"))) {
       return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4816349095291127781l, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4035562641222585520l, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression")) || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
     }
     return true;

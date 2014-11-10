@@ -19,9 +19,9 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">
     <file name="QueriesGenerated.java">
-      <node id="2087237500476347103" at="27,163,28,272" concept="1" />
+      <node id="2087237500476347103" at="27,163,28,381" concept="1" />
       <node id="2087237500476328252" at="27,0,30,0" concept="5" trace="nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="2087237500476328253" at="27,163,28,272" />
+      <scope id="2087237500476328253" at="27,163,28,381" />
       <scope id="2087237500476328252" at="27,0,30,0">
         <var name="_context" id="2087237500476328252" />
         <var name="operationContext" id="2087237500476328252" />

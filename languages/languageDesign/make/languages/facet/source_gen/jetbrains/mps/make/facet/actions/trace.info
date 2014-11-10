@@ -27,9 +27,9 @@
   </root>
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/127305800529615843">
     <file name="QueriesGenerated.java">
-      <node id="127305800529615847" at="51,160,52,280" concept="4" />
+      <node id="127305800529615847" at="51,160,52,383" concept="4" />
       <node id="127305800529615845" at="51,0,54,0" concept="11" trace="nodeFactory_NodeSetup_ParametersDeclaration_127305800529615845#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="127305800529615846" at="51,160,52,280" />
+      <scope id="127305800529615846" at="51,160,52,383" />
       <scope id="127305800529615845" at="51,0,54,0">
         <var name="_context" id="127305800529615845" />
         <var name="operationContext" id="127305800529615845" />
@@ -346,9 +346,9 @@
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/7320828025189375231">
     <file name="QueriesGenerated.java">
       <node id="7320828025189386995" at="145,44,146,603" concept="10" />
-      <node id="7320828025189387038" at="152,98,153,135" concept="9" />
-      <node id="7320828025189408967" at="153,135,154,145" concept="9" />
-      <node id="7320828025189408977" at="154,145,155,190" concept="4" />
+      <node id="7320828025189387038" at="152,98,153,243" concept="9" />
+      <node id="7320828025189408967" at="153,243,154,253" concept="9" />
+      <node id="7320828025189408977" at="154,253,155,190" concept="4" />
       <node id="7320828025189408991" at="155,190,156,234" concept="4" />
       <node id="7320828025189409008" at="156,234,157,28" concept="10" />
       <node id="7320828025189387014" at="159,61,160,189" concept="10" />
@@ -411,8 +411,8 @@
       <node id="8351679702044391376" at="104,39,105,37" concept="10" />
       <node id="8351679702044391388" at="107,0,108,0" concept="5" trace="_2_em" />
       <node id="8351679702044391388" at="108,0,109,0" concept="5" trace="_2_em_it" />
-      <node id="8351679702044391461" at="119,98,120,133" concept="9" />
-      <node id="8351679702044391468" at="120,133,121,238" concept="4" />
+      <node id="8351679702044391461" at="119,98,120,241" concept="9" />
+      <node id="8351679702044391468" at="120,241,121,238" concept="4" />
       <node id="8351679702044391484" at="121,238,122,209" concept="4" />
       <node id="8351679702044391504" at="122,209,123,27" concept="10" />
       <node id="8351679702044391424" at="125,61,126,249" concept="10" />

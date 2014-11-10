@@ -68,7 +68,7 @@ public class AddThrows_Intention implements IntentionFactory {
       return "Add Throws";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"), "jetbrains.mps.baseLanguage.structure.Type");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
       editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).last());
     }
     public IntentionDescriptor getDescriptor() {

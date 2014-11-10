@@ -103,7 +103,7 @@ public class CreatePropertyAntiquotation_Intention implements IntentionFactory {
       if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", propertyName)) != null) {
         AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", propertyName), null);
       } else {
-        SNode propertyAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
+        SNode propertyAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", propertyName), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196866233735l, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"));
         if (selectedCell.isSingleNodeCell()) {
           SPropertyOperations.set(propertyAntiquotation, MetaAdapterFactory.getProperty(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 6489343236075007666l, "label"), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }

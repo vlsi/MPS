@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class NewNode {
   public void newNode1(SModel model) {
@@ -27,8 +26,8 @@ public class NewNode {
   }
   public void newNode3(SNode sample) {
     SNode ifStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
-    SNode ifStatement1 = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", sample);
+    SNode ifStatement1 = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), sample);
     SNode ifStatement2 = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
-    SNode ifStatement3 = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
+    SNode ifStatement3 = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
   }
 }

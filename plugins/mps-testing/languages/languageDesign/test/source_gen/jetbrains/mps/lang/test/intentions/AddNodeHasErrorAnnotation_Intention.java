@@ -15,10 +15,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -75,7 +75,7 @@ public class AddNodeHasErrorAnnotation_Intention implements IntentionFactory {
       return "Add Node Has Error Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"), null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
       SNode errorCheck = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"));
       ListSequence.fromList(SLinkOperations.getChildren(newAnnotation, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).addElement(errorCheck);

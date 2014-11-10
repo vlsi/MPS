@@ -76,7 +76,7 @@ public class SurroundWithParenthesis_Intention implements IntentionFactory {
       return "( expression )";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
     }
     public IntentionDescriptor getDescriptor() {
       return SurroundWithParenthesis_Intention.this;

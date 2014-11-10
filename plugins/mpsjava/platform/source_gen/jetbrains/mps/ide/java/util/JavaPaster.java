@@ -120,7 +120,7 @@ public class JavaPaster {
           break;
         case STATEMENTS:
           for (SNode node : ListSequence.fromList(nodes)) {
-            pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"));
+            pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")));
           }
           break;
         default:

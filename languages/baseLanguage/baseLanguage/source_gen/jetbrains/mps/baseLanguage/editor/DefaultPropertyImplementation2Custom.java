@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DefaultPropertyImplementation2Custom {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -22,7 +24,7 @@ public class DefaultPropertyImplementation2Custom {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
     }
   }
 }

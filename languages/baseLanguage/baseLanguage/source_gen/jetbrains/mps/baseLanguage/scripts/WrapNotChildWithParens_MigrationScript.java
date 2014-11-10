@@ -30,7 +30,7 @@ public class WrapNotChildWithParens_MigrationScript extends BaseMigrationScript 
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode childExpr = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
         SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), childExpr);
       }
       public boolean isShowAsIntention() {

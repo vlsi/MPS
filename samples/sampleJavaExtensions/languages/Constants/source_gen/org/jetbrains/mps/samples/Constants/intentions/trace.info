@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,20,0" name="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" />
+      <unit at="8,0,15,0" name="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573650">

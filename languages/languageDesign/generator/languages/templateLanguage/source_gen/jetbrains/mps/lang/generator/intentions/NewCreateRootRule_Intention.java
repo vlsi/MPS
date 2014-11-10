@@ -116,7 +116,7 @@ public class NewCreateRootRule_Intention implements IntentionFactory {
         // TODO: let user to choose mapping config? 
       }
       //  add new rule 
-      SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167088157977l, "createRootRule"), "jetbrains.mps.lang.generator.structure.CreateRootRule");
+      SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167088157977l, "createRootRule"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167087469898l, "jetbrains.mps.lang.generator.structure.CreateRootRule"));
       SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167087469898l, 1167087469901l, "templateNode"), node);
       //  open in editor 
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), rule, true, true);

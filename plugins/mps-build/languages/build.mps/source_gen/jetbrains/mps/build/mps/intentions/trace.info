@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,22,0" name="jetbrains.mps.build.mps.intentions.IntentionsDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.build.mps.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)/1753793013241722025">

@@ -45,7 +45,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null);
+                SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066557l, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), null);
                 SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (item));
                 return node;
               }
@@ -81,7 +81,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null);
+                SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), null);
                 SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (item));
                 return node;
               }

@@ -52,7 +52,7 @@ public class create_IdeaPluginDescription extends KeyMapImpl {
       return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 2172791612906637490l, "description")) == null);
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 2172791612906637490l, "description"), "jetbrains.mps.build.structure.BuildStringNotEmpty");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 2172791612906637490l, "description"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 841011766566059607l, "jetbrains.mps.build.structure.BuildStringNotEmpty"));
     }
     public String getKeyStroke() {
       return " letter or digit";

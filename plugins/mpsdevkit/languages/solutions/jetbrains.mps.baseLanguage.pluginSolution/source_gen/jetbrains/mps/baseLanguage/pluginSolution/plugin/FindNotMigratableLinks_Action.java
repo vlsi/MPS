@@ -19,6 +19,8 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder;
 import jetbrains.mps.smodel.SNodePointer;
@@ -68,7 +70,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "property"))) {
+          for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1107880067339l, "method")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1128555889557l, "staticField")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1178616825527l, "staticInnerClassifiers")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1068390468201l, "constructor")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1070462273904l, "staticMethod")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1068390468199l, "field")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1201374247313l, "property")))) {
             for (SNode node : Sequence.fromIterable(NonMigratableUsagesFinder.findNonMigratableUsages(link))) {
               ListSequence.fromList(usages).addElement(new SNodePointer(node));
             }

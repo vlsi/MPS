@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,20,0" name="testDefaultEditor.intentions.IntentionsDescriptor" />
+      <unit at="8,0,15,0" name="testDefaultEditor.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)/2870455723671212067">

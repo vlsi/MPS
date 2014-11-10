@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 
@@ -36,7 +36,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
+              SNode usage = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-248448403205894696l, -5239469005774541060l), 1569627462441399919l, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), null);
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), usage);
               SLinkOperations.setTarget(usage, MetaAdapterFactory.getReferenceLink(new UUID(-248448403205894696l, -5239469005774541060l), 1569627462441399919l, 1569627462441399920l, "operator"), (item));
               SLinkOperations.setTarget(usage, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), _context.getSourceNode());

@@ -61,7 +61,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
       return "Add Extends Clause";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1198252130653l, "jetbrains.mps.lang.editor.structure.StyleSheetClassReference"), null));
     }
     public IntentionDescriptor getDescriptor() {
       return AddExtendsClause_Intention.this;

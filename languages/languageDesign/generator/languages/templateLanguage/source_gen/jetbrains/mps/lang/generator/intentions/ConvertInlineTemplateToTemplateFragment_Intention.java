@@ -74,14 +74,14 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
       return "Convert to Template Fragment";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode templateNode = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
+      SNode templateNode = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), null);
       SNode ruleNode = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), false, false);
       SLinkOperations.setTarget(templateNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"), SLinkOperations.getTarget(ruleNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept")));
       SPropertyOperations.set(templateNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "template1");
       SLinkOperations.setTarget(templateNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode")));
       SPropertyOperations.set(templateNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
 
-      SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+      SNode templateRefNode = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559333462l, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
       SLinkOperations.setTarget(templateRefNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), templateNode);
 
       SelectionUtil.selectNode(editorContext, templateNode);

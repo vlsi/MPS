@@ -73,7 +73,7 @@ public class SplitIf_Intention implements IntentionFactory {
       SNode left = SLinkOperations.getTarget(andExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
       SNode right = SLinkOperations.getTarget(andExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), right);
-      SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+      SNode statement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), null);
       SLinkOperations.setTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), left);
       SNodeOperations.replaceWithAnother(node, statement);
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(node);

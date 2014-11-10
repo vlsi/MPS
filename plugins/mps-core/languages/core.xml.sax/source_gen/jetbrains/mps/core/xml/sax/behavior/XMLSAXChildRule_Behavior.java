@@ -31,7 +31,7 @@ public class XMLSAXChildRule_Behavior {
         return new EmptyScope();
       }
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_a0b), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
-        return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+        return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140404l, "attrs")));
       }
     }
     return null;
@@ -48,7 +48,7 @@ public class XMLSAXChildRule_Behavior {
         SNode concept_a0b0c;
         concept_a0b0c = kind;
         if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_a0b0c), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
-          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140404l, "attrs")));
         }
       }
     }

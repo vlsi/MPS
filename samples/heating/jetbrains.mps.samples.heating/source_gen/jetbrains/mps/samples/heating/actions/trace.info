@@ -12,8 +12,8 @@
   </root>
   <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/935069066462603543">
     <file name="QueriesGenerated.java">
-      <node id="935069066462973859" at="28,94,29,125" concept="1" />
-      <node id="935069066462974448" at="29,125,30,217" concept="0" />
+      <node id="935069066462973859" at="28,94,29,233" concept="1" />
+      <node id="935069066462974448" at="29,233,30,217" concept="0" />
       <node id="935069066462977640" at="30,217,31,19" concept="2" />
       <node id="935069066462604243" at="49,200,50,225" concept="2" />
       <node id="935069066462603596" at="49,0,52,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />

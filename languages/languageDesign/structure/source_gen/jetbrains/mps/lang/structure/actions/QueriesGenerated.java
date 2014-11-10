@@ -112,7 +112,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode linkDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.structure.structure.LinkDeclaration", _context.getCurrentTargetNode());
+                SNode linkDeclaration = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"), (item));
                 return linkDeclaration;
               }
@@ -272,7 +272,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
-        SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+        SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
         SPropertyOperations.set(childLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation");
         SelectionUtil.selectCell(editorContext, childLink, "role");
         EditorCell selectedCell = editorContext.getSelectedCell();
@@ -325,7 +325,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+              SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
               SPropertyOperations.set(childLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation");
               SLinkOperations.setTarget(childLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"), (item));
               return childLink;
@@ -366,7 +366,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
-        SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+        SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
         SPropertyOperations.set(childLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference");
         SelectionUtil.selectCell(editorContext, childLink, "role");
         EditorCell selectedCell = editorContext.getSelectedCell();
@@ -419,7 +419,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+              SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
               SPropertyOperations.set(childLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference");
               SLinkOperations.setTarget(childLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"), (item));
               return childLink;
@@ -460,7 +460,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
-        SNode property = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+        SNode property = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
         SelectionUtil.selectCell(editorContext, property, "name");
         EditorCell selectedCell = editorContext.getSelectedCell();
         if (selectedCell instanceof EditorCell_Label) {
@@ -512,7 +512,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode property = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+              SNode property = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
               SLinkOperations.setTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"), (item));
               return property;
             }

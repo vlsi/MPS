@@ -68,7 +68,7 @@ public class CreateSetAccessor_Intention implements IntentionFactory {
       return "Create Set Accessor";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor"), "jetbrains.mps.baseLanguage.structure.SetAccessor");
+      SNodeFactoryOperations.setNewChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201476912089l, "jetbrains.mps.baseLanguage.structure.SetAccessor"));
     }
     public IntentionDescriptor getDescriptor() {
       return CreateSetAccessor_Intention.this;

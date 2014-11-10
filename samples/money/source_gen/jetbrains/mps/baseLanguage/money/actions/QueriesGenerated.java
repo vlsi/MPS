@@ -27,7 +27,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1186669599053l, "jetbrains.mps.baseLanguage.money.structure.MoneyType"))) {
-          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187357945755l, "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall"), null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
           SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1186669599053l, "jetbrains.mps.baseLanguage.money.structure.MoneyType"))) {
-          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187617584208l, "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall"), null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
           SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;
@@ -81,7 +81,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1186669599053l, "jetbrains.mps.baseLanguage.money.structure.MoneyType"))) {
-          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187357875552l, "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall"), null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
           SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;

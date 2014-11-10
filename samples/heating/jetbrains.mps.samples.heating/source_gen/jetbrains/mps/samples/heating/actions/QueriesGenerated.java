@@ -14,9 +14,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -26,7 +26,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.heating.structure.DailyPlan"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.DailyPlanReference", null);
+        SNode ref = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, "jetbrains.mps.samples.heating.structure.DailyPlanReference"), null);
         SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes"), ref);
         return ref;
       }

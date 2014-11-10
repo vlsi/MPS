@@ -80,7 +80,7 @@ public class AddProducer_Intention implements IntentionFactory {
       return "Create Producer for " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode producer = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
+      SNode producer = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), null);
       SLinkOperations.setTarget(producer, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration"), createPersistentConfigurationType_wy7zix_a0b0a(node));
       SPropertyOperations.set(producer, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
       SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);

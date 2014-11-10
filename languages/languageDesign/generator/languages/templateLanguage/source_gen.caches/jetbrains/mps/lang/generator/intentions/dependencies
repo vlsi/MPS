@@ -412,8 +412,6 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.NewTemplateInWeavingRule_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" file="MacroIntentionsUtil.java">
@@ -712,7 +710,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
@@ -739,7 +736,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
@@ -765,7 +761,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />

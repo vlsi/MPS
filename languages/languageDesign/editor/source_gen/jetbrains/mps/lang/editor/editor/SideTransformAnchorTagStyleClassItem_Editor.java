@@ -120,7 +120,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
+      SNode tagWrapper = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 3608226089191997415l, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper"), null);
       SPropertyOperations.set(tagWrapper, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 3608226089191997415l, 3608226089191997418l, "tag"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1214320119173l, 1214320119174l, "tag"), null));
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1214320119173l, 3608226089191997414l, "tags"))).addElement(tagWrapper);
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1214320119173l, 1214320119174l, "tag"), null);

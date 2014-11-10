@@ -70,7 +70,7 @@ public class MakeGeneric_Intention implements IntentionFactory {
       return "Add Type Variable";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"));
     }
     public IntentionDescriptor getDescriptor() {
       return MakeGeneric_Intention.this;

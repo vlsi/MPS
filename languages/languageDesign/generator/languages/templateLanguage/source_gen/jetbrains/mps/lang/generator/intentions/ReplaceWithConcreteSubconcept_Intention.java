@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory {
@@ -90,7 +89,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null);
+      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null);
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
     }

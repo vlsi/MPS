@@ -4,9 +4,9 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +20,7 @@ public class MethodDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
-    SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", null);
+    SNode method = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), null);
     SPropertyOperations.set(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
     ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767079l, 3751132065236767080l, "param"))).select(new ISelector<SNode, SNode>() {

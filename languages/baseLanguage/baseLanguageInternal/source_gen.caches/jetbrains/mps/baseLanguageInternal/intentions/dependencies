@@ -5,8 +5,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.intentions.add_parameter_to_InternalClassifierType_Intention" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention" file="ReplaceWithConstantValue_Intention.java">

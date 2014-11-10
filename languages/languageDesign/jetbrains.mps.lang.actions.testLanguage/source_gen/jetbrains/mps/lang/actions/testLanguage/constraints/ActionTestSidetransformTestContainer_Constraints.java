@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionTestSidetransformTestContainer_Constraints extends BaseConstraintsDescriptor {
@@ -34,10 +34,10 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer", "abstractChildConstrained")) {
+    if (childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 1702123884811354597l, 4942308145798610513l, "abstractChildConstrained"))) {
       return false;
     }
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 3185679905990512080l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")) && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer", "anotherAbstractChildConstrained")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 3185679905990512080l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")) && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 1702123884811354597l, 3185679905990201679l, "anotherAbstractChildConstrained"))) {
       return false;
     }
 

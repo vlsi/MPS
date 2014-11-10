@@ -16,9 +16,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -37,9 +37,9 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode logStatement = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", null);
+                SNode logStatement = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), null);
                 SPropertyOperations.set(logStatement, MetaAdapterFactory.getProperty(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167245565795l, "severity"), SEnumOperations.getEnumMemberValue((item)));
-                SNodeFactoryOperations.setNewChild(logStatement, MetaAdapterFactory.getContainmentLink(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167227463056l, "logExpression"), "jetbrains.mps.baseLanguage.structure.StringLiteral");
+                SNodeFactoryOperations.setNewChild(logStatement, MetaAdapterFactory.getContainmentLink(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167227463056l, "logExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                 SNode catchClause = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, "jetbrains.mps.baseLanguage.structure.CatchClause"), true, false);
                 if ((catchClause != null) && (SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")) != null)) {
                   SPropertyOperations.set(logStatement, MetaAdapterFactory.getProperty(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167228628751l, "hasException"), "" + (true));

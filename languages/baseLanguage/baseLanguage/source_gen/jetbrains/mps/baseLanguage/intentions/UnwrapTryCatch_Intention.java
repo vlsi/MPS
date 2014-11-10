@@ -90,7 +90,7 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
           }
         });
       } else {
-        SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
+        SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
         SLinkOperations.setTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), body);
       }
     }

@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.math.intentions.IntentionsDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.math.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)/1237104496404">

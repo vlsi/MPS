@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -47,7 +46,7 @@ public class ConceptEditorHelper {
     return result;
   }
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
-    SNode conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+    SNode conceptAspect = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
     BehaviorReflection.invokeVirtual(Void.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Object[]{applicableNode});
     SModelOperations.addRootNode(model, conceptAspect);
 

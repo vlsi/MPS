@@ -14,10 +14,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -72,7 +72,7 @@ public class convert_to_from_unrestricted_Intention implements IntentionFactory 
       return "Convert to " + type + " Closure Literal";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) : SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null));
+      SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1229598881739l, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"), null) : SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), null));
       SNodeOperations.replaceWithAnother(node, cl);
       List<SNode> params = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"));
       for (SNode p : params) {

@@ -285,7 +285,7 @@ public class Classifier_Behavior {
   public static SNode call_getResolvedMethodVar_836080658851951996(SNode thisNode, SNode reference, SNode method, SNode baseMethod) {
     int i = ListSequence.fromList(SLinkOperations.getChildren(baseMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).indexOf(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
     if (i >= 0 && i <= ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count()) {
-      SNode varRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode varRef = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), null);
       SLinkOperations.setTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).getElement(i));
       return varRef;
     }

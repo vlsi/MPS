@@ -30,6 +30,8 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -173,7 +175,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       return true;
     }
     public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
+      return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), null);
     }
   }
   private EditorCell createConstant_ym22pt_e0(EditorContext editorContext, SNode node) {

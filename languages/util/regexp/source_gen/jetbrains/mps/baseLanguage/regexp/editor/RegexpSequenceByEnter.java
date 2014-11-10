@@ -8,10 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -32,7 +32,7 @@ public class RegexpSequenceByEnter {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+      SNode nt = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
       SNodeOperations.replaceWithAnother(node, nt);
       SLinkOperations.setTarget(nt, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right"), node);
       SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(nt, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left")), SelectionManager.FIRST_CELL);
@@ -50,7 +50,7 @@ public class RegexpSequenceByEnter {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+      SNode nt = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
       SNodeOperations.replaceWithAnother(node, nt);
       SLinkOperations.setTarget(nt, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left"), node);
       SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(nt, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right")), SelectionManager.FIRST_CELL);

@@ -14,9 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -42,7 +42,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlCharRefValue", null);
+            return SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 3080189811177215998l, "jetbrains.mps.core.xml.structure.XmlCharRefValue"), null);
           }
           public String getMatchingText(String pattern) {
             return "&#";
@@ -59,7 +59,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlEntityRefValue", null);
+            return SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541921l, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"), null);
           }
           public String getMatchingText(String pattern) {
             return "&";
@@ -76,7 +76,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode val = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlTextValue", null);
+            SNode val = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"), null);
             SPropertyOperations.set(val, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), pattern);
             return val;
           }
@@ -105,7 +105,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode attr = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlAttribute", null);
+            SNode attr = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"), null);
             String attrName = "name";
             if (!((pattern == null || pattern.length() == 0))) {
               String name = pattern;
@@ -151,7 +151,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             Matcher _matcher_x583g4_a1a0a0a0a0a2a0a1a2;
-            SNode element = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlElement", null);
+            SNode element = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"), null);
             if ((_matcher_x583g4_a1a0a0a0a0a2a0a1a2 = REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a2.matcher(pattern)).find()) {
               SPropertyOperations.set(element, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415862l, "tagName"), _matcher_x583g4_a1a0a0a0a0a2a0a1a2.group(1));
             }
@@ -176,7 +176,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode val = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlText", null);
+            SNode val = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"), null);
             SPropertyOperations.set(val, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, 1622293396948953704l, "value"), pattern);
             return val;
           }
@@ -205,7 +205,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode val = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlCommentLine", null);
+            SNode val = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396949036126l, "jetbrains.mps.core.xml.structure.XmlCommentLine"), null);
             SPropertyOperations.set(val, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396949036126l, 1622293396949036127l, "text"), pattern);
             return val;
           }
@@ -236,7 +236,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlDeclaration", null);
+            return SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, "jetbrains.mps.core.xml.structure.XmlDeclaration"), null);
           }
           public boolean hasSubstitute() {
             return true;
@@ -262,7 +262,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", null);
+            return SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), null);
           }
           public boolean hasSubstitute() {
             return true;

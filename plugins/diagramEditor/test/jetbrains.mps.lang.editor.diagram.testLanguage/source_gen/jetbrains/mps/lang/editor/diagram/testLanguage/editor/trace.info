@@ -1380,8 +1380,8 @@
       <scope id="511002117671748040" at="87,0,127,0">
         <var name="node" id="511002117671748040" />
       </scope>
-      <unit id="4633202057941642082" at="71,404,74,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$1" />
-      <unit id="4633202057941642082" at="79,322,82,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$2" />
+      <unit id="4633202057941642082" at="71,470,74,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$1" />
+      <unit id="4633202057941642082" at="79,388,82,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$2" />
       <unit id="511002117671748040" at="92,114,96,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$4" />
       <unit id="511002117671748040" at="97,109,101,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$4" />
       <unit id="511002117671748040" at="132,123,136,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor$5" />
@@ -4797,15 +4797,15 @@
       <scope id="8794120090374245752" at="98,0,138,0">
         <var name="node" id="8794120090374245752" />
       </scope>
-      <unit id="5540569706413846293" at="65,313,69,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$2" />
-      <unit id="5540569706413846293" at="87,344,91,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$5" />
+      <unit id="5540569706413846293" at="65,381,69,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$2" />
+      <unit id="5540569706413846293" at="87,412,91,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$5" />
       <unit id="8794120090374245752" at="103,114,107,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$8" />
       <unit id="8794120090374245752" at="108,109,112,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$8" />
       <unit id="8794120090374245752" at="143,123,147,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$9" />
       <unit id="8794120090374245752" at="148,132,152,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$9" />
-      <unit id="8794120090374256321" at="60,394,65,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$1" />
+      <unit id="8794120090374256321" at="60,462,65,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$1" />
       <unit id="5540569706413846293" at="69,13,74,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$3" />
-      <unit id="8794120090374256321" at="79,312,84,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$4" />
+      <unit id="8794120090374256321" at="79,380,84,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$4" />
       <unit id="5540569706413846293" at="91,13,96,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$6" />
       <unit id="8794120090374245752" at="113,83,121,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$8" />
       <unit id="8794120090374245752" at="122,74,133,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_Editor$8" />

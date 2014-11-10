@@ -90,7 +90,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.LinkArgument", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637559l, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"), _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637559l, 285670992217679783l, "link"), (item));
                 return parameter;
               }
@@ -131,7 +131,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992217672837l, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"), _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992217672837l, 285670992217689748l, "property"), (item));
                 return parameter;
               }
@@ -157,7 +157,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), _context.getCurrentTargetNode());
           }
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {

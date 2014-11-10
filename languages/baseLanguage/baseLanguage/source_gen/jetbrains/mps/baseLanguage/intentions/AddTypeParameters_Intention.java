@@ -69,7 +69,7 @@ public class AddTypeParameters_Intention implements IntentionFactory {
       return "Add Type Parameters";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"), "jetbrains.mps.baseLanguage.structure.Type");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddTypeParameters_Intention.this;

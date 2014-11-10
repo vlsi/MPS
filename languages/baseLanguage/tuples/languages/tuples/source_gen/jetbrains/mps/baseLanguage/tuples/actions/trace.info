@@ -19,8 +19,8 @@
   </root>
   <root nodeRef="r:838e2cf6-ab53-4d74-b51a-1c68353cb80b(jetbrains.mps.baseLanguage.tuples.actions)/1238884701076">
     <file name="QueriesGenerated.java">
-      <node id="1238884852033" at="167,94,168,207" concept="5" />
-      <node id="1238884858043" at="168,207,169,201" concept="1" />
+      <node id="1238884852033" at="167,94,168,310" concept="5" />
+      <node id="1238884858043" at="168,310,169,201" concept="1" />
       <node id="1238884871341" at="169,201,170,19" concept="6" />
       <node id="1238884731275" at="191,196,192,253" concept="6" />
       <node id="1238884718191" at="191,0,194,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1238884718191#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
@@ -37,12 +37,12 @@
   <root nodeRef="r:838e2cf6-ab53-4d74-b51a-1c68353cb80b(jetbrains.mps.baseLanguage.tuples.actions)/1239567468054">
     <file name="QueriesGenerated.java">
       <node id="2912004279740771390" at="49,51,50,188" concept="6" />
-      <node id="1239567537226" at="52,9,53,534" concept="1" />
+      <node id="1239567537226" at="52,9,53,637" concept="1" />
       <node id="2912004279740771246" at="49,0,52,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="1239567501524" at="47,151,54,5" concept="2" />
       <node id="1239567483801" at="47,0,56,0" concept="7" trace="nodeFactory_NodeSetup_NamedTupleLiteral_1239567483801#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <scope id="2912004279740771247" at="49,51,50,188" />
-      <scope id="1239567501528" at="52,9,53,534" />
+      <scope id="1239567501528" at="52,9,53,637" />
       <scope id="2912004279740771246" at="49,0,52,0">
         <var name="ntd" id="2912004279740771246" />
       </scope>

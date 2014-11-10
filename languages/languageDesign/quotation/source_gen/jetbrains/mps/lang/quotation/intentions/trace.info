@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,22,0" name="jetbrains.mps.lang.quotation.intentions.IntentionsDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.quotation.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)/1227885451240">
@@ -39,8 +39,8 @@
       <node id="8843103228116911932" at="70,212,71,183" concept="4" />
       <node id="1227886102841" at="71,183,72,15" concept="10" />
       <node id="1227886102854" at="74,162,75,156" concept="4" />
-      <node id="91680102684962150" at="76,14,77,234" concept="9" />
-      <node id="91680102684962157" at="77,234,78,58" concept="4" />
+      <node id="91680102684962150" at="76,14,77,336" concept="9" />
+      <node id="91680102684962157" at="77,336,78,58" concept="4" />
       <node id="1227885451240" at="81,48,82,48" concept="10" />
       <node id="1227885451240" at="24,0,26,0" concept="2" trace="CreateAntiquotation_Intention#()V" />
       <node id="1227885451240" at="60,0,62,0" concept="2" trace="IntentionImplementation#()V" />
@@ -140,8 +140,8 @@
       <node id="1227886560378" at="74,163,75,15" concept="10" />
       <node id="1227886560383" at="76,7,77,59" concept="9" />
       <node id="1227886560391" at="78,168,79,160" concept="4" />
-      <node id="3434714437240693022" at="80,14,81,246" concept="9" />
-      <node id="3434714437240708807" at="81,246,82,62" concept="4" />
+      <node id="3434714437240693022" at="80,14,81,348" concept="9" />
+      <node id="3434714437240708807" at="81,348,82,62" concept="4" />
       <node id="1227886484790" at="85,48,86,52" concept="10" />
       <node id="1227886484790" at="25,0,27,0" concept="2" trace="CreateListAntiquotation_Intention#()V" />
       <node id="1227886484790" at="61,0,63,0" concept="2" trace="IntentionImplementation#()V" />
@@ -252,7 +252,7 @@
       <node id="1237748021123" at="93,38,94,174" concept="4" />
       <node id="1227886738046" at="94,174,95,15" concept="10" />
       <node id="1227886738066" at="97,177,98,171" concept="4" />
-      <node id="6489343236075024185" at="99,14,100,267" concept="9" />
+      <node id="6489343236075024185" at="99,14,100,369" concept="9" />
       <node id="6489343236075024200" at="101,46,102,403" concept="4" />
       <node id="1227886614590" at="106,48,107,57" concept="10" />
       <node id="1227886614590" at="26,0,28,0" concept="2" trace="CreateReferenceAntiquotation_Intention#()V" />
@@ -272,7 +272,7 @@
       <node id="1227886614590" at="78,0,81,0" concept="8" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="1601689342051414083" at="82,64,85,7" concept="7" />
       <node id="1601689342051414098" at="86,224,89,7" concept="7" />
-      <node id="6489343236075024198" at="100,267,103,9" concept="7" />
+      <node id="6489343236075024198" at="100,369,103,9" concept="7" />
       <node id="1227886614590" at="106,0,109,0" concept="8" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="1227886738073" at="99,12,104,7" concept="1" />
       <node id="1227886614590" at="46,0,52,0" concept="8" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -386,7 +386,7 @@
       <node id="1237748780944" at="99,38,100,185" concept="4" />
       <node id="1227886869198" at="100,185,101,15" concept="10" />
       <node id="1237748823697" at="103,188,104,182" concept="4" />
-      <node id="6489343236075023260" at="105,14,106,276" concept="9" />
+      <node id="6489343236075023260" at="105,14,106,378" concept="9" />
       <node id="6489343236075024145" at="107,46,108,402" concept="4" />
       <node id="7656077486303150712" at="109,9,110,66" concept="4" />
       <node id="1227886844257" at="113,48,114,56" concept="10" />
@@ -408,7 +408,7 @@
       <node id="3891516456976074352" at="83,78,86,7" concept="7" />
       <node id="1227886869142" at="88,224,91,7" concept="7" />
       <node id="1227886869148" at="91,7,94,7" concept="7" />
-      <node id="6489343236075023289" at="106,276,109,9" concept="7" />
+      <node id="6489343236075023289" at="106,378,109,9" concept="7" />
       <node id="1227886844257" at="113,0,116,0" concept="8" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="1227886844257" at="48,0,54,0" concept="8" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1227886844257" at="71,0,77,0" concept="8" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />

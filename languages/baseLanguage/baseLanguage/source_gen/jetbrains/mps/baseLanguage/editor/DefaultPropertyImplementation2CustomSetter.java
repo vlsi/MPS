@@ -26,8 +26,8 @@ public class DefaultPropertyImplementation2CustomSetter {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode replaceWithNewInitialized = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
-      SNodeFactoryOperations.setNewChild(replaceWithNewInitialized, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), "jetbrains.mps.baseLanguage.structure.SetAccessor");
+      SNode replaceWithNewInitialized = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
+      SNodeFactoryOperations.setNewChild(replaceWithNewInitialized, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201476912089l, "jetbrains.mps.baseLanguage.structure.SetAccessor"));
     }
   }
   public static class DefaultPropertyImplementation2CustomSetter_DELETE extends AbstractCellAction {
@@ -39,7 +39,7 @@ public class DefaultPropertyImplementation2CustomSetter {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
     }
   }
   public static class DefaultPropertyImplementation2CustomSetter_BACKSPACE extends AbstractCellAction {
@@ -51,7 +51,7 @@ public class DefaultPropertyImplementation2CustomSetter {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
     }
   }
 }

@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -113,7 +112,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr"))));
+      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr"))));
     }
     public boolean isReferentPresentation() {
       return false;

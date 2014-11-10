@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateWildcardPattern_Intention implements IntentionFactory {
@@ -67,7 +69,7 @@ public class CreateWildcardPattern_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
-      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), "jetbrains.mps.lang.pattern.structure.WildcardPattern");
+      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037783l, "jetbrains.mps.lang.pattern.structure.WildcardPattern"));
     }
     public IntentionDescriptor getDescriptor() {
       return CreateWildcardPattern_Intention.this;

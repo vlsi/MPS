@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddOperationParameter_Intention implements IntentionFactory {
@@ -77,9 +76,9 @@ public class AddOperationParameter_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
       if (ListSequence.fromList(applicableParms).count() == 1) {
-        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(((SNode) ListSequence.fromList(applicableParms).first())), null));
       } else {
-        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"), "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
+        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1144100743722l, "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter"));
       }
     }
     public IntentionDescriptor getDescriptor() {

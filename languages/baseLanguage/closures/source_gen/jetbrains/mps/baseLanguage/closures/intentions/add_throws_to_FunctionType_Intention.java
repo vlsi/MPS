@@ -68,7 +68,7 @@ public class add_throws_to_FunctionType_Intention implements IntentionFactory {
       return "Add Throws Clause";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
     public IntentionDescriptor getDescriptor() {
       return add_throws_to_FunctionType_Intention.this;

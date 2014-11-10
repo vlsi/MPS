@@ -19,7 +19,7 @@ public class BwfTaskPart_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask")) {
       SNode task = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"));
-      SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks"));
+      SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032826l, "subTasks")));
       CompositeScope scope = new CompositeScope(currentSubtaskScope);
       if (task != null) {
         scope.addScope(BehaviorReflection.invokeVirtual(Scope.class, task, "virtual_getScope_3734116213129936182", new Object[]{kind, null}));
@@ -27,7 +27,7 @@ public class BwfTaskPart_Behavior {
       if (task == null || SNodeOperations.getParent(task) != SNodeOperations.getParent(thisNode)) {
         for (SNode n : SNodeOperations.getAllSiblings(thisNode, false)) {
           if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart")) && SLinkOperations.getTarget(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart")), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"))) {
-            scope.addScope(SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks")));
+            scope.addScope(SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032826l, "subTasks"))));
           }
         }
       }

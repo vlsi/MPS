@@ -26,7 +26,7 @@ public class AddPosition {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position")) == null) {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 8486807419021026918l, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), null));
       }
     }
   }

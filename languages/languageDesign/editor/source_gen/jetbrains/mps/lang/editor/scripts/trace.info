@@ -471,40 +471,40 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/3500491402030546638">
     <file name="MigrationUtil.java">
-      <node id="2970389781193035791" at="19,116,20,72" concept="6" />
-      <node id="2970389781193035796" at="20,72,21,81" concept="0" />
-      <node id="2970389781193035803" at="21,81,22,0" concept="8" />
-      <node id="2970389781193035804" at="22,0,23,37" concept="6" />
-      <node id="2970389781193035813" at="24,21,25,38" concept="3" />
-      <node id="8921588707434161206" at="26,5,27,22" concept="6" />
-      <node id="8921588707434230751" at="27,22,28,139" concept="6" />
-      <node id="8921588707434241337" at="29,32,30,27" concept="7" />
-      <node id="8921588707434167072" at="31,5,32,0" concept="8" />
-      <node id="8921588707434237277" at="32,0,33,93" concept="3" />
-      <node id="8921588707434161191" at="33,93,34,140" concept="3" />
-      <node id="8921588707434161196" at="34,140,35,55" concept="3" />
-      <node id="8921588707434161201" at="35,55,36,0" concept="8" />
-      <node id="8921588707434161212" at="36,0,37,25" concept="7" />
-      <node id="3500491402030546640" at="17,0,19,0" concept="2" trace="MigrationUtil#()V" />
-      <node id="2970389781193035811" at="23,37,26,5" concept="4" />
-      <node id="8921588707434173418" at="28,139,31,5" concept="4" />
-      <node id="2970389781193035787" at="19,0,39,0" concept="9" trace="getOrCreateConceptAspectInstance#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3500491402030546643" at="17,26,17,26" />
-      <scope id="2970389781193035812" at="24,21,25,38" />
-      <scope id="8921588707434173420" at="29,32,30,27" />
-      <scope id="3500491402030546640" at="17,0,19,0" />
-      <scope id="2970389781193035790" at="19,116,37,25">
+      <node id="2970389781193035791" at="18,116,19,72" concept="6" />
+      <node id="2970389781193035796" at="19,72,20,81" concept="0" />
+      <node id="2970389781193035803" at="20,81,21,0" concept="8" />
+      <node id="2970389781193035804" at="21,0,22,37" concept="6" />
+      <node id="2970389781193035813" at="23,21,24,38" concept="3" />
+      <node id="8921588707434161206" at="25,5,26,22" concept="6" />
+      <node id="8921588707434230751" at="26,22,27,139" concept="6" />
+      <node id="8921588707434241337" at="28,32,29,27" concept="7" />
+      <node id="8921588707434167072" at="30,5,31,0" concept="8" />
+      <node id="8921588707434237277" at="31,0,32,114" concept="3" />
+      <node id="8921588707434161191" at="32,114,33,140" concept="3" />
+      <node id="8921588707434161196" at="33,140,34,55" concept="3" />
+      <node id="8921588707434161201" at="34,55,35,0" concept="8" />
+      <node id="8921588707434161212" at="35,0,36,25" concept="7" />
+      <node id="3500491402030546640" at="16,0,18,0" concept="2" trace="MigrationUtil#()V" />
+      <node id="2970389781193035811" at="22,37,25,5" concept="4" />
+      <node id="8921588707434173418" at="27,139,30,5" concept="4" />
+      <node id="2970389781193035787" at="18,0,38,0" concept="9" trace="getOrCreateConceptAspectInstance#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3500491402030546643" at="16,26,16,26" />
+      <scope id="2970389781193035812" at="23,21,24,38" />
+      <scope id="8921588707434173420" at="28,32,29,27" />
+      <scope id="3500491402030546640" at="16,0,18,0" />
+      <scope id="2970389781193035790" at="18,116,36,25">
         <var name="conceptAspect" id="8921588707434230752" />
         <var name="language" id="2970389781193035792" />
         <var name="md" id="2970389781193035805" />
         <var name="model" id="8921588707434161204" />
       </scope>
-      <scope id="2970389781193035787" at="19,0,39,0">
+      <scope id="2970389781193035787" at="18,0,38,0">
         <var name="applicableNode" id="2970389781193035832" />
         <var name="aspect" id="2970389781193035830" />
         <var name="concept" id="2970389781193035834" />
       </scope>
-      <unit id="3500491402030546638" at="16,0,40,0" name="jetbrains.mps.lang.editor.scripts.MigrationUtil" />
+      <unit id="3500491402030546638" at="15,0,39,0" name="jetbrains.mps.lang.editor.scripts.MigrationUtil" />
     </file>
   </root>
 </debug-info>

@@ -23,9 +23,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -112,7 +112,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Override
   protected SNode createEvaluatorNode() {
-    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", null);
+    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), null);
     SPropertyOperations.set(evaluatorConcept, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243739l, "isShowContext"), "" + (myIsInWatch));
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 1155520443816777472l, "evaluatedStatements")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;

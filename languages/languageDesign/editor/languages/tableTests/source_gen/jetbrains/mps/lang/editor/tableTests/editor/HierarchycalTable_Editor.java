@@ -22,6 +22,8 @@ import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModelWithHeader;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class HierarchycalTable_Editor extends DefaultNodeEditor {
@@ -70,7 +72,7 @@ public class HierarchycalTable_Editor extends DefaultNodeEditor {
   private EditorCell createTable_sl01pn_c0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
-        return new HierarchycalTableModelWithHeader(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Table", "rows"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Row", "cells"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "headers"));
+        return new HierarchycalTableModelWithHeader(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 8506335436194701777l, 8506335436194701780l, "headers")));
       }
     };
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_sl01pn_c0");

@@ -2008,8 +2008,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661877950">
     <file name="InfoStatement_Behavior.java">
-      <node id="1210674410577" at="17,93,18,136" concept="7" />
-      <node id="1210674361648" at="18,136,19,172" concept="2" />
+      <node id="1210674410577" at="17,93,18,244" concept="7" />
+      <node id="1210674361648" at="18,244,19,172" concept="2" />
       <node id="1597542831856656071" at="22,173,23,325" concept="8" />
       <node id="1597542831857034382" at="24,12,25,252" concept="7" />
       <node id="1597542831856656095" at="26,94,27,29" concept="8" />
@@ -2044,8 +2044,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661924626">
     <file name="ReportErrorStatement_Behavior.java">
-      <node id="8489045168661924678" at="17,93,18,143" concept="7" />
-      <node id="8489045168661924684" at="18,143,19,172" concept="2" />
+      <node id="8489045168661924678" at="17,93,18,251" concept="7" />
+      <node id="8489045168661924684" at="18,251,19,172" concept="2" />
       <node id="4531408400492770666" at="22,173,23,325" concept="8" />
       <node id="1597542831856631284" at="24,12,25,255" concept="7" />
       <node id="1597542831856644686" at="26,94,27,29" concept="8" />
@@ -2080,8 +2080,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661926300">
     <file name="WarningStatement_Behavior.java">
-      <node id="8489045168661926352" at="17,93,18,139" concept="7" />
-      <node id="8489045168661926358" at="18,139,19,172" concept="2" />
+      <node id="8489045168661926352" at="17,93,18,247" concept="7" />
+      <node id="8489045168661926358" at="18,247,19,172" concept="2" />
       <node id="1597542831856651597" at="22,173,23,325" concept="8" />
       <node id="1597542831857030253" at="24,12,25,255" concept="7" />
       <node id="1597542831856651621" at="26,94,27,29" concept="8" />

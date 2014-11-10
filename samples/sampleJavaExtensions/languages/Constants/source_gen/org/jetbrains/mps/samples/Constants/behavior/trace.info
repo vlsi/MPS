@@ -21,13 +21,13 @@
   </root>
   <root nodeRef="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)/5956117492786858347">
     <file name="Constants_Behavior.java">
-      <node id="5956117492787112065" at="19,243,20,193" concept="2" />
+      <node id="5956117492787112065" at="19,243,20,271" concept="2" />
       <node id="5956117492787427086" at="23,47,24,99" concept="3" />
       <node id="5956117492786970725" at="26,8,27,28" concept="3" />
       <node id="5956117492787054797" at="28,5,29,16" concept="3" />
       <node id="5956117492786858347" at="16,0,18,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5956117492787425957" at="22,0,26,0" concept="1" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5956117492787425423" at="20,193,26,8" concept="2" />
+      <node id="5956117492787425423" at="20,271,26,8" concept="2" />
       <node id="5956117492786950660" at="18,107,28,5" concept="0" />
       <node id="5956117492786858347" at="18,0,31,0" concept="4" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="5956117492786865753" at="16,43,16,43" />

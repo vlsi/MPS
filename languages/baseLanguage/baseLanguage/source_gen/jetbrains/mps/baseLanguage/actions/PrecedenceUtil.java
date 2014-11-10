@@ -27,12 +27,12 @@ public class PrecedenceUtil {
         break;
       }
       SNode targetContainingLink = SNodeOperations.getContainingLinkDeclaration(targetNode);
-      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && targetContainingLink == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "leftExpression")) {
+      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && targetContainingLink == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"))) {
         // if parent expression is BinaryOperation and target is left child of it 
         // then we should rather transform current target 
         break;
       }
-      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")) && targetContainingLink == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operand")) {
+      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")) && targetContainingLink == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))) {
         // if parent expression is DotExpression and target is operang ("left" part of the expression) 
         // then we should rather transform current target 
         break;
@@ -52,7 +52,7 @@ public class PrecedenceUtil {
         // same with ParenthesizedExpression 
         break;
       }
-      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && SNodeOperations.getContainingLinkDeclaration(targetNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
+      if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && SNodeOperations.getContainingLinkDeclaration(targetNode) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"))) {
         // if parent expression is BinaryOperation having higher priority and target is rhigh child of it 
         // then we should rather transform current target and add additional parenthesis around resulting expression 
         break;
@@ -67,15 +67,15 @@ public class PrecedenceUtil {
   public static SNode parenthesiseIfNecessary(@NotNull SNode contextNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
-      if (SNodeOperations.getContainingLinkDeclaration(contextNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression") && isHigherPriority(parentBinaryOperation, contextNode)) {
-        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      if (SNodeOperations.getContainingLinkDeclaration(contextNode) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")) && isHigherPriority(parentBinaryOperation, contextNode)) {
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), contextNode);
         return result;
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, "jetbrains.mps.baseLanguage.structure.CastExpression"))) {
       SNode parentCastExpression = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, "jetbrains.mps.baseLanguage.structure.CastExpression"));
       if (PrecedenceUtil.needsParensAroundCastExpression(parentCastExpression)) {
-        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), contextNode);
         return result;
       }
@@ -182,7 +182,7 @@ public class PrecedenceUtil {
     SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(sourceNode, result);
     // since BinaryOperations are left-associative we should perform complex LT then 
     // BinaryOperations is "rightExpression" child of another BinaryOperations with same priority 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && SNodeOperations.getContainingLinkDeclaration(nodeToProcess) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && SNodeOperations.getContainingLinkDeclaration(nodeToProcess) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"))) {
       SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       if (PrecedenceUtil.isSamePriority(parentBinaryOperation, result)) {
         SNodeOperations.replaceWithAnother(parentBinaryOperation, result);

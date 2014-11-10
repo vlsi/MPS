@@ -361,7 +361,7 @@ public class ClassifierType_Behavior {
         SNode etype = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
         SLinkOperations.setTarget(etype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), enclosing);
         for (SNode tvd : ListSequence.fromList(SLinkOperations.getChildren(enclosing, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")))) {
-          SNode tvr = SNodeFactoryOperations.addNewChild(etype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"), "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+          SNode tvr = SNodeFactoryOperations.addNewChild(etype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
           SLinkOperations.setTarget(tvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), tvd);
         }
         BehaviorReflection.invokeVirtual(Void.class, etype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});

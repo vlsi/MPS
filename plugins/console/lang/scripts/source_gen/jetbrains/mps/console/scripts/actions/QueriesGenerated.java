@@ -31,9 +31,9 @@ public class QueriesGenerated {
     } else {
       SNode sel = SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1204796164442l, 1204796294226l, "closure"));
       if ((sel == null)) {
-        sel = SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1204796164442l, 1204796294226l, "closure"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+        sel = SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1204796164442l, 1204796294226l, "closure"), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
       }
-      SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(sel, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+      SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(sel, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1203518072036l, "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration"));
       SPropertyOperations.set(pd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
     }
   }

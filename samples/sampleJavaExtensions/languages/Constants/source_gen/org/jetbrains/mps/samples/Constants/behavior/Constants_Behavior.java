@@ -17,7 +17,7 @@ public class Constants_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"))) {
-      SimpleRoleScope forNamedElements = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.Constants.structure.Constants", "constants"));
+      SimpleRoleScope forNamedElements = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912535l, 1494751830318912552l, "constants")));
       FilteringScope filteringScope = new FilteringScope(forNamedElements) {
         @Override
         public boolean isExcluded(SNode node) {

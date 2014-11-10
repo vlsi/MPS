@@ -47,7 +47,7 @@ public class MyMainActionGroup implements PaletteActionGroup {
       ListSequence.fromList(MapSequence.fromMap(tagToGroupMap).get(key)).addElement(node);
     }
     for (String tag : MapSequence.fromMap(tagToGroupMap).keySet()) {
-      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), tag));
+      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974080694l, "newBlocks")), tag));
     }
     ListSequence.fromList(groups).addElement(new MyConnectorCreationAction(myDiagramCell));
     return ListSequence.fromList(groups).toGenericArray(PaletteElement.class);

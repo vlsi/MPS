@@ -15,7 +15,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -75,7 +74,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr)), null));
+      final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr)), null));
       ((SModel) MapSequence.fromMap(_params).get("model")).addRootNode(newClass);
       AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")));
       SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"), NewClassLike_Action.this.descr);

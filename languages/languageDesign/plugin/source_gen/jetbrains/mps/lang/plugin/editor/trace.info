@@ -5485,7 +5485,7 @@
       <node id="1210180436234" at="20,77,21,25" concept="2" />
       <node id="1210180436234" at="23,40,24,31" concept="8" />
       <node id="1210180436234" at="26,54,27,56" concept="2" />
-      <node id="1210180450936" at="29,75,30,239" concept="2" />
+      <node id="1210180450936" at="29,75,30,341" concept="2" />
       <node id="1210180436234" at="15,0,18,0" concept="10" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1210180436234" at="20,0,23,0" concept="1" trace="PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1210180436234" at="23,0,26,0" concept="6" trace="getDescriptionText#()Ljava/lang/String;" />
@@ -5495,7 +5495,7 @@
       <scope id="1210180436234" at="20,77,21,25" />
       <scope id="1210180436234" at="23,40,24,31" />
       <scope id="1210180436234" at="26,54,27,56" />
-      <scope id="1210180446805" at="29,75,30,239" />
+      <scope id="1210180446805" at="29,75,30,341" />
       <scope id="1210180436234" at="15,0,18,0">
         <var name="context" id="1210180436234" />
         <var name="editorCell" id="1210180436234" />

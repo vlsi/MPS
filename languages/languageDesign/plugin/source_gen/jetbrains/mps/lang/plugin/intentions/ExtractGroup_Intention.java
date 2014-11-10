@@ -13,9 +13,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -69,7 +69,7 @@ public class ExtractGroup_Intention implements IntentionFactory {
       return "Extract Group";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode rootGroup = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", null);
+      SNode rootGroup = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), null);
       SPropertyOperations.set(rootGroup, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SLinkOperations.setTarget(rootGroup, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, 1207145245948l, "contents"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, 1207145245948l, "contents")));
       SNodeOperations.deleteNode(node);

@@ -8,9 +8,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IntervalSymbolClassPart_removeRight {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,7 +26,7 @@ public class IntervalSymbolClassPart_removeRight {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
       SPropertyOperations.set(cn, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558315290l, "start")));
     }
   }
@@ -39,7 +39,7 @@ public class IntervalSymbolClassPart_removeRight {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
       SPropertyOperations.set(cn, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558315290l, "start")));
     }
   }

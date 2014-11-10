@@ -12,9 +12,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -63,7 +63,7 @@ public class ConvertToMethodFQNameSpecification_Intention implements IntentionFa
       return "Convert Direct Method reference to hardcoded FQName specification";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode methodSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification");
+      SNode methodSpecification = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 4774682482449847011l, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification"));
       SPropertyOperations.set(methodSpecification, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 4774682482449847011l, 2291767839160466985l, "snodeId"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 2291767839159498115l, 2291767839159499865l, "methodDeclaration")).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }

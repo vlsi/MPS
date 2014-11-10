@@ -14,9 +14,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -70,8 +70,8 @@ public class SurroundWithIndentCollection_Intention implements IntentionFactory 
       return "Surround with Indent Collection";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null));
+      SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), null);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"), null));
       List<SNode> nodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
       for (SNode sn : nodes) {

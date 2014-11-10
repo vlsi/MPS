@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -60,7 +60,7 @@ public class QueriesGenerated {
     tmpVar = tmpVar && _context.getModel() != null;
     tmpVar = tmpVar && operationContext != null;
 
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "conceptSubstitutePart");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 2550657305103442374l, "conceptSubstitutePart"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_3213804652571374655(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -88,7 +88,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_3213804652589510715(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_conceptSubstitute");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 3213804652589512225l, "addMenu_conceptSubstitute"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestChild1SubConcept_3213804652589861815(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -120,7 +120,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestChild1SubConcept_3213804652589913916(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_genericQuery");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 3213804652591201723l, "addMenu_genericQuery"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_3286607483604815176(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -254,7 +254,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_3286607483604919584(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_parameterizedSubstitute");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 3286607483605022921l, "addMenu_parameterizedSubstitute"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_2534942168330113631(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -441,7 +441,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_2534942168331233421(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_simpleItemSubstitute");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 2534942168331159850l, "addMenu_simpleItemSubstitute"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChildWrapper_5164819300892286056(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -533,7 +533,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415191470(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstitute");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 5164819300892346417l, "addMenu_wrapperSubstitute"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestChildToWrap1_8749184937171477954(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -579,7 +579,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607731233278(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removeByConditionPart");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 8349639607730759178l, "removeByConditionPart"));
   }
   public static void removeActionsByCondition_8349639607718546826(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
@@ -610,14 +610,14 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607733067495(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removePart");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 8349639607733071711l, "removePart"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestDefaultAbstractChild_8349639607733412514(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607733417630(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removeDefaultsPart");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 8349639607733418666l, "removeDefaultsPart"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChildWrapper_2870536390415252135(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -657,13 +657,13 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415252400(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstituteDefaultSelection");
+    return _context.getLink() == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103395183l, 2870536390414919847l, "addMenu_wrapperSubstituteDefaultSelection"));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAbstractChild_4942308145796905559(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"));
       }
       public String getMatchingText(String pattern) {
         return "child1";
@@ -685,7 +685,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"));
       }
       public String getMatchingText(String pattern) {
         return "child1";
