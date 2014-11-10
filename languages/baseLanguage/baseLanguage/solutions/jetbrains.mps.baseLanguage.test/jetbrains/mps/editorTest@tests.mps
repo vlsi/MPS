@@ -38498,8 +38498,8 @@
         <property role="asn4.1169194658468.1169194664001" value="Foo" />
         <node concept="vg0i.1068390468200" id="1774243543380572883" role="vg0i.1107461130800.5375687026011219971" info="igu">
           <property role="asn4.1169194658468.1169194664001" value="foo" />
-          <property role="vg0i.1068390468200.1240249534625" value="false" />
-          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.1240249534625" value="true" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
           <property role="vg0i.1068390468200.8606350594693632173" value="true" />
           <property role="vg0i.1224848483129.1224848525476" value="false" />
           <node concept="vg0i.1070534370425" id="1774243543380572886" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
@@ -38507,12 +38507,12 @@
             <property role="vg0i.1068580320020.1068580320021" value="10" />
           </node>
           <node concept="vg0i.1146644602865" id="1774243543380572888" role="vg0i.1178549954367.1178549979242" info="nn" />
-          <node concept="5i2a.1229194968594" id="1774243543380572966" role="asn4.1133920641626.5169995583184591170" info="ng">
+          <node concept="5i2a.1229194968594" id="8573539357030430728" role="asn4.1133920641626.5169995583184591170" info="ng">
             <property role="5i2a.1229194968594.1229432188737" value="true" />
             <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-            <property role="5i2a.1229194968594.6268941039745498163" value="5" />
-            <property role="5i2a.1229194968594.6268941039745498165" value="5" />
-            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="8" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="8" />
+            <property role="5i2a.1229194968594.1229194968595" value="volatileModifier" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="1774243543380572784" role="vg0i.1178549954367.1178549979242" info="nn" />
