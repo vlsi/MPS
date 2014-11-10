@@ -2001,6 +2001,206 @@
       <unit id="2707740038604155061" at="10,0,31,0" name="jetbrains.mps.editorTest.DeleteIfPossibleMethod_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478053219702">
+    <file name="RemoveStaticInStaticFieldBackspace1_Test.java">
+      <node id="2738496478053219702" at="15,75,16,107" concept="2" />
+      <node id="2738496478053219702" at="16,107,17,116" concept="2" />
+      <node id="2738496478053219702" at="24,51,25,63" concept="2" />
+      <node id="2738496478053219704" at="25,63,26,77" concept="2" />
+      <node id="2738496478053219706" at="26,77,27,77" concept="2" />
+      <node id="2738496478053219708" at="27,77,28,77" concept="2" />
+      <node id="2738496478053219710" at="28,77,29,77" concept="2" />
+      <node id="2738496478053219712" at="29,77,30,77" concept="2" />
+      <node id="2738496478053219714" at="30,77,31,77" concept="2" />
+      <node id="2738496478053219716" at="31,77,32,77" concept="2" />
+      <node id="2738496478053219702" at="12,0,14,0" concept="1" trace="RemoveStaticInStaticFieldBackspace1_Test#()V" />
+      <node id="2738496478053219702" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478053219702" at="14,0,19,0" concept="5" trace="test_RemoveStaticInStaticFieldBackspace1#()V" />
+      <node id="2738496478053219702" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478053219702" at="12,53,12,53" />
+      <scope id="2738496478053219702" at="21,23,21,23" />
+      <scope id="2738496478053219702" at="12,0,14,0" />
+      <scope id="2738496478053219702" at="15,75,17,116" />
+      <scope id="2738496478053219702" at="21,0,23,0" />
+      <scope id="2738496478053219702" at="14,0,19,0" />
+      <scope id="2738496478053219702" at="24,51,32,77" />
+      <scope id="2738496478053219702" at="23,0,34,0" />
+      <unit id="2738496478053219702" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldBackspace1_Test$TestBody" />
+      <unit id="2738496478053219702" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldBackspace1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478053332960">
+    <file name="RemoveStaticInStaticFieldDelete1_Test.java">
+      <node id="2738496478053332960" at="15,72,16,107" concept="2" />
+      <node id="2738496478053332960" at="16,107,17,113" concept="2" />
+      <node id="2738496478053332960" at="24,51,25,63" concept="2" />
+      <node id="2738496478053332962" at="25,63,26,77" concept="2" />
+      <node id="2738496478053332964" at="26,77,27,77" concept="2" />
+      <node id="2738496478053332966" at="27,77,28,77" concept="2" />
+      <node id="2738496478053332968" at="28,77,29,77" concept="2" />
+      <node id="2738496478053332970" at="29,77,30,77" concept="2" />
+      <node id="2738496478053332972" at="30,77,31,77" concept="2" />
+      <node id="2738496478053332974" at="31,77,32,74" concept="2" />
+      <node id="2738496478053332960" at="12,0,14,0" concept="1" trace="RemoveStaticInStaticFieldDelete1_Test#()V" />
+      <node id="2738496478053332960" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478053332960" at="14,0,19,0" concept="5" trace="test_RemoveStaticInStaticFieldDelete1#()V" />
+      <node id="2738496478053332960" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478053332960" at="12,50,12,50" />
+      <scope id="2738496478053332960" at="21,23,21,23" />
+      <scope id="2738496478053332960" at="12,0,14,0" />
+      <scope id="2738496478053332960" at="15,72,17,113" />
+      <scope id="2738496478053332960" at="21,0,23,0" />
+      <scope id="2738496478053332960" at="14,0,19,0" />
+      <scope id="2738496478053332960" at="24,51,32,74" />
+      <scope id="2738496478053332960" at="23,0,34,0" />
+      <unit id="2738496478053332960" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete1_Test$TestBody" />
+      <unit id="2738496478053332960" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478055586441">
+    <file name="RemoveFinalInStaticFieldBackspace_Test.java">
+      <node id="2738496478055586441" at="15,73,16,107" concept="2" />
+      <node id="2738496478055586441" at="16,107,17,114" concept="2" />
+      <node id="2738496478055586441" at="24,51,25,63" concept="2" />
+      <node id="2738496478055586443" at="25,63,26,77" concept="2" />
+      <node id="2738496478055586445" at="26,77,27,77" concept="2" />
+      <node id="2738496478055586447" at="27,77,28,77" concept="2" />
+      <node id="2738496478055586449" at="28,77,29,77" concept="2" />
+      <node id="2738496478055586451" at="29,77,30,77" concept="2" />
+      <node id="2738496478055586453" at="30,77,31,77" concept="2" />
+      <node id="2738496478055586441" at="12,0,14,0" concept="1" trace="RemoveFinalInStaticFieldBackspace_Test#()V" />
+      <node id="2738496478055586441" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478055586441" at="14,0,19,0" concept="5" trace="test_RemoveFinalInStaticFieldBackspace#()V" />
+      <node id="2738496478055586441" at="23,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478055586441" at="12,51,12,51" />
+      <scope id="2738496478055586441" at="21,23,21,23" />
+      <scope id="2738496478055586441" at="12,0,14,0" />
+      <scope id="2738496478055586441" at="15,73,17,114" />
+      <scope id="2738496478055586441" at="21,0,23,0" />
+      <scope id="2738496478055586441" at="14,0,19,0" />
+      <scope id="2738496478055586441" at="24,51,31,77" />
+      <scope id="2738496478055586441" at="23,0,33,0" />
+      <unit id="2738496478055586441" at="19,0,34,0" name="jetbrains.mps.editorTest.RemoveFinalInStaticFieldBackspace_Test$TestBody" />
+      <unit id="2738496478055586441" at="10,0,35,0" name="jetbrains.mps.editorTest.RemoveFinalInStaticFieldBackspace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478055586646">
+    <file name="RemoveVolatileInStaticFieldBackspace_Test.java">
+      <node id="2738496478055586646" at="15,76,16,107" concept="2" />
+      <node id="2738496478055586646" at="16,107,17,117" concept="2" />
+      <node id="2738496478055586646" at="24,51,25,63" concept="2" />
+      <node id="2738496478055586648" at="25,63,26,77" concept="2" />
+      <node id="2738496478055586650" at="26,77,27,77" concept="2" />
+      <node id="2738496478055586652" at="27,77,28,77" concept="2" />
+      <node id="2738496478055586654" at="28,77,29,77" concept="2" />
+      <node id="2738496478055586656" at="29,77,30,77" concept="2" />
+      <node id="2738496478055586658" at="30,77,31,77" concept="2" />
+      <node id="2738496478055586828" at="31,77,32,77" concept="2" />
+      <node id="2738496478055586844" at="32,77,33,77" concept="2" />
+      <node id="2738496478055586862" at="33,77,34,77" concept="2" />
+      <node id="2738496478055586646" at="12,0,14,0" concept="1" trace="RemoveVolatileInStaticFieldBackspace_Test#()V" />
+      <node id="2738496478055586646" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478055586646" at="14,0,19,0" concept="5" trace="test_RemoveVolatileInStaticFieldBackspace#()V" />
+      <node id="2738496478055586646" at="23,0,36,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478055586646" at="12,54,12,54" />
+      <scope id="2738496478055586646" at="21,23,21,23" />
+      <scope id="2738496478055586646" at="12,0,14,0" />
+      <scope id="2738496478055586646" at="15,76,17,117" />
+      <scope id="2738496478055586646" at="21,0,23,0" />
+      <scope id="2738496478055586646" at="14,0,19,0" />
+      <scope id="2738496478055586646" at="24,51,34,77" />
+      <scope id="2738496478055586646" at="23,0,36,0" />
+      <unit id="2738496478055586646" at="19,0,37,0" name="jetbrains.mps.editorTest.RemoveVolatileInStaticFieldBackspace_Test$TestBody" />
+      <unit id="2738496478055586646" at="10,0,38,0" name="jetbrains.mps.editorTest.RemoveVolatileInStaticFieldBackspace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478055586918">
+    <file name="RemoveTransientInFieldDelete_Test.java">
+      <node id="2738496478055586918" at="15,68,16,107" concept="2" />
+      <node id="2738496478055586918" at="16,107,17,109" concept="2" />
+      <node id="2738496478055586918" at="24,51,25,63" concept="2" />
+      <node id="2738496478055586920" at="25,63,26,77" concept="2" />
+      <node id="2738496478055586922" at="26,77,27,77" concept="2" />
+      <node id="2738496478055586924" at="27,77,28,77" concept="2" />
+      <node id="2738496478055586926" at="28,77,29,77" concept="2" />
+      <node id="2738496478055586928" at="29,77,30,77" concept="2" />
+      <node id="2738496478055586930" at="30,77,31,77" concept="2" />
+      <node id="2738496478055587261" at="31,77,32,77" concept="2" />
+      <node id="2738496478055587279" at="32,77,33,77" concept="2" />
+      <node id="2738496478055587299" at="33,77,34,77" concept="2" />
+      <node id="2738496478055586932" at="34,77,35,74" concept="2" />
+      <node id="2738496478055586918" at="12,0,14,0" concept="1" trace="RemoveTransientInFieldDelete_Test#()V" />
+      <node id="2738496478055586918" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478055586918" at="14,0,19,0" concept="5" trace="test_RemoveTransientInFieldDelete#()V" />
+      <node id="2738496478055586918" at="23,0,37,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478055586918" at="12,46,12,46" />
+      <scope id="2738496478055586918" at="21,23,21,23" />
+      <scope id="2738496478055586918" at="12,0,14,0" />
+      <scope id="2738496478055586918" at="15,68,17,109" />
+      <scope id="2738496478055586918" at="21,0,23,0" />
+      <scope id="2738496478055586918" at="14,0,19,0" />
+      <scope id="2738496478055586918" at="24,51,35,74" />
+      <scope id="2738496478055586918" at="23,0,37,0" />
+      <unit id="2738496478055586918" at="19,0,38,0" name="jetbrains.mps.editorTest.RemoveTransientInFieldDelete_Test$TestBody" />
+      <unit id="2738496478055586918" at="10,0,39,0" name="jetbrains.mps.editorTest.RemoveTransientInFieldDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478055587353">
+    <file name="RemoveStaticInStaticFieldDelete2_Test.java">
+      <node id="2738496478055587353" at="15,72,16,107" concept="2" />
+      <node id="2738496478055587353" at="16,107,17,113" concept="2" />
+      <node id="2738496478055587353" at="24,51,25,63" concept="2" />
+      <node id="2738496478055587355" at="25,63,26,77" concept="2" />
+      <node id="2738496478055587357" at="26,77,27,77" concept="2" />
+      <node id="2738496478055587359" at="27,77,28,77" concept="2" />
+      <node id="2738496478055587361" at="28,77,29,77" concept="2" />
+      <node id="2738496478055587363" at="29,77,30,77" concept="2" />
+      <node id="2738496478055587365" at="30,77,31,77" concept="2" />
+      <node id="2738496478055587367" at="31,77,32,74" concept="2" />
+      <node id="2738496478055587353" at="12,0,14,0" concept="1" trace="RemoveStaticInStaticFieldDelete2_Test#()V" />
+      <node id="2738496478055587353" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478055587353" at="14,0,19,0" concept="5" trace="test_RemoveStaticInStaticFieldDelete2#()V" />
+      <node id="2738496478055587353" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478055587353" at="12,50,12,50" />
+      <scope id="2738496478055587353" at="21,23,21,23" />
+      <scope id="2738496478055587353" at="12,0,14,0" />
+      <scope id="2738496478055587353" at="15,72,17,113" />
+      <scope id="2738496478055587353" at="21,0,23,0" />
+      <scope id="2738496478055587353" at="14,0,19,0" />
+      <scope id="2738496478055587353" at="24,51,32,74" />
+      <scope id="2738496478055587353" at="23,0,34,0" />
+      <unit id="2738496478055587353" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete2_Test$TestBody" />
+      <unit id="2738496478055587353" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2738496478055587551">
+    <file name="RemoveStaticInStaticFieldBackspace2_Test.java">
+      <node id="2738496478055587551" at="15,75,16,107" concept="2" />
+      <node id="2738496478055587551" at="16,107,17,116" concept="2" />
+      <node id="2738496478055587551" at="24,51,25,63" concept="2" />
+      <node id="2738496478055587553" at="25,63,26,77" concept="2" />
+      <node id="2738496478055587555" at="26,77,27,77" concept="2" />
+      <node id="2738496478055587557" at="27,77,28,77" concept="2" />
+      <node id="2738496478055587559" at="28,77,29,77" concept="2" />
+      <node id="2738496478055587561" at="29,77,30,77" concept="2" />
+      <node id="2738496478055587563" at="30,77,31,77" concept="2" />
+      <node id="2738496478055587565" at="31,77,32,77" concept="2" />
+      <node id="2738496478055587551" at="12,0,14,0" concept="1" trace="RemoveStaticInStaticFieldBackspace2_Test#()V" />
+      <node id="2738496478055587551" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2738496478055587551" at="14,0,19,0" concept="5" trace="test_RemoveStaticInStaticFieldBackspace2#()V" />
+      <node id="2738496478055587551" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2738496478055587551" at="12,53,12,53" />
+      <scope id="2738496478055587551" at="21,23,21,23" />
+      <scope id="2738496478055587551" at="12,0,14,0" />
+      <scope id="2738496478055587551" at="15,75,17,116" />
+      <scope id="2738496478055587551" at="21,0,23,0" />
+      <scope id="2738496478055587551" at="14,0,19,0" />
+      <scope id="2738496478055587551" at="24,51,32,77" />
+      <scope id="2738496478055587551" at="23,0,34,0" />
+      <unit id="2738496478055587551" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldBackspace2_Test$TestBody" />
+      <unit id="2738496478055587551" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldBackspace2_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2834737865486664156">
     <file name="NoAbstractForPrivate_Test.java">
       <node id="2834737865486664156" at="15,60,16,107" concept="2" />
