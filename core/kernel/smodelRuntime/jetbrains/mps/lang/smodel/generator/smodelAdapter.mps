@@ -12296,7 +12296,7 @@
                 </node>
                 <node concept="vg0i.1070534058343" id="9116031298985458133" role="vg0i.1204053956946.1068499141038" info="nn" />
                 <node concept="vg0i.1068498886296" id="9116031298985458134" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294421" resolveInfo="conceptFQName" />
+                  <reference role="vg0i.1068498886296.1068581517664" target="6599163591527294421" resolveInfo="concept" />
                 </node>
               </node>
             </node>
@@ -12380,7 +12380,7 @@
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6599163591527294421" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="conceptFQName" />
+          <property role="asn4.1169194658468.1169194664001" value="concept" />
           <node concept="vg0i.1107535904670" id="9116031298985459121" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
           </node>

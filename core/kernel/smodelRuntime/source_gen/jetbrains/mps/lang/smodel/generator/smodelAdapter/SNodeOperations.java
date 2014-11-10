@@ -475,12 +475,12 @@ public class SNodeOperations {
     }
     return result;
   }
-  public static SNode insertNewNextSiblingChild(SNode node, SConcept conceptFQName) {
+  public static SNode insertNewNextSiblingChild(SNode node, SConcept concept) {
     if (node == null || node.getParent() == null) {
       return null;
     }
     SNode parent = node.getParent();
-    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, conceptFQName);
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, concept);
     if (newChild == null) {
       return null;
     }
