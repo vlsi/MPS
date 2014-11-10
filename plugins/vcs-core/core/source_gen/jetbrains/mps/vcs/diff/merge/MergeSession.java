@@ -255,7 +255,7 @@ public class MergeSession {
   }
   public void restoreState(MergeSessionState state) {
     MergeSessionState stateCopy = new MergeSessionState(state);
-    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.roots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
       }
@@ -266,7 +266,7 @@ public class MergeSession {
     UnregisteredNodes.instance().clear();
 
     CopyUtil.copyModelProperties(((SModelBase) stateCopy.myResultModel).getSModel(), ((SModelBase) myResultModel).getSModel());
-    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.roots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SModelOperations.addRootNode(myResultModel, r);
       }

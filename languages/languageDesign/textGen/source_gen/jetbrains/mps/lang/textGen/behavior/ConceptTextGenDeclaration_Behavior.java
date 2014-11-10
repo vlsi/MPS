@@ -7,17 +7,17 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> roots = SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+    List<SNode> roots = SModelOperations.roots(SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
     for (SNode langTextGen : roots) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(langTextGen, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1233922432965l, "operation"))));
     }

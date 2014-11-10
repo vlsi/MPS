@@ -15,9 +15,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -69,7 +69,7 @@ public class GoToRulesHelper {
     }
 
     // todo: populate rules from other typesystem models! 
-    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystem, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
+    List<SNode> rules = ListSequence.fromList(SModelOperations.roots(typesystem, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, "jetbrains.mps.lang.typesystem.structure.AbstractRule"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return isApplicable(node, concept, exactConcept);
       }

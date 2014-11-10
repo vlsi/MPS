@@ -10,6 +10,15 @@ public class AsSConcept_BehaviorDescriptor extends SNodeOperation_BehaviorDescri
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return AsSConcept_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
   }
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return AsSConcept_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  }
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+    return AsSConcept_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
+  }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return AsSConcept_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AsSConcept";

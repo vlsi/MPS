@@ -4,8 +4,6 @@ package jetbrains.mps.core.xml.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -15,7 +13,7 @@ public class XmlContent_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isOneLineBlock_2133624044437631438(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_oneLineBlock_1262430001741497816", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_oneLineBlock_1262430001741497816", new Object[]{});
   }
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart"))) {
@@ -50,7 +48,7 @@ public class XmlContent_Behavior {
     return false;
   }
   public static boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_textLike_1262430001741498277", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_textLike_1262430001741498277", new Object[]{});
   }
   public static boolean virtual_oneLineBlock_1262430001741497816(SAbstractConcept thisConcept) {
     return false;

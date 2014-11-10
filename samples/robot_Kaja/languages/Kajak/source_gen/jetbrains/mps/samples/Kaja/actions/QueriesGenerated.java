@@ -118,15 +118,15 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode expression;
               if ((item).equals("heading")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Heading", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039683649l, "jetbrains.mps.samples.Kaja.structure.Heading"));
               } else if ((item).equals("mark")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsMark", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436186598l, "jetbrains.mps.samples.Kaja.structure.IsMark"));
               } else if ((item).equals("full")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsFull", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 859008965969439768l, "jetbrains.mps.samples.Kaja.structure.IsFull"));
               } else if ((item).equals("wall")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsWall", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647788l, "jetbrains.mps.samples.Kaja.structure.IsWall"));
               } else if ((item).equals("looking")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Looking", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 7060824959893078082l, "jetbrains.mps.samples.Kaja.structure.Looking"));
               } else {
                 throw new IllegalArgumentException("Cannot find a match for " + (item));
               }

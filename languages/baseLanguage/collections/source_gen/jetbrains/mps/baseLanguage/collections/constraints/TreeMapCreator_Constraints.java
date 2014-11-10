@@ -35,7 +35,7 @@ public class TreeMapCreator_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode dtype = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201183863028l, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), "virtual_deriveType_1213877435747", new Object[]{SNodeOperations.as(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"))});
-    return (dtype == null) || SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), "jetbrains.mps.baseLanguage.collections.structure.SortedMapType");
+    return (dtype == null) || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(dtype)), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1240239337991l, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1241447284211");
 }

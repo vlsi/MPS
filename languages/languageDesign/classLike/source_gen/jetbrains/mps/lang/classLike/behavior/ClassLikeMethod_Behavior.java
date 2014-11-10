@@ -17,7 +17,7 @@ public class ClassLikeMethod_Behavior {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"))) {
       SNode dti = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"));
       SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(dti);
-      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(myType), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(myType)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         return null;
       }
       return myType;

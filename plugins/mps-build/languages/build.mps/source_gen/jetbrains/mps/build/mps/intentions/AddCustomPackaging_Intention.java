@@ -66,7 +66,7 @@ public class AddCustomPackaging_Intention implements IntentionFactory {
       return "Customize Packaging for modules";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
+      SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 4034578608468929319l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddCustomPackaging_Intention.this;

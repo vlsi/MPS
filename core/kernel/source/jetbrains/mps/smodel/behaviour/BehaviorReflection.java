@@ -65,6 +65,10 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
   }
 
+  public static Object invokeNonVirtual(@NotNull SNode node, SAbstractConcept concept, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invoke(node, methodName, parameters);
+  }
+
   public static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
   }

@@ -88,7 +88,7 @@ public class AddRemoveFigureParameterAttributeField_Intention implements Intenti
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField")) != null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), null);
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField", null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2922223385321452486l, -5907006357078305369l), 2084788800270473590l, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField")));
       }
     }
     public IntentionDescriptor getDescriptor() {

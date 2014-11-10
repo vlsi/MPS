@@ -137,7 +137,7 @@ public class SetNodePackage_Action extends BaseAction {
     }));
     Set<String> packages = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel m) {
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(m, "jetbrains.mps.lang.core.structure.BaseConcept");
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode r) {

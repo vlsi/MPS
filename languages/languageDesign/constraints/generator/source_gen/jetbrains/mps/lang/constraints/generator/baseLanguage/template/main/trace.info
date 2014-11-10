@@ -17,8 +17,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)/1147476728864">
     <file name="QueriesGenerated.java">
       <node id="6490356536635248866" at="39,108,40,52" concept="4" />
-      <node id="4623703450343172356" at="40,52,41,152" concept="5" />
-      <node id="4623703450343172355" at="41,152,42,0" concept="7" />
+      <node id="4623703450343172356" at="40,52,41,149" concept="5" />
+      <node id="4623703450343172355" at="41,149,42,0" concept="7" />
       <node id="1199971784022" at="124,103,125,22" concept="5" />
       <scope id="1199971770630" at="124,103,125,22" />
       <scope id="6490356536635245645" at="39,108,42,0">
@@ -287,7 +287,7 @@
       <node id="2196823097109809249" at="106,39,107,590" concept="5" />
       <node id="2196823097109809264" at="109,15,110,441" concept="5" />
       <node id="2196823097109786136" at="112,112,113,114" concept="5" />
-      <node id="3749568622064166996" at="358,120,359,134" concept="5" />
+      <node id="3749568622064166996" at="358,120,359,233" concept="5" />
       <node id="2196823097109730146" at="363,37,364,180" concept="5" />
       <node id="2196823097109809247" at="106,0,109,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2196823097109730144" at="363,0,366,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -297,7 +297,7 @@
       <scope id="4623703450343115878" at="101,112,102,261" />
       <scope id="2196823097109809248" at="106,39,107,590" />
       <scope id="2196823097109740281" at="112,112,113,114" />
-      <scope id="7093837644838476731" at="358,120,359,134" />
+      <scope id="7093837644838476731" at="358,120,359,233" />
       <scope id="2196823097109730145" at="363,37,364,180" />
       <scope id="2196823097109809247" at="106,0,109,0">
         <var name="it" id="2196823097109809247" />
@@ -309,8 +309,8 @@
       <scope id="2196823097109809235" at="104,112,110,441">
         <var name="constraints" id="2196823097109809237" />
       </scope>
-      <unit id="2196823097109809247" at="105,123,109,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.main.QueriesGenerated$1" />
-      <unit id="2196823097109730144" at="362,168,366,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.main.QueriesGenerated$3" />
+      <unit id="2196823097109809247" at="105,120,109,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="2196823097109730144" at="362,267,366,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.main.QueriesGenerated$3" />
     </file>
   </root>
 </debug-info>

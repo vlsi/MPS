@@ -12,7 +12,7 @@ public class Siblings {
   public void nextSibling(SNode statement) {
     SNode next1 = SNodeOperations.getNextSibling(statement);
     SNode next2 = SNodeOperations.cast(SNodeOperations.getNextSibling(statement), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
-    SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
     SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
   }
   public void nextSiblings(SNode statement) {

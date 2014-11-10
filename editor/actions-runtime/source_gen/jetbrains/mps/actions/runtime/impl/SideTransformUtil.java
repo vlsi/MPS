@@ -20,10 +20,10 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -33,7 +33,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -61,7 +60,7 @@ public class SideTransformUtil {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(actionsModelDescriptor, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
+      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, 1138079416599l, "actionsBuilder"));
         }
@@ -116,7 +115,7 @@ public class SideTransformUtil {
     if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), "left", null))) {
       return false;
     }
-    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(node), NameUtil.nodeFQName(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept")))))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept")))))) {
       return false;
     }
 

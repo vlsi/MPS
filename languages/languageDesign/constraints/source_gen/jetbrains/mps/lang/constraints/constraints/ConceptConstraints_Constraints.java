@@ -112,7 +112,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
                 return new EmptyScope();
               }
 
-              return new NamedElementsScope(SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+              return new NamedElementsScope(SModelOperations.roots(structure, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
             }
           }
         };

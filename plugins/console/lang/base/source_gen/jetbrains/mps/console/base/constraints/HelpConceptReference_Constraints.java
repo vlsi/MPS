@@ -16,8 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
@@ -25,7 +24,6 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.console.base.util.SubconceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.SNodePointer;
@@ -52,7 +50,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getDisplayString_7006261637493126103", new Object[]{});
+            return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) _context.getParameterNode())), "virtual_getDisplayString_7006261637493126103", new Object[]{});
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -62,7 +60,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(new SubconceptsScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), _context.getModel()) {
               public String getName(SNode child) {
-                return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) child))), "virtual_getDisplayString_7006261637493126103", new Object[]{});
+                return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(((SNode) child)), "virtual_getDisplayString_7006261637493126103", new Object[]{});
               }
             }) {
               @Override

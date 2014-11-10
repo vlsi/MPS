@@ -12,12 +12,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)/1192798704064">
     <file name="QueriesGenerated.java">
       <node id="3804167831988850599" at="31,108,32,52" concept="2" />
-      <node id="3804167831988830138" at="32,52,33,211" concept="3" />
+      <node id="3804167831988830138" at="32,52,33,317" concept="3" />
       <node id="5264392666049412673" at="76,109,77,25" concept="3" />
       <node id="5264392666049483292" at="115,108,116,191" concept="3" />
       <scope id="5264392666049409976" at="76,109,77,25" />
       <scope id="5264392666049483257" at="115,108,116,191" />
-      <scope id="3804167831988830137" at="31,108,33,211">
+      <scope id="3804167831988830137" at="31,108,33,317">
         <var name="model" id="3804167831988850600" />
       </scope>
     </file>
@@ -114,7 +114,7 @@
         <var name="it" id="647666612127260575" />
       </scope>
       <scope id="647666612127306268" at="145,119,150,13" />
-      <unit id="647666612127260575" at="146,163,150,5" name="jetbrains.mps.lang.intentions.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="647666612127260575" at="146,269,150,5" name="jetbrains.mps.lang.intentions.generator.baseLanguage.template.main.QueriesGenerated$1" />
     </file>
   </root>
 </debug-info>

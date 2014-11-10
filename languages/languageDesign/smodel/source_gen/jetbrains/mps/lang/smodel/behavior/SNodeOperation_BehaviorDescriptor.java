@@ -15,6 +15,7 @@ public abstract class SNodeOperation_BehaviorDescriptor extends BaseConcept_Beha
   public boolean virtual_applicableToConceptProperty_1262430001741497945(SConcept thisConcept) {
     return SNodeOperation_Behavior.virtual_applicableToConceptProperty_1262430001741497945(thisConcept);
   }
+  @Deprecated
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return SNodeOperation_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
   }
@@ -32,6 +33,9 @@ public abstract class SNodeOperation_BehaviorDescriptor extends BaseConcept_Beha
   }
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return SNodeOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
+  }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
   }
   public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
     return SNodeOperation_Behavior.virtual_applicableToSimpleProperty_1262430001741498100(thisConcept);

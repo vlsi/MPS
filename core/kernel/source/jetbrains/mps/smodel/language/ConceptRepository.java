@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -64,8 +63,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   @Deprecated
   @Override
   public SAbstractConcept getConcept(@NotNull String id) {
-    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    if (desc instanceof IllegalConceptDescriptor) return null;
+    ConceptDescriptor desc = ConceptRegistryUtil.getConceptDescriptor(id);
+    if (desc == null) return null;
 
     return desc.isInterfaceConcept() ? new SInterfaceConceptAdapterById(desc.getId(), id) : new SConceptAdapterById(desc.getId(), id);
   }

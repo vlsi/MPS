@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -54,7 +53,7 @@ public abstract class BaseMethodsScope extends Scope {
     nameToMethods = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode node : ListSequence.fromList(SNodeOperations.getChildren(classifier)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind));
+        return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(kind));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -112,7 +111,7 @@ public abstract class BaseMethodsScope extends Scope {
     for (SNode extendedClassifier : Sequence.fromIterable(extendedClassifiers)) {
       for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeVirtual(Scope.class, extendedClassifier, "virtual_getVisibleMembers_8083692786967356611", new Object[]{classifier, kind}).getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(kind));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -187,6 +186,6 @@ public abstract class BaseMethodsScope extends Scope {
   }
   @Override
   public boolean contains(SNode node) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).contains(node);
+    return SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).contains(node);
   }
 }

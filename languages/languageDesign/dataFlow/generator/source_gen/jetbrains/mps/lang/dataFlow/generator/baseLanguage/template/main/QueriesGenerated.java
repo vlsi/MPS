@@ -142,7 +142,7 @@ public class QueriesGenerated {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1206456525472(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, 1206442096288l, "conceptDeclaration")), "virtual_getFqName_1213877404258", new Object[]{});
       }

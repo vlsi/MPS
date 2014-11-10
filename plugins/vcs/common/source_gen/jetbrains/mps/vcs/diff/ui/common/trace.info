@@ -2456,7 +2456,7 @@
       <node id="2761975718096645672" at="74,0,79,0" concept="17" trace="genDiffSModelRef#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
       <node id="2761975718097156239" at="79,0,86,0" concept="17" trace="getOriginalSModelRef#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
       <node id="2874648801263364244" at="39,0,47,0" concept="17" trace="unregisterModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="2761975718098172018" at="61,86,70,9" concept="6" />
+      <node id="2761975718098172018" at="61,83,70,9" concept="6" />
       <node id="2874648801263299286" at="28,0,39,0" concept="17" trace="renameModelAndRegister#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)V" />
       <node id="2761975718098140431" at="60,71,71,5" concept="9" />
       <node id="2761975718096579060" at="57,0,73,0" concept="17" trace="fixModelReferences#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
@@ -2531,7 +2531,7 @@
         <var name="mo" id="2874648801263342150" />
         <var name="module" id="2874648801263342154" />
       </scope>
-      <scope id="2761975718098140437" at="61,86,70,9" />
+      <scope id="2761975718098140437" at="61,83,70,9" />
       <scope id="2874648801263299286" at="28,0,39,0">
         <var name="model" id="2874648801263308738" />
         <var name="version" id="2874648801263325209" />

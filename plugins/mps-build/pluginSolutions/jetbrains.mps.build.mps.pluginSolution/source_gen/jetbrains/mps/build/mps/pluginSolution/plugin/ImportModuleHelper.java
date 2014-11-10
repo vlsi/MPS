@@ -8,12 +8,12 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,15 +39,15 @@ public class ImportModuleHelper {
   public void create() {
     try {
       if (moduleDescriptor instanceof LanguageDescriptor) {
-        SNode lang = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Language", null);
+        SNode lang = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         initModule(lang);
         created = lang;
       } else if (moduleDescriptor instanceof SolutionDescriptor) {
-        SNode solution = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Solution", null);
+        SNode solution = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
         initModule(solution);
         created = solution;
       } else if (moduleDescriptor instanceof DevkitDescriptor) {
-        SNode devkit = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null);
+        SNode devkit = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"));
         initModule(devkit);
         created = devkit;
       }

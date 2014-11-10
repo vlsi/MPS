@@ -15,10 +15,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,7 +29,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyLiteral"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
-        Iterable<SNode> units = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getSourceNode()), "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable")).translate(new ITranslator2<SNode, SNode>() {
+        Iterable<SNode> units = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(7361871549399452950l, -7685266567827134434l), 3607579524910560662l, "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable"))).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
             return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(7361871549399452950l, -7685266567827134434l), 3607579524910560662l, 3607579524910560668l, "units"));
           }
@@ -40,7 +40,7 @@ public class QueriesGenerated {
           }
         });
         if (unit != null) {
-          SNode ml = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Money.structure.MoneyLiteral", null);
+          SNode ml = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"));
           SLinkOperations.setTarget(ml, MetaAdapterFactory.getReferenceLink(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l, 3607579524910560680l, "unit"), unit);
           SPropertyOperations.set(ml, MetaAdapterFactory.getProperty(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l, 5447719361346490755l, "amount"), "" + (SPropertyOperations.getInteger(SNodeOperations.cast(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"))));
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), ml);
@@ -49,7 +49,7 @@ public class QueriesGenerated {
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
-        Iterable<SNode> units = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getSourceNode()), "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable")).translate(new ITranslator2<SNode, SNode>() {
+        Iterable<SNode> units = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(7361871549399452950l, -7685266567827134434l), 3607579524910560662l, "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable"))).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
             return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(7361871549399452950l, -7685266567827134434l), 3607579524910560662l, 3607579524910560668l, "units"));
           }

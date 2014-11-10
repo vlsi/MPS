@@ -48,7 +48,7 @@ public class QuotationConverter {
       return node;
     }
 
-    SNode q = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilder", null);
+    SNode q = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, "jetbrains.mps.lang.quotation.structure.NodeBuilder"));
     SLinkOperations.setTarget(q, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, 5455284157993863838l, "quotedNode"), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode")));
     SLinkOperations.setTarget(q, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, 5455284157993863839l, "modelToCreate"), SLinkOperations.getTarget(quotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate")));
     return q;
@@ -59,25 +59,25 @@ public class QuotationConverter {
     }
     SNode aq = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"));
     if ((aq != null)) {
-      SNode expr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
+      SNode expr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
       SLinkOperations.setTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, 8182547171709752112l, "expression"), SLinkOperations.getTarget(aq, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
       return expr;
     }
     SNode la = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
     if ((la != null)) {
-      SNode expr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
+      SNode expr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
       SLinkOperations.setTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, 8182547171709752112l, "expression"), SLinkOperations.getTarget(la, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
       return expr;
     }
 
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderNode", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993910961l, "concept"), SNodeOperations.getConceptDeclaration(quotationNode));
 
     List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), quotationNode.getPropertyNames());
     Collections.sort(propertyNames);
     for (String property : propertyNames) {
       SNode attribute = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", property));
-      SNode pval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", null);
+      SNode pval = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911077l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"));
       SLinkOperations.setTarget(pval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911077l, 5455284157993911078l, "property"), AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SLinkOperations.getTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993910961l, "concept")), property));
       if (attribute != null) {
         SLinkOperations.setTarget(pval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), SLinkOperations.getTarget(attribute, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
@@ -91,14 +91,14 @@ public class QuotationConverter {
     for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(quotationNode))) {
       seenRoles.add(SLinkOperations.getRole(ref));
       SNode refattr = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", SLinkOperations.getRole(ref)));
-      SNode lval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
+      SNode lval = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"));
       SLinkOperations.setTarget(lval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link"), SNodeOperations.as(SModelSearchUtil.findMostSpecificLinkDeclaration(SLinkOperations.getTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993910961l, "concept")), SLinkOperations.getRole(ref)), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
       if (refattr != null) {
-        SNode nbexpr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
+        SNode nbexpr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
         SLinkOperations.setTarget(nbexpr, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, 8182547171709752112l, "expression"), SLinkOperations.getTarget(refattr, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
         SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), nbexpr);
       } else {
-        SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderRef", null));
+        SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef")));
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression")), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef")), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, 8182547171709614741l, "target"), SNodeOperations.as(SLinkOperations.getTargetNode(ref), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")));
       }
       ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(lval);
@@ -117,9 +117,9 @@ public class QuotationConverter {
         continue;
       }
       seenRoles.add(SPropertyOperations.getString(refAQ, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole")));
-      SNode lval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
+      SNode lval = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"));
       SLinkOperations.setTarget(lval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link"), SNodeOperations.as(SModelSearchUtil.findMostSpecificLinkDeclaration(SLinkOperations.getTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993910961l, "concept")), SPropertyOperations.getString(refAQ, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole"))), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
-      SNode nbexpr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
+      SNode nbexpr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
       SLinkOperations.setTarget(nbexpr, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, 8182547171709752112l, "expression"), SLinkOperations.getTarget(refAQ, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
       SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), nbexpr);
       ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(lval);
@@ -143,12 +143,12 @@ public class QuotationConverter {
       if (MapSequence.fromMap(map).containsKey(link)) {
         lval = MapSequence.fromMap(map).get(link);
       } else {
-        lval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
+        lval = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"));
         SLinkOperations.setTarget(lval, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link"), link);
         ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(lval);
         if (multipleLink) {
           MapSequence.fromMap(map).put(link, lval);
-          SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderList", null));
+          SLinkOperations.setTarget(lval, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993911097l, 5455284157993911094l, "expression"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709738802l, "jetbrains.mps.lang.quotation.structure.NodeBuilderList")));
         }
       }
       if (multipleLink) {

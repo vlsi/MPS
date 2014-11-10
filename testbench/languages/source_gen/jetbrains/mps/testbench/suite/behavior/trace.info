@@ -257,7 +257,7 @@
       </scope>
       <unit id="1178539434126757486" at="36,1116,40,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$2" />
       <unit id="4089647634160960799" at="42,18,46,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$2" />
-      <unit id="8756160028287889836" at="51,142,55,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$4" />
+      <unit id="8756160028287889836" at="51,241,55,9" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$4" />
       <unit id="1514755338275795365" at="57,17,61,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$4" />
       <unit id="4089647634160960736" at="34,280,42,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$1" />
       <unit id="8756160028287794490" at="49,109,57,5" name="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior$3" />
@@ -392,7 +392,7 @@
       <unit id="1280144168199457850" at="57,113,61,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$5" />
       <unit id="1280144168199457833" at="61,23,65,13" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$5" />
       <unit id="4089647634160960832" at="34,280,46,5" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$1" />
-      <unit id="8756160028287949034" at="55,142,67,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$4" />
+      <unit id="8756160028287949034" at="55,241,67,9" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$4" />
       <unit id="8756160028287949023" at="53,109,69,5" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior$3" />
       <unit id="2956932267233336804" at="24,0,93,0" name="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />
     </file>

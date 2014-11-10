@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class MigrationScriptUtil {
   public static List<SNode> getMigrationScripts(Language language) {
     SModel modelDescr = LanguageAspect.SCRIPTS.get(language);
     SModel model = (modelDescr == null ? null : modelDescr);
-    return SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
+    return SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, "jetbrains.mps.lang.script.structure.MigrationScript"));
   }
   public static List<BaseMigrationScript> getScriptInstances(List<SNodeReference> scriptNodePointers, IOperationContext context) {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();

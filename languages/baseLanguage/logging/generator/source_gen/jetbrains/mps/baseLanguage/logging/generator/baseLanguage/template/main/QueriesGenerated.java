@@ -101,7 +101,7 @@ public class QueriesGenerated {
     return outputNode;
   }
   public static boolean mappingConfiguration_Condition_6450631649356134114(final TemplateQueryContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement").isEmpty()) || !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.logging.structure.PrintStatement").isEmpty());
+    return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement")).isEmpty()) || !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1168401810208l, "jetbrains.mps.baseLanguage.logging.structure.PrintStatement")).isEmpty());
   }
   private static SNode _quotation_createNode_x583g4_a0a0a1a21() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

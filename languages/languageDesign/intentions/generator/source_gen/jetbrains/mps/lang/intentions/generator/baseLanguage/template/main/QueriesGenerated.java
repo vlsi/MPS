@@ -7,6 +7,8 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -14,8 +16,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -30,7 +30,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_3804167831988830136(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.INTENTIONS;
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.INTENTIONS;
   }
   public static Object propertyMacro_GetPropertyValue_7991477654791693985(final PropertyMacroContext _context) {
     SModule module = _context.getOriginalInputModel().getModule();
@@ -143,7 +143,7 @@ public class QueriesGenerated {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 1240395258925l, 1240395532443l, "queryBlock")), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 1240316299033l, 1240393479918l, "paramType")));
   }
   public static Iterable<SNode> sourceNodesQuery_647666612127306266(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }

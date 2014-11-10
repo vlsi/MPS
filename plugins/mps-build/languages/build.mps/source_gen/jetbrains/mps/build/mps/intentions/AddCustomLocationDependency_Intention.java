@@ -66,7 +66,7 @@ public class AddCustomLocationDependency_Intention implements IntentionFactory {
       return "Override jar location";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200826393l, 2798275735916344703l, "customLocation"), "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef");
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200826393l, 2798275735916344703l, "customLocation"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddCustomLocationDependency_Intention.this;

@@ -33,7 +33,7 @@ public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, final String propertyValue) {
         String propertyName = "propertyName";
-        return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)))).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), (SPropertyOperations.getString(propertyValue)));
           }

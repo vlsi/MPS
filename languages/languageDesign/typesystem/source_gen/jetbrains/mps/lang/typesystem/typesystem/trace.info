@@ -3189,7 +3189,7 @@
         <var name="status" id="1541218333119613305" />
         <var name="typeCheckingContext" id="1541218333119613305" />
       </scope>
-      <unit id="8433157989202145588" at="28,161,32,5" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule$1" />
+      <unit id="8433157989202145588" at="28,260,32,5" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule$1" />
       <unit id="1541218333119613305" at="23,0,53,0" name="jetbrains.mps.lang.typesystem.typesystem.check_DuplicatedRules_NonTypesystemRule" />
     </file>
   </root>

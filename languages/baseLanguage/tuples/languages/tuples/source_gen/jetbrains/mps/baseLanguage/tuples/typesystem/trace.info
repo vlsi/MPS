@@ -842,8 +842,8 @@
     <file name="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java">
       <node id="1239972432012" at="26,113,27,77" concept="7" />
       <node id="1239972674655" at="27,77,28,200" concept="7" />
-      <node id="1239973336433" at="30,38,31,109" concept="7" />
-      <node id="1239973452764" at="31,109,32,375" concept="3" />
+      <node id="1239973336433" at="30,38,31,205" concept="7" />
+      <node id="1239973452764" at="31,205,32,375" concept="3" />
       <node id="1239972928885" at="32,375,33,45" concept="3" />
       <node id="1239972928889" at="33,45,34,223" concept="3" />
       <node id="1239972928896" at="35,59,36,68" concept="7" />
@@ -1238,8 +1238,8 @@
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/3122175964860974805">
     <file name="NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule.java">
       <node id="3122175964860988409" at="22,120,23,45" concept="7" />
-      <node id="3985682400538583019" at="24,366,25,111" concept="7" />
-      <node id="3985682400538583026" at="25,111,26,342" concept="3" />
+      <node id="3985682400538583019" at="24,366,25,207" concept="7" />
+      <node id="3985682400538583026" at="25,207,26,342" concept="3" />
       <node id="3122175964860988428" at="26,342,27,48" concept="3" />
       <node id="3122175964860988446" at="28,5,29,15" concept="8" />
       <node id="3122175964860974805" at="31,46,32,72" concept="8" />

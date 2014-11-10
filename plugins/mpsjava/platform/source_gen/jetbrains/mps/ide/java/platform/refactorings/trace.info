@@ -1839,7 +1839,7 @@
       <scope id="4507335185602817503" at="91,0,148,0" />
       <unit id="4507335185602817473" at="75,76,79,5" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$1" />
       <unit id="4507335185602817484" at="79,16,83,5" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$2" />
-      <unit id="4507335185602817618" at="114,250,118,9" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
+      <unit id="4507335185602817618" at="114,350,118,9" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
       <unit id="4507335185602817567" at="104,50,109,11" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
       <unit id="4507335185602817642" at="127,60,142,5" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
       <unit id="4507335185602817546" at="100,8,126,5" name="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$3" />

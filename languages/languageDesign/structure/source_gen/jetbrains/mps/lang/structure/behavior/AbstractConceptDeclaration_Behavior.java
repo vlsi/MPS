@@ -10,12 +10,12 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -62,7 +61,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (model == null) {
       return null;
     }
-    for (SNode aspectConcept : SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
+    for (SNode aspectConcept : SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
       if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) == thisNode) {
         return aspectConcept;
       }
@@ -73,7 +72,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (model == null) {
       return;
     }
-    for (SNode aspectConcept : SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
+    for (SNode aspectConcept : SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
       if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), aspectConcept, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{})).contains(thisNode)) {
         ListSequence.fromList(collection).addElement(aspectConcept);
       }
@@ -88,7 +87,7 @@ public class AbstractConceptDeclaration_Behavior {
     for (Generator g : language.getGenerators()) {
       for (SModel sd : g.getOwnTemplateModels()) {
         SModel m = sd;
-        for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+        for (SNode node : ListSequence.fromList(SModelOperations.roots(m, null))) {
           if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept")) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")) == thisNode) {
             ListSequence.fromList(result).addElement(node);
           } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
@@ -235,8 +234,8 @@ public class AbstractConceptDeclaration_Behavior {
           return null;
         }
       }
-      if (SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), NameUtil.nodeFQName(targetConcept))) {
-        SNode result = SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), SNodeOperations.asSConcept(targetConcept))) {
+        SNode result = SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"), targetConcept);
         SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"), link);
         SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), SPropertyOperations.getString_def(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference"));
@@ -247,11 +246,11 @@ public class AbstractConceptDeclaration_Behavior {
     return null;
   }
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && !(SConceptOperations.isSubConceptOf(((SNode) thisNode), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"));
+    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) thisNode)), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1835621062190663819l, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static boolean call_isDefaultSubstitutableConcept_1213877394594(SNode thisNode, SNode expectedConcept) {
     if (AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(thisNode)) {
-      return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
+      return SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(expectedConcept), SNodeOperations.asSConcept(thisNode));
     }
     return false;
   }

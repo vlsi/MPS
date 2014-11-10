@@ -23,7 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorCellIdScope extends FilteringScope {
@@ -72,6 +71,6 @@ public class EditorCellIdScope extends FilteringScope {
       return true;
     }
     SNode conceptAspect = SNodeOperations.getNodeAncestor(editorCellId, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"), false, false);
-    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(myConceptDeclaration, NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
+    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(myConceptDeclaration), SNodeOperations.asSConcept(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
   }
 }

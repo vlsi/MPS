@@ -13,7 +13,6 @@ import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,7 +28,7 @@ public class typeof_TemplateDeclarationReference_InferenceRule extends AbstractI
       SNode templateApplicableConcept = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(templateDeclRef), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"));
       SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
       if (ruleApplicableConcept != null && templateApplicableConcept != null) {
-        if (!(SConceptOperations.isSubConceptOf(ruleApplicableConcept, NameUtil.nodeFQName(templateApplicableConcept)))) {
+        if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(ruleApplicableConcept), SNodeOperations.asSConcept(templateApplicableConcept)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(templateDeclRef, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1722980698497666436", null, errorTarget);

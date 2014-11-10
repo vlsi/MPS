@@ -140,7 +140,7 @@ public abstract class ExtractMethodRefactoring {
     Map<SNode, SNode> result = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (MethodParameter methodParameter : ListSequence.fromList(this.myParameters.getParameters())) {
       if (methodParameter.isSelected()) {
-        SNode parameter = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SNode parameter = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
         SLinkOperations.setTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(methodParameter.getType()));
         SPropertyOperations.set(parameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), methodParameter.getName());
         if (methodParameter.isFinal()) {

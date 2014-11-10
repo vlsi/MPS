@@ -107,7 +107,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7923290658387314322(final PropertyMacroContext _context) {
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept")), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
 
-    if (SConceptOperations.isExactly(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept")), "jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept"))), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
       return "jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor";
     }
     if ((extendsNode == null)) {
@@ -280,7 +280,7 @@ public class QueriesGenerated {
       }
     }
 
-    for (SNode behavior : SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
+    for (SNode behavior : SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
       // todo: and extends and implements node in priority order! 
       if (SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")) == SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept"))) {
         for (SNode method : SLinkOperations.getChildren(behavior, MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))) {
@@ -313,7 +313,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"));
   }
   public static Iterable<SNode> sourceNodesQuery_1144956008583623940(final SourceSubstituteMacroNodesContext _context) {
-    SNode behavior = ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")).where(new IWhereFilter<SNode>() {
+    SNode behavior = ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")) == SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept"));
       }
@@ -349,10 +349,10 @@ public class QueriesGenerated {
     Language language = Language.getLanguageForLanguageAspect(behaviorModel);
     SModel structureModel = LanguageAspect.STRUCTURE.get(language);
 
-    return SModelOperations.getNodes(structureModel, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    return SModelOperations.nodes(structureModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   public static Iterable<SNode> sourceNodesQuery_1144956008583655066(final SourceSubstituteMacroNodesContext _context) {
-    SNode behavior = ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")).where(new IWhereFilter<SNode>() {
+    SNode behavior = ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")) == SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 646895014681116169l, 646895014681116170l, "concept"));
       }
@@ -391,7 +391,7 @@ public class QueriesGenerated {
     Language language = Language.getLanguageForLanguageAspect(behaviorModel);
     SModel structureModel = LanguageAspect.STRUCTURE.get(language);
 
-    return ListSequence.fromList(SModelOperations.getNodes(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(structureModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")));
       }

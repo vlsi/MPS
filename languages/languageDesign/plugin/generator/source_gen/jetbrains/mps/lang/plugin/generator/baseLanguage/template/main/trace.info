@@ -172,7 +172,7 @@
       <scope id="1215866113040" at="639,88,647,5" />
       <scope id="1512255007354024184" at="159,112,172,17" />
       <scope id="7266073704221024075" at="1052,120,1065,7" />
-      <unit id="1512255007354024320" at="160,159,164,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="1512255007354024320" at="160,264,164,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$1" />
       <unit id="1512255007354024408" at="164,18,168,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$2" />
       <unit id="1512255007354024471" at="168,17,172,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$3" />
       <unit id="7748242000682397041" at="1053,235,1057,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$4" />
@@ -1144,8 +1144,8 @@
       </scope>
       <scope id="2713887941725402221" at="1471,0,1488,0" />
       <scope id="2713887941725402159" at="1453,0,1471,0" />
-      <unit id="2713887941725402135" at="1343,165,1347,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$35" />
-      <unit id="2713887941725402185" at="1350,193,1354,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$36" />
+      <unit id="2713887941725402135" at="1343,264,1347,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$35" />
+      <unit id="2713887941725402185" at="1350,292,1354,5" name="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated$36" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/2983858627856870964">
@@ -1339,14 +1339,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/466361829302878437">
     <file name="QueriesGenerated.java">
-      <node id="466361829302878486" at="1333,188,1334,144" concept="6" />
-      <node id="466361829302878456" at="1334,144,1335,140" concept="6" />
-      <node id="466361829302878502" at="1335,140,1336,195" concept="2" />
+      <node id="466361829302878486" at="1333,287,1334,246" concept="6" />
+      <node id="466361829302878456" at="1334,246,1335,242" concept="6" />
+      <node id="466361829302878502" at="1335,242,1336,195" concept="2" />
       <node id="466361829302878483" at="1336,195,1337,254" concept="2" />
       <node id="466361829302878469" at="1337,254,1338,61" concept="2" />
       <node id="466361829302878563" at="1338,61,1339,197" concept="2" />
       <node id="466361829302878441" at="1332,102,1340,5" concept="3" />
-      <scope id="466361829302878444" at="1333,188,1339,197">
+      <scope id="466361829302878444" at="1333,287,1339,197">
         <var name="newNode" id="466361829302878487" />
         <var name="typecastNode" id="466361829302878457" />
       </scope>

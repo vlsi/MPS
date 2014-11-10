@@ -30,7 +30,7 @@ public class ActionDeclaration_Behavior {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
+    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1205852320419l, "jetbrains.mps.lang.plugin.structure.ActionType"));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1205852320419l, 1205852349655l, "action"), thisNode);
     return type;
   }
@@ -38,7 +38,7 @@ public class ActionDeclaration_Behavior {
     return new PropertyReference(thisNode, "caption");
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
+    if (SConceptOperations.isExactly(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"))) {
       SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

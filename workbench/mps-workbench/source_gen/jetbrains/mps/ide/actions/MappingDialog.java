@@ -34,6 +34,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
@@ -111,7 +113,7 @@ public class MappingDialog extends DialogWrapper {
         MPSTreeNode modelTreeNode = newTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md;
-        for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+        for (SNode node : SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
           SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
             @Override
             public boolean met(SNode p0) {

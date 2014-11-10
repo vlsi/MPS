@@ -27,9 +27,9 @@ import org.apache.log4j.Level;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -164,7 +164,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (unitType == null) {
       return null;
     }
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.UnitNode", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"));
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {

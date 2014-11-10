@@ -57,7 +57,7 @@ public class LatticeUtil {
     }
   }
   private static SNode join(SNode node1, SNode node2) {
-    SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    SNode joinType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
     if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
       SNode joinWrapper1 = SNodeOperations.cast(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
       for (SNode bc : SLinkOperations.getChildren(joinWrapper1, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))) {
@@ -85,7 +85,7 @@ public class LatticeUtil {
     return joinType;
   }
   private static SNode meet(SNode node1, SNode node2) {
-    SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
+    SNode meetType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
     if (SNodeOperations.isInstanceOf(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
       SNode meetWrapper1 = SNodeOperations.cast(node1, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, "jetbrains.mps.lang.typesystem.structure.MeetType"));
       for (SNode bc : SLinkOperations.getChildren(meetWrapper1, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {

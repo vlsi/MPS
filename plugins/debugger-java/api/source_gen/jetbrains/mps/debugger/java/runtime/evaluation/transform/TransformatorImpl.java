@@ -53,7 +53,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
           return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("evaluate");
         }
       });
-      myWhatToEvaluate = ListSequence.fromList(SModelOperations.getNodes(myModel, "jetbrains.mps.baseLanguage.structure.ClassConcept")).translate(new ITranslator2<SNode, SNode>() {
+      myWhatToEvaluate = ListSequence.fromList(SModelOperations.nodes(myModel, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode root) {
           return ListSequence.fromList(SNodeOperations.getNodeDescendants(root, null, false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
@@ -354,7 +354,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      SNode staticMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode staticMethodCall = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       // some concepts, such as :eq: extract static methods 
       if (ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false, new SConcept[]{})).contains(SNodeOperations.cast(SLinkOperations.getTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
         continue;
@@ -375,7 +375,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      SNode instanceMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
+      SNode instanceMethodCall = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
       SLinkOperations.setTarget(instanceMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(localInstanceMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
       ListSequence.fromList(SLinkOperations.getChildren(instanceMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(localInstanceMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))));
       AttributeOperations.createAndSetAttrbiute(instanceMethodCall, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
@@ -391,7 +391,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      SNode staticFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+      SNode staticFieldReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
       SLinkOperations.setTarget(staticFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SLinkOperations.getTarget(localStaticFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
       SLinkOperations.setTarget(staticFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       AttributeOperations.createAndSetAttrbiute(staticFieldReference, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
@@ -407,7 +407,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      SNode fieldReferenceOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+      SNode fieldReferenceOperation = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"));
       SLinkOperations.setTarget(fieldReferenceOperation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"), SLinkOperations.getTarget(localInstanceFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
       AttributeOperations.createAndSetAttrbiute(fieldReferenceOperation, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localInstanceFieldReference, _quotation_createNode_s72qk1_a0a3a7a71(fieldReferenceOperation, TransformationUtil.createThisNodeReplacement()));
@@ -720,7 +720,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
   private static void normalizeDotExpression(SNode dotExpression) {
     List<SNode> order = getOrder(dotExpression, ListSequence.fromList(new ArrayList<SNode>()));
-    final Wrappers._T<SNode> normalizedDotExpression = new Wrappers._T<SNode>(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null));
+    final Wrappers._T<SNode> normalizedDotExpression = new Wrappers._T<SNode>(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")));
     final Wrappers._boolean firstTime = new Wrappers._boolean(true);
     ListSequence.fromList(order).visitAll(new IVisitor<SNode>() {
       public void visit(SNode node) {
@@ -729,7 +729,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
           SLinkOperations.setTarget(normalizedDotExpression.value, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
           firstTime.value = false;
         } else {
-          SNode newDotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+          SNode newDotExpression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
           SLinkOperations.setTarget(newDotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), normalizedDotExpression.value);
           SLinkOperations.setTarget(normalizedDotExpression.value, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027803184l, "jetbrains.mps.baseLanguage.structure.IOperation")));
           normalizedDotExpression.value = newDotExpression;

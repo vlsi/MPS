@@ -4,15 +4,13 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
 
@@ -20,22 +18,22 @@ public class IMember_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }
     return memberOperationConcept;
   }
   public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"), thisNode);
     return result;
   }
   public static SNode call_getContainer_1213877353020(SNode thisNode) {
-    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
+    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), thisNode);
   }
   public static boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
     return true;

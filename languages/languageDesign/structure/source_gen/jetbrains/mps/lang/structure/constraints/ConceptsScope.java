@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
@@ -66,7 +65,7 @@ public class ConceptsScope extends SimpleScope {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) metaConcept));
+        return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(metaConcept));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

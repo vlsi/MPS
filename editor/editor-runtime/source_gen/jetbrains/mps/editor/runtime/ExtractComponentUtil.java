@@ -33,11 +33,11 @@ public class ExtractComponentUtil {
     editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(node);
-        SNode component = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", null);
+        SNode component = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
         SPropertyOperations.set(component, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), componentName);
         SLinkOperations.setTarget(component, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration"), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), container, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
         SLinkOperations.setTarget(component, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"), SNodeOperations.copyNode(node));
-        SNode toReplace = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Component", null);
+        SNode toReplace = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, "jetbrains.mps.lang.editor.structure.CellModel_Component"));
         SLinkOperations.setTarget(toReplace, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, 1078939183255l, "editorComponent"), component);
         SNodeOperations.replaceWithAnother(node, toReplace);
       }

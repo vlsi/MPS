@@ -454,7 +454,7 @@
     </file>
     <file name="QueriesGenerated.java">
       <node id="7991477654791680149" at="34,108,35,52" concept="9" />
-      <node id="7991477654791680155" at="35,52,36,205" concept="10" />
+      <node id="7991477654791680155" at="35,52,36,304" concept="10" />
       <node id="4192433084863763944" at="38,112,39,276" concept="10" />
       <node id="6366407517031517853" at="41,112,42,276" concept="10" />
       <node id="4192433084863763890" at="86,94,87,217" concept="10" />
@@ -473,7 +473,7 @@
       <scope id="4192433084863763928" at="132,108,133,204" />
       <scope id="4192433084863763936" at="168,120,169,207" />
       <scope id="6366407517031517861" at="171,120,172,207" />
-      <scope id="7991477654791680148" at="34,108,36,205">
+      <scope id="7991477654791680148" at="34,108,36,304">
         <var name="model" id="7991477654791680150" />
       </scope>
     </file>
@@ -3220,8 +3220,8 @@
       </scope>
       <scope id="7991477654791670214" at="76,112,81,38" />
       <scope id="7991477654791670242" at="174,120,179,13" />
-      <unit id="2144206851851948922" at="77,165,81,5" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$1" />
-      <unit id="7991477654791670251" at="175,156,179,5" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$2" />
+      <unit id="2144206851851948922" at="77,264,81,5" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="7991477654791670251" at="175,255,179,5" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated$2" />
     </file>
   </root>
 </debug-info>

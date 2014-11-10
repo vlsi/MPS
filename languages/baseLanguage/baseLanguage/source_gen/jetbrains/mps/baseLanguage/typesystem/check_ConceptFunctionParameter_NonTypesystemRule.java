@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -36,7 +35,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
       Iterable<SNode> seq = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), conceptFunction, "virtual_getParameters_1213877374450", new Object[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));
+          return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(it));
         }
       });
       if (Sequence.fromIterable(seq).isEmpty() && BehaviorReflection.invokeVirtual(Boolean.TYPE, parameter, "virtual_needConceptFunction_1236687728308", new Object[]{})) {

@@ -30,7 +30,7 @@ public class ActionGroupDeclaration_Behavior {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)) + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.GroupType", null);
+    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1207490810216l, "jetbrains.mps.lang.plugin.structure.GroupType"));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1207490810216l, 1207490810218l, "actionGroup"), thisNode);
     return type;
   }

@@ -45,10 +45,10 @@ public class SequenceType_Behavior {
   }
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode seqCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", null);
+    SNode seqCreator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"));
     SLinkOperations.setTarget(seqCreator, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414456414l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"))));
     ListSequence.fromList(result).addElement(seqCreator);
-    SNode singCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", null);
+    SNode singCreator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1235573135402l, "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator"));
     SLinkOperations.setTarget(singCreator, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1235573135402l, 1235573175711l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"))));
     ListSequence.fromList(result).addElement(singCreator);
     return result;

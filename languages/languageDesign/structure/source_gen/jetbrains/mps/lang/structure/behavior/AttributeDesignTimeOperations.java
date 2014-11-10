@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -45,7 +44,7 @@ public class AttributeDesignTimeOperations {
         // todo: why not getAttributeRole? 
         return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550663l, "role"))) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SConceptOperations.isSubConceptOf(nodeConcept, NameUtil.nodeFQName(it));
+            return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(nodeConcept), SNodeOperations.asSConcept(it));
           }
         });
       }

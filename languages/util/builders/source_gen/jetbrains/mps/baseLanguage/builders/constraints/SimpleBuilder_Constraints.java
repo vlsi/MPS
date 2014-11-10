@@ -19,8 +19,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior;
 import java.util.List;
@@ -53,7 +51,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contextBuilder = null;
             if (SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")) || SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getContextNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")) || SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
-              contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), (SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) ? SNodeOperations.getParent(_context.getContextNode()) : _context.getContextNode()));
+              contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder")), (SNodeOperations.isInstanceOf(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) ? SNodeOperations.getParent(_context.getContextNode()) : _context.getContextNode()));
             }
             if (SNodeOperations.isInstanceOf(contextBuilder, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"))) {
               return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")), _context.getModel());
@@ -61,7 +59,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
 
               List<SNode> result = new ArrayList<SNode>();
 
-              for (SNode dcl : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).translate(new ITranslator2<SNode, SNode>() {
+              for (SNode dcl : ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode it) {
                   return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"));
                 }

@@ -252,7 +252,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
@@ -338,7 +338,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);

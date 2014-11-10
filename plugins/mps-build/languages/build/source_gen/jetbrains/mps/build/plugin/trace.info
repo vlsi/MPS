@@ -473,7 +473,7 @@
       <scope id="4243675727097117252" at="74,0,129,0" />
       <scope id="4243675727097117245" at="179,0,235,0" />
       <unit id="6648795410103988215" at="109,69,113,27" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$4" />
-      <unit id="2034046503361584553" at="194,169,199,21" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
+      <unit id="2034046503361584553" at="194,166,199,21" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
       <unit id="3736430118459669525" at="106,62,115,23" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$3" />
       <unit id="5780287594867997539" at="104,67,117,19" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />
       <unit id="1670948443106485492" at="89,65,103,19" name="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet$2" />

@@ -124,11 +124,11 @@ public class AttachMappingLabel_Action extends BaseAction {
         Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
         mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.getRoots(it, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+            return SModelOperations.roots(it, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
           }
         });
       } else {
-        mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+        mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       }
       final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {

@@ -607,7 +607,7 @@
       <unit id="4652592318748341905" at="216,78,220,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$12" />
       <unit id="4652592318748341917" at="221,80,225,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$13" />
       <unit id="4652592318748341929" at="226,95,230,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$14" />
-      <unit id="1976796331003085427" at="242,188,246,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$15" />
+      <unit id="1976796331003085427" at="242,182,246,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$15" />
       <unit id="2260496836771383762" at="258,53,262,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$16" />
       <unit id="4652592318748341816" at="189,120,197,5" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$9" />
       <unit id="4652592318748341230" at="297,0,305,0" name="jetbrains.mps.vcs.diff.ChangeSetBuilder$DefaultPropertySupport" />

@@ -72,7 +72,7 @@ public class IntentionUtils {
       return null;
     }
 
-    SNode ternaryOperator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
+    SNode ternaryOperator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"), (SNode) CopyUtil.copy(condition));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"), (SNode) CopyUtil.copy(diff._0()));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"), (SNode) CopyUtil.copy(diff._1()));
@@ -102,7 +102,7 @@ public class IntentionUtils {
     }
     // todo: i don't think that this code is true 
     SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-    return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+    return SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
   }
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
@@ -112,14 +112,14 @@ public class IntentionUtils {
     SNode concept = SNodeOperations.getConceptDeclaration(node1);
 
     // todo: use ConceptRegistry/SConcept when it will possible 
-    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
+    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getPropertyDeclarations())) {
       SNode property = ((SNode) _property);
       if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), node2.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
       SNode linkDeclaration = (SNode) _link;
       if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference")) {
         if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
@@ -129,7 +129,7 @@ public class IntentionUtils {
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
       SNode linkDeclaration = (SNode) _link;
 
       if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {

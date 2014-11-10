@@ -15,13 +15,13 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +41,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SNode>() {
@@ -132,11 +132,11 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
+                SNode andNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
                 conjuction = andNode;
               } else {
-                SNode orNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.Or", null);
+                SNode orNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
                 conjuction = orNode;
               }

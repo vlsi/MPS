@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,7 +24,7 @@ public class check_CustomMemberDeclaration_NonTypesystemRule extends AbstractNon
     if ((SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")) == null)) {
       return;
     }
-    if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")), "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(customMemberDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")), "custom member should be a subconcept of ClassifierMember", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "330439066007850555", null, errorTarget);

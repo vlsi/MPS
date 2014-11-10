@@ -15135,15 +15135,15 @@
       <node id="1231693283891" at="25,52,26,25" concept="3" />
       <node id="1231693283891" at="28,54,29,56" concept="3" />
       <node id="1231693361386" at="31,75,32,61" concept="8" />
-      <node id="1231694249737" at="32,61,33,353" concept="8" />
-      <node id="1231694405061" at="33,353,34,39" concept="3" />
+      <node id="1231694249737" at="32,61,33,377" concept="8" />
+      <node id="1231694405061" at="33,377,34,39" concept="3" />
       <node id="4510086454784748857" at="34,39,35,280" concept="3" />
       <node id="1231693283891" at="39,0,40,0" concept="4" trace="myNode" />
       <node id="1231693283891" at="40,55,41,25" concept="3" />
       <node id="1231693283891" at="43,54,44,56" concept="3" />
       <node id="1231693361386" at="46,75,47,61" concept="8" />
-      <node id="1231694249737" at="47,61,48,353" concept="8" />
-      <node id="1231694405061" at="48,353,49,39" concept="3" />
+      <node id="1231694249737" at="47,61,48,377" concept="8" />
+      <node id="1231694405061" at="48,377,49,39" concept="3" />
       <node id="4510086454784748857" at="49,39,50,280" concept="3" />
       <node id="1231693283891" at="25,0,28,0" concept="2" trace="PropertyMacroActions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1231693283891" at="28,0,31,0" concept="7" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />

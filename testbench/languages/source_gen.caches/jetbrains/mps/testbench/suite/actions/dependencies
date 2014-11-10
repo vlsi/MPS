@@ -29,8 +29,6 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />

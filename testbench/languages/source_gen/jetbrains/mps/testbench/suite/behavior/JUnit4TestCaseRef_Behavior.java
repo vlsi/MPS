@@ -52,7 +52,7 @@ public class JUnit4TestCaseRef_Behavior {
   public static Iterable<SNode> call_getTestClassesForModule_1514755338276096458(SAbstractConcept thisConcept, SNode module) {
     return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return ListSequence.fromList(SModelOperations.getRoots(((SModel) it), "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(it)).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode m) {

@@ -101,7 +101,7 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_2343938651364855368(final BaseMappingRuleContext _context) {
     SModel aspectModel = LanguageAspect.FIND_USAGES.get(((Language) _context.getVariable("langModule")));
-    if (aspectModel == null || ListSequence.fromList(SModelOperations.getRoots(((SModel) aspectModel), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isEmpty()) {
+    if (aspectModel == null || ListSequence.fromList(SModelOperations.roots(((SModel) aspectModel), MetaAdapterFactory.getConcept(new UUID(7265238368668241523l, -5766677349071573456l), 1197044488845l, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isEmpty()) {
       return false;
     }
     return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
@@ -115,7 +115,7 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_1783365356166362826(final BaseMappingRuleContext _context) {
     SModel aspectModel = LanguageAspect.PLUGIN.get(((Language) _context.getVariable("langModule")));
-    if (aspectModel == null || ListSequence.fromList(SModelOperations.getRoots(((SModel) aspectModel), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isEmpty()) {
+    if (aspectModel == null || ListSequence.fromList(SModelOperations.roots(((SModel) aspectModel), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isEmpty()) {
       return false;
     }
     return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
@@ -297,7 +297,7 @@ public class QueriesGenerated {
         if (m == null) {
           return false;
         }
-        return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.TemplateSwitch")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).isNotEmpty();
+        return ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"))).isNotEmpty() || ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))).isNotEmpty();
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -320,7 +320,7 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        SNode n = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression", null);
+        SNode n = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969069898l, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"));
         SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId"), MPSModuleRepository.getInstance().getModuleByFqName(it).getModuleId().toString());
         return n;
       }

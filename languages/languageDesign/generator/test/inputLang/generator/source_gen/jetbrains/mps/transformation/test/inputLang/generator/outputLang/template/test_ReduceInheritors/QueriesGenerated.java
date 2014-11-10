@@ -40,7 +40,7 @@ public class QueriesGenerated {
     return "arch:" + ((String) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.arch"));
   }
   public static Iterable<SNode> sourceNodesQuery_8417539822878722925(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getOriginalInputModel(), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1195169805620l, "inputChild"));
       }
@@ -53,7 +53,7 @@ public class QueriesGenerated {
     return (((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) == null ? true : ((Integer) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.list")) < 2);
   }
   public static SNode insertMacro_Query_7612440128092282150(final TemplateQueryContextWithMacro _context) {
-    SNode inode = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    SNode inode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
     SPropertyOperations.set(inode, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "Inserted node for input=" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     return inode;
   }

@@ -7,11 +7,11 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.samples.agreementLanguage.generator.util.QueriesUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -32,7 +32,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_1197658386740(final CreateRootRuleContext _context) {
     // apply rule if at least one Plan exists in input model 
-    List<SNode> plans = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
+    List<SNode> plans = SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111790951422l, "jetbrains.mps.samples.agreementLanguage.structure.Plan"));
     return ListSequence.fromList(plans).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_1197670052131(final BaseMappingRuleContext _context) {
@@ -206,7 +206,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111785030296l, 1111785124143l, "valueIfFalse"));
   }
   public static Iterable<SNode> sourceNodesQuery_1197662961260(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111790951422l, "jetbrains.mps.samples.agreementLanguage.structure.Plan"));
   }
   public static Iterable<SNode> sourceNodesQuery_1197663210559(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111790951422l, 1111791064925l, "value"));
@@ -312,7 +312,7 @@ __switch__:
     }).toListSequence();
   }
   public static Iterable<SNode> sourceNodesQuery_1197659458874(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111790951422l, "jetbrains.mps.samples.agreementLanguage.structure.Plan"));
   }
   private static SNode _quotation_createNode_x583g4_a0a0c0gb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

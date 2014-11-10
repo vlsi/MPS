@@ -56,7 +56,7 @@ public class FinderUtils {
     SNode l1 = SNodeOperations.getContainingLinkDeclaration(n1);
     SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
     for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
-      SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(p);
+      SNode conceptDeclaration = SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(p));
       SNode editor = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.EDITOR});
       for (SNode cell : ListSequence.fromList(SNodeOperations.getNodeDescendants(editor, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), false, new SConcept[]{}))) {
         if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l1) {

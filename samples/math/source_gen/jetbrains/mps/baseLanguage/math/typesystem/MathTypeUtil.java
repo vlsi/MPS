@@ -256,7 +256,7 @@ public class MathTypeUtil {
         }
         if (matches_i9t80i_a2a62) {
           {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixType", null);
+            SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, "jetbrains.mps.baseLanguage.math.structure.MatrixType"));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"), "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0ab, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"))));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"), "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0ab, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))));
             SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697050707l, "elementType"), e);
@@ -272,7 +272,7 @@ public class MathTypeUtil {
           }
           if (matches_i9t80i_b2a62) {
             {
-              SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.VectorType", null);
+              SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
               SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"), "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0ab, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"))));
               SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType"), e);
               return result;

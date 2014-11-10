@@ -9,9 +9,9 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -69,22 +69,22 @@ public class ClassifierUpdater {
     SModel fakeModel = null;
     switch (kind) {
       case CLASS:
-        SNode c = SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        SNode c = SModelOperations.createNewNode(fakeModel, nodeId, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         prepare(c, shortName);
         initClass(c);
         return c;
       case INTERFACE:
-        SNode i = SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.Interface");
+        SNode i = SModelOperations.createNewNode(fakeModel, nodeId, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"));
         prepare(i, shortName);
         initInterface(i);
         return i;
       case ENUM:
-        SNode e = SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.EnumClass");
+        SNode e = SModelOperations.createNewNode(fakeModel, nodeId, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"));
         prepare(e, shortName);
         initClass(e);
         return e;
       case ANNOTATIONS:
-        SNode a = SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.Annotation");
+        SNode a = SModelOperations.createNewNode(fakeModel, nodeId, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"));
         prepare(a, shortName);
         initAnnotation(a);
         return a;
@@ -271,7 +271,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode constructor = _quotation_createNode_ol94f8_a0d0a0w(null, ASMNodeId.createId(myParsedClass, c), createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SNode constructor = _quotation_createNode_ol94f8_a0d0a0w(null, ASMNodeId.createId(myParsedClass, c), createVisibility(c), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5293379017992965193l, "jetbrains.mps.baseLanguage.structure.StubStatementList")), SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SPropertyOperations.set(constructor, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (c.isDeprecated()));
       for (ASMTypeVariable tv : c.getTypeParameters()) {
         ListSequence.fromList(SLinkOperations.getChildren(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).addElement(_quotation_createNode_ol94f8_a0a0a5a0a22(tv.getName()));
@@ -332,7 +332,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+      SNode md = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ((jetbrains.mps.smodel.SNode) md).setId(ASMNodeId.createId(myParsedClass, m));
       SPropertyOperations.set(md, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "" + (m.isAbstract()));
       SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), createVisibility(m));
@@ -356,7 +356,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+      SNode md = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       ((jetbrains.mps.smodel.SNode) md).setId(ASMNodeId.createId(myParsedClass, m));
       SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), createVisibility(m));
       updateBaseMethod(m, md, cls);
@@ -447,7 +447,7 @@ public class ClassifierUpdater {
     }));
   }
   private SNode createAnnotation(ASMAnnotation annotation) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
     ASMClassType c = (ASMClassType) annotation.getType();
     addClassifierReference(result, "annotation", c);
     Map<String, Object> values = ((Map<String, Object>) annotation.getValues());
@@ -507,7 +507,7 @@ public class ClassifierUpdater {
     if (value instanceof ASMEnumValue) {
       ASMEnumValue enumValue = (ASMEnumValue) value;
       ASMClassType c = (ASMClassType) enumValue.getType();
-      SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
       addClassifierReference(res, "enumClass", c);
       addEnumConstReference(res, "enumConstantDeclaration", enumValue);
       return res;
@@ -569,7 +569,7 @@ public class ClassifierUpdater {
     }
     if (type instanceof ASMClassType) {
       ASMClassType c = (ASMClassType) type;
-      SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SNode classifierType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       addClassifierReference(classifierType, "classifier", c);
       return classifierType;
     }
@@ -584,7 +584,7 @@ public class ClassifierUpdater {
       if (e.getBound() instanceof ASMClassType) {
         ASMClassType ct = (ASMClassType) e.getBound();
         if (ct.getName().equals("java.lang.Object")) {
-          return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
+          return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType"));
         }
       }
       return _quotation_createNode_ol94f8_a2a41a23(getTypeByASMType(e.getBound(), method, classifier));
@@ -594,12 +594,12 @@ public class ClassifierUpdater {
       return _quotation_createNode_ol94f8_a1a51a23(getTypeByASMType(e.getBound(), method, classifier));
     }
     if (type instanceof ASMUnboundedType) {
-      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType"));
     }
     if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error("Can't convert type " + type + " class : ");
     }
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
   }
   private void addTypeParameters(List<? extends ASMType> typeParameters, SNode method, SNode classifier, SNode result) {
     List<SNode> toAdd = new ArrayList<SNode>();

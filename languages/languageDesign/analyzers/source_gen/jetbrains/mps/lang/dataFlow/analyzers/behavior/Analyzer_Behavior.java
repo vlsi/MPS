@@ -31,7 +31,7 @@ public class Analyzer_Behavior {
   }
   public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode rule : SModelOperations.getRootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) {
+    for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
       if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 4130591939054429248l, "analyzer")) == thisNode) {
         ListSequence.fromList(result).addElement(rule);
       }

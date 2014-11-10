@@ -30,9 +30,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_DependentTypeDeclaration_9097849371504700476(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null));
+    SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")));
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).addElement(_quotation_createNode_6hmkle_a0a1a0a());
-    SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+    SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
   }
   public static void nodeFactory_NodeSetup_GenerateModifier_3855110916776743543(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, "jetbrains.mps.lang.classLike.structure.ClassLikeMember"), true, false), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010631473l, "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"))) {
@@ -44,7 +44,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.classLike.structure.ClassLikeMethod");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             return Util.getMethodDescriptors(_context.getParentNode());
@@ -73,7 +73,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.classLike.structure.ClassLikeProperty");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             return Util.getPropertyDescriptors(_context.getParentNode());

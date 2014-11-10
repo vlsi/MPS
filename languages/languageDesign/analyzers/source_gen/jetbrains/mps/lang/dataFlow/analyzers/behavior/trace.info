@@ -112,7 +112,7 @@
       <node id="178770917832626022" at="19,0,22,0" concept="5" trace="call_getAnalyzerRunnerName_178770917832626025#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="178770917832652129" at="23,141,26,5" concept="2" />
       <node id="178770917832626022" at="29,0,32,0" concept="5" trace="call_getAnalyzerName_178770917832626046#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4130591939054438383" at="34,209,37,7" concept="2" />
+      <node id="4130591939054438383" at="34,314,37,7" concept="2" />
       <node id="4130591939054438356" at="33,48,38,5" concept="1" />
       <node id="178770917832626022" at="22,0,29,0" concept="5" trace="call_getAnalyzerRunnerFqName_178770917832652115#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="178770917832626022" at="32,0,41,0" concept="5" trace="call_getRules_4130591939054429267#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -130,7 +130,7 @@
       <scope id="178770917832626022" at="29,0,32,0">
         <var name="thisNode" id="178770917832626022" />
       </scope>
-      <scope id="4130591939054438358" at="34,209,37,7" />
+      <scope id="4130591939054438358" at="34,314,37,7" />
       <scope id="178770917832652118" at="22,88,27,102">
         <var name="longName" id="178770917832652121" />
       </scope>
@@ -152,8 +152,8 @@
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161345">
     <file name="AnalyzerFunFunction_Behavior.java">
       <node id="430844094082161350" at="18,83,19,424" concept="4" />
-      <node id="3044950653914718863" at="21,125,22,261" concept="3" />
-      <node id="3044950653914718878" at="22,261,23,184" concept="0" />
+      <node id="3044950653914718863" at="21,125,22,289" concept="3" />
+      <node id="3044950653914718878" at="22,289,23,184" concept="0" />
       <node id="3044950653914718883" at="23,184,24,184" concept="0" />
       <node id="3044950653914718887" at="24,184,25,18" concept="4" />
       <node id="430844094082161345" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -179,8 +179,8 @@
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161366">
     <file name="AnalyzerMergeFunction_Behavior.java">
       <node id="430844094082161371" at="18,83,19,424" concept="4" />
-      <node id="3044950653914718767" at="21,125,22,261" concept="3" />
-      <node id="3044950653914718782" at="22,261,23,184" concept="0" />
+      <node id="3044950653914718767" at="21,125,22,289" concept="3" />
+      <node id="3044950653914718782" at="22,289,23,184" concept="0" />
       <node id="3044950653914718787" at="23,184,24,184" concept="0" />
       <node id="3044950653914718791" at="24,184,25,18" concept="4" />
       <node id="430844094082161366" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -206,8 +206,8 @@
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/430844094082161381">
     <file name="AnalyzerInitialFunction_Behavior.java">
       <node id="430844094082161386" at="18,83,19,424" concept="4" />
-      <node id="3044950653914721390" at="21,125,22,261" concept="3" />
-      <node id="3044950653914721405" at="22,261,23,184" concept="0" />
+      <node id="3044950653914721390" at="21,125,22,289" concept="3" />
+      <node id="3044950653914721405" at="22,289,23,184" concept="0" />
       <node id="3044950653914721409" at="23,184,24,18" concept="4" />
       <node id="430844094082161381" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="430844094082161381" at="18,0,21,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

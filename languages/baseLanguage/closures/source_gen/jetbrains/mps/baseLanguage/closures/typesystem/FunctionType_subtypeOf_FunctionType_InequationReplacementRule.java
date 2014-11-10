@@ -83,7 +83,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
     }
-    SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    SNode rightThrows = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
     ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(_quotation_createNode_8k7qpx_a0a6a1());
     for (SNode thr : ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
       ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(SNodeOperations.copyNode(thr));
@@ -128,7 +128,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
           result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) paramTypeRight_var, (SNode) paramTypeLeft_var, true);
         }
       }
-      SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+      SNode rightThrows = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
       ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(_quotation_createNode_8k7qpx_a0a6a1a2());
       for (SNode thr : ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
         ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(SNodeOperations.copyNode(thr));

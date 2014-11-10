@@ -5,6 +5,9 @@ package jetbrains.mps.build.mps.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.DescendantsScope;
 import jetbrains.mps.build.behavior.BuildPlugin_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -13,9 +16,6 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.mps.util.RequiredPlugins;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
@@ -24,8 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -35,7 +33,7 @@ public class BuildMPSPlugin_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_Group") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, "jetbrains.mps.build.mps.structure.BuildMps_Group")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"))) {
       return DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
     }
 
@@ -104,7 +102,7 @@ public class BuildMPSPlugin_Behavior {
     }
   }
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_Group")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, "jetbrains.mps.build.mps.structure.BuildMps_Group"))) {
       Iterable<DescendantsScope> forAllVisible = Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), false)).select(new ISelector<SNode, DescendantsScope>() {
         public DescendantsScope select(SNode it) {
           return DescendantsScope.forNamedElements(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
@@ -116,7 +114,7 @@ public class BuildMPSPlugin_Behavior {
     return null;
   }
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin")))));
+    return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin"))));
   }
   public static SNode call_getMpsLibrary_4101476690147447822(SAbstractConcept thisConcept) {
     return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"));

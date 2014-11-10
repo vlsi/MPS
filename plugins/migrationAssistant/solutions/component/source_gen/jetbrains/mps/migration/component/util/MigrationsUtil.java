@@ -5,8 +5,7 @@ package jetbrains.mps.migration.component.util;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.AbstractModule;
@@ -31,7 +30,7 @@ import org.apache.log4j.LogManager;
 
 public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
-    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript"))), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
+    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
   public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
     return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {

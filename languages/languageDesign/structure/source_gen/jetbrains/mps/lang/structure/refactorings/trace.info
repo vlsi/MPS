@@ -534,7 +534,7 @@
       <unit id="8299073042392964901" at="78,89,82,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$3" />
       <unit id="8299073042392964934" at="82,29,86,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$4" />
       <unit id="8299073042392964969" at="86,17,90,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$5" />
-      <unit id="8299073042392951832" at="92,243,96,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$6" />
+      <unit id="8299073042392951832" at="92,343,96,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$6" />
       <unit id="3883347270486229141" at="144,101,148,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$7" />
       <unit id="46729075931840173" at="57,74,63,5" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts$1" />
       <unit id="3068114543317961454" at="41,0,163,0" name="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
@@ -811,56 +811,56 @@
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3883347270486219802">
     <file name="ConceptMoveUtil.java">
-      <node id="6934781091951635467" at="23,39,24,189" concept="7" />
-      <node id="6934781091951635475" at="24,189,25,153" concept="8" />
-      <node id="3883347270486221544" at="29,89,30,53" concept="8" />
-      <node id="3883347270486229645" at="32,103,33,72" concept="9" />
-      <node id="3883347270486229609" at="33,72,34,118" concept="7" />
-      <node id="3883347270486229656" at="35,59,36,95" concept="7" />
-      <node id="3883347270486229665" at="37,60,38,69" concept="3" />
-      <node id="3883347270486229626" at="40,5,41,26" concept="8" />
-      <node id="3883347270486219804" at="19,0,21,0" concept="2" trace="ConceptMoveUtil#()V" />
-      <node id="3883347270486221530" at="29,0,32,0" concept="11" trace="getConceptAspects#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="3883347270486229663" at="36,95,39,7" concept="5" />
-      <node id="3883347270486219844" at="23,0,27,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3883347270486219832" at="21,96,27,24" concept="8" />
-      <node id="3883347270486229652" at="34,118,40,5" concept="4" />
-      <node id="3883347270486219812" at="21,0,29,0" concept="11" trace="getConceptsAspects#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="3883347270486229598" at="32,0,43,0" concept="11" trace="getAspectNodes#(Ljetbrains/mps/smodel/Language;Ljava/util/List;)Ljava/util/Map;" />
-      <scope id="3883347270486219807" at="19,28,19,28" />
-      <scope id="3883347270486221533" at="29,89,30,53" />
-      <scope id="3883347270486229664" at="37,60,38,69" />
-      <scope id="3883347270486219804" at="19,0,21,0" />
-      <scope id="3883347270486219845" at="23,39,25,153">
+      <node id="6934781091951635467" at="25,39,26,189" concept="7" />
+      <node id="6934781091951635475" at="26,189,27,153" concept="8" />
+      <node id="3883347270486221544" at="31,89,32,53" concept="8" />
+      <node id="3883347270486229645" at="34,103,35,72" concept="9" />
+      <node id="3883347270486229609" at="35,72,36,118" concept="7" />
+      <node id="3883347270486229656" at="37,59,38,95" concept="7" />
+      <node id="3883347270486229665" at="39,60,40,69" concept="3" />
+      <node id="3883347270486229626" at="42,5,43,26" concept="8" />
+      <node id="3883347270486219804" at="21,0,23,0" concept="2" trace="ConceptMoveUtil#()V" />
+      <node id="3883347270486221530" at="31,0,34,0" concept="11" trace="getConceptAspects#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+      <node id="3883347270486229663" at="38,95,41,7" concept="5" />
+      <node id="3883347270486219844" at="25,0,29,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3883347270486219832" at="23,96,29,24" concept="8" />
+      <node id="3883347270486229652" at="36,118,42,5" concept="4" />
+      <node id="3883347270486219812" at="23,0,31,0" concept="11" trace="getConceptsAspects#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+      <node id="3883347270486229598" at="34,0,45,0" concept="11" trace="getAspectNodes#(Ljetbrains/mps/smodel/Language;Ljava/util/List;)Ljava/util/Map;" />
+      <scope id="3883347270486219807" at="21,28,21,28" />
+      <scope id="3883347270486221533" at="31,89,32,53" />
+      <scope id="3883347270486229664" at="39,60,40,69" />
+      <scope id="3883347270486219804" at="21,0,23,0" />
+      <scope id="3883347270486219845" at="25,39,27,153">
         <var name="baseConcepts" id="6934781091951635468" />
       </scope>
-      <scope id="3883347270486221530" at="29,0,32,0">
+      <scope id="3883347270486221530" at="31,0,34,0">
         <var name="aspectModel" id="3883347270486221538" />
         <var name="concepts" id="3883347270486221536" />
       </scope>
-      <scope id="3883347270486219844" at="23,0,27,0">
+      <scope id="3883347270486219844" at="25,0,29,0">
         <var name="it" id="3883347270486219844" />
       </scope>
-      <scope id="3883347270486229655" at="35,59,39,7">
+      <scope id="3883347270486229655" at="37,59,41,7">
         <var name="aspectNodes" id="3883347270486229657" />
       </scope>
-      <scope id="3883347270486219815" at="21,96,27,24" />
-      <scope id="3883347270486229652" at="34,118,40,5">
+      <scope id="3883347270486219815" at="23,96,29,24" />
+      <scope id="3883347270486229652" at="36,118,42,5">
         <var name="aspect" id="3883347270486229653" />
       </scope>
-      <scope id="3883347270486219812" at="21,0,29,0">
+      <scope id="3883347270486219812" at="23,0,31,0">
         <var name="aspectModel" id="3883347270486219822" />
         <var name="concepts" id="3883347270486219816" />
       </scope>
-      <scope id="3883347270486229601" at="32,103,41,26">
+      <scope id="3883347270486229601" at="34,103,43,26">
         <var name="aspectNodesMap" id="3883347270486229610" />
       </scope>
-      <scope id="3883347270486229598" at="32,0,43,0">
+      <scope id="3883347270486229598" at="34,0,45,0">
         <var name="language" id="3883347270486229640" />
         <var name="nodes" id="3883347270486229617" />
       </scope>
-      <unit id="3883347270486219844" at="22,140,27,5" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil$1" />
-      <unit id="3883347270486219802" at="18,0,44,0" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil" />
+      <unit id="3883347270486219844" at="24,246,29,5" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil$1" />
+      <unit id="3883347270486219802" at="20,0,46,0" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil" />
     </file>
   </root>
 </debug-info>

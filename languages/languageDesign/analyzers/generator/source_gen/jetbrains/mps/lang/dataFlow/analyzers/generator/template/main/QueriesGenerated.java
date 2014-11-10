@@ -213,7 +213,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4217760266503579796l, 323410281720600578l, "target")) != null) {
       return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4217760266503579796l, 323410281720600578l, "target"));
     }
-    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"));
     SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, 4943044633102057745l, "applicableNode"), SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
     return reference;
   }
@@ -221,12 +221,12 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4217760266503579796l, 323410281720600578l, "target")) != null) {
       return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4217760266503579796l, 323410281720600578l, "target"));
     }
-    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"));
     SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, 4943044633102057745l, "applicableNode"), SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
     return reference;
   }
   public static SNode sourceNodeQuery_7962250936070468016(final SourceSubstituteMacroNodeContext _context) {
-    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"));
     SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, 4943044633102057745l, "applicableNode"), SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
     return reference;
   }

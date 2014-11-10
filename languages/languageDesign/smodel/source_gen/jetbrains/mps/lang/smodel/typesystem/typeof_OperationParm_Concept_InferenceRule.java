@@ -39,7 +39,7 @@ public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenc
   private static SNode _quotation_createNode_eac4ma_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept", null, null, false);
     return quotedNode_1;
   }
 }

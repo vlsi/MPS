@@ -93,7 +93,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         }
       });
       if (l == null) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_getFqName_1213877404258", new Object[]{}), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Couldn't find declaring language for concept " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), "virtual_getFqName_1213877404258", new Object[]{}), "Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
       org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();

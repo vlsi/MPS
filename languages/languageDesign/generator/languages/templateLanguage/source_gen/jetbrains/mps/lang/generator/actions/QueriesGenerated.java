@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -87,11 +86,11 @@ public class QueriesGenerated {
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
-          return concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") && !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef")) && !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression")) && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression");
+          return concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4816349095291127781l, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4035562641222585520l, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"))) && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression");
 
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }

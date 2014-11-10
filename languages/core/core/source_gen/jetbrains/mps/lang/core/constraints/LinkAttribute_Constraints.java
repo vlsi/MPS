@@ -33,7 +33,7 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, final String propertyValue) {
         String propertyName = "linkRole";
-        return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)))).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return eq_eprrss_a0a0a0a0a0a0b0b0a1a0b0b(LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(it), (SPropertyOperations.getString(propertyValue)));
           }

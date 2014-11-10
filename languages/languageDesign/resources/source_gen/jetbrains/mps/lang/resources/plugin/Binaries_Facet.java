@@ -33,11 +33,11 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
@@ -109,7 +109,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         final FilesDelta fd = new FilesDelta(outputDir);
                         ListSequence.fromList(deltaList).addElement(fd);
                         new StaleFilesCollector(outputDir).updateDelta(fd);
-                        return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
+                        return ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, "jetbrains.mps.lang.resources.structure.Resource"))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path")));
                           }

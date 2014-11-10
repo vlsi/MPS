@@ -248,7 +248,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ModelChangeSet changeSet = (rootId == null ? myMetadataChangeSet : myChangeSet);
-        SNodeId nodeId = (rootId == null ? ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() : rootId);
+        SNodeId nodeId = (rootId == null ? ListSequence.fromList(SModelOperations.roots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() : rootId);
         if (myRootDifferencePane == null) {
           myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
           DefaultActionGroup actionGroup = new DefaultActionGroup();

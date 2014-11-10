@@ -262,7 +262,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
   }
   public static void mappingScript_CodeBlock_7048923897762709815(final MappingScriptContext _context) {
-    for (SNode expr : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression")) {
+    for (SNode expr : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"))) {
       SNode container = RegexUtil.getRegexpIfContainer(expr);
       if (container != null) {
         Flags.ADD_VARS.flag(SNodeOperations.getParent(container));

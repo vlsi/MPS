@@ -24,7 +24,7 @@ public class IWillBeClassifier_Behavior {
   }
   public static SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
     final String clsName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
-    return ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(targetModel, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return clsName.equals(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }

@@ -290,11 +290,11 @@
       <node id="1213877219584" at="29,263,30,193" concept="9" />
       <node id="1213877219590" at="30,193,31,79" concept="9" />
       <node id="7376433222636453131" at="31,79,32,46" concept="11" />
-      <node id="1213877219600" at="33,109,34,64" concept="10" />
+      <node id="1213877219600" at="33,240,34,64" concept="10" />
       <node id="1213877219611" at="35,5,36,28" concept="10" />
       <node id="1262430001741646712" at="38,103,39,16" concept="10" />
-      <node id="3044950653914721962" at="41,125,42,265" concept="9" />
-      <node id="3044950653914721977" at="42,265,43,169" concept="4" />
+      <node id="3044950653914721962" at="41,125,42,293" concept="9" />
+      <node id="3044950653914721977" at="42,293,43,169" concept="4" />
       <node id="3044950653914721982" at="43,169,44,187" concept="4" />
       <node id="3044950653914721987" at="44,187,45,174" concept="4" />
       <node id="3044950653914721992" at="45,174,46,169" concept="4" />
@@ -331,7 +331,7 @@
       <node id="1213877219601" at="56,0,69,0" concept="13" trace="_quotation_createNode_mxwyp3_a0a8a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877219536" at="24,0,38,0" concept="13" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877219615" at="22,43,22,43" />
-      <scope id="1213877219599" at="33,109,34,64" />
+      <scope id="1213877219599" at="33,240,34,64" />
       <scope id="1262430001741646711" at="38,103,39,16" />
       <scope id="1213877219536" at="22,0,24,0">
         <var name="thisNode" id="1213877219536" />
@@ -758,13 +758,13 @@
       <node id="1213877354984" at="27,256,28,257" concept="4" />
       <node id="1213877354991" at="28,257,29,252" concept="4" />
       <node id="1213877354998" at="29,252,30,19" concept="10" />
-      <node id="3166264919334429469" at="33,169,34,266" concept="9" />
-      <node id="3166264919334429477" at="34,266,35,511" concept="4" />
+      <node id="3166264919334429469" at="33,169,34,369" concept="9" />
+      <node id="3166264919334429477" at="34,369,35,511" concept="4" />
       <node id="3166264919334429484" at="35,511,36,366" concept="4" />
-      <node id="3166264919334429591" at="37,222,38,279" concept="9" />
-      <node id="3166264919334429604" at="38,279,39,562" concept="4" />
-      <node id="3166264919334432283" at="39,562,40,136" concept="9" />
-      <node id="3166264919334432291" at="40,136,41,392" concept="4" />
+      <node id="3166264919334429591" at="37,222,38,382" concept="9" />
+      <node id="3166264919334429604" at="38,382,39,562" concept="4" />
+      <node id="3166264919334432283" at="39,562,40,233" concept="9" />
+      <node id="3166264919334432291" at="40,233,41,392" concept="4" />
       <node id="3166264919334429632" at="41,392,42,204" concept="4" />
       <node id="8360039740498071331" at="45,98,46,48" concept="9" />
       <node id="8360039740498071279" at="48,216,49,419" concept="4" />
@@ -1105,8 +1105,8 @@
       <node id="1213877473052" at="24,27,25,155" concept="10" />
       <node id="1213877473062" at="26,5,27,47" concept="10" />
       <node id="1262430001741642812" at="29,103,30,16" concept="10" />
-      <node id="3044950653914720438" at="32,125,33,265" concept="9" />
-      <node id="3044950653914720453" at="33,265,34,169" concept="4" />
+      <node id="3044950653914720438" at="32,125,33,293" concept="9" />
+      <node id="3044950653914720453" at="33,293,34,169" concept="4" />
       <node id="3044950653914720458" at="34,169,35,187" concept="4" />
       <node id="3044950653914720463" at="35,187,36,169" concept="4" />
       <node id="3044950653914720468" at="36,169,37,174" concept="4" />
@@ -1295,8 +1295,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741520185">
     <file name="TemplateFragment_ContextNodeQuery_Behavior.java">
       <node id="1262430001741520183" at="17,103,18,16" concept="10" />
-      <node id="3044950653914719261" at="20,125,21,265" concept="9" />
-      <node id="3044950653914719276" at="21,265,22,169" concept="4" />
+      <node id="3044950653914719261" at="20,125,21,293" concept="9" />
+      <node id="3044950653914719276" at="21,293,22,169" concept="4" />
       <node id="3044950653914719281" at="22,169,23,174" concept="4" />
       <node id="3044950653914719286" at="23,174,24,187" concept="4" />
       <node id="3044950653914719291" at="24,187,25,169" concept="4" />
@@ -1353,8 +1353,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641667">
     <file name="IfMacro_Condition_Behavior.java">
       <node id="1262430001741641665" at="17,103,18,16" concept="10" />
-      <node id="3044950653914723567" at="20,125,21,265" concept="9" />
-      <node id="3044950653914723582" at="21,265,22,187" concept="4" />
+      <node id="3044950653914723567" at="20,125,21,293" concept="9" />
+      <node id="3044950653914723582" at="21,293,22,187" concept="4" />
       <node id="3044950653914723587" at="22,187,23,169" concept="4" />
       <node id="3044950653914723592" at="23,169,24,174" concept="4" />
       <node id="3044950653914723596" at="24,174,25,18" concept="10" />
@@ -1400,8 +1400,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642153">
     <file name="BaseMappingRule_Condition_Behavior.java">
       <node id="1262430001741642151" at="17,103,18,16" concept="10" />
-      <node id="3044950653914720201" at="20,125,21,265" concept="9" />
-      <node id="3044950653914720216" at="21,265,22,187" concept="4" />
+      <node id="3044950653914720201" at="20,125,21,293" concept="9" />
+      <node id="3044950653914720216" at="21,293,22,187" concept="4" />
       <node id="3044950653914720221" at="22,187,23,169" concept="4" />
       <node id="3044950653914720226" at="23,169,24,174" concept="4" />
       <node id="3044950653914720230" at="24,174,25,18" concept="10" />
@@ -1447,8 +1447,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642829">
     <file name="MapSrcMacro_MapperFunction_Behavior.java">
       <node id="1262430001741642827" at="17,103,18,16" concept="10" />
-      <node id="3044950653914718363" at="20,125,21,265" concept="9" />
-      <node id="3044950653914718378" at="21,265,22,187" concept="4" />
+      <node id="3044950653914718363" at="20,125,21,293" concept="9" />
+      <node id="3044950653914718378" at="21,293,22,187" concept="4" />
       <node id="3044950653914718383" at="22,187,23,169" concept="4" />
       <node id="3044950653914718388" at="23,169,24,169" concept="4" />
       <node id="3044950653914718393" at="24,169,25,174" concept="4" />
@@ -1495,8 +1495,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741642977">
     <file name="MapSrcMacro_PostMapperFunction_Behavior.java">
       <node id="1262430001741642975" at="15,103,16,16" concept="10" />
-      <node id="3044950653914720795" at="18,125,19,265" concept="9" />
-      <node id="3044950653914720810" at="19,265,20,169" concept="4" />
+      <node id="3044950653914720795" at="18,125,19,293" concept="9" />
+      <node id="3044950653914720810" at="19,293,20,169" concept="4" />
       <node id="3044950653914720815" at="20,169,21,187" concept="4" />
       <node id="3044950653914720820" at="21,187,22,169" concept="4" />
       <node id="3044950653914720825" at="22,169,23,174" concept="4" />
@@ -1524,8 +1524,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741646754">
     <file name="CreateRootRule_Condition_Behavior.java">
       <node id="1262430001741646752" at="17,103,18,16" concept="10" />
-      <node id="3044950653914720601" at="20,125,21,265" concept="9" />
-      <node id="3044950653914720616" at="21,265,22,187" concept="4" />
+      <node id="3044950653914720601" at="20,125,21,293" concept="9" />
+      <node id="3044950653914720616" at="21,293,22,187" concept="4" />
       <node id="3044950653914720621" at="22,187,23,174" concept="4" />
       <node id="3044950653914720625" at="23,174,24,18" concept="10" />
       <node id="658365993682017561" at="26,83,27,47" concept="10" />
@@ -1570,8 +1570,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741647188">
     <file name="Weaving_MappingRule_ContextNodeQuery_Behavior.java">
       <node id="1262430001741647186" at="17,103,18,16" concept="10" />
-      <node id="3044950653914718234" at="20,125,21,265" concept="9" />
-      <node id="3044950653914718249" at="21,265,22,187" concept="4" />
+      <node id="3044950653914718234" at="20,125,21,293" concept="9" />
+      <node id="3044950653914718249" at="21,293,22,187" concept="4" />
       <node id="3044950653914718254" at="22,187,23,174" concept="4" />
       <node id="3044950653914718259" at="23,174,24,169" concept="4" />
       <node id="3044950653914718263" at="24,169,25,18" concept="10" />
@@ -1617,8 +1617,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703037">
     <file name="MappingScript_CodeBlock_Behavior.java">
       <node id="1262430001741703035" at="15,103,16,16" concept="10" />
-      <node id="3044950653914717374" at="18,125,19,265" concept="9" />
-      <node id="3044950653914717389" at="19,265,20,187" concept="4" />
+      <node id="3044950653914717374" at="18,125,19,293" concept="9" />
+      <node id="3044950653914717389" at="19,293,20,187" concept="4" />
       <node id="3044950653914717394" at="20,187,21,174" concept="4" />
       <node id="3044950653914717399" at="21,174,22,174" concept="4" />
       <node id="3044950653914717403" at="22,174,23,18" concept="10" />
@@ -1655,8 +1655,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703872">
     <file name="DropRootRule_Condition_Behavior.java">
       <node id="1262430001741703870" at="17,103,18,16" concept="10" />
-      <node id="3044950653914722065" at="20,125,21,265" concept="9" />
-      <node id="3044950653914722080" at="21,265,22,174" concept="4" />
+      <node id="3044950653914722065" at="20,125,21,293" concept="9" />
+      <node id="3044950653914722080" at="21,293,22,174" concept="4" />
       <node id="3044950653914722085" at="22,174,23,187" concept="4" />
       <node id="3044950653914722090" at="23,187,24,169" concept="4" />
       <node id="3044950653914722094" at="24,169,25,18" concept="10" />
@@ -1702,8 +1702,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741704594">
     <file name="SourceSubstituteMacro_SourceNodeQuery_Behavior.java">
       <node id="1262430001741704592" at="17,103,18,16" concept="10" />
-      <node id="3044950653914722356" at="20,125,21,265" concept="9" />
-      <node id="3044950653914722371" at="21,265,22,187" concept="4" />
+      <node id="3044950653914722356" at="20,125,21,293" concept="9" />
+      <node id="3044950653914722371" at="21,293,22,187" concept="4" />
       <node id="3044950653914722376" at="22,187,23,169" concept="4" />
       <node id="3044950653914722381" at="23,169,24,174" concept="4" />
       <node id="3044950653914722385" at="24,174,25,18" concept="10" />
@@ -1749,8 +1749,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741704930">
     <file name="SourceSubstituteMacro_SourceNodesQuery_Behavior.java">
       <node id="1262430001741704928" at="19,103,20,16" concept="10" />
-      <node id="3044950653914722029" at="22,125,23,265" concept="9" />
-      <node id="3044950653914722044" at="23,265,24,187" concept="4" />
+      <node id="3044950653914722029" at="22,125,23,293" concept="9" />
+      <node id="3044950653914722044" at="23,293,24,187" concept="4" />
       <node id="3044950653914722049" at="24,187,25,169" concept="4" />
       <node id="3044950653914722054" at="25,169,26,174" concept="4" />
       <node id="3044950653914722058" at="26,174,27,18" concept="10" />
@@ -1813,8 +1813,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741719795">
     <file name="MappingConfiguration_Condition_Behavior.java">
       <node id="1262430001741719793" at="17,103,18,16" concept="10" />
-      <node id="3044950653914717472" at="20,125,21,265" concept="9" />
-      <node id="3044950653914717487" at="21,265,22,187" concept="4" />
+      <node id="3044950653914717472" at="20,125,21,293" concept="9" />
+      <node id="3044950653914717487" at="21,293,22,187" concept="4" />
       <node id="3044950653914717491" at="22,187,23,18" concept="10" />
       <node id="658365993682017699" at="25,83,26,47" concept="10" />
       <node id="658365993682017695" at="28,60,29,63" concept="9" />
@@ -1858,8 +1858,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741720197">
     <file name="InsertMacro_CreateNodeQuery_Behavior.java">
       <node id="1262430001741720195" at="17,103,18,16" concept="10" />
-      <node id="3044950653914717883" at="20,125,21,265" concept="9" />
-      <node id="3044950653914717898" at="21,265,22,187" concept="4" />
+      <node id="3044950653914717883" at="20,125,21,293" concept="9" />
+      <node id="3044950653914717898" at="21,293,22,187" concept="4" />
       <node id="3044950653914717903" at="22,187,23,169" concept="4" />
       <node id="3044950653914717907" at="23,169,24,18" concept="10" />
       <node id="658365993681972175" at="26,83,27,47" concept="10" />
@@ -2231,8 +2231,8 @@
       <node id="4035562641222665469" at="25,433,26,231" concept="10" />
       <node id="4035562641222645875" at="27,5,28,47" concept="10" />
       <node id="1262430001741704873" at="30,103,31,16" concept="10" />
-      <node id="3044950653914719545" at="33,125,34,265" concept="9" />
-      <node id="3044950653914719560" at="34,265,35,187" concept="4" />
+      <node id="3044950653914719545" at="33,125,34,293" concept="9" />
+      <node id="3044950653914719560" at="34,293,35,187" concept="4" />
       <node id="3044950653914719565" at="35,187,36,169" concept="4" />
       <node id="3044950653914719570" at="36,169,37,174" concept="4" />
       <node id="3044950653914719574" at="37,174,38,18" concept="10" />
@@ -2288,8 +2288,8 @@
       <node id="5015072279636625567" at="24,27,25,20" concept="10" />
       <node id="5015072279636624591" at="27,5,28,47" concept="10" />
       <node id="1262430001741703065" at="30,103,31,16" concept="10" />
-      <node id="3044950653914724486" at="33,125,34,265" concept="9" />
-      <node id="3044950653914724501" at="34,265,35,187" concept="4" />
+      <node id="3044950653914724486" at="33,125,34,293" concept="9" />
+      <node id="3044950653914724501" at="34,293,35,187" concept="4" />
       <node id="3044950653914724506" at="35,187,36,174" concept="4" />
       <node id="3044950653914724511" at="36,174,37,169" concept="4" />
       <node id="3044950653914724515" at="37,169,38,18" concept="10" />
@@ -2562,8 +2562,8 @@
       <node id="8360039740498071156" at="17,98,18,48" concept="9" />
       <node id="8360039740498071170" at="19,220,20,233" concept="4" />
       <node id="8360039740498071163" at="21,5,22,18" concept="10" />
-      <node id="7656801780400897415" at="24,100,25,120" concept="9" />
-      <node id="7656801780400897423" at="25,120,26,195" concept="4" />
+      <node id="7656801780400897415" at="24,100,25,217" concept="9" />
+      <node id="7656801780400897423" at="25,217,26,195" concept="4" />
       <node id="7656801780400913197" at="26,195,27,233" concept="4" />
       <node id="8360039740498070952" at="15,0,17,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8360039740498070965" at="18,48,21,5" concept="6" />

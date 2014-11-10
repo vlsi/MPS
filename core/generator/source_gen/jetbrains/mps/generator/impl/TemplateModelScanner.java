@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -128,7 +127,7 @@ public class TemplateModelScanner {
     // so isInstanceOf limited only to generator language concepts 
     // todo: extending generator macroses impossible anymore, is it ok? 
     if (node != null && eq_8grp5z_a0a3a02(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
-      return SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
+      return SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept));
     } else {
       return false;
     }

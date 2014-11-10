@@ -23,9 +23,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
@@ -89,7 +89,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       }
     }).toListSequence();
     SModel srcModel = ((SModel) refactoringContext.getParameter("sourceModel"));
-    boolean isSourceExtends = ListSequence.fromList(SModelOperations.getRoots(srcModel, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes())).translate(new ITranslator2<SNode, SNode>() {
+    boolean isSourceExtends = ListSequence.fromList(SModelOperations.roots(srcModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SConceptOperations.getDirectSuperConcepts(it, false);
       }

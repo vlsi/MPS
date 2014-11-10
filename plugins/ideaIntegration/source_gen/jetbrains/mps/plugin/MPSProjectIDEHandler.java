@@ -218,7 +218,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         continue;
       }
       SModel model = m;
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      for (SNode root : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
         if (name.equals(SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
           return root;
         }

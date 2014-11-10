@@ -105,7 +105,7 @@ public class CommentLine_Action extends BaseAction {
         assert statement != null : "Statement should not be null due to the isApplicable() constraints";
         // commenting 
         SNode comment = SNodeOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
-        SNode commentPart = SLinkOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+        SNode commentPart = SLinkOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"));
         SLinkOperations.setTarget(commentPart, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement"), statement);
         currentNode = comment;
       }

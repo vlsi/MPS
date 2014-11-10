@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -68,7 +67,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
             }
             for (SNode linkDeclaration : childLinkDeclarations) {
               if (SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")).equals(childRole)) {
-                if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
+                if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node))))) {
                   return;
                 }
               }
@@ -78,7 +77,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
           result.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
-              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
+              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
             }
           });
         }

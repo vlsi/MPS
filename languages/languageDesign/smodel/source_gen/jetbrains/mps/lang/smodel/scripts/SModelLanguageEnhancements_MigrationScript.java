@@ -57,7 +57,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         return false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode newExpr = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
+        SNode newExpr = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"));
         SLinkOperations.setTarget(newExpr, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")));
         SLinkOperations.setTarget(newExpr, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138128738l, "concept"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
@@ -116,7 +116,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         return true;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), "jetbrains.mps.lang.smodel.structure.SNodeType");
+        SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType"));
       }
       public boolean isShowAsIntention() {
         return false;
@@ -149,7 +149,7 @@ public class SModelLanguageEnhancements_MigrationScript extends BaseMigrationScr
         return true;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), "jetbrains.mps.lang.smodel.structure.SModelType");
+        SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1143226024141l, "jetbrains.mps.lang.smodel.structure.SModelType"));
       }
       public boolean isShowAsIntention() {
         return false;

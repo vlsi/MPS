@@ -65,7 +65,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
   }
   public static boolean mappingConfiguration_Condition_6847351214607238415(final TemplateQueryContext _context) {
-    for (SNode node : SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+    for (SNode node : SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
       SNode le = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
       SNode re = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
       if (Helper.isCollectionElementAccess(le) || Helper.isCollectionElementAccess(re)) {

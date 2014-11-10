@@ -9,6 +9,6 @@ import java.util.UUID;
 
 public class DefaultSetAccessor_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1202077725299l, 1202077744034l, "visibility"), "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1202077725299l, 1202077744034l, "visibility"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
   }
 }

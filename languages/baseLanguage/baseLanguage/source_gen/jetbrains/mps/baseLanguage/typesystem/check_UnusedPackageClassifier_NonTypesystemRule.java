@@ -27,7 +27,7 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
   }
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null)) {
-      if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
+      if (!(ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false)).isEmpty();
         }

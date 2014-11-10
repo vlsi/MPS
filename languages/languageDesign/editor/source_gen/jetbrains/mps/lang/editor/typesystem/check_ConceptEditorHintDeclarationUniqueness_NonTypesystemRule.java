@@ -10,10 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,7 +26,7 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
   public check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule() {
   }
   public void applyRule(final SNode conceptEditorHintDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode hintDeclarartion : ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptEditorHintDeclaration), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
+    for (SNode hintDeclarartion : ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(conceptEditorHintDeclaration), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, 5944657839000877563l, "hints"));
       }

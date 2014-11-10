@@ -105,10 +105,10 @@ public class ConvertAnonymousRefactoring {
     }
   }
   private SNode makeInnerClass() {
-    SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+    SNode innerClass = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(this.myClassToRefactor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(innerClass);
     SPropertyOperations.set(innerClass, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), this.myNameForInnerClass);
-    SLinkOperations.setTarget(innerClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null));
+    SLinkOperations.setTarget(innerClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")));
     this.chooseNonStaticForInnerClass(innerClass);
     this.copyChildren(this.myClassToRefactor, innerClass);
     this.addSuperToInnerClass(innerClass);
@@ -119,11 +119,11 @@ public class ConvertAnonymousRefactoring {
   }
   private void makeInnerConstructor(SNode innerClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isEmpty()) {
-      SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, ctor);
-      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), "jetbrains.mps.baseLanguage.structure.StatementList");
-      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), "jetbrains.mps.baseLanguage.structure.VoidType");
+      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
+      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
+      SLinkOperations.setNewChild(ctor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"));
     }
     SNode innerConstructor = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first();
     this.addParametersToConstructor(innerConstructor);

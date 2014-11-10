@@ -5,8 +5,7 @@ package jetbrains.mps.execution.common.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -27,7 +26,7 @@ public class IGeneratedToClass_Behavior {
     return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(thisNode) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
   public static String call_getValidClassName_2572811016744662265(SNode thisNode, @NonNls String name) {
-    return IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), name);
+    return IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass")), name);
   }
   public static String call_getGeneratedClassName_946964771156905516(SNode thisNode, String name) {
     if ((name == null || name.length() == 0)) {
@@ -46,7 +45,7 @@ public class IGeneratedToClass_Behavior {
     while (result.contains(symbol)) {
       int index = result.indexOf(symbol);
       result = result.replace(symbol, "");
-      result = IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), result, index);
+      result = IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass")), result, index);
     }
     return result;
   }
@@ -61,7 +60,7 @@ public class IGeneratedToClass_Behavior {
     name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a9, new _Replacer_tq53pp_a0a0d0j(null, null));
     // in the beggining 
     name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a9, new _Replacer_tq53pp_a0a0f0j(null, null));
-    return IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), name, 0);
+    return IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass")), name, 0);
   }
   private static Pattern REGEXP_tq53pp_b0a1a9 = Pattern.compile("(\\w)\\W+(\\w)", 0);
   private static Pattern REGEXP_tq53pp_b0a3a9 = Pattern.compile("(.)\\W+$", 0);

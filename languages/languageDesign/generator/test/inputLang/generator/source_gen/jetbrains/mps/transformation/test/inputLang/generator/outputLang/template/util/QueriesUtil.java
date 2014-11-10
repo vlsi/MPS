@@ -6,14 +6,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
   public static boolean isTest1(SModel model) {
-    List<SNode> nodes = SModelOperations.getRoots(model, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot");
+    List<SNode> nodes = SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"));
     for (SNode node : ListSequence.fromList(nodes)) {
       if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "test1", "none")) {
         return true;
