@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -45,16 +44,16 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   private String myRole;
   private Condition<SNode> myCondition;
 
-  public SNodeTreeNode(SNode node, IOperationContext operationContext) {
-    this(node, null, operationContext);
+  public SNodeTreeNode(SNode node) {
+    this(node, null);
   }
 
-  public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-    this(node, role, operationContext, Condition.TRUE_CONDITION);
+  public SNodeTreeNode(SNode node, String role) {
+    this(node, role, Condition.TRUE_CONDITION);
   }
 
-  public SNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-    super(operationContext);
+  public SNodeTreeNode(SNode node, String role, Condition<SNode> condition) {
+    super(null);
     myNode = node;
     myRole = role;
     myCondition = condition;
@@ -95,7 +94,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   protected void doUpdatePresentation_internal() {
-    if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode)) {
+    if (myNode == null) {
       return;
     }
     if (hasErrors()) {
@@ -103,9 +102,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     } else {
       setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     }
-    if (myNode != null) {
-      setIcon(IconManager.getIconFor(myNode));
-    }
+    setIcon(IconManager.getIconFor(myNode));
 
     if (jetbrains.mps.util.SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
@@ -115,7 +112,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAutoExpandable(myNode != null && !(myNode.getModel() != null && myNode.getParent() == null));
+    setAutoExpandable(myNode.getModel() == null || myNode.getParent() != null);
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -168,7 +165,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (ourShowStructureCondition == null || ourShowStructureCondition.met(getTree())) {
       for (SNode childNode : n.getChildren()) {
         if (!myCondition.met(childNode)) continue;
-        SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent(), getOperationContext());
+        SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent());
         child.myCondition = myCondition;
         add(child);
       }
@@ -184,10 +181,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return ourShowStructureCondition != null && !ourShowStructureCondition.met(getTree());
   }
 
-  protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
+  protected SNodeTreeNode createChildTreeNode(SNode childNode, String role) {
     SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
-    SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role, operationContext)
-        : sModelTreeNode.createSNodeTreeNode(childNode, role, operationContext);
+    SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role)
+        : sModelTreeNode.createSNodeTreeNode(childNode, role);
     return child;
   }
 

@@ -37,16 +37,25 @@ public class SNodeUtil {
   /**
    * Returns whether the given node belongs to the repository (or to one of its parent repositories).
    */
-  public static boolean isAccessible(@NotNull SNode node, SRepository inRepository) {
-    inRepository.getModelAccess().checkReadAccess();
-
+  public static boolean isAccessible(@NotNull SNode node, @NotNull SRepository inRepository) {
     SModel model = node.getModel();
     if (model == null) return false;
 
     SRepository mrep = model.getRepository();
     if (mrep == null) return false;
 
-    return inRepository != null;
+    mrep.getModelAccess().checkReadAccess();
+
+    if (inRepository == mrep) {
+      return true;
+    }
+    // FIXME this is a hack to deal with incomplete story of repository relationship.
+    // We have at least two repositories, ProjectRepository and MPSModuleRepository, and with repository.getParent() dropped, there are no chance
+    // to figure out node coming from MPSModuleRepository is visible in ProjectRepository (EditorComponent.editNode() passes here project's repository
+    // but node might come from an MPSModuleRepository (e.g. temp node from console), and they don't match.
+    // Here, assume node is accessible even if repositories are different if its module is identical in both.
+    inRepository.getModelAccess().checkReadAccess();
+    return model.getModule() == inRepository.getModule(model.getModule().getModuleId());
   }
 
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {

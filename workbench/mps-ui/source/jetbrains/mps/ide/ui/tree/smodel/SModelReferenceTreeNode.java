@@ -21,7 +21,6 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -32,9 +31,8 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
   private SModel myModelDescriptor;
   private Project myProject;
 
-  public SModelReferenceTreeNode(SModel modelDescriptor, IOperationContext operationContext) {
-    super(operationContext);
-    myProject = operationContext.getProject();
+  public SModelReferenceTreeNode(SModel modelDescriptor, Project mpsProject) {
+    myProject = mpsProject;
     myModelDescriptor = modelDescriptor;
     String name = SNodeOperations.getModelLongName(modelDescriptor);
     if (SModelStereotype.getStereotype(modelDescriptor).length() > 0) {

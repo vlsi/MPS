@@ -10827,7 +10827,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612482536" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612482535" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705611" resolveInfo="MPS.Platform" />
             </node>
           </node>
@@ -11699,7 +11699,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612485305" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612485304" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705611" resolveInfo="MPS.Platform" />
             </node>
           </node>
@@ -11843,7 +11843,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="7764087766386383330" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="7764087766386383331" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1480008320050917282" resolveInfo="MPS.IDEA" />
             </node>
           </node>
@@ -19107,7 +19107,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612485947" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612485946" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705611" resolveInfo="MPS.Platform" />
             </node>
           </node>
@@ -22660,7 +22660,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612488338" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612488337" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705611" resolveInfo="MPS.Platform" />
             </node>
           </node>
@@ -22722,12 +22722,6 @@
             <node concept="bxtc.5253498789149585690" id="7764087766386383887" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1480008320050917282" resolveInfo="MPS.IDEA" />
-            </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="2034874075398076828" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="2034874075398076829" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="6361939271669846727" resolveInfo="jetbrains.mps.execution.configurations.implementation.plugin" />
             </node>
           </node>
         </node>

@@ -8074,23 +8074,12 @@
                                 <node concept="vg0i.1068498886296" id="4265636116363104471" role="vg0i.1204053956946.1068499141038" info="nn">
                                   <reference role="vg0i.1068498886296.1068581517664" target="3207605520775490374" resolveInfo="query" />
                                 </node>
-                                <node concept="vg0i.1197027756228" id="9035647347015373705" role="vg0i.1204053956946.1068499141038" info="nn">
-                                  <node concept="vg0i.1197027756228" id="9035647347015343981" role="vg0i.1197027756228.1197027771414" info="nn">
-                                    <node concept="vg0i.1197027756228" id="3207605520775490398" role="vg0i.1197027756228.1197027771414" info="nn">
-                                      <node concept="1sqg.1205752633985" id="3207605520775490399" role="vg0i.1197027756228.1197027771414" info="nn" />
-                                      <node concept="79nr.1217252428768" id="9035647347015335899" role="vg0i.1197027756228.1197027833540" info="nn">
-                                        <reference role="1sqg.1205756064662.1205756909548" target="3207605520775490518" resolveInfo="editorContext" />
-                                      </node>
-                                    </node>
-                                    <node concept="vg0i.1202948039474" id="9035647347015357324" role="vg0i.1197027756228.1197027833540" info="nn">
-                                      <reference role="vg0i.1204053956946.1068499141037" target="srng.~EditorContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
-                                    </node>
+                                <node concept="vg0i.1197027756228" id="4238457070936303453" role="vg0i.1204053956946.1068499141038" info="nn">
+                                  <node concept="1sqg.1205752633985" id="4238457070936303456" role="vg0i.1197027756228.1197027771414" info="nn">
+                                    <reference role="1sqg.1205752633985.1218736638915" target="3207605520775490246" resolveInfo="ShowSurroundWithIntentions" />
                                   </node>
-                                  <node concept="vg0i.1202948039474" id="9035647347015421539" role="vg0i.1197027756228.1197027833540" info="nn">
-                                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~List%dget(int)%cjava%dlang%dObject" resolveInfo="get" />
-                                    <node concept="vg0i.1068580320020" id="9035647347015432085" role="vg0i.1204053956946.1068499141038" info="nn">
-                                      <property role="vg0i.1068580320020.1068580320021" value="0" />
-                                    </node>
+                                  <node concept="79nr.1217252428768" id="4238457070936303458" role="vg0i.1197027756228.1197027833540" info="nn">
+                                    <reference role="1sqg.1205756064662.1205756909548" target="4238457070936240768" resolveInfo="selectedNode" />
                                   </node>
                                 </node>
                                 <node concept="vg0i.1197027756228" id="3207605520775490401" role="vg0i.1204053956946.1068499141038" info="nn">
@@ -8422,6 +8411,11 @@
         <property role="asn4.1169194658468.1169194664001" value="project" />
         <reference role="79nr.1217252042208.1217252646389" target="5xh9.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
         <node concept="79nr.5538333046911348654" id="5272353921214662186" role="79nr.1217413147516.5538333046911298738" info="ng" />
+      </node>
+      <node concept="79nr.1217252042208" id="4238457070936240768" role="79nr.1203071646776.1217413222820" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="selectedNode" />
+        <reference role="79nr.1217252042208.1217252646389" target="5xh9.~MPSCommonDataKeys%dNODE" resolveInfo="NODE" />
+        <node concept="79nr.5538333046911348654" id="4238457070936240769" role="79nr.1217413147516.5538333046911298738" info="ng" />
       </node>
       <node concept="79nr.1205681243813" id="3207605520775490521" role="79nr.1203071646776.1203083196627" info="in">
         <node concept="vg0i.1068580123136" id="3207605520775490522" role="vg0i.1137021947720.1137022507850" info="sn">

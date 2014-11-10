@@ -10,8 +10,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
 import com.intellij.openapi.application.ApplicationManager;
@@ -27,14 +25,11 @@ public class WatchableNode extends AbstractWatchableNode {
   private final AtomicBoolean myInitializationInProgress = new AtomicBoolean(false);
   private final List<_FunctionTypes._void_P0_E0> myCallbacks = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
   public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
-    this(null, watchable, state);
-  }
-  public WatchableNode(IOperationContext context, @NotNull IWatchable watchable, AbstractUiState state) {
-    super(context, watchable.getNode());
+    super(watchable.getNode());
     myWatchable = watchable;
     myState = state;
     setNodeIdentifier(calculateNodeId());
-    setIcon(getNodeIcon());
+    setIcon(watchable.getPresentationIcon());
   }
   @Override
   protected void doUpdate() {
@@ -44,9 +39,6 @@ public class WatchableNode extends AbstractWatchableNode {
   @Override
   public boolean isInitialized() {
     return myInitialized;
-  }
-  protected Icon getNodeIcon() {
-    return myWatchable.getPresentationIcon();
   }
   protected String calculateNodeId() {
     IValue value = myWatchable.getValue();

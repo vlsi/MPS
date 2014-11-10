@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,42 +18,41 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
-  public ModelFavoritesRoot(SModelReference value) {
-    super(value);
+  public ModelFavoritesRoot(Project project, SModelReference value) {
+    super(project, value);
   }
 
   @Override
-  public MPSTreeNode getTreeNode(IOperationContext context) {
-    SModel md = SModelRepository.getInstance().getModelDescriptor(getValue());
+  public MPSTreeNode createTreeNode() {
+    SModel md = getValue().resolve(myProject.getRepository());
     if (md == null) return null;
-    return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), context.getProject()));
+    return new SModelTreeNode(md, null);
   }
 
   @Override
   public List<SNode> getAvailableNodes() {
-    List<SNode> result = new ArrayList<SNode>();
-    final SModel md = SModelRepository.getInstance().getModelDescriptor(getValue());
-    if (md == null) return result;
-    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+    final List<SNode> result = new ArrayList<SNode>();
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
-      public SModel compute() {
-        return md;
+      public void run() {
+        final SModel model = getValue().resolve(myProject.getRepository());
+        if (model == null) {
+          return;
+        }
+        for (SNode node : model.getRootNodes()) {
+          result.add(node);
+        }
       }
     });
-    if (model == null) return result;
-
-    for (SNode node : model.getRootNodes()) {
-      result.add(node);
-    }
     return result;
   }
 }

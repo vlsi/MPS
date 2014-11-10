@@ -184,7 +184,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
   public void showItemInHierarchy(SNode node, IOperationContext _context) {
-    myHierarchyTree.setOperationContext(_context);
     myContext = _context;
     myHierarchyTree.myHierarchyNode = node;
     ModelAccess.instance().runReadInEDT(new Runnable() {

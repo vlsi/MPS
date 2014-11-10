@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import java.util.Collections;
@@ -84,7 +85,8 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
     @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = myFindUsages.findUsages(GlobalScopeMinusTransient.getInstance(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+      FindUsagesFacade fuFacade = FindUsagesFacade.getInstance();
+      Set<SReference> usages = fuFacade.findUsages(GlobalScopeMinusTransient.getInstance(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

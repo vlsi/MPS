@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,10 @@ public class FavoritesUtil {
     List<Object> result = new ArrayList<Object>();
     for (TreeNode treeNode : treeNodes) {
       if (treeNode instanceof MPSTreeNode) {
-        FavoritesRoot favoritesRoot = FavoritesRoot.createForTreeNode((MPSTreeNode) treeNode);
-        if (favoritesRoot == null) {
-          continue;
+        Object favoritesValue = FavoritesRoot.extractValue((MPSTreeNode) treeNode);
+        if (favoritesValue != null) {
+          result.add(favoritesValue);
         }
-        result.add(favoritesRoot.getValue());
       }
     }
     return result;

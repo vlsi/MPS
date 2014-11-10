@@ -30,7 +30,6 @@ import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -276,8 +275,7 @@ public abstract class ProjectTreeFindHelper {
     @Override
     public boolean met(MPSTreeNode treeNode) {
       if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
-      IOperationContext nodeContext = treeNode.getOperationContext();
-      return nodeContext != null && nodeContext.getModule() == myModule;
+      return ((ProjectModuleTreeNode) treeNode).getModule() == myModule;
     }
   }
 

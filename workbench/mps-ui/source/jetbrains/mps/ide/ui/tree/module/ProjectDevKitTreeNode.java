@@ -18,7 +18,6 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -27,31 +26,27 @@ import jetbrains.mps.vfs.IFile;
 
 
 public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
-  private DevKit myDevKit;
+  private final Project myProject;
   private boolean myShortNameOnly;
   private boolean myInitialized;
 
   protected ProjectDevKitTreeNode(DevKit devkit, Project project, boolean shortNameOnly) {
-    super(new ModuleContext(devkit, project));
+    super(devkit);
+    myProject = project;
     myShortNameOnly = shortNameOnly;
-    myDevKit = devkit;
 
     setNodeIdentifier(calculateNodeIdentifier());
     setIcon(IdeIcons.DEVKIT_ICON);
   }
 
   @Override
-  public DevKit getModule() {
-    return myDevKit;
-  }
-
-  public DevKit getDevKit() {
-    return myDevKit;
+  public boolean isInitialized() {
+    return myInitialized;
   }
 
   @Override
-  public boolean isInitialized() {
-    return myInitialized;
+  public DevKit getModule() {
+    return (DevKit) super.getModule();
   }
 
   @Override
@@ -61,14 +56,14 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   public String calculateNodeIdentifier() {
-    IFile descriptorFile = myDevKit.getDescriptorFile();
+    IFile descriptorFile = getModule().getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getPath();
   }
 
   @Override
   public String getModuleText() {
-    String name = myDevKit.getModuleDescriptor().getNamespace();
+    String name = getModule().getModuleDescriptor().getNamespace();
 
     if (myShortNameOnly) {
       name = NameUtil.shortNameFromLongName(name);
@@ -81,23 +76,21 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    Project project = getOperationContext().getProject();
-
     TextTreeNode extendedDevkits = new TextTreeNode("extended devkits");
-    for (DevKit d : myDevKit.getExtendedDevKits()) {
-      extendedDevkits.add(ProjectModuleTreeNode.createFor(project, d));
+    for (DevKit d : getModule().getExtendedDevKits()) {
+      extendedDevkits.add(ProjectModuleTreeNode.createFor(myProject, d));
     }
     add(extendedDevkits);
 
     TextTreeNode exportedLangs = new TextTreeNode("exported languages");
-    for (Language l : myDevKit.getExportedLanguages()) {
-      exportedLangs.add(ProjectModuleTreeNode.createFor(project, l));
+    for (Language l : getModule().getExportedLanguages()) {
+      exportedLangs.add(ProjectModuleTreeNode.createFor(myProject, l));
     }
     add(exportedLangs);
 
     TextTreeNode exportedSolutions = new TextTreeNode("exported solutions");
-    for (Solution s : myDevKit.getExportedSolutions()) {
-      exportedSolutions.add(ProjectModuleTreeNode.createFor(project, s));
+    for (Solution s : getModule().getExportedSolutions()) {
+      exportedSolutions.add(ProjectModuleTreeNode.createFor(myProject, s));
     }
     add(exportedSolutions);
   }

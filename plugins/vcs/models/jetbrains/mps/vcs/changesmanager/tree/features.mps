@@ -762,21 +762,14 @@
               </node>
               <node concept="vg0i.1197027756228" id="8214059917935787124" role="vg0i.1068431474542.1068431790190" info="nn">
                 <node concept="vg0i.1202948039474" id="7935983930721746235" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SNodePointer%dresolve(org%djetbrains%dmps%dopenapi%dmodule%dSRepository)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="resolve" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeReference%dresolve(org%djetbrains%dmps%dopenapi%dmodule%dSRepository)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="resolve" />
                   <node concept="vg0i.1081236700937" id="7935983930721746236" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
                     <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
                   </node>
                 </node>
-                <node concept="vg0i.1079359253375" id="2774990161568307553" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <node concept="vg0i.1070534934090" id="2774990161568307554" role="vg0i.1079359253375.1079359253376" info="nn">
-                    <node concept="vg0i.1107535904670" id="2774990161568307555" role="vg0i.1070534934090.1070534934091" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
-                    </node>
-                    <node concept="vg0i.7812454656619025412" id="4923130412073217994" role="vg0i.1070534934090.1070534934092" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="6277750378633134093" resolveInfo="getNodePointer" />
-                    </node>
-                  </node>
+                <node concept="vg0i.7812454656619025412" id="5723573060914296972" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="6277750378633134093" resolveInfo="getNodePointer" />
                 </node>
               </node>
             </node>

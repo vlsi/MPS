@@ -41,7 +41,6 @@ import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -319,7 +318,7 @@ public class CellExplorerView extends BaseProjectTool {
         }
 
         if (myCell.getAvailableActions().size() > 0) {
-          add(new CellActionsTreeNode(myCell, getOperationContext()));
+          add(new CellActionsTreeNode(myCell));
         }
       } else {
         add(new TextTreeNode("No Node"));
@@ -357,8 +356,8 @@ public class CellExplorerView extends BaseProjectTool {
 
   private class CellActionsTreeNode extends MPSTreeNode {
 
-    public CellActionsTreeNode(EditorCell cell, IOperationContext operationContext) {
-      super(cell, operationContext);
+    public CellActionsTreeNode(EditorCell cell) {
+      super(cell);
       for (CellActionType action : cell.getAvailableActions()) {
         add(new TextTreeNode(action + ""));
       }

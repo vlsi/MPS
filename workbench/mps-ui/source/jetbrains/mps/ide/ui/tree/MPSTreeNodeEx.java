@@ -22,8 +22,12 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Intended for tree elements backed with SNode and populated lazily
  */
 public abstract class MPSTreeNodeEx extends MPSTreeNode {
+  // FIXME default cons
+  @Deprecated
   protected MPSTreeNodeEx(IOperationContext operationContext) {
     super(operationContext);
+  }
+  protected MPSTreeNodeEx() {
   }
 
   public abstract SNode getSNode();

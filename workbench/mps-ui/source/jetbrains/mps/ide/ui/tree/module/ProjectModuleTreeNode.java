@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode, TreeElement {
+  private final SModule myModule;
+
   public static ProjectModuleTreeNode createFor(Project project, SModule module) {
     return createFor(project, module, false);
   }
@@ -43,9 +45,14 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
     return null;
   }
 
-  protected ProjectModuleTreeNode(IOperationContext operationContext) {
-    super(operationContext);
-    setUserObject(operationContext.getModule().getModuleName());
+  protected ProjectModuleTreeNode(@NotNull SModule module) {
+    super(module.getModuleName());
+    myModule = module;
+  }
+
+  @Override
+  public SModule getModule() {
+    return myModule;
   }
 
   @Override

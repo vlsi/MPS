@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
-  public SModelGroupTreeNode(IOperationContext context) {
-    super("util models", context);
+  public SModelGroupTreeNode() {
+    super("util models");
   }
 
   @Override

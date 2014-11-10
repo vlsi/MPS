@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestView;
 import com.intellij.openapi.Disposable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
@@ -28,15 +28,15 @@ import java.util.ArrayList;
 
 public class TestTree extends MPSTree implements TestView, Disposable {
   @NotNull
-  private final IOperationContext myOperationContext;
+  private final Project myProject;
   private final TestRunState myState;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> myMap;
   private boolean myAllTree = true;
   private final TestTreeIconAnimator myAnimator;
-  public TestTree(TestRunState state, @NotNull IOperationContext context, Disposable disposable) {
+  public TestTree(TestRunState state, @NotNull Project project, Disposable disposable) {
     Disposer.register(disposable, this);
     myState = state;
-    myOperationContext = context;
+    myProject = project;
     myMap = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     myAllTree = !(UnitTestOptions.isHidePassed());
     myAnimator = new TestTreeIconAnimator(this);
@@ -158,13 +158,13 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       }
       TestCaseTreeNode testCaseTreeNode = myMap.get(testCase.getFqName());
       if (testCaseTreeNode == null) {
-        testCaseTreeNode = new TestCaseTreeNode(myOperationContext, testCase);
+        testCaseTreeNode = new TestCaseTreeNode(myProject, testCase);
       }
       testCaseTreeNode.removeAllChildren();
       boolean hasTestNotPassed = false;
       for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = myMap.get(testCase.getFqName(), method.getName());
-        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(myOperationContext, method);
+        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(myProject, method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ? newMethodTreeNode : oldMethodTreeNode);
         boolean isNotPassedMethod = !(isPassed(methodTreeNode));
         hasTestNotPassed = hasTestNotPassed || isNotPassedMethod;

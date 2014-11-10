@@ -17,33 +17,28 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Splitter;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 
 public abstract class BaseNodeDialog extends DialogWrapper {
 
-  private static final Logger LOG = LogManager.getLogger(BaseNodeDialog.class);
-
-  private IOperationContext myOperationContext;
+  private final Project myProject;
   private UIEditorComponent myEditorComponent;
   private Splitter mySplitter;
   private boolean myDisposed = false;
 
-  protected BaseNodeDialog(String text, IOperationContext operationContext) {
+  protected BaseNodeDialog(Project mpsProject, String text) {
     super(true);
+    myProject = mpsProject;
     setTitle(text);
-    myOperationContext = operationContext;
 
-    InspectorEditorComponent inspector = new InspectorEditorComponent(operationContext.getProject().getRepository());
+    InspectorEditorComponent inspector = new InspectorEditorComponent(myProject.getRepository());
     inspector.setNoVirtualFile(true);
-    myEditorComponent = new UIEditorComponent(getOperationContext().getProject().getRepository(), inspector);
+    myEditorComponent = new UIEditorComponent(myProject.getRepository(), inspector);
 
     mySplitter = new Splitter(true, 0.6f);
     mySplitter.setFirstComponent(myEditorComponent.getExternalComponent());
@@ -52,8 +47,8 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
   protected abstract SNode getNode();
 
-  protected IOperationContext getOperationContext() {
-    return myOperationContext;
+  public Project getProject() {
+    return myProject;
   }
 
   protected JComponent getMainComponent() {
@@ -62,7 +57,7 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
   @Override
   public void show() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         myEditorComponent.editNode(getNode());

@@ -206,8 +206,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       if (myNode == null) {
         return new TextTreeNode("null");
       }
-      SNodeTreeNode treeNode = new SNodeTreeNode(myNode, myOperationContext);
-      return treeNode;
+      return new SNodeTreeNode(myNode);
     }
 
 
