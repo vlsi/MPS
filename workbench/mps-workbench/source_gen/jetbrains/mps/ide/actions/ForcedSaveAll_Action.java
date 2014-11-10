@@ -58,7 +58,7 @@ public class ForcedSaveAll_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+      Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();

@@ -114,7 +114,7 @@ public class StubResolver {
     }
   }
   public void resolveInProject(MPSProject project, IOperationContext context) {
-    for (SModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
+    for (SModule module : Sequence.fromIterable(project.getModulesWithGenerators())) {
       if (module.isReadOnly()) {
         continue;
       }

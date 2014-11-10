@@ -6965,6 +6965,40 @@
       </node>
       <node concept="79nr.1205681243813" id="8918545961567366044" role="79nr.1203071646776.1203083196627" info="in">
         <node concept="vg0i.1068580123136" id="8918545961567366045" role="vg0i.1137021947720.1137022507850" info="sn">
+          <node concept="vg0i.1068581242864" id="2004991980989141693" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="2004991980989141694" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="projectModules" />
+              <node concept="vg0i.1107535904670" id="2004991980989141691" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~HashSet" resolveInfo="HashSet" />
+                <node concept="vg0i.1107535904670" id="2004991980989143079" role="vg0i.1107535904670.1109201940907" info="in">
+                  <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                </node>
+              </node>
+              <node concept="vg0i.1145552977093" id="2004991980989144424" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1212685548494" id="2004991980989311415" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~HashSet%d&lt;init&gt;(java%dutil%dCollection)" resolveInfo="HashSet" />
+                  <node concept="vg0i.1107535904670" id="2004991980989313777" role="vg0i.1212685548494.1212687122400" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                  </node>
+                  <node concept="vg0i.1081236700937" id="2004991980989315709" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="msyo.~IterableUtil%dasCollection(java%dlang%dIterable)%cjava%dutil%dCollection" resolveInfo="asCollection" />
+                    <reference role="vg0i.1081236700937.1144433194310" target="msyo.~IterableUtil" resolveInfo="IterableUtil" />
+                    <node concept="vg0i.1197027756228" id="8918545961567434063" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <node concept="vg0i.1197027756228" id="8918545961567434056" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <node concept="1sqg.1205752633985" id="8918545961567434057" role="vg0i.1197027756228.1197027771414" info="nn" />
+                        <node concept="79nr.1217252428768" id="8918545961567434058" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="1sqg.1205756064662.1205756909548" target="1241020205868" resolveInfo="mpsProject" />
+                        </node>
+                      </node>
+                      <node concept="vg0i.1202948039474" id="8918545961567434071" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModules()%cjava%dlang%dIterable" resolveInfo="getModules" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1144226303539" id="8918545961567433997" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068580123136" id="8918545961567433998" role="vg0i.1154032098014.1154032183016" info="sn">
               <node concept="vg0i.1068580123159" id="8918545961567434030" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -6976,22 +7010,14 @@
                   </node>
                 </node>
                 <node concept="vg0i.1197027756228" id="8918545961567434076" role="vg0i.1068580123159.1068580123160" info="nn">
-                  <node concept="vg0i.1197027756228" id="8918545961567434063" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <node concept="vg0i.1197027756228" id="8918545961567434056" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <node concept="1sqg.1205752633985" id="8918545961567434057" role="vg0i.1197027756228.1197027771414" info="nn" />
-                      <node concept="79nr.1217252428768" id="8918545961567434058" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="1sqg.1205756064662.1205756909548" target="1241020205868" resolveInfo="mpsProject" />
-                      </node>
-                    </node>
-                    <node concept="vg0i.1202948039474" id="8918545961567434071" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModules()%cjava%dutil%dList" resolveInfo="getModules" />
-                    </node>
-                  </node>
                   <node concept="vg0i.1202948039474" id="8918545961567434084" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~List%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~HashSet%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
                     <node concept="vg0i.1068498886296" id="4265636116363096790" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="8918545961567434001" resolveInfo="module" />
                     </node>
+                  </node>
+                  <node concept="vg0i.1068498886296" id="2004991980989324810" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="2004991980989141694" resolveInfo="projectModules" />
                   </node>
                 </node>
               </node>
@@ -12986,7 +13012,7 @@
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123157" id="7496280355371018335" role="vg0i.1068580123136.1068581517665" info="nn" />
+          <node concept="vg0i.1068580123157" id="7741637692081720007" role="vg0i.1068580123136.1068581517665" info="nn" />
           <node concept="vg0i.1068581242864" id="7496280355371018336" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="7496280355371018337" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="project" />
@@ -22894,7 +22920,7 @@
                 </node>
               </node>
               <node concept="vg0i.1202948039474" id="9164503229271486525" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModulesWithGenerators()%cjava%dutil%dList" resolveInfo="getModulesWithGenerators" />
+                <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModulesWithGenerators()%cjava%dlang%dIterable" resolveInfo="getModulesWithGenerators" />
               </node>
             </node>
             <node concept="vg0i.1068580123136" id="9164503229271455507" role="vg0i.1154032098014.1154032183016" info="sn">
@@ -34228,12 +34254,14 @@
                   </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="1366666897732413908" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModulesWithGenerators()%cjava%dutil%dList" resolveInfo="getModulesWithGenerators" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModulesWithGenerators()%cjava%dlang%dIterable" resolveInfo="getModulesWithGenerators" />
                 </node>
               </node>
               <node concept="j0ph.1151689724996" id="120896515006382801" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <node concept="vg0i.1107535904670" id="120896515006382803" role="j0ph.1151689724996.1151689745422" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                <node concept="vg0i.1171903916106" id="7741637692080748485" role="j0ph.1151689724996.1151689745422" info="in">
+                  <node concept="vg0i.1107535904670" id="7741637692080751477" role="vg0i.1171903916106.1171903916107" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -69,6 +69,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176923520476" name="jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
@@ -158,6 +159,7 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996/1151689745422" name="elementType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1171903916106/1171903916107" name="bound" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202/1176906787974" name="rightExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
@@ -303,8 +305,10 @@
             <node concept="vg0i.1068581242863" id="8638477894669146743" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="modulesWithGenerators" />
               <node concept="j0ph.1151689724996" id="8638477894669147032" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <node concept="vg0i.1107535904670" id="8638477894669147034" role="j0ph.1151689724996.1151689745422" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                <node concept="vg0i.1171903916106" id="7741637692080788667" role="j0ph.1151689724996.1151689745422" info="in">
+                  <node concept="vg0i.1107535904670" id="7741637692080792043" role="vg0i.1171903916106.1171903916107" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                  </node>
                 </node>
               </node>
               <node concept="vg0i.1197027756228" id="8638477894669146744" role="vg0i.1068431474542.1068431790190" info="nn">
@@ -315,7 +319,7 @@
                   </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="8638477894669146748" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModulesWithGenerators()%cjava%dutil%dList" resolveInfo="getModulesWithGenerators" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModulesWithGenerators()%cjava%dlang%dIterable" resolveInfo="getModulesWithGenerators" />
                 </node>
               </node>
             </node>
@@ -627,8 +631,10 @@
             <node concept="vg0i.1068581242863" id="7390751706570181583" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="modules" />
               <node concept="j0ph.1151689724996" id="7390751706570184442" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <node concept="vg0i.1107535904670" id="7390751706570184444" role="j0ph.1151689724996.1151689745422" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                <node concept="vg0i.1171903916106" id="5465820460278793807" role="j0ph.1151689724996.1151689745422" info="in">
+                  <node concept="vg0i.1107535904670" id="5465820460278798027" role="vg0i.1171903916106.1171903916107" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
+                  </node>
                 </node>
               </node>
               <node concept="vg0i.1197027756228" id="3617479182050528102" role="vg0i.1068431474542.1068431790190" info="nn">
@@ -639,7 +645,7 @@
                   </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="3617479182050534312" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModulesWithGenerators()%cjava%dutil%dList" resolveInfo="getModulesWithGenerators" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModulesWithGenerators()%cjava%dlang%dIterable" resolveInfo="getModulesWithGenerators" />
                 </node>
               </node>
             </node>
