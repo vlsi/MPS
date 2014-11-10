@@ -3868,12 +3868,12 @@
               <node concept="vg0i.1068581242864" id="1917749888334820926" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1068581242863" id="1917749888334820927" role="vg0i.1068581242864.1068581242865" info="nr">
                   <property role="asn4.1169194658468.1169194664001" value="declaration" />
-                  <node concept="vg0i.1107535904670" id="1917749888335035179" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+                  <node concept="vg0i.1107535904670" id="2131355072284689220" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SAbstractConcept" resolveInfo="SAbstractConcept" />
                   </node>
                   <node concept="vg0i.1081236700937" id="1917749888335030902" role="vg0i.1068431474542.1068431790190" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                     <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
                     <node concept="vg0i.1070534934090" id="1917749888335033888" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="1917749888334820928" role="vg0i.1070534934090.1070534934092" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="jpli.~SModelUtil%dfindConceptDeclaration(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="findConceptDeclaration" />
@@ -15276,8 +15276,8 @@
             <node concept="vg0i.1081516740877" id="3902354333651348604" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1197027756228" id="3902354333651348606" role="vg0i.1081516740877.1081516765348" info="nn">
                 <node concept="vg0i.1081236700937" id="3902354333651348607" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                   <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
                   <node concept="vg0i.1070534934090" id="3902354333651349069" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1068498886296" id="3902354333651348608" role="vg0i.1070534934090.1070534934092" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="3902354333651329043" resolveInfo="node" />
@@ -15406,7 +15406,7 @@
               <node concept="vg0i.1197027756228" id="3902354333651366649" role="vg0i.1081516740877.1081516765348" info="nn">
                 <node concept="vg0i.1081236700937" id="3902354333651366650" role="vg0i.1197027756228.1197027771414" info="nn">
                   <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
-                  <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
                   <node concept="vg0i.1070534934090" id="3902354333651366651" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1068498886296" id="3902354333651366652" role="vg0i.1070534934090.1070534934092" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="6599163591527295391" resolveInfo="node" />
@@ -15542,7 +15542,7 @@
           <node concept="vg0i.1068581242878" id="6677504323280309886" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1081236700937" id="6677504323280309877" role="vg0i.1068581242878.1068581517676" info="nn">
               <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
-              <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+              <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
               <node concept="vg0i.1070534934090" id="6677504323280309878" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1068498886296" id="6677504323280309879" role="vg0i.1070534934090.1070534934092" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="6677504323280309888" resolveInfo="node" />
@@ -15612,14 +15612,14 @@
             </node>
           </node>
           <node concept="vg0i.1068581242878" id="742658975218862652" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="742658975218862653" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
+            <node concept="vg0i.1081236700937" id="2131355072284811849" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetInstanceConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getInstanceConcept" />
               <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
-              <node concept="vg0i.1070534934090" id="742658975218862654" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="742658975218862655" role="vg0i.1070534934090.1070534934092" info="nn">
+              <node concept="vg0i.1070534934090" id="2131355072284811850" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="vg0i.1068498886296" id="2131355072284811851" role="vg0i.1070534934090.1070534934092" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="742658975218862657" resolveInfo="node" />
                 </node>
-                <node concept="vg0i.1107535904670" id="742658975218862656" role="vg0i.1070534934090.1070534934091" info="in">
+                <node concept="vg0i.1107535904670" id="2131355072284811852" role="vg0i.1070534934090.1070534934091" info="in">
                   <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~SNode" resolveInfo="SNode" />
                 </node>
               </node>
@@ -15645,13 +15645,11 @@
         <property role="vg0i.1224848483129.1224848525476" value="false" />
         <node concept="vg0i.1068580123136" id="742658975218862662" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1068581242878" id="742658975218862663" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.7812454656619025412" id="742658975218893699" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="742658975218862643" resolveInfo="asInstanceConcept" />
-              <node concept="vg0i.7812454656619025412" id="742658975218893997" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="8828148184965530998" resolveInfo="asNode" />
-                <node concept="vg0i.1068498886296" id="742658975218894548" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="742658975218862665" resolveInfo="concept" />
-                </node>
+            <node concept="vg0i.1081236700937" id="2131355072285164635" role="vg0i.1068581242878.1068581517676" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dasInstanceConcept(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="asInstanceConcept" />
+              <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
+              <node concept="vg0i.1068498886296" id="2131355072285165206" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="742658975218862665" resolveInfo="concept" />
               </node>
             </node>
           </node>

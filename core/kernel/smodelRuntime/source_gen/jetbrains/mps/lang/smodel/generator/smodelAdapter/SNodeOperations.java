@@ -829,10 +829,10 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getInstanceConcept((jetbrains.mps.smodel.SNode) node);
   }
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
-    return asInstanceConcept(asNode(concept));
+    return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {

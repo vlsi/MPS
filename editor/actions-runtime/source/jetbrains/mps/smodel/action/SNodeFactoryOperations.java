@@ -20,10 +20,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -39,12 +41,12 @@ public class SNodeFactoryOperations {
   @Deprecated
   public static SConcept asInstanceConcept(SNode node) {
     if (node == null) { return null; }
-    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getInstanceConcept((jetbrains.mps.smodel.SNode) node);
   }
 
   @Deprecated
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
-    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept.getDeclarationNode());
+    return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
 
   @Deprecated
