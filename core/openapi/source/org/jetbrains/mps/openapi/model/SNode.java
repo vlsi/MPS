@@ -77,7 +77,6 @@ public interface SNode {
 
   /**
    * The concept that this node represents. Concepts can be checked for equality with equals().
-   * Does not produce node read event as the result value can't be changed.
    */
   @NotNull
   SConcept getConcept();
