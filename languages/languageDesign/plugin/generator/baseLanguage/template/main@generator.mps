@@ -9306,7 +9306,7 @@
             <node concept="vg0i.1068580123155" id="3062002558005753450" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="3062002558005753451" role="vg0i.1068580123155.1068580123156" info="nn">
                 <node concept="vg0i.1202948039474" id="3062002558005753454" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="2yea.~GeneratedTabbedTool%daddTab(javax%dswing%dJComponent,java%dlang%dString,javax%dswing%dIcon,jetbrains%dmps%dplugins%dtool%dIComponentDisposer)%cvoid" resolveInfo="addTab" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="jwd7.~BaseTabbedProjectTool%daddTab(javax%dswing%dJComponent,java%dlang%dString,javax%dswing%dIcon,jetbrains%dmps%dplugins%dtool%dIComponentDisposer,boolean)%cvoid" resolveInfo="addTab" />
                   <node concept="7gwc.1095672379244" id="3062002558005753490" role="asn4.1133920641626.5169995583184591170" info="ng" />
                   <node concept="vg0i.1145552977093" id="8383992355238314327" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1212685548494" id="8383992355238345799" role="vg0i.1145552977093.1145553007750" info="nn">
@@ -9456,6 +9456,9 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="vg0i.1068580123137" id="5932342739255556147" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <property role="vg0i.1068580123137.1068580123138" value="true" />
+                  </node>
                 </node>
                 <node concept="vg0i.1070475354124" id="6423922349611078578" role="vg0i.1197027756228.1197027771414" info="nn" />
               </node>
@@ -9463,8 +9466,8 @@
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="3062002558005753491" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1107535904670" id="6423922349611078574" role="vg0i.1068390468198.1165602531693" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="2yea.~GeneratedTabbedTool" resolveInfo="GeneratedTabbedTool" />
+        <node concept="vg0i.1107535904670" id="5932342739255550339" role="vg0i.1068390468198.1165602531693" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="jwd7.~BaseTabbedProjectTool" resolveInfo="BaseTabbedProjectTool" />
         </node>
       </node>
     </node>
@@ -10075,8 +10078,8 @@
                   <node concept="vg0i.1068580123136" id="5508914264443135970" role="vg0i.1206060495898.1206060644605" info="sn">
                     <node concept="vg0i.1068581242878" id="5508914264443135971" role="vg0i.1068580123136.1068581517665" info="nn">
                       <node concept="le35.1196350785113" id="5508914264443135972" role="vg0i.1068581242878.1068581517676" info="nn">
-                        <node concept="vg0i.1107535904670" id="5508914264443135973" role="le35.1196350785113.1196350785114" info="in">
-                          <reference role="vg0i.1107535904670.1107535924139" target="2yea.~GeneratedTabbedTool" resolveInfo="GeneratedTabbedTool" />
+                        <node concept="vg0i.1107535904670" id="8070462976159406877" role="le35.1196350785113.1196350785114" info="in">
+                          <reference role="vg0i.1107535904670.1107535924139" target="jwd7.~BaseTabbedProjectTool" resolveInfo="BaseTabbedProjectTool" />
                         </node>
                       </node>
                     </node>
