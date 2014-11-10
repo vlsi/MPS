@@ -1170,46 +1170,23 @@
         <reference role="7gwc.1167169308231.1167169349424" target="tp25.1226359078165" resolveInfo="LinkRefExpression" />
         <node concept="7gwc.1177093525992" id="1226362283240" role="7gwc.1167327847730.1169672767469" info="lg">
           <node concept="vg0i.1081236700937" id="1226362325212" role="7gwc.1177093525992.1177093586806" info="nn">
-            <reference role="vg0i.1204053956946.1068499141037" target="i8bi.6599163591527286355" resolveInfo="findLinkDeclaration" />
             <reference role="vg0i.1081236700937.1144433194310" target="i8bi.6599163591527286349" resolveInfo="SLinkOperations" />
-            <node concept="vg0i.1070475926800" id="1226362334291" role="vg0i.1204053956946.1068499141038" info="nn">
-              <property role="vg0i.1070475926800.1070475926801" value="conceptFqName" />
-              <node concept="7gwc.1087833241328" id="1226362356278" role="asn4.1133920641626.5169995583184591170" info="ln">
-                <property role="asn4.3364660638048049750.1757699476691236117" value="value" />
-                <node concept="7gwc.1167756080639" id="1226362356279" role="7gwc.1087833241328.1167756362303" info="in">
-                  <node concept="vg0i.1068580123136" id="1226362356280" role="vg0i.1137021947720.1137022507850" info="sn">
-                    <node concept="vg0i.1068580123155" id="1226362365187" role="vg0i.1068580123136.1068581517665" info="nn">
-                      <node concept="vg0i.1081236700937" id="1226362365188" role="vg0i.1068580123155.1068580123156" info="nn">
-                        <reference role="vg0i.1081236700937.1144433194310" target="msyo.~NameUtil" resolveInfo="NameUtil" />
-                        <reference role="vg0i.1204053956946.1068499141037" target="msyo.~NameUtil%dnodeFQName(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
-                        <node concept="vg0i.1197027756228" id="1226362365189" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <node concept="7gwc.1167169188348" id="1226362365190" role="vg0i.1197027756228.1197027771414" info="nn" />
-                          <node concept="4ia1.1138056143562" id="1226362371383" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="4ia1.1138056143562.1138056516764" target="tp25.1226359078166" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1070475926800" id="1226362344590" role="vg0i.1204053956946.1068499141038" info="nn">
-              <property role="vg0i.1070475926800.1070475926801" value="role" />
-              <node concept="7gwc.1087833241328" id="1226362379165" role="asn4.1133920641626.5169995583184591170" info="ln">
-                <property role="asn4.3364660638048049750.1757699476691236117" value="value" />
-                <node concept="7gwc.1167756080639" id="1226362379166" role="7gwc.1087833241328.1167756362303" info="in">
-                  <node concept="vg0i.1068580123136" id="1226362379167" role="vg0i.1137021947720.1137022507850" info="sn">
-                    <node concept="vg0i.1068580123155" id="1226362451465" role="vg0i.1068580123136.1068581517665" info="nn">
-                      <node concept="vg0i.1197027756228" id="1226362459127" role="vg0i.1068580123155.1068580123156" info="nn">
-                        <node concept="vg0i.1197027756228" id="1226362451577" role="vg0i.1197027756228.1197027771414" info="nn">
-                          <node concept="7gwc.1167169188348" id="1226362451466" role="vg0i.1197027756228.1197027771414" info="nn" />
-                          <node concept="4ia1.1138056143562" id="1226362456845" role="vg0i.1197027756228.1197027833540" info="nn">
+            <reference role="vg0i.1204053956946.1068499141037" target="i8bi.81088748284935243" resolveInfo="findLinkDeclaration" />
+            <node concept="vg0i.1070534058343" id="81088748285026460" role="vg0i.1204053956946.1068499141038" info="nn">
+              <node concept="7gwc.1194565793557" id="81088748285026637" role="asn4.1133920641626.5169995583184591170" info="ln">
+                <reference role="7gwc.1194565793557.1194566366375" target="6506750610319222074" resolveInfo="reduce_LinkDeclaration_SLink" />
+                <node concept="7gwc.1168024337012" id="81088748285026664" role="7gwc.1194565793557.1194565823413" info="in">
+                  <node concept="vg0i.1068580123136" id="81088748285026665" role="vg0i.1137021947720.1137022507850" info="sn">
+                    <node concept="vg0i.1068580123155" id="81088748285028664" role="vg0i.1068580123136.1068581517665" info="nn">
+                      <node concept="vg0i.1197027756228" id="81088748285040284" role="vg0i.1068580123155.1068580123156" info="nn">
+                        <node concept="vg0i.1197027756228" id="81088748285038181" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <node concept="7gwc.1167169188348" id="81088748285028663" role="vg0i.1197027756228.1197027771414" info="nn" />
+                          <node concept="4ia1.1138056143562" id="81088748285039087" role="vg0i.1197027756228.1197027833540" info="nn">
                             <reference role="4ia1.1138056143562.1138056516764" target="tp25.1226359192215" />
                           </node>
                         </node>
-                        <node concept="4ia1.1138056022639" id="1226362460427" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="4ia1.1138056022639.1138056395725" target="tpce.1071599776563" resolveInfo="role" />
+                        <node concept="4ia1.1179409122411" id="81088748285041725" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="tpcn.1213877254523" resolveInfo="getGenuineLink" />
                         </node>
                       </node>
                     </node>
