@@ -23,8 +23,17 @@ import org.jetbrains.mps.openapi.model.SNode;
  * physically lie anywhere in the AST (even in a different model).
  */
 public interface SReferenceLink extends SAbstractLink {
+  /**
+   * Returns a name of this reference
+   * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
+   */
   String getRoleName();
 
+  /**
+   * Return the concept that contains the declaration of this reference.
+   * Note that if you've got some reference from a concept, this method can return its [concept's] ancestor, not
+   * exactly the concept from which you've obtained this reference.
+   */
   SAbstractConcept getContainingConcept();
 
   /**
