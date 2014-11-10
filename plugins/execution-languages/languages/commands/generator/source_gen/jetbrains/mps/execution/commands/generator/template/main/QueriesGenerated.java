@@ -374,13 +374,13 @@ public class QueriesGenerated {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"), "jetbrains.mps.execution.commands.structure.BuilderBlockStatement");
   }
   public static void mappingScript_CodeBlock_865001690840234106(final MappingScriptContext _context) {
-    for (SNode commandRef : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandParameterReference"))) {
+    for (SNode commandRef : ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281756l, "jetbrains.mps.execution.commands.structure.CommandParameterReference")))) {
       SPropertyOperations.set(commandRef, MetaAdapterFactory.getProperty(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281756l, 856705193941281757l, "resolveInfo"), SPropertyOperations.getString(SLinkOperations.getTarget(commandRef, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281756l, 856705193941281758l, "parameter")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       // this is a hack to generate command parameter references into field references incide of process builder expression 
     }
   }
   public static void mappingScript_CodeBlock_865001690840234128(final MappingScriptContext _context) {
-    for (SNode blockStatement : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement")).where(new IWhereFilter<SNode>() {
+    for (SNode blockStatement : ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderBlockStatement")) != null);
       }
@@ -393,7 +393,7 @@ public class QueriesGenerated {
     }
   }
   public static void mappingScript_CodeBlock_3445893456317717322(final MappingScriptContext _context) {
-    for (SNode declaration : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandDeclaration"))) {
+    for (SNode declaration : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, "jetbrains.mps.execution.commands.structure.CommandDeclaration")))) {
       if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(declaration)) {
         for (SNode part : ListSequence.fromList(SLinkOperations.getChildren(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 6129022259108579262l, "executePart")))) {
           for (SNode commandBuilder : ListSequence.fromList(SNodeOperations.getNodeDescendants(part, MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), false, new SConcept[]{}))) {
@@ -405,7 +405,7 @@ public class QueriesGenerated {
                   return eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a98(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281764l, 856705193941281765l, "parameterDeclaration")), calledDebuggerParameter);
                 }
               }) == null) {
-                SNode reference = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandParameterReference", null);
+                SNode reference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281756l, "jetbrains.mps.execution.commands.structure.CommandParameterReference"));
                 SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281756l, 856705193941281758l, "parameter"), SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter")));
                 ListSequence.fromList(SLinkOperations.getChildren(commandBuilder, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 856705193941281781l, "argument"))).addElement(_quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a98(calledDebuggerParameter, reference));
               }

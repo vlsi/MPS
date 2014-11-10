@@ -356,7 +356,7 @@
       <node id="5199967550912384282" at="16,0,18,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5199967550912479714" at="18,88,21,5" concept="3" />
       <node id="5199967550912479721" at="21,5,24,5" concept="3" />
-      <node id="5199967550912479791" at="29,138,32,7" concept="3" />
+      <node id="5199967550912479791" at="29,243,32,7" concept="3" />
       <node id="6211769134875410582" at="38,29,42,5" concept="10" />
       <node id="5199967550912479771" at="28,48,33,5" concept="2" />
       <node id="5199967550912384282" at="18,0,27,0" concept="8" trace="call_isDescendant_5199967550912479710#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -370,7 +370,7 @@
         <var name="thisNode" id="5199967550912384282" />
       </scope>
       <scope id="6211769134875410584" at="39,29,41,205" />
-      <scope id="5199967550912479772" at="29,138,32,7" />
+      <scope id="5199967550912479772" at="29,243,32,7" />
       <scope id="5199967550912479771" at="28,48,33,5">
         <var name="sb" id="5199967550912479775" />
       </scope>

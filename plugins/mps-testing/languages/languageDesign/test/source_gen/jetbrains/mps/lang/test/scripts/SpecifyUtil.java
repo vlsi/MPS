@@ -12,6 +12,8 @@ import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.model.SModelBase;
 
@@ -39,7 +41,7 @@ public class SpecifyUtil {
   }
 
   public static void attachNewContainer(SNode node) {
-    SNode container = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
+    SNode container = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), container);
   }
 

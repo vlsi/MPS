@@ -545,7 +545,7 @@
         <var name="status" id="7469468981580405274" />
         <var name="typeCheckingContext" id="7469468981580405274" />
       </scope>
-      <unit id="7469468981580452447" at="31,180,35,5" name="jetbrains.mps.lang.structure.typesystem.check_DuplicatedConceptName_NonTypesystemRule$1" />
+      <unit id="7469468981580452447" at="31,280,35,5" name="jetbrains.mps.lang.structure.typesystem.check_DuplicatedConceptName_NonTypesystemRule$1" />
       <unit id="7469468981580405274" at="23,0,56,0" name="jetbrains.mps.lang.structure.typesystem.check_DuplicatedConceptName_NonTypesystemRule" />
     </file>
   </root>
@@ -617,7 +617,7 @@
     <file name="FixAttributeInfo_QuickFix.java">
       <node id="7588428831943087664" at="18,44,19,387" concept="12" />
       <node id="7588428831943505763" at="21,35,22,222" concept="11" />
-      <node id="7588428831943130012" at="23,245,24,423" concept="6" />
+      <node id="7588428831943130012" at="23,245,24,526" concept="6" />
       <node id="7588428831943614971" at="26,248,27,355" concept="6" />
       <node id="7588428831943086210" at="16,0,18,0" concept="3" trace="FixAttributeInfo_QuickFix#()V" />
       <node id="7588428831943086210" at="18,0,21,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -626,7 +626,7 @@
       <node id="7588428831943086210" at="21,0,30,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="7588428831943086210" at="16,38,16,38" />
       <scope id="7588428831943086825" at="18,44,19,387" />
-      <scope id="7588428831943501958" at="23,245,24,423" />
+      <scope id="7588428831943501958" at="23,245,24,526" />
       <scope id="7588428831943614970" at="26,248,27,355" />
       <scope id="7588428831943086210" at="16,0,18,0" />
       <scope id="7588428831943086210" at="18,0,21,0">

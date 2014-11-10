@@ -58,7 +58,7 @@ public class MigrationsCheckUtil {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4144229974054378362l, 4144229974054378363l, "script"));
       }
     }));
-    return result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(script), "jetbrains.mps.lang.migration.structure.MigrationScript")).where(new IWhereFilter<SNode>() {
+    return result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) < SPropertyOperations.getInteger(script, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
       }
@@ -77,7 +77,7 @@ public class MigrationsCheckUtil {
     }
     boolean hasIncompleteScript = false;
     List<Integer> scripts = new ArrayList<Integer>();
-    for (SNode root : SModelOperations.getRoots(migModel, "jetbrains.mps.lang.migration.structure.MigrationScript")) {
+    for (SNode root : SModelOperations.roots(migModel, MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"))) {
       if (root.getProperty(MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) == null) {
         hasIncompleteScript = true;
         continue;

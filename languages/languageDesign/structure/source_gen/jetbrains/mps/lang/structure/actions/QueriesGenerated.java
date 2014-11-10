@@ -72,7 +72,7 @@ public class QueriesGenerated {
           for (final Boolean item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", null);
+                SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 6054523464626862044l, "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple"));
                 SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 6054523464626862044l, 6054523464626875854l, "value"), "" + ((item).booleanValue()));
                 return result;
               }

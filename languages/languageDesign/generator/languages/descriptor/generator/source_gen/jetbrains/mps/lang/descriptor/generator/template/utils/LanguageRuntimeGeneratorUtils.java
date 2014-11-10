@@ -12,9 +12,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -27,7 +27,7 @@ public class LanguageRuntimeGeneratorUtils {
     if (aspectModel == null) {
       return false;
     }
-    List<SNode> roots = SModelOperations.getRoots(((SModel) aspectModel), null);
+    List<SNode> roots = SModelOperations.roots(((SModel) aspectModel), null);
     return (rootConcepts.length == 0 ? ListSequence.fromList(roots).isNotEmpty() : ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         for (SNode rootConcept : rootConcepts) {
@@ -44,7 +44,7 @@ public class LanguageRuntimeGeneratorUtils {
     if (editorModel == null) {
       return false;
     }
-    List<SNode> roots = SModelOperations.getRoots(((SModel) editorModel), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    List<SNode> roots = SModelOperations.roots(((SModel) editorModel), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     return ListSequence.fromList(roots).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "EditorAspectDescriptorImpl".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));

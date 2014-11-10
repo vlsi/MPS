@@ -139,7 +139,7 @@ public class ChildSubstituteActionsUtil {
         continue;
       }
       SModel sModel = actionsModelDescr;
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, 1112058057696l, "actionsBuilder"));
         }

@@ -51,7 +51,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode res = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
+            SNode res = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149588970l, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource"));
             SLinkOperations.setTarget(res, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149588970l, 5253498789149588972l, "folder"), nodeToWrap);
             return res;
           }
@@ -267,7 +267,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SLinkOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
+        SLinkOperations.addNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 4034578608468929319l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule"));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {

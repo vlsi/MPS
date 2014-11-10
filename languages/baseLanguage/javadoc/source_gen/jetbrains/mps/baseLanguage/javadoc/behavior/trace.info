@@ -181,7 +181,7 @@
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/6612597108004626828">
     <file name="HTMLElement_Behavior.java">
-      <node id="6612597108004626831" at="16,43,17,248" concept="1" />
+      <node id="6612597108004626831" at="16,43,17,356" concept="1" />
       <node id="439148907936339404" at="19,108,20,243" concept="4" />
       <node id="439148907936414313" at="20,243,21,59" concept="4" />
       <node id="439148907936340169" at="21,59,22,212" concept="4" />
@@ -233,7 +233,7 @@
       <node id="439148907936531663" at="35,10,74,5" concept="0" />
       <node id="439148907936340114" at="26,0,74,5" concept="3" />
       <node id="6612597108004626828" at="19,0,77,0" concept="8" trace="virtual_smartDelete_9042833497008205283#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
-      <scope id="6612597108004626830" at="16,43,17,248" />
+      <scope id="6612597108004626830" at="16,43,17,356" />
       <scope id="5521685164201377200" at="29,403,30,398" />
       <scope id="3633133276124307752" at="37,439,38,63" />
       <scope id="3633133276124307924" at="49,255,50,66" />

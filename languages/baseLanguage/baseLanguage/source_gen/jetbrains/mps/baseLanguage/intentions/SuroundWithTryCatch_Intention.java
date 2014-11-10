@@ -123,7 +123,7 @@ public class SuroundWithTryCatch_Intention implements IntentionFactory {
             if (Sequence.fromIterable(handledExceptions).contains(it)) {
               return;
             }
-            SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+            SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
             SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), it);
             SNode clause = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
             SLinkOperations.setTarget(clause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null));

@@ -26,7 +26,7 @@ public class SelectInEditorOperation_selectionStartActions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd")) == null) {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
     }
   }

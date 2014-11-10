@@ -60,8 +60,8 @@
         <var name="_context" id="943668161921866947" />
         <var name="operationContext" id="943668161921866947" />
       </scope>
-      <unit id="943668161921929148" at="37,194,41,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$2" />
-      <unit id="943668161921929030" at="73,186,77,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
+      <unit id="943668161921929148" at="37,298,41,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$2" />
+      <unit id="943668161921929030" at="73,290,77,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
     </file>
   </root>
 </debug-info>

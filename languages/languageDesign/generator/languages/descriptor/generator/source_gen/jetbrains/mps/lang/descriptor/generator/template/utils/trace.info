@@ -11,12 +11,12 @@
     <file name="LanguageRuntimeGeneratorUtils.java">
       <node id="725186580885286579" at="25,151,26,76" concept="4" />
       <node id="725186580885308437" at="27,30,28,19" concept="5" />
-      <node id="4586246778193290114" at="29,5,30,80" concept="4" />
+      <node id="4586246778193290114" at="29,5,30,77" concept="4" />
       <node id="2178507174410770184" at="34,162,35,24" concept="5" />
       <node id="2178507174410790270" at="37,9,38,21" concept="5" />
       <node id="725186580885324059" at="42,112,43,91" concept="4" />
       <node id="725186580885357331" at="44,30,45,19" concept="5" />
-      <node id="725186580884194035" at="46,5,47,127" concept="4" />
+      <node id="725186580884194035" at="46,5,47,226" concept="4" />
       <node id="725186580885050982" at="49,39,50,214" concept="5" />
       <node id="725186580885209802" at="54,118,55,243" concept="4" />
       <node id="725186580885209814" at="56,27,57,295" concept="0" />
@@ -34,9 +34,9 @@
       <node id="725186580885209809" at="55,243,59,5" concept="2" />
       <node id="725186580885209843" at="61,110,65,5" concept="2" />
       <node id="2178507174410691254" at="32,39,37,9" concept="1" />
-      <node id="725186580884256001" at="47,127,52,7" concept="5" />
+      <node id="725186580884256001" at="47,226,52,7" concept="5" />
       <node id="2178507174410563899" at="32,0,40,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2178507174410107804" at="30,80,40,16" concept="5" />
+      <node id="2178507174410107804" at="30,77,40,16" concept="5" />
       <node id="725186580884192681" at="42,0,54,0" concept="6" trace="hasManualEditorAspectDescriptor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
       <node id="725186580885202869" at="54,0,69,0" concept="6" trace="getAspectModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="4586246778193290021" at="25,0,42,0" concept="6" trace="isAspectOfLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;null)Z" />

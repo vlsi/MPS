@@ -191,7 +191,7 @@ public class QueriesGenerated {
     return ContextUtil.getContextForConstant(_context, _context.getNode(), true);
   }
   public static void mappingScript_CodeBlock_5546896804536307448(final MappingScriptContext _context) {
-    for (SNode nn : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression")) {
+    for (SNode nn : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 3196918548952765095l, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"))) {
       List<SNode> all = SNodeOperations.getNodeAncestors(nn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false);
       for (SNode statement : all) {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"))) {

@@ -54,7 +54,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     return eq_5ytd5s_a0a0m(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"));
     if ((highType != null)) {
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691674l, "highType"), highType);
     } else {

@@ -372,12 +372,12 @@ public class QueriesGenerated {
     SPropertyOperations.set(_context.getOutputNode(), MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6999033275467544021l, "shortEmptyNotation"), "" + (true));
   }
   public static void mappingScript_CodeBlock_4755209551904406821(final MappingScriptContext _context) {
-    for (SNode project : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
+    for (SNode project : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, "jetbrains.mps.build.workflow.structure.BwfProject"))) {
       new CycleHelper(project, _context).processCycles();
     }
   }
   public static void mappingScript_CodeBlock_1117643560963147796(final MappingScriptContext _context) {
-    for (SNode n : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
+    for (SNode n : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, "jetbrains.mps.build.workflow.structure.BwfProject"))) {
       new TaskLibrariesHelper(n, _context).importLibs();
     }
   }

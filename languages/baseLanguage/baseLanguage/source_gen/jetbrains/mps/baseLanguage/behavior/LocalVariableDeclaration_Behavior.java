@@ -28,7 +28,7 @@ public class LocalVariableDeclaration_Behavior {
     return SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement"));
   }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode ref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"));
     SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), thisNode);
     return ref;
   }

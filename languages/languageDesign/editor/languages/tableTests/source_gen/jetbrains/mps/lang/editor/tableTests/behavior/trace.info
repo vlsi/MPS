@@ -64,16 +64,16 @@
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/2882388703616228638">
     <file name="Table_Behavior.java">
-      <node id="2882388703616228649" at="18,227,19,111" concept="2" />
-      <node id="2882388703616228657" at="20,232,21,123" concept="2" />
-      <node id="2882388703616228663" at="21,123,22,208" concept="0" />
+      <node id="2882388703616228649" at="18,227,19,214" concept="2" />
+      <node id="2882388703616228657" at="20,232,21,226" concept="2" />
+      <node id="2882388703616228663" at="21,226,22,208" concept="0" />
       <node id="2882388703616228673" at="22,208,23,233" concept="0" />
       <node id="2882388703616228688" at="24,7,25,230" concept="0" />
       <node id="1262430001741498025" at="28,101,29,13" concept="3" />
       <node id="1262430001741498093" at="31,98,32,13" concept="3" />
       <node id="2882388703616228638" at="28,0,31,0" concept="5" trace="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
       <node id="2882388703616228638" at="31,0,34,0" concept="5" trace="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
-      <node id="2882388703616228655" at="19,111,24,7" concept="1" />
+      <node id="2882388703616228655" at="19,214,24,7" concept="1" />
       <node id="2882388703616228647" at="17,43,26,5" concept="1" />
       <node id="2882388703616228638" at="17,0,28,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1262430001741498028" at="28,101,29,13" />
@@ -87,7 +87,7 @@
       <scope id="2882388703616228638" at="31,0,34,0">
         <var name="thisConcept" id="2882388703616228638" />
       </scope>
-      <scope id="2882388703616228655" at="19,111,24,7">
+      <scope id="2882388703616228655" at="19,214,24,7">
         <var name="j" id="2882388703616228680" />
       </scope>
       <scope id="2882388703616228648" at="18,227,25,230">
@@ -106,23 +106,23 @@
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7483705179651302808">
     <file name="StateMachine_Behavior.java">
       <node id="7483705179651302811" at="14,43,15,18" concept="2" />
-      <node id="7483705179651319695" at="16,37,17,115" concept="2" />
-      <node id="7483705179651319713" at="17,115,18,175" concept="0" />
+      <node id="7483705179651319695" at="16,37,17,217" concept="2" />
+      <node id="7483705179651319713" at="17,217,18,175" concept="0" />
       <node id="7483705179651319681" at="18,175,19,232" concept="0" />
-      <node id="7483705179651319744" at="21,37,22,115" concept="2" />
-      <node id="7483705179651319752" at="22,115,23,175" concept="0" />
+      <node id="7483705179651319744" at="21,37,22,217" concept="2" />
+      <node id="7483705179651319752" at="22,217,23,175" concept="0" />
       <node id="7483705179651319768" at="23,175,24,232" concept="0" />
       <node id="4674252664726329705" at="26,37,27,248" concept="2" />
       <node id="4674252664726366680" at="27,248,28,275" concept="2" />
       <node id="4674252664726366663" at="28,275,29,242" concept="2" />
       <node id="4674252664726366715" at="29,242,30,0" concept="4" />
-      <node id="4674252664726328837" at="30,0,31,125" concept="2" />
-      <node id="4674252664726328845" at="31,125,32,299" concept="0" />
-      <node id="4674252664726366718" at="32,299,33,378" concept="0" />
-      <node id="4674252664726329677" at="33,378,34,297" concept="0" />
-      <node id="4674252664726366735" at="34,297,35,376" concept="0" />
-      <node id="4674252664726329691" at="35,376,36,297" concept="0" />
-      <node id="4674252664726366752" at="36,297,37,370" concept="0" />
+      <node id="4674252664726328837" at="30,0,31,227" concept="2" />
+      <node id="4674252664726328845" at="31,227,32,401" concept="0" />
+      <node id="4674252664726366718" at="32,401,33,378" concept="0" />
+      <node id="4674252664726329677" at="33,378,34,399" concept="0" />
+      <node id="4674252664726366735" at="34,399,35,376" concept="0" />
+      <node id="4674252664726329691" at="35,376,36,399" concept="0" />
+      <node id="4674252664726366752" at="36,399,37,370" concept="0" />
       <node id="3833526849318580668" at="37,370,38,193" concept="0" />
       <node id="3833526849318579665" at="38,193,39,242" concept="0" />
       <node id="7483705179651302819" at="15,18,20,5" concept="1" />
@@ -161,16 +161,16 @@
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7651593722933724230">
     <file name="LightWeightDecisionTable_Behavior.java">
-      <node id="7651593722933724234" at="11,43,12,242" concept="0" />
-      <node id="7651593722933755850" at="12,242,13,242" concept="0" />
-      <node id="7651593722933755858" at="13,242,14,239" concept="0" />
-      <node id="7651593722933755866" at="14,239,15,239" concept="0" />
-      <node id="7651593722933755879" at="15,239,16,239" concept="0" />
-      <node id="7651593722933755886" at="16,239,17,239" concept="0" />
-      <node id="7651593722933755893" at="17,239,18,239" concept="0" />
-      <node id="7651593722933755900" at="18,239,19,239" concept="0" />
+      <node id="7651593722933724234" at="11,43,12,344" concept="0" />
+      <node id="7651593722933755850" at="12,344,13,344" concept="0" />
+      <node id="7651593722933755858" at="13,344,14,341" concept="0" />
+      <node id="7651593722933755866" at="14,341,15,341" concept="0" />
+      <node id="7651593722933755879" at="15,341,16,341" concept="0" />
+      <node id="7651593722933755886" at="16,341,17,341" concept="0" />
+      <node id="7651593722933755893" at="17,341,18,341" concept="0" />
+      <node id="7651593722933755900" at="18,341,19,341" concept="0" />
       <node id="7651593722933724230" at="11,0,21,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="7651593722933724232" at="11,43,19,239" />
+      <scope id="7651593722933724232" at="11,43,19,341" />
       <scope id="7651593722933724230" at="11,0,21,0">
         <var name="thisNode" id="7651593722933724230" />
       </scope>
@@ -195,8 +195,8 @@
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/8506335436194799574">
     <file name="HierarchycalTable_Behavior.java">
-      <node id="2422839104779457221" at="18,230,19,121" concept="2" />
-      <node id="2422839104779457227" at="19,121,20,191" concept="0" />
+      <node id="2422839104779457221" at="18,230,19,224" concept="2" />
+      <node id="2422839104779457227" at="19,224,20,191" concept="0" />
       <node id="2422839104779457235" at="20,191,21,238" concept="0" />
       <node id="1262430001741646993" at="24,101,25,13" concept="3" />
       <node id="1262430001741720097" at="27,98,28,13" concept="3" />

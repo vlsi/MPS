@@ -18,7 +18,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/1096629760203">
     <file name="QueriesGenerated.java">
-      <node id="4547882846713921805" at="57,108,58,476" concept="6" />
+      <node id="4547882846713921805" at="57,108,58,779" concept="6" />
       <node id="4772059062239964465" at="173,110,174,269" concept="6" />
       <node id="4772059062240146192" at="176,110,177,269" concept="6" />
       <node id="4772059062240316597" at="179,110,180,269" concept="6" />
@@ -37,7 +37,7 @@
       <node id="2548761562343553495" at="1966,120,1967,369" concept="6" />
       <node id="4772059062238773279" at="1969,120,1970,379" concept="6" />
       <node id="5950344441600479122" at="1972,120,1973,206" concept="6" />
-      <scope id="4547882846713899481" at="57,108,58,476" />
+      <scope id="4547882846713899481" at="57,108,58,779" />
       <scope id="4772059062239964252" at="173,110,174,269" />
       <scope id="4772059062240144660" at="176,110,177,269" />
       <scope id="4772059062240312815" at="179,110,180,269" />
@@ -1667,8 +1667,8 @@
       <node id="2193538562733675059" at="140,110,141,246" concept="6" />
       <node id="9186828658637067755" at="143,110,144,78" concept="6" />
       <node id="9186828658631742315" at="2053,107,2054,239" concept="5" />
-      <node id="9186828658631679004" at="2054,239,2055,132" concept="5" />
-      <node id="9186828658631682453" at="2055,132,2056,183" concept="1" />
+      <node id="9186828658631679004" at="2054,239,2055,228" concept="5" />
+      <node id="9186828658631682453" at="2055,228,2056,183" concept="1" />
       <node id="9186828658631765626" at="2056,183,2057,237" concept="1" />
       <node id="9186828658631850498" at="2057,237,2058,27" concept="6" />
       <node id="4911702205467752816" at="125,0,128,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1964,7 +1964,7 @@
       <node id="8872173783417963942" at="1044,109,1045,177" concept="6" />
       <node id="4586907386449955932" at="1353,50,1354,194" concept="6" />
       <node id="8872173783417963907" at="1358,94,1359,114" concept="6" />
-      <node id="4618993321951069567" at="1361,94,1362,165" concept="6" />
+      <node id="4618993321951069567" at="1361,94,1362,264" concept="6" />
       <node id="3784190569164330675" at="1364,94,1365,116" concept="6" />
       <node id="3784190569164257835" at="1367,94,1368,115" concept="6" />
       <node id="6427926542643776590" at="1372,50,1373,194" concept="6" />
@@ -2041,7 +2041,7 @@
       <scope id="8872173783417963941" at="1044,109,1045,177" />
       <scope id="4586907386449955932" at="1353,50,1354,194" />
       <scope id="8872173783417963906" at="1358,94,1359,114" />
-      <scope id="4618993321951063331" at="1361,94,1362,165" />
+      <scope id="4618993321951063331" at="1361,94,1362,264" />
       <scope id="3784190569164330628" at="1364,94,1365,116" />
       <scope id="3784190569164257450" at="1367,94,1368,115" />
       <scope id="6427926542643776590" at="1372,50,1373,194" />
@@ -2149,25 +2149,25 @@
       <scope id="2467262375110794921" at="2093,102,2102,13" />
       <scope id="8872173783417963829" at="1997,120,2010,13" />
       <scope id="907051507539218521" at="2015,119,2028,13" />
-      <unit id="4586907386449955932" at="1352,321,1356,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$9" />
-      <unit id="6427926542643776590" at="1371,165,1375,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$10" />
-      <unit id="7574907573014856376" at="1378,198,1382,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$11" />
-      <unit id="6427926542643768796" at="1385,165,1389,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$12" />
-      <unit id="6427926542628705072" at="1392,198,1396,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$13" />
+      <unit id="4586907386449955932" at="1352,531,1356,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$9" />
+      <unit id="6427926542643776590" at="1371,270,1375,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$10" />
+      <unit id="7574907573014856376" at="1378,297,1382,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$11" />
+      <unit id="6427926542643768796" at="1385,270,1389,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$12" />
+      <unit id="6427926542628705072" at="1392,297,1396,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$13" />
       <unit id="2467262375112805640" at="1871,112,1875,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$15" />
       <unit id="2467262375112941395" at="1878,112,1882,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$16" />
-      <unit id="4586907386450005887" at="1991,165,1995,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$18" />
-      <unit id="8872173783417963846" at="1998,161,2002,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$19" />
+      <unit id="4586907386450005887" at="1991,270,1995,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$18" />
+      <unit id="8872173783417963846" at="1998,260,2002,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$19" />
       <unit id="7033942394254696197" at="2002,17,2006,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$20" />
       <unit id="8872173783417963833" at="2006,27,2010,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$21" />
-      <unit id="907051507539229453" at="2016,163,2020,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$22" />
+      <unit id="907051507539229453" at="2016,262,2020,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$22" />
       <unit id="7033942394254772266" at="2020,17,2024,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$23" />
       <unit id="907051507539229440" at="2024,27,2028,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$24" />
-      <unit id="8714766435274427370" at="2034,198,2038,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$25" />
+      <unit id="8714766435274427370" at="2034,297,2038,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$25" />
       <unit id="4933681201882474806" at="2038,191,2042,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$26" />
-      <unit id="8872173783417963876" at="2072,160,2076,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$28" />
+      <unit id="8872173783417963876" at="2072,259,2076,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$28" />
       <unit id="8872173783417963865" at="2076,16,2080,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$29" />
-      <unit id="907051507539333197" at="2083,162,2087,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$30" />
+      <unit id="907051507539333197" at="2083,261,2087,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$30" />
       <unit id="907051507539333186" at="2087,16,2091,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$31" />
       <unit id="2467262375110919322" at="2094,113,2098,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$32" />
       <unit id="2467262375111092715" at="2098,27,2102,5" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$33" />

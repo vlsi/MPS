@@ -1161,8 +1161,8 @@
       <unit id="4124845871897265653" at="167,98,171,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$4" />
       <unit id="4743311727820084717" at="185,45,189,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$5" />
       <unit id="4743311727820084733" at="189,20,193,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$6" />
-      <unit id="4515621863031799849" at="258,87,262,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$8" />
-      <unit id="4510141043204705948" at="269,97,273,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$9" />
+      <unit id="4515621863031799849" at="258,84,262,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$8" />
+      <unit id="4510141043204705948" at="269,94,273,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$9" />
       <unit id="4415110399252640026" at="302,69,306,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$1" />
       <unit id="4515621863031846379" at="318,69,322,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$2" />
       <unit id="4415110399252644525" at="335,99,339,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$3" />

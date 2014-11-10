@@ -19,9 +19,9 @@ import java.util.HashMap;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import java.util.Collections;
 import java.util.List;
@@ -48,7 +48,7 @@ public class MigrationDataUtil {
       throw new RuntimeException();
     }
     for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
-      SNode stepData = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.migration.util.structure.StepData", null);
+      SNode stepData = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData"));
       SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script"), createMigrationScriptReference_hzite5_a0b0g0a(p._0().getModuleReference().toString(), p._0().getFromVersion()));
       SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"), p._1());
     }
@@ -76,7 +76,7 @@ public class MigrationDataUtil {
       throw new RuntimeException(e);
     }
 
-    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.migration.util.structure.StepData"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData")))) {
       ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"))), SPropertyOperations.getInteger(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"))), SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"))));
     }
     return result;

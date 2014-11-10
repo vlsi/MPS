@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -20,8 +22,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 
@@ -34,7 +34,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066579l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }
@@ -70,7 +70,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.execution.settings.structure.PersistentConfiguration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }

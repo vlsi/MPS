@@ -1401,9 +1401,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3350570190399391695">
     <file name="WhenConcreteVariableDeclaration_Behavior.java">
-      <node id="3350570190399462396" at="11,43,12,242" concept="2" />
+      <node id="3350570190399462396" at="11,43,12,350" concept="2" />
       <node id="3350570190399391695" at="11,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3350570190399391697" at="11,43,12,242" />
+      <scope id="3350570190399391697" at="11,43,12,350" />
       <scope id="3350570190399391695" at="11,0,14,0">
         <var name="thisNode" id="3350570190399391695" />
       </scope>
@@ -2134,8 +2134,8 @@
     <file name="AbstractRule_Behavior.java">
       <node id="8952337903384866982" at="16,382,17,539" concept="8" />
       <node id="8952337903384866995" at="18,5,19,16" concept="8" />
-      <node id="6261424444345979642" at="21,100,22,128" concept="7" />
-      <node id="6261424444345979650" at="22,128,23,196" concept="2" />
+      <node id="6261424444345979642" at="21,100,22,224" concept="7" />
+      <node id="6261424444345979650" at="22,224,23,196" concept="2" />
       <node id="6261424444345979667" at="23,196,24,202" concept="2" />
       <node id="8952337903384830487" at="13,0,15,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8952337903384866980" at="15,82,18,5" concept="5" />

@@ -47,7 +47,7 @@ public class TestCollector {
         public List<SNode> invoke() {
           final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b2(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
-          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode itc) {
               return !(SPropertyOperations.getBoolean(SNodeOperations.as(itc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(itc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
@@ -62,7 +62,7 @@ public class TestCollector {
         public void visit(final SNode itc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
+              SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, "jetbrains.mps.testbench.suite.structure.TestCaseRef"));
               SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase"), itc);
               return tref;
             }
@@ -92,7 +92,7 @@ public class TestCollector {
           final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b3(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
           final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a1a0a0c0b3(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
-          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
               return !(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
@@ -115,7 +115,7 @@ public class TestCollector {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
+              SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"));
               SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, 4504141816188599489l, "klass"), SNodeOperations.cast(tc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
               return tref;
             }
@@ -151,7 +151,7 @@ public class TestCollector {
         public List<SNode> invoke() {
           final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b4(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
-          return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+          return nodes.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
               return !(SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) && !(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
@@ -166,7 +166,7 @@ public class TestCollector {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
+              SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"));
               SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, 1280144168199457727l, "klass"), SNodeOperations.cast(tc, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
               return tref;
             }

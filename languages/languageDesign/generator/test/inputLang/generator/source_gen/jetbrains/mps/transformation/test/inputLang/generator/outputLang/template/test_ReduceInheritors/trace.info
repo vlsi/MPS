@@ -336,8 +336,8 @@
       <node id="8014813979421810811" at="39,112,40,128" concept="9" />
       <node id="8417539822878729234" at="44,50,45,188" concept="9" />
       <node id="1206460269944" at="49,114,50,200" concept="9" />
-      <node id="7612440128092282153" at="55,107,56,126" concept="8" />
-      <node id="7612440128092282159" at="56,126,57,370" concept="3" />
+      <node id="7612440128092282153" at="55,107,56,222" concept="8" />
+      <node id="7612440128092282159" at="56,222,57,370" concept="3" />
       <node id="7612440128092282169" at="57,370,58,17" concept="9" />
       <node id="8417539822878729234" at="44,0,47,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="8417539822878724200" at="42,120,47,7" concept="9" />
@@ -351,7 +351,7 @@
         <var name="inode" id="7612440128092282154" />
       </scope>
       <scope id="8417539822878722926" at="42,120,47,7" />
-      <unit id="8417539822878729234" at="43,175,47,5" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated$1" />
+      <unit id="8417539822878729234" at="43,275,47,5" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)/8417539822878724212">

@@ -794,7 +794,7 @@
       <node id="3719390199793467556" at="100,19,101,0" concept="12" />
       <node id="3719390199793467557" at="101,0,102,19" concept="10" />
       <node id="3719390199793467249" at="28,0,31,0" concept="2" trace="ConstraintsChecker#()V" />
-      <node id="3719390199793467286" at="36,92,39,7" concept="7" />
+      <node id="3719390199793467286" at="36,89,39,7" concept="7" />
       <node id="3719390199793467307" at="45,212,48,13" concept="7" />
       <node id="3719390199793467345" at="49,18,52,13" concept="7" />
       <node id="5779969123417805520" at="59,0,62,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -861,7 +861,7 @@
       <scope id="3719390199793467301" at="42,21,68,7">
         <var name="link" id="3719390199793467450" />
       </scope>
-      <scope id="3719390199793467285" at="36,92,98,7">
+      <scope id="3719390199793467285" at="36,89,98,7">
         <var name="concept" id="3719390199793467293" />
       </scope>
       <scope id="3719390199793467281" at="35,53,99,5">
@@ -932,7 +932,7 @@
       <node id="3719390199793467786" at="34,19,35,0" concept="12" />
       <node id="3719390199793467787" at="35,0,36,19" concept="10" />
       <node id="3719390199793467712" at="18,0,20,0" concept="2" trace="UnavailableConceptsChecker#()V" />
-      <node id="3719390199793467745" at="25,86,28,7" concept="7" />
+      <node id="3719390199793467745" at="25,83,28,7" concept="7" />
       <node id="3719390199793467757" at="29,66,32,7" concept="7" />
       <node id="3719390199793467743" at="24,45,33,5" concept="6" />
       <node id="3719390199793467716" at="20,0,38,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
@@ -940,7 +940,7 @@
       <scope id="3719390199793467746" at="26,33,27,14" />
       <scope id="3719390199793467761" at="30,28,31,272" />
       <scope id="3719390199793467712" at="18,0,20,0" />
-      <scope id="3719390199793467744" at="25,86,32,7">
+      <scope id="3719390199793467744" at="25,83,32,7">
         <var name="concept" id="3719390199793467752" />
       </scope>
       <scope id="3719390199793467743" at="24,45,33,5">
@@ -996,7 +996,7 @@
       <node id="150237051626719747" at="112,5,113,16" concept="10" />
       <node id="3719390199793467800" at="29,0,31,0" concept="2" trace="UnresolvedReferencesChecker#()V" />
       <node id="3719390199793467818" at="33,124,36,5" concept="7" />
-      <node id="3719390199793467871" at="39,86,42,7" concept="7" />
+      <node id="3719390199793467871" at="39,83,42,7" concept="7" />
       <node id="3719390199793467884" at="44,95,47,9" concept="7" />
       <node id="150237051626719685" at="50,0,53,0" concept="8" trace="doFix#()Z" />
       <node id="3719390199793467928" at="55,68,58,9" concept="7" />
@@ -1062,7 +1062,7 @@
       <scope id="3719390199793467879" at="43,41,92,7">
         <var name="ref" id="3719390199793468035" />
       </scope>
-      <scope id="3719390199793467870" at="39,86,92,7" />
+      <scope id="3719390199793467870" at="39,83,92,7" />
       <scope id="3719390199793467866" at="38,0,93,5">
         <var name="node" id="3719390199793468036" />
       </scope>
@@ -1738,7 +1738,7 @@
       <node id="3719390199795829596" at="69,42,78,15" concept="7" />
       <node id="3719390199795829577" at="65,90,80,13" concept="6" />
       <node id="3719390199795829562" at="63,0,82,0" concept="8" trace="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
-      <node id="3719390199795829553" at="61,75,82,11" concept="4" />
+      <node id="3719390199795829553" at="61,72,82,11" concept="4" />
       <node id="3719390199795829551" at="60,7,83,7" concept="6" />
       <node id="3719390199795829526" at="51,83,85,5" concept="6" />
       <node id="3719390199795829502" at="47,0,89,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
@@ -1782,7 +1782,7 @@
       <scope id="3719390199795829562" at="63,0,82,0">
         <var name="p0" id="3719390199795829565" />
       </scope>
-      <scope id="3719390199795829552" at="61,75,82,11" />
+      <scope id="3719390199795829552" at="61,72,82,11" />
       <scope id="3719390199795829551" at="60,7,83,7">
         <var name="rootNode" id="3719390199795829645" />
       </scope>
@@ -1831,7 +1831,7 @@
       <node id="3719390199795829676" at="25,0,27,0" concept="2" trace="GeneratorTemplatesChecker#()V" />
       <node id="3719390199795829685" at="28,142,31,5" concept="7" />
       <node id="3719390199795829712" at="33,130,36,5" concept="7" />
-      <node id="3719390199795829735" at="42,67,45,11" concept="7" />
+      <node id="3719390199795829735" at="42,64,45,11" concept="7" />
       <node id="3719390199795829741" at="45,11,48,11" concept="7" />
       <node id="3719390199795829768" at="52,51,55,9" concept="7" />
       <node id="3719390199795829783" at="58,93,61,13" concept="7" />
@@ -1864,7 +1864,7 @@
       <scope id="3719390199795829834" at="73,170,74,23" />
       <scope id="3719390199795829837" at="76,66,77,23" />
       <scope id="3719390199795829676" at="25,0,27,0" />
-      <scope id="3719390199795829734" at="42,67,48,11" />
+      <scope id="3719390199795829734" at="42,64,48,11" />
       <scope id="3719390199795829732" at="41,26,49,9" />
       <scope id="3719390199795829733" at="41,26,49,9">
         <var name="root" id="3719390199795829752" />

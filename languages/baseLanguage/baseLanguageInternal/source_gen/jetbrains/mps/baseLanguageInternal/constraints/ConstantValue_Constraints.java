@@ -65,7 +65,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null) && SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
               }

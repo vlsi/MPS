@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -31,7 +31,7 @@ public class NodeFactoryUtil {
     if (actionsModelDescriptor == null) {
       return Collections.emptyList();
     }
-    return ListSequence.fromList(SModelOperations.getRoots(actionsModelDescriptor, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700664498l, "jetbrains.mps.lang.actions.structure.NodeFactories"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700664498l, 1158700779049l, "nodeFactory"));
       }

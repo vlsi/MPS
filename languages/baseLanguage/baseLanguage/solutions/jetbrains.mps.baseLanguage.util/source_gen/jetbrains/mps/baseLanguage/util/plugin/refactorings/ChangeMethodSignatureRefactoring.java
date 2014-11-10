@@ -43,7 +43,7 @@ public class ChangeMethodSignatureRefactoring {
       for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")))) {
         int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getNodeId().toString());
         if (index == -1) {
-          call.addArgument(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
+          call.addArgument(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534058343l, "jetbrains.mps.baseLanguage.structure.NullLiteral")));
         } else {
           call.addArgument(ListSequence.fromList(oldArgs).getElement(index));
         }

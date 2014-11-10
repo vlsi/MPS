@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -69,7 +71,7 @@ public class AddDefaultNodeAttribute_Intention implements IntentionFactory {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute")) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute")));
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute"), SConceptOperations.createNewNode("testDefaultEditor.structure.DefaultNodeAttribute", null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203553l, "testDefaultEditor.structure.DefaultNodeAttribute")));
         SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute")), "const");
       }
     }

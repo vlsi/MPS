@@ -206,7 +206,7 @@
         <var name="concept" id="4832363360995121725" />
         <var name="exactConcept" id="4832363360995121727" />
       </scope>
-      <unit id="3256144589678342142" at="72,151,76,5" name="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
+      <unit id="3256144589678342142" at="72,250,76,5" name="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
       <unit id="3256144589678342283" at="78,74,82,5" name="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$2" />
       <unit id="3256144589678342562" at="82,18,86,5" name="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$3" />
       <unit id="3256144589678342624" at="86,17,90,5" name="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$4" />

@@ -72,7 +72,7 @@ public class IntentionUtils {
       return null;
     }
 
-    SNode ternaryOperator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
+    SNode ternaryOperator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"), (SNode) CopyUtil.copy(condition));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"), (SNode) CopyUtil.copy(diff._0()));
     SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"), (SNode) CopyUtil.copy(diff._1()));

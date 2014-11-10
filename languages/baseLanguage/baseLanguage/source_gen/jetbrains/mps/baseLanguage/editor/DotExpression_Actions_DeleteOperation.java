@@ -33,7 +33,7 @@ public class DotExpression_Actions_DeleteOperation {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")))), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
       } else {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1208623485264l, "jetbrains.mps.baseLanguage.structure.AbstractOperation")));
       }
     }
   }
@@ -52,7 +52,7 @@ public class DotExpression_Actions_DeleteOperation {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")))), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
       } else {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1208623485264l, "jetbrains.mps.baseLanguage.structure.AbstractOperation")));
       }
     }
   }

@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -37,7 +37,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            List<SNode> containers = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer");
+            List<SNode> containers = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701953l, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"));
             List<SNode> customConstructors = new ArrayList<SNode>();
             for (SNode container : ListSequence.fromList(containers)) {
               ListSequence.fromList(customConstructors).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701953l, 3041831561922340678l, "constructors"))));

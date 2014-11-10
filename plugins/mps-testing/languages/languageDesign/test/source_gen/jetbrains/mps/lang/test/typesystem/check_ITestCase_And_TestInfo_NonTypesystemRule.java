@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +22,7 @@ public class check_ITestCase_And_TestInfo_NonTypesystemRule extends AbstractNonT
   public check_ITestCase_And_TestInfo_NonTypesystemRule() {
   }
   public void applyRule(final SNode iTestCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, iTestCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{}) && ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(iTestCase), "jetbrains.mps.lang.test.structure.TestInfo")).isEmpty()) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, iTestCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{}) && ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(iTestCase), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 5097124989038916362l, "jetbrains.mps.lang.test.structure.TestInfo"))).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(iTestCase, "TestInfo root pointing the the test project should be created in the model to properly code in all environments", "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1558359368029368278", null, errorTarget);

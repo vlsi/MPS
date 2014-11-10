@@ -50,7 +50,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class Classifier_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
@@ -241,10 +241,10 @@ public class Classifier_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), thisNode);
     for (SNode decl : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
-      SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode reference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), decl);
       ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(reference);
     }

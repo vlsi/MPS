@@ -62,7 +62,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
         continue;
       }
 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), enclosingEnum);
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
@@ -115,7 +115,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       }
 
       // success 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(enumClassCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
@@ -149,7 +149,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
         continue;
       }
 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(claz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
       SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 

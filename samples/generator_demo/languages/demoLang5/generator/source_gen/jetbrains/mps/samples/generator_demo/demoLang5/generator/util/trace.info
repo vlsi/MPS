@@ -11,8 +11,8 @@
   <root nodeRef="r:d5b5743a-35a4-486d-873c-cecbc6ad99d5(jetbrains.mps.samples.generator_demo.demoLang5.generator.util)/3978102045101718900">
     <file name="TextUtil.java">
       <node id="3978102045101719015" at="19,44,20,38" concept="6" />
-      <node id="3978102045101720381" at="20,38,21,113" concept="4" />
-      <node id="3978102045101783854" at="21,113,22,27" concept="6" />
+      <node id="3978102045101720381" at="20,38,21,212" concept="4" />
+      <node id="3978102045101783854" at="21,212,22,27" concept="6" />
       <node id="3978102045101783043" at="24,39,25,195" concept="5" />
       <node id="3978102045101784195" at="28,52,29,43" concept="6" />
       <node id="3978102045101784260" at="29,43,30,342" concept="1" />

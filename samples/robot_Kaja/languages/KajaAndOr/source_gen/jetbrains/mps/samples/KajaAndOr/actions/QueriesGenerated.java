@@ -132,11 +132,11 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
+                SNode andNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
                 conjuction = andNode;
               } else {
-                SNode orNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.Or", null);
+                SNode orNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
                 conjuction = orNode;
               }

@@ -87,7 +87,7 @@
       <node id="1233929479423" at="29,45,30,107" concept="13" />
       <node id="1233929479423" at="33,47,34,16" concept="9" />
       <node id="1236703309944" at="40,138,41,52" concept="8" />
-      <node id="1236703470000" at="41,52,42,160" concept="8" />
+      <node id="1236703470000" at="41,52,42,260" concept="8" />
       <node id="1236703614298" at="43,33,44,248" concept="3" />
       <node id="1236703334581" at="45,9,46,22" concept="9" />
       <node id="1233929479423" at="49,59,50,46" concept="9" />
@@ -105,7 +105,7 @@
       <node id="1233929479423" at="85,0,86,0" concept="11" trace="breakingNode_617hs5_a0a1a0a0a2" />
       <node id="1234264389786" at="75,18,77,13" concept="0" />
       <node id="1233929479423" at="29,0,32,0" concept="2" trace="OperationDeclaration_Constraints#()V" />
-      <node id="1236703502276" at="42,160,45,9" concept="5" />
+      <node id="1236703502276" at="42,260,45,9" concept="5" />
       <node id="1234268259875" at="66,188,69,11" concept="6" />
       <node id="1233929479423" at="32,0,36,0" concept="7" trace="hasOwnDefaultScopeProvider#()Z" />
       <node id="1233929479423" at="48,0,52,0" concept="7" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -128,7 +128,7 @@
       <scope id="1234264389787" at="75,20,76,44" />
       <scope id="1234264345467" at="72,56,74,58" />
       <scope id="1233929479423" at="29,0,32,0" />
-      <scope id="1236703502276" at="42,160,45,9">
+      <scope id="1236703502276" at="42,260,45,9">
         <var name="tg" id="1236703502280" />
       </scope>
       <scope id="1233929479423" at="32,0,36,0" />

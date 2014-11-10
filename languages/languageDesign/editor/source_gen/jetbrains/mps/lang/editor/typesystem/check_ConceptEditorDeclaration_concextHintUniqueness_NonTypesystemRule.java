@@ -79,7 +79,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
       }
       SModel editorModel = LanguageAspect.EDITOR.get(nextLanguage);
       if (editorModel != null) {
-        CollectionSequence.fromCollection(duplicatingEditorDeclarations).addSequence(ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).where(new IWhereFilter<SNode>() {
+        CollectionSequence.fromCollection(duplicatingEditorDeclarations).addSequence(ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == SLinkOperations.getTarget(editorDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) && it != editorDeclaration;
           }

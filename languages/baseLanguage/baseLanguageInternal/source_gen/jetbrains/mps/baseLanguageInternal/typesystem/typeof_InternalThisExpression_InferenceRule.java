@@ -22,7 +22,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
   }
   public void applyRule(final SNode ite, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode c = SNodeOperations.getNodeAncestor(ite, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-    SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode ct = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     SLinkOperations.setTarget(ct, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), c);
     SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"));
     {
@@ -34,7 +34,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
         }
         tvd = tvd_iterator.next();
         {
-          SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+          SNode tvr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
           SLinkOperations.setTarget(tvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), tvd);
           ListSequence.fromList(SLinkOperations.getChildren(ct, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(tvr);
         }

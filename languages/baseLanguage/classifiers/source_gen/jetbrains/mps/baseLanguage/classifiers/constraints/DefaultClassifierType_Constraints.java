@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -44,7 +45,7 @@ public class DefaultClassifierType_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> classifiers = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
+            List<SNode> classifiers = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"));
             classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_createType_1213877527970", new Object[]{})) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType");

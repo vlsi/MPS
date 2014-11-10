@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,7 +29,7 @@ public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesy
     if (!(SNodeOperations.getModel(ms).getModule() instanceof Language)) {
       return;
     }
-    List<SNode> scripts = SModelOperations.getRoots(SNodeOperations.getModel(ms), "jetbrains.mps.lang.migration.structure.MigrationScript");
+    List<SNode> scripts = SModelOperations.roots(SNodeOperations.getModel(ms), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"));
     int scNum = ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) == SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));

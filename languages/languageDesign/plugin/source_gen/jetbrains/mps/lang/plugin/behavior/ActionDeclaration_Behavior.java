@@ -30,7 +30,7 @@ public class ActionDeclaration_Behavior {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
+    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1205852320419l, "jetbrains.mps.lang.plugin.structure.ActionType"));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1205852320419l, 1205852349655l, "action"), thisNode);
     return type;
   }

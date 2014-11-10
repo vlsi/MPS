@@ -59,7 +59,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
 
               List<SNode> result = new ArrayList<SNode>();
 
-              for (SNode dcl : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).translate(new ITranslator2<SNode, SNode>() {
+              for (SNode dcl : ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode it) {
                   return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"));
                 }

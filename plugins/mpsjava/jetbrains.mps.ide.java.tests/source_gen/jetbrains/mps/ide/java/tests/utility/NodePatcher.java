@@ -29,7 +29,7 @@ public class NodePatcher {
   }
   public static void removeStatements(SNode node) {
     for (SNode method : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, new SConcept[]{}))) {
-      SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null));
+      SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5293379017992965193l, "jetbrains.mps.baseLanguage.structure.StubStatementList")));
     }
   }
   /**
@@ -63,7 +63,7 @@ public class NodePatcher {
     }
   }
   public static void removeSourceLevelAnnotations(SNode node) {
-    final SNode retentionAnno = ListSequence.fromList(SModelOperations.getRoots(SModelRepository.getInstance().getModelDescriptor("java.lang.annotation@java_stub"), "jetbrains.mps.baseLanguage.structure.Annotation")).findFirst(new IWhereFilter<SNode>() {
+    final SNode retentionAnno = ListSequence.fromList(SModelOperations.roots(SModelRepository.getInstance().getModelDescriptor("java.lang.annotation@java_stub"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206331916l, "jetbrains.mps.baseLanguage.structure.Annotation"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("Retention");
       }

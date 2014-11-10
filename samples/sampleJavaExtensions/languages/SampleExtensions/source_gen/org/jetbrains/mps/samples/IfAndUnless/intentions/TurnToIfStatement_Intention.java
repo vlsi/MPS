@@ -98,7 +98,7 @@ public class TurnToIfStatement_Intention implements IntentionFactory {
             condition = notExpression;
           }
         }
-        SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+        SNode ifStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
         SLinkOperations.setTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), condition);
         SLinkOperations.setTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, 393299394024627228l, "body")));
         SNodeOperations.replaceWithAnother(node, ifStatement);

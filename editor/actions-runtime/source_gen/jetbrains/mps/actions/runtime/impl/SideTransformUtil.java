@@ -20,10 +20,10 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -60,7 +60,7 @@ public class SideTransformUtil {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(actionsModelDescriptor, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
+      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, 1138079416599l, "actionsBuilder"));
         }

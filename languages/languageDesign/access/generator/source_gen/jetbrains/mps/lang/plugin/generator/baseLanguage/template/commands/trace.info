@@ -15,9 +15,9 @@
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/1225441503896">
     <file name="QueriesGenerated.java">
       <node id="1225441503910" at="19,102,20,220" concept="0" />
-      <node id="8319207097755373180" at="22,108,23,508" concept="0" />
+      <node id="8319207097755373180" at="22,108,23,604" concept="0" />
       <scope id="1225441503909" at="19,102,20,220" />
-      <scope id="8319207097755373178" at="22,108,23,508" />
+      <scope id="8319207097755373178" at="22,108,23,604" />
     </file>
   </root>
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/1225441503916">

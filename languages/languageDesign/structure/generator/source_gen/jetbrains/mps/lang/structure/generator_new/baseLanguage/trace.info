@@ -58,13 +58,13 @@
       <node id="1178978272293" at="373,214,374,210" concept="6" />
       <node id="1178978309407" at="374,210,375,47" concept="6" />
       <node id="1178978507282" at="375,47,376,51" concept="6" />
-      <node id="1178978483178" at="378,34,379,142" concept="2" />
-      <node id="1178978572526" at="380,14,381,144" concept="2" />
-      <node id="1178978595618" at="381,144,382,384" concept="2" />
-      <node id="1178978697813" at="385,194,386,144" concept="2" />
+      <node id="1178978483178" at="378,34,379,244" concept="2" />
+      <node id="1178978572526" at="380,14,381,246" concept="2" />
+      <node id="1178978595618" at="381,246,382,384" concept="2" />
+      <node id="1178978697813" at="385,194,386,246" concept="2" />
       <node id="1178978727525" at="387,34,388,384" concept="2" />
       <node id="1178978662839" at="389,14,390,415" concept="2" />
-      <node id="1178978860165" at="393,194,394,144" concept="2" />
+      <node id="1178978860165" at="393,194,394,246" concept="2" />
       <node id="1178978860173" at="395,34,396,381" concept="2" />
       <node id="9150969968748405646" at="398,45,399,430" concept="2" />
       <node id="9150969968748479586" at="400,16,401,413" concept="2" />
@@ -74,11 +74,11 @@
       <node id="9150969968748479584" at="400,14,402,9" concept="0" />
       <node id="1178978563084" at="380,12,383,7" concept="0" />
       <node id="1178978958113" at="404,5,407,5" concept="4" />
-      <node id="1178978662820" at="386,144,391,7" concept="4" />
+      <node id="1178978662820" at="386,246,391,7" concept="4" />
       <node id="9150969968748405612" at="397,14,402,9" concept="4" />
       <node id="1178978465619" at="377,193,383,7" concept="4" />
       <node id="1178978860184" at="397,12,403,7" concept="0" />
-      <node id="1178978860171" at="394,144,403,7" concept="4" />
+      <node id="1178978860171" at="394,246,403,7" concept="4" />
       <node id="1178978812012" at="392,10,404,5" concept="4" />
       <node id="1178978626893" at="384,10,404,5" concept="4" />
       <node id="1178978409089" at="376,51,404,5" concept="4" />
@@ -90,7 +90,7 @@
       <scope id="1174698255354" at="271,114,272,196" />
       <scope id="1174700250816" at="274,114,275,196" />
       <scope id="1174700303503" at="277,114,278,196" />
-      <scope id="1178978465620" at="378,34,379,142" />
+      <scope id="1178978465620" at="378,34,379,244" />
       <scope id="1178978662821" at="387,34,388,384" />
       <scope id="1178978662832" at="389,14,390,415" />
       <scope id="1178978860172" at="395,34,396,381" />
@@ -195,8 +195,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)/3157361072876778597">
     <file name="QueriesGenerated.java">
-      <node id="3125857749401203976" at="45,108,46,321" concept="7" />
-      <scope id="3125857749401203975" at="45,108,46,321" />
+      <node id="3125857749401203976" at="45,108,46,521" concept="7" />
+      <scope id="3125857749401203975" at="45,108,46,521" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)/4715720811466783279">
@@ -463,7 +463,7 @@
       <unit id="5096292688183698475" at="217,236,221,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$3" />
       <unit id="3002767456620999879" at="245,236,249,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$4" />
       <unit id="3002767456621123863" at="252,236,256,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$5" />
-      <unit id="2318347719271988224" at="281,164,285,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$6" />
+      <unit id="2318347719271988224" at="281,264,285,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$6" />
       <unit id="5096292688183698350" at="288,238,292,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$7" />
       <unit id="5096292688183698408" at="295,238,299,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$8" />
       <unit id="5096292688183698439" at="302,238,306,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$9" />
@@ -472,8 +472,8 @@
       <unit id="3002767456620556824" at="334,52,338,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$12" />
       <unit id="3002767456620999903" at="344,238,348,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$13" />
       <unit id="3002767456621123890" at="351,238,355,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$14" />
-      <unit id="8768039269252246216" at="358,164,362,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$15" />
-      <unit id="7984585883276875663" at="365,164,369,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$16" />
+      <unit id="8768039269252246216" at="358,264,362,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$15" />
+      <unit id="7984585883276875663" at="365,264,369,5" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$16" />
       <unit id="5096292688183698709" at="412,295,416,7" name="jetbrains.mps.lang.structure.generator_new.baseLanguage.QueriesGenerated$17" />
     </file>
   </root>

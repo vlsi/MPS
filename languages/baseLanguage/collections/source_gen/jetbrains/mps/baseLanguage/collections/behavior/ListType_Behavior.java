@@ -47,16 +47,16 @@ public class ListType_Behavior {
     return true;
   }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
+    SNode creator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1160600644654l, "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit"));
     SLinkOperations.setTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     return creator;
   }
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> res = new ArrayList<SNode>();
-    SNode lc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
+    SNode lc = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1160600644654l, "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit"));
     SLinkOperations.setTarget(lc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     ListSequence.fromList(res).addElement(lc);
-    SNode llc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
+    SNode llc = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1227008614712l, "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator"));
     SLinkOperations.setTarget(llc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     ListSequence.fromList(res).addElement(llc);
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));

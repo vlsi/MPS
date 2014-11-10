@@ -38,8 +38,8 @@
   </root>
   <root nodeRef="r:14d9938d-f7ef-4995-a5b9-c40ae14726a7(jetbrains.mps.make.facet.actions)/2191561637326275633">
     <file name="QueriesGenerated.java">
-      <node id="8170824575195153437" at="268,94,269,263" concept="4" />
-      <node id="8170824575195153453" at="269,263,270,40" concept="10" />
+      <node id="8170824575195153437" at="268,94,269,365" concept="4" />
+      <node id="8170824575195153453" at="269,365,270,40" concept="10" />
       <node id="2191561637326275637" at="291,211,292,223" concept="10" />
       <node id="2191561637326275635" at="291,0,294,0" concept="11" trace="sideTransformHintSubstituteActionsBuilder_Precondition_IPropertyExpression_2191561637326275635#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <scope id="2191561637326275636" at="291,211,292,223" />
@@ -232,7 +232,7 @@
       <node id="7178445679340358586" at="225,223,226,93" concept="9" />
       <node id="7178445679340358586" at="227,5,228,133" concept="9" />
       <node id="7178445679340358586" at="228,133,229,62" concept="9" />
-      <node id="7178445679340360012" at="232,44,233,138" concept="10" />
+      <node id="7178445679340360012" at="232,44,233,243" concept="10" />
       <node id="1919086248986825185" at="239,98,240,68" concept="10" />
       <node id="7178445679340360024" at="242,61,243,195" concept="10" />
       <node id="7178445679340358586" at="245,68,246,48" concept="10" />
@@ -264,7 +264,7 @@
       <node id="7178445679340358586" at="226,93,255,5" concept="1" />
       <node id="7178445679340358586" at="226,93,255,5" concept="1" />
       <node id="7178445679340358586" at="225,0,258,0" concept="11" trace="nodeSubstituteActionsBuilder_ActionsFactory_FacetReferenceExpression_7178445679340358586#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="7178445679340358586" at="232,44,233,138" />
+      <scope id="7178445679340358586" at="232,44,233,243" />
       <scope id="7178445679340360010" at="239,98,240,68" />
       <scope id="7178445679340360023" at="242,61,243,195" />
       <scope id="7178445679340358586" at="245,68,246,48" />
@@ -503,7 +503,7 @@
         <var name="_context" id="8351679702044371560" />
         <var name="operationContext" id="8351679702044371560" />
       </scope>
-      <unit id="8351679702044391355" at="63,172,67,13" name="jetbrains.mps.make.facet.actions.QueriesGenerated$2" />
+      <unit id="8351679702044391355" at="63,277,67,13" name="jetbrains.mps.make.facet.actions.QueriesGenerated$2" />
       <unit id="8351679702044371560" at="118,57,131,13" name="jetbrains.mps.make.facet.actions.QueriesGenerated$2" />
       <unit id="8351679702044391376" at="71,31,109,21" name="jetbrains.mps.make.facet.actions.QueriesGenerated$4" />
       <unit id="8351679702044391376" at="69,27,111,17" name="jetbrains.mps.make.facet.actions.QueriesGenerated$3" />

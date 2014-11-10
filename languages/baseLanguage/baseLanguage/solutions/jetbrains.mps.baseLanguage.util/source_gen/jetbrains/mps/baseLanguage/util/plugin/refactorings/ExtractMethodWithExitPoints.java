@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,16 +18,16 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   }
   @Override
   public SNode getMethodType() {
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanType", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534644030l, "jetbrains.mps.baseLanguage.structure.BooleanType"));
   }
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode methodCall = ExtractMethodWithExitPoints.this.createMethodCall(match, methodDeclaration);
-        SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+        SNode ifNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
         SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), methodCall);
-        SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+        SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
         ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(ListSequence.fromList(ExtractMethodWithExitPoints.this.myAnalyzer.getIntenalExitPoints()).first());
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(ExtractMethodWithExitPoints.this.myStatements).first(), ifNode);
         for (SNode statement : ListSequence.fromList(ExtractMethodWithExitPoints.this.myStatements)) {
@@ -38,8 +38,8 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   }
   @Override
   protected void modifyPartToExtract() {
-    SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-    SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    SNode ret = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
+    SNode constant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
     SPropertyOperations.set(constant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "" + (false));
     SLinkOperations.setTarget(ret, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), constant);
     ListSequence.fromList(this.myStatements).addElement(SNodeOperations.copyNode(ret));

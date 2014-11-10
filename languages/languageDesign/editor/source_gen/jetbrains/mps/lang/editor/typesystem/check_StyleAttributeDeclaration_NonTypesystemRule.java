@@ -32,7 +32,7 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(declaration, "Attribute of primitive type should have default value", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "8307535009119141639", null, errorTarget);
       }
     }
-    if (!(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(declaration), "jetbrains.mps.lang.editor.structure.StyleSheet")).translate(new ITranslator2<SNode, SNode>() {
+    if (!(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(declaration), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402211651l, "jetbrains.mps.lang.editor.structure.StyleSheet"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402211651l, 1186402402630l, "styleClass"));
       }

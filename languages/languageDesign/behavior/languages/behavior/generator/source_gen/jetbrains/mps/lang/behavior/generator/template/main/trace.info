@@ -79,7 +79,7 @@
       <scope id="1144956008583742082" at="372,120,386,7">
         <var name="concept" id="3248195274271182527" />
       </scope>
-      <unit id="1144956008583655091" at="355,163,359,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$10" />
+      <unit id="1144956008583655091" at="355,263,359,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$10" />
       <unit id="1144956008583655111" at="360,219,364,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$11" />
       <unit id="1144956008583742084" at="374,219,378,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$12" />
       <unit id="1144956008583742084" at="378,18,382,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$13" />
@@ -169,7 +169,7 @@
         <var name="language" id="2056529430201935333" />
         <var name="structureModel" id="2056529430201935341" />
       </scope>
-      <unit id="2056529430201935356" at="394,147,398,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$15" />
+      <unit id="2056529430201935356" at="394,247,398,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$15" />
     </file>
   </root>
   <root nodeRef="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)/257065298285569774">
@@ -418,7 +418,7 @@
       <node id="9160358483032894698" at="275,14,276,0" concept="8" />
       <node id="7923290658387314484" at="278,136,279,129" concept="1" />
       <node id="7923290658387314502" at="281,5,282,0" concept="8" />
-      <node id="7923290658387314505" at="283,137,284,66" concept="7" />
+      <node id="7923290658387314505" at="283,237,284,66" concept="7" />
       <node id="7923290658387314513" at="287,137,288,133" concept="1" />
       <node id="7923290658387314559" at="292,5,293,0" concept="8" />
       <node id="7923290658387314560" at="293,0,294,14" concept="7" />
@@ -524,7 +524,7 @@
       <scope id="7923290658387314509" at="285,379,290,9">
         <var name="method" id="7923290658387314527" />
       </scope>
-      <scope id="7923290658387314504" at="283,137,291,7" />
+      <scope id="7923290658387314504" at="283,237,291,7" />
       <scope id="7923290658387314503" at="282,0,292,5">
         <var name="behavior" id="7923290658387314541" />
       </scope>
@@ -545,7 +545,7 @@
       </scope>
       <unit id="7923290658387314606" at="296,114,300,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$3" />
       <unit id="6066855126825549434" at="300,16,304,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$4" />
-      <unit id="1144956008583624514" at="316,163,320,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$5" />
+      <unit id="1144956008583624514" at="316,263,320,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$5" />
       <unit id="1144956008583624604" at="321,219,325,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$6" />
       <unit id="1144956008583745037" at="332,222,336,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$7" />
       <unit id="1144956008583745037" at="336,18,340,5" name="jetbrains.mps.lang.behavior.generator.template.main.QueriesGenerated$8" />
@@ -560,9 +560,9 @@
       <node id="7923290658387314680" at="348,0,349,77" concept="5" />
       <node id="1144956008583669895" at="349,77,350,67" concept="5" />
       <node id="1144956008583669888" at="350,67,351,0" concept="8" />
-      <node id="2644693874449975644" at="351,0,352,122" concept="6" />
+      <node id="2644693874449975644" at="351,0,352,222" concept="6" />
       <scope id="7923290658387314694" at="156,109,157,30" />
-      <scope id="7923290658387314673" at="346,120,352,122">
+      <scope id="7923290658387314673" at="346,120,352,222">
         <var name="behaviorModel" id="7923290658387314675" />
         <var name="language" id="7923290658387314681" />
         <var name="structureModel" id="1144956008583669896" />

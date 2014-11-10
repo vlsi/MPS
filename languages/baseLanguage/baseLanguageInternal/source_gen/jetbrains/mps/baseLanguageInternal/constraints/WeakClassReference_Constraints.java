@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -37,7 +38,7 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Classifier");
+            return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

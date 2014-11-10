@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -42,7 +43,7 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Interface")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ifc) {
                 return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ifc)).count() == 1;
               }

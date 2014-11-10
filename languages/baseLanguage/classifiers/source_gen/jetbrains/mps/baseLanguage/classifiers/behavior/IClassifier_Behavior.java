@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -22,7 +22,7 @@ public class IClassifier_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752906494l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType"));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752906494l, 1205752917136l, "classifier"), thisNode);
     return result;
   }
@@ -31,7 +31,7 @@ public class IClassifier_Behavior {
   }
   public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
+    for (SNode part : SModelOperations.roots(SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752174734l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"))) {
       if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), part, "virtual_getMainClassifier_1213877255428", new Object[]{}) == thisNode) {
         ListSequence.fromList(result).addElement(part);
       }
@@ -75,15 +75,15 @@ public class IClassifier_Behavior {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
       @Override
       public SNode createNewMethod() {
-        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
+        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205769003971l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"));
       }
       @Override
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
-        SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
+        SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"));
         SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"), SNodeOperations.cast(methodDeclaration, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205769003971l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration")));
         ListSequence.fromList(SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, 1205770614681l, "actualArgument"))).addSequence(ListSequence.fromList(parameteres));
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null));
+        SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), call);
         return result;
       }

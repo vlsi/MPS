@@ -41,7 +41,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(pd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "component");
   }
   public static void nodeFactory_NodeSetup_ActionParameter_315309404903965694(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"), "jetbrains.mps.lang.plugin.structure.RequiredCondition");
+    SLinkOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5538333046911348654l, "jetbrains.mps.lang.plugin.structure.RequiredCondition"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1217414463812(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

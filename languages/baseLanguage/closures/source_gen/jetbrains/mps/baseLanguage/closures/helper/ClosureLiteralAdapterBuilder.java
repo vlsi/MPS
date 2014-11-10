@@ -34,10 +34,10 @@ public class ClosureLiteralAdapterBuilder {
     SNode adapterClass = findAdapterClassDeclaration(literal, annInst);
     SNode adapterClassFunctionType = getAdapterClassFunctionType(adapterClass);
 
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), adapterClass);
     for (SNode tvd : SLinkOperations.getChildren(adapterClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
-      SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode tvr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       SLinkOperations.setTarget(tvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), tvd);
       ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(tvr);
       replaceWithTarget(tvr, adapterClassFunctionType, targetFunType);
@@ -70,7 +70,7 @@ public class ClosureLiteralAdapterBuilder {
     return null;
   }
   private SNode findAdapterClassDeclaration(SNode literal, final SNode annInst) {
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(literal), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(literal), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
       @Override
       public boolean accept(SNode cls) {
         return SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(annInst, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188214630783l, "value"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214607812l, "value")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")));

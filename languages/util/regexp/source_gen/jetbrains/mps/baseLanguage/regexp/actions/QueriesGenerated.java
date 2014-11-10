@@ -640,7 +640,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration");
+          return SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554386384l, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration"));
         }
       }.compute();
       if (parameterObjects != null) {
@@ -678,7 +678,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration");
+          return SModelOperations.nodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration"));
         }
       }.compute();
       if (parameterObjects != null) {

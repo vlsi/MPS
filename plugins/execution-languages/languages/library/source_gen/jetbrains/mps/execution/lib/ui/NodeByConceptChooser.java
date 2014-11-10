@@ -90,7 +90,7 @@ public class NodeByConceptChooser extends NodeChooser {
   }
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(SNodeOperations.isInstanceOf(it, myTargetConcept))) {
           return false;

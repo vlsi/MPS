@@ -26,6 +26,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603382l, 1225239603384l, "rootElement"));
   }
   public static Iterable<SNode> sourceNodesQuery_1228518035217(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603382l, "jetbrains.mps.sampleXML.structure.Document"));
   }
 }

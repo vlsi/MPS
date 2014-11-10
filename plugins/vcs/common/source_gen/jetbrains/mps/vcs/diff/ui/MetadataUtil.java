@@ -11,9 +11,9 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +48,7 @@ public class MetadataUtil {
   }
   private static SNode createModelRoot(SModel model) {
     SModelBase modelBase = (SModelBase) model;
-    SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
+    SNode root = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"));
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355110l, "longname"), SModelOperations.getModelName(model));
     // <node> 
     SPropertyOperations.set(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355115l, "version"), "" + (modelBase.getVersion()));
@@ -73,7 +73,7 @@ public class MetadataUtil {
     return root;
   }
   private static SNode createModuleRefNode(SModuleReference module) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
+    SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, "jetbrains.mps.lang.project.structure.ModuleReference"));
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName"), module.getModuleName());
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"), module.getModuleId().toString());
     ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"))));
@@ -83,7 +83,7 @@ public class MetadataUtil {
     return new ModuleReference(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid")));
   }
   private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
+    SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, "jetbrains.mps.lang.project.structure.ModelReference"));
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName"), SModelStereotype.withoutStereotype(impModel.getModelReference().getModelName()));
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"), impModel.getModelReference().getModelId().toString());
     SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype"), SModelStereotype.getStereotype(impModel.getModelReference().getModelName()));
@@ -100,7 +100,7 @@ public class MetadataUtil {
     }
 
     final SModelBase modelBase = (SModelBase) model;
-    SNode root = ListSequence.fromList(SModelOperations.getRoots(metadataModel, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")).first();
+    SNode root = ListSequence.fromList(SModelOperations.roots(metadataModel, MetaAdapterFactory.getConcept(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"))).first();
     modelBase.setVersion(SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(new UUID(7921841224385317272l, -7108959942382919355l), 8374934269827354989l, 8374934269827355115l, "version")));
     if (model instanceof GeneratableSModel) {
       check_ca1g54_a0a5a8(((GeneratableSModel) model), root);

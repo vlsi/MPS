@@ -426,8 +426,8 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282073">
     <file name="CommandMethod_Behavior.java">
-      <node id="856705193941282076" at="13,43,14,240" concept="1" />
-      <node id="856705193941282082" at="14,240,15,229" concept="1" />
+      <node id="856705193941282076" at="13,43,14,342" concept="1" />
+      <node id="856705193941282082" at="14,342,15,229" concept="1" />
       <node id="856705193941282073" at="13,0,17,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="856705193941282075" at="13,43,15,229" />
       <scope id="856705193941282073" at="13,0,17,0">
@@ -438,7 +438,7 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282089">
     <file name="CommandDeclaration_Behavior.java">
-      <node id="8478830098674492361" at="25,43,26,328" concept="1" />
+      <node id="8478830098674492361" at="25,43,26,430" concept="1" />
       <node id="856705193941282106" at="28,78,29,219" concept="5" />
       <node id="856705193941282116" at="32,77,33,21" concept="5" />
       <node id="856705193941282124" at="35,72,36,55" concept="5" />
@@ -497,7 +497,7 @@
       <node id="3754131050835964233" at="66,18,79,24" concept="5" />
       <node id="856705193941282089" at="60,0,81,0" concept="7" trace="call_getDistinctByNameAndTypeFieldParameters_3754131050835964183#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="856705193941282089" at="38,0,60,0" concept="7" trace="call_getDistinctFieldParameters_6129022259108623165#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="856705193941282120" at="25,43,26,328" />
+      <scope id="856705193941282120" at="25,43,26,430" />
       <scope id="856705193941282105" at="28,78,29,219" />
       <scope id="856705193941282115" at="32,77,33,21" />
       <scope id="856705193941282123" at="35,72,36,55" />

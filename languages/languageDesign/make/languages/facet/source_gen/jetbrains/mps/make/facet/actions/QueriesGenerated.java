@@ -60,7 +60,7 @@ public class QueriesGenerated {
         Iterable<Tuples._2<SNode, SNode>> queryResult = new Computable<Iterable<Tuples._2<SNode, SNode>>>() {
           public Iterable<Tuples._2<SNode, SNode>> compute() {
             final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, "jetbrains.mps.make.facet.structure.TargetDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode fct) {
                 return Sequence.fromIterable(relatedFacets).contains(SNodeOperations.getNodeAncestor(fct, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"), false, false));
               }
@@ -230,7 +230,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+            return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
           }
         }.compute();
         if (queryResult != null) {
@@ -266,7 +266,7 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SLinkOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 2191561637326275576l, 8170824575195151990l, "resource"), "jetbrains.mps.baseLanguage.structure.Expression");
+        SLinkOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 2191561637326275576l, 8170824575195151990l, "resource"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {

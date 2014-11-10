@@ -197,7 +197,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1465982738277781862l, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);

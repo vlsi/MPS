@@ -61,7 +61,7 @@ public class StubResolver {
   private List<SReference> getReferencesToResolve(SModel sourceModel, Map<SModelReference, SModelReference> models) {
     // fills models map with stub -> model correspondance 
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(sourceModel, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(sourceModel, null))) {
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         SModelReference targetModelRef = ref.getTargetSModelReference();
         if (targetModelRef == null || !(JAVA_STUB.equals(SModelStereotype.getStereotype(targetModelRef.getModelName())))) {

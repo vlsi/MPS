@@ -37,11 +37,11 @@ public class FetchDependenciesProcessor {
 
     List<SNode> statements = helper.getStatements();
     if (!(ListSequence.fromList(statements).isEmpty())) {
-      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.structure.BuildCustomWorkflow");
-      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfTaskPart");
+      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132281259l, "jetbrains.mps.build.structure.BuildCustomWorkflow"));
+      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
       SLinkOperations.setTarget(taskpart, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"), SLinkOperations.getTarget(_quotation_createNode_t02zqv_a0a2a7a3(), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, 2769948622284574295l, "target")));
       ListSequence.fromList(SLinkOperations.getChildren(wf, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132281259l, 4701820937132281260l, "parts"))).addElement(taskpart);
-      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfSubTask");
+      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, "jetbrains.mps.build.workflow.structure.BwfSubTask"));
       SPropertyOperations.set(stask, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "fetch");
       ListSequence.fromList(SLinkOperations.getChildren(taskpart, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032826l, "subTasks"))).addElement(stask);
       ListSequence.fromList(SLinkOperations.getChildren(stask, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284606050l, "statements"))).addSequence(ListSequence.fromList(statements));

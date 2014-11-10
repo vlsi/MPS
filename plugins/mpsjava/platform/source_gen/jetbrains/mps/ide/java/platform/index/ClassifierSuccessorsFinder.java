@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -33,8 +35,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.openapi.module.Module;
@@ -62,8 +62,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         continue;
       }
       if (emd.isChanged()) {
-        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(md, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(md, "jetbrains.mps.baseLanguage.structure.Interface")));
+        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.nodes(md, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.nodes(md, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))));
       } else {
         SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
       }

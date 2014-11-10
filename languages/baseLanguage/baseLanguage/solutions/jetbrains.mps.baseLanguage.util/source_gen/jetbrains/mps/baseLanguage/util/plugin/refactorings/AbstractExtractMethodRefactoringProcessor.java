@@ -5,10 +5,10 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -28,7 +28,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   }
   @Override
   public SNode createNewMethod() {
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
   }
   @Override
   public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {

@@ -68,7 +68,7 @@ public class ExtractRoutine_Intention implements IntentionFactory {
       SNode routineDefinition = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.RoutineDefinition", null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, 3265739055509559116l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).addElement(routineDefinition);
-      SNode call = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.RoutineCall", null);
+      SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, "jetbrains.mps.samples.Kaja.structure.RoutineCall"));
       SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition"), routineDefinition);
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(selectedNodes).first(), call);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

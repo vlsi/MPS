@@ -40,7 +40,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
   }
   public List<SNode> getNodes(SNode node) {
     final SNode nodeFinal = node;
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration")) == nodeFinal;
       }
@@ -53,7 +53,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"));
   }
   public SNode createNode(final SNode node, final SNode concept) {
-    SNode producer = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
+    SNode producer = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"));
     SLinkOperations.setTarget(producer, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration"), createPersistentConfigurationType_rqzr2x_a0b0a0(node));
     SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
     return producer;

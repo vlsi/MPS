@@ -598,53 +598,53 @@
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/263434549788570114">
     <file name="RootTemplateAnnotator.java">
-      <node id="263434549788570146" at="27,52,28,37" concept="9" />
-      <node id="263434549788717052" at="31,172,32,293" concept="3" />
-      <node id="2381446136244093866" at="43,36,44,43" concept="10" />
-      <node id="2381446136244093866" at="45,5,46,16" concept="10" />
-      <node id="2381446136244093908" at="49,36,50,43" concept="10" />
-      <node id="2381446136244093908" at="51,5,52,16" concept="10" />
-      <node id="263434549788570117" at="21,0,23,0" concept="2" trace="RootTemplateAnnotator#(Ljetbrains/mps/smodel/GlobalSModelEventsManager;)V" />
-      <node id="263434549788685425" at="30,331,33,13" concept="7" />
-      <node id="263434549788570193" at="39,0,42,0" concept="8" trace="dispose#()V" />
-      <node id="2381446136244093866" at="42,83,45,5" concept="7" />
-      <node id="2381446136244093908" at="48,85,51,5" concept="7" />
-      <node id="263434549788570158" at="29,80,34,11" concept="7" />
-      <node id="2381446136244093866" at="42,0,48,0" concept="14" trace="check_epzavk_a0a0a0b0a0a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="2381446136244093908" at="48,0,54,0" concept="14" trace="check_epzavk_a0a0a0b0a0a0a0a0b_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="263434549788570152" at="28,37,35,9" concept="7" />
-      <node id="263434549788570140" at="26,0,37,0" concept="8" trace="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
-      <node id="263434549788570133" at="24,22,37,7" concept="3" />
-      <node id="263434549788570129" at="23,0,39,0" concept="8" trace="init#()V" />
-      <scope id="263434549788570120" at="21,63,21,63" />
-      <scope id="263434549788570196" at="40,25,40,25" />
-      <scope id="263434549788685426" at="31,172,32,293" />
-      <scope id="2381446136244093866" at="43,36,44,43" />
-      <scope id="2381446136244093908" at="49,36,50,43" />
-      <scope id="263434549788570117" at="21,0,23,0">
+      <node id="263434549788570146" at="29,52,30,37" concept="9" />
+      <node id="263434549788717052" at="33,172,34,396" concept="3" />
+      <node id="2381446136244093866" at="45,36,46,43" concept="10" />
+      <node id="2381446136244093866" at="47,5,48,16" concept="10" />
+      <node id="2381446136244093908" at="51,36,52,43" concept="10" />
+      <node id="2381446136244093908" at="53,5,54,16" concept="10" />
+      <node id="263434549788570117" at="23,0,25,0" concept="2" trace="RootTemplateAnnotator#(Ljetbrains/mps/smodel/GlobalSModelEventsManager;)V" />
+      <node id="263434549788685425" at="32,331,35,13" concept="7" />
+      <node id="263434549788570193" at="41,0,44,0" concept="8" trace="dispose#()V" />
+      <node id="2381446136244093866" at="44,83,47,5" concept="7" />
+      <node id="2381446136244093908" at="50,85,53,5" concept="7" />
+      <node id="263434549788570158" at="31,80,36,11" concept="7" />
+      <node id="2381446136244093866" at="44,0,50,0" concept="14" trace="check_epzavk_a0a0a0b0a0a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="2381446136244093908" at="50,0,56,0" concept="14" trace="check_epzavk_a0a0a0b0a0a0a0a0b_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="263434549788570152" at="30,37,37,9" concept="7" />
+      <node id="263434549788570140" at="28,0,39,0" concept="8" trace="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
+      <node id="263434549788570133" at="26,22,39,7" concept="3" />
+      <node id="263434549788570129" at="25,0,41,0" concept="8" trace="init#()V" />
+      <scope id="263434549788570120" at="23,63,23,63" />
+      <scope id="263434549788570196" at="42,25,42,25" />
+      <scope id="263434549788685426" at="33,172,34,396" />
+      <scope id="2381446136244093866" at="45,36,46,43" />
+      <scope id="2381446136244093908" at="51,36,52,43" />
+      <scope id="263434549788570117" at="23,0,25,0">
         <var name="dep" id="2481791643076243538" />
       </scope>
-      <scope id="263434549788570170" at="30,331,33,13" />
-      <scope id="263434549788570193" at="39,0,42,0" />
-      <scope id="2381446136244093866" at="42,83,46,16" />
-      <scope id="2381446136244093908" at="48,85,52,16" />
-      <scope id="263434549788570157" at="29,80,34,11" />
-      <scope id="2381446136244093866" at="42,0,48,0">
+      <scope id="263434549788570170" at="32,331,35,13" />
+      <scope id="263434549788570193" at="41,0,44,0" />
+      <scope id="2381446136244093866" at="44,83,48,16" />
+      <scope id="2381446136244093908" at="50,85,54,16" />
+      <scope id="263434549788570157" at="31,80,36,11" />
+      <scope id="2381446136244093866" at="44,0,50,0">
         <var name="checkedDotOperand" id="2381446136244093866" />
       </scope>
-      <scope id="2381446136244093908" at="48,0,54,0">
+      <scope id="2381446136244093908" at="50,0,56,0">
         <var name="checkedDotOperand" id="2381446136244093908" />
       </scope>
-      <scope id="263434549788570145" at="27,52,35,9">
+      <scope id="263434549788570145" at="29,52,37,9">
         <var name="node" id="263434549788570147" />
       </scope>
-      <scope id="263434549788570140" at="26,0,37,0">
+      <scope id="263434549788570140" at="28,0,39,0">
         <var name="event" id="263434549788570143" />
       </scope>
-      <scope id="263434549788570132" at="24,22,37,7" />
-      <scope id="263434549788570129" at="23,0,39,0" />
-      <unit id="263434549788570139" at="25,71,37,5" name="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
-      <unit id="263434549788570114" at="20,0,55,0" name="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
+      <scope id="263434549788570132" at="26,22,39,7" />
+      <scope id="263434549788570129" at="25,0,41,0" />
+      <unit id="263434549788570139" at="27,71,39,5" name="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
+      <unit id="263434549788570114" at="22,0,57,0" name="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
     </file>
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/4814657600604696799">

@@ -1926,10 +1926,10 @@
       <node id="963101385307642090" at="22,0,23,0" concept="3" trace="myNode" />
       <node id="963101385307642090" at="23,52,24,25" concept="2" />
       <node id="963101385307642090" at="26,54,27,56" concept="2" />
-      <node id="963101385307663766" at="29,75,30,118" concept="6" />
-      <node id="963101385308010106" at="30,118,31,283" concept="2" />
-      <node id="963101385308074676" at="31,283,32,417" concept="2" />
-      <node id="963101385308310191" at="32,417,33,924" concept="2" />
+      <node id="963101385307663766" at="29,75,30,220" concept="6" />
+      <node id="963101385308010106" at="30,220,31,379" concept="2" />
+      <node id="963101385308074676" at="31,379,32,519" concept="2" />
+      <node id="963101385308310191" at="32,519,33,924" concept="2" />
       <node id="963101385307664028" at="33,924,34,58" concept="2" />
       <node id="963101385307642090" at="18,0,21,0" concept="9" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="963101385307642090" at="23,0,26,0" concept="1" trace="BLExpression_Actions_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

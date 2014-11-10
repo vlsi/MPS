@@ -48,7 +48,7 @@ public class JUnit3TestCaseRef_Behavior {
   public static Iterable<SNode> call_getTestClassesForModule_1514755338275898928(SAbstractConcept thisConcept, SNode module) {
     return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return ListSequence.fromList(SModelOperations.getRoots(((SModel) it), "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_6e9f36_a0a0a0a0a0a0a0a0a2(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))});
           }

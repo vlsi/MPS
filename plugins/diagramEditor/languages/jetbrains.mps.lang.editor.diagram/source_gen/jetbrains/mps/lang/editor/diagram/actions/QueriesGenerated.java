@@ -48,7 +48,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode diagramNodeCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", null);
+            SNode diagramNodeCell = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"));
             SLinkOperations.setTarget(diagramNodeCell, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure"), nodeToWrap);
             return diagramNodeCell;
           }

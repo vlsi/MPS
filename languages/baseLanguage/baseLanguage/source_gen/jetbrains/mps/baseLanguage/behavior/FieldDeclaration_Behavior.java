@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FieldDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
   }
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
@@ -44,7 +44,7 @@ public class FieldDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode ref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"));
     SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), thisNode);
     return ref;
   }

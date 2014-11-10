@@ -1292,7 +1292,7 @@
       <node id="1227217922381" at="59,91,60,167" concept="7" />
       <node id="1227219537942" at="61,29,62,19" concept="8" />
       <node id="1227219557524" at="64,202,65,19" concept="8" />
-      <node id="1227219557531" at="66,5,67,147" concept="7" />
+      <node id="1227219557531" at="66,5,67,247" concept="7" />
       <node id="1227219557541" at="68,51,69,19" concept="8" />
       <node id="1227219557564" at="74,43,75,198" concept="8" />
       <node id="7376433222636453587" at="79,7,80,30" concept="9" />
@@ -1304,7 +1304,7 @@
       <node id="7376433222636453287" at="98,87,99,66" concept="9" />
       <node id="7376433222636453145" at="99,66,100,42" concept="9" />
       <node id="1227216919495" at="100,42,101,44" concept="8" />
-      <node id="1227218039958" at="103,78,104,149" concept="7" />
+      <node id="1227218039958" at="103,78,104,249" concept="7" />
       <node id="1227218669096" at="107,43,108,383" concept="8" />
       <node id="1227218729082" at="111,67,112,77" concept="2" />
       <node id="7376433222636454273" at="115,55,116,52" concept="9" />
@@ -1325,7 +1325,7 @@
       <node id="1227216572218" at="53,84,56,5" concept="5" />
       <node id="1227219529370" at="60,167,63,5" concept="5" />
       <node id="1227219557522" at="63,5,66,5" concept="5" />
-      <node id="1227219557539" at="67,147,70,5" concept="5" />
+      <node id="1227219557539" at="67,247,70,5" concept="5" />
       <node id="1227219557562" at="74,0,77,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1227216572218" at="83,0,86,0" concept="6" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1227216572218" at="86,0,89,0" concept="6" trace="isSurroundWith#()Z" />
@@ -1341,7 +1341,7 @@
       <node id="1227216572218" at="89,0,95,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1227219557552" at="72,0,79,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1227219557546" at="70,5,79,7" concept="7" />
-      <node id="1227218099999" at="104,149,114,7" concept="5" />
+      <node id="1227218099999" at="104,249,114,7" concept="5" />
       <node id="1227216572218" at="103,0,124,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1227216572218" at="59,0,83,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="1227216572218" at="33,40,33,40" />
@@ -1441,7 +1441,7 @@
       <node id="1227221178733" at="59,91,60,167" concept="7" />
       <node id="1227221178742" at="61,29,62,19" concept="8" />
       <node id="1227221178749" at="64,202,65,19" concept="8" />
-      <node id="1227221178756" at="66,5,67,147" concept="7" />
+      <node id="1227221178756" at="66,5,67,247" concept="7" />
       <node id="1227221178766" at="68,51,69,19" concept="8" />
       <node id="1227221178789" at="74,43,75,194" concept="8" />
       <node id="7376433222636453625" at="79,7,80,30" concept="9" />
@@ -1453,7 +1453,7 @@
       <node id="7376433222636453431" at="98,87,99,62" concept="9" />
       <node id="7376433222636453871" at="99,62,100,42" concept="9" />
       <node id="1227221178637" at="100,42,101,40" concept="8" />
-      <node id="1227221178641" at="103,78,104,149" concept="7" />
+      <node id="1227221178641" at="103,78,104,249" concept="7" />
       <node id="1227221178660" at="107,43,108,383" concept="8" />
       <node id="1227221178672" at="111,67,112,77" concept="2" />
       <node id="7376433222636453109" at="115,55,116,52" concept="9" />
@@ -1475,7 +1475,7 @@
       <node id="1227221178632" at="53,84,56,5" concept="5" />
       <node id="1227221178740" at="60,167,63,5" concept="5" />
       <node id="1227221178747" at="63,5,66,5" concept="5" />
-      <node id="1227221178764" at="67,147,70,5" concept="5" />
+      <node id="1227221178764" at="67,247,70,5" concept="5" />
       <node id="1227221178787" at="74,0,77,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1227221178632" at="83,0,86,0" concept="6" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1227221178632" at="86,0,89,0" concept="6" trace="isSurroundWith#()Z" />
@@ -1491,7 +1491,7 @@
       <node id="1227221178632" at="89,0,95,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1227221178777" at="72,0,79,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1227221178771" at="70,5,79,7" concept="7" />
-      <node id="1227221178649" at="104,149,114,7" concept="5" />
+      <node id="1227221178649" at="104,249,114,7" concept="5" />
       <node id="1227221178632" at="103,0,125,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1227221178632" at="59,0,83,0" concept="6" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="1227221178632" at="33,41,33,41" />
@@ -3084,7 +3084,7 @@
       <node id="3644457381597319727" at="67,97,68,53" concept="7" />
       <node id="3644457381597319727" at="70,37,71,118" concept="2" />
       <node id="3644457381597319727" at="73,5,74,16" concept="8" />
-      <node id="2490685849537244254" at="76,86,77,126" concept="8" />
+      <node id="2490685849537244254" at="76,86,77,226" concept="8" />
       <node id="3644457381597319727" at="80,0,81,0" concept="3" trace="myParameter" />
       <node id="3644457381597319727" at="81,53,82,30" concept="2" />
       <node id="2127765886923122637" at="84,87,85,91" concept="8" />
@@ -3128,7 +3128,7 @@
       <scope id="3644457381597319727" at="60,53,61,134" />
       <scope id="3644457381597319727" at="63,35,64,17" />
       <scope id="3644457381597319727" at="70,37,71,118" />
-      <scope id="3644457381597319727" at="76,86,77,126" />
+      <scope id="3644457381597319727" at="76,86,77,226" />
       <scope id="3644457381597319727" at="81,53,82,30" />
       <scope id="2127765886923122636" at="84,87,85,91" />
       <scope id="3644457381597319727" at="95,48,96,53" />

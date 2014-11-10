@@ -16,9 +16,9 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
@@ -31,7 +31,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode res = SConceptOperations.createNewNode("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam", null);
+            SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 980633948634473453l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam"));
             SLinkOperations.setTarget(res, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), nodeToWrap);
             return res;
           }

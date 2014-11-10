@@ -2127,7 +2127,7 @@
       <node id="2565896126719599612" at="95,114,96,104" concept="10" />
       <node id="2565896126719599621" at="97,33,98,21" concept="4" />
       <node id="2565896126719599625" at="99,11,100,73" concept="10" />
-      <node id="2565896126719599635" at="101,138,102,51" concept="10" />
+      <node id="2565896126719599635" at="101,238,102,51" concept="10" />
       <node id="2565896126719599644" at="103,192,104,69" concept="5" />
       <node id="2565896126719599663" at="109,5,110,18" concept="11" />
       <node id="2565896126719599486" at="112,36,113,17" concept="11" />
@@ -2155,7 +2155,7 @@
       <node id="2254732680176829880" at="150,41,151,32" concept="5" />
       <node id="6362460243896751234" at="154,5,155,0" concept="13" />
       <node id="2565896126719599745" at="155,0,156,56" concept="10" />
-      <node id="8056901375583445888" at="160,62,161,173" concept="5" />
+      <node id="8056901375583445888" at="160,62,161,273" concept="5" />
       <node id="2565896126719599772" at="165,7,166,0" concept="13" />
       <node id="2565896126719599775" at="167,52,168,85" concept="12" />
       <node id="2565896126719599780" at="170,27,171,30" concept="10" />
@@ -2163,8 +2163,8 @@
       <node id="2565896126719599797" at="175,13,176,60" concept="5" />
       <node id="6362460243896751184" at="177,11,178,74" concept="0" />
       <node id="2565896126719599819" at="178,74,179,0" concept="13" />
-      <node id="2565896126719599820" at="179,0,180,125" concept="10" />
-      <node id="2565896126719599826" at="180,125,181,176" concept="5" />
+      <node id="2565896126719599820" at="179,0,180,222" concept="10" />
+      <node id="2565896126719599826" at="180,222,181,176" concept="5" />
       <node id="2565896126719599832" at="181,176,182,52" concept="5" />
       <node id="2565896126719599837" at="182,52,183,59" concept="5" />
       <node id="2565896126719599845" at="186,5,187,0" concept="13" />
@@ -2177,11 +2177,11 @@
       <node id="2565896126719599887" at="198,25,199,63" concept="10" />
       <node id="2565896126719599899" at="200,251,201,98" concept="5" />
       <node id="2565896126719599906" at="201,98,202,202" concept="5" />
-      <node id="2565896126719599922" at="203,507,204,288" concept="10" />
-      <node id="2565896126719599930" at="204,288,205,201" concept="5" />
+      <node id="2565896126719599922" at="203,507,204,391" concept="10" />
+      <node id="2565896126719599930" at="204,391,205,201" concept="5" />
       <node id="2565896126719599937" at="205,201,206,392" concept="5" />
-      <node id="2565896126719599947" at="207,16,208,144" concept="10" />
-      <node id="2565896126719599953" at="208,144,209,206" concept="5" />
+      <node id="2565896126719599947" at="207,16,208,247" concept="10" />
+      <node id="2565896126719599953" at="208,247,209,206" concept="5" />
       <node id="2565896126719599960" at="209,206,210,180" concept="5" />
       <node id="2565896126719599968" at="210,180,211,517" concept="5" />
       <node id="2565896126719599978" at="211,517,212,60" concept="5" />
@@ -2246,7 +2246,7 @@
       <scope id="2565896126719599486" at="112,36,113,17" />
       <scope id="2565896126719599733" at="134,37,135,20" />
       <scope id="2254732680176829842" at="142,61,143,23" />
-      <scope id="8056901375583389240" at="160,62,161,173" />
+      <scope id="8056901375583389240" at="160,62,161,273" />
       <scope id="2565896126719599795" at="173,61,174,23" />
       <scope id="2565896126719599851" at="193,12,194,62" />
       <scope id="2565896126719599486" at="49,0,51,0" />
@@ -2282,7 +2282,7 @@
       </scope>
       <scope id="2565896126719599486" at="68,0,72,0" />
       <scope id="2565896126719599583" at="88,256,92,9" />
-      <scope id="2565896126719599634" at="101,138,105,13">
+      <scope id="2565896126719599634" at="101,238,105,13">
         <var name="conceptToAdd" id="2565896126719599636" />
       </scope>
       <scope id="6352952732713927187" at="123,0,127,0" />
@@ -3172,7 +3172,7 @@
       <node id="2970389781193035593" at="77,0,81,0" concept="3" trace="ModelCondition#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/LanguageAspect;)V" />
       <node id="2970389781193035572" at="81,0,85,0" concept="9" trace="met#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="2970389781193035625" at="92,48,97,7" concept="7" />
-      <node id="2970389781193035676" at="32,127,38,7" concept="8" />
+      <node id="2970389781193035676" at="32,227,38,7" concept="8" />
       <node id="2970389781193035841" at="66,95,72,30" concept="11" />
       <node id="2970389781193035716" at="42,0,49,0" concept="15" trace="getAvailableConceptAspects#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="2970389781193035758" at="49,0,56,0" concept="15" trace="createNewConceptAspectInstance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -3218,7 +3218,7 @@
       <scope id="2970389781193035625" at="92,48,97,7">
         <var name="generator" id="2970389781193035626" />
       </scope>
-      <scope id="2970389781193035675" at="32,127,38,7" />
+      <scope id="2970389781193035675" at="32,227,38,7" />
       <scope id="2970389781193035840" at="66,95,72,30" />
       <scope id="2970389781193035624" at="92,48,98,19" />
       <scope id="2970389781193035716" at="42,0,49,0">
@@ -4727,7 +4727,7 @@
         <var name="node" id="8321617901826002798" />
         <var name="project" id="2575930471429081262" />
       </scope>
-      <unit id="8321617901826002980" at="72,151,76,5" name="jetbrains.mps.ide.devkit.actions.GoToEditorDeclarationHelper$5" />
+      <unit id="8321617901826002980" at="72,250,76,5" name="jetbrains.mps.ide.devkit.actions.GoToEditorDeclarationHelper$5" />
       <unit id="8321617901826002811" at="26,52,31,5" name="jetbrains.mps.ide.devkit.actions.GoToEditorDeclarationHelper$1" />
       <unit id="8321617901826002838" at="35,43,40,5" name="jetbrains.mps.ide.devkit.actions.GoToEditorDeclarationHelper$2" />
       <unit id="8321617901826002876" at="45,34,50,5" name="jetbrains.mps.ide.devkit.actions.GoToEditorDeclarationHelper$3" />

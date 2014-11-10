@@ -85,6 +85,6 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, 1205770614681l, "actualArgument"));
   }
   public static boolean mappingConfiguration_Condition_2948912184536575088(final TemplateQueryContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1029302639053433191l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"))).isNotEmpty();
   }
 }

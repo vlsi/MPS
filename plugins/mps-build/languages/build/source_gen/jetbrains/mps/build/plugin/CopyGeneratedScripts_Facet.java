@@ -191,7 +191,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     MapSequence.fromMap(vars(pa.global()).fileNameToDestination()).put(gres.model().getReference(), MapSequence.fromMap(new HashMap<String, String>()));
 
                     // all descendants with scripts_dir_property 
-                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(((SModel) gres.status().getOutputModel()), null)).where(new IWhereFilter<SNode>() {
+                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.roots(((SModel) gres.status().getOutputModel()), null)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
                         Object userObject = it.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY);
                         return userObject != null && userObject instanceof String;

@@ -26,7 +26,7 @@ public class SimpleBuilders_Behavior {
   }
   public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode sb : SModelOperations.getRootsIncludingImported(context, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
+    for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
       if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {
         ListSequence.fromList(result).addElement(sb);
       }

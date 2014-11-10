@@ -33,12 +33,12 @@ public class QueriesGenerated {
     return Util.isMulDivExpressionMoneyExpression(_context.getNode());
   }
   public static SNode sourceNodeQuery_1187347202363(final SourceSubstituteMacroNodeContext _context) {
-    SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode new_node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
     SPropertyOperations.set(new_node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-850839507942816123l, -8275646104739946638l), 1186667651178l, 1186667962877l, "amount")));
     return new_node;
   }
   public static SNode sourceNodeQuery_1187347224873(final SourceSubstituteMacroNodeContext _context) {
-    SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode new_node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
     SPropertyOperations.set(new_node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-850839507942816123l, -8275646104739946638l), 1186667651178l, 1186667945792l, "currency")));
     return new_node;
   }

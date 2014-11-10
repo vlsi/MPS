@@ -47,7 +47,7 @@ public class OverridingMethodsFinder {
       SetSequence.fromSet(safeGet(nameToMethodsMap, SPropertyOperations.getString(methodToCheck, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).addElement(methodToCheck);
     }
     if (MapSequence.fromMap(nameToMethodsMap).isNotEmpty()) {
-      SNode dummy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+      SNode dummy = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
       SLinkOperations.setTarget(dummy, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier"), container);
       collectOverridingMethodsInClassifierHierarchy(dummy, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
     }

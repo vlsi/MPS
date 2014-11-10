@@ -17,9 +17,9 @@
   </root>
   <root nodeRef="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)/1117643560963147795">
     <file name="QueriesGenerated.java">
-      <node id="1117643560963171462" at="380,121,381,56" concept="2" />
+      <node id="1117643560963171462" at="380,226,381,56" concept="2" />
       <node id="1117643560963147798" at="379,103,382,5" concept="4" />
-      <scope id="1117643560963147801" at="380,121,381,56" />
+      <scope id="1117643560963147801" at="380,226,381,56" />
       <scope id="1117643560963147797" at="379,103,382,5" />
       <scope id="1117643560963147798" at="379,103,382,5">
         <var name="n" id="1117643560963147799" />
@@ -748,9 +748,9 @@
   </root>
   <root nodeRef="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)/4755209551904406820">
     <file name="QueriesGenerated.java">
-      <node id="4755209551904411823" at="375,127,376,57" concept="2" />
+      <node id="4755209551904411823" at="375,232,376,57" concept="2" />
       <node id="4755209551904406823" at="374,103,377,5" concept="4" />
-      <scope id="4755209551904406826" at="375,127,376,57" />
+      <scope id="4755209551904406826" at="375,232,376,57" />
       <scope id="4755209551904406822" at="374,103,377,5" />
       <scope id="4755209551904406823" at="374,103,377,5">
         <var name="project" id="4755209551904406824" />

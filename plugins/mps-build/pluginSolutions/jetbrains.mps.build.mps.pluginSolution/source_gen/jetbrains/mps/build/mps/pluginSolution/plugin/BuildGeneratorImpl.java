@@ -33,9 +33,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
@@ -205,10 +205,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
   protected Iterable<SNode> createBuildScripts(SModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // setup build project 
-    SNode buildProject = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
+    SNode buildProject = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
     SPropertyOperations.set(buildProject, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
-    ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildJavaPlugin", null));
-    ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMPSPlugin", null));
+    ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).addElement(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6647099934206700647l, "jetbrains.mps.build.structure.BuildJavaPlugin")));
+    ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"))).addElement(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 868032131020265945l, "jetbrains.mps.build.mps.structure.BuildMPSPlugin")));
 
     // internal base dir is a project base dir 
     try {
@@ -273,7 +273,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }).toListSequence(), name);
     SNode plugin = _quotation_createNode_un708i_a0ab0m(name, group, name, name);
 
-    SLinkOperations.setNewChild(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout"), "jetbrains.mps.build.structure.BuildLayout");
+    SLinkOperations.setNewChild(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745364l, "jetbrains.mps.build.structure.BuildLayout"));
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"))).addElement(plugin);
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"))).addElement(group);
     if (eq_un708i_a0fb0m(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
@@ -310,11 +310,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return Sequence.<SNode>singleton(buildProject);
   }
   private SNode addStandaloneBuild(SModel targetSModel, SNode buildProject) {
-    SNode buildStandalone = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
+    SNode buildStandalone = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "Distribution");
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4915877860348071612l, "fileName"), "buildDistribution.xml");
     ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).addElement(_quotation_createNode_un708i_a0a3a31(buildProject));
-    SLinkOperations.setNewChild(buildStandalone, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout"), "jetbrains.mps.build.structure.BuildLayout");
+    SLinkOperations.setNewChild(buildStandalone, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745364l, "jetbrains.mps.build.structure.BuildLayout"));
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5204048710541015587l, "internalBaseDirectory"), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5204048710541015587l, "internalBaseDirectory")));
 
     SNode mpsHomeMacro = _quotation_createNode_un708i_a0h0n();
@@ -345,7 +345,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return buildStandalone;
   }
   private SNode convertToMacroRelative(SNode projectRelative, SNode macro) {
-    SNode macroRelative = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null);
+    SNode macroRelative = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"));
     SLinkOperations.setTarget(macroRelative, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), CopyUtil.copy(SLinkOperations.getTarget(projectRelative, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"))));
     SLinkOperations.setTarget(macroRelative, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro"), macro);
     return macroRelative;
@@ -396,7 +396,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode compositePart = SLinkOperations.getTarget(path, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"));
     for (String part : parts) {
       SPropertyOperations.set(compositePart, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"), part);
-      SLinkOperations.setNewChild(compositePart, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"), "jetbrains.mps.build.structure.BuildCompositePath");
+      SLinkOperations.setNewChild(compositePart, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"));
       compositePart = SLinkOperations.getTarget(compositePart, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"));
     }
     SNodeOperations.deleteNode(compositePart);

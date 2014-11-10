@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class HTMLElement_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
   }
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));

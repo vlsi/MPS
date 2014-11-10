@@ -190,7 +190,7 @@ public class TransformationUtil {
   public static SNode createClassFqNameNode(SModel model, SNode classConcept) {
     SNode fqNameNode;
     // TODO this is not completely correct: model can contain several classes 
-    if (ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).contains(classConcept)) {
+    if (ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).contains(classConcept)) {
       fqNameNode = _quotation_createNode_crriw5_a0a0c0w();
     } else {
       fqNameNode = createStringLiteral(BehaviorReflection.invokeVirtual(String.class, classConcept, "virtual_getFqName_1213877404258", new Object[]{}));
@@ -298,7 +298,7 @@ public class TransformationUtil {
     return "V";
   }
   public static SNode createStringLiteral(String value) {
-    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode stringLiteral = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
     SPropertyOperations.set(stringLiteral, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), value);
     return stringLiteral;
   }

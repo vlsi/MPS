@@ -1792,7 +1792,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return res;
   }
   public static void mappingScript_CodeBlock_6481445890966574680(final MappingScriptContext _context) {
-    for (SNode varDecl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+    for (SNode varDecl : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, "jetbrains.mps.baseLanguage.collections.structure.MapType")))) {
         continue;
       }

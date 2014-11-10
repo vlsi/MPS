@@ -17,10 +17,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -44,7 +44,7 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == _quotation_createNode_9aygvv_a0a0a0a0a0a();
               }

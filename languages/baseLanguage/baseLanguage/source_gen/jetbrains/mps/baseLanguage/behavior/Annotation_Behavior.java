@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Annotation_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644602865l, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.Interface", "virtual_getMembers_1213877531970", new Object[]{});

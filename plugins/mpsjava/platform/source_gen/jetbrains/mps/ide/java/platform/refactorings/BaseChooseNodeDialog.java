@@ -31,9 +31,9 @@ import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.smodel.SNodePointer;
@@ -111,7 +111,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
       }
       private void initModelDescriptorNode(ModelTreeNode node, SModel descriptor) {
         SModel sModel = descriptor;
-        for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.core.structure.BaseConcept")).where(new IWhereFilter<SNode>() {
+        for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return isAcceptable(it);
           }

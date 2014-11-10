@@ -182,7 +182,7 @@ public class QueriesGenerated {
     return MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.migration.structure.MigrationScript");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"));
   }
   protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
   private static SNode _quotation_createNode_x583g4_a0a0fb() {

@@ -234,7 +234,7 @@ __switch__:
     }
     SNode constructedType = _quotation_createNode_5ahx9e_a0f0g(parentIT);
     for (SNode tvd : SLinkOperations.getChildren(parentIT, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
-      SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode tvr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       SLinkOperations.setTarget(tvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), tvd);
       ListSequence.fromList(SLinkOperations.getChildren(constructedType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(tvr);
     }

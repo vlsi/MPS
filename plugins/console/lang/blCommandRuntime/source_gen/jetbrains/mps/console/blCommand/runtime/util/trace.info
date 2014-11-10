@@ -14,7 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)/313482946808721508">
     <file name="CommandUtil.java">
-      <node id="6322385757206087378" at="51,51,52,51" concept="6" />
+      <node id="6322385757206087378" at="51,51,52,48" concept="6" />
       <node id="1915462833256354217" at="59,55,60,49" concept="6" />
       <node id="752693057586626230" at="65,61,66,68" concept="5" />
       <node id="752693057586640116" at="68,40,69,34" concept="6" />
@@ -28,8 +28,8 @@
       <node id="7738379549910165782" at="91,82,92,142" concept="6" />
       <node id="1125969196844503718" at="96,9,97,95" concept="1" />
       <node id="7820875636627963753" at="99,41,100,66" concept="1" />
-      <node id="7600370246423004420" at="105,107,106,123" concept="5" />
-      <node id="7600370246423004426" at="106,123,107,191" concept="1" />
+      <node id="7600370246423004420" at="105,107,106,226" concept="5" />
+      <node id="7600370246423004426" at="106,226,107,191" concept="1" />
       <node id="7600370246423004437" at="107,191,108,76" concept="1" />
       <node id="7600370246423022285" at="108,76,109,37" concept="1" />
       <node id="8627797991303080446" at="113,28,114,40" concept="1" />
@@ -50,14 +50,14 @@
       <node id="3501374812264201946" at="169,77,170,63" concept="6" />
       <node id="3501374812263054977" at="172,66,173,38" concept="6" />
       <node id="3501374812263057320" at="175,70,176,39" concept="6" />
-      <node id="2348043250037290191" at="179,76,180,122" concept="5" />
-      <node id="2348043250038028746" at="180,122,181,190" concept="1" />
+      <node id="2348043250037290191" at="179,76,180,225" concept="5" />
+      <node id="2348043250038028746" at="180,225,181,190" concept="1" />
       <node id="2348043250037266919" at="181,190,182,26" concept="1" />
       <node id="6558068108107683969" at="185,129,186,45" concept="5" />
       <node id="6558068108107683974" at="186,45,187,55" concept="1" />
       <node id="6558068108107682276" at="187,55,188,0" concept="8" />
-      <node id="6558068108108370769" at="188,0,189,128" concept="5" />
-      <node id="6558068108108373959" at="189,128,190,209" concept="1" />
+      <node id="6558068108108370769" at="188,0,189,230" concept="5" />
+      <node id="6558068108108373959" at="189,230,190,209" concept="1" />
       <node id="6558068108108580762" at="190,209,191,217" concept="1" />
       <node id="6558068108108409359" at="191,217,192,37" concept="1" />
       <node id="4307205004143616460" at="198,0,199,0" concept="2" trace="mySearchScope" />
@@ -158,7 +158,7 @@
       <node id="1125969196844632137" at="138,0,151,0" concept="10" trace="modelsToResults#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="1125969196844632254" at="152,0,165,0" concept="10" trace="modulesToResults#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="4307205004142786686" at="195,0,208,0" concept="10" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/console/tool/ConsoleContext;)Ljetbrains/mps/console/blCommand/runtime/util/ConsoleScope;" />
-      <scope id="6322385757206087377" at="51,51,52,51" />
+      <scope id="6322385757206087377" at="51,51,52,48" />
       <scope id="1915462833256353670" at="59,55,60,49" />
       <scope id="752693057586639439" at="68,40,69,34" />
       <scope id="4307205004144837893" at="77,41,78,34" />

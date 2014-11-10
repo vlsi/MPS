@@ -75,9 +75,9 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode sd;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638198293l, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"))) {
-        sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", null);
+        sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 1192794744107l, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"));
       } else {
-        sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", null);
+        sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638198293l, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"));
       }
       SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription")));

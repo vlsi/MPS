@@ -46,7 +46,7 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
 
     // out of scope, let's make this reference non-local, but qualified 
     SNode thatClass = SNodeOperations.getNodeAncestor(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-    SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+    SNode sfr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
     SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), thatClass);
     SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
 

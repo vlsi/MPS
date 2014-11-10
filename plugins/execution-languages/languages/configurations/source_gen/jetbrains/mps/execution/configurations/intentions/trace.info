@@ -129,7 +129,7 @@
         <var name="editorContext" id="2557661505909760572" />
         <var name="node" id="2557661505909760572" />
       </scope>
-      <unit id="8401208354348486287" at="58,179,62,5" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$1" />
+      <unit id="8401208354348486287" at="58,284,62,5" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$1" />
       <unit id="2557661505909760572" at="76,0,93,0" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$IntentionImplementation" />
       <unit id="2557661505909760572" at="28,0,100,0" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention" />
     </file>
@@ -235,7 +235,7 @@
         <var name="editorContext" id="2557661505909893922" />
         <var name="node" id="2557661505909893922" />
       </scope>
-      <unit id="2557661505909996074" at="56,187,60,5" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$1" />
+      <unit id="2557661505909996074" at="56,292,60,5" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$1" />
       <unit id="2557661505909893922" at="74,0,91,0" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$IntentionImplementation" />
       <unit id="2557661505909893922" at="26,0,92,0" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention" />
     </file>

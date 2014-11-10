@@ -48,7 +48,7 @@ public class CheckingTestsUtil {
           if (SModelStereotype.isGeneratorModel(sm)) {
             continue;
           }
-          for (SNode root : SModelOperations.getRoots(((SModel) sm), null)) {
+          for (SNode root : SModelOperations.roots(((SModel) sm), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, sm.getRepository());

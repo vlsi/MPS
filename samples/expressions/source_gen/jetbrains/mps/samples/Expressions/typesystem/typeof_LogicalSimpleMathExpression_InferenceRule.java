@@ -27,12 +27,12 @@ public class typeof_LogicalSimpleMathExpression_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logicalExpression, MetaAdapterFactory.getContainmentLink(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467207869132l, 2073504467207935096l, "right"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208094202", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208094209", true), (SNode) SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", null), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208094209", true), (SNode) SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467208085352l, "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType")), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = logicalExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208098709", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208098716", true), (SNode) SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", null), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467208098716", true), (SNode) SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467208085352l, "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType")), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

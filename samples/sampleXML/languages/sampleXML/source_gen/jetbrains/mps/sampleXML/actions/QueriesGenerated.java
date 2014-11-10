@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +31,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode attr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
+            SNode attr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, "jetbrains.mps.sampleXML.structure.Attribute"));
             SPropertyOperations.set(attr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), ((pattern == null ? null : pattern.trim())));
             return attr;
           }
@@ -54,7 +54,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode text = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Text", null);
+            SNode text = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, "jetbrains.mps.sampleXML.structure.Text"));
             SPropertyOperations.set(text, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), pattern);
             return text;
           }
@@ -77,7 +77,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.sampleXML.structure.Attribute"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         //  add next attribute 
-        SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
+        SNode nextAttr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, "jetbrains.mps.sampleXML.structure.Attribute"));
         SPropertyOperations.set(nextAttr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), ((pattern == null ? null : pattern.trim())));
         SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), nextAttr);
         return nextAttr;

@@ -220,7 +220,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 2598676492883244606l, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);

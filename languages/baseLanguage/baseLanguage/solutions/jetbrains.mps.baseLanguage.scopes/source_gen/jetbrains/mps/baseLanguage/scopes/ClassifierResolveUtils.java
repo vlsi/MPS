@@ -200,7 +200,7 @@ public class ClassifierResolveUtils {
     return name;
   }
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
-    return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")));
       }

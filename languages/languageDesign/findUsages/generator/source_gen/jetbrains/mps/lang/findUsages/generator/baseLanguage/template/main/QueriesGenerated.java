@@ -7,13 +7,13 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,7 +33,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_7991477654791680147(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.FIND_USAGES;
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(7265238368668241523l, -5766677349071573456l), 1197044488845l, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.FIND_USAGES;
   }
   public static Object propertyMacro_GetPropertyValue_4192433084863763942(final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(7265238368668241523l, -5766677349071573456l), 2005690715325995359l, 7222148688691763792l, "finder")));
@@ -74,7 +74,7 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_7991477654791670213(final PropertyMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getOriginalInputModel(), MetaAdapterFactory.getConcept(new UUID(7265238368668241523l, -5766677349071573456l), 1197044488845l, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0a41(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
@@ -172,7 +172,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7265238368668241523l, -5766677349071573456l), 6366407517031508177l, 6366407517031508178l, "finder"));
   }
   public static Iterable<SNode> sourceNodesQuery_7991477654791670241(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(7265238368668241523l, -5766677349071573456l), 1197044488845l, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }

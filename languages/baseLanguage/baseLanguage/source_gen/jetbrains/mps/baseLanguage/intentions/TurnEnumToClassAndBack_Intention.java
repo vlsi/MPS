@@ -114,7 +114,7 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
         }
       });
 
-      ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall")).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_ck6aau_a0a0a0a0a0a71a2o(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept")), node);
         }
@@ -123,7 +123,7 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
           SLinkOperations.setTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), classNode);
         }
       });
-      ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference")).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_ck6aau_a0a0a0a0a0a81a2o(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), node);
         }

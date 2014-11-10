@@ -101,7 +101,7 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef"), SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4531408400486526326l, "jetbrains.mps.lang.test.structure.WarningStatementReference")));
       SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), parameterObject);
     }
     public boolean isReferentPresentation() {

@@ -406,7 +406,7 @@
       <node id="2742102018362199416" at="143,9,152,11" concept="10" />
       <node id="9164503229271455504" at="116,79,126,5" concept="7" />
       <node id="9073603541474871836" at="116,0,128,0" concept="9" trace="resolveInProject#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <node id="9073603541474867700" at="64,92,79,7" concept="7" />
+      <node id="9073603541474867700" at="64,89,79,7" concept="7" />
       <node id="9073603541474867694" at="63,81,80,5" concept="7" />
       <node id="9073603541474867664" at="61,0,83,0" concept="9" trace="getReferencesToResolve#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/util/Map;)Ljava/util/List;" />
       <node id="9073603541474871828" at="83,0,111,0" concept="9" trace="resolveInModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)V" />
@@ -483,8 +483,8 @@
         <var name="modelRef" id="9073603541474867744" />
         <var name="targetModelRef" id="9073603541474867707" />
       </scope>
-      <scope id="9073603541474867699" at="64,92,79,7" />
-      <scope id="9073603541474867700" at="64,92,79,7">
+      <scope id="9073603541474867699" at="64,89,79,7" />
+      <scope id="9073603541474867700" at="64,89,79,7">
         <var name="ref" id="9073603541474867701" />
       </scope>
       <scope id="9073603541474867694" at="63,81,80,5">

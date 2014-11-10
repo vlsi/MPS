@@ -33,7 +33,7 @@ public class ConstraintsChecker extends SpecificChecker {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start("cardinalities and properties", 1);
-    for (final SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (final SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }

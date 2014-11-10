@@ -83,7 +83,7 @@
   </root>
   <root nodeRef="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)/5546896804536307447">
     <file name="QueriesGenerated.java">
-      <node id="5546896804536307456" at="194,148,195,220" concept="4" />
+      <node id="5546896804536307456" at="194,254,195,220" concept="4" />
       <node id="5546896804536307516" at="197,237,198,51" concept="1" />
       <node id="5546896804536307491" at="198,51,199,16" concept="0" />
       <node id="5546896804536307466" at="196,35,200,9" concept="3" />
@@ -94,7 +94,7 @@
       <scope id="5546896804536307464" at="195,220,201,7">
         <var name="statement" id="5546896804536307499" />
       </scope>
-      <scope id="5546896804536307455" at="194,148,201,7">
+      <scope id="5546896804536307455" at="194,254,201,7">
         <var name="all" id="5546896804536307457" />
       </scope>
       <scope id="5546896804536307449" at="193,103,202,5" />

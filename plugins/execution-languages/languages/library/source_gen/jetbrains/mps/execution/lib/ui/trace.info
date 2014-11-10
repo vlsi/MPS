@@ -731,7 +731,7 @@
       </scope>
       <unit id="4465376900255659626" at="47,65,51,5" name="jetbrains.mps.execution.lib.ui.NodeByConceptChooser$1" />
       <unit id="8278380780105768695" at="80,113,84,7" name="jetbrains.mps.execution.lib.ui.NodeByConceptChooser$2" />
-      <unit id="8278380780105768733" at="93,94,104,5" name="jetbrains.mps.execution.lib.ui.NodeByConceptChooser$3" />
+      <unit id="8278380780105768733" at="93,91,104,5" name="jetbrains.mps.execution.lib.ui.NodeByConceptChooser$3" />
       <unit id="8278380780105768516" at="32,0,107,0" name="jetbrains.mps.execution.lib.ui.NodeByConceptChooser" />
     </file>
   </root>
@@ -850,7 +850,7 @@
       <unit id="8278380780105899603" at="48,86,56,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$2" />
       <unit id="8278380780105899762" at="88,69,101,9" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$5" />
       <unit id="8278380780105899663" at="62,80,78,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$3" />
-      <unit id="8278380780105899754" at="86,94,103,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$4" />
+      <unit id="8278380780105899754" at="86,91,103,5" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser$4" />
       <unit id="8278380780105899520" at="34,0,106,0" name="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" />
     </file>
   </root>

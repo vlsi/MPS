@@ -120,7 +120,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"));
   }
   public static void mappingScript_CodeBlock_3308300503039700895(final MappingScriptContext _context) {
-    List<SNode> roots = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.samples.Kaja.structure.Script");
+    List<SNode> roots = SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"));
     ListSequence.fromList(roots).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, 3265739055509559116l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).where(new IWhereFilter<SNode>() {
@@ -138,14 +138,14 @@ public class QueriesGenerated {
     });
   }
   public static void mappingScript_CodeBlock_3308300503039761163(final MappingScriptContext _context) {
-    ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.samples.Kaja.structure.EmptyLine")).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039740438l, "jetbrains.mps.samples.Kaja.structure.EmptyLine"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNodeOperations.deleteNode(it);
       }
     });
   }
   public static void mappingScript_CodeBlock_4394627182935101791(final MappingScriptContext _context) {
-    ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.samples.Kaja.structure.Script")).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"))).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode script) {
         final Iterable<SNode> requireCommands = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(script, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, 3265739055509559116l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

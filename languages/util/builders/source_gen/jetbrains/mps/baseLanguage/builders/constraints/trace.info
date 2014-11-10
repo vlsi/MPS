@@ -165,7 +165,7 @@
       <node id="3436597452201051265" at="55,254,58,19" concept="5" />
       <node id="5389689214217448670" at="39,0,43,0" concept="6" trace="hasOwnScopeProvider#()Z" />
       <node id="5389689214217448670" at="64,0,68,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="3436597452201051221" at="53,189,59,17" concept="4" />
+      <node id="3436597452201051221" at="53,294,59,17" concept="4" />
       <node id="3436597452201051211" at="52,263,60,15" concept="4" />
       <node id="3436597452201051168" at="50,443,61,13" concept="3" />
       <node id="5389689214217448670" at="47,0,64,0" concept="6" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
@@ -183,8 +183,8 @@
         <var name="extdecl" id="3436597452201051239" />
       </scope>
       <scope id="5389689214217448670" at="64,0,68,0" />
-      <scope id="3436597452201051214" at="53,189,59,17" />
-      <scope id="3436597452201051221" at="53,189,59,17">
+      <scope id="3436597452201051214" at="53,294,59,17" />
+      <scope id="3436597452201051221" at="53,294,59,17">
         <var name="basedecl" id="3436597452201051222" />
       </scope>
       <scope id="3436597452201051211" at="52,263,60,15">
@@ -512,7 +512,7 @@
         <var name="references" id="7288041816793179319" />
       </scope>
       <scope id="7288041816793179319" at="38,0,86,0" />
-      <unit id="7782956297805865810" at="62,196,66,15" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$3" />
+      <unit id="7782956297805865810" at="62,301,66,15" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$3" />
       <unit id="7288041816793179319" at="49,19,81,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$2" />
       <unit id="7288041816793179319" at="41,143,83,5" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$1" />
       <unit id="7288041816793179319" at="34,0,88,0" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints" />

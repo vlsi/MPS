@@ -14,11 +14,11 @@
   <root nodeRef="r:746f58a1-d17e-4009-b865-845d0d70ab6f(jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main@generator)/1228678752534">
     <file name="QueriesGenerated.java">
       <node id="1228680316628" at="83,102,84,198" concept="4" />
-      <node id="1228680279582" at="100,114,101,109" concept="4" />
-      <node id="5273477653284537095" at="103,120,104,108" concept="4" />
+      <node id="1228680279582" at="100,114,101,208" concept="4" />
+      <node id="5273477653284537095" at="103,120,104,207" concept="4" />
       <scope id="1228680307377" at="83,102,84,198" />
-      <scope id="1228680239722" at="100,114,101,109" />
-      <scope id="5273477653284500113" at="103,120,104,108" />
+      <scope id="1228680239722" at="100,114,101,208" />
+      <scope id="5273477653284500113" at="103,120,104,207" />
     </file>
   </root>
   <root nodeRef="r:746f58a1-d17e-4009-b865-845d0d70ab6f(jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main@generator)/1228678752590">
@@ -112,20 +112,20 @@
   <root nodeRef="r:746f58a1-d17e-4009-b865-845d0d70ab6f(jetbrains.mps.samples.generator_demo.demoLang5.generator.template.main@generator)/3978102045101460212">
     <file name="QueriesGenerated.java">
       <node id="3978102045101588697" at="109,103,110,27" concept="5" />
-      <node id="3978102045101468575" at="110,27,111,113" concept="3" />
+      <node id="3978102045101468575" at="110,27,111,212" concept="3" />
       <node id="3978102045101588110" at="112,53,113,40" concept="5" />
       <node id="3978102045101486307" at="113,40,114,107" concept="3" />
       <node id="3978102045101471162" at="114,107,115,174" concept="0" />
       <node id="3978102045101587539" at="115,174,116,53" concept="5" />
-      <node id="3978102045101559641" at="116,53,117,245" concept="3" />
-      <node id="3978102045101495902" at="117,245,118,177" concept="0" />
+      <node id="3978102045101559641" at="116,53,117,347" concept="3" />
+      <node id="3978102045101495902" at="117,347,118,177" concept="0" />
       <node id="3978102045101569051" at="118,177,119,333" concept="0" />
-      <node id="3978102045101469716" at="111,113,120,5" concept="1" />
+      <node id="3978102045101469716" at="111,212,120,5" concept="1" />
       <scope id="3978102045101469722" at="112,53,119,333">
         <var name="attribute" id="3978102045101559642" />
         <var name="label" id="3978102045101486308" />
       </scope>
-      <scope id="3978102045101469716" at="111,113,120,5">
+      <scope id="3978102045101469716" at="111,212,120,5">
         <var name="text" id="3978102045101469718" />
       </scope>
       <scope id="3978102045101460214" at="109,103,120,5">

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -60,7 +61,7 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.IStyle");
+            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797320402872l, "jetbrains.mps.lang.editor.structure.IStyle"));
           }
         });
 

@@ -94,10 +94,10 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1228680239721(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603382l, "jetbrains.mps.sampleXML.structure.Document"));
   }
   public static Iterable<SNode> sourceNodesQuery_5273477653284500112(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element"));
   }
   public static Iterable<SNode> sourceNodesQuery_1228681296814(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603387l, "content"));

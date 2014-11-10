@@ -98,7 +98,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
             continue;
           }
           SModel structureModel = language.getStructureModelDescriptor();
-          for (SNode nodeToAdd : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+          for (SNode nodeToAdd : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
             SNode conceptToAdd = (SNode) nodeToAdd;
             if (SPropertyOperations.getBoolean(nodeToAdd, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"))) {
               ListSequence.fromList(result).addElement(conceptToAdd);
@@ -158,7 +158,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       public void run() {
         for (Generator generator : genList) {
           for (SModel gm : generator.getOwnTemplateModels()) {
-            ListSequence.fromList(mappings).addSequence(ListSequence.fromList(SModelOperations.getRoots(gm, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+            ListSequence.fromList(mappings).addSequence(ListSequence.fromList(SModelOperations.roots(gm, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))));
           }
         }
       }
@@ -177,7 +177,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           }
           assert model != null : "model should have been already created";
 
-          SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+          SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "main");
           SModelOperations.addRootNode(model, node);
           ListSequence.fromList(mappings).addElement(node);
@@ -201,11 +201,11 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
           BehaviorReflection.invokeNonVirtual(Void.class, mapping.value, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "call_addMember_3166264919334415805", new Object[]{result.value});
         } else if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) || SNodeOperations.isInstanceOf(result.value, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
-          SNode mappingRule = SLinkOperations.addNewChild(mapping.value, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167328349397l, "reductionMappingRule"), "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
+          SNode mappingRule = SLinkOperations.addNewChild(mapping.value, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167328349397l, "reductionMappingRule"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
           SLinkOperations.setTarget(mappingRule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"), node);
           SLinkOperations.setTarget(mappingRule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence"), SNodeOperations.cast(result.value, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559098955l, "jetbrains.mps.lang.generator.structure.RuleConsequence")));
         } else {
-          SNode rootTemplateNode = SModelOperations.createNewNode(model, null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+          SNode rootTemplateNode = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
           SLinkOperations.setTarget(rootTemplateNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"), node);
           AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), rootTemplateNode);
           SPropertyOperations.set(SNodeOperations.cast(result.value, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));

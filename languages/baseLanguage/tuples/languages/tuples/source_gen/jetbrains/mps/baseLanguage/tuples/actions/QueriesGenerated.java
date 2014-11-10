@@ -92,7 +92,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ntd) {
                 return VisibilityUtil.isVisible(_context.getParentNode(), ntd);
               }
@@ -135,7 +135,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ntd) {
                 return VisibilityUtil.isVisible(_context.getParentNode(), ntd);
               }

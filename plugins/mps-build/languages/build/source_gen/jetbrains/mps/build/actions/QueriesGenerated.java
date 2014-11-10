@@ -147,7 +147,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildStringPart");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildString", null);
+            SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString"));
             ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, 4903714810883783243l, "parts"))).addElement(nodeToWrap);
             return res;
           }
@@ -175,7 +175,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildString");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode init = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
+            SNode init = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString"));
             SLinkOperations.setTarget(init, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, 2755237150521975437l, "value"), nodeToWrap);
             return init;
           }
@@ -284,7 +284,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, "jetbrains.mps.build.structure.BuildSource_JavaFiles"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset"), nodeToWrap);
             return n;
           }
@@ -312,7 +312,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaJar");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, 3717132724152589377l, "jar"), nodeToWrap);
             return n;
           }
@@ -340,7 +340,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaCP");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"), nodeToWrap);
             return n;
           }

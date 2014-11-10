@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -44,7 +44,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     monitor.start("illegal references", 1);
 
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
         for (SNode ref : ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference");
@@ -67,7 +67,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       }
     }
 
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }

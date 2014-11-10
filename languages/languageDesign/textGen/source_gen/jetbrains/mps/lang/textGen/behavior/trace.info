@@ -111,13 +111,13 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1234257860776">
     <file name="OperationDeclaration_Behavior.java">
-      <node id="1234257871250" at="13,43,14,269" concept="1" />
+      <node id="1234257871250" at="13,43,14,365" concept="1" />
       <node id="1234265138564" at="16,77,17,16" concept="6" />
       <node id="1234265941454" at="19,78,20,188" concept="6" />
       <node id="1234257860776" at="13,0,16,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1234257860776" at="16,0,19,0" concept="7" trace="virtual_isReturnsVoid_1234359555698#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1234257860776" at="19,0,22,0" concept="7" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1234257860778" at="13,43,14,269" />
+      <scope id="1234257860778" at="13,43,14,365" />
       <scope id="1234265130012" at="16,77,17,16" />
       <scope id="1234265815772" at="19,78,20,188" />
       <scope id="1234257860776" at="13,0,16,0">
@@ -238,14 +238,14 @@
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1234272591436">
     <file name="ConceptTextGenDeclaration_Behavior.java">
       <node id="1234781983112" at="18,90,19,48" concept="5" />
-      <node id="1234781917457" at="19,48,20,153" concept="5" />
+      <node id="1234781917457" at="19,48,20,253" concept="5" />
       <node id="1234782010678" at="21,37,22,253" concept="1" />
       <node id="1234782049420" at="23,5,24,18" concept="6" />
       <node id="1234784611194" at="26,77,27,18" concept="6" />
       <node id="8952337903384725612" at="29,82,30,194" concept="6" />
       <node id="6261424444345979614" at="32,100,33,200" concept="1" />
       <node id="1234272591436" at="16,0,18,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1234781956544" at="20,153,23,5" concept="3" />
+      <node id="1234781956544" at="20,253,23,5" concept="3" />
       <node id="1234272591436" at="26,0,29,0" concept="7" trace="virtual_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1234272591436" at="29,0,32,0" concept="7" trace="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1234272591436" at="32,0,35,0" concept="7" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -258,7 +258,7 @@
       <scope id="1234272591436" at="16,0,18,0">
         <var name="thisNode" id="1234272591436" />
       </scope>
-      <scope id="1234781956544" at="20,153,23,5">
+      <scope id="1234781956544" at="20,253,23,5">
         <var name="langTextGen" id="1234781956548" />
       </scope>
       <scope id="1234272591436" at="26,0,29,0">
@@ -621,8 +621,8 @@
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/3147100357551177052">
     <file name="StubOperationDeclaration_Behavior.java">
       <node id="3147100357551243789" at="20,127,20,127" concept="0" />
-      <node id="3147100357551284750" at="14,43,15,269" concept="1" />
-      <node id="3147100357551191182" at="15,269,16,211" concept="1" />
+      <node id="3147100357551284750" at="14,43,15,365" concept="1" />
+      <node id="3147100357551191182" at="15,365,16,211" concept="1" />
       <node id="3147100357551243789" at="18,60,19,63" concept="5" />
       <node id="3147100357551243789" at="19,63,20,127" concept="5" />
       <node id="3147100357551243789" at="20,127,21,14" concept="6" />

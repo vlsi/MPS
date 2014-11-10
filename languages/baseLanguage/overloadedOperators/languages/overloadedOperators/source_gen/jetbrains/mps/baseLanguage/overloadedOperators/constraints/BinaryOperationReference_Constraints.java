@@ -27,9 +27,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,7 +59,7 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
             for (Language language : langs) {
               SModel strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
               SModel strucModel = strucModelDescriptor;
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(strucModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) it)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")));
                 }

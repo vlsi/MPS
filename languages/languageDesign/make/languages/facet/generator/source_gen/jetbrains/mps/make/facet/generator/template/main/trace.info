@@ -92,8 +92,8 @@
   </root>
   <root nodeRef="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)/5086995156117116955">
     <file name="QueriesGenerated.java">
-      <node id="671853460608725579" at="45,107,46,154" concept="4" />
-      <node id="2824583209542435181" at="48,108,49,154" concept="4" />
+      <node id="671853460608725579" at="45,107,46,259" concept="4" />
+      <node id="2824583209542435181" at="48,108,49,259" concept="4" />
       <node id="8170824575195255924" at="51,110,52,277" concept="4" />
       <node id="8170824575195255946" at="54,110,55,277" concept="4" />
       <node id="8703512757937217048" at="57,110,58,259" concept="4" />
@@ -104,8 +104,8 @@
       <node id="2146492603954835984" at="248,108,249,196" concept="4" />
       <node id="6872280991287182717" at="251,108,252,194" concept="4" />
       <node id="6872280991287182725" at="254,108,255,196" concept="4" />
-      <scope id="671853460608709086" at="45,107,46,154" />
-      <scope id="2824583209542435180" at="48,108,49,154" />
+      <scope id="671853460608709086" at="45,107,46,259" />
+      <scope id="2824583209542435180" at="48,108,49,259" />
       <scope id="8170824575195255923" at="51,110,52,277" />
       <scope id="8170824575195255945" at="54,110,55,277" />
       <scope id="8703512757937217044" at="57,110,58,259" />
@@ -337,7 +337,7 @@
         <var name="fd" id="1575700832007790115" />
       </scope>
       <scope id="671853460608824200" at="343,119,348,13" />
-      <unit id="1575700832007790115" at="344,150,348,5" name="jetbrains.mps.make.facet.generator.template.main.QueriesGenerated$8" />
+      <unit id="1575700832007790115" at="344,255,348,5" name="jetbrains.mps.make.facet.generator.template.main.QueriesGenerated$8" />
     </file>
   </root>
   <root nodeRef="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)/6872280991287182616">
