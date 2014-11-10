@@ -22,9 +22,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Represents a concept property
  */
 public interface SProperty {
-  @Deprecated //renamed to getContainingConcept, remove after 3.2
-  SAbstractConcept getConcept();
-
   /**
    * Return the concept that contains the declaration of this property.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
