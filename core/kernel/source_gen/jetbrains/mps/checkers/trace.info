@@ -887,10 +887,10 @@
       <node id="7390982340086720312" at="94,7,99,9" concept="8" />
       <node id="8428637256415920766" at="105,52,110,9" concept="8" />
       <node id="7390982340086720424" at="123,5,128,8" concept="8" />
-      <node id="7390982340086720500" at="139,103,144,9" concept="8" />
+      <node id="7390982340086720500" at="139,103,144,10" concept="8" />
       <node id="7390982340086720459" at="131,195,137,7" concept="6" />
       <node id="8887378328853569023" at="37,79,45,5" concept="6" />
-      <node id="7390982340086720519" at="144,9,152,7" concept="6" />
+      <node id="7390982340086720519" at="144,10,152,7" concept="6" />
       <node id="8887378328853481940" at="36,0,47,0" concept="7" trace="getBreakingNodeAndClearContext#(Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7390982340086720243" at="72,0,83,5" concept="6" />
       <node id="7390982340086720162" at="55,5,71,5" concept="6" />
@@ -991,7 +991,7 @@
       <unit id="7390982340086720318" at="95,60,99,7" name="jetbrains.mps.checkers.ConstraintsChecker$3" />
       <unit id="8428637256415926932" at="106,62,110,7" name="jetbrains.mps.checkers.ConstraintsChecker$4" />
       <unit id="7390982340086720433" at="124,56,128,5" name="jetbrains.mps.checkers.ConstraintsChecker$5" />
-      <unit id="7390982340086720506" at="140,60,144,7" name="jetbrains.mps.checkers.ConstraintsChecker$6" />
+      <unit id="7390982340086720506" at="140,98,144,7" name="jetbrains.mps.checkers.ConstraintsChecker$6" />
       <unit id="7390982340086720127" at="33,0,157,0" name="jetbrains.mps.checkers.ConstraintsChecker" />
     </file>
   </root>

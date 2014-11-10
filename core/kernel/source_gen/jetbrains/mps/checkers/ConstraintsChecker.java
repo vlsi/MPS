@@ -137,11 +137,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));
       final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
-      boolean canSetValue = propertyDescriptor==null?false:component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+      boolean canSetValue = (propertyDescriptor == null ? false : component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ps.canSetValue(propertyDescriptor, node, propertyName, value);
         }
-      });
+      }));
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
         if ("name".equals(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
