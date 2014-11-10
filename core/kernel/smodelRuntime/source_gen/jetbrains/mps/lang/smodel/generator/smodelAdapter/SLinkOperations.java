@@ -254,13 +254,4 @@ public class SLinkOperations {
     }
     return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
   }
-
-  public static SNode setNewChild(SNode ctor, SContainmentLink body, String s) {
-
-  return null;
-  }
-
-  public static SNode addNewChild(SNode history, SContainmentLink item, String s) {
-    return null;
-  }
 }

@@ -207,7 +207,7 @@ public class SModelOperations {
       if (m == null) {
         return null;
       }
-      SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
+      SNode l = ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"))).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_kkj9n5_a0a0a0a0a0a4a1a71(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540898l, "uuid")), module.getModuleReference().getModuleId().toString());
@@ -215,7 +215,7 @@ public class SModelOperations {
       }));
     } else {
       SModel m = ProjectStructureModule.getInstance().getModelByModule(module);
-      return (m == null ? null : ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first());
+      return (m == null ? null : ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, "jetbrains.mps.lang.project.structure.Module"))).first());
     }
   }
   private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a71(Object a, Object b) {

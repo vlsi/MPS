@@ -99,7 +99,7 @@
         <var name="enumm" id="1101499704720825575" />
         <var name="value" id="1101499704720825577" />
       </scope>
-      <unit id="1101499704720825439" at="21,147,25,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$1" />
+      <unit id="1101499704720825439" at="21,247,25,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$1" />
       <unit id="1101499704720825523" at="41,232,45,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$2" />
       <unit id="1101499704720825563" at="51,229,55,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$3" />
       <unit id="1101499704720825413" at="17,0,58,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
@@ -1129,10 +1129,10 @@
       <node id="8920265417895136580" at="204,38,205,63" concept="11" />
       <node id="8920265417895136591" at="205,63,206,77" concept="11" />
       <node id="8920265417895136614" at="207,22,208,20" concept="12" />
-      <node id="8920265417895136620" at="209,7,210,125" concept="11" />
+      <node id="8920265417895136620" at="209,7,210,231" concept="11" />
       <node id="8920265417895136669" at="212,41,213,274" concept="12" />
       <node id="2780279129385103639" at="216,12,217,79" concept="11" />
-      <node id="6995935425733981958" at="217,79,218,141" concept="12" />
+      <node id="6995935425733981958" at="217,79,218,247" concept="12" />
       <node id="8920265417895136676" at="221,74,222,46" concept="12" />
       <node id="6599163591527280392" at="35,0,37,0" concept="3" trace="SModelOperations#()V" />
       <node id="3902406419449999833" at="121,12,123,7" concept="1" />
@@ -1168,7 +1168,7 @@
       <node id="9116031298984946673" at="127,0,132,0" concept="16" trace="getNodes#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Ljava/util/List;" />
       <node id="6599163591527280830" at="145,0,150,0" concept="16" trace="createNewNode#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="9116031298985583863" at="178,0,183,0" concept="16" trace="createNewRootNode#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8920265417895136642" at="210,125,215,10" concept="12" />
+      <node id="8920265417895136642" at="210,231,215,10" concept="12" />
       <node id="9116031298984644388" at="48,46,54,6" concept="11" />
       <node id="1917749888335241872" at="172,0,178,0" concept="16" trace="createNewNode#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNodeId;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6599163591527280921" at="190,0,196,0" concept="16" trace="addRootNode#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -1219,7 +1219,7 @@
       <scope id="8920265417895136666" at="212,41,213,274" />
       <scope id="8920265417895136676" at="221,74,222,46" />
       <scope id="6599163591527280392" at="35,0,37,0" />
-      <scope id="8920265417895104213" at="216,12,218,141">
+      <scope id="8920265417895104213" at="216,12,218,247">
         <var name="m" id="2780279129385103640" />
       </scope>
       <scope id="9116031298984644367" at="42,55,45,7">
