@@ -6387,7 +6387,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "finalModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "final";
@@ -6406,7 +6407,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, 6468716278899125786l, "isTransient"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "transientModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "transient";
@@ -6425,7 +6427,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, 6468716278899126575l, "isVolatile"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "volatileModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "volatile";
@@ -6447,7 +6450,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        SNode replacing = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, "staticModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "static";
@@ -6466,7 +6471,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "finalModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "final";
@@ -6485,7 +6491,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, 8606350594693632173l, "isTransient"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "transientModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "transient";
@@ -6504,7 +6511,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, 1240249534625l, "isVolatile"), "" + (true));
-        return _context.getSourceNode();
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "volatileModifier", -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "volatile";

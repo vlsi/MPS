@@ -4781,6 +4781,9 @@
           <node concept="9wj7.1164824717996" id="2509912883461065405" role="9wj7.1073389214265.1164826688380" info="ng">
             <node concept="9wj7.8233876857994246075" id="7272388447761557908" role="9wj7.1164824717996.1164824815888" info="ng" />
           </node>
+          <node concept="9wj7.4323500428121233431" id="1774243543375899715" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="staticModifier" />
+          </node>
         </node>
         <node concept="9wj7.1073389577006" id="1188210606983" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="final" />
@@ -4803,6 +4806,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="9wj7.4323500428121233431" id="1774243543375910496" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="finalModifier" />
           </node>
         </node>
         <node concept="9wj7.1073389577006" id="6468716278899212583" role="9wj7.1073389446423.1073389446424" info="sn">
@@ -4827,6 +4833,9 @@
               </node>
             </node>
           </node>
+          <node concept="9wj7.4323500428121233431" id="1774243543375911143" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="transientModifier" />
+          </node>
         </node>
         <node concept="9wj7.1073389577006" id="6468716278899144043" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="volatile" />
@@ -4849,6 +4858,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="9wj7.4323500428121233431" id="1774243543375911790" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="volatileModifier" />
           </node>
         </node>
         <node concept="9wj7.1073389882823" id="1188210606990" role="9wj7.1073389446423.1073389446424" info="sg">
