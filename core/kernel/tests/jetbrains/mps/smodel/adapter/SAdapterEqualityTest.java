@@ -18,6 +18,9 @@ package jetbrains.mps.smodel.adapter;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
@@ -42,12 +45,10 @@ public class SAdapterEqualityTest {
     assertTrue(new SLanguageAdapterByName("name").equals(new SLanguageAdapterByName("name")));
     assertTrue(new SLanguageAdapterByName("name").equals(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name")));
     assertTrue(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name").equals(new SLanguageAdapterByName("name")));
-    assertTrue(
-        new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name1").equals(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name2")));
+    assertTrue(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name1").equals(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name2")));
 
     assertFalse(new SConceptAdapterByName("name1").equals(new SConceptAdapterByName("name2")));
-    assertFalse(
-        new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name").equals(new SLanguageAdapterById(MetaIdFactory.langId(new UUID(1, 1)), "name")));
+    assertFalse(new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, "name").equals(new SLanguageAdapterById(MetaIdFactory.langId(new UUID(1, 1)), "name")));
   }
 
   @Test
@@ -58,8 +59,39 @@ public class SAdapterEqualityTest {
     assertTrue(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name1").equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name2")));
 
     assertFalse(new SConceptAdapterByName("name1").equals(new SConceptAdapterByName("name2")));
-    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(
-        new SConceptAdapterById(MetaIdFactory.conceptId(new UUID(-1, -1), 1), "name")));
+    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SConceptAdapterById(MetaIdFactory.conceptId(new UUID(-1, -1), 1), "name")));
+  }
+
+  @Test
+  public void testInterfaceConceptEquality() {
+    assertTrue(new SInterfaceConceptAdapterByName("name").equals(new SInterfaceConceptAdapterByName("name")));
+    assertTrue(new SInterfaceConceptAdapterByName("name").equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
+    assertTrue(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptAdapterByName("name")));
+    assertTrue(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name1").equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name2")));
+
+    assertFalse(new SInterfaceConceptAdapterByName("name1").equals(new SInterfaceConceptAdapterByName("name2")));
+    assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(new UUID(-1, -1), 1), "name")));
+  }
+
+  @Test
+  public void testInterfaceConceptInEquality() {
+    assertFalse(new SInterfaceConceptAdapterByName("name").equals(new SConceptAdapterByName("name")));
+    assertFalse(new SConceptAdapterByName("name").equals(new SInterfaceConceptAdapterByName("name")));
+
+    assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
+    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
+
+    assertFalse(new SInterfaceConceptAdapterByName("name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name"))));
+    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name")).equals(new SInterfaceConceptAdapterByName("name")));
+
+    assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name"))));
+    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")).equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
+
+    assertFalse(new SConceptAdapterByName("name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name"))));
+    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name")).equals(new SConceptAdapterByName("name")));
+
+    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name"))));
+    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")).equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
   }
 
   @Test
@@ -71,8 +103,7 @@ public class SAdapterEqualityTest {
     assertTrue(new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, "name1").equals(new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, "name2")));
 
     assertFalse(new SPropertyAdapterByName("cname","name1").equals(new SPropertyAdapterByName("cname", "name2")));
-    assertFalse(
-        new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, "name").equals(new SPropertyAdapterById(MetaIdFactory.propId(new UUID(-1, -1), 1, 1), "name")));
+    assertFalse(new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, "name").equals(new SPropertyAdapterById(MetaIdFactory.propId(new UUID(-1, -1), 1, 1), "name")));
   }
 
   @Test
@@ -84,8 +115,7 @@ public class SAdapterEqualityTest {
     assertTrue(new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, "name1").equals(new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, "name2")));
 
     assertFalse(new SReferenceLinkAdapterByName("cname","name1").equals(new SReferenceLinkAdapterByName("cname", "name2")));
-    assertFalse(
-        new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, "name").equals(new SReferenceLinkAdapterById(MetaIdFactory.refId(new UUID(-1, -1), 1, 1), "name")));
+    assertFalse(new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, "name").equals(new SReferenceLinkAdapterById(MetaIdFactory.refId(new UUID(-1, -1), 1, 1), "name")));
   }
 
   @Test
@@ -97,7 +127,6 @@ public class SAdapterEqualityTest {
     assertTrue(new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, "name1").equals(new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, "name2")));
 
     assertFalse(new SContainmentLinkAdapterByName("cname","name1").equals(new SContainmentLinkAdapterByName("cname", "name2")));
-    assertFalse(
-        new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, "name").equals(new SContainmentLinkAdapterById(MetaIdFactory.linkId(new UUID(-1, -1), 1, 1), "name")));
+    assertFalse(new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, "name").equals(new SContainmentLinkAdapterById(MetaIdFactory.linkId(new UUID(-1, -1), 1, 1), "name")));
   }
 }
