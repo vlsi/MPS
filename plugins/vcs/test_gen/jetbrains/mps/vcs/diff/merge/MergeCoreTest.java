@@ -61,14 +61,6 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
     RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
-
-    Properties p = new Properties();
-    p.setProperty("log4j.rootLogger", "info, console");
-    p.setProperty("log4j.appender.console", "org.apache.log4j.ConsoleAppender");
-    p.setProperty("log4j.appender.console.layout", "org.apache.log4j.PatternLayout");
-    p.setProperty("log4j.appender.console.layout.ConversionPattern", "%-4r [%t] %-5p %c %x - %m%n");
-    p.setProperty("log4j.appender.console.target", "System.err");
-    PropertyConfigurator.configure(p);
   }
   @AfterClass
   public static void tearDownClass() {
