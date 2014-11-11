@@ -29,12 +29,9 @@ import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * @author Alex Pyshkin on 2/20/14.
- */
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
   private static final String TEST_PROJECT = null;
-  private static final File SOURCE_ZIP = new File("testbench/modules/testClassloading.zip");
+  private static final File SOURCE_ZIP = new File("testbench/modules/testClassLoading");
   private static final File TEMP_DIR = new File(PathManager.getHomePath(), "TEST_CLASS_LOADING_DESCRIPTOR_CHANGED");
 
   /**
