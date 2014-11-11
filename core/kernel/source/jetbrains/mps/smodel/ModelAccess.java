@@ -156,15 +156,11 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   }
 
   public static void assertLegalWrite() {
-    if (!instance().canWrite()) {
-      throw new IllegalModelAccessError("You can write model only inside write actions");
-    }
+    instance().checkWriteAccess();
   }
 
   public static void assertLegalRead() {
-    if (!instance().canRead()) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
+    instance().checkReadAccess();
   }
 
   protected void onCommandStarted() {

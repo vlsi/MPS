@@ -82,12 +82,12 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       throw new IllegalStateException("already initialized");
     }
     ourInstance = this;
-    ModelAccess.instance().addCommandListener(myCommandListener);
+    getModelAccess().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
-    ModelAccess.instance().removeCommandListener(myCommandListener);
+    getModelAccess().removeCommandListener(myCommandListener);
     ourInstance = null;
     super.dispose();
   }
@@ -95,7 +95,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   //-----------------register/unregister-merge-----------
 
   public <T extends SModule> T registerModule(T module, MPSModuleOwner owner) {
-    ModelAccess.assertLegalWrite();
+    getModelAccess().checkWriteAccess();
 
     SModuleId moduleId = module.getModuleReference().getModuleId();
     String moduleFqName = module.getModuleName();
@@ -146,7 +146,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public void unregisterModule(SModule module, MPSModuleOwner owner) {
-    ModelAccess.assertLegalWrite();
+    getModelAccess().checkWriteAccess();
 
     boolean moduleRemoved = doUnregisterModule(module, owner);
     invalidateCaches();
@@ -168,7 +168,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
    * @return true if module was removed from ModuleRepository
    */
   private boolean doUnregisterModule(SModule module, MPSModuleOwner owner) {
-    ModelAccess.assertLegalWrite();
+    getModelAccess().checkWriteAccess();
     assert myModules.contains(
         module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + ((AbstractModule) module).getDescriptorFile();
 
@@ -203,7 +203,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public Set<MPSModuleOwner> getOwners(SModule module) {
-    ModelAccess.assertLegalRead();
+    getModelAccess().checkReadAccess();
 
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
@@ -216,7 +216,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public SModule getModule(SModuleId id) {
-    ModelAccess.assertLegalRead();
+    getModelAccess().checkReadAccess();
 
     if (id == null) return null;
     return myIdToModuleMap.get(id);
@@ -224,7 +224,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public Iterable<SModule> getModules() {
-    ModelAccess.assertLegalRead();
+    getModelAccess().checkReadAccess();
     return Collections.unmodifiableSet(myModules);
   }
 
@@ -242,7 +242,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   //--------------------------------------------------
 
   public void invalidateCaches() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
@@ -277,7 +277,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   public void moduleFqNameChanged(SModule module, String oldName) {
-    ModelAccess.assertLegalWrite();
+    getModelAccess().checkWriteAccess();
 
     if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleName())) {
       throw new IllegalStateException();
