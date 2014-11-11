@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class WrapNotChildWithParens_MigrationScript extends BaseMigrationScript {
@@ -27,9 +29,9 @@ public class WrapNotChildWithParens_MigrationScript extends BaseMigrationScript 
         return PrecedenceUtil.needsParensAroundNotExpression(node);
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode childExpr = SLinkOperations.getTarget(node, "expression", true);
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(parens, "expression", childExpr, true);
+        SNode childExpr = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
+        SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), childExpr);
       }
       public boolean isShowAsIntention() {
         return false;

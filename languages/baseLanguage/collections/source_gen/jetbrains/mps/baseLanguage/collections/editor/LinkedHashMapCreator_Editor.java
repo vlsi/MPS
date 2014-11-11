@@ -44,7 +44,7 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g44azu_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g44azu_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_g44azu_b0a(editorContext, node));

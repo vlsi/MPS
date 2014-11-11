@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CommentLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -14,7 +16,7 @@ public class CommentLine_TextGen extends SNodeTextGen {
       DocCommentTextGen.javadocIndent(this);
     }
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "part", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"));
       for (SNode item : collection) {
         appendNode(item);
       }

@@ -61,7 +61,8 @@ public class EditorCell_STHint extends EditorCell_Constant {
   private final CellSide mySide;
   private boolean myInstalled;
 
-  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, String sideTransformTag, CellInfo restoreSelectionCellInto) {
+  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, String sideTransformTag,
+      CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
     mySide = side;
@@ -232,19 +233,17 @@ public class EditorCell_STHint extends EditorCell_Constant {
     @Override
     public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
-      if (anchorCell == null) return super.findCell(editorComponent);
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
+      return anchorCell != null ? STHintUtil.getSTHintCell(anchorCell) : super.findCell(editorComponent);
     }
 
     @Override
     public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
-      if (anchorCell == null) return super.findCell(editorComponent);
-      EditorCell_Label rtHint = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
-      if (rtHint == null) {
-        return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
+      if (anchorCell == null) {
+        return super.findCell(editorComponent);
       }
-      return rtHint;
+      EditorCell_Label rtHint = STHintUtil.getSTHintCell(anchorCell);
+      return rtHint != null ? rtHint : (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
     }
   }
 }

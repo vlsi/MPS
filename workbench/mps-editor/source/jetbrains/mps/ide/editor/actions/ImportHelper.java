@@ -177,7 +177,6 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
       assert modelAccess != null;
-      assert !modelAccess.canRead();
       final Set<SModuleReference> importCandidates = new HashSet<SModuleReference>();
       modelAccess.runWriteAction(new Runnable() {
         @Override
@@ -313,7 +312,6 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
       assert modelAccess != null;
-      assert !modelAccess.canRead();
 
       modelAccess.runWriteAction(new Runnable() {
         @Override

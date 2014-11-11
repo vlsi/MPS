@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class FloatingPointConstant_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (SPropertyOperations.getString(node, "value") == null) {
-      SPropertyOperations.set(node, "value", "?.?f");
+    if (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, 1113006610751l, "value")) == null) {
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, 1113006610751l, "value"), "?.?f");
     }
-    this.append(SPropertyOperations.getString(node, "value"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1111509017652l, 1113006610751l, "value")));
   }
 }

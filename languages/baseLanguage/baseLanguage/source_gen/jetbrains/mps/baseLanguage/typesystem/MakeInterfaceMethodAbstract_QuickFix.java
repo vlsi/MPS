@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,7 +17,7 @@ public class MakeInterfaceMethodAbstract_QuickFix extends QuickFix_Runtime {
     return "Make Interface Method Abstract";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "isAbstract", "" + (true));
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "body", true), "statement", true)).clear();
+    SPropertyOperations.set(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "" + (true));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).clear();
   }
 }

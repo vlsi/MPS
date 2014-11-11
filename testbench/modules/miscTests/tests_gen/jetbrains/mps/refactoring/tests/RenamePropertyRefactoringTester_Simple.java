@@ -17,6 +17,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -42,7 +44,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor;
         SNode node = SModelOperations.getRootByName(model, "YetAnotherGoodConcept");
-        SNode property = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "propertyDeclaration", true)).first();
+        SNode property = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"))).first();
         refactoringContext.setSelectedNode(property);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newPropertyName);

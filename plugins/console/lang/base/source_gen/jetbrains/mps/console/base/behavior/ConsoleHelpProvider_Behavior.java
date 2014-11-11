@@ -5,27 +5,29 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConsoleHelpProvider_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "conceptShortDescription");
+    return SPropertyOperations.getString(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription"));
   }
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     return null;
   }
   public static String virtual_getGroup_6928665434441162387(SAbstractConcept thisConcept) {
-    return SNodeOperations.getModel(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())).getModule().getModuleName();
+    return SNodeOperations.getModel(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))).getModule().getModuleName();
   }
   public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
-    String alias = SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "conceptAlias");
+    String alias = SPropertyOperations.getString(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     if ((alias != null && alias.length() > 0)) {
       return alias;
     } else {
-      return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "name");
+      return SPropertyOperations.getString(SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
   }
 }

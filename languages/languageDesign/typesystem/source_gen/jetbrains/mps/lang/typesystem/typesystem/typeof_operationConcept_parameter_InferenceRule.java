@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -19,13 +21,13 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
   public typeof_operationConcept_parameter_InferenceRule() {
   }
   public void applyRule(final SNode concept_parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, false);
+    SNode typeRule = SNodeOperations.getNodeAncestor(concept_parameter, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 8124453027370845339l, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"), false, false);
     if ((typeRule != null)) {
-      for (SNode opConcept : ListSequence.fromList(SLinkOperations.getTargets(typeRule, "operationConcept", true))) {
+      for (SNode opConcept : ListSequence.fromList(SLinkOperations.getChildren(typeRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 8124453027370845339l, 8124453027370845341l, "operationConcept")))) {
         {
           SNode _nodeToCheck_1029348928467 = concept_parameter;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299036", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299038", true), (SNode) _quotation_createNode_v9qm53_a0a0a0b0b(SLinkOperations.getTarget(opConcept, "concept", false)), false, true, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "2888402081996299038", true), (SNode) _quotation_createNode_v9qm53_a0a0a0b0b(SLinkOperations.getTarget(opConcept, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1154546950173l, 1154546997487l, "concept"))), false, true, _info_12389875345);
         }
       }
     }
@@ -46,7 +48,7 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

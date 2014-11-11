@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
@@ -32,6 +34,11 @@ public class ConstraintsAspectInterpreted implements ConstraintsAspectDescriptor
   @Override
   public ConstraintsDescriptor getDescriptor(String fqName) {
     // todo: illegal?
-    return new BaseConstraintsDescriptor(fqName);
+    return new BaseConstraintsDescriptor(ConceptRegistry.getInstance().getConceptDescriptor(fqName).getId());
+  }
+
+  @Override
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    return new BaseConstraintsDescriptor(ConceptRegistry.getInstance().getConceptDescriptor(conceptId).getId());
   }
 }

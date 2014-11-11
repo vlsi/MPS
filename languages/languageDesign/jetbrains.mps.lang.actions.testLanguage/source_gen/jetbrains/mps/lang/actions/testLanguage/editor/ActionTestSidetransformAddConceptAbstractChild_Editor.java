@@ -30,8 +30,8 @@ public class ActionTestSidetransformAddConceptAbstractChild_Editor extends Defau
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sidetransform abstract child add concept");
     editorCell.setCellId("Constant_4fzsyb_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

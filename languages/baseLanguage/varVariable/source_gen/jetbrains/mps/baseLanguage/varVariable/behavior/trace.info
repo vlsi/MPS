@@ -12,13 +12,13 @@
   </root>
   <root nodeRef="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)/8425555512443914486">
     <file name="VarVariableDeclaration_Behavior.java">
-      <node id="8425555512443914489" at="9,43,10,104" concept="0" />
-      <node id="8425555512443914486" at="9,0,12,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="8425555512443914488" at="9,43,10,104" />
-      <scope id="8425555512443914486" at="9,0,12,0">
+      <node id="8425555512443914489" at="11,43,12,350" concept="0" />
+      <node id="8425555512443914486" at="11,0,14,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="8425555512443914488" at="11,43,12,350" />
+      <scope id="8425555512443914486" at="11,0,14,0">
         <var name="thisNode" id="8425555512443914486" />
       </scope>
-      <unit id="8425555512443914486" at="8,0,13,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" />
+      <unit id="8425555512443914486" at="10,0,15,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" />
     </file>
   </root>
 </debug-info>

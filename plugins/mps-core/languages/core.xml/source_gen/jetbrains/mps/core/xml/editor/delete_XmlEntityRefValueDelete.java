@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.core.xml.actions.AttributeUtil;
 
 public class delete_XmlEntityRefValueDelete {
@@ -24,7 +26,7 @@ public class delete_XmlEntityRefValueDelete {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode pnode = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
+      SNode pnode = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"));
       SNodeOperations.deleteNode(node);
       AttributeUtil.updateValue(pnode, editorContext);
     }
@@ -38,7 +40,7 @@ public class delete_XmlEntityRefValueDelete {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode pnode = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
+      SNode pnode = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"));
       SNodeOperations.deleteNode(node);
       AttributeUtil.updateValue(pnode, editorContext);
     }

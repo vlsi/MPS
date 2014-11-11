@@ -18,28 +18,31 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferenceTreeNode extends TextTreeNode {
+  private final Project myProject;
   private final SReference myRef;
 
-  public ReferenceTreeNode(IOperationContext context, SReference ref) {
-    super(ref.getRole() + ": " + ref.getTargetNode(), context);
+  public ReferenceTreeNode(Project project, SReference ref) {
+    super(ref.getRole() + ": " + ref.getTargetNode());
+    myProject = project;
     myRef = ref;
     setIcon(Icons.DEFAULT_ICON);
   }
 
   @Override
   public void doubleClick() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode target = myRef.getTargetNode();
         if (target == null) return;
-        NavigationSupport.getInstance().openNode(getOperationContext(), target, true, !(target.getModel() != null && target.getParent() == null));
+        NavigationSupport.getInstance().openNode(myProject, target, true, !(target.getModel() != null && target.getParent() == null));
       }
     });
   }

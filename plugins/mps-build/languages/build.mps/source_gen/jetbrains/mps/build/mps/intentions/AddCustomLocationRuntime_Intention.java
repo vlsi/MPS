@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -43,7 +45,7 @@ public class AddCustomLocationRuntime_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customLocation", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200804496l, 2798275735916344702l, "customLocation")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "202934866058893735");
@@ -64,7 +66,7 @@ public class AddCustomLocationRuntime_Intention implements IntentionFactory {
       return "Override jar location";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, "customLocation", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef");
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 4278635856200804496l, 2798275735916344702l, "customLocation"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddCustomLocationRuntime_Intention.this;

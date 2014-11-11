@@ -4,6 +4,8 @@ package jetbrains.mps.samples.heating.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -15,18 +17,18 @@ public class Slot_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getCustomizedSlot_935069066463578518(final SNode thisNode) {
-    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.heating.structure.DailyPlan");
+    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan"));
     SNode found = null;
     List<SNode> visitedPlans = new ArrayList<SNode>();
-    while (found == null && (SLinkOperations.getTarget(dailyPlan, "customizes", true) != null)) {
+    while (found == null && (SLinkOperations.getTarget(dailyPlan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null)) {
       ListSequence.fromList(visitedPlans).addElement(dailyPlan);
-      dailyPlan = SLinkOperations.getTarget(SLinkOperations.getTarget(dailyPlan, "customizes", true), "target", false);
+      dailyPlan = SLinkOperations.getTarget(SLinkOperations.getTarget(dailyPlan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")), MetaAdapterFactory.getReferenceLink(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, 935069066462619697l, "target"));
       if (ListSequence.fromList(visitedPlans).contains(dailyPlan)) {
         return null;
       }
-      found = ListSequence.fromList(SLinkOperations.getTargets(dailyPlan, "items", true)).findFirst(new IWhereFilter<SNode>() {
+      found = ListSequence.fromList(SLinkOperations.getChildren(dailyPlan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getInteger(it, "start") == SPropertyOperations.getInteger(thisNode, "start");
+          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) == SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"));
         }
       });
     }

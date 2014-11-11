@@ -118,7 +118,7 @@ public class NewRootAction extends AnAction {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
             SModel model = myModelDescriptor;
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model);
-            SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, getNameField().getText());
+            SNodeAccessUtil.setProperty(newNode, SNodeUtil.propertyName_INamedConcept_name, getNameField().getText());
             model.addRootNode(newNode);
             myModelDescriptor.save();
           }
@@ -134,6 +134,7 @@ public class NewRootAction extends AnAction {
           String conceptFqName = entry.getKey();
           SNode concept = entry.getValue().resolve(MPSModuleRepository.getInstance());
           dialog.getKindCombo().addItem(NodePresentationUtil.matchingText(concept), IconManager.getIconForConceptFQName(conceptFqName), conceptFqName);
+          dialog.setTemplateKindComponentsVisible(true);
         }
       }
     });
@@ -169,7 +170,7 @@ public class NewRootAction extends AnAction {
         final String modelName = ((PsiJavaDirectoryImpl) psiElement).getPresentation().getLocationString();
         EditableSModel model = null;
         try {
-          model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
+          model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot, null,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
         } catch (IOException ioException) {
           LOG.error("Can't create per-root model " + modelName + " under " + useSourceRoot, ioException);

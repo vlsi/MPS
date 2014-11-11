@@ -5,6 +5,7 @@ package jetbrains.mps.lang.structure.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -30,9 +31,39 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new DataTypeDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1083171877298l) {
+      return new EnumerationMemberDeclaration_Constraints();
+    }
+    if (id == 1071489090640l) {
+      return new ConceptDeclaration_Constraints();
+    }
+    if (id == 1071489288298l) {
+      return new LinkDeclaration_Constraints();
+    }
+    if (id == 1082978164219l) {
+      return new EnumerationDataTypeDeclaration_Constraints();
+    }
+    if (id == 1169125989551l) {
+      return new InterfaceConceptDeclaration_Constraints();
+    }
+    if (id == 1082978499127l) {
+      return new ConstrainedDataTypeDeclaration_Constraints();
+    }
+    if (id == 1169125787135l) {
+      return new AbstractConceptDeclaration_Constraints();
+    }
+    if (id == 1071489288299l) {
+      return new PropertyDeclaration_Constraints();
+    }
+    if (id == 1082978164218l) {
+      return new DataTypeDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration"};
 }

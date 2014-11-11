@@ -5,12 +5,14 @@ package jetbrains.mps.lang.textGen.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractTextGenParameter_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getGetterName_1234885318469(SNode thisNode) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     StringBuilder builder = new StringBuilder("get");
     for (int i = 0; i < alias.length(); i++) {
       char ch = alias.charAt(i);
@@ -23,7 +25,7 @@ public class AbstractTextGenParameter_Behavior {
     return builder.toString();
   }
   public static boolean call_inLangConcept_1236168601263(SNode thisNode) {
-    return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+    return SNodeOperations.isInstanceOf((SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1234281982537l, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), false, false)), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
   }
   public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return false;

@@ -16,6 +16,8 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -60,7 +62,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
           final Wrappers._boolean result = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), "jetbrains.mps.testHybridEditor.structure.BlockInstance") && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), "jetbrains.mps.testHybridEditor.structure.BlockInstance") && connectionInfo.getToId() instanceof SNode && eq_lbjacb_a0a0a0a0a0a4a0a0b0a0a0a0a5(SNodeOperations.getContainingLinkDeclaration(((SNode) connectionInfo.getToId())), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"))) {
+              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getToId() instanceof SNode && eq_lbjacb_a0a0a0a0a0a4a0a0b0a0a0a0a5(SNodeOperations.getContainingLinkDeclaration(((SNode) connectionInfo.getToId())), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 2353136177973888134l, "inMetaPorts")))) {
                 result.value = true;
               }
             }
@@ -70,14 +72,14 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
           }
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SNode connectorInstance = SConceptOperations.createNewNode("jetbrains.mps.testHybridEditor.structure.ConnectorInstance", null);
-              SLinkOperations.setTarget(connectorInstance, "source", SConceptOperations.createNewNode("jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance", null), true);
-              SLinkOperations.setTarget(connectorInstance, "target", SConceptOperations.createNewNode("jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance", null), true);
-              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, "source", true), "block", SNodeOperations.cast(connectionInfo.getFromNode(), "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
-              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, "source", true), "metaPort", ((SNode) connectionInfo.getFromId()), false);
-              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, "target", true), "block", SNodeOperations.cast(connectionInfo.getToNode(), "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
-              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, "target", true), "metaPort", ((SNode) connectionInfo.getToId()), false);
-              ListSequence.fromList(SLinkOperations.getTargets(((SNode) myDiagramCell.getSNode()), "newConnectors", true)).addElement(connectorInstance);
+              SNode connectorInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"));
+              SLinkOperations.setTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance")));
+              SLinkOperations.setTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance")));
+              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"), SNodeOperations.cast(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance")));
+              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964096l, "source")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort"), ((SNode) connectionInfo.getFromId()));
+              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"), SNodeOperations.cast(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance")));
+              SLinkOperations.setTarget(SLinkOperations.getTarget(connectorInstance, MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974088982l, 5288989961863964102l, "target")), MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964093l, "metaPort"), ((SNode) connectionInfo.getToId()));
+              ListSequence.fromList(SLinkOperations.getChildren(((SNode) myDiagramCell.getSNode()), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974093280l, "newConnectors"))).addElement(connectorInstance);
             }
           });
           event.consume();

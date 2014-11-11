@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -434,16 +435,16 @@ public abstract class DeltaBuilder {
   public void dump() {
     for (DeltaRoot dr : myDelta) {
       if (dr instanceof NewRoot) {
-        System.out.printf("+%s\n", SNodeUtil.getDebugText(((NewRoot) dr).myRoot));
+        System.out.printf("+%s\n", SNodeOperations.getDebugText(((NewRoot) dr).myRoot));
       } else if (dr instanceof ReplacedRoot) {
         ReplacedRoot rr = (ReplacedRoot) dr;
-        System.out.printf("R%s - %d\n", SNodeUtil.getDebugText(rr.myReplacedRoot), rr.myReplacements.size());
+        System.out.printf("R%s - %d\n", SNodeOperations.getDebugText(rr.myReplacedRoot), rr.myReplacements.size());
       } else if (dr instanceof DeletedRoot) {
-        System.out.printf("-%s\n", SNodeUtil.getDebugText(((DeletedRoot) dr).myRoot));
+        System.out.printf("-%s\n", SNodeOperations.getDebugText(((DeletedRoot) dr).myRoot));
       } else {
         CopyRoot root = (CopyRoot) dr;
         char c = root.mySubTrees.length > 0 ? '*' : '~';
-        System.out.printf("%c%s\n", c, SNodeUtil.getDebugText(root.myRoot));
+        System.out.printf("%c%s\n", c, SNodeOperations.getDebugText(root.myRoot));
         for (SubTree tree : root.mySubTrees) {
           if (tree.isSourceCopy()) {
             System.out.printf("    copysrc %s\n", tree.myInputNode);

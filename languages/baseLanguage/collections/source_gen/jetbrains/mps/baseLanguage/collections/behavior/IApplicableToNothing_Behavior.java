@@ -9,12 +9,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,45 +25,45 @@ public class IApplicableToNothing_Behavior {
   public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
-    if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "implements", true)).select(new ISelector<SNode, SNode>() {
+    if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "intfc", false);
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SNodeOperations.asSConcept(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
         }
       });
     } else {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "extends", true)).select(new ISelector<SNode, SNode>() {
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
+      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) SNodeOperations.asNode(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "intfc", false);
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SNodeOperations.asSConcept(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
         }
       });
     }
     for (SNode impl : Sequence.fromIterable(implementList)) {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(((SNode) impl)), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
     }
     return result;
   }
   public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
-    return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
   }
   public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
+    SNode jt = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
+    for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)))) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {
           SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
         }
-        ListSequence.fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
+        ListSequence.fromList(SLinkOperations.getChildren(jt, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(rt);
       }
     }
     return jt;

@@ -6,6 +6,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeRuleFactory {
   private IErrorReporter reporter;
@@ -29,18 +31,18 @@ public class NodeRuleFactory {
 
   private SNode createTypeSystemCheckOperation() {
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 428590876651279930l, "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation"));
     } else {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 8578280453509464010l, "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation"));
     }
   }
 
   private SNode createConstraintsCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 8333855927540283103l, "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation"));
     } else {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation"));
     }
     return result;
   }
@@ -48,9 +50,9 @@ public class NodeRuleFactory {
   private SNode createMessageStatementCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"));
     } else {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation"));
     }
     return result;
   }
@@ -58,9 +60,9 @@ public class NodeRuleFactory {
   private SNode createDefaultCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 7835233914436786109l, "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation"));
     } else {
-      result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", null);
+      result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation"));
     }
     return result;
   }

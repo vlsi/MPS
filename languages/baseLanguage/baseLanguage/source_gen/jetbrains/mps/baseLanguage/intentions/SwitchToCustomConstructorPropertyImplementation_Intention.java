@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,7 +47,7 @@ public class SwitchToCustomConstructorPropertyImplementation_Intention implement
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation")));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "6526572214154952610");
@@ -63,13 +65,13 @@ public class SwitchToCustomConstructorPropertyImplementation_Intention implement
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation") ? "Customize Setter" : "Make Getter Default");
+      return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201372606839l, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation")) ? "Customize Setter" : "Make Getter Default");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode toBeReplaced = SLinkOperations.getTarget(node, "propertyImplementation", true);
-      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
-      if (SNodeOperations.isInstanceOf(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
-        SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(SNodeOperations.cast(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), "setAccessor", true), true);
+      SNode toBeReplaced = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation"));
+      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
+      if (SNodeOperations.isInstanceOf(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"))) {
+        SLinkOperations.setTarget(replacingNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), SLinkOperations.getTarget(SNodeOperations.cast(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")));
       }
     }
     public IntentionDescriptor getDescriptor() {

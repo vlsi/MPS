@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -30,16 +32,16 @@ public class PriorityCheckTestPlusFirst_Test extends BaseTransformationTest {
     public void test_testRotation() throws Exception {
       this.addNodeById("818296778579245155");
       this.addNodeById("818296778579245164");
-      SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlusExpression", null);
-      SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-      SPropertyOperations.set(constant, "value", "" + (3));
-      SLinkOperations.setTarget(op, "leftExpression", constant, true);
-      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("818296778579252641"), "jetbrains.mps.baseLanguage.structure.MulExpression"), op);
-      SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("818296778579252641"), "jetbrains.mps.baseLanguage.structure.MulExpression"), true);
+      SNode op = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242875l, "jetbrains.mps.baseLanguage.structure.PlusExpression"));
+      SNode constant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      SPropertyOperations.set(constant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "" + (3));
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), constant);
+      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1092119917967l, "jetbrains.mps.baseLanguage.structure.MulExpression")), op);
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SNodeOperations.cast(this.getNodeById("818296778579252641"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1092119917967l, "jetbrains.mps.baseLanguage.structure.MulExpression")));
       ParenthesisUtil.checkOperationWRTPriority(op);
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245167"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245158"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245167"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("818296778579245158"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }

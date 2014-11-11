@@ -25,6 +25,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -49,7 +51,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -83,14 +85,15 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     public ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      // FIXME need a helper to provide all models visible in a repository 
       return SModelRepository.getInstance().getModelDescriptors();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModel) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SModel parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "name", SNodeOperations.getModelLongName(parameterObject));
-      SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name"), SNodeOperations.getModelLongName(parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"), SModelStereotype.getStereotype(parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;
@@ -99,7 +102,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
       return this.getMatchingText_internal((SModel) parameterObject);
     }
     public String getMatchingText_internal(SModel parameterObject) {
-      return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
+      return parameterObject.getModelName();
     }
   }
   private EditorCell createConstant_uy53zt_d0(EditorContext editorContext, SNode node) {
@@ -123,7 +126,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_uy53zt_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_uy53zt_b0a(editorContext, node));
@@ -159,7 +162,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_uy53zt_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_uy53zt_b1a(editorContext, node));
@@ -178,6 +181,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stereotype");
     provider.setNoTargetText("<no stereotype>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_stereotype");

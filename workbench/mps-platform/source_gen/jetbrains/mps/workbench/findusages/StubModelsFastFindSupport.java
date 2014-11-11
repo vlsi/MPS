@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.findUsages.FindUsagesUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -74,7 +76,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     });
     for (SNode node : SetSequence.fromSet(nodes)) {
       SNode snode = ((SNode) node);
-      if (!(SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
+      if (!(SNodeOperations.isInstanceOf(snode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")))) {
         continue;
       }
       candidates.putValue(SNodeOperations.getModel(snode), node);
@@ -102,7 +104,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
-        return "java_stub".equals(SModelStereotype.getStereotype(it.getModelName()));
+        return SModelStereotype.JAVA_STUB.equals(SModelStereotype.getStereotype(it.getModelName()));
       }
     }));
     MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {

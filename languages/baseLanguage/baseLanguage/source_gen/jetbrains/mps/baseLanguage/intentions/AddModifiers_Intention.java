@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddModifiers_Intention implements IntentionFactory {
@@ -58,7 +60,7 @@ public class AddModifiers_Intention implements IntentionFactory {
       return "Add Generic Modifiers";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "modifiers", "jetbrains.mps.baseLanguage.structure.Modifier");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2323553266850475941l, 2323553266850475953l, "modifiers"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2403002034744051110l, "jetbrains.mps.baseLanguage.structure.Modifier"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddModifiers_Intention.this;

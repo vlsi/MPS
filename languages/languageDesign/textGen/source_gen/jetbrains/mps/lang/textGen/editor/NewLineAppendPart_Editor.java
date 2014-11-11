@@ -29,7 +29,7 @@ public class NewLineAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_moyyqd_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

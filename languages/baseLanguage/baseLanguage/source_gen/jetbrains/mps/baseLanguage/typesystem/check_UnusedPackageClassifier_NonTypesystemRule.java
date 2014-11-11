@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,10 +26,10 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
   public check_UnusedPackageClassifier_NonTypesystemRule() {
   }
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(classifier, "visibility", true) == null)) {
-      if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
+    if ((SLinkOperations.getTarget(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null)) {
+      if (!(ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ListSequence.fromList(SNodeOperations.getAncestors(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false)).isEmpty();
+          return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false)).isEmpty();
         }
       }).translate(new ITranslator2<SNode, SReference>() {
         public Iterable<SReference> translate(SNode it) {
@@ -35,7 +37,7 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
         }
       }).any(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(it), classifier) || ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTargetNode(it), "jetbrains.mps.baseLanguage.structure.Classifier", false)).any(new IWhereFilter<SNode>() {
+          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(it), classifier) || ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTargetNode(it), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(it, classifier);
             }
@@ -44,11 +46,11 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
       }))) {
 
         String msg;
-        if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+        if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
           msg = "Enum";
-        } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        } else if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           msg = "Class";
-        } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        } else if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
           msg = "Interface";
         } else {
           msg = "Classifier";

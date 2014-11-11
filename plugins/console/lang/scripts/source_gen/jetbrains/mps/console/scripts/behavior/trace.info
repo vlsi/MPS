@@ -31,18 +31,18 @@
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235576">
     <file name="ConsoleScript_Behavior.java">
-      <node id="1734392475491235582" at="11,89,12,65" concept="0" />
-      <node id="1734392475491235576" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1734392475491235576" at="11,0,14,0" concept="1" trace="virtual_getCommands_1734392475491235554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="1734392475491235578" at="9,43,9,43" />
-      <scope id="1734392475491235581" at="11,89,12,65" />
-      <scope id="1734392475491235576" at="9,0,11,0">
+      <node id="1734392475491235582" at="13,89,14,198" concept="0" />
+      <node id="1734392475491235576" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1734392475491235576" at="13,0,16,0" concept="1" trace="virtual_getCommands_1734392475491235554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <scope id="1734392475491235578" at="11,43,11,43" />
+      <scope id="1734392475491235581" at="13,89,14,198" />
+      <scope id="1734392475491235576" at="11,0,13,0">
         <var name="thisNode" id="1734392475491235576" />
       </scope>
-      <scope id="1734392475491235576" at="11,0,14,0">
+      <scope id="1734392475491235576" at="13,0,16,0">
         <var name="thisNode" id="1734392475491235576" />
       </scope>
-      <unit id="1734392475491235576" at="8,0,15,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
+      <unit id="1734392475491235576" at="10,0,17,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">

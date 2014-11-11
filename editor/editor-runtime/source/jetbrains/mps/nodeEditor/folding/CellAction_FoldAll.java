@@ -42,7 +42,7 @@ public class CellAction_FoldAll extends AbstractCellAction {
           cellsToProcess.add((EditorCell_Collection) childCell);
         }
       }
-      if (nextCollection.canBePossiblyFolded() && !nextCollection.isFolded()) {
+      if (nextCollection.isFoldable() && !nextCollection.isFolded()) {
         nextCollection.fold();
       }
     }

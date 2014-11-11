@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -25,12 +27,12 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.build.structure.BuildLayout_Copy";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile"));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_File");
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, "jetbrains.mps.build.structure.BuildLayout_File"));
         SNodeOperations.replaceWithAnother(node, file);
-        SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
+        SLinkOperations.setTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path")));
       }
       public boolean isShowAsIntention() {
         return true;
@@ -47,13 +49,13 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.build.structure.BuildLayout_Copy";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles"));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_Files");
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, "jetbrains.mps.build.structure.BuildLayout_Files"));
         SNodeOperations.replaceWithAnother(node, files);
-        SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
-        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));
+        SLinkOperations.setTarget(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074432l, "path"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794598l, "dir")));
+        ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))));
       }
       public boolean isShowAsIntention() {
         return true;
@@ -70,13 +72,13 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.build.structure.BuildLayout_CustomCopy";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile"));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_File");
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, "jetbrains.mps.build.structure.BuildLayout_File"));
         SNodeOperations.replaceWithAnother(node, file);
-        SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
-        ListSequence.fromList(SLinkOperations.getTargets(file, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "handlers", true)));
+        SLinkOperations.setTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path")));
+        ListSequence.fromList(SLinkOperations.getChildren(file, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))));
       }
       public boolean isShowAsIntention() {
         return true;
@@ -93,14 +95,14 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
         return "jetbrains.mps.build.structure.BuildLayout_CustomCopy";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles"));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildLayout_Files");
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, "jetbrains.mps.build.structure.BuildLayout_Files"));
         SNodeOperations.replaceWithAnother(node, files);
-        SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
-        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));
-        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "handlers", true)));
+        SLinkOperations.setTarget(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074432l, "path"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794598l, "dir")));
+        ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, "jetbrains.mps.build.structure.BuildInputFiles")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))));
+        ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))));
       }
       public boolean isShowAsIntention() {
         return true;

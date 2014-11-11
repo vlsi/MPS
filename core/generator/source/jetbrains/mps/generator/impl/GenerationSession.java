@@ -62,7 +62,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -438,7 +437,7 @@ class GenerationSession {
       List<Pair<SNodeReference, SNodeReference>> pairs = tracer.getAllAppliedRulesWithInputNodes(realOutputModel.getReference());
       for (Pair<SNodeReference, SNodeReference> pair : pairs) {
         SNode templateNode = pair.o1 == null ? null : pair.o1.resolve(MPSModuleRepository.getInstance());
-        myLogger.error(pair.o1, templateNode == null ? "unknown rule" : String.format("rule: %s", SNodeUtil.getDebugText(templateNode)),
+        myLogger.error(pair.o1, templateNode == null ? "unknown rule" : String.format("rule: %s", SNodeOperations.getDebugText(templateNode)),
             GeneratorUtil.describe(pair.o2, "input"));
       }
     } else {

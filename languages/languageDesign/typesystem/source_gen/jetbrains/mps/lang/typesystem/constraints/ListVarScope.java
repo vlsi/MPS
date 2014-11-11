@@ -9,6 +9,8 @@ import java.util.List;
 import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -22,8 +24,8 @@ public class ListVarScope extends SearchScopeWithNode {
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingNode = getEnclosingNode();
     SNode statement;
-    if (SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      statement = SNodeOperations.cast(enclosingNode, "jetbrains.mps.baseLanguage.structure.Statement");
+    if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"))) {
+      statement = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
     } else {
       statement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
     }
@@ -32,11 +34,11 @@ public class ListVarScope extends SearchScopeWithNode {
       if ((statementList == null)) {
         return result;
       }
-      for (SNode aStatement : SLinkOperations.getTargets(statementList, "statement", true)) {
+      for (SNode aStatement : SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
         if (aStatement == statement) {
           break;
         }
-        if (SNodeOperations.isInstanceOf(aStatement, "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration")) {
+        if (SNodeOperations.isInstanceOf(aStatement, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1203432538703l, "jetbrains.mps.lang.typesystem.structure.ListVarDeclaration"))) {
           result.add(aStatement);
         }
       }

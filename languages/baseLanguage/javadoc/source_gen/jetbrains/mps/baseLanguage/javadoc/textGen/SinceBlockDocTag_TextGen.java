@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SinceBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
     this.append("@since ");
-    this.append(SPropertyOperations.getString(node, "text"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690324397l, 8465538089690324399l, "text")));
   }
 }

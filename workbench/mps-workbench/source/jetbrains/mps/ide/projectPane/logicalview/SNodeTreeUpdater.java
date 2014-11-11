@@ -58,10 +58,6 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     return myTreeNode.getTree();
   }
 
-  protected IOperationContext getOperationContext() {
-    return myTreeNode.getOperationContext();
-  }
-
   protected boolean showPropertiesAndReferences() {
     return false;
   }
@@ -92,12 +88,12 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
         SNodeTreeNode childNode = (SNodeTreeNode) child;
         int index = IterableUtil.asList(parentNode.getChildren()).indexOf(childNode.getSNode());
         if (index <= indexof) continue;
-        SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRoleInParent(), getOperationContext());
+        SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRoleInParent());
         treeModel.insertNodeInto(newTreeNode,
           parent, treeModel.getIndexOfChild(parent, childNode));
         continue outer;
       }
-      treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRoleInParent(), getOperationContext()), parent, parent.getChildCount());
+      treeModel.insertNodeInto(new SNodeTreeNode(added, added.getRoleInParent()), parent, parent.getChildCount());
     }
   }
 
@@ -242,7 +238,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
             nodesWithChangedPresentations.add(event.getNode());
 
-            if (SNodeUtil.property_BaseConcept_virtualPackage.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
+            if (SNodeUtil.propertyName_BaseConcept_virtualPackage.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
               nodesWithChangedPackages.add(event.getNode());
             }
           }

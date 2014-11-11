@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.uiActions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
@@ -31,10 +32,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SupertypesTree extends AbstractHierarchyTree {
+  private final Project myProject;
   private boolean myShowOnlyStrong = false;
 
-  public SupertypesTree(AbstractHierarchyView abstractHierarchyView) {
-    super(abstractHierarchyView, SNodeUtil.concept_BaseConcept, false);
+  public SupertypesTree(Project mpsProject, AbstractHierarchyView abstractHierarchyView) {
+    super(abstractHierarchyView, SNodeUtil.conceptName_BaseConcept, false);
+    myProject = mpsProject;
   }
 
   protected String noNodeString() {
@@ -53,9 +56,8 @@ public class SupertypesTree extends AbstractHierarchyTree {
     if (node == null) {
       return new HashSet<SNode>();
     }
-    Set<SNode> supertypes = TypeChecker.getInstance().getSubtypingManager().
+    return TypeChecker.getInstance().getSubtypingManager().
         collectImmediateSupertypes(node, !myShowOnlyStrong);
-    return supertypes;
   }
 
   public void setShowOnlyStrong(boolean showOnlyStrong) {
@@ -72,7 +74,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
     })) {
       return false;
     }
-    new MyBaseNodeDialog(hierarchyTreeNode).show();
+    new MyBaseNodeDialog(myProject, hierarchyTreeNode).show();
     return true;
   }
 
@@ -84,11 +86,11 @@ public class SupertypesTree extends AbstractHierarchyTree {
     return PresentationManager.toString(treeNode.getNode());
   }
 
-  private class MyBaseNodeDialog extends BaseNodeDialog {
+  private static class MyBaseNodeDialog extends BaseNodeDialog {
     private final HierarchyTreeNode myHierarchyTreeNode;
 
-    public MyBaseNodeDialog(HierarchyTreeNode hierarchyTreeNode) {
-      super("", SupertypesTree.this.myOperationContext);
+    public MyBaseNodeDialog(Project mpsProject, HierarchyTreeNode hierarchyTreeNode) {
+      super(mpsProject, "");
       myHierarchyTreeNode = hierarchyTreeNode;
 
       setHorizontalStretch(2f);

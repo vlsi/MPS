@@ -5,14 +5,16 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class OrderReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "order", false), "virtual_presents_1499919975383879508", new Object[]{tab});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 2450897840534688273l, 2450897840534688274l, "order")), "virtual_presents_1499919975383879508", new Object[]{tab});
   }
   public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "order", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 2450897840534688273l, 2450897840534688274l, "order"));
   }
 }

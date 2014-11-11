@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -25,8 +27,8 @@ public class QueryParameterScopeValue_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SLinkOperations.getTarget(node, "value", true) != null) {
-        SLinkOperations.setTarget(node, "value", null, true);
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132412719l, 4307205004134707081l, "value")) != null) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132412719l, 4307205004134707081l, "value"), null);
         return;
       }
       CellAction action = editorContext.getEditorComponent().findNodeCell(node).getAction(CellActionType.DELETE);
@@ -46,8 +48,8 @@ public class QueryParameterScopeValue_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SLinkOperations.getTarget(node, "value", true) != null) {
-        SLinkOperations.setTarget(node, "value", null, true);
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132412719l, 4307205004134707081l, "value")) != null) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132412719l, 4307205004134707081l, "value"), null);
         return;
       }
       CellAction action = editorContext.getEditorComponent().findNodeCell(node).getAction(CellActionType.DELETE);

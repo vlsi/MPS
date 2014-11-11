@@ -5,6 +5,8 @@ package jetbrains.mps.lang.behavior.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -15,19 +17,19 @@ public class FixMethodSignature_QuickFix extends QuickFix_Runtime {
     return "Fix Method Signature";
   }
   public void execute(SNode node) {
-    SLinkOperations.setTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "returnType", true)), true);
-    int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "parameter", true)).count();
-    int currentParamCount = ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "parameter", true)).count();
+    SLinkOperations.setTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"))));
+    int paramCount = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count();
+    int currentParamCount = ListSequence.fromList(SLinkOperations.getChildren(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count();
     for (int i = 0; i < Math.max(paramCount, currentParamCount); i++) {
       if (i < paramCount && i < currentParamCount) {
-        SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "parameter", true)).getElement(i), "type", SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "parameter", true)).getElement(i), "type", true)), true);
+        SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getChildren(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))));
       }
       if (i >= currentParamCount) {
-        ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "parameter", true)).addElement(SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "parameter", true)).getElement(i)));
+        ListSequence.fromList(SLinkOperations.getChildren(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i)));
       }
       if (i >= paramCount) {
         for (int j = 0; j < currentParamCount - paramCount; j++) {
-          SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "parameter", true)).getElement(i));
+          SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getChildren(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i));
         }
         break;
       }

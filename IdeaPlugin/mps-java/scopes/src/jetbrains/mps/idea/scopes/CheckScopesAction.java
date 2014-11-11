@@ -33,8 +33,8 @@ import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -43,7 +43,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class CheckScopesAction extends AnAction {
-  private static Log LOG = LogFactory.getLog(CheckScopesAction.class);
+  private static Logger LOG = LogManager.getLogger(CheckScopesAction.class);
 
   private IFile myModelFile;
   private Project myProject;

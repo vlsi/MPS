@@ -5,6 +5,8 @@ package jetbrains.mps.lang.checkedName.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 
 public class FixNamingPolicy_literal_once_QuickFix extends QuickFix_Runtime {
@@ -14,6 +16,6 @@ public class FixNamingPolicy_literal_once_QuickFix extends QuickFix_Runtime {
     return ((String) FixNamingPolicy_literal_once_QuickFix.this.getField("caption")[0]);
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) FixNamingPolicy_literal_once_QuickFix.this.getField("literal")[0]), "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(((SNode) FixNamingPolicy_literal_once_QuickFix.this.getField("literal")[0]), "value")));
+    SPropertyOperations.set(((SNode) FixNamingPolicy_literal_once_QuickFix.this.getField("literal")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(((SNode) FixNamingPolicy_literal_once_QuickFix.this.getField("literal")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"))));
   }
 }

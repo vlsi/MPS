@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -67,43 +66,30 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
   private Icon myIcon;
 
-  public SModelTreeNode(SModel modelDescriptor,
-      String label,
-      @NotNull IOperationContext operationContext) {
-    this(modelDescriptor, label, operationContext, true);
+  public SModelTreeNode(SModel modelDescriptor, String label) {
+    this(modelDescriptor, label, true, Condition.TRUE_CONDITION, 0);
+  }
+
+  public SModelTreeNode(SModel modelDescriptor, String label, Condition<SNode> condition) {
+    this(modelDescriptor, label, true, condition, 0);
+  }
+
+  public SModelTreeNode(SModel modelDescriptor,String label, boolean showLongName) {
+    this(modelDescriptor, label, showLongName, Condition.TRUE_CONDITION, 0);
+  }
+
+  public SModelTreeNode(SModel modelDescriptor, String label, int countNamePart) {
+    this(modelDescriptor, label, false, Condition.TRUE_CONDITION, countNamePart);
   }
 
   public SModelTreeNode(SModel modelDescriptor,
       String label,
-      @NotNull IOperationContext operationContext,
-      Condition<SNode> condition) {
-    this(modelDescriptor, label, operationContext, true, condition, 0);
-  }
-
-  public SModelTreeNode(SModel modelDescriptor,
-      String label,
-      IOperationContext operationContext,
-      boolean showLongName) {
-    this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION, 0);
-  }
-
-  public SModelTreeNode(SModel modelDescriptor,
-      String label,
-      IOperationContext operationContext,
-      int countNamePart) {
-    this(modelDescriptor, label, operationContext, false, Condition.TRUE_CONDITION, countNamePart);
-  }
-
-  public SModelTreeNode(SModel modelDescriptor,
-      String label,
-      IOperationContext operationContext,
       boolean showLongName,
       Condition<SNode> condition,
       int countNamePart) {
-    super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
-    myIcon = IconManager.getIconFor(getSModelDescriptor());
+    myIcon = IconManager.getIconFor(getModel());
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
@@ -141,7 +127,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       return null;
     }
 
-    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
+    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
 
     if (nodePackage != null && !"".equals(nodePackage)) {
       String[] packages = nodePackage.split("\\.");
@@ -239,44 +225,28 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     }
   }
 
-  public org.jetbrains.mps.openapi.model.SModel getModel() {
+  public SModel getModel() {
     return myModelDescriptor;
   }
 
-  /**
-   * use getModel
-   */
-  @Deprecated
-  public final SModel getSModel() {
-    return getModel();
-  }
-
-  /**
-   * use getModel
-   */
-  @Deprecated
-  public final SModel getSModelDescriptor() {
-    return getModel();
+  @NotNull
+  public final SNodeTreeNode createSNodeTreeNode(SNode node) {
+    return createSNodeTreeNode(node, (String) null);
   }
 
   @NotNull
-  public final SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
-    return createSNodeTreeNode(node, null, operationContext);
+  public final SNodeTreeNode createSNodeTreeNode(SNode node, Condition<SNode> condition) {
+    return createSNodeTreeNode(node, null, condition);
   }
 
   @NotNull
-  public final SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext, Condition<SNode> condition) {
-    return createSNodeTreeNode(node, null, operationContext, condition);
+  public final SNodeTreeNode createSNodeTreeNode(SNode node, String role) {
+    return createSNodeTreeNode(node, role, Condition.TRUE_CONDITION);
   }
 
   @NotNull
-  public final SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-    return createSNodeTreeNode(node, role, operationContext, Condition.TRUE_CONDITION);
-  }
-
-  @NotNull
-  public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-    return new SNodeTreeNode(node, role, operationContext, condition);
+  public SNodeTreeNode createSNodeTreeNode(SNode node, String role, Condition<SNode> condition) {
+    return new SNodeTreeNode(node, role, condition);
   }
 
   private String calculateText() {
@@ -388,7 +358,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
         Collections.sort(sortedRoots, childrenComparator);
       }
       for (SNode sortedRoot : sortedRoots) {
-        MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext(), myNodesCondition);
+        MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, myNodesCondition);
         MPSTreeNode group = getNodeGroupFor(sortedRoot);
         if (group != null) {
           group.add(treeNode);
@@ -432,7 +402,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     final ArrayList<SNode> allRoots = new ArrayList<SNode>();
-    for (SNode root1 : getSModel().getRootNodes()) {
+    for (SNode root1 : getModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));
@@ -446,7 +416,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     });
 
     for (SNode root : added) {
-      SNodeTreeNode nodeToInsert = new SNodeTreeNode(root, getOperationContext());
+      SNodeTreeNode nodeToInsert = new SNodeTreeNode(root);
       MPSTreeNode targetNode = getNodeGroupFor(root);
 
       if (targetNode == null) {

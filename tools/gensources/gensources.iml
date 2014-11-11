@@ -952,6 +952,6 @@
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
+    <orderEntry type="module" module-name="textgen" />
   </component>
 </module>
-

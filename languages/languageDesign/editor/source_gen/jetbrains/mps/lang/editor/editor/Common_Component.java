@@ -22,6 +22,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Common_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -67,7 +69,7 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a0b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tf8r10_b0b0(editorContext, node));
@@ -95,7 +97,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell.setRole("id");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -111,8 +113,8 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tf8r10_b1b0(editorContext, node));
@@ -139,7 +141,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell.setRole("actionMap");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -170,7 +172,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("CC_property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.DRAW_BORDER, true);
+      style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -187,8 +189,8 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a2b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tf8r10_b2b0(editorContext, node));
@@ -215,7 +217,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell.setRole("keyMap");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -246,7 +248,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("CC_property_name_1");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.DRAW_BORDER, true);
+      style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -263,7 +265,7 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_d1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a3b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tf8r10_b3b0(editorContext, node));
@@ -288,7 +290,7 @@ public class Common_Component implements ConceptEditorComponent {
       editorCell.setRole("menuDescriptor");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -304,8 +306,8 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_e1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a4b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tf8r10_b4b0(editorContext, node));
@@ -328,7 +330,7 @@ public class Common_Component implements ConceptEditorComponent {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("CC_property_attractsFocus");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -344,14 +346,14 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_f1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a5b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tf8r10_b5b0(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_tf8r10_a5b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
+    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "0", "0"));
   }
   private EditorCell createConstant_tf8r10_a5b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy condition");
@@ -385,7 +387,7 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_g1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tf8r10_a6b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tf8r10_b6b0(editorContext, node));

@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -32,13 +34,13 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode replacement;
-        if ((SLinkOperations.getTarget(node, "query", true) != null)) {
-          replacement = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", null);
-          SLinkOperations.setTarget(SNodeOperations.cast(replacement, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), "query", SLinkOperations.getTarget(node, "query", true), true);
+        if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 8730965736661186051l, "query")) != null)) {
+          replacement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"));
+          SLinkOperations.setTarget(SNodeOperations.cast(replacement, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797336200704l, 9122903797336200706l, "query"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 8730965736661186051l, "query")));
         } else {
-          replacement = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null);
+          replacement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1950447826681509042l, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"));
         }
-        SLinkOperations.setTarget(replacement, "target", createStyleReference_s4lgfb_a0c0a0(SLinkOperations.getTarget(node, "key", false)), true);
+        SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1950447826681509042l, 1950447826683828796l, "target"), createStyleReference_s4lgfb_a0c0a0(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 4151393920404716535l, 4151393920404978387l, "key"))));
         SNodeOperations.replaceWithAnother(node, replacement);
       }
       public boolean isShowAsIntention() {
@@ -60,9 +62,9 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       }
       public void doUpdateInstanceNode(SNode node) {
         as_n8en9w_a0a0a4a0a0a0a2a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
-        if ((SLinkOperations.getTarget(node, "extendedClass", true) != null)) {
-          ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "extendedClass", true), "styleSheetClass", false)));
-          SLinkOperations.setTarget(node, "extendedClass", null, true);
+        if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass")) != null)) {
+          ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).insertElement(0, createApplyStyleClass_s4lgfb_a0a0a1a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1198252130653l, 1198252276894l, "styleSheetClass"))));
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass"), null);
         }
       }
       public boolean isShowAsIntention() {
@@ -73,7 +75,7 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
   private static SNode createStyleReference_s4lgfb_a0c0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleReference", null, false);
-    n1.setReferenceTarget("style", (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797312246523l, 9122903797312247166l, "style"), (SNode) p0);
     return n1;
   }
   private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0b(Object p0) {
@@ -81,8 +83,8 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null, false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleReference", null, false);
-      n2.setReferenceTarget("style", (SNode) p0);
-      n1.addChild("target", n2);
+      n2.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797312246523l, 9122903797312247166l, "style"), (SNode) p0);
+      n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1950447826681509042l, 1950447826683828796l, "target"), n2);
     }
     return n1;
   }

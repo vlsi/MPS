@@ -25,7 +25,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_nvbf9m_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.READ_ONLY, true);
+    style.set(StyleAttributes.READ_ONLY, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_nvbf9m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nvbf9m_b0(editorContext, node));
@@ -35,8 +35,8 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "> ");
     editorCell.setCellId("Constant_nvbf9m_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -51,7 +51,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
       editorCell.setRole("command");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.READ_ONLY, false);
+    style.set(StyleAttributes.READ_ONLY, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

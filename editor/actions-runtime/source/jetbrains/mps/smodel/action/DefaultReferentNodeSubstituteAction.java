@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -87,7 +88,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     if (myCurrentReferent != parameterNode) {
       SNode linkDeclaration = myLinkDeclaration;
       if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
-        throw new RuntimeException("Couldn't set referent node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parameterNode));
+        throw new RuntimeException("Couldn't set referent node: " + SNodeOperations.getDebugText(parameterNode));
       }
       SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
 

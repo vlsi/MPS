@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,11 +29,11 @@ public class DeleteThought {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      SNode mindMap = SNodeOperations.getAncestor(node, "jetbrains.mps.samples.mindmaps.structure.MindMap", false, false);
+      SNode mindMap = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, "jetbrains.mps.samples.mindmaps.structure.MindMap"), false, false);
 
-      ListSequence.fromList(SLinkOperations.getTargets(mindMap, "relationships", true)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SLinkOperations.getChildren(mindMap, MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887323l, "relationships"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_tcgyjr_a0a0a0a0a0a0c0d1_0(SLinkOperations.getTarget(it, "target", false), node) || eq_tcgyjr_a0a0a0a0a0a0c0d1(SLinkOperations.getTarget(it, "source", false), node);
+          return eq_tcgyjr_a0a0a0a0a0a0c0d1_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884499l, 79242395703887327l, "target")), node) || eq_tcgyjr_a0a0a0a0a0a0c0d1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884499l, 5871420002487876254l, "source")), node);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -56,11 +58,11 @@ public class DeleteThought {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      SNode mindMap = SNodeOperations.getAncestor(node, "jetbrains.mps.samples.mindmaps.structure.MindMap", false, false);
+      SNode mindMap = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, "jetbrains.mps.samples.mindmaps.structure.MindMap"), false, false);
 
-      ListSequence.fromList(SLinkOperations.getTargets(mindMap, "relationships", true)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SLinkOperations.getChildren(mindMap, MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887323l, "relationships"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_tcgyjr_a0a0a0a0a0a0c0d2_0(SLinkOperations.getTarget(it, "target", false), node) || eq_tcgyjr_a0a0a0a0a0a0c0d2(SLinkOperations.getTarget(it, "source", false), node);
+          return eq_tcgyjr_a0a0a0a0a0a0c0d2_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884499l, 79242395703887327l, "target")), node) || eq_tcgyjr_a0a0a0a0a0a0c0d2(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884499l, 5871420002487876254l, "source")), node);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {

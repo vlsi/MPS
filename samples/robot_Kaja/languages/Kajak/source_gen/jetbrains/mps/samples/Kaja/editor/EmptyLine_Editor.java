@@ -24,7 +24,7 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_s23fc5_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyLine_Editor.ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a()}));

@@ -10,8 +10,11 @@ import java.util.ArrayList;
 import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -33,44 +36,44 @@ public class JavaExternalLibraryHelper {
     List<SNode> jarContainers = new ArrayList<SNode>();
 
     if (BuildSource_JavaLibrary_Behavior.call_canExportByParts_5610619299014309362(library)) {
-      for (SNode element : ListSequence.fromList(SLinkOperations.getTargets(library, "elements", true))) {
-        SNode jcp = SNodeOperations.as(element, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+      for (SNode element : ListSequence.fromList(SLinkOperations.getChildren(library, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6057319140845467763l, 6057319140845478673l, "elements")))) {
+        SNode jcp = SNodeOperations.as(element, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"));
         if ((jcp == null)) {
           return null;
         }
-        SNode classpath = SLinkOperations.getTarget(jcp, "classpath", true);
-        if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar")) {
-          SNode jarArtifact = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true));
+        SNode classpath = SLinkOperations.getTarget(jcp, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"));
+        if (SNodeOperations.isInstanceOf(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, "jetbrains.mps.build.structure.BuildSource_JavaJar"))) {
+          SNode jarArtifact = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, "jetbrains.mps.build.structure.BuildSource_JavaJar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")));
           if (jarArtifact != null) {
             ListSequence.fromList(artifacts).addElement(jarArtifact);
           } else {
-            genContext.showErrorMessage(library, "jar `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null}) + "' was not found in the layout");
-            return Collections.emptyList();
+            genContext.showErrorMessage(library, "jar `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, "jetbrains.mps.build.structure.BuildSource_JavaJar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null}) + "' was not found in the layout");
+            return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
-        } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")) {
-          SNode file = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), "extJar", true), "jar", false);
-          SNode artifact = SNodeOperations.as(file, "jetbrains.mps.build.structure.BuildLayout_Node");
-          if (artifact == null && SNodeOperations.isInstanceOf(file, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-            artifact = SNodeOperations.as(helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(file, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+        } else if (SNodeOperations.isInstanceOf(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014446503l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"))) {
+          SNode file = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014446503l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014446503l, 5610619299014446504l, "extJar")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, 5610619299014309453l, "jar"));
+          SNode artifact = SNodeOperations.as(file, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
+          if (artifact == null && SNodeOperations.isInstanceOf(file, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
+            artifact = SNodeOperations.as(helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(file, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, "jetbrains.mps.build.structure.BuildInputSingleFile")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path"))), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
           }
           if (artifact != null) {
             ListSequence.fromList(artifacts).addElement(artifact);
           } else {
             genContext.showErrorMessage(library, "jar file `" + BehaviorReflection.invokeVirtual(String.class, file, "virtual_getApproximateName_5610619299013425878", new Object[]{}) + "' was not found in the layout");
-            return Collections.emptyList();
+            return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
 
-        } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")) {
-          SNode folder = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"), "extFolder", true), "folder", false);
-          SNode artifact = SNodeOperations.as(folder, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
-          if (artifact == null && SNodeOperations.isInstanceOf(folder, "jetbrains.mps.build.structure.BuildInputSingleFolder")) {
-            artifact = SNodeOperations.as(helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(folder, "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+        } else if (SNodeOperations.isInstanceOf(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531832l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"))) {
+          SNode folder = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531832l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531832l, 5610619299014531834l, "extFolder")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l, "folder"));
+          SNode artifact = SNodeOperations.as(folder, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848004876l, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+          if (artifact == null && SNodeOperations.isInstanceOf(folder, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder"))) {
+            artifact = SNodeOperations.as(helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(folder, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path"))), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848004876l, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
           }
           if (artifact != null) {
             ListSequence.fromList(jarContainers).addElement(artifact);
           } else {
             genContext.showErrorMessage(library, "jar folder `" + BehaviorReflection.invokeVirtual(String.class, folder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + "' was not found in the layout");
-            return Collections.emptyList();
+            return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
         } else {
           // unknown child, reset to library reexport 
@@ -85,26 +88,26 @@ public class JavaExternalLibraryHelper {
     if (ListSequence.fromList(artifacts).isEmpty() && ListSequence.fromList(jarContainers).isEmpty()) {
       SNode layoutNode = helper.artifacts().get(library);
       if (layoutNode == null) {
-        genContext.showErrorMessage(library, "java library " + SPropertyOperations.getString(library, "name") + " was not found in the layout");
-        return Collections.emptyList();
+        genContext.showErrorMessage(library, "java library " + SPropertyOperations.getString(library, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " was not found in the layout");
+        return Sequence.fromIterable(Collections.<SNode>emptyList());
       } else {
-        if (SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-          ListSequence.fromList(artifacts).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true)));
+        if (SNodeOperations.isInstanceOf(layoutNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2913098736709465755l, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"))) {
+          ListSequence.fromList(artifacts).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(layoutNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2913098736709465755l, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))));
         } else {
           ListSequence.fromList(artifacts).addElement(layoutNode);
         }
       }
     }
 
-    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pe : ListSequence.fromList(artifacts).distinct()) {
       String val = helper.locations().get(pe);
       if (val == null) {
         genContext.showErrorMessage(pe, "no location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a4(val));
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
+      ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a9a4(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     for (SNode pe : jarContainers) {
@@ -113,44 +116,44 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no content location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a4(val));
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a4());
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
+      ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a01a4(val));
+      ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a4a01a4());
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
   }
-  private static SNode _quotation_createNode_g6ffke_b0a3a9a4(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_a0a3a9a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "attrName", "file");
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "file");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
-    quotedNode_2.addChild("value", quotedNode_3);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), (String) parameter_1);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_g6ffke_b0a3a01a4(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_a0a3a01a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "attrName", "dir");
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "dir");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
-    quotedNode_2.addChild("value", quotedNode_3);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), (String) parameter_1);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_g6ffke_b0a4a01a4() {
+  private static SNode _quotation_createNode_g6ffke_a0a4a01a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "attrName", "includes");
+    SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "includes");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "text", "*.jar");
-    quotedNode_1.addChild("value", quotedNode_2);
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), "*.jar");
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_2);
     return quotedNode_1;
   }
 }

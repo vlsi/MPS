@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SuppressErrors_Intention implements IntentionFactory {
@@ -75,7 +77,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 4222318806802425298l, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null));
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null);
       }

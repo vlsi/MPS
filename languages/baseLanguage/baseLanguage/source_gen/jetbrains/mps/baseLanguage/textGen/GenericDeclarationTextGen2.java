@@ -6,14 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
   public static void typeDeclarations(SNode generic, final SNodeTextGen textGen) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(generic, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(generic, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isNotEmpty()) {
       textGen.append("<");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(generic, "typeVariableDeclaration", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(generic, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           textGen.appendNode(item);

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,11 +21,11 @@ public class RepetitionCheck_NonTypesystemRule extends AbstractNonTypesystemRule
   public RepetitionCheck_NonTypesystemRule() {
   }
   public void applyRule(final SNode command, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Step") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.LeftTurn") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Drop") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Pick")))) {
+    if (!((SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, "jetbrains.mps.samples.Kaja.structure.RoutineCall")) || SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559138l, "jetbrains.mps.samples.Kaja.structure.Step")) || SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647627l, "jetbrains.mps.samples.Kaja.structure.LeftTurn")) || SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436120871l, "jetbrains.mps.samples.Kaja.structure.Drop")) || SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436170013l, "jetbrains.mps.samples.Kaja.structure.Pick"))))) {
       return;
     }
     if (SNodeOperations.getConceptDeclaration(command) == SNodeOperations.getConceptDeclaration(SNodeOperations.getNextSibling(command))) {
-      if (SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") && SLinkOperations.getTarget(SNodeOperations.cast(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), "definition", false) != SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getNextSibling(command), "jetbrains.mps.samples.Kaja.structure.RoutineCall"), "definition", false)) {
+      if (SNodeOperations.isInstanceOf(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, "jetbrains.mps.samples.Kaja.structure.RoutineCall")) && SLinkOperations.getTarget(SNodeOperations.cast(command, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, "jetbrains.mps.samples.Kaja.structure.RoutineCall")), MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition")) != SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getNextSibling(command), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, "jetbrains.mps.samples.Kaja.structure.RoutineCall")), MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition"))) {
         return;
       }
       {

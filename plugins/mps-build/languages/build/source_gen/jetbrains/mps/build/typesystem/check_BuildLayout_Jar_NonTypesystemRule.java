@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,11 +22,11 @@ public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesyst
   public check_BuildLayout_Jar_NonTypesystemRule() {
   }
   public void applyRule(final SNode jarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(jarArchive, "containerName", true), null);
+    String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848050060l, 4380385936562148502l, "containerName")), null);
     if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{})))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, "containerName", true), "should end with `" + BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{}) + "'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848050060l, 4380385936562148502l, "containerName")), "should end with `" + BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{}) + "'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.build.typesystem.fixContainerName_QuickFix", false);
           intentionProvider.putArgument("newExtension", BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{}));

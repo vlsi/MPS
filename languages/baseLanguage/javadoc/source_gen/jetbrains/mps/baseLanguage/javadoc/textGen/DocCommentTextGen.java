@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -21,7 +23,7 @@ public abstract class DocCommentTextGen {
     textGen.appendNewLine();
     DocCommentTextGen.javadocIndent(textGen);
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "body", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"));
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
@@ -33,32 +35,32 @@ public abstract class DocCommentTextGen {
     }
 
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "author", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 5349172909345532722l, "author"));
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
     }
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "since", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331490l, "since"));
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
     }
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "version", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331491l, "version"));
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
     }
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "see", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 2217234381367277533l, "see"));
       for (SNode item : collection) {
         textGen.appendNode(item);
       }
     }
-    if ((SLinkOperations.getTarget(node, "deprecated", true) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable") && SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated")) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated")) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) && SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"))) {
       textGen.appendNewLine();
-      textGen.appendNode(SLinkOperations.getTarget(node, "deprecated", true));
+      textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated")));
     }
   }
   public static void docCommentEnd(SNode node, final SNodeTextGen textGen) {

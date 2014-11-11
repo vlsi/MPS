@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class hasSameSignatureTest_Test extends BaseTransformationTest {
@@ -21,7 +23,7 @@ public class hasSameSignatureTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_list() throws Exception {
       this.addNodeById("5157939743593407746");
-      Assert.assertTrue(BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      Assert.assertTrue(BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
     }
   }
 }

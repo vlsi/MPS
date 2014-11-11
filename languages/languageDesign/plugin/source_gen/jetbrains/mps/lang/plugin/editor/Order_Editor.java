@@ -135,7 +135,7 @@ public class Order_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yh3zz3_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yh3zz3_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yh3zz3_b0a0(editorContext, node));

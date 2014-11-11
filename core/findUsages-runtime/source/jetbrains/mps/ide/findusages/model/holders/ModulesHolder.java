@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,32 +17,25 @@ package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModulesHolder implements IHolder<List<SModule>> {
   private List<SModule> myModules = new ArrayList<SModule>();
-  private IOperationContext myOperationContext = null;
 
-  public ModulesHolder(List<SModule> modules, IOperationContext operationContext) {
+  public ModulesHolder(List<SModule> modules) {
     myModules = modules;
-    myOperationContext = operationContext;
   }
 
   @Override
   public List<SModule> getObject() {
     return myModules;
-  }
-
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
   }
 
   @Override

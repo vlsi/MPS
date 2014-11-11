@@ -32,7 +32,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import java.util.ArrayList;
 
 public class TraceInfoUtil {
@@ -179,7 +178,7 @@ public class TraceInfoUtil {
                 finished = true;
                 for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
                   SNode otherNode = new SNodePointer(model, otherPos.getNodeId()).resolve(MPSModuleRepository.getInstance());
-                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
+                  if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getNodeAncestors(otherNode, null, false)).contains(currentNode)) {
                     currentNode = otherNode;
                     finished = false;
                     break;
@@ -275,7 +274,7 @@ public class TraceInfoUtil {
       }
     }).select(new ISelector<String, SModel>() {
       public SModel select(String stereotype) {
-        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype).toString());
+        return SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withStereotype(modelFqName, stereotype));
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

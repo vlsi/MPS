@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,19 +34,19 @@ public class CellModel_Collection_Behavior {
     }
   }
   public static boolean call_isVertical_1237380214915(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, "vertical") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
+    return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446425l, "vertical")) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1106270571710l, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical"));
   }
   public static boolean call_isVerticalGrid_1239872947848(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, "gridLayout") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid");
+    return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446426l, "gridLayout")) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1239814640496l, "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid"));
   }
   public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
-    return (!(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
+    return (!(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446425l, "vertical"))) && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1106270549637l, "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal"));
   }
   public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
   }
   public static boolean call_isFoldingEnabled_1822203275565710635(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "usesFolding") || (SLinkOperations.getTarget(thisNode, "usesFoldingCondition", true) != null);
+    return SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1160590353935l, "usesFolding")) || (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 8709572687796959088l, "usesFoldingCondition")) != null);
   }
   public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
     if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
@@ -53,34 +55,34 @@ public class CellModel_Collection_Behavior {
     if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(thisNode)) {
       return true;
     }
-    for (SNode model : SLinkOperations.getTargets(thisNode, "childCellModel", true)) {
+    for (SNode model : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))) {
       if (EditorCellModel_Behavior.call_isNewLine_1237383076236(model) || EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(model) || EditorCellModel_Behavior.call_isOnNewLine_1237385424172(model)) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(SNodeOperations.cast(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))) {
+      if (SNodeOperations.isInstanceOf(model, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(SNodeOperations.cast(model, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")))) {
         return true;
       }
     }
     return false;
   }
   public static boolean virtual_shellBeSynchronized_4500758155551546553(final SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, it);
       }
-    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
+    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 7723470090030138869l, "foldedCellModel")));
   }
   public static boolean call_shellBeSynchronized_4500758155551647684(SNode thisNode, SNode childCell) {
-    return childCell != null && SNodeOperations.isInstanceOf(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable"), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
+    return childCell != null && SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
   }
   public static boolean virtual_canBeSynchronized_4052492221165595783(final SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).all(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, it);
       }
-    }) && CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
+    }) && CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 7723470090030138869l, "foldedCellModel")));
   }
   public static boolean call_canBeSynchronized_4052492221165827676(SNode thisNode, SNode childCell) {
-    return childCell == null || (SNodeOperations.isInstanceOf(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable"), "virtual_canBeSynchronized_4052492221165595783", new Object[]{}));
+    return childCell == null || (SNodeOperations.isInstanceOf(childCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")), "virtual_canBeSynchronized_4052492221165595783", new Object[]{}));
   }
 }

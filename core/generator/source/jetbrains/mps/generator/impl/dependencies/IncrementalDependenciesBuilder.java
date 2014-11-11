@@ -26,13 +26,13 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -241,14 +241,14 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
     // shouldn't happen
     LOG.error("consistency problem in dependencies map", new IllegalStateException());
-    LOG.error("INPUT: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode));
+    LOG.error("INPUT: " + SNodeOperations.getDebugText(inputNode));
     if (initial != inputNode) {
-      LOG.error("getRootBuilder invoked for: " + SNodeUtil.getDebugText(initial));
+      LOG.error("getRootBuilder invoked for: " + SNodeOperations.getDebugText(initial));
     }
     LOG.error("current to original map:");
     for (SNode n : currentToOriginalMap.keySet()) {
       final SNode o = currentToOriginalMap.get(n);
-      LOG.error(String.format("%s --> %s", SNodeUtil.getDebugText(n), o == null ? String.valueOf(o) : SNodeUtil.getDebugText(o)));
+      LOG.error(String.format("%s --> %s", SNodeOperations.getDebugText(n), o == null ? String.valueOf(o) : SNodeOperations.getDebugText(o)));
     }
     return null;
   }

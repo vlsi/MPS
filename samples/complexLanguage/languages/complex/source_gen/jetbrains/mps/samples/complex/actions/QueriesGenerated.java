@@ -14,6 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -23,9 +25,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ReExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196260743057l, "jetbrains.mps.samples.complex.structure.ReExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {
@@ -47,9 +49,9 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ImExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196261859224l, "jetbrains.mps.samples.complex.structure.ImExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {
@@ -71,9 +73,9 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.AbsExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196264034207l, "jetbrains.mps.samples.complex.structure.AbsExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {
@@ -95,9 +97,9 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ArgExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196263843100l, "jetbrains.mps.samples.complex.structure.ArgExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {
@@ -119,9 +121,9 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196418881524l, "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {
@@ -143,9 +145,9 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression");
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-61736462980330219l, -7283073916880922380l), 1196421957108l, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression"));
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196260832413l, 1196260892801l, "complexExpression"), _context.getSourceNode());
         return result;
       }
       public String getMatchingText(String pattern) {

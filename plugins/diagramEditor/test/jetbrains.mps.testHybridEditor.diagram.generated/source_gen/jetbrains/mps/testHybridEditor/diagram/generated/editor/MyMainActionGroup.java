@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.Icon;
@@ -35,17 +37,17 @@ public class MyMainActionGroup implements PaletteActionGroup {
     ModelPlusImportedScope scope = new ModelPlusImportedScope(myDiagramCell.getSNode().getModel(), false, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock")));
     for (SNode node : Sequence.fromIterable(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.testHybridEditor.structure.MetaBlock");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, "jetbrains.mps.testHybridEditor.structure.MetaBlock"));
       }
     })) {
-      String key = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.MetaBlock"), "path");
+      String key = SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, "jetbrains.mps.testHybridEditor.structure.MetaBlock")), MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 2336278055263049479l, "path"));
       if (!(MapSequence.fromMap(tagToGroupMap).containsKey(key))) {
         MapSequence.fromMap(tagToGroupMap).put(key, ListSequence.fromList(new ArrayList<SNode>()));
       }
       ListSequence.fromList(MapSequence.fromMap(tagToGroupMap).get(key)).addElement(node);
     }
     for (String tag : MapSequence.fromMap(tagToGroupMap).keySet()) {
-      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), tag));
+      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974080694l, "newBlocks")), tag));
     }
     ListSequence.fromList(groups).addElement(new MyConnectorCreationAction(myDiagramCell));
     return ListSequence.fromList(groups).toGenericArray(PaletteElement.class);

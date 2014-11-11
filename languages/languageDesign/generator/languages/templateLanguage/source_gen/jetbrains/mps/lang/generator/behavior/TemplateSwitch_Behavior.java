@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -14,14 +16,14 @@ public class TemplateSwitch_Behavior {
   }
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mappingRule : SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(mappingRule, "applicableConcept", false));
+    for (SNode mappingRule : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, 1167340453568l, "reductionMappingRule"))) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(mappingRule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept")));
     }
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
-    SLinkOperations.setTarget(rule, "applicableConcept", baseConcept, false);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
+    SNode rule = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"));
+    SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"), baseConcept);
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, 1167340453568l, "reductionMappingRule"))).addElement(rule);
   }
 }

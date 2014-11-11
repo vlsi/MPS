@@ -35,6 +35,8 @@ import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import com.intellij.ui.SimpleTextAttributes;
@@ -233,7 +235,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
           }
 
           if (myVirtualPackage == null) {
-            myVirtualPackage = (SPropertyOperations.getString(root, "virtualPackage") == null ? "" : SPropertyOperations.getString(root, "virtualPackage"));
+            myVirtualPackage = (SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")) == null ? "" : SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
           }
           if (icon == null) {
             icon = IconManager.getIconFor(root);

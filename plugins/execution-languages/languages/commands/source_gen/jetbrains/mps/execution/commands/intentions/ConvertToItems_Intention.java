@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -48,12 +50,12 @@ public class ConvertToItems_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode list = SLinkOperations.getTarget(node, "list", true);
-    if ((list == null) || !(SNodeOperations.isInstanceOf(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
+    SNode list = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"));
+    if ((list == null) || !(SNodeOperations.isInstanceOf(list, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")))) {
       return false;
     }
-    SNode creator = SLinkOperations.getTarget(SNodeOperations.cast(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true);
-    return SNodeOperations.isInstanceOf(creator, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(creator, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)).isNotEmpty();
+    SNode creator = SLinkOperations.getTarget(SNodeOperations.cast(list, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"));
+    return SNodeOperations.isInstanceOf(creator, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(creator, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_icoqxr_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "list");
@@ -77,9 +79,9 @@ public class ConvertToItems_Intention implements IntentionFactory {
       return "Convert Explicit List Creation to Items";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode list = SLinkOperations.getTarget(node, "list", true);
+      SNode list = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"));
       SNodeOperations.detachNode(list);
-      ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)));
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(list, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"))));
     }
     public IntentionDescriptor getDescriptor() {
       return ConvertToItems_Intention.this;

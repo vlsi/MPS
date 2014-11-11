@@ -8,6 +8,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,19 +39,19 @@ public class ImportModuleHelper {
   public void create() {
     try {
       if (moduleDescriptor instanceof LanguageDescriptor) {
-        SNode lang = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Language", null);
+        SNode lang = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         initModule(lang);
         created = lang;
       } else if (moduleDescriptor instanceof SolutionDescriptor) {
-        SNode solution = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Solution", null);
+        SNode solution = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
         initModule(solution);
         created = solution;
       } else if (moduleDescriptor instanceof DevkitDescriptor) {
-        SNode devkit = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null);
+        SNode devkit = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 322010710375794190l, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"));
         initModule(devkit);
         created = devkit;
       }
-      ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).addElement(created);
+      ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"))).addElement(created);
     } catch (PathConverter.PathConvertException ex) {
       // ignore 
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -58,10 +60,10 @@ public class ImportModuleHelper {
     }
   }
   private void initModule(SNode module) throws PathConverter.PathConvertException {
-    SPropertyOperations.set(module, "compact", "" + (true));
-    SPropertyOperations.set(module, "name", moduleDescriptor.getModuleReference().getModuleName());
-    SPropertyOperations.set(module, "uuid", moduleDescriptor.getModuleReference().getModuleId().toString());
-    SLinkOperations.setTarget(module, "path", ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first(), true);
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact"), "" + (true));
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), moduleDescriptor.getModuleReference().getModuleName());
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid"), moduleDescriptor.getModuleReference().getModuleId().toString());
+    SLinkOperations.setTarget(module, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path"), ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first());
   }
   public void update(VisibleModules visible) {
     if ((created == null)) {

@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,11 +19,11 @@ public class typeof_SimpleBuilderParentExpression_InferenceRule extends Abstract
   public typeof_SimpleBuilderParentExpression_InferenceRule() {
   }
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode builder = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{});
+    SNode builder = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNodeAncestor(expression, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820421041l, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), false, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{});
     {
       SNode _nodeToCheck_1029348928467 = expression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "7288041816792806060", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "7288041816792806057", true), (SNode) SLinkOperations.getTarget(builder, "type", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "7288041816792806057", true), (SNode) SLinkOperations.getTarget(builder, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390455307l, "type")), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -28,13 +30,13 @@ public class BuildScript_Producer {
       super(configurationType, factoryName);
     }
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected BuildScript_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       SNode containingRoot = SNodeOperations.getContainingRoot(source);
-      if (SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.structure.BuildProject") && !(SNodeOperations.getModel(containingRoot).getModule().isPackaged())) {
-        String name = SPropertyOperations.getString(SNodeOperations.cast(containingRoot, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      if (SNodeOperations.isInstanceOf(containingRoot, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")) && !(SNodeOperations.getModel(containingRoot).getModule().isPackaged())) {
+        String name = SPropertyOperations.getString(SNodeOperations.cast(containingRoot, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         if (name == null) {
           return null;
         }

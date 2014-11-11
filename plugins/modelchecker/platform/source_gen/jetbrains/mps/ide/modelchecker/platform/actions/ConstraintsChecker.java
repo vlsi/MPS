@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,27 +33,27 @@ public class ConstraintsChecker extends SpecificChecker {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start("cardinalities and properties", 1);
-    for (final SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (final SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
 
       // Check links 
-      for (final SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
+      for (final SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asNode(concept), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
         if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isAtLeastOneCardinality_3386205146660812199", new Object[]{})) {
-          if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+          if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-              SpecificChecker.addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              SpecificChecker.addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           } else {
             if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-              SpecificChecker.addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              SpecificChecker.addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           }
         } else if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{})) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-            SpecificChecker.addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
+            SpecificChecker.addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
               public boolean doFix() {
                 ListSequence.fromList(SNodeOperations.getChildren(node, link)).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
                   public void visit(SNode child) {

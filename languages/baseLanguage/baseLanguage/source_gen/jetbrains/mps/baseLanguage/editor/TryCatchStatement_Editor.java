@@ -54,7 +54,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_k2ibe6_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -70,8 +70,8 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole("body");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -88,8 +88,8 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_k2ibe6_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     TryCatchStatement_DeleteBodyEndingBrace.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -100,7 +100,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_catchClause");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.POSITION, "next-line");
+    style.set(StyleAttributes.POSITION, 0, "next-line");
     editorCell.getStyle().putAll(style);
     UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());

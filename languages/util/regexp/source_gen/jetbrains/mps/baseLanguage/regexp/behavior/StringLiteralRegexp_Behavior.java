@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -14,13 +15,13 @@ public class StringLiteralRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text"));
+    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, 1174482761807l, "text")));
   }
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    if (isEmptyString(SPropertyOperations.getString(thisNode, "text"))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, 1174482761807l, "text")))) {
       return false;
     }
-    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
+    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, 1174482761807l, "text"))) != null;
   }
   public static String call_toRegexp_8330008649152995372(SNode thisNode, String s) {
     StringBuilder sb = new StringBuilder();
@@ -39,7 +40,7 @@ public class StringLiteralRegexp_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"))), c))) {
+            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")), c))) {
               return null;
             }
             sb.append(c);

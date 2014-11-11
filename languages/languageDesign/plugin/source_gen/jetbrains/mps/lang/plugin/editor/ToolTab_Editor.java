@@ -49,7 +49,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -59,7 +59,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,8 +74,8 @@ public class ToolTab_Editor extends DefaultNodeEditor {
       editorCell.setRole("componentExpression");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -92,7 +92,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -107,8 +107,8 @@ public class ToolTab_Editor extends DefaultNodeEditor {
       editorCell.setRole("titleExpression");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -125,7 +125,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -140,8 +140,8 @@ public class ToolTab_Editor extends DefaultNodeEditor {
       editorCell.setRole("iconExpression");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -158,7 +158,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_i0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -173,7 +173,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
       editorCell.setRole("disposeTabClosure");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -190,7 +190,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vspo6f_k0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

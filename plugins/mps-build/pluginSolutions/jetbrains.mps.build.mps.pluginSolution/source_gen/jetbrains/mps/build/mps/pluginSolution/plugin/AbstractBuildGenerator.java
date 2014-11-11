@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -88,7 +87,7 @@ public abstract class AbstractBuildGenerator {
     return this.myCreateSolution;
   }
   public boolean isValidModelName(String text) {
-    return SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(text)) == null;
+    return SModelRepository.getInstance().getModelDescriptor(text) == null;
   }
   public boolean isValidSolutionName(String text) {
     if (text.equals("")) {

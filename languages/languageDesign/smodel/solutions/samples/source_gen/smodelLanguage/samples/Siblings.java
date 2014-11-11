@@ -4,13 +4,15 @@ package smodelLanguage.samples;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 
 public class Siblings {
   public void nextSibling(SNode statement) {
     SNode next1 = SNodeOperations.getNextSibling(statement);
-    SNode next2 = SNodeOperations.cast(SNodeOperations.getNextSibling(statement), "jetbrains.mps.baseLanguage.structure.Statement");
-    SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode next2 = SNodeOperations.cast(SNodeOperations.getNextSibling(statement), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
+    SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
     SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
   }
   public void nextSiblings(SNode statement) {

@@ -9,6 +9,7 @@
     <model ref="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)" name="jetbrains.mps.lang.smodelTests.structure" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148684180339" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" />
     <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" />
@@ -44,6 +45,7 @@
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" implicit="true" />
     <import index="tp1t" ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="qzws.1213093968558" id="8758390115029091794" info="ng">
@@ -67,8 +69,8 @@
             <node concept="vg0i.1068580123155" id="8758390115029158859" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="8758390115029158861" role="vg0i.1068580123155.1068580123156" info="nn">
                 <node concept="qzws.3906442776579549644" id="8758390115029158860" role="vg0i.1197027756228.1197027771414" info="nn" />
-                <node concept="4ia1.1138056022639" id="8758390115029158865" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056022639.1138056395725" target="yetq.8758390115028851453" resolveInfo="name" />
+                <node concept="4ia1.1138056022639" id="5707990991338299098" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -94,8 +96,8 @@
             <node concept="vg0i.1068580123155" id="8758390115029225998" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="8758390115029226000" role="vg0i.1068580123155.1068580123156" info="nn">
                 <node concept="qzws.3906442776579549644" id="8758390115029225999" role="vg0i.1197027756228.1197027771414" info="nn" />
-                <node concept="4ia1.1138056022639" id="8758390115029226004" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056022639.1138056395725" target="yetq.8758390115028851453" resolveInfo="name" />
+                <node concept="4ia1.1138056022639" id="5707990991338303289" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -121,8 +123,8 @@
             <node concept="vg0i.1068580123155" id="8758390115029226013" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="8758390115029226015" role="vg0i.1068580123155.1068580123156" info="nn">
                 <node concept="qzws.3906442776579549644" id="8758390115029226014" role="vg0i.1197027756228.1197027771414" info="nn" />
-                <node concept="4ia1.1138056022639" id="8758390115029226019" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056022639.1138056395725" target="yetq.8758390115028851453" resolveInfo="name" />
+                <node concept="4ia1.1138056022639" id="5707990991338306142" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>

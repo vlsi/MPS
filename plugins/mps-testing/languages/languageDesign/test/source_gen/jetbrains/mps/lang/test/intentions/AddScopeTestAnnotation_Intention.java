@@ -9,12 +9,13 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.test.behavior.ScopesTest_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -54,7 +55,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
-    return ScopesTest_Behavior.call_isApplicable_5449224527592368025(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node);
+    return ScopesTest_Behavior.call_isApplicable_5449224527592368025(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest")), node);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "3100207102208970627");
@@ -75,17 +76,17 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
       return "Add Scope Test Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
+      SNode newAnnotation = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest"));
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest"), newAnnotation);
 
-      if (ScopesTest_Behavior.call_isSimple_5449224527592395483(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node)) {
-        SLinkOperations.setTarget(newAnnotation, "checkingReference", ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode(), false);
+      if (ScopesTest_Behavior.call_isSimple_5449224527592395483(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest")), node)) {
+        SLinkOperations.setTarget(newAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"), ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode());
         Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation));
 
         for (SNode avaliable : scope.getAvailableElements(null)) {
-          SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
-          SLinkOperations.setTarget(expectedNode, "ref", avaliable, false);
-          ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodes", true)).addElement(expectedNode);
+          SNode expectedNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, "jetbrains.mps.lang.test.structure.ScopesExpectedNode"));
+          SLinkOperations.setTarget(expectedNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, 4052780437578824735l, "ref"), avaliable);
+          ListSequence.fromList(SLinkOperations.getChildren(newAnnotation, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))).addElement(expectedNode);
         }
       }
 

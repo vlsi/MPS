@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -22,7 +24,7 @@ public class ShowBrokenReferences_Behavior {
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{context})).translate(new ITranslator2<SNode, SReference>() {
+        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458009228l, 2087237500458009229l, "target")), "virtual_getNodes_5207260697411458163", new Object[]{context})).translate(new ITranslator2<SNode, SReference>() {
           public Iterable<SReference> translate(SNode it) {
             return SNodeOperations.getReferences(it);
           }
@@ -37,9 +39,9 @@ public class ShowBrokenReferences_Behavior {
           console.addText("node  id = " + ref.getTargetNodeId());
           SNode targetNode = ref.getSourceNode();
           console.addText("\n");
-          SNode clickableNode = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferenceString", null);
-          SPropertyOperations.set(clickableNode, "referencePresentation", "Go to enclosing node");
-          SLinkOperations.setTarget(clickableNode, "target", targetNode, false);
+          SNode clickableNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250036118117l, "jetbrains.mps.console.base.structure.NodeReferenceString"));
+          SPropertyOperations.set(clickableNode, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation"), "Go to enclosing node");
+          SLinkOperations.setTarget(clickableNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"), targetNode);
           console.addNode(clickableNode);
           console.addText("\n");
           console.addText("\n");

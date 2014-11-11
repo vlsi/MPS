@@ -36,7 +36,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_h2teu2_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

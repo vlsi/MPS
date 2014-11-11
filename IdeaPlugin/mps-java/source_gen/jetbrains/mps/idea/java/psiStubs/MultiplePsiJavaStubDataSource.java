@@ -69,7 +69,7 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
   public void addListener(DataSourceListener listener) {
     super.addListener(listener);
     synchronized (LOCK) {
-      if (myListeners.isEmpty()) {
+      if (ListSequence.fromList(myListeners).isEmpty()) {
         startListening();
       }
       ListSequence.fromList(myListeners).addElement(listener);
@@ -80,7 +80,7 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
   public void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
       ListSequence.fromList(myListeners).removeElement(listener);
-      if (myListeners.isEmpty()) {
+      if (ListSequence.fromList(myListeners).isEmpty()) {
         stopListening();
       }
     }

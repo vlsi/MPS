@@ -30,7 +30,7 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qyv4ec_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qyv4ec_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qyv4ec_b0(editorContext, node));

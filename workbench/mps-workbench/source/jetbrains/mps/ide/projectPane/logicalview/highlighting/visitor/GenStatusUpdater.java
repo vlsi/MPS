@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,6 +41,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreeNode;
 
 public class GenStatusUpdater extends TreeUpdateVisitor {
+
+  public GenStatusUpdater(Project mpsProject) {
+    super(mpsProject);
+  }
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
     do {
@@ -182,8 +187,11 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
 
-    jetbrains.mps.project.Project project = node.getOperationContext().getProject();
-    if (DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb()) return GenerationStatus.UPDATING;
+    final Project mpsProject = ProjectHelper.getProject(node.getModel().getRepository());
+    if (mpsProject != null) {
+      // FIXME why (a) it's here, not in the GenStatusUpdater, prior to StatusUpdate call; (b) are we bound to the Idea platform here?
+      if (DumbService.getInstance(ProjectHelper.toIdeaProject(mpsProject)).isDumb()) return GenerationStatus.UPDATING;
+    }
 
     boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getModel());
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;

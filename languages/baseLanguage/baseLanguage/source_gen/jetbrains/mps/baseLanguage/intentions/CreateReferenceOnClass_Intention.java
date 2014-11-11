@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -44,10 +46,10 @@ public class CreateReferenceOnClass_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode outerConcept = SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     while ((outerConcept != null)) {
-      if (SNodeOperations.isInstanceOf(outerConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        outerConcept = SNodeOperations.getAncestor(outerConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      if (SNodeOperations.isInstanceOf(outerConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+        outerConcept = SNodeOperations.getNodeAncestor(outerConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
       } else {
         break;
       }
@@ -73,15 +75,15 @@ public class CreateReferenceOnClass_Intention implements IntentionFactory {
       return "Create a Reference on Outer Class";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode outerConcept = SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
       while ((outerConcept != null)) {
-        if (SNodeOperations.isInstanceOf(outerConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-          outerConcept = SNodeOperations.getAncestor(outerConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        if (SNodeOperations.isInstanceOf(outerConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+          outerConcept = SNodeOperations.getNodeAncestor(outerConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
         } else {
           break;
         }
       }
-      SLinkOperations.setTarget(node, "classConcept", outerConcept, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), outerConcept);
     }
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClass_Intention.this;

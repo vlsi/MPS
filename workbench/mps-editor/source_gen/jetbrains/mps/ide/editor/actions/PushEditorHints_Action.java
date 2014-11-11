@@ -16,6 +16,9 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import javax.swing.SwingUtilities;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.project.Project;
@@ -72,7 +75,8 @@ public class PushEditorHints_Action extends BaseAction {
       final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          settings.updateSettings(component.getEnabledHints());
+          String[] initialEditorHints = component.getUpdater().getInitialEditorHints();
+          settings.updateSettings((initialEditorHints == null ? Collections.<String>emptySet() : SetSequence.fromSetAndArray(new HashSet<String>(), initialEditorHints)));
           final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
           DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
           dialog.show();

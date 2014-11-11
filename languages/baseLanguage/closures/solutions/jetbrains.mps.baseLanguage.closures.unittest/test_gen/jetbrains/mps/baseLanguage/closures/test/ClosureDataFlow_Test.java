@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class ClosureDataFlow_Test extends BaseTransformationTest {
@@ -20,7 +22,7 @@ public class ClosureDataFlow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_ClosureDataFlow() throws Exception {
       this.addNodeById("1227886714746");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1227886714749"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1227886714749"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false);
     }
   }
 }

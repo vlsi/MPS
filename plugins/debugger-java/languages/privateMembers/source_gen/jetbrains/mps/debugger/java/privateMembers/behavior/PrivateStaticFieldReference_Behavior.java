@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -12,14 +14,14 @@ public class PrivateStaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "variableDeclaration", false) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == null)) {
       return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "virtual_getPresentation_1213877396640", new Object[]{});
     }
     String classifierPresentation = "";
-    if ((SLinkOperations.getTarget(thisNode, "classifier", false) != null)) {
-      classifierPresentation = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getPresentation_1213877396640", new Object[]{}) + ".";
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")) != null)) {
+      classifierPresentation = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), "virtual_getPresentation_1213877396640", new Object[]{}) + ".";
     }
-    return classifierPresentation + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "name");
+    return classifierPresentation + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return false;

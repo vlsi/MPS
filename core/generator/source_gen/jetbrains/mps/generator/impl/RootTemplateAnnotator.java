@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -29,7 +31,7 @@ public class RootTemplateAnnotator implements CoreComponent {
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
           if ((Language) check_epzavk_a0a0a0b0a0a0a0a0b(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorLanguage() && (Language) check_epzavk_a0a0a0b0a0a0a0a0b_0(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorParametersLanguage()) {
             if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null)) {
-              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
+              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
             }
           }
         }

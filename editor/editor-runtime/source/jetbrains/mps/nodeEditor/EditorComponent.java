@@ -83,16 +83,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -102,10 +98,12 @@ import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -114,6 +112,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -196,7 +195,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -331,8 +329,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
 
-  private CommandContextImpl myCommandContext;
-
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
@@ -347,9 +343,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
-
-  private Set<String> myEnabledHints = new HashSet<String>();
-  private boolean myUseCustomHints = false;
 
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
@@ -801,10 +794,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     new CellNavigator(this) {
       @Override
       boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        if (APICellAdapter.hasErrorMessages(cell)) {
-          return true;
-        }
-        return false;
+        return CellMessagesUtil.hasErrorMessages(cell);
 
       }
     }.goToNextCell(backwards);
@@ -951,7 +941,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (cell.getBottom() < parent.getBottom() && parent.getSNode() != cell.getSNode()) {
         return Collections.emptyList();
       }
-      List<HighlighterMessage> messages = APICellAdapter.getMessages(parent, HighlighterMessage.class);
+      List<HighlighterMessage> messages = CellMessagesUtil.getMessages(parent, HighlighterMessage.class);
       if (!messages.isEmpty()) {
         return messages;
       }
@@ -1290,26 +1280,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   protected SRepository getRepository() {
     return myRepository;
-  }
-
-  protected void pushCellContext() {
-    if (myUseCustomHints) {
-      getEditorContext().getCellFactory().pushCellContext();
-      Object[] hints = myEnabledHints.toArray();
-      getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-    } else {
-      getEditorContext().getCellFactory().pushCellContext();
-      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getCurrentProject());
-      HintsState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
-      if (project != null && state != null) {
-        Object[] hints = state.getEnabledHints().toArray();
-        getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-      }
-    }
-  }
-
-  protected void popCellContext() {
-    getEditorContext().getCellFactory().popCellContext();
   }
 
   /**
@@ -1799,7 +1769,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public void rebuildEditorContent() {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
-    getUpdater().update(null);
+    getUpdater().update();
     relayout();
   }
 
@@ -2221,7 +2191,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
-      myRootCell.paint(g, ParentSettings.createDefaultSetting());
+      myRootCell.paint(g);
     }
 
     for (AdditionalPainter additionalPainter : additionalPainters) {
@@ -2295,7 +2265,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   @Override
-  public UpdaterImpl getUpdater() {
+  public Updater getUpdater() {
     return myUpdater;
   }
 
@@ -2452,11 +2422,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public CommandContextImpl getCommandContext() {
-    if (myCommandContext == null) {
-      myCommandContext = new CommandContextImpl(this);
-    }
-    return myCommandContext;
+  public CommandContext getCommandContext() {
+    return myUpdater;
   }
 
   /**
@@ -2542,6 +2509,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // caret is at the end of line
     boolean atTheEndOfLine = pattern.equals(patternEditor.getText());
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
+    substituteInfo.invalidateActions();
     if (originalTextChanged || atTheEndOfLine) {
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
@@ -2951,33 +2919,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
-  }
-
-  /**
-   * @return true if set of EnabledHints was changed by this operation
-   */
-  public synchronized boolean setEnabledHints(@NotNull Set<String> enabledHints) {
-    boolean result = !myEnabledHints.equals(enabledHints);
-    myEnabledHints = enabledHints;
-    return result;
-  }
-
-  @NotNull
-  public synchronized Set<String> getEnabledHints() {
-    return myEnabledHints;
-  }
-
-  /**
-   * @return true if UseCustomHints value was changed by this operation
-   */
-  public boolean setUseCustomHints(boolean useDefaultsHints) {
-    boolean result = myUseCustomHints != useDefaultsHints;
-    myUseCustomHints = useDefaultsHints;
-    return result;
-  }
-
-  public boolean getUseCustomHints() {
-    return myUseCustomHints;
   }
 
   private class ReferenceUnderliner {

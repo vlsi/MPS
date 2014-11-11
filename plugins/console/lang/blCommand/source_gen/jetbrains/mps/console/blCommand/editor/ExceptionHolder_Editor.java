@@ -23,7 +23,7 @@ public class ExceptionHolder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_hbc894_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hbc894_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_hbc894_b0(editorContext, node));

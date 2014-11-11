@@ -24,6 +24,8 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -98,7 +100,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604217076");
-        SNodeAccessUtil.setProperty(tnode1, "text", "wrapper created by reduction 1");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "wrapper created by reduction 1");
         {
           Collection<SNode> tlist2 = null;
           final SNode copySrcInput2 = context.getInput();
@@ -159,7 +161,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301917");
-        SNodeAccessUtil.setProperty(tnode1, "text", "wrapper created by reduction 2");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "wrapper created by reduction 2");
         {
           Collection<SNode> tlist2 = null;
           final SNode copySrcInput2 = context.getInput();
@@ -184,7 +186,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913379840");
-        SNodeAccessUtil.setProperty(tnode1, "value", "42");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "42");
       } finally {
       }
       return TemplateUtil.singletonList(tnode1);
@@ -204,7 +206,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           try {
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681234");
-            SNodeAccessUtil.setProperty(tnode2, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681251(new PropertyMacroContext(context, "i", propertyMacro_417xrn_c0a0c0b0b0b0c0b12))));
+            SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681251(new PropertyMacroContext(context, "i", propertyMacro_417xrn_c0a0c0b0b0b0c0b12))));
             {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
               try {
@@ -220,7 +222,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
               try {
                 environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/6054909491974232093");
-                SNodeAccessUtil.setProperty(tnode4, "value", "0");
+                SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "0");
               } finally {
               }
               if (tnode4 != null) {
@@ -244,7 +246,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           try {
             environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681238");
-            SNodeAccessUtil.setProperty(tnode6, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681260(new PropertyMacroContext(context, "e", propertyMacro_417xrn_c0a0c0b0b0b0e0b12))));
+            SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6010543442198681260(new PropertyMacroContext(context, "e", propertyMacro_417xrn_c0a0c0b0b0b0e0b12))));
             {
               final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
               try {
@@ -276,7 +278,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                   try {
                     environment.nodeCopied(context, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/6010543442198681245");
-                    SNodeAccessUtil.setProperty(tnode10, "value", "2");
+                    SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "2");
                   } finally {
                   }
                   if (tnode10 != null) {
@@ -499,7 +501,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913792886");
-                SNodeAccessUtil.setProperty(tnode3, "value", "22");
+                SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "22");
               } finally {
               }
               if (tnode3 != null) {
@@ -515,7 +517,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                   try {
                     environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913945865");
-                    SNodeAccessUtil.setProperty(tnode5, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913945867(new PropertyMacroContext(context, "", propertyMacro_417xrn_c0a0c0b0b0b0b0c0b0b0c0c62))));
+                    SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913945867(new PropertyMacroContext(context, "", propertyMacro_417xrn_c0a0c0b0b0b0b0c0b0b0c0c62))));
                   } finally {
                   }
                   if (tnode5 != null) {
@@ -527,7 +529,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                   try {
                     environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695914046247");
-                    tnode6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode6, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~String.length():int")));
+                    tnode6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~String.length():int")));
                   } finally {
                   }
                   if (tnode6 != null) {
@@ -601,7 +603,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/6509983489805125465");
-                SNodeAccessUtil.setProperty(tnode3, "value", "12");
+                SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "12");
               } finally {
               }
               if (tnode3 != null) {

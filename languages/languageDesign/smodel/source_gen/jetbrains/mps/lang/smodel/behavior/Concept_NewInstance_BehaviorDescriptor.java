@@ -13,6 +13,9 @@ public class Concept_NewInstance_BehaviorDescriptor extends SNodeOperation_Behav
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Concept_NewInstance_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return Concept_NewInstance_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Concept_NewInstance";

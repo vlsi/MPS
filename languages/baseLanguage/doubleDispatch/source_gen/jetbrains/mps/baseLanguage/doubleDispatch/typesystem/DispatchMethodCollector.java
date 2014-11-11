@@ -11,6 +11,8 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
@@ -34,7 +36,7 @@ public class DispatchMethodCollector {
       })) {
         addMethod(m);
       }
-      clas = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(clas, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
+      clas = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(clas, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     }
 
     for (DispatchGroup g : Sequence.fromIterable(MapSequence.fromMap(groups).values())) {
@@ -60,7 +62,7 @@ public class DispatchMethodCollector {
     DispatchGroupDescriptor desc = new DispatchGroupDescriptor(method);
     DispatchGroup group = MapSequence.fromMap(groups).get(desc);
     if (group == null) {
-      group = new DispatchGroup(desc, SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+      group = new DispatchGroup(desc, SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
       MapSequence.fromMap(groups).put(desc, group);
     }
 

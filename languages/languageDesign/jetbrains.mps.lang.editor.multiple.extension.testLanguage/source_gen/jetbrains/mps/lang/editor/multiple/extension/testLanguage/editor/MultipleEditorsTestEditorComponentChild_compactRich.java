@@ -29,7 +29,7 @@ public class MultipleEditorsTestEditorComponentChild_compactRich implements Conc
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8ftnui_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_8ftnui_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8ftnui_b0(editorContext, node));
@@ -43,7 +43,7 @@ public class MultipleEditorsTestEditorComponentChild_compactRich implements Conc
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("METECCR_property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -63,7 +63,7 @@ public class MultipleEditorsTestEditorComponentChild_compactRich implements Conc
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("METECCR_property_richCompactProperty");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

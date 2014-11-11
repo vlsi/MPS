@@ -10,53 +10,53 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="17,0,42,0" name="jetbrains.mps.lang.intentions.actions.QueriesGenerated" />
+      <unit at="19,0,44,0" name="jetbrains.mps.lang.intentions.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:503e670b-4b3c-40d2-84e3-fcdece65438f(jetbrains.mps.lang.intentions.actions)/1240404183712">
     <file name="QueriesGenerated.java">
-      <node id="1240404186104" at="18,203,19,93" concept="5" />
-      <node id="1240404647544" at="22,42,23,81" concept="5" />
-      <node id="2038229098145627053" at="23,81,24,182" concept="5" />
-      <node id="2038229098145627064" at="24,182,25,173" concept="5" />
-      <node id="6587171674898963125" at="25,173,26,178" concept="5" />
-      <node id="1240404639683" at="27,69,28,162" concept="1" />
-      <node id="1240404639697" at="29,11,30,28" concept="6" />
-      <node id="1240404186104" at="34,40,35,228" concept="1" />
-      <node id="1240404186104" at="38,5,39,18" concept="6" />
-      <node id="1240404639681" at="26,178,29,11" concept="3" />
-      <node id="1240404186104" at="33,32,36,9" concept="2" />
-      <node id="1240404186104" at="32,18,37,7" concept="3" />
-      <node id="1240404186104" at="22,0,32,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
-      <node id="1240404186104" at="20,5,32,18" concept="5" />
-      <node id="1240404186104" at="19,93,38,5" concept="0" />
-      <node id="1240404186104" at="19,93,38,5" concept="0" />
-      <node id="1240404186104" at="18,0,41,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240404186104#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-      <scope id="1240404639682" at="27,69,28,162" />
-      <scope id="1240404186104" at="34,40,35,228" />
-      <scope id="1240404186104" at="33,32,36,9" />
-      <scope id="1240404186104" at="33,32,36,9">
+      <node id="1240404186104" at="20,203,21,93" concept="5" />
+      <node id="1240404647544" at="24,42,25,81" concept="5" />
+      <node id="2038229098145627053" at="25,81,26,289" concept="5" />
+      <node id="2038229098145627064" at="26,289,27,280" concept="5" />
+      <node id="6587171674898963125" at="27,280,28,291" concept="5" />
+      <node id="1240404639683" at="29,69,30,162" concept="1" />
+      <node id="1240404639697" at="31,11,32,28" concept="6" />
+      <node id="1240404186104" at="36,40,37,228" concept="1" />
+      <node id="1240404186104" at="40,5,41,18" concept="6" />
+      <node id="1240404639681" at="28,291,31,11" concept="3" />
+      <node id="1240404186104" at="35,32,38,9" concept="2" />
+      <node id="1240404186104" at="34,18,39,7" concept="3" />
+      <node id="1240404186104" at="24,0,34,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
+      <node id="1240404186104" at="22,5,34,18" concept="5" />
+      <node id="1240404186104" at="21,93,40,5" concept="0" />
+      <node id="1240404186104" at="21,93,40,5" concept="0" />
+      <node id="1240404186104" at="20,0,43,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240404186104#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
+      <scope id="1240404639682" at="29,69,30,162" />
+      <scope id="1240404186104" at="36,40,37,228" />
+      <scope id="1240404186104" at="35,32,38,9" />
+      <scope id="1240404186104" at="35,32,38,9">
         <var name="item" id="1240404186104" />
       </scope>
-      <scope id="1240404186104" at="22,42,30,28">
+      <scope id="1240404186104" at="24,42,32,28">
         <var name="inParInt" id="2038229098145627054" />
         <var name="notInApplicable" id="2038229098145627065" />
         <var name="notInChildFilterBlock" id="6587171674898963128" />
         <var name="parameters" id="1240404647545" />
       </scope>
-      <scope id="1240404186104" at="22,0,32,0" />
-      <scope id="1240404186104" at="20,5,37,7">
+      <scope id="1240404186104" at="24,0,34,0" />
+      <scope id="1240404186104" at="22,5,39,7">
         <var name="queryResult" id="1240404186104" />
       </scope>
-      <scope id="1240404186104" at="19,93,38,5" />
-      <scope id="1240404186104" at="18,203,39,18">
+      <scope id="1240404186104" at="21,93,40,5" />
+      <scope id="1240404186104" at="20,203,41,18">
         <var name="result" id="1240404186104" />
       </scope>
-      <scope id="1240404186104" at="18,0,41,0">
+      <scope id="1240404186104" at="20,0,43,0">
         <var name="_context" id="1240404186104" />
         <var name="operationContext" id="1240404186104" />
       </scope>
-      <unit id="1240404186104" at="21,40,32,7" name="jetbrains.mps.lang.intentions.actions.QueriesGenerated$1" />
+      <unit id="1240404186104" at="23,40,34,7" name="jetbrains.mps.lang.intentions.actions.QueriesGenerated$1" />
     </file>
   </root>
 </debug-info>

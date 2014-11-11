@@ -11,6 +11,9 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FinderUtils {
@@ -33,8 +36,8 @@ public class FinderUtils {
     }, true);
   }
   public static int compareNodes(SNode n1, SNode n2) {
-    List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
-    List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
+    List<SNode> path1 = ListSequence.fromList(SNodeOperations.getNodeAncestors(n1, null, true)).reversedList();
+    List<SNode> path2 = ListSequence.fromList(SNodeOperations.getNodeAncestors(n2, null, true)).reversedList();
     for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
       if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
         return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
@@ -53,13 +56,13 @@ public class FinderUtils {
     SNode l1 = SNodeOperations.getContainingLinkDeclaration(n1);
     SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
     for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
-      SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(p);
+      SNode conceptDeclaration = SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(p));
       SNode editor = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.EDITOR});
-      for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
+      for (SNode cell : ListSequence.fromList(SNodeOperations.getNodeDescendants(editor, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), false, new SConcept[]{}))) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l1) {
           return -1;
         }
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l2) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l2) {
           return 1;
         }
       }

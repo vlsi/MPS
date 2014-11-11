@@ -22,13 +22,13 @@ public class UnavailableConceptsChecker extends SpecificChecker {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start("unavailable concepts", 1);
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       if (concept == null) {
-        SpecificChecker.addIssue(results, node, "Cannot find concept \"" + BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{}) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
+        SpecificChecker.addIssue(results, node, "Cannot find concept \"" + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(concept), "virtual_getFqName_1213877404258", new Object[]{}) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
     monitor.done();

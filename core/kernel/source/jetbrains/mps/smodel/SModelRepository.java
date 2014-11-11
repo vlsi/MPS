@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -345,6 +346,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   @Deprecated
+  @ToRemove(version = 3.2)
   public SModel getModelDescriptor(SModelFqName fqName) {
     return getModelDescriptor(fqName.toString());
   }

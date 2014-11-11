@@ -4,15 +4,17 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildMps_Solution_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_hasTestsSources_7354447573575923452(SNode thisNode) {
-    return isNotEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) && (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("tests"));
+    return isNotEmptyString(SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null)) && (SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null).equals("tests"));
   }
   public static boolean call_hasSources_7354447573576714831(SNode thisNode) {
-    return isEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) || (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources"));
+    return isEmptyString(SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null)) || (SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null).equals("sources"));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

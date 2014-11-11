@@ -118,8 +118,19 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     });
   }
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
-  public void openNode(SNode node, IOperationContext context) {
-    NavigationSupport.getInstance().openNode(context, node, true, true);
+  public void openNode(final SNodeReference nodeRef) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    if (mpsProject == null) {
+      return;
+    }
+    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+      public void run() {
+        SNode node = nodeRef.resolve(mpsProject.getRepository());
+        if (node != null) {
+          NavigationSupport.getInstance().openNode(mpsProject, node, true, true);
+        }
+      }
+    });
   }
   protected DefaultActionGroup createButtonsGroup() {
     GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {
@@ -184,7 +195,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
   public void showItemInHierarchy(SNode node, IOperationContext _context) {
-    myHierarchyTree.setOperationContext(_context);
     myContext = _context;
     myHierarchyTree.myHierarchyNode = node;
     ModelAccess.instance().runReadInEDT(new Runnable() {

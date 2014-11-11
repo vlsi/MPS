@@ -7,13 +7,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ExecuteFindersGetSearchResults_DataFlow extends DataFlowBuilder {
   public ExecuteFindersGetSearchResults_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "progress", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "queryNode", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "scope", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7265238368668241523l, -5766677349071573456l), 2005690715325995353l, 6366407517031970112l, "progress")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7265238368668241523l, -5766677349071573456l), 2005690715325995353l, 6366407517031970110l, "queryNode")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7265238368668241523l, -5766677349071573456l), 2005690715325995353l, 6366407517031970111l, "scope")));
   }
 }

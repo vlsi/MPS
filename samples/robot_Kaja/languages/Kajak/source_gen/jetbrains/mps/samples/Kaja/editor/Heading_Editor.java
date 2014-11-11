@@ -30,8 +30,8 @@ public class Heading_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_i9varp_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

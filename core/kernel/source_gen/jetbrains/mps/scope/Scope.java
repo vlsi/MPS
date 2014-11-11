@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -63,8 +65,8 @@ public abstract class Scope {
     SNode curr = node;
     SNode prev = fromChild;
     while (curr != null) {
-      if (SNodeOperations.isInstanceOf(curr, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
-        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
+      if (SNodeOperations.isInstanceOf(curr, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
+        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
         if (scope != null) {
           return scope;
         }
@@ -78,8 +80,8 @@ public abstract class Scope {
    * Get scope for smart reference, when node doesn't exist yet
    */
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
-      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
+      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
       if (scope != null) {
         return scope;
       }
@@ -88,10 +90,10 @@ public abstract class Scope {
   }
   public static SNode parent(SNode n) {
     if (SNodeOperations.isAttribute(n)) {
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.core.structure.NodeAttribute")) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
         SNode next = SNodeOperations.getPrevSibling(n);
         while (next != null) {
-          if (SNodeOperations.isInstanceOf(next, "jetbrains.mps.lang.core.structure.NodeAttribute")) {
+          if (SNodeOperations.isInstanceOf(next, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
             return next;
           }
           next = SNodeOperations.getPrevSibling(next);
@@ -101,9 +103,9 @@ public abstract class Scope {
       }
       return SNodeOperations.getParent(n);
     }
-    SNode lastAttr = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(n, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
+    SNode lastAttr = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.NodeAttribute");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"));
       }
     }).last();
     if ((lastAttr != null)) {

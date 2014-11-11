@@ -61,7 +61,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_azestd_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_azestd_a2a(editorContext, node));
     return editorCell;
@@ -90,7 +90,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.setCellId("Constant_azestd_d0");
     Style style = new StyleImpl();
     StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
-    style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(1, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,7 +135,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_azestd_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_azestd_b0a(editorContext, node));
@@ -168,7 +168,7 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_azestd_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_azestd_b1a(editorContext, node));

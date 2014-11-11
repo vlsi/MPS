@@ -73,7 +73,7 @@ public class ReplacementRuleReference_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -91,7 +91,7 @@ public class ReplacementRuleReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_lotkev_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_lotkev_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_lotkev_a0(editorContext, node));

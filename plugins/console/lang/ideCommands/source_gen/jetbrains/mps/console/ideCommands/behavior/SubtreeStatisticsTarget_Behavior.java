@@ -7,8 +7,11 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -18,8 +21,8 @@ public class SubtreeStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
-    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getTargetNode_3575813534625153815", new Object[]{});
-    List<SNode> subNodes = SNodeOperations.getDescendants(targetNode, null, false, new String[]{});
+    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target")), "virtual_getTargetNode_3575813534625153815", new Object[]{});
+    List<SNode> subNodes = SNodeOperations.getNodeDescendants(targetNode, null, false, new SConcept[]{});
     int references = 0;
     int properties = 0;
     for (SNode node : subNodes) {
@@ -34,6 +37,6 @@ public class SubtreeStatisticsTarget_Behavior {
     return result;
   }
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "target", true), null, false, new String[]{});
+    return SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target")), null, false, new SConcept[]{});
   }
 }

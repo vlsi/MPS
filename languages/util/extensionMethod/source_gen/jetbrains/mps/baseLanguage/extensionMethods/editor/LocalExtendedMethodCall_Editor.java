@@ -28,7 +28,7 @@ public class LocalExtendedMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6e2wus_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_6e2wus_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6e2wus_b0(editorContext, node));

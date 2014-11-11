@@ -4,13 +4,14 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CustomMemberDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
-    return (SNode) SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(thisNode, "cncpt", false)), null);
+    return (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt"))), null);
   }
 }

@@ -14,9 +14,12 @@ import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -69,28 +72,28 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
       return "Replace with foreach from collections language";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
+      final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547808367l, 1176547942567l, "loopVariable"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode lv) {
-          return _quotation_createNode_kx76k7_a0a0a0a0a0a(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
+          return _quotation_createNode_kx76k7_a0a0a0a0a0a(SPropertyOperations.getString(SLinkOperations.getTarget(lv, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547881822l, "variable")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547896901l, "iterable"))));
         }
       }).toListSequence();
-      SNode mfs = SNodeOperations.replaceWithAnother(node, _quotation_createNode_kx76k7_a0a0b0a(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true))));
-      final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
+      SNode mfs = SNodeOperations.replaceWithAnother(node, _quotation_createNode_kx76k7_a0a0b0a(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")))));
+      final List<SNode> lvs = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547808367l, 1176547942567l, "loopVariable"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode lv) {
-          return SLinkOperations.getTarget(lv, "variable", true);
+          return SLinkOperations.getTarget(lv, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547881822l, "variable"));
         }
       }).toListSequence();
-      ListSequence.fromList(SNodeOperations.getDescendants(mfs, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SNodeOperations.getNodeDescendants(mfs, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
         }
       }).toListSequence().where(new IWhereFilter<SNode>() {
         public boolean accept(SNode lvr) {
-          return ListSequence.fromList(lvs).contains(SNodeOperations.cast(SLinkOperations.getTarget(lvr, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+          return ListSequence.fromList(lvs).contains(SNodeOperations.cast(SLinkOperations.getTarget(lvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")));
         }
       }).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode lvr) {
-          SNodeOperations.replaceWithAnother(lvr, _quotation_createNode_kx76k7_a0a0a0a0d0a(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, "variableDeclaration", false)))), "variable", true)));
+          SNodeOperations.replaceWithAnother(lvr, _quotation_createNode_kx76k7_a0a0a0a0d0a(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"))))), MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099778l, "variable"))));
         }
       });
     }
@@ -105,11 +108,11 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_1);
-    quotedNode_3.addChild("variable", quotedNode_4);
+    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_1);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099778l, "variable"), quotedNode_4);
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("input", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099735l, "input"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }
@@ -124,12 +127,12 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("forEach", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099698l, 9042586985346099734l, "forEach"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("body", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }
@@ -137,7 +140,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variable", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-8968771020793164004l, -7182180101671965361l), 8293956702609956630l, 8293956702609966325l, "variable"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

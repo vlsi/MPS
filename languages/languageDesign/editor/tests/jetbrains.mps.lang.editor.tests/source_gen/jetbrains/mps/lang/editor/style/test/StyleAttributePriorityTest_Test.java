@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import junit.framework.Assert;
@@ -32,12 +34,12 @@ public class StyleAttributePriorityTest_Test extends BaseTransformationTest {
       initEditor("23293207022989701", "");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode root = SNodeOperations.cast(TestBody.this.getEditorComponent().getEditedNode(), "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer");
-          SNode leaf = ListSequence.fromList(SLinkOperations.getTargets(root, "node", true)).getElement(0);
-          SNode priority = ListSequence.fromList(SLinkOperations.getTargets(root, "node", true)).getElement(1);
-          SNode innerLeaf = ListSequence.fromList(SLinkOperations.getTargets(priority, "node", true)).getElement(0);
-          SNode ignore = ListSequence.fromList(SLinkOperations.getTargets(priority, "node", true)).getElement(1);
-          SNode ignoreLeaf = ListSequence.fromList(SLinkOperations.getTargets(ignore, "node", true)).getElement(0);
+          SNode root = SNodeOperations.cast(TestBody.this.getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
+          SNode leaf = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
+          SNode priority = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(1);
+          SNode innerLeaf = ListSequence.fromList(SLinkOperations.getChildren(priority, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
+          SNode ignore = ListSequence.fromList(SLinkOperations.getChildren(priority, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(1);
+          SNode ignoreLeaf = ListSequence.fromList(SLinkOperations.getChildren(ignore, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
 
           Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
           Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");

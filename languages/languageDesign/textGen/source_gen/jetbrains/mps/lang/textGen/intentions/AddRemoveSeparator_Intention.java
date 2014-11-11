@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveSeparator_Intention implements IntentionFactory {
@@ -55,13 +57,13 @@ public class AddRemoveSeparator_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "withSeparator") ? "Remove Separator" : "Add Separator");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator")) ? "Remove Separator" : "Add Separator");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "withSeparator")) {
-        SPropertyOperations.set(node, "separator", "");
+      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator"))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237306003719l, "separator"), "");
       }
-      SPropertyOperations.set(node, "withSeparator", "" + (!(SPropertyOperations.getBoolean(node, "withSeparator"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator")))));
     }
     public IntentionDescriptor getDescriptor() {
       return AddRemoveSeparator_Intention.this;

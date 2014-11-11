@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeOrientationAlternation_Intention implements IntentionFactory {
@@ -55,10 +57,10 @@ public class ChangeOrientationAlternation_Intention implements IntentionFactory 
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "vertical") ? "Make Horizontal" : "Make Vertical");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1088612959204l, 1088613081987l, "vertical")) ? "Make Horizontal" : "Make Vertical");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "vertical", "" + (!(SPropertyOperations.getBoolean(node, "vertical"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1088612959204l, 1088613081987l, "vertical"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1088612959204l, 1088613081987l, "vertical")))));
     }
     public IntentionDescriptor getDescriptor() {
       return ChangeOrientationAlternation_Intention.this;

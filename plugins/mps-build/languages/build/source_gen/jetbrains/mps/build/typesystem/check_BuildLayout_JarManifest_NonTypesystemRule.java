@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,10 +20,10 @@ public class check_BuildLayout_JarManifest_NonTypesystemRule extends AbstractNon
   public check_BuildLayout_JarManifest_NonTypesystemRule() {
   }
   public void applyRule(final SNode manifest, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BuildLayout_JarManifest_Behavior.call_isInJar_6837653846148477885(manifest) && (SLinkOperations.getTarget(manifest, "name", true) != null)) {
+    if (BuildLayout_JarManifest_Behavior.call_isInJar_6837653846148477885(manifest) && (SLinkOperations.getTarget(manifest, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960366l, 7471276865245798337l, "name")) != null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(manifest, "name", true), "Jar manifest name will be ignored.", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "8990969321156011416", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(manifest, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960366l, 7471276865245798337l, "name")), "Jar manifest name will be ignored.", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "8990969321156011416", null, errorTarget);
       }
     }
   }

@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BaseDocComment_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "author", true)).isEmpty() && (SLinkOperations.getTarget(thisNode, "deprecated", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "since", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "version", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "see", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 5349172909345532722l, "author"))).isEmpty() && (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated")) == null) && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331490l, "since"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331491l, "version"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 2217234381367277533l, "see"))).isEmpty();
   }
 }

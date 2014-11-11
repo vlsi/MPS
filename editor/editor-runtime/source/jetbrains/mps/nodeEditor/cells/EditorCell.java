@@ -32,6 +32,14 @@ import java.util.List;
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   void paint(Graphics g);
 
+  void paintCell(Graphics g, ParentSettings parentSettings);
+
+  void paintDecorations(Graphics g);
+
+  /**
+   * @deprecated since MPS 3.2 use paintContent() & paintDecorations() instead
+   */
+  @Deprecated
   void paint(Graphics g, ParentSettings parentSettings);
 
   void paintSelection(Graphics g, Color c, boolean drawBorder);
@@ -78,49 +86,104 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   // TODO: move this method to open API
   CellInfo getCellInfo();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   void setRightTransformAnchorTag(String tag);
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   String getRightTransformAnchorTag();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean hasRightTransformAnchorTag(String tag);
 
   Iterator<EditorCell_Collection> parents();
 
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
-  // TODO: move to EditorCell_Collection & open API
+  /**
+   * @deprecated since MPS 3.2 this method present in {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean isFolded();
 
+  /**
+   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean isUnfoldedCollection();
 
+  /**
+   * @deprecated since MPS 3.2 functionality moved to {@link jetbrains.mps.openapi.editor.cells.EditorCell_Collection}
+   */
+  @Deprecated
   boolean canBePossiblyFolded();
 
   boolean isFirstPositionInBigCell();
 
   boolean isLastPositionInBigCell();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isLastChild();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isFirstChild();
 
   boolean isFirstCaretPosition();
 
   boolean isLastCaretPosition();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isOnLeftBoundary();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isOnRightBoundary();
 
   EditorCell getContainingBigCell();
 
   boolean isAncestorOf(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
+   */
+  @Deprecated
   <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.openapi.editor.cells.CellMessagesUtil} instead
+   */
+  @Deprecated
   boolean hasErrorMessages();
 
+  /**
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.STHintUtil} instead
+   */
+  @Deprecated
   EditorCell_Label getSTHintCell();
 
   boolean isLeaf();

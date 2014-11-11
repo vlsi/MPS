@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RemoveDirectCallProperty_MigrationScript extends BaseMigrationScript {
   public RemoveDirectCallProperty_MigrationScript(IOperationContext operationContext) {
@@ -25,7 +27,7 @@ public class RemoveDirectCallProperty_MigrationScript extends BaseMigrationScrip
         return true;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, "directCall", null);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 1179409122411l, 2853323645193760541l, "directCall"), null);
       }
       public boolean isShowAsIntention() {
         return false;

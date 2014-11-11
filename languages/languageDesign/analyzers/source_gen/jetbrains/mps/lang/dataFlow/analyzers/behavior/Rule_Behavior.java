@@ -5,6 +5,8 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Rule_Behavior {
   public static void init(SNode thisNode) {
@@ -12,8 +14,8 @@ public class Rule_Behavior {
   public static String call_getFqName_8716397433969716516(SNode thisNode) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
     if (longName.equals("")) {
-      return SPropertyOperations.getString(thisNode, "name");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
-    return longName + "." + SPropertyOperations.getString(thisNode, "name");
+    return longName + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

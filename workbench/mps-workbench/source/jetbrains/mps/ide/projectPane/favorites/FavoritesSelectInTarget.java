@@ -19,6 +19,7 @@ import com.intellij.ide.SelectInContext;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -42,7 +43,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     List<SNode> result = new ArrayList<SNode>();
     if (objects == null) return result;
     for (Object o : objects) {
-      FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
+      FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(ProjectHelper.toMPSProject(getProject()), o);
       if (favoritesRoot == null) continue;
       result.addAll(favoritesRoot.getAvailableNodes());
     }

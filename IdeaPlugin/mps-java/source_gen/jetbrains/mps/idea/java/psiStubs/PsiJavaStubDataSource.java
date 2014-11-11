@@ -65,10 +65,10 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
   @Override
   public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
-      if (myListeners.isEmpty()) {
+      if (ListSequence.fromList(myListeners).isEmpty()) {
         startListening();
       }
-      myListeners.add(listener);
+      ListSequence.fromList(myListeners).addElement(listener);
     }
   }
 
@@ -76,7 +76,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
   public void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
       ListSequence.fromList(myListeners).removeElement(listener);
-      if (myListeners.isEmpty()) {
+      if (ListSequence.fromList(myListeners).isEmpty()) {
         stopListening();
       }
     }

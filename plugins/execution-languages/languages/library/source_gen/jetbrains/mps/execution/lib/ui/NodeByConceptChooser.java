@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -27,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeByConceptChooser extends NodeChooser {
   @NotNull
@@ -62,7 +62,7 @@ public class NodeByConceptChooser extends NodeChooser {
     myTargetConcept = targetConcept;
   }
   public void setTargetConcept(SNode targetConcept) {
-    myTargetConcept = BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{});
+    myTargetConcept = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(targetConcept), "virtual_getFqName_1213877404258", new Object[]{});
   }
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> getAcceptor() {
     return myAcceptor;
@@ -90,7 +90,7 @@ public class NodeByConceptChooser extends NodeChooser {
   }
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(SNodeOperations.isInstanceOf(it, myTargetConcept))) {
           return false;

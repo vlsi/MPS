@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -47,7 +49,7 @@ public class AddFinalModifierToAny_Intention implements IntentionFactory {
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     // it should not be applicable inoside initializer 
-    SNode nodeUnderDecl = ListSequence.fromList(SNodeOperations.getAncestors(childNode, null, true)).where(new IWhereFilter<SNode>() {
+    SNode nodeUnderDecl = ListSequence.fromList(SNodeOperations.getNodeAncestors(childNode, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getParent(it) == node;
       }
@@ -56,7 +58,7 @@ public class AddFinalModifierToAny_Intention implements IntentionFactory {
     if ((nodeUnderDecl == null)) {
       return true;
     }
-    if (SNodeOperations.hasRole(nodeUnderDecl, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
+    if (SNodeOperations.hasRole(nodeUnderDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))) {
       return false;
     }
 
@@ -78,10 +80,10 @@ public class AddFinalModifierToAny_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isFinal") ? "Remove 'final' Modifier" : "Add 'final' Modifier");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")) ? "Remove 'final' Modifier" : "Add 'final' Modifier");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "isFinal", "" + (!(SPropertyOperations.getBoolean(node, "isFinal"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")))));
     }
     public IntentionDescriptor getDescriptor() {
       return AddFinalModifierToAny_Intention.this;

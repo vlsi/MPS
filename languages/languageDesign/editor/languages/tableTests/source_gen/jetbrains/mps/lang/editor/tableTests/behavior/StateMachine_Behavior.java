@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -12,29 +14,29 @@ public class StateMachine_Behavior {
   public static void init(SNode thisNode) {
     int count = 3;
     for (int i = 0; i < count; i++) {
-      SNode event = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null);
-      SPropertyOperations.set(event, "name", "e_" + i);
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "events", true)).addElement(event);
+      SNode event = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729147l, "jetbrains.mps.lang.editor.tableTests.structure.Event"));
+      SPropertyOperations.set(event, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "e_" + i);
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726947l, "events"))).addElement(event);
     }
     for (int i = 0; i < count; i++) {
-      SNode state = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null);
-      SPropertyOperations.set(state, "name", "s_" + i);
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).addElement(state);
+      SNode state = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729154l, "jetbrains.mps.lang.editor.tableTests.structure.State"));
+      SPropertyOperations.set(state, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "s_" + i);
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726949l, "states"))).addElement(state);
     }
     for (int i = 0; i < count; i++) {
-      SNode sourceState = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).getElement(i);
-      SNode targetState = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).getElement((i + 1 == count ? 0 : i + 1));
-      SNode event = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "events", true)).getElement(i);
+      SNode sourceState = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726949l, "states"))).getElement(i);
+      SNode targetState = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726949l, "states"))).getElement((i + 1 == count ? 0 : i + 1));
+      SNode event = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726947l, "events"))).getElement(i);
 
-      SNode transition = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
-      SLinkOperations.setTarget(transition, "fromState", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
-      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", sourceState, false);
-      SLinkOperations.setTarget(transition, "toState", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
-      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "toState", true), "state", targetState, false);
-      SLinkOperations.setTarget(transition, "trigger", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
-      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", event, false);
-      SPropertyOperations.set(transition, "condition", "true");
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "transitions", true)).addElement(transition);
+      SNode transition = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, "jetbrains.mps.lang.editor.tableTests.structure.Transition"));
+      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729150l, "fromState"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729156l, "jetbrains.mps.lang.editor.tableTests.structure.StateReference")));
+      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729150l, "fromState")), MetaAdapterFactory.getReferenceLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729156l, 763922957008729157l, "state"), sourceState);
+      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729152l, "toState"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729156l, "jetbrains.mps.lang.editor.tableTests.structure.StateReference")));
+      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729152l, "toState")), MetaAdapterFactory.getReferenceLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729156l, 763922957008729157l, "state"), targetState);
+      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729151l, "trigger"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729158l, "jetbrains.mps.lang.editor.tableTests.structure.EventReference")));
+      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729151l, "trigger")), MetaAdapterFactory.getReferenceLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729158l, 763922957008729159l, "event"), event);
+      SPropertyOperations.set(transition, MetaAdapterFactory.getProperty(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008729149l, 763922957008729153l, "condition"), "true");
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, 763922957008726948l, "transitions"))).addElement(transition);
     }
   }
 }

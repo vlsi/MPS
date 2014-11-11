@@ -4,15 +4,17 @@ package jetbrains.mps.build.mps.tests.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class BuildMpsLayout_TestModule_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
-    return SLinkOperations.getTarget(thisNode, "module", false) == module;
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469362l, 4560297596904469363l, "module")) == module;
   }
   public static Iterable<SNode> virtual_getModules_4560297596904469651(SNode thisNode) {
-    return Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, "module", false));
+    return Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469362l, 4560297596904469363l, "module")));
   }
 }

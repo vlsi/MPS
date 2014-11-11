@@ -4,6 +4,8 @@ package jetbrains.mps.lang.generator.generationContext.constraints;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -13,10 +15,10 @@ public class TraverseUtil {
   }
   public static SNode parent(SNode n) {
     if (SNodeOperations.isAttribute(n)) {
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.core.structure.NodeAttribute")) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
         SNode next = SNodeOperations.getPrevSibling(n);
         while (next != null) {
-          if (SNodeOperations.isInstanceOf(next, "jetbrains.mps.lang.core.structure.NodeAttribute")) {
+          if (SNodeOperations.isInstanceOf(next, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
             return next;
           }
           next = SNodeOperations.getPrevSibling(next);
@@ -26,9 +28,9 @@ public class TraverseUtil {
       }
       return SNodeOperations.getParent(n);
     }
-    SNode lastAttr = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(n, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
+    SNode lastAttr = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.NodeAttribute");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"));
       }
     }).last();
     if ((lastAttr != null)) {

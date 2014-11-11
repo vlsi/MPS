@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,25 +22,25 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
   public check_WeaveEach_RuleConsequence_NonTypesystemRule() {
   }
   public void applyRule(final SNode weaveEach, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode template = SLinkOperations.getTarget(weaveEach, "template", false);
+    SNode template = SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569853122l, "template"));
     if ((template == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993044375", null, errorTarget);
       }
-    } else if (!(ListSequence.fromList(SLinkOperations.getTargets(template, "parameter", true)).isEmpty())) {
+    } else if (!(ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isEmpty())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(weaveEach, "Cannot weave template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "546192990993046864", null, errorTarget);
       }
     } else {
-      final SNode templateApplicableConcept = SLinkOperations.getTarget(template, "applicableConcept", false);
+      final SNode templateApplicableConcept = SLinkOperations.getTarget(template, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"));
       if (templateApplicableConcept == null) {
         return;
       }
-      SNode query = SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
+      SNode query = SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569939267l, "sourceNodesQuery"));
       SNode NT = QueriesUtil.getOutputNodeType_fromSourceQuery(query);
-      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
+      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(NT, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, "jetbrains.mps.lang.smodel.structure.SNodeType")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
       if (!(SModelUtil.isAssignableConcept(nodeConcept, templateApplicableConcept))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

@@ -5,6 +5,7 @@ package jetbrains.mps.make.facet.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -34,9 +35,45 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 10:
         return new TargetReferenceExpression_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6418371274763029565l) {
+      return new TargetDeclaration_Constraints();
+    }
+    if (id == 6418371274763029523l) {
+      return new FacetDeclaration_Constraints();
+    }
+    if (id == 6447445394688555033l) {
+      return new ExtendsFacetReference_Constraints();
+    }
+    if (id == 6447445394688422642l) {
+      return new FacetReference_Constraints();
+    }
+    if (id == 8351679702044320297l) {
+      return new RelatedFacetReference_Constraints();
+    }
+    if (id == 6418371274763029600l) {
+      return new TargetDependency_Constraints();
+    }
+    if (id == 3344436107830227888l) {
+      return new ForeignParametersExpression_Constraints();
+    }
+    if (id == 119022571401949652l) {
+      return new ResourceTypeDeclaration_Constraints();
+    }
+    if (id == 119022571402207412l) {
+      return new ResourceClassifierType_Constraints();
+    }
+    if (id == 1919086248986845077l) {
+      return new NamedFacetReference_Constraints();
+    }
+    if (id == 8703512757937156087l) {
+      return new TargetReferenceExpression_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
 }

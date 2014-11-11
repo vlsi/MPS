@@ -32,8 +32,8 @@ public class Not_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "not");
     editorCell.setCellId("Constant_w1i24s_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     RemoveNot.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

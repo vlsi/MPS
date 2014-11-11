@@ -4,6 +4,8 @@ package jetbrains.mps.core.xml.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlBasePrologElement_Behavior {
@@ -16,26 +18,26 @@ public class XmlBasePrologElement_Behavior {
     return false;
   }
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart")) {
-      SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart");
-      if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlText")) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlText"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart"))) {
+      SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart"));
+      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"))) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
-      if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlWhitespace")) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlWhitespace"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
+      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace"))) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
       return !((BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isTextLike_2133624044437631604", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isOneLineBlock_2133624044437631438", new Object[]{})));
     }
     return true;
   }
   public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart")) {
-      SNode right = SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart");
-      if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.core.xml.structure.XmlText")) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, "jetbrains.mps.core.xml.structure.XmlText"), "virtual_onNewLine_2133624044437631588", new Object[]{});
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart"))) {
+      SNode right = SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart"));
+      if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"))) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText")), "virtual_onNewLine_2133624044437631588", new Object[]{});
       }
-      if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.core.xml.structure.XmlWhitespace")) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, "jetbrains.mps.core.xml.structure.XmlWhitespace"), "virtual_onNewLine_2133624044437631588", new Object[]{});
+      if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace"))) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace")), "virtual_onNewLine_2133624044437631588", new Object[]{});
       }
       return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, right, "virtual_isTextLike_2133624044437631604", new Object[]{}));
     }

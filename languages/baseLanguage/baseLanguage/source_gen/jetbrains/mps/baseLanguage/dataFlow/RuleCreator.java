@@ -14,7 +14,7 @@ public class RuleCreator extends DataFlowConstructor {
   public RuleCreator() {
   }
   public boolean isApplicable(SNode node) {
-    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
+    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractCreator";

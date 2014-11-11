@@ -29,7 +29,7 @@ public class TestISimpleAttribute_EditorComponent implements ConceptEditorCompon
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w8uy2a_a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_w8uy2a_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_w8uy2a_b0(editorContext, node));

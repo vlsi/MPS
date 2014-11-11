@@ -9,6 +9,9 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -28,11 +31,11 @@ public class RemoveDocComment {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
+      SNode doc = ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), true, new SConcept[]{})).first();
       SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
-      if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
-        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      if (SNodeOperations.isInstanceOf(commentedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"))) {
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       }
       SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }
@@ -46,11 +49,11 @@ public class RemoveDocComment {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
+      SNode doc = ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), true, new SConcept[]{})).first();
       SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
-      if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
-        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      if (SNodeOperations.isInstanceOf(commentedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"))) {
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       }
       SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }

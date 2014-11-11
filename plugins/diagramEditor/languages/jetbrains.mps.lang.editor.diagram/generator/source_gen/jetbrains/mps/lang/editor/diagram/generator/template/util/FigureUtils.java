@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.diagram.generator.template.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
@@ -11,10 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FigureUtils {
   public static boolean isMovable(SNode figureReference) {
-    return SNodeOperations.isInstanceOf(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference") && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), "figureAttribute", false)))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "8082246476498952649"));
+    return SNodeOperations.isInstanceOf(figureReference, MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference")) && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference")), MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, 5422656561931890753l, "figureAttribute"))))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "8082246476498952649"));
   }
 
   public static boolean isResizable(SNode figureReference) {
-    return SNodeOperations.isInstanceOf(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference") && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), "figureAttribute", false)))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "7493754406620213986"));
+    return SNodeOperations.isInstanceOf(figureReference, MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference")) && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference")), MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, 5422656561931890753l, "figureAttribute"))))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "7493754406620213986"));
   }
 }

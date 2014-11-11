@@ -29,7 +29,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_jdqktq_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+    style.set(StyleAttributes.LAYOUT_CONSTRAINT, 0, "punctuation");
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_jdqktq_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jdqktq_b0(editorContext, node));
@@ -41,8 +41,8 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_jdqktq_a0");
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -71,7 +71,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_jdqktq_c0");
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_AppendPart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

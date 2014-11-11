@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TestInheritedAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -23,11 +25,11 @@ public class TestInheritedAttribute_Editor extends DefaultNodeEditor {
       bigCell.setBig(true);
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), TestInheritedAttribute_Editor._StyleParameter_QueryFunction_twhn5o_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestInheritedAttribute_Editor._StyleParameter_QueryFunction_twhn5o_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
   private static String _StyleParameter_QueryFunction_twhn5o_a0a(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getString(node, "value");
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-6253595335891071644l, -6783526492980008552l), 8917170296719630045l, 8917170296719630046l, "value"));
   }
 }

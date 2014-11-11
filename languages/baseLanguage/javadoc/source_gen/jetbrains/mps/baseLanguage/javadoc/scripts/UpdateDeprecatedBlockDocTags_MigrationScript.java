@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigrationScript {
@@ -23,10 +25,10 @@ public class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigrationS
         return "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return (SLinkOperations.getTarget(node, "text", true) == null);
+        return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text")) == null);
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNodeFactoryOperations.setNewChild(node, "text", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
       }
       public boolean isShowAsIntention() {
         return false;

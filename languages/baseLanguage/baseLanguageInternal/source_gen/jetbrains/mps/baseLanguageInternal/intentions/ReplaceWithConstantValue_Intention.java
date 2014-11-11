@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -62,7 +64,7 @@ public class ReplaceWithConstantValue_Intention implements IntentionFactory {
       return "Replace with Constant Value";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode constantValue = _quotation_createNode_y7ts2x_a0a0a(SLinkOperations.getTarget(node, "variableDeclaration", false));
+      SNode constantValue = _quotation_createNode_y7ts2x_a0a0a(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
       SNodeOperations.replaceWithAnother(node, constantValue);
     }
     public IntentionDescriptor getDescriptor() {
@@ -73,7 +75,7 @@ public class ReplaceWithConstantValue_Intention implements IntentionFactory {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ConstantValue", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "constant", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1585405235656310154l, 1585405235656310155l, "constant"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

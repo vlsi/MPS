@@ -15,8 +15,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public Quotation_quotedNode() {
@@ -36,8 +37,8 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode oldInstance = SLinkOperations.getTarget(node, "quotedNode", true);
-      SLinkOperations.setTarget(node, "quotedNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), null), true);
+      SNode oldInstance = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), null));
       if (oldInstance != null) {
         SNodeOperations.deleteNode(oldInstance);
       }

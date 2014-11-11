@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddPosition {
@@ -23,8 +25,8 @@ public class AddPosition {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SLinkOperations.getTarget(node, "position", true) == null) {
-        SLinkOperations.setTarget(node, "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position")) == null) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 8486807419021026918l, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), null));
       }
     }
   }

@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,7 +49,7 @@ public class AddAnnotation_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).isNotEmpty()) {
       return false;
     }
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canBeAnnotated_1233076312117", new Object[]{}))) {
@@ -78,7 +80,7 @@ public class AddAnnotation_Intention implements IntentionFactory {
       return "Add Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, "annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+      SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
       editorContext.selectWRTFocusPolicy(annotationInstance);
     }
     public IntentionDescriptor getDescriptor() {

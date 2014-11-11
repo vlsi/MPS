@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -61,10 +63,10 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_29llnk_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -93,9 +95,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_29llnk_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
-    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
+    style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new _Quotation_createModel());
     editorCell.setDefaultText("");
@@ -105,7 +107,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_29llnk_d0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_29llnk_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_29llnk_b3a(editorContext, node));
@@ -116,7 +118,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate")) != null;
   }
   private EditorCell createConstant_29llnk_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");
@@ -191,7 +193,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_29llnk_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_29llnk_a0a(editorContext, node));
     if (renderingCondition_29llnk_a1a0(node, editorContext)) {
@@ -206,8 +208,8 @@ public class Quotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
     editorCell.setCellId("Constant_29llnk_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -215,7 +217,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_29llnk_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SLinkOperations.getTarget(node, "quotedNode", true) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "quotedNode", true)), "name") : "<not specitied>");
+        return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : "<not specitied>");
       }
       public void setText(String s) {
       }
@@ -230,7 +232,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) != null;
   }
   public static class Quotation_component_cellMenu_29llnk_a0b0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
@@ -248,7 +250,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) == null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) == null;
   }
   public static class Quotation_component_cellMenu_29llnk_a0c0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;

@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -56,7 +54,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ulpguu_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getLeftBracket_1262430001741498346", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getLeftBracket_1262430001741498346", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -136,7 +134,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ulpguu_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRightBracket_1262430001741498139", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getRightBracket_1262430001741498139", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -157,7 +155,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_ulpguu_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ulpguu_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ulpguu_b0(editorContext, node));
@@ -167,7 +165,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ulpguu_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ulpguu_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ulpguu_b0a(editorContext, node));
@@ -240,7 +238,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "components:");
     editorCell.setCellId("Constant_ulpguu_a1a_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -257,7 +255,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       editorCell.setRole("tupleDeclaration");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -290,7 +288,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
       editorCell.setCellId("refNodeList_component");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setRole(handler.getElementRole());
       return editorCell;

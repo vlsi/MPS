@@ -24,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiClass;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -115,8 +117,8 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
 
         for (PsiClass cls : jf.getClasses()) {
           SNode node = converter.convertClass(cls);
-          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-            AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), javaImports);
+          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+            AttributeOperations.setAttribute(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), javaImports);
           }
           // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
           //  which is an error but none the less) 
@@ -194,8 +196,8 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
 
           for (PsiClass cls : file.getClasses()) {
             SNode node = converter.convertClass(cls);
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-              AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), javaImports);
+            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+              AttributeOperations.setAttribute(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), javaImports);
             }
 
             myModel.addRootNode(node);
@@ -238,12 +240,12 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
       }
 
       SNode javaImport = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
-      SPropertyOperations.set(javaImport, "onDemand", "" + (imp.isOnDemand()));
-      SPropertyOperations.set(javaImport, "static", "" + (imp instanceof PsiImportStaticStatement));
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"), "" + (imp.isOnDemand()));
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 5574384225470059890l, "static"), "" + (imp instanceof PsiImportStaticStatement));
       String qName = ref.getQualifiedName();
-      SPropertyOperations.set(javaImport, "tokens", qName);
+      SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), qName);
 
-      ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).addElement(javaImport);
+      ListSequence.fromList(SLinkOperations.getChildren(javaImports, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).addElement(javaImport);
     }
     return javaImports;
   }

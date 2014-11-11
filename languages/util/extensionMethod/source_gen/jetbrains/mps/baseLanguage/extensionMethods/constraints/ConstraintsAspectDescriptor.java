@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -24,9 +25,30 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new LocalExtendedMethodCall_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1894531970723270160l) {
+      return new TypeExtension_Constraints();
+    }
+    if (id == 1550313277221324859l) {
+      return new ExtensionMethodCall_Constraints();
+    }
+    if (id == 3316739663067157299l) {
+      return new ThisExtensionExpression_Constraints();
+    }
+    if (id == 1550313277222152185l) {
+      return new ExtensionMethodDeclaration_Constraints();
+    }
+    if (id == 1973189701690850247l) {
+      return new ExtensionStaticFieldReference_Constraints();
+    }
+    if (id == 7685333756920172912l) {
+      return new LocalExtendedMethodCall_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
 }

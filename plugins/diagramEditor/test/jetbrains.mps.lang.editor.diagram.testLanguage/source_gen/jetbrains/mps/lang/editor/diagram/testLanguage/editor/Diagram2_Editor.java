@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -55,41 +57,41 @@ public class Diagram2_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_dbn5di_a0 extends DiagramCell {
     private DiagramCellImpl_dbn5di_a0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "mainNodes"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 8794120090374242825l, "mainNodes")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          SPropertyOperations.set(node, "x", "" + (x));
-          SPropertyOperations.set(node, "y", "" + (y));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"), "" + (x));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"), "" + (y));
         }
-      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "nodeConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 5540569706413713166l, "nodeConnectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort");
+          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436906l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436850l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"));
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          SLinkOperations.setTarget(node, "src", SNodeOperations.cast(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), false);
-          SLinkOperations.setTarget(node, "dst", SNodeOperations.cast(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), false);
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452892l, "src"), SNodeOperations.cast(from, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436906l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452907l, "dst"), SNodeOperations.cast(to, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436850l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort")));
         }
       })}));
       synchronize();
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "mainNodes"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 8794120090374242825l, "mainNodes")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          SPropertyOperations.set(node, "x", "" + (x));
-          SPropertyOperations.set(node, "y", "" + (y));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"), "" + (x));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"), "" + (y));
         }
       })};
     }
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "nodeConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 5540569706413713166l, "nodeConnectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort");
+          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436906l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436850l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"));
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          SLinkOperations.setTarget(node, "src", SNodeOperations.cast(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), false);
-          SLinkOperations.setTarget(node, "dst", SNodeOperations.cast(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), false);
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452892l, "src"), SNodeOperations.cast(from, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436906l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452907l, "dst"), SNodeOperations.cast(to, MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436850l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort")));
         }
       })};
     }
@@ -156,8 +158,8 @@ public class Diagram2_Editor extends DefaultNodeEditor {
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
       ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
-      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "mainNodes", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
-      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "nodeConnectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getChildren(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 8794120090374242825l, "mainNodes")), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getChildren(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233314l, 5540569706413713166l, "nodeConnectors")), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }

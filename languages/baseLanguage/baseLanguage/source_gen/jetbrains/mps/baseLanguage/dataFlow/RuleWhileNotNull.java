@@ -11,23 +11,25 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleWhileNotNull extends DataFlowConstructor {
   public RuleWhileNotNull() {
   }
   public boolean isApplicable(SNode node) {
-    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
+    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.WhileStatement";
   }
   public void performActions(Program o, SNode node) {
     List<SNode> result = new ArrayList<SNode>();
-    NullableUtil.getAndExpressions(SLinkOperations.getTarget(node, "condition", true), result);
+    NullableUtil.getAndExpressions(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, 1076505808688l, "condition")), result);
     for (SNode condition : result) {
-      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
         if (notNullNode != null) {
           {
             Object object = condition;

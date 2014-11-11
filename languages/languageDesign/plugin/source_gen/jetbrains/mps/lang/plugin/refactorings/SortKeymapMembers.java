@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,15 +27,15 @@ public class SortKeymapMembers extends BaseRefactoring {
   }
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    List<SNode> copy = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "shortcutChange", true));
-    ListSequence.fromList(SLinkOperations.getTargets(node, "shortcutChange", true)).clear();
-    ListSequence.fromList(SLinkOperations.getTargets(node, "shortcutChange", true)).addSequence(ListSequence.fromList(copy).sort(new ISelector<SNode, Boolean>() {
+    List<SNode> copy = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, 1562714432501166199l, "shortcutChange")));
+    ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, 1562714432501166199l, "shortcutChange"))).clear();
+    ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1562714432501166197l, 1562714432501166199l, "shortcutChange"))).addSequence(ListSequence.fromList(copy).sort(new ISelector<SNode, Boolean>() {
       public Boolean select(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616734266l, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"));
       }
     }, true).alsoSort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "action", false), "name");
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l, "action")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true));
   }

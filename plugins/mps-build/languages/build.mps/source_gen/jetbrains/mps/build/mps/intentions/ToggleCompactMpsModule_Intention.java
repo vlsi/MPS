@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ToggleCompactMpsModule_Intention implements IntentionFactory {
@@ -55,10 +57,10 @@ public class ToggleCompactMpsModule_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "compact") ? "Unfold " + SPropertyOperations.getString(node, "name") : "Fold " + SPropertyOperations.getString(node, "name"));
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact")) ? "Unfold " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : "Fold " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "compact", "" + (!(SPropertyOperations.getBoolean(node, "compact"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact")))));
     }
     public IntentionDescriptor getDescriptor() {
       return ToggleCompactMpsModule_Intention.this;

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
@@ -14,7 +16,7 @@ public class TrivialModelId_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module) {
-    String modelName = SPropertyOperations.getString(thisNode, "modelName") + "@proxy";
+    String modelName = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546942789835l, 9032177546942789839l, "modelName")) + "@proxy";
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
     SModel rv = module.createTransientModel(mr);
     module.addModelToKeep(mr, true);

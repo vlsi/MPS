@@ -17,15 +17,15 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.textGen.TextGenBuffer;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultTextGenDescriptor implements TextGenDescriptor {
   @Override
   public void doGenerateText(@NotNull SNode node, @NotNull TextGenBuffer buffer) {
     buffer.append("<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>");
-    buffer.foundError("No textgen for " + node.getConcept().getQualifiedName() + " in " + SNodeUtil.getDebugText(node), node, null);
+    buffer.foundError("No textgen for " + node.getConcept().getQualifiedName() + " in " + SNodeOperations.getDebugText(node), node, null);
   }
 
   @NotNull

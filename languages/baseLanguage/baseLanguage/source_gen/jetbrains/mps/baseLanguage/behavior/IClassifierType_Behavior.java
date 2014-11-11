@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils;
@@ -32,8 +34,8 @@ public class IClassifierType_Behavior {
     // this cache is safe, more complicated caches - think about it 
     Tuples._2<SNode, List<SNode>> cacheKey = MultiTuple.<SNode,List<SNode>>from(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassifier_7405920559687237513", new Object[]{}), new ArrayList<SNode>());
     for (SNode typeParameter : BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) {
-      if (SNodeOperations.isInstanceOf(typeParameter, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        ListSequence.fromList(cacheKey._1()).addElement(SLinkOperations.getTarget(SNodeOperations.cast(typeParameter, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+      if (SNodeOperations.isInstanceOf(typeParameter, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
+        ListSequence.fromList(cacheKey._1()).addElement(SLinkOperations.getTarget(SNodeOperations.cast(typeParameter, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")));
       } else {
         ListSequence.fromList(cacheKey._1()).addElement(typeParameter);
         // in pure language i don't need this things =(. Main problem here is: classifier.getThisType() != classifier.getThisType() 
@@ -45,7 +47,7 @@ public class IClassifierType_Behavior {
         IClassifierType_Behavior.call_populateMembers_7405920559687241253(thisNode, scope, thisNode);
         return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IClassifierMember");
+            return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
           }
         });
       }

@@ -12,6 +12,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,22 +22,21 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.List;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -58,7 +59,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not inside macro 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.AbstractMacro", false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
       return false;
     }
     //  in root template - ok 
@@ -66,20 +67,20 @@ public class AttachMappingLabel_Action extends BaseAction {
       return true;
     }
     //  in in-line template - ok 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null) {
       return true;
     }
     //  in in-line template with context 
-    if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", false, false) != null) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), false, false) != null) {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
         }
       }) != null;
     }
     //  in template fragment - ok 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
+      return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
         }
@@ -117,15 +118,19 @@ public class AttachMappingLabel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
-      SModule module = operationContext.getModule();
-      List<SNode> mappings;
+      SModule module = SNodeOperations.getModel(node).getModule();
+      Iterable<SNode> mappings;
       if (module instanceof Generator) {
-        mappings = (List<SNode>) GenerationFacade.getOwnMappings((Generator) module);
+        Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
+        mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
+          public Iterable<SNode> translate(SModel it) {
+            return SModelOperations.roots(it, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+          }
+        });
       } else {
-        mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+        mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       }
-      final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2<SNode, String>() {
+      final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
@@ -140,7 +145,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2_label_it = ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
+                        this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"))).iterator();
                       case 3:
                         if (!(this._2_label_it.hasNext())) {
                           this.__CP__ = 1;
@@ -150,7 +155,7 @@ __switch__:
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, "name"))) {
+                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
                           this.__CP__ = 6;
                           break;
                         }
@@ -158,7 +163,7 @@ __switch__:
                         break;
                       case 7:
                         this.__CP__ = 3;
-                        this.yield(SPropertyOperations.getString(_2_label, "name"));
+                        this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
                         return true;
                       case 0:
                         this.__CP__ = 2;

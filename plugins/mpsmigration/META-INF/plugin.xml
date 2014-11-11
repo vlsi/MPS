@@ -9,13 +9,12 @@
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>3.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="136.1"/>
+  <idea-version since-build="139.1"/>
     
   <depends>jetbrains.mps.ide.modelchecker</depends>
   <depends>jetbrains.mps.ide.java</depends>
   <depends>jetbrains.mps.console</depends>
 
-  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration31/Migration31Actions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration32/Migration32Actions.xml" xpointer="xpointer(/components/*)"/>
     
   <extensions defaultExtensionNs="com.intellij">

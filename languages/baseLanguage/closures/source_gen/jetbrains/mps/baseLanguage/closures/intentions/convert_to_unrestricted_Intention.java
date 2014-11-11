@@ -14,6 +14,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -69,15 +71,15 @@ public class convert_to_unrestricted_Intention implements IntentionFactory {
       return "Convert to Unrestricted Function Type";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode uft = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
-      List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
+      SNode uft = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"));
+      List<SNode> ptypes = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"));
       for (SNode pt : ptypes) {
-        ListSequence.fromList(SLinkOperations.getTargets(uft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
+        ListSequence.fromList(SLinkOperations.getChildren(uft, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).addElement(SNodeOperations.detachNode(pt));
       }
-      SLinkOperations.setTarget(uft, "resultType", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "resultType", true)), true);
-      List<SNode> ttypes = SLinkOperations.getTargets(node, "throwsType", true);
+      SLinkOperations.setTarget(uft, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"), SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"))));
+      List<SNode> ttypes = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"));
       for (SNode tt : ttypes) {
-        ListSequence.fromList(SLinkOperations.getTargets(uft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
+        ListSequence.fromList(SLinkOperations.getChildren(uft, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"))).addElement(SNodeOperations.detachNode(tt));
       }
     }
     public IntentionDescriptor getDescriptor() {

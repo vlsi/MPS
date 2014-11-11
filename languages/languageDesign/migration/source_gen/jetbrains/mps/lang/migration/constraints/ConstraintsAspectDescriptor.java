@@ -5,6 +5,7 @@ package jetbrains.mps.lang.migration.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -13,18 +14,36 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
         return new DataDependencyReference_Constraints();
-      case 4:
-        return new PropertyPatternVariableReference_Constraints();
       case 1:
         return new LinkPatternVariableReference_Constraints();
-      case 2:
-        return new MigrateOperation_Constraints();
       case 3:
         return new NodePatternVariableReference_Constraints();
+      case 4:
+        return new PropertyPatternVariableReference_Constraints();
+      case 2:
+        return new ListPatternVariableReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"};
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 7153805464398780214l) {
+      return new DataDependencyReference_Constraints();
+    }
+    if (id == 3220955710218421371l) {
+      return new LinkPatternVariableReference_Constraints();
+    }
+    if (id == 7527743013695058339l) {
+      return new NodePatternVariableReference_Constraints();
+    }
+    if (id == 3220955710218030028l) {
+      return new PropertyPatternVariableReference_Constraints();
+    }
+    if (id == 6129256022887940218l) {
+      return new ListPatternVariableReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
+  }
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"};
 }

@@ -205,6 +205,14 @@ public class EventsCollector {
     });
   }
 
+  protected void clearCollectedEvents() {
+    checkDisposed();
+
+    if (myEvents.isEmpty()) return;
+    ModelAccess.instance().checkWriteAccess();
+    myEvents.clear();
+  }
+
   protected void eventsHappened(List<SModelEvent> events) {
 
   }

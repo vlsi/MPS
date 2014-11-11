@@ -40,7 +40,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell.setCellId("Collection_185r4c_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createCollection_185r4c_a0(editorContext, node));
@@ -51,7 +51,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_185r4c_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_185r4c_b0a(editorContext, node));
@@ -70,7 +70,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_side");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -128,7 +128,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -155,7 +155,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_transformTag");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -171,9 +171,9 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " //");
     editorCell.setCellId("Constant_185r4c_f0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -187,7 +187,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_description");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -203,7 +203,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_185r4c_b1a(editorContext, node));
@@ -217,7 +217,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_185r4c_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_185r4c_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_185r4c_b1b0(editorContext, node));
@@ -235,7 +235,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_a1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_185r4c_a0b1a(editorContext, node));
     return editorCell;
@@ -250,7 +250,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_b1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_185r4c_b1b1a(editorContext, node));
@@ -283,7 +283,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_185r4c_c1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -292,7 +292,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_d1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_185r4c_a3b1a(editorContext, node));
     return editorCell;
@@ -307,7 +307,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_185r4c_b4b1a(editorContext, node));
@@ -362,7 +362,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_185r4c_a1e1b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no common variables>");
       return editorCell;
@@ -372,7 +372,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_f1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a5b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_185r4c_b5b1a(editorContext, node));
@@ -386,8 +386,8 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "....................................");
     editorCell.setCellId("Constant_185r4c_b5b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -396,7 +396,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_g1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a6b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_185r4c_b6b1a(editorContext, node));
@@ -429,7 +429,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_185r4c_h1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -438,7 +438,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_i1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_185r4c_a8b1a(editorContext, node));
     return editorCell;
@@ -453,7 +453,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_185r4c_j1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_185r4c_a9b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_185r4c_b9b1a(editorContext, node));

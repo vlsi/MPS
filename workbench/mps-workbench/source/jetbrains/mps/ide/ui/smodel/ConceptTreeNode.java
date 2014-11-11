@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,18 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
+  private final Project myProject;
   private SNode myNode;
   private boolean myInitialized;
 
@@ -33,26 +36,18 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     return true;
   }
 
-  public ConceptTreeNode(IOperationContext operationContext, SNode node) {
-    super(operationContext);
+  public ConceptTreeNode(Project project, SNode node) {
+    myProject = project;
     myNode = node;
 
-    SNode concept = getDeclarationNode();
-    if (concept != null) {
-      setIcon(IconManager.getIconFor(concept));
-      setNodeIdentifier(concept.getName());
-    } else {
-      setNodeIdentifier(myNode.getConcept().getQualifiedName());
-    }
+    SConcept concept = myNode.getConcept();
+    setIcon(IconManager.getIcon(concept));
+    setNodeIdentifier(concept.getName());
   }
 
   @Override
   public SNode getSNode() {
     return myNode;
-  }
-
-  public SNode getDeclarationNode() {
-    return ((jetbrains.mps.smodel.SNode) myNode).getConceptDeclarationNode();
   }
 
   @Override
@@ -74,13 +69,14 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
 
   @Override
   public void doubleClick() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    // XXX doubleClick shall be external, so that neither ConceptTreeNode nor ReferenceTreeNode shall know about project and writeInEDT
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode concept = getSNode();
-        if (concept == null || !SNodeUtil.isAccessible(concept, MPSModuleRepository.getInstance())) return;
+        if (concept == null || !SNodeUtil.isAccessible(concept, myProject.getRepository())) return;
         // TODO: use node pointers here
-        NavigationSupport.getInstance().openNode(getOperationContext(), concept, true, true);
+        NavigationSupport.getInstance().openNode(myProject, concept, true, true);
       }
     });
   }

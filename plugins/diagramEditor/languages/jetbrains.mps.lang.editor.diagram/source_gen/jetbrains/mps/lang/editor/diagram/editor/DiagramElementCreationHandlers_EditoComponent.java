@@ -36,7 +36,7 @@ public class DiagramElementCreationHandlers_EditoComponent implements ConceptEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on create:");
     editorCell.setCellId("Constant_6gkixf_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

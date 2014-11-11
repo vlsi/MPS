@@ -5,6 +5,7 @@ package jetbrains.mps.core.xml.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -46,9 +47,63 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 6:
         return new XmlDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6666499814681299061l) {
+      return new XmlProcessingInstruction_Constraints();
+    }
+    if (id == 6666499814681415858l) {
+      return new XmlElement_Constraints();
+    }
+    if (id == 6666499814681541921l) {
+      return new XmlEntityRefValue_Constraints();
+    }
+    if (id == 6666499814681541919l) {
+      return new XmlTextValue_Constraints();
+    }
+    if (id == 6666499814681447923l) {
+      return new XmlAttribute_Constraints();
+    }
+    if (id == 6666499814681299051l) {
+      return new XmlContent_Constraints();
+    }
+    if (id == 6666499814681299066l) {
+      return new XmlCDATA_Constraints();
+    }
+    if (id == 1622293396949036126l) {
+      return new XmlCommentLine_Constraints();
+    }
+    if (id == 1622293396949069645l) {
+      return new XmlEntityRef_Constraints();
+    }
+    if (id == 1622293396948952339l) {
+      return new XmlText_Constraints();
+    }
+    if (id == 3080189811177199750l) {
+      return new XmlCharRef_Constraints();
+    }
+    if (id == 3080189811177215998l) {
+      return new XmlCharRefValue_Constraints();
+    }
+    if (id == 6666499814681541916l) {
+      return new XmlValuePart_Constraints();
+    }
+    if (id == 7604553062773750440l) {
+      return new XmlWhitespace_Constraints();
+    }
+    if (id == 2133624044437898907l) {
+      return new XmlDoctypeDeclaration_Constraints();
+    }
+    if (id == 2133624044438029119l) {
+      return new XmlExternalId_Constraints();
+    }
+    if (id == 5228786488744996718l) {
+      return new XmlDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
 }

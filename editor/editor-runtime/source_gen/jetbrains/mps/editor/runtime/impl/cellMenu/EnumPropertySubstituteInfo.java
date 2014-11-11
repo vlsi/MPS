@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
@@ -27,19 +29,19 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   }
   @Override
   protected List<SubstituteAction> createActions() {
-    SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, "dataType", false);
-    List<SubstituteAction> actions = ListSequence.fromList(new ArrayList<SubstituteAction>(ListSequence.fromList(SLinkOperations.getTargets(enumDataType, "member", true)).count()));
-    for (final SNode enumMemberDeclaration : SLinkOperations.getTargets(enumDataType, "member", true)) {
+    SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
+    List<SubstituteAction> actions = ListSequence.fromList(new ArrayList<SubstituteAction>(ListSequence.fromList(SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))).count()));
+    for (final SNode enumMemberDeclaration : SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))) {
       ListSequence.fromList(actions).addElement(new AbstractNodeSubstituteAction(null, enumMemberDeclaration, myNode) {
         @Override
         public String getMatchingText(String pattern) {
-          return SPropertyOperations.getString(enumMemberDeclaration, "externalValue");
+          return SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
         }
         @Override
         protected SNode doSubstitute(@Nullable EditorContext editorContext, String pattern) {
-          String propertyName = SPropertyOperations.getString(myPropertyDeclaration, "name");
+          String propertyName = SPropertyOperations.getString(myPropertyDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           assert propertyName != null;
-          SNodeAccessUtil.setProperty(getSourceNode(), propertyName, SPropertyOperations.getString(enumMemberDeclaration, "internalValue"));
+          SNodeAccessUtil.setProperty(getSourceNode(), propertyName, SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue")));
 
           if (editorContext != null) {
             // TODO use editorContext.select(getSourceNode(), propertyName, -1 /* end */); 

@@ -7,15 +7,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AssertMatch_DataFlow extends DataFlowBuilder {
   public AssertMatch_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode before : SLinkOperations.getTargets(_context.getNode(), "before", true)) {
+    for (SNode before : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979305365l, "before"))) {
       _context.getBuilder().build((SNode) before);
     }
-    for (SNode after : SLinkOperations.getTargets(_context.getNode(), "after", true)) {
+    for (SNode after : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979322383l, "after"))) {
       _context.getBuilder().build((SNode) after);
     }
   }

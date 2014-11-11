@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,9 +55,9 @@ public class AddProducer_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     final SNode nodeFinal = node;
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "configuration", true), "persistentConfiguration", false) == nodeFinal;
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration")) == nodeFinal;
       }
     }).isEmpty();
   }
@@ -75,12 +77,12 @@ public class AddProducer_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Create Producer for " + SPropertyOperations.getString(node, "name");
+      return "Create Producer for " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode producer = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
-      SLinkOperations.setTarget(producer, "configuration", createPersistentConfigurationType_wy7zix_a0b0a(node), true);
-      SPropertyOperations.set(producer, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
+      SNode producer = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), null);
+      SLinkOperations.setTarget(producer, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration"), createPersistentConfigurationType_wy7zix_a0b0a(node));
+      SPropertyOperations.set(producer, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
       SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), producer, true, false);
     }
@@ -91,7 +93,7 @@ public class AddProducer_Intention implements IntentionFactory {
   private static SNode createPersistentConfigurationType_wy7zix_a0b0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, false);
-    n1.setReferenceTarget("persistentConfiguration", (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (SNode) p0);
     return n1;
   }
 }

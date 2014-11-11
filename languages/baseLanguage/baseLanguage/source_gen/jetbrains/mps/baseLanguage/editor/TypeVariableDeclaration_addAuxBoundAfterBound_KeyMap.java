@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
@@ -51,7 +53,7 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
 
       // Selected node should be within TypeVariableDeclaration 
       SNode selectedNode = ListSequence.fromList(selectedNodes).first();
-      SNode typeVarDeclaration = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
+      SNode typeVarDeclaration = SNodeOperations.getNodeAncestor(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), true, false);
       if (typeVarDeclaration == null) {
         return false;
       }
@@ -66,8 +68,8 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
       return nextCellNode != null && nextCellNode != typeVarDeclaration;
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode typeVarDeclaration = SNodeOperations.getAncestor(ListSequence.fromList(selectedNodes).first(), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
-      SNodeFactoryOperations.addNewChild(typeVarDeclaration, "auxBounds", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode typeVarDeclaration = SNodeOperations.getNodeAncestor(ListSequence.fromList(selectedNodes).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), true, false);
+      SNodeFactoryOperations.addNewChild(typeVarDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1215091156086l, "auxBounds"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
     public String getKeyStroke() {
       return " &";

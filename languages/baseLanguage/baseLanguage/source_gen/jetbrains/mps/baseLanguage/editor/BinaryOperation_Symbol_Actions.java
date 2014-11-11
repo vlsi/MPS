@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
@@ -30,9 +32,9 @@ public class BinaryOperation_Symbol_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+      SNode newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
       if (newExpression == null) {
-        newExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+        newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
       }
       SNodeOperations.replaceWithAnother(node, newExpression);
       editorContext.flushEvents();
@@ -59,9 +61,9 @@ public class BinaryOperation_Symbol_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+      SNode newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
       if (newExpression == null) {
-        newExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+        newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
       }
       SNodeOperations.replaceWithAnother(node, newExpression);
       editorContext.flushEvents();

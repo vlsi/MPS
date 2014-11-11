@@ -4,14 +4,16 @@ package jetbrains.mps.lang.dataFlow.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DataFlowBuilderDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, 1206442096288l, "conceptDeclaration"));
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, 1206442096288l, "conceptDeclaration"), baseConcept);
   }
 }

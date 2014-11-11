@@ -33,8 +33,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.action.BaseAction;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,7 +49,7 @@ import java.util.Set;
 
 public class AddMissingDependencyAction extends BaseAction {
 
-  protected static Log log = LogFactory.getLog(AddMissingDependencyAction.class);
+  protected static Logger log = LogManager.getLogger(AddMissingDependencyAction.class);
 
   public AddMissingDependencyAction() {
     super("Add Missing Dependency", "", null);
@@ -145,9 +145,7 @@ public class AddMissingDependencyAction extends BaseAction {
       }
 
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
-      }
+      log.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
     }
 
   }
@@ -171,9 +169,7 @@ public class AddMissingDependencyAction extends BaseAction {
       boolean enabled = isApplicable(e);
       this.setEnabledState(e.getPresentation(), enabled);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameMethod", t);
-      }
+      log.error("User's action doUpdate method failed. Action:" + "RenameMethod", t);
       this.disable(e.getPresentation());
     }
   }

@@ -144,9 +144,9 @@ public class ModelDiffTool implements DiffTool {
     if (model == null) {
       return null;
     }
-    int size = ListSequence.fromList(SModelOperations.getRoots(model, null)).count();
+    int size = ListSequence.fromList(SModelOperations.roots(model, null)).count();
     assert size <= 1;
-    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(model, null)).getElement(0).getNodeId()));
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.roots(model, null)).getElement(0).getNodeId()));
 
   }
   @Nullable
@@ -164,9 +164,9 @@ public class ModelDiffTool implements DiffTool {
       }
       return null;
     }
-    int size = ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).count();
+    int size = ListSequence.fromList(SModelOperations.roots(diskModel, null)).count();
     assert size <= 1;
-    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).getElement(0).getNodeId()));
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.roots(diskModel, null)).getElement(0).getNodeId()));
   }
   protected static Logger LOG = LogManager.getLogger(ModelDiffTool.class);
 }

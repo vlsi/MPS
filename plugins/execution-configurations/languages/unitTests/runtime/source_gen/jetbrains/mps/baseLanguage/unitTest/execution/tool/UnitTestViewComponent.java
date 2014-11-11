@@ -10,9 +10,8 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import com.intellij.openapi.ui.Splitter;
@@ -57,12 +56,12 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final Project myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-  public UnitTestViewComponent(Project project, @NotNull IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
+  public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     myProject = project;
     myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
-    myTreeComponent = new TestTree(myTestState, context, this);
+    myTreeComponent = new TestTree(myTestState, ProjectHelper.toMPSProject(project), this);
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
     myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 

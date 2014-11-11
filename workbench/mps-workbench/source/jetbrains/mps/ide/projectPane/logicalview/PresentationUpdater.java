@@ -44,9 +44,6 @@ public class PresentationUpdater<T extends MPSTreeNode> implements Runnable {
   }
 
   protected boolean isValid(T treeNode) {
-    if (treeNode.getTree() == null) return false;
-
-    //module has been already removed
-    return treeNode.getOperationContext().isValid();
+    return treeNode.getTree() != null;
   }
 }

@@ -4,87 +4,90 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
+import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class ModelCheckerIssueFinder implements IFinder {
+  private final List<SpecificChecker> myExtraCheckers;
+
   public ModelCheckerIssueFinder() {
+    myExtraCheckers = null;
+  }
+  public ModelCheckerIssueFinder(List<SpecificChecker> extraCheckers) {
+    myExtraCheckers = extraCheckers;
+  }
+  public ModelCheckerIssueFinder(SpecificChecker... extraCheckers) {
+    this(Arrays.asList(extraCheckers));
   }
   protected List<SpecificChecker> getSpecificCheckers() {
-    return null;
+    return myExtraCheckers;
   }
   @Override
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     IHolder objectHolder = searchQuery.getObjectHolder();
-    IOperationContext operationContext;
-    List<SModel> models;
-    List<SModule> modules = null;
+    final SearchScope scope = searchQuery.getScope();
+    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+    List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     if (objectHolder instanceof ModelsHolder) {
       ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
-      operationContext = modelsHolder.getOperationContext();
-      models = Sequence.fromIterable(((Iterable<SModelReference>) modelsHolder.getObject())).select(new ISelector<SModelReference, SModel>() {
-        public SModel select(SModelReference ref) {
-          return SModelRepository.getInstance().getModelDescriptor(ref);
+      for (SModelReference ref : modelsHolder.getObject()) {
+        SModel resolved = scope.resolve(ref);
+        if (resolved != null) {
+          ListSequence.fromList(models).addElement(resolved);
         }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it) {
-          return it != null;
-        }
-      }).toListSequence();
+      }
     } else if (objectHolder instanceof ModulesHolder) {
       ModulesHolder modulesHolder = (ModulesHolder) objectHolder;
-      operationContext = modulesHolder.getOperationContext();
-      models = ModelCheckerUtils.getModelDescriptors(modulesHolder.getObject());
-      modules = modulesHolder.getObject();
+      Set<SModule> visibleModules = IterableUtil.asSet(scope.getModules());
+      visibleModules.retainAll(modulesHolder.getObject());
+      ListSequence.fromList(models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(visibleModules)));
+      ListSequence.fromList(modules).addSequence(ListSequence.fromList(modulesHolder.getObject()));
     } else {
       throw new IllegalArgumentException();
     }
 
-    int work = ((modules != null ? ListSequence.fromList(modules).count() : 0)) + ListSequence.fromList(models).count() + 1;
+    int work = ListSequence.fromList(modules).count() + ListSequence.fromList(models).count() + 1;
     monitor.start("Checking", work);
 
     try {
-      ModuleChecker moduleChecker = null;
-      if (modules != null) {
-        moduleChecker = new ModuleChecker();
+      SearchResults<ModelCheckerIssue> rv = new SearchResults<ModelCheckerIssue>();
+      if (!(ListSequence.fromList(modules).isEmpty())) {
+        ModuleChecker moduleChecker = new ModuleChecker();
         for (SModule module : ListSequence.fromList(modules)) {
           moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
           if (monitor.isCanceled()) {
             break;
           }
         }
+        rv.addAll(moduleChecker.getSearchResults());
       }
       monitor.advance(0);
-      ModelChecker modelChecker;
-      if (moduleChecker != null) {
-        modelChecker = new ModelChecker(operationContext, moduleChecker.getSearchResults());
-      } else {
-        modelChecker = new ModelChecker(operationContext);
-      }
+
+      ModelChecker modelChecker = new ModelChecker();
       modelChecker.setSpecificCheckers(getSpecificCheckers());
       monitor.advance(1);
-
       for (SModel modelDescriptor : ListSequence.fromList(models)) {
         modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }
       }
-      return modelChecker.getSearchResults();
+      rv.addAll(modelChecker.getSearchResults());
+      return rv;
     } finally {
       monitor.done();
     }

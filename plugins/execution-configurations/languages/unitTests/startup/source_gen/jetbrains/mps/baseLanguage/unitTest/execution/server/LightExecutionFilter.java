@@ -7,9 +7,9 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class LightExecutionFilter implements Filter {
@@ -23,21 +23,21 @@ public class LightExecutionFilter implements Filter {
       public void run() {
         SNode testNode = testNodeWrapper.getNode();
         SNode rootNode = SNodeOperations.getContainingRoot(testNode);
-        if (!(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"))) {
+        if (!(SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1215620452633l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable")))) {
           result[0] = new Filter.FilterException("The test concept must be an instance on ITestable concept. Test " + testNodeWrapper.getName() + " is ignored.");
         }
-        if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
+        if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo")), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
           result[0] = new Filter.FilterException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
         }
-        if (SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+        if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
 
         }
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
-        if (SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+        if (SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
 

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -14,14 +16,14 @@ public class PasteWrappers_Behavior {
   }
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode nodeFactory : SLinkOperations.getTargets(thisNode, "wrapper", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, "sourceConcept", false));
+    for (SNode nodeFactory : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135252814l, 1221135321084l, "wrapper"))) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(nodeFactory, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, 1221135563864l, "sourceConcept")));
     }
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode pasteWrapper = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PasteWrapper", null);
-    SLinkOperations.setTarget(pasteWrapper, "sourceConcept", baseConcept, false);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "wrapper", true)).addElement(pasteWrapper);
+    SNode pasteWrapper = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, "jetbrains.mps.lang.actions.structure.PasteWrapper"));
+    SLinkOperations.setTarget(pasteWrapper, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, 1221135563864l, "sourceConcept"), baseConcept);
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135252814l, 1221135321084l, "wrapper"))).addElement(pasteWrapper);
   }
 }

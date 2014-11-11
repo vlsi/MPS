@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -44,7 +46,7 @@ public class addHandler_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "handler", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140365l, "handler")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)", "2264311582634140824");
@@ -65,7 +67,7 @@ public class addHandler_Intention implements IntentionFactory {
       return "Add handler";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "handler", SNodeFactoryOperations.createNewNode("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", null), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140365l, "handler"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140353l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler"), null));
     }
     public IntentionDescriptor getDescriptor() {
       return addHandler_Intention.this;

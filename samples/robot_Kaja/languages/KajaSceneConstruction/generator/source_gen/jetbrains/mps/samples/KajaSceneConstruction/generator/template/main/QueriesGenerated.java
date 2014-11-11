@@ -5,68 +5,70 @@ package jetbrains.mps.samples.KajaSceneConstruction.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_3210697320273563062(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273563071(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648347(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648356(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273608239(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273608248(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648397(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648406(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614396(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614405(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614416(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614425(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648551(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648560(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614493(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614502(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614513(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273614524(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648470(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "col");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l, "col"));
   }
   public static Object propertyMacro_GetPropertyValue_3210697320273648479(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "row");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l, "row"));
   }
 }

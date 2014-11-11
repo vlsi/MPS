@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -30,7 +32,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
     myMetaBlock = block;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myText = SPropertyOperations.getString(block, "name");
+        myText = SPropertyOperations.getString(block, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         myIcon = IconManager.getIconFor(myMetaBlock);
       }
     });
@@ -47,11 +49,11 @@ public class MyBlockCreationAction implements PaletteToggleAction {
           }
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SNode newBlockInstance = SConceptOperations.createNewNode("jetbrains.mps.testHybridEditor.structure.BlockInstance", null);
-              SLinkOperations.setTarget(newBlockInstance, "metaBlock", myMetaBlock, false);
-              SPropertyOperations.set(newBlockInstance, "x", "" + (event.x()));
-              SPropertyOperations.set(newBlockInstance, "y", "" + (event.y()));
-              ListSequence.fromList(SLinkOperations.getTargets(((SNode) myDiagramCell.getSNode()), "newBlocks", true)).addElement(newBlockInstance);
+              SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
+              SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084777l, "metaBlock"), myMetaBlock);
+              SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084745l, "x"), "" + (event.x()));
+              SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084746l, "y"), "" + (event.y()));
+              ListSequence.fromList(SLinkOperations.getChildren(((SNode) myDiagramCell.getSNode()), MetaAdapterFactory.getContainmentLink(new UUID(-7982035075869357830l, -5979686021354407916l), 725186580883451585l, 2353136177974080694l, "newBlocks"))).addElement(newBlockInstance);
             }
           });
           event.consume();

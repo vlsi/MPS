@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,21 +16,21 @@ public class RefExpressionParamUtil {
   public RefExpressionParamUtil() {
   }
   public static void xxx(SNode node, SNode ref, StyledTextPrinter styledText, boolean showParameters) {
-    styledText.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")).append("<").append(SPropertyOperations.getString(ref, "name")).append(">(");
+    styledText.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"))).append("<").append(SPropertyOperations.getString(ref, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))).append(">(");
     String target = "no_target";
-    boolean isList = SPropertyOperations.getBoolean(SLinkOperations.getTarget(ref, "target", true), "allowMultiple");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {
-      target = ((isList ? "nlist" : "node")) + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), "concept", false), "name") + ">";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.ModelTarget")) {
+    boolean isList = SPropertyOperations.getBoolean(SLinkOperations.getTarget(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getProperty(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310761l, 6895093993902310999l, "allowMultiple"));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget"))) {
+      target = ((isList ? "nlist" : "node")) + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget")), MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, 6895093993902310806l, "concept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ">";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310762l, "jetbrains.mps.lang.refactoring.structure.ModelTarget"))) {
       target = (isList ? "list<model>" : "model");
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.ModuleTarget")) {
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310763l, "jetbrains.mps.lang.refactoring.structure.ModuleTarget"))) {
       target = (isList ? "list<SModule>" : "SModule");
     }
     styledText.append(target).append(" target");
     if (showParameters) {
       styledText.append(" : MPSProject project");
-      for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(ref, "parameter", true))) {
-        styledText.append(", ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{})).append(" ").append(SPropertyOperations.getString(param, "name"));
+      for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ref, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902236376l, "parameter")))) {
+        styledText.append(", ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_getPresentation_1213877396640", new Object[]{})).append(" ").append(SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     }
     styledText.append(")");

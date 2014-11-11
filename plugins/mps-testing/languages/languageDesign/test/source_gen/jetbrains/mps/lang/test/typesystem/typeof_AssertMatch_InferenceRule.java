@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,14 +20,14 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
   public typeof_AssertMatch_InferenceRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true))) {
+    for (SNode node : ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979305365l, "before")))) {
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433132", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433134", true), (SNode) _quotation_createNode_qwyt5f_a0a0a0b(), false, true, _info_12389875345);
       }
     }
-    for (SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true))) {
+    for (SNode node : ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979322383l, "after")))) {
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982429078", 0, null);
@@ -35,8 +37,8 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode nodeBefore;
       SNode nodeAfter;
-      Iterator<SNode> nodeBefore_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true)).iterator();
-      Iterator<SNode> nodeAfter_iterator = ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true)).iterator();
+      Iterator<SNode> nodeBefore_iterator = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979305365l, "before"))).iterator();
+      Iterator<SNode> nodeAfter_iterator = ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1211979288880l, 1211979322383l, "after"))).iterator();
       while (true) {
         if (!(nodeBefore_iterator.hasNext())) {
           break;

@@ -26,13 +26,13 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.STRIKE_OUT, ConceptFunctionParameter_Editor._StyleParameter_QueryFunction_q0ga01_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.AUTO_DELETABLE, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.STRIKE_OUT, 0, ConceptFunctionParameter_Editor._StyleParameter_QueryFunction_q0ga01_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_q0ga01_a1a(EditorContext editorContext, SNode node) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(node), "virtual_isDeprecated_1224609060727", new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), "virtual_isDeprecated_1224609060727", new Object[]{});
   }
 }

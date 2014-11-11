@@ -6,19 +6,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class OrRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getString_1222432436326", new Object[]{vars}) + "|" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getString_1222432436326", new Object[]{vars});
+    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left")), "virtual_getString_1222432436326", new Object[]{vars}) + "|" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right")), "virtual_getString_1222432436326", new Object[]{vars});
     return (OrRegexp_Behavior.call_inParentheses_1353467374623956858(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s);
   }
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return true;
   }
   public static boolean call_inParentheses_1353467374623956858(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"));
   }
 }

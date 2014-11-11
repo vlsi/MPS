@@ -9,9 +9,12 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,18 +24,18 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
   }
   public void applyRule(final SNode letRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 
-    SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "value", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
+    SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")), MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, 4939219901991602080l, "value")), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
     Map<String, SNode> map = MapSequence.fromMap(new HashMap<String, SNode>());
-    for (SNode t : SNodeOperations.getDescendants(type, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", false, new String[]{})) {
+    for (SNode t : SNodeOperations.getNodeDescendants(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"), false, new SConcept[]{})) {
       final SNode v_typevar_464844656889754475 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode varNode = typeCheckingContext.getRepresentative(v_typevar_464844656889754475);
-      if (!(MapSequence.fromMap(map).containsKey(SPropertyOperations.getString(t, "name")))) {
-        MapSequence.fromMap(map).put(SPropertyOperations.getString(t, "name"), SNodeOperations.cast(typeCheckingContext.getRepresentative(v_typevar_464844656889754475), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
+      if (!(MapSequence.fromMap(map).containsKey(SPropertyOperations.getString(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
+        MapSequence.fromMap(map).put(SPropertyOperations.getString(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SNodeOperations.cast(typeCheckingContext.getRepresentative(v_typevar_464844656889754475), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")));
       } else {
         {
           SNode _nodeToCheck_1029348928467 = letRef;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "464844656889754494", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, "name")), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(v_typevar_464844656889754475), (SNode) MapSequence.fromMap(map).get(SPropertyOperations.getString(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), _info_12389875345);
         }
       }
       SNodeOperations.replaceWithAnother(t, varNode);

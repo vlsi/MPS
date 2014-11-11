@@ -17,6 +17,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -71,11 +73,11 @@ public class ShowGenerationPlan_Action extends BaseAction {
       final Wrappers._T<SNode> command = new Wrappers._T<SNode>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          command.value = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ShowGenPlan", null);
-          SLinkOperations.setTarget(command.value, "targetModel", SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ModelReference", null), true);
-          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "fqName", ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
-          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "name", SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
-          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "stereotype", SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
+          command.value = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"));
+          SLinkOperations.setTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7820875636625377576l, "jetbrains.mps.console.ideCommands.structure.ModelReference")));
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel")), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393041554l, "fqName"), ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel")), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name"), SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel")), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"), SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
         }
       });
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value);

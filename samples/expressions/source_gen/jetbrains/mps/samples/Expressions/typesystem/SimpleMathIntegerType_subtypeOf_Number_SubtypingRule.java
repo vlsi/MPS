@@ -8,13 +8,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class SimpleMathIntegerType_subtypeOf_Number_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathIntegerType_subtypeOf_Number_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode integerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467209504078l, "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType"));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType";

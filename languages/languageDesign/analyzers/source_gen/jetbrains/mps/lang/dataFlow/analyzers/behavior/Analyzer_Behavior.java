@@ -4,6 +4,8 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ public class Analyzer_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getAnalyzerRunnerName_178770917832626025(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "AnalyzerRunner";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "AnalyzerRunner";
   }
   public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode thisNode) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
@@ -25,12 +27,12 @@ public class Analyzer_Behavior {
     return longName + "." + Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(thisNode);
   }
   public static String call_getAnalyzerName_178770917832626046(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "Analyzer";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "Analyzer";
   }
   public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode rule : SModelOperations.getRootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) {
-      if (SLinkOperations.getTarget(rule, "analyzer", false) == thisNode) {
+    for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
+      if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 4130591939054429248l, "analyzer")) == thisNode) {
         ListSequence.fromList(result).addElement(rule);
       }
     }

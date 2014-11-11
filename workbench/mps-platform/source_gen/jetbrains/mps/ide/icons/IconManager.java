@@ -13,8 +13,6 @@ import java.awt.Component;
 import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
@@ -27,10 +25,13 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -52,7 +53,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
 
-public class IconManager {
+public final class IconManager {
   public static final Logger LOG = LogManager.getLogger(IconManager.class);
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
@@ -70,7 +71,7 @@ public class IconManager {
       return 18;
     }
   };
-  public IconManager() {
+  private IconManager() {
   }
   public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
     return getIconFor(node, true);
@@ -79,68 +80,63 @@ public class IconManager {
     return getIconFor(node, false);
   }
   public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
-    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
-      @Override
-      public Icon compute() {
-        Icon mainIcon = null;
-        if (SNodeOperations.isUnknown(node)) {
-          return IdeIcons.UNKNOWN_ICON;
+    Icon mainIcon = null;
+    if (SNodeOperations.isUnknown(node)) {
+      return IdeIcons.UNKNOWN_ICON;
+    }
+    SNode concept = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node);
+    if ((concept != null)) {
+      Icon alternativeIcon = null;
+      try {
+        String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
+        if (alternativeIconPath != null) {
+          alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
         }
-        SNode concept = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node);
-        if ((concept != null)) {
-          Icon alternativeIcon = null;
-          try {
-            String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
-            if (alternativeIconPath != null) {
-              alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
-            }
-          } catch (Exception ignore) {
-          }
-          if (alternativeIcon != null) {
-            mainIcon = alternativeIcon;
-          } else {
-            mainIcon = IconManager.getIconForConcept(concept);
-          }
-        }
-        if (mainIcon == null) {
-          if (SNodeOperations.isRoot(node)) {
-            return IdeIcons.DEFAULT_ROOT_ICON;
-          } else {
-            return IdeIcons.DEFAULT_NODE_ICON;
-          }
-        }
-        SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
-        if (model == null || SNodeOperations.isModelDisposed(model)) {
-          return mainIcon;
-        }
-        if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && model.isReadOnly()) {
-          mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
-        }
-        RowIcon result = new RowIcon(2);
-        result.setIcon(mainIcon, 0);
-        if (!(withoutAdditional)) {
-          result.setIcon(BehaviorReflection.invokeVirtual(Icon.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{}), 1);
-        }
-        List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
-        if (markIcons != null) {
-          LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
-          layeredIcon.setIcon(result, 0);
-          for (int i = 0; i < markIcons.size(); i++) {
-            layeredIcon.setIcon(markIcons.get(i), i + 1);
-          }
-          return layeredIcon;
-        }
-        return result;
+      } catch (Exception ignore) {
       }
-    });
+      if (alternativeIcon != null) {
+        mainIcon = alternativeIcon;
+      } else {
+        mainIcon = IconManager.getIconForConcept(concept);
+      }
+    }
+    if (mainIcon == null) {
+      if (SNodeOperations.isRoot(node)) {
+        return IdeIcons.DEFAULT_ROOT_ICON;
+      } else {
+        return IdeIcons.DEFAULT_NODE_ICON;
+      }
+    }
+    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    if (model == null || SNodeOperations.isModelDisposed(model)) {
+      return mainIcon;
+    }
+    if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && model.isReadOnly()) {
+      mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
+    }
+    RowIcon result = new RowIcon(2);
+    result.setIcon(mainIcon, 0);
+    if (!(withoutAdditional)) {
+      result.setIcon(BehaviorReflection.invokeVirtual(Icon.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{}), 1);
+    }
+    List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+    if (markIcons != null) {
+      LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
+      layeredIcon.setIcon(result, 0);
+      for (int i = 0; i < markIcons.size(); i++) {
+        layeredIcon.setIcon(markIcons.get(i), i + 1);
+      }
+      return layeredIcon;
+    }
+    return result;
   }
   private static Icon getIconForConcept(SNode conceptDeclaration) {
     while (conceptDeclaration != null) {
-      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, "iconPath"));
+      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath")));
       if (icon != null) {
         return icon;
       }
-      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
     }
     return null;
   }
@@ -157,12 +153,22 @@ public class IconManager {
     }
     return null;
   }
+  public static Icon getIcon(SAbstractConcept concept) {
+    return getIconForConceptFQName(concept.getQualifiedName());
+  }
+  /**
+   * 
+   * 
+
+   * @deprecated use#getIcon(SAbstractConcept) instead
+   */
+  @Deprecated
   public static Icon getIconForConceptFQName(String conceptFQName) {
     SNode acd = SModelUtil.findConceptDeclaration(conceptFQName);
     SNode cd = null;
     Icon icon = null;
     if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
-      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       icon = getIconForConcept(cd);
     }
     if (icon == null) {

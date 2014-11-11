@@ -108,7 +108,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       myPackage = null;
       if (node != null) {
         SNode root = node.getContainingRoot();
-        myPackage = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
+        myPackage = SNodeAccessUtil.getProperty(root, SNodeUtil.propertyName_BaseConcept_virtualPackage);
       }
     }
 

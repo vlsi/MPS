@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class StringLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    return SPropertyOperations.getString(thisNode, "value");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
   }
   public static boolean call_isCorrect_1221565233201(SNode thisNode) {
     boolean isEscapeMode = false;
@@ -18,12 +20,12 @@ public class StringLiteral_Behavior {
     boolean isSymbolCodeMode = false;
     int digitNumber = 0;
     int unicodeDigitNumber = 0;
-    String value = SPropertyOperations.getString(thisNode, "value");
+    String value = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
     if (value == null) {
       return true;
     }
     for (int i = 0; i < value.length(); i++) {
-      char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
+      char c = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")).charAt(i);
       if (isEscapeMode) {
         if (c == 'u') {
           isUnicodeMode = true;

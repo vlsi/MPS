@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -41,11 +43,11 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
   }
   public void applyRule(final SNode editorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Language containingLanguage = as_e0tm27_a0a0a1(SNodeOperations.getModel(editorDeclaration).getModule(), Language.class);
-    if (containingLanguage == null || SLinkOperations.getTarget(editorDeclaration, "conceptDeclaration", false) == null) {
+    if (containingLanguage == null || SLinkOperations.getTarget(editorDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == null) {
       return;
     }
 
-    if (ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).isEmpty() && containingLanguage != SNodeOperations.getModel(SLinkOperations.getTarget(editorDeclaration, "conceptDeclaration", false)).getModule()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(editorDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).isEmpty() && containingLanguage != SNodeOperations.getModel(SLinkOperations.getTarget(editorDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration"))).getModule()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("conceptDeclaration");
@@ -54,9 +56,9 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
       return;
     }
 
-    final Set<SNode> editorHintsSet = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).select(new ISelector<SNode, SNode>() {
+    final Set<SNode> editorHintsSet = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getChildren(editorDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "hint", false);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 6822301196700715228l, 5944657839026714445l, "hint"));
       }
     }));
     Collection<SNode> duplicatingEditorDeclarations = CollectionSequence.fromCollection(new ArrayList<SNode>());
@@ -77,15 +79,15 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
       }
       SModel editorModel = LanguageAspect.EDITOR.get(nextLanguage);
       if (editorModel != null) {
-        CollectionSequence.fromCollection(duplicatingEditorDeclarations).addSequence(ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).where(new IWhereFilter<SNode>() {
+        CollectionSequence.fromCollection(duplicatingEditorDeclarations).addSequence(ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "conceptDeclaration", false) == SLinkOperations.getTarget(editorDeclaration, "conceptDeclaration", false) && it != editorDeclaration;
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == SLinkOperations.getTarget(editorDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) && it != editorDeclaration;
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SetSequence.fromSet(editorHintsSet).count() == ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).select(new ISelector<SNode, SNode>() {
+            return SetSequence.fromSet(editorHintsSet).count() == ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, "hint", false);
+                return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 6822301196700715228l, 5944657839026714445l, "hint"));
               }
             }));
           }
@@ -98,9 +100,9 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget("conceptDeclaration");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorDeclaration, "Duplicate editor declaration. Editor for same set of context hints (" + ((ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).isEmpty() ? "<default>" : ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).select(new ISelector<SNode, String>() {
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorDeclaration, "Duplicate editor declaration. Editor for same set of context hints (" + ((ListSequence.fromList(SLinkOperations.getChildren(editorDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).isEmpty() ? "<default>" : ListSequence.fromList(SLinkOperations.getChildren(editorDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"))).select(new ISelector<SNode, String>() {
             public String select(SNode it) {
-              return SPropertyOperations.getString(SLinkOperations.getTarget(it, "hint", false), "name");
+              return SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 6822301196700715228l, 5944657839026714445l, "hint")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
             }
           }).reduceLeft(new ILeftCombinator<String, String>() {
             public String combine(String a, String b) {

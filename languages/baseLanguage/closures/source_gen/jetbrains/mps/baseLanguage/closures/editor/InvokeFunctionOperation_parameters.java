@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -16,7 +18,7 @@ public class InvokeFunctionOperation_parameters implements ParametersInformation
   public InvokeFunctionOperation_parameters() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+    return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));

@@ -6,6 +6,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,38 +20,38 @@ public class BaseMethodParameterInformationQueryUtil {
   }
   public static List<SNode> getMethodsToShow(SNode methodCall) {
     List<SNode> methodsToShow = new ArrayList<SNode>();
-    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-    SNode targetContainer = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
-    Iterable<SNode> members = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{SPropertyOperations.getString(method, "name")});
+    SNode method = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+    SNode targetContainer = SNodeOperations.cast(SNodeOperations.getParent(method), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1194952169813l, "jetbrains.mps.baseLanguage.structure.IMemberContainer"));
+    Iterable<SNode> members = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))});
     if (Sequence.fromIterable(members).isEmpty()) {
       members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), targetContainer, "virtual_getMembers_1213877531970", new Object[]{});
     }
 
     for (SNode member : Sequence.fromIterable(members)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a6a1(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
-        ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && eq_bha4h6_a0a0a6a1(SPropertyOperations.getString(SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+        ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
     return methodsToShow;
   }
   public static void fillPresentation(SNode methodDeclaration, SNode selectedActualArgument, StyledTextPrinter styledText) {
-    if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
-      if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(methodDeclaration, "returnType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + " ");
+    if (!(SNodeOperations.isInstanceOf(methodDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")))) {
+      if (SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")) != null) {
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "virtual_getPresentation_1213877396640", new Object[]{}) + " ");
       } else {
         styledText.append("??? ");
       }
     }
-    if (SPropertyOperations.getString(methodDeclaration, "name") != null) {
-      styledText.append(SPropertyOperations.getString(methodDeclaration, "name"));
+    if (SPropertyOperations.getString(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+      styledText.append(SPropertyOperations.getString(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     } else {
       styledText.append("<no name>");
     }
-    if (SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
-      SNode classifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if (classifier != null && ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (SNodeOperations.isInstanceOf(methodDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
+      SNode classifier = SNodeOperations.getNodeAncestor(methodDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+      if (classifier != null && ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isNotEmpty()) {
         styledText.append("<");
-        for (SNode param : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
+        for (SNode param : SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
           if (SNodeOperations.getIndexInParent(param) > 0) {
             styledText.append(", ");
           }
@@ -61,20 +63,20 @@ public class BaseMethodParameterInformationQueryUtil {
 
     int argumentIndex = (selectedActualArgument != null ? SNodeOperations.getIndexInParent(selectedActualArgument) : -1);
     styledText.append("(");
-    for (SNode param : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
+    for (SNode param : SLinkOperations.getChildren(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
       if (SNodeOperations.getIndexInParent(param) > 0) {
         styledText.append(", ");
       }
       if (SNodeOperations.getIndexInParent(param) == argumentIndex) {
         styledText.setBold(true);
       }
-      if (SLinkOperations.getTarget(param, "type", true) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+      if (SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")) != null) {
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }
-      if (SPropertyOperations.getString(param, "name") != null) {
-        styledText.append(" " + SPropertyOperations.getString(param, "name"));
+      if (SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+        styledText.append(" " + SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
       styledText.setBold(false);
     }

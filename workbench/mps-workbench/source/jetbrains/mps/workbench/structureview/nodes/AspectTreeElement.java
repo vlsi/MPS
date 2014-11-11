@@ -20,9 +20,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Computable;
 
 import java.awt.Color;
 
@@ -52,21 +50,15 @@ public class AspectTreeElement extends NodeTreeElement {
 
   @Override
   public ItemPresentation getPresentation() {
-    //todo use SNodeReference here, get rid of read action
-    return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+    return new NodeTreeElementPresentation() {
       @Override
-      public ItemPresentation compute() {
-        return new NodeTreeElementPresentation() {
-          @Override
-          public TextAttributesKey getTextAttributesKey() {
-            if (myIsBijectional) return null;
+      public TextAttributesKey getTextAttributesKey() {
+        if (myIsBijectional) return null;
 
-            TextAttributes att = new TextAttributes();
-            att.setForegroundColor(Color.GRAY);
-            return TextAttributesKey.createTextAttributesKey(NON_BIJECTIONAL_NODE_ASPECT, att);
-          }
-        };
+        TextAttributes att = new TextAttributes();
+        att.setForegroundColor(Color.GRAY);
+        return TextAttributesKey.createTextAttributesKey(NON_BIJECTIONAL_NODE_ASPECT, att);
       }
-    });
+    };
   }
 }

@@ -4,11 +4,13 @@ package jetbrains.mps.lang.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractMethodSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPullUpMethod_2291767839160328420(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.script.structure.PullUpMethod");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 849077997121870276l, "jetbrains.mps.lang.script.structure.PullUpMethod"));
   }
 }

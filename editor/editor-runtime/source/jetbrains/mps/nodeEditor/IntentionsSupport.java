@@ -29,6 +29,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
@@ -268,11 +269,11 @@ public class IntentionsSupport {
 
   private void executeIntention(final IntentionExecutable intention, final SNode node) {
     Project project = myEditor.getOperationContext().getProject();
-    if (project == null)  return;
+    if (project == null) return;
 
-    getModelAccess().executeCommandInEDT(new Runnable() {
+    getModelAccess().executeCommandInEDT(new EditorCommand(myEditor) {
       @Override
-      public void run() {
+      public void doExecute() {
         intention.execute(node, myEditor.getEditorContext());
       }
     });

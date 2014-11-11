@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguageInternal.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InternalStaticFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
+    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173995204289l, 1173995448817l, "fqClassName")), node, this);
     this.append(".");
-    this.append(SPropertyOperations.getString(node, "fieldName"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173995204289l, 1173995466678l, "fieldName")));
   }
 }

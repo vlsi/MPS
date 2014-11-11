@@ -22,14 +22,12 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAware;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -50,7 +48,6 @@ import java.util.Map;
 public class NewRootNodeAction extends BaseAction implements DumbAware {
   private final String myPack;
   private Project myProject;
-  public IOperationContext myContext;
   private final SNodeReference myNodeConcept;
   private final SModel myModelDescriptor;
 
@@ -67,33 +64,29 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
   @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!super.collectActionData(e, _params)) return false;
-    myProject = MPSCommonDataKeys.PROJECT.getData(e.getDataContext());
-    myContext = MPSCommonDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
-    if (myContext == null) return false;
+    myProject = MPSCommonDataKeys.MPS_PROJECT.getData(e.getDataContext());
     return true;
   }
 
   @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-    final SRepository projectRepo = mpsProject.getRepository();
+    final SRepository projectRepo = myProject.getRepository();
     final ModelAccess modelAccess = projectRepo.getModelAccess();
     modelAccess.executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(projectRepo), null, null, myModelDescriptor);
-        SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myPack);
+        SNodeAccessUtil.setProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage, myPack);
         myModelDescriptor.addRootNode(node);
 
         modelAccess.runWriteInEDT(new Runnable() {
           @Override
           public void run() {
             if (!trySelectInCurrentPane(myProject, node)) {
-              ProjectOperationContext context = new ProjectOperationContext(mpsProject);
-              NavigationSupport.getInstance().selectInTree(context, node, false);
+              NavigationSupport.getInstance().selectInTree(myProject, node, false);
             }
 
-            NavigationSupport.getInstance().openNode(myContext, node, true, false);
+            NavigationSupport.getInstance().openNode(myProject, node, true, false);
           }
         });
       }
@@ -101,6 +94,9 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
   }
 
   public static boolean trySelectInCurrentPane(Project p, final SNode node) {
+    return trySelectInCurrentPane(ProjectHelper.toIdeaProject(p), node);
+  }
+  public static boolean trySelectInCurrentPane(com.intellij.openapi.project.Project p, final SNode node) {
     final ProjectView projectView = ProjectView.getInstance(p);
 
     AbstractProjectViewPane selectedPane = projectView.getCurrentProjectViewPane();
@@ -117,17 +113,17 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
   }
 
   private static class MySelectInContext implements SelectInContext {
-    private Project myProject;
+    private com.intellij.openapi.project.Project myProject;
     private final SNodeReference myNode;
 
-    public MySelectInContext(Project p, SNodeReference node) {
+    public MySelectInContext(com.intellij.openapi.project.Project p, SNodeReference node) {
       myProject = p;
       myNode = node;
     }
 
     @Override
     @NotNull
-    public Project getProject() {
+    public com.intellij.openapi.project.Project getProject() {
       return myProject;
     }
 

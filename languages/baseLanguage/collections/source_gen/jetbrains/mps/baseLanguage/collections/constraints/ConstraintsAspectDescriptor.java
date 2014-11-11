@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.collections.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -66,9 +67,93 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 19:
         return new MultiForEachVariableReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1153944233411l) {
+      return new ForEachVariableReference_Constraints();
+    }
+    if (id == 1201225890326l) {
+      return new MapOperation_Constraints();
+    }
+    if (id == 1203518072036l) {
+      return new SmartClosureParameterDeclaration_Constraints();
+    }
+    if (id == 1151701983961l) {
+      return new SequenceOperation_Constraints();
+    }
+    if (id == 1226566831166l) {
+      return new AbstractSetOperation_Constraints();
+    }
+    if (id == 1237470736245l) {
+      return new AbstractIteratorOperation_Constraints();
+    }
+    if (id == 1237497044713l) {
+      return new AbstractEnumeratorOperation_Constraints();
+    }
+    if (id == 1237783176940l) {
+      return new AllConstant_Constraints();
+    }
+    if (id == 1240151544672l) {
+      return new RemoveOperation_Constraints();
+    }
+    if (id == 1240239309184l) {
+      return new SortedMapOperation_Constraints();
+    }
+    if (id == 1240251169236l) {
+      return new SortedSetOperation_Constraints();
+    }
+    if (id == 1240325842691l) {
+      return new AsSequenceOperation_Constraints();
+    }
+    if (id == 1240687580870l) {
+      return new JoinOperation_Constraints();
+    }
+    if (id == 1240824716764l) {
+      return new AbstractMappingOperation_Constraints();
+    }
+    if (id == 1227008614712l) {
+      return new LinkedListCreator_Constraints();
+    }
+    if (id == 1226516258405l) {
+      return new HashSetCreator_Constraints();
+    }
+    if (id == 1240247536947l) {
+      return new TreeSetCreator_Constraints();
+    }
+    if (id == 1160600644654l) {
+      return new ListCreatorWithInit_Constraints();
+    }
+    if (id == 1197686869805l) {
+      return new HashMapCreator_Constraints();
+    }
+    if (id == 1240239494010l) {
+      return new TreeMapCreator_Constraints();
+    }
+    if (id == 2141797557973018607l) {
+      return new IListOperation_Constraints();
+    }
+    if (id == 497032923610827734l) {
+      return new IQueueOperation_Constraints();
+    }
+    if (id == 2141797557972817928l) {
+      return new IContainerOperation_Constraints();
+    }
+    if (id == 6099516049394485216l) {
+      return new CustomContainerDeclaration_Constraints();
+    }
+    if (id == 1331913329176106419l) {
+      return new CustomContainerCreator_Constraints();
+    }
+    if (id == 1576845966386891367l) {
+      return new CustomMapCreator_Constraints();
+    }
+    if (id == 8293956702609956630l) {
+      return new MultiForEachVariableReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation", "jetbrains.mps.baseLanguage.collections.structure.IListOperation", "jetbrains.mps.baseLanguage.collections.structure.IQueueOperation", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", "jetbrains.mps.baseLanguage.collections.structure.MapOperation", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.RemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"};
 }

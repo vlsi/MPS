@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -54,16 +56,16 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return false;
     }
 
-    List<SNode> migrations = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.MigrationScript");
+    List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"));
     if (ListSequence.fromList(migrations).isEmpty() && lang.getLanguageVersion() != 0) {
       return true;
     }
 
     int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return SPropertyOperations.getInteger(it, "fromVersion");
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
       }
-    }, false).first(), "fromVersion");
+    }, false).first(), MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
 
     SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
     SLanguageAdapterById slang = new SLanguageAdapterById(langId, lang.getModuleName());
@@ -105,13 +107,13 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     try {
       final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
       SModel mig = LanguageAspect.MIGRATION.get(lang);
-      List<SNode> scripts = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.MigrationScript");
+      List<SNode> scripts = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"));
       if (ListSequence.fromList(scripts).isNotEmpty()) {
         int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
           public Integer select(SNode it) {
-            return SPropertyOperations.getInteger(it, "fromVersion");
+            return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
           }
-        }, false).first(), "fromVersion");
+        }, false).first(), MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
         lang.setLanguageVersion(maxFrom + 1);
       } else {
         final int v = lang.getLanguageVersion();

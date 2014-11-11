@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -18,23 +20,23 @@ public class CopyPasteHandlers_Behavior {
   }
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     final List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "preProcessor", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790175l, "preProcessor"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682321734l, 5948027493682346893l, "concept")));
       }
     });
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790174l, "postProcessor"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, "concept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, 6026743057587410043l, "concept")));
       }
     });
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
-    SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
+    SNode pastePostProcessor = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, "jetbrains.mps.lang.actions.structure.PastePostProcessor"));
+    SLinkOperations.setTarget(pastePostProcessor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, 6026743057587410043l, "concept"), baseConcept);
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790174l, "postProcessor"))).addElement(pastePostProcessor);
     String name = SModelUtil.getDeclaringLanguage(baseConcept).getModuleName();
-    SPropertyOperations.set(thisNode, "name", NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }
 }

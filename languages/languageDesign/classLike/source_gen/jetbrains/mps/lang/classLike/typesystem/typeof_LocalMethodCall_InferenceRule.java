@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,11 +20,11 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode localMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // This is a hack made for convenience while trying to decrease number of DependentTypeInstance occurences 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(localMethodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"))) {
       {
         SNode _nodeToCheck_1029348928467 = localMethodCall;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "9097849371505485953", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "9097849371505485693", true), (SNode) DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(localMethodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance")), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "9097849371505485693", true), (SNode) DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(localMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767083l, "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"))), _info_12389875345);
       }
     }
   }

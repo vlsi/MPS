@@ -5,13 +5,15 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ClassifierDocComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     DocCommentTextGen.docCommentStart(node, this);
 
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "param", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 2068944020170241612l, 2068944020170241614l, "param"));
       for (SNode item : collection) {
         appendNode(item);
       }

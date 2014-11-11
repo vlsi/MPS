@@ -120,7 +120,7 @@ public class NodePaster {
       model.addRootNode(pasteNode);
       if (dstPackage==null) continue;
 
-      SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.property_BaseConcept_virtualPackage, dstPackage);
+      SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.propertyName_BaseConcept_virtualPackage, dstPackage);
     }
   }
 

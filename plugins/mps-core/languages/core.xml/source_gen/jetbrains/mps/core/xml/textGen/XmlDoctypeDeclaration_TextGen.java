@@ -5,6 +5,8 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -12,16 +14,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class XmlDoctypeDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode left = SNodeOperations.getPrevSibling(node);
-    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPart"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
     }
     this.append("<!DOCTYPE");
     this.append(" ");
-    this.append(SPropertyOperations.getString(node, "doctypeName"));
-    if ((SLinkOperations.getTarget(node, "externalId", true) != null)) {
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044437898910l, "doctypeName")));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044438029120l, "externalId")) != null)) {
       this.append(" ");
-      appendNode(SLinkOperations.getTarget(node, "externalId", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044438029120l, "externalId")));
     }
     this.append(">");
   }

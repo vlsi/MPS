@@ -5,6 +5,8 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,13 +26,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
   public void updateLowLevelVariable(SNode variable) {
     if (myIsHighLevelInfoAvailable) {
-      SPropertyOperations.set(variable, "name", myHighLevelName);
-      SPropertyOperations.set(variable, "highLevelNodeId", SNodePointer.serialize(myHighLevelNode));
+      SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), myHighLevelName);
+      SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182694l, 7906267809293264975l, "highLevelNodeId"), SNodePointer.serialize(myHighLevelNode));
     } else {
-      SPropertyOperations.set(variable, "name", myLowLevelName);
+      SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), myLowLevelName);
     }
-    SLinkOperations.setTarget(variable, "type", createDebuggedType(), true);
-    SPropertyOperations.set(variable, "lowLevelName", myLowLevelName);
+    SLinkOperations.setTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), createDebuggedType());
+    SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182694l, 5600437724825490670l, "lowLevelName"), myLowLevelName);
   }
   private SNode createDebuggedType() {
     return createDebuggedType(myLowLevelType, (myIsHighLevelInfoAvailable ? myHighLevelType : null));
@@ -38,8 +40,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public void setHighLevelNode(SNode node) {
     myIsHighLevelInfoAvailable = true;
     myHighLevelNode = new SNodePointer(node);
-    myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
-    myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : myLowLevelName);
+    myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")));
+    myHighLevelName = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : myLowLevelName);
   }
   public void setHighLevelName(String highLevelName) {
     myHighLevelName = highLevelName;
@@ -52,14 +54,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     return eq_5ytd5s_a0a0m(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"));
     if ((highType != null)) {
-      SLinkOperations.setTarget(result, "highType", highType, true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691674l, "highType"), highType);
     } else {
-      SLinkOperations.setTarget(result, "highType", SNodeOperations.copyNode(lowType), true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691674l, "highType"), SNodeOperations.copyNode(lowType));
     }
-    SPropertyOperations.set(result, "isHigh", "" + (highType != null));
-    SLinkOperations.setTarget(result, "lowType", lowType, true);
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691693l, "isHigh"), "" + (highType != null));
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4544608336420691672l, 4544608336420691673l, "lowType"), lowType);
     return result;
   }
   private static boolean eq_5ytd5s_a0a0m(Object a, Object b) {

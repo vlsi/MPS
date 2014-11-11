@@ -9,7 +9,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -30,7 +29,7 @@ public class MigrationUtil {
       return conceptAspect;
     }
 
-    conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+    conceptAspect = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
     BehaviorReflection.invokeVirtual(Void.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Object[]{applicableNode});
     SModelOperations.addRootNode(model, conceptAspect);
 

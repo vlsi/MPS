@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent {
   public TargetDeclaration_resourcesPolicy() {
@@ -27,7 +29,7 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "resourcesPolicy", SEnumOperations.getEnumMemberValue(parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 1675547159918562088l, "resourcesPolicy"), SEnumOperations.getEnumMemberValue(parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;

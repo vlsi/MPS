@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -61,10 +63,10 @@ public class ConvertSwitchToParameterized_Intention implements IntentionFactory 
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode n = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
-      SLinkOperations.setTarget(n, "template", SLinkOperations.getTarget(node, "templateSwitch", false), false);
-      SPropertyOperations.set(n, "comment", SPropertyOperations.getString(node, "comment"));
-      SLinkOperations.setTarget(n, "sourceNodeQuery", SLinkOperations.getTarget(node, "sourceNodeQuery", true), true);
-      SLinkOperations.setTarget(n, "mappingLabel", SLinkOperations.getTarget(node, "mappingLabel", false), false);
+      SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1112731629154l, "templateSwitch")));
+      SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, 3265704088513289864l, "comment"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, 3265704088513289864l, "comment")));
+      SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510068000147l, 982871510068000158l, "sourceNodeQuery"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1168380395224l, "sourceNodeQuery")));
+      SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel")));
     }
     public IntentionDescriptor getDescriptor() {
       return ConvertSwitchToParameterized_Intention.this;

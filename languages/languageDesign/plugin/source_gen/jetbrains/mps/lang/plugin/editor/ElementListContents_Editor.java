@@ -36,7 +36,7 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contents");
     editorCell.setCellId("Constant_xnbcto_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -52,7 +52,7 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_xnbcto_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -61,7 +61,7 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ElementListContents_Editor.referenceListHandler_xnbcto_b1a(node, "reference", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_reference");
-    editorCell.setCanBeFolded(true);
+    editorCell.setFoldable(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -35,8 +35,8 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_urzn0w_a0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttrCharRefValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -71,8 +71,8 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_urzn0w_c0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttrCharRefValue(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

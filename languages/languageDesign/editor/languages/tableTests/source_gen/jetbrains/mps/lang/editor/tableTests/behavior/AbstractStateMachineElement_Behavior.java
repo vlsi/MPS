@@ -4,11 +4,13 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractStateMachineElement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getStateMachine_7943979732673457916(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.tableTests.structure.StateMachine");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 763922957008726945l, "jetbrains.mps.lang.editor.tableTests.structure.StateMachine"));
   }
 }

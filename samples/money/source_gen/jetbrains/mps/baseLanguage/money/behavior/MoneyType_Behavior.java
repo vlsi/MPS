@@ -4,12 +4,14 @@ package jetbrains.mps.baseLanguage.money.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MoneyType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", null);
+    SNode creator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-850839507942816123l, -8275646104739946638l), 1187340310888l, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"));
     return creator;
   }
 }

@@ -19,10 +19,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -30,7 +33,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   private String myName;
   private SModelTreeNode myModelNode;
 
-  public PackageNode(SModelTreeNode model, String name, PackageNode parent) {
+  public PackageNode(SModelTreeNode model, String name, @Nullable PackageNode parent) {
     super(model, name, true);
     myModelNode = model;
     if (parent != null) {
@@ -40,23 +43,20 @@ public class PackageNode extends SNodeGroupTreeNode {
     }
   }
 
-  @Override
-  public IOperationContext getOperationContext() {
-    return myModelNode.getOperationContext();
-  }
-
   public Set<SNode> getNodesUnderPackage() {
+    if (myModelNode.getModel() == null) {
+      return Collections.emptySet();
+    }
     Set<SNode> result = new LinkedHashSet<SNode>();
 
-    if (getOperationContext().getModule() instanceof Language) {
-      Language l = (Language) getOperationContext().getModule();
-
-      for (SModel sm : LanguageAspect.getAspectModels(l)) {
+    final SModule module = myModelNode.getModel().getModule();
+    if (module instanceof Language) {
+      for (SModel sm : LanguageAspect.getAspectModels((Language) module)) {
         result.addAll(getNodesUnderPackage(sm));
       }
     }
 
-    result.addAll(getNodesUnderPackage(myModelNode.getSModelDescriptor()));
+    result.addAll(getNodesUnderPackage(myModelNode.getModel()));
 
     return result;
   }
@@ -64,7 +64,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   public Set<SNode> getNodesUnderPackage(SModel sm) {
     Set<SNode> nodes = new LinkedHashSet<SNode>();
     for (SNode root : sm.getRootNodes()) {
-      String rootPack = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
+      String rootPack = SNodeAccessUtil.getProperty(root, SNodeUtil.propertyName_BaseConcept_virtualPackage);
       if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {
         nodes.add(root);
       }

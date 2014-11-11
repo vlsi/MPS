@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -21,12 +23,12 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
   public check_EnumConstantHasConstructorDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode enumClass = SNodeOperations.getAncestor(enumConstant, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
+    SNode enumClass = SNodeOperations.getNodeAncestor(enumConstant, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
     if ((enumClass == null)) {
       return;
     }
 
-    SNode constructorDeclaration = SLinkOperations.getTarget(enumConstant, "baseMethodDeclaration", false);
+    SNode constructorDeclaration = SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if ((constructorDeclaration == null)) {
       if (Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(enumClass)).isEmpty()) {
         {

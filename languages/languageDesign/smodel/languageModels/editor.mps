@@ -30,17 +30,18 @@
     <model ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" name="jetbrains.mps.lang.smodel.behavior" />
     <model ref="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" name="jetbrains.mps.lang.project.editor" />
     <model ref="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" name="jetbrains.mps.baseLanguage.collections.editor" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
@@ -49,14 +50,19 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1079353555532" name="jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
@@ -66,13 +72,17 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
@@ -83,8 +93,11 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164052439493" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165253627126" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165420626554" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" />
@@ -95,20 +108,26 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180615838666" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180616057533" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414949600" name="jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214406454886" name="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214472762472" name="jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007883204" name="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085112640" name="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085197271" name="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" />
@@ -119,10 +138,16 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7667276221847570194" name="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446425" name="vertical" />
@@ -135,6 +160,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139537298254" name="description" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1139852716018" name="noTargetText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140017977771" name="readOnly" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140114345053" name="allowEmptyText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450554" name="vertical" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450557" name="separatorText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165253627126/1165254125954" name="presentation" />
@@ -150,6 +176,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656/1238091709220" name="labelName" />
     <property id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1238684351431" name="asCast" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
@@ -222,6 +249,7 @@
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435808" name="initValue" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
   </debugInfo>
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
@@ -1722,6 +1750,9 @@
           <node concept="9wj7.1215007897487" id="1219240767001" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
           </node>
+          <node concept="9wj7.1223386653097" id="4876532271860088250" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1186414536763.1186414551515" value="true" />
+          </node>
         </node>
         <node concept="9wj7.1073389577006" id="1180481149413" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="&lt;" />
@@ -1764,6 +1795,9 @@
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="1219240940136" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+          <node concept="9wj7.1223386653097" id="4876532271862336524" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
         </node>
         <node concept="9wj7.1073389577006" id="1177028645589" role="9wj7.1073389446423.1073389446424" info="sn">
@@ -3885,6 +3919,11 @@
               <property role="9wj7.1165253627126.1165254125954" value="custom" />
               <node concept="9wj7.1163613035599" id="559557797393041622" role="9wj7.1165420413719.1165420413720" info="in">
                 <node concept="vg0i.1068580123136" id="559557797393041623" role="vg0i.1137021947720.1137022507850" info="sn">
+                  <node concept="vg0i.6329021646629104954" id="5430698888127379224" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.6329021646629104957" id="5430698888127380661" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+                      <property role="vg0i.6329021646629104957.6329021646629104958" value="FIXME need a helper to provide all models visible in a repository" />
+                    </node>
+                  </node>
                   <node concept="vg0i.1068580123155" id="7649594692996251890" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1197027756228" id="559557797393049200" role="vg0i.1068580123155.1068580123156" info="nn">
                       <node concept="vg0i.1081236700937" id="559557797393049199" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -3938,22 +3977,11 @@
               </node>
               <node concept="9wj7.1164052439493" id="559557797393049248" role="9wj7.1165253627126.1165254159533" info="in">
                 <node concept="vg0i.1068580123136" id="559557797393049249" role="vg0i.1137021947720.1137022507850" info="sn">
-                  <node concept="vg0i.1068580123155" id="559557797393049250" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1068581242875" id="559557797393050509" role="vg0i.1068580123155.1068580123156" info="nn">
-                      <node concept="vg0i.1081236700937" id="8232981609242714535" role="vg0i.1081773326031.1081773367579" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dgetStereotype(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjava%dlang%dString" resolveInfo="getStereotype" />
-                        <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
-                        <node concept="9wj7.1163613549566" id="8232981609242714536" role="vg0i.1204053956946.1068499141038" info="nn" />
-                      </node>
-                      <node concept="vg0i.1068581242875" id="559557797393050505" role="vg0i.1081773326031.1081773367580" info="nn">
-                        <node concept="vg0i.1081236700937" id="8232981609242714364" role="vg0i.1081773326031.1081773367580" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="unno.9160302885342508446" resolveInfo="getModelLongName" />
-                          <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
-                          <node concept="9wj7.1163613549566" id="8232981609242714365" role="vg0i.1204053956946.1068499141038" info="nn" />
-                        </node>
-                        <node concept="vg0i.1070475926800" id="559557797393050508" role="vg0i.1081773326031.1081773367579" info="nn">
-                          <property role="vg0i.1070475926800.1070475926801" value="@" />
-                        </node>
+                  <node concept="vg0i.1068580123155" id="5430698888127385138" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="5430698888127401800" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="9wj7.1163613549566" id="5430698888127385136" role="vg0i.1197027756228.1197027771414" info="nn" />
+                      <node concept="vg0i.1202948039474" id="5430698888127403666" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetModelName()%cjava%dlang%dString" resolveInfo="getModelName" />
                       </node>
                     </node>
                   </node>
@@ -3994,6 +4022,7 @@
             <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node concept="9wj7.1073389658414" id="559557797393041607" role="9wj7.1073389446423.1073389446424" info="sg">
+            <property role="9wj7.1139848536355.1140114345053" value="true" />
             <reference role="9wj7.1139848536355.1140103550593" target="tp25.559557797393021807" resolveInfo="stereotype" />
           </node>
           <node concept="9wj7.1106270549637" id="559557797393041608" role="9wj7.1073389446423.1106270802874" info="nn" />
@@ -4359,8 +4388,8 @@
       <reference role="9wj7.1166049232041.1166049300910" target="tp25.2644386474300074836" resolveInfo="ConceptIdRefExpression" />
       <node concept="9wj7.1073389446423" id="2644386474300075440" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1073389577006" id="2644386474300075441" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="concept id" />
-          <reference role="9wj7.1381004262292414836.1381004262292426837" target="wr1s.269654322145162290" resolveInfo="KeyWord" />
+          <property role="9wj7.1073389577006.1073389577007" value="sconcept" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="2644386474300075442" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
           </node>
@@ -4405,8 +4434,8 @@
       <node concept="9wj7.1073389446423" id="2644386474301421455" role="9wj7.1080736578640.1080736633877" info="sn">
         <property role="9wj7.1073389446423.1073389446425" value="false" />
         <node concept="9wj7.1073389577006" id="2644386474301421456" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="link id" />
-          <reference role="9wj7.1381004262292414836.1381004262292426837" target="wr1s.269654322145162290" resolveInfo="KeyWord" />
+          <property role="9wj7.1073389577006.1073389577007" value="link" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="2644386474301421457" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
           </node>
@@ -4471,8 +4500,8 @@
       <node concept="9wj7.1073389446423" id="2644386474302386461" role="9wj7.1080736578640.1080736633877" info="sn">
         <property role="9wj7.1073389446423.1073389446425" value="false" />
         <node concept="9wj7.1073389577006" id="2644386474302386462" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="property id" />
-          <reference role="9wj7.1381004262292414836.1381004262292426837" target="wr1s.269654322145162290" resolveInfo="KeyWord" />
+          <property role="9wj7.1073389577006.1073389577007" value="property" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="2644386474302386463" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
           </node>
@@ -4529,6 +4558,63 @@
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1215088010675" resolveInfo="RightParen" />
         </node>
         <node concept="9wj7.1237303669825" id="2644386474302386479" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="6677504323281690195" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="type" />
+      <reference role="9wj7.1166049232041.1166049300910" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
+      <node concept="9wj7.1073389446423" id="6677504323281690196" role="9wj7.1080736578640.1080736633877" info="sn">
+        <node concept="9wj7.1073389577006" id="6677504323281690197" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="sconcept" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
+          <node concept="9wj7.1215007897487" id="6677504323281690198" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+        </node>
+        <node concept="9wj7.1073389577006" id="6677504323281690199" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="&lt;" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1234958090348" resolveInfo="LeftParenAfterName" />
+          <node concept="9wj7.1186414928363" id="6677504323281690200" role="9wj7.1219418625346.1219418656006" info="ln" />
+        </node>
+        <node concept="9wj7.1088013125922" id="6677504323281690201" role="9wj7.1073389446423.1073389446424" info="sg">
+          <property role="9wj7.1139848536355.1214560368769" value="true" />
+          <reference role="9wj7.1139848536355.1140103550593" target="tp25.6677504323281689839" />
+          <node concept="9wj7.1088185857835" id="6677504323281690202" role="9wj7.1088013125922.1088186146602" info="ig">
+            <node concept="9wj7.1073389658414" id="6677504323281690203" role="9wj7.1080736578640.1080736633877" info="sg">
+              <property role="9wj7.1139848536355.1140017977771" value="true" />
+              <property role="9wj7.1139848536355.1139852716018" value="&lt;no name&gt;" />
+              <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
+              <node concept="9wj7.1215007897487" id="6677504323281690204" role="9wj7.1219418625346.1219418656006" info="ln">
+                <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+              </node>
+              <node concept="9wj7.1186404549998" id="6677504323281690205" role="9wj7.1219418625346.1219418656006" info="ln">
+                <property role="9wj7.1186403694788.1186403713874" value="DARK_MAGENTA" />
+              </node>
+            </node>
+          </node>
+          <node concept="9wj7.1215007897487" id="6677504323281690206" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+        </node>
+        <node concept="9wj7.1073389577006" id="6677504323281690207" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="&gt;" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1215088010675" resolveInfo="RightParen" />
+        </node>
+        <node concept="9wj7.1237303669825" id="6677504323281690208" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="7453996997717780755" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="operation.node" />
+      <reference role="9wj7.1166049232041.1166049300910" target="tp25.7453996997717780434" resolveInfo="Node_GetSConceptOperation" />
+      <node concept="9wj7.1073389577006" id="7453996997717780756" role="9wj7.1080736578640.1080736633877" info="sn">
+        <property role="9wj7.1073389577006.1073389577007" value="sconcept" />
+        <property role="9wj7.1073389214265.1130859485024" value="1" />
+        <node concept="9wj7.1186414860679" id="7453996997717780757" role="9wj7.1219418625346.1219418656006" info="ln">
+          <property role="9wj7.1186414536763.1186414551515" value="true" />
+        </node>
+        <node concept="9wj7.1215007897487" id="7453996997717780758" role="9wj7.1219418625346.1219418656006" info="ln">
+          <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+        </node>
       </node>
     </node>
   </contents>

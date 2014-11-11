@@ -5,19 +5,19 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XmlProlog_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isInValidPosition_2133624044437891376(SNode thisNode, SNode element) {
-    SNode declaration = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode declaration = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299057l, 7604553062773674214l, "elements"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(it))), "virtual_isFirst_1262430001741498376", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), "virtual_isFirst_1262430001741498376", new Object[]{});
       }
     });
     if (declaration == null) {

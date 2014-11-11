@@ -6,6 +6,8 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -16,13 +18,13 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1209150617830(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"), "useInTest", "reduceExpressionToStatement", "none");
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-6121824463232872651l, -5378768732970966980l), 1209149421970l, "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList")), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1209149421970l, 1209149495553l, "useInTest"), "reduceExpressionToStatement", "none");
   }
   public static boolean baseMappingRule_Condition_1209150502311(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceExpressionToStatement", "none");
+    return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1209149421970l, 1209149495553l, "useInTest"), "reduceExpressionToStatement", "none");
   }
   public static SNode sourceNodeQuery_1209150187921(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "statementList", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6121824463232872651l, -5378768732970966980l), 1209149421970l, 1209149449081l, "statementList"));
   }
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);

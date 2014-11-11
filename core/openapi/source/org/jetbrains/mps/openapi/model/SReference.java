@@ -26,9 +26,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
  */
 @Immutable
 public interface SReference {
+  @Deprecated
   String getRole();
-
-  SReferenceLink getReferenceLink();
 
   /**
    * Gets the associated Link - an abstract meta-definition for the reference

@@ -116,6 +116,8 @@
                       serviceImplementation="com.intellij.ui.SystemNotificationsImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.keymap.KeymapGroupFactory"
                       serviceImplementation="com.intellij.openapi.keymap.impl.KeymapGroupFactoryImpl"/>
+    <applicationService serviceInterface="com.intellij.openapi.keymap.impl.ActionShortcutRestrictions"
+                        serviceImplementation="com.intellij.openapi.keymap.impl.ActionShortcutRestrictionsImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.editor.highlighter.EditorHighlighterFactory"
                       serviceImplementation="com.intellij.openapi.editor.highlighter.EditorHighlighterFactoryImpl"/>
   <applicationService serviceInterface="com.intellij.ide.dnd.DnDManager"
@@ -170,8 +172,7 @@
   <applicationService serviceInterface="com.intellij.openapi.options.SchemesManagerFactory"
                       serviceImplementation="com.intellij.openapi.options.SchemesManagerFactoryImpl"/>
 
-  <applicationService serviceInterface="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"
-                      serviceImplementation="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"/>
+    <applicationService serviceImplementation="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"/>
   <applicationService serviceInterface="com.intellij.openapi.editor.colors.TextAttributesKey$TextAttributeKeyDefaultsProvider"
                       serviceImplementation="com.intellij.openapi.editor.colors.impl.TextAttributeKeyDefaultsProviderImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.editor.colors.EditorColorsManager"
@@ -186,6 +187,8 @@
 
   <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
                       serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
+
+    <applicationService serviceImplementation="com.intellij.openapi.util.DimensionService"/>
 
   <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
@@ -227,37 +230,31 @@
   <projectService serviceInterface="com.intellij.execution.testframework.autotest.AutoTestManager"
                   serviceImplementation="com.intellij.execution.testframework.autotest.AutoTestManager"/>
 
-  <projectService serviceInterface="com.intellij.openapi.roots.ui.OrderEntryAppearanceService"
-                  serviceImplementation="com.intellij.openapi.roots.ui.OrderEntryAppearanceServiceImpl"/>
-
   <projectService serviceInterface="com.intellij.openapi.vcs.VcsFileListenerContextHelper"
                   serviceImplementation="com.intellij.openapi.vcs.VcsFileListenerContextHelper"/>
 
     <projectService serviceInterface="com.intellij.openapi.editor.LazyRangeMarkerFactory"
                     serviceImplementation="com.intellij.openapi.editor.impl.LazyRangeMarkerFactoryImpl"/>
 
+    <projectService serviceInterface="com.intellij.openapi.project.ProjectReloadState"
+                    serviceImplementation="com.intellij.openapi.project.impl.ProjectReloadStateImpl"/>
+
   <!-- General -->
     <applicationConfigurable groupId="appearance" groupWeight="120" key="title.general" bundle="messages.IdeBundle" id="preferences.general" instance="com.intellij.ide.GeneralSettingsConfigurable"/>
 
   <!-- Appearance -->
-    <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="appearance" key="title.appearance"
+    <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="preferences.lookFeel" key="title.appearance"
                            bundle="messages.IdeBundle"/>
 
   <!-- Keymap -->
     <applicationConfigurable groupId="appearance" groupWeight="140" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap" key="keymap.display.name"
                            bundle="messages.KeyMapBundle"/>
-    <applicationConfigurable parentId="appearance" instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
+    <applicationConfigurable groupId="appearance" instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
                            displayName="Quick Lists"/>
 
   <!-- Customizations -->
-    <applicationConfigurable parentId="appearance" instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
+    <applicationConfigurable groupId="appearance" groupWeight="130" instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
                            key="title.customizations" bundle="messages.IdeBundle"/>
-
-  <!-- Web Browser -->
-  <applicationConfigurable groupId="tools" groupWeight="160" instance="com.intellij.ide.browsers.BrowserSettings" id="reference.settings.ide.settings.web.browsers"
-                           key="browsers.settings" bundle="messages.IdeBundle"/>
-  <applicationService serviceInterface="com.intellij.ide.browsers.WebBrowserManager"
-                      serviceImplementation="com.intellij.ide.browsers.WebBrowserManager"/>
 
   <!-- Notifications -->
     <applicationConfigurable groupId="appearance" groupWeight="110" displayName="Notifications" instance="com.intellij.notification.impl.NotificationsConfigurable"/>
@@ -291,11 +288,8 @@
 
     <applicationService serviceInterface="com.intellij.openapi.actionSystem.AbbreviationManager"
                         serviceImplementation="com.intellij.openapi.actionSystem.impl.AbbreviationManagerImpl"/>
-    <exportable serviceInterface="com.intellij.openapi.actionSystem.AbbreviationManager"/>
 
-  <applicationService serviceInterface="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"
-                      serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
-  <exportable serviceInterface="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
+    <applicationService serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
 
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
   <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
@@ -303,9 +297,6 @@
   <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
   <componentConfigurationMerger implementation="com.intellij.openapi.vcs.changes.shelf.ShelfManagerConfigurationMerger"/>
   <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler" id="hide-hints"/>
-  <ComponentRoamingType component="ChangeListManager" type="DISABLED"/>
-  <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
-  <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
 
   <!--MPS Patch: we do not need javaee configurable
   <projectConfigurable groupId="language" groupWeight="110" instance="com.intellij.javaee.ExternalResourceConfigurable" key="display.name.edit.external.resource"
@@ -378,6 +369,7 @@
   <applicationService serviceInterface="com.intellij.ide.XmlRpcServer" serviceImplementation="com.intellij.ide.XmlRpcServerImpl"/>
   <applicationService serviceImplementation="com.intellij.util.net.ssl.CertificateManager"/>
   <httpRequestHandler implementation="com.intellij.ide.XmlRpcServerImpl$XmlRpcRequestHandler"/>
+    <httpRequestHandler implementation="com.intellij.platform.ProjectSetRequestHandler"/>
   <postStartupActivity implementation="org.jetbrains.ide.BuiltInServerManagerImpl$MyPostStartupActivity"/>
 
   <editorNotificationProvider implementation="com.intellij.ide.FileChangedNotificationProvider"/>

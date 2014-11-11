@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -122,9 +123,177 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 45:
         return new PropertyValueReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1153179560115l) {
+      return new ClosureParameterReference_Constraints();
+    }
+    if (id == 1081236700937l) {
+      return new StaticMethodCall_Constraints();
+    }
+    if (id == 1068581242866l) {
+      return new LocalVariableReference_Constraints();
+    }
+    if (id == 1170345865475l) {
+      return new AnonymousClass_Constraints();
+    }
+    if (id == 1188206331916l) {
+      return new Annotation_Constraints();
+    }
+    if (id == 1212685548494l) {
+      return new ClassCreator_Constraints();
+    }
+    if (id == 1109283449304l) {
+      return new TypeVariableReference_Constraints();
+    }
+    if (id == 1107461130800l) {
+      return new Classifier_Constraints();
+    }
+    if (id == 1070475354124l) {
+      return new ThisExpression_Constraints();
+    }
+    if (id == 1070475587102l) {
+      return new SuperConstructorInvocation_Constraints();
+    }
+    if (id == 1070533707846l) {
+      return new StaticFieldReference_Constraints();
+    }
+    if (id == 1201370618622l) {
+      return new Property_Constraints();
+    }
+    if (id == 1107796713796l) {
+      return new Interface_Constraints();
+    }
+    if (id == 1068390468198l) {
+      return new ClassConcept_Constraints();
+    }
+    if (id == 1073063089578l) {
+      return new SuperMethodCall_Constraints();
+    }
+    if (id == 1068581242863l) {
+      return new LocalVariableDeclaration_Constraints();
+    }
+    if (id == 1178893518978l) {
+      return new ThisConstructorInvocation_Constraints();
+    }
+    if (id == 1068580123140l) {
+      return new ConstructorDeclaration_Constraints();
+    }
+    if (id == 1178285077437l) {
+      return new ClassifierMember_Constraints();
+    }
+    if (id == 1212170275853l) {
+      return new IValidIdentifier_Constraints();
+    }
+    if (id == 1083260308424l) {
+      return new EnumConstantReference_Constraints();
+    }
+    if (id == 1068581242874l) {
+      return new ParameterReference_Constraints();
+    }
+    if (id == 1202948039474l) {
+      return new InstanceMethodCallOperation_Constraints();
+    }
+    if (id == 1188214545140l) {
+      return new AnnotationInstanceValue_Constraints();
+    }
+    if (id == 1172008963197l) {
+      return new LocalStaticFieldReference_Constraints();
+    }
+    if (id == 1172058436953l) {
+      return new LocalStaticMethodCall_Constraints();
+    }
+    if (id == 1201385106094l) {
+      return new PropertyReference_Constraints();
+    }
+    if (id == 1197029447546l) {
+      return new FieldReferenceOperation_Constraints();
+    }
+    if (id == 1208890769693l) {
+      return new ArrayLengthOperation_Constraints();
+    }
+    if (id == 1188206574119l) {
+      return new AnnotationMethodDeclaration_Constraints();
+    }
+    if (id == 1225271315873l) {
+      return new BaseStringOperation_Constraints();
+    }
+    if (id == 1197027803184l) {
+      return new IOperation_Constraints();
+    }
+    if (id == 4898614932449915862l) {
+      return new PlaceholderMethodDeclaration_Constraints();
+    }
+    if (id == 1116615150612l) {
+      return new ClassifierClassExpression_Constraints();
+    }
+    if (id == 1070462154015l) {
+      return new StaticFieldDeclaration_Constraints();
+    }
+    if (id == 363746191845183785l) {
+      return new LoopLabelReference_Constraints();
+    }
+    if (id == 1224575136086l) {
+      return new EnumValueOfExpression_Constraints();
+    }
+    if (id == 1224573963862l) {
+      return new EnumValuesExpression_Constraints();
+    }
+    if (id == 1068580123132l) {
+      return new BaseMethodDeclaration_Constraints();
+    }
+    if (id == 1188220165133l) {
+      return new ArrayLiteral_Constraints();
+    }
+    if (id == 2580416627845338977l) {
+      return new ImplicitAnnotationInstanceValue_Constraints();
+    }
+    if (id == 1830039279190439966l) {
+      return new AdditionalForLoopVariable_Constraints();
+    }
+    if (id == 3066917033203108594l) {
+      return new LocalInstanceMethodCall_Constraints();
+    }
+    if (id == 7785501532031639928l) {
+      return new LocalInstanceFieldReference_Constraints();
+    }
+    if (id == 5205855332950442198l) {
+      return new ArrayCloneOperation_Constraints();
+    }
+    if (id == 1068580123165l) {
+      return new InstanceMethodDeclaration_Constraints();
+    }
+    if (id == 1188207840427l) {
+      return new AnnotationInstance_Constraints();
+    }
+    if (id == 4972933694980447171l) {
+      return new BaseVariableDeclaration_Constraints();
+    }
+    if (id == 5862977038373003187l) {
+      return new LocalPropertyReference_Constraints();
+    }
+    if (id == 1068498886296l) {
+      return new VariableReference_Constraints();
+    }
+    if (id == 7812454656619025412l) {
+      return new LocalMethodCall_Constraints();
+    }
+    if (id == 1083245299891l) {
+      return new EnumConstantDeclaration_Constraints();
+    }
+    if (id == 1107535904670l) {
+      return new ClassifierType_Constraints();
+    }
+    if (id == 2820489544401957797l) {
+      return new DefaultClassCreator_Constraints();
+    }
+    if (id == 2622108313324567541l) {
+      return new PropertyValueReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalMethodCall", "jetbrains.mps.baseLanguage.structure.LocalPropertyReference", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.PropertyValueReference", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.VariableReference"};
 }

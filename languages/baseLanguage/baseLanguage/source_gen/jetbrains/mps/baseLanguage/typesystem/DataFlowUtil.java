@@ -14,12 +14,15 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import java.util.Set;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class DataFlowUtil {
@@ -63,13 +66,13 @@ public class DataFlowUtil {
   public static void checkReturns(final TypeCheckingContext typeCheckingContext, Program program) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(program);
     for (SNode expectedReturn : expectedReturns) {
-      if (expectedReturn != null && !(SNodeOperations.isInstanceOf(expectedReturn, "jetbrains.mps.baseLanguage.structure.TryStatement")) && SNodeOperations.getAncestor(expectedReturn, "jetbrains.mps.baseLanguage.structure.SetAccessor", true, false) == null) {
+      if (expectedReturn != null && !(SNodeOperations.isInstanceOf(expectedReturn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, "jetbrains.mps.baseLanguage.structure.TryStatement"))) && SNodeOperations.getNodeAncestor(expectedReturn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201476912089l, "jetbrains.mps.baseLanguage.structure.SetAccessor"), true, false) == null) {
         SNode nodeToSelect;
-        SNode sl = SNodeOperations.getAncestor(expectedReturn, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
-        if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
-          nodeToSelect = SNodeOperations.getAncestor(expectedReturn, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
+        SNode sl = SNodeOperations.getNodeAncestor(expectedReturn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), true, false);
+        if ((sl != null) && ListSequence.fromList(SLinkOperations.getChildren(sl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isNotEmpty()) {
+          nodeToSelect = SNodeOperations.getNodeAncestor(expectedReturn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), true, false);
         } else {
-          nodeToSelect = SNodeOperations.getAncestor(expectedReturn, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
+          nodeToSelect = SNodeOperations.getNodeAncestor(expectedReturn, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), true, false);
         }
         if ((nodeToSelect == null)) {
           nodeToSelect = expectedReturn;
@@ -104,15 +107,15 @@ public class DataFlowUtil {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
     for (SNode read : uninitializedReads) {
       SNode localReference = null;
-      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.ILocalReference")) {
-        localReference = SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.ILocalReference");
+      if (SNodeOperations.isInstanceOf(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"))) {
+        localReference = SNodeOperations.cast(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"));
       }
-      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.structure.ILocalReference")) {
-        localReference = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.structure.ILocalReference");
+      if (SNodeOperations.isInstanceOf(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"))) {
+        localReference = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"));
       }
       if (localReference != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}), "virtual_isReferencedInClosure_3262277503800823422", new Object[]{}))) {
-        SNode refAncestor = SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
-        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}) != null && (refAncestor == null || SNodeOperations.getAncestor(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == refAncestor)) {
+        SNode refAncestor = SNodeOperations.getNodeAncestor(read, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false);
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}) != null && (refAncestor == null || SNodeOperations.getNodeAncestor(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false) == refAncestor)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable '" + BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), localReference, "virtual_getDeclaration_3262277503800831941", new Object[]{}), "virtual_getPresentation_1213877396640", new Object[]{}) + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", null, errorTarget);
@@ -126,13 +129,13 @@ public class DataFlowUtil {
   private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, Program program) {
     Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(program);
     for (SNode write : unusedAssignments) {
-      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
-        SNode assignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
+      if (SNodeOperations.isInstanceOf(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"))) {
+        SNode assignment = SNodeOperations.cast(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"));
         SNode declaration = null;
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-          declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
-          if ((SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-            if (SNodeOperations.getAncestor(assignment, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == null || declaration != null && SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) != null) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+          declaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
+          if ((SNodeOperations.isInstanceOf(declaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) || (SNodeOperations.isInstanceOf(declaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")))) {
+            if (SNodeOperations.getNodeAncestor(assignment, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false) == null || declaration != null && SNodeOperations.getNodeAncestor(declaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false) != null) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(assignment, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7567158975344997930", null, errorTarget);
@@ -145,28 +148,28 @@ public class DataFlowUtil {
           }
         }
       }
-      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-        SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
+      if (SNodeOperations.isInstanceOf(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+        SNode variableAssignment = SNodeOperations.cast(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1223985693348l, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"));
         if (BehaviorReflection.invokeVirtual(Boolean.TYPE, variableAssignment, "virtual_isCanBeUnused_1223985713603", new Object[]{})) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", null, errorTarget);
           }
         }
-      } else if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
-        SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
+      } else if (SNodeOperations.isInstanceOf(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1223985693348l, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"))) {
+        SNode variableAssignment = SNodeOperations.cast(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1223985693348l, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"));
         if (BehaviorReflection.invokeVirtual(Boolean.TYPE, variableAssignment, "virtual_isCanBeUnused_1223985713603", new Object[]{})) {
-          if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-            SNode decl = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          if (SNodeOperations.isInstanceOf(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+            SNode decl = SNodeOperations.cast(write, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
             if (BehaviorReflection.invokeVirtual(Boolean.TYPE, decl, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{})) {
               continue;
             }
-            if (SLinkOperations.getTarget(decl, "initializer", true) == null) {
+            if (SLinkOperations.getTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) == null) {
               continue;
             }
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(decl, "initializer", true), "Variable '" + SPropertyOperations.getString(decl, "name") + "' initializer is redundant", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "963887337804010668", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")), "Variable '" + SPropertyOperations.getString(decl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' initializer is redundant", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "963887337804010668", null, errorTarget);
               {
                 BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
                 _reporter_2309309498.addIntentionProvider(intentionProvider);
@@ -190,12 +193,12 @@ public class DataFlowUtil {
   @CheckingMethod
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
     Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
-    for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", false, new String[]{})) {
+    for (SNode var : SNodeOperations.getNodeDescendants(statementList, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5432666129547687712l, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), false, new SConcept[]{})) {
       if (program.getInstructionsFor(var).isEmpty()) {
         continue;
       }
-      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
-        if ((!(SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || SLinkOperations.getTarget(SNodeOperations.cast(var, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true) == null) && !(SetSequence.fromSet(usedVariables).contains(var))) {
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, "jetbrains.mps.baseLanguage.structure.CatchClause"))) && SNodeOperations.getNodeAncestor(var, MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) == null) {
+        if ((!(SNodeOperations.isInstanceOf(var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) || SLinkOperations.getTarget(SNodeOperations.cast(var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) == null) && !(SetSequence.fromSet(usedVariables).contains(var))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", null, errorTarget);

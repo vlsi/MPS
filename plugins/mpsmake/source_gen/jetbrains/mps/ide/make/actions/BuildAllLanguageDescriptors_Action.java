@@ -19,9 +19,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
@@ -68,13 +68,9 @@ public class BuildAllLanguageDescriptors_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).where(new IWhereFilter<SModule>() {
-            public boolean accept(SModule it) {
-              return it instanceof Language;
-            }
-          }).select(new ISelector<SModule, SModel>() {
-            public SModel select(SModule it) {
+          Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
+            public SModel select(Language it) {
               return Sequence.fromIterable(((Iterable<SModel>) it.getModels())).findFirst(new IWhereFilter<SModel>() {
                 public boolean accept(SModel it) {
                   return "descriptor".equals(SModelStereotype.getStereotype(it));
@@ -83,11 +79,7 @@ public class BuildAllLanguageDescriptors_Action extends BaseAction {
             }
           }).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return it != null;
-            }
-          }).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it) {
-              return SNodeOperations.isGeneratable(it);
+              return it != null && SNodeOperations.isGeneratable(it);
             }
           }));
         }

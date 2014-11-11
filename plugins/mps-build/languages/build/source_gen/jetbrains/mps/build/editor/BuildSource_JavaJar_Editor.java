@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
@@ -74,14 +76,14 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gw6hs4_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_gw6hs4_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gw6hs4_b2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customLocation", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 8706695667516275782l, "customLocation")) != null);
   }
   private EditorCell createConstant_gw6hs4_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");

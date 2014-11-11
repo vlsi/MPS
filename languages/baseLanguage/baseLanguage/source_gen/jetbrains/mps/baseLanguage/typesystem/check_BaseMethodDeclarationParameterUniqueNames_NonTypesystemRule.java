@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -24,15 +26,15 @@ public class check_BaseMethodDeclarationParameterUniqueNames_NonTypesystemRule e
   }
   public void applyRule(final SNode baseMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final Set<String> names = SetSequence.fromSet(new HashSet<String>());
-    ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        if (SetSequence.fromSet(names).contains(SPropertyOperations.getString(it, "name"))) {
+        if (SetSequence.fromSet(names).contains(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(it, "Parameter names must be unique", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4830624418866443087", null, errorTarget);
           }
         } else {
-          SetSequence.fromSet(names).addElement(SPropertyOperations.getString(it, "name"));
+          SetSequence.fromSet(names).addElement(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       }
     });

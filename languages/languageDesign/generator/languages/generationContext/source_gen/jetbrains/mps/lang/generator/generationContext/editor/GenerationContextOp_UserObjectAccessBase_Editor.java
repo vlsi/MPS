@@ -54,7 +54,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     editorCell.setCellId("Constant_4ccleb_b0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

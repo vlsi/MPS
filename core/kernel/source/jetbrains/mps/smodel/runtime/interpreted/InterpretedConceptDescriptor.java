@@ -60,6 +60,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private List<SConceptId> parentsIds;
 
   private Set<String> ancestors;
+  private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> myProperties;
   private Map<String, PropertyDescriptor> myPropertiesByName;
   private Map<SReferenceLinkId, ReferenceDescriptor> myReferences;
@@ -77,21 +78,23 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private String shortDescription;
   private String helpURL;
   private StaticScope staticScope;
+  private volatile boolean myIsInitialized = false;
+
+  // temp collections for delayed initialization
+  private List<String> directProperties = new ArrayList<String>();
+  private List<String> directReferences = new ArrayList<String>();
+
+  private Map<SPropertyId, PropertyDescriptor> directPropertiesByIds = new HashMap<SPropertyId, PropertyDescriptor>();
+  private Map<SReferenceLinkId, ReferenceDescriptor> directReferencesByIds = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
+  private Map<SContainmentLinkId, LinkDescriptor> directLinksByIds = new HashMap<SContainmentLinkId, LinkDescriptor>();
+
+  private Map<String, PropertyDescriptor> directPropertiesByName = new HashMap<String, PropertyDescriptor>();
+  private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
+  private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
   InterpretedConceptDescriptor(SConceptId id, final String name) {
     myId = id;
     myName = name;
-
-    final List<String> directProperties = new ArrayList<String>();
-    final List<String> directReferences = new ArrayList<String>();
-
-    final Map<SPropertyId, PropertyDescriptor> directPropertiesByIds = new HashMap<SPropertyId, PropertyDescriptor>();
-    final Map<SReferenceLinkId, ReferenceDescriptor> directReferencesByIds = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
-    final Map<SContainmentLinkId, LinkDescriptor> directLinksByIds = new HashMap<SContainmentLinkId, LinkDescriptor>();
-
-    final Map<String, PropertyDescriptor> directPropertiesByName = new HashMap<String, PropertyDescriptor>();
-    final Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
-    final Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
@@ -124,8 +127,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
           SNode superConceptNode = SNodeUtil.getConceptDeclaration_Extends(declaration);
 
-          if (superConceptNode == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
-            superConcept = SNodeUtil.concept_BaseConcept;
+          if (superConceptNode == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
+            superConcept = SNodeUtil.conceptName_BaseConcept;
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = NameUtil.nodeFQName(superConceptNode);
@@ -153,8 +156,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         parentsSet.remove(null);
-        if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
-          parentsSet.add(SNodeUtil.concept_BaseConcept);
+        if (superConcept == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
+          parentsSet.add(SNodeUtil.conceptName_BaseConcept);
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }
 
@@ -211,6 +214,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
       }
     });
+  }
+
+  private void init() {
+    if (myIsInitialized) {
+      return;
+    }
+    synchronized (this) {
+      if (myIsInitialized) {
+        return;
+      }
+
 
     if (isLegal) {
       // get parent descriptors
@@ -223,9 +237,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       }
 
       // ancestors
+      ancestorsIds = new HashSet<SConceptId>(parentsIds);
       ancestors = new HashSet<String>(parents);
+      ancestorsIds.add(myId);
       ancestors.add(myName);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+        ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
         ancestors.addAll(parentDescriptor.getAncestorsNames());
       }
 
@@ -301,6 +318,18 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myLinks = Collections.unmodifiableMap(linksByIds);
       myLinksByName = Collections.unmodifiableMap(linksByName);
     }
+      myIsInitialized = true;
+      directProperties = null;
+      directReferences = null;
+
+      directPropertiesByIds = null;
+      directReferencesByIds = null;
+      directLinksByIds = null;
+
+      directPropertiesByName = null;
+      directReferencesByName = null;
+      directLinksByName = null;
+    }
   }
 
   @Override
@@ -320,21 +349,25 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<String> getPropertyNames() {
+    init();
     return propertyNames;
   }
 
   @Override
   public Set<String> getReferenceNames() {
+    init();
     return referenceNames;
   }
 
   @Override
   public Set<String> getChildrenNames() {
+    init();
     return childrenNames;
   }
 
   @Override
   public Set<String> getUnorderedChildrenNames() {
+    init();
     return unorderedChildren;
   }
 
@@ -350,11 +383,13 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<String> getAncestorsNames() {
+    init();
     return ancestors;
   }
 
   @Override
   public boolean isMultipleChild(String name) {
+    init();
     return childrenMap.get(name);
   }
 
@@ -396,51 +431,67 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<SConceptId> getParentsIds() {
+    init();
     return parentsIds;
   }
 
   @Override
+  public Set<SConceptId> getAncestorsIds() {
+    init();
+    return ancestorsIds;
+  }
+
+  @Override
   public Set<SPropertyId> getPropertyIds() {
+    init();
     return myProperties.keySet();
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
+    init();
     return myProperties.get(id);
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(String name) {
+    init();
     return myPropertiesByName.get(name);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+    init();
     return myReferences.get(id);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(String name) {
+    init();
     return myReferencesByName.get(name);
   }
 
   @Override
   public Set<SContainmentLinkId> getLinkIds() {
+    init();
     return myLinks.keySet();
   }
 
   @Override
   public Set<SReferenceLinkId> getReferenceIds() {
+    init();
     return myReferences.keySet();
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
+    init();
     return myLinks.get(id);
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(String name) {
+    init();
     return myLinksByName.get(name);
   }
 }

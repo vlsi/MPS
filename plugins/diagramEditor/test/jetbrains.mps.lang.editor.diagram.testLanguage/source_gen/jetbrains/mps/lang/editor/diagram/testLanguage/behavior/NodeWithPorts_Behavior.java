@@ -4,9 +4,11 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeWithPorts_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "lineWidth", "" + (3));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414469728l, "lineWidth"), "" + (3));
   }
 }

@@ -22,6 +22,8 @@ import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.ArrayList;
@@ -91,10 +93,10 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
           for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
-              if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
-                safeMap(result, SLinkOperations.getTarget(classNode, "superclass", true), classNode);
+              if (SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) != null) {
+                safeMap(result, SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), classNode);
               }
-              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
                 safeMap(result, implementedInterface, classNode);
               }
               if (isInstanceOfAnonymousClassConcept(classNode)) {
@@ -102,7 +104,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
               }
             } else if (isInstanceOfInterfaceConcept(nextNode)) {
               SNode interfaceNode = (SNode) nextNode;
-              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface")))) {
                 safeMap(result, extendedInterface, interfaceNode);
               }
             }

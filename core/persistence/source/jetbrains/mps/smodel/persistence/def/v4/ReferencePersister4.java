@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -30,7 +31,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -136,14 +136,14 @@ public class ReferencePersister4 implements IReferencePersister {
         importedModelReference = getImportedModelUID(model, getImportIndex());
       }
       if (importedModelReference == null) {
-        LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(
+        LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeOperations.getDebugText(
             this.getSourceNode()) + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
     }
 
     if (this.getTargetId() == null) {
-      LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(this.getSourceNode()) + " : target node id is null");
+      LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeOperations.getDebugText(this.getSourceNode()) + " : target node id is null");
       return null;
     }
 
@@ -205,7 +205,7 @@ public class ReferencePersister4 implements IReferencePersister {
           }
         } else {
           LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-          LOG.error("-- was reference " + reference + " in " + SNodeUtil.getDebugText(reference.getSourceNode()));
+          LOG.error("-- was reference " + reference + " in " + SNodeOperations.getDebugText(reference.getSourceNode()));
         }
       }
     }

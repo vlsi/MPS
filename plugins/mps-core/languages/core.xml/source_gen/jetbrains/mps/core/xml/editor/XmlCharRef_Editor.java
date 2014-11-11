@@ -35,8 +35,8 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5huibn_a0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlCharRef(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -69,8 +69,8 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5huibn_c0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlCharRef(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

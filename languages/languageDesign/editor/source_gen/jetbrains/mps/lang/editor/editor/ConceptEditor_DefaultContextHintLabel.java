@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConceptEditor_DefaultContextHintLabel extends KeyMapImpl {
   public ConceptEditor_DefaultContextHintLabel() {
@@ -46,7 +48,7 @@ public class ConceptEditor_DefaultContextHintLabel extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.addNewChild(node, "contextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 6822301196700715228l, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference"));
     }
     public String getKeyStroke() {
       return " letter or digit";

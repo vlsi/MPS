@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -21,7 +23,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", new Object[]{});
+        return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), "virtual_isAbstract_1232982539764", new Object[]{});
       }
     };
   }
@@ -31,7 +33,7 @@ public class MemberScopes {
     return new FilteringScope(scope) {
       @Override
       public boolean isExcluded(SNode node) {
-        return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode}));
+        return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode}));
       }
     };
   }
@@ -40,7 +42,7 @@ public class MemberScopes {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 
     Scope membersScope = BehaviorReflection.invokeVirtual(Scope.class, contextClassifier, "virtual_getMembers_2201875424515824604", new Object[]{kind});
     if (membersScope == null) {
-      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, "name") + " and kind " + SPropertyOperations.getString(kind, "name") + " is null");
+      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " and kind " + SPropertyOperations.getString(kind, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " is null");
     }
     return visibleClassifierMembers(membersScope, contextClassifier, contextNode);
   }

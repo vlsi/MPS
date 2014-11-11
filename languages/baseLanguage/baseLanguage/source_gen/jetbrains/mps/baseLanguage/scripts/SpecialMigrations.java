@@ -7,6 +7,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -22,12 +24,12 @@ public class SpecialMigrations {
   }
   public static List<AbstractMigrationRefactoring> migrateSpecializedLinkAccess(final MigrationConfig config, final SNode linkTargetConcept) {
     // migrate all specialized link accesses to "base" link access 
-    final SNode sourceLinkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(config.sourceConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+    final SNode sourceLinkDeclaration = ListSequence.fromList(SLinkOperations.getChildren(config.sourceConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "target", false) == linkTargetConcept;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) == linkTargetConcept;
       }
     });
-    final SNode targetLinkDeclaration = SLinkOperations.getTarget(sourceLinkDeclaration, "specializedLink", false);
+    final SNode targetLinkDeclaration = SLinkOperations.getTarget(sourceLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"));
     if (sourceLinkDeclaration == null) {
       throw new IllegalArgumentException();
     }
@@ -37,27 +39,27 @@ public class SpecialMigrations {
     ListSequence.fromList(migrations).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
       @Override
       public String getName() {
-        return "Migrate specialized link reference access for " + SPropertyOperations.getString(config.sourceConcept, "name");
+        return "Migrate specialized link reference access for " + SPropertyOperations.getString(config.sourceConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "link", false) == sourceLinkDeclaration;
+        return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link")) == sourceLinkDeclaration;
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "link", targetLinkDeclaration, false);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link"), targetLinkDeclaration);
         // <node> 
       }
     });
     ListSequence.fromList(migrations).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        SNode qualifier = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true);
-        return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier") && SLinkOperations.getTarget(SNodeOperations.cast(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", false) == sourceLinkDeclaration;
+        SNode qualifier = SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 3609773094169249792l, 3609773094169252180l, "linkQualifier")), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 5168775467716640652l, 5168775467716640653l, "linkQualifier"));
+        return SNodeOperations.isInstanceOf(qualifier, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")) && SLinkOperations.getTarget(SNodeOperations.cast(qualifier, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, 1204851882689l, "link")) == sourceLinkDeclaration;
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true), "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", targetLinkDeclaration, false);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 3609773094169249792l, 3609773094169252180l, "linkQualifier")), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 5168775467716640652l, 5168775467716640653l, "linkQualifier")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1204851882688l, 1204851882689l, "link"), targetLinkDeclaration);
       }
     });
 
@@ -68,10 +70,10 @@ public class SpecialMigrations {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138128738l, "concept"), (SNode) parameter_1);
     quotedNode_4 = (SNode) parameter_2;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression"), HUtil.copyIfNecessary(quotedNode_4));
     }
     return quotedNode_3;
   }

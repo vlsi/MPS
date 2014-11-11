@@ -9,9 +9,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Extension_customContainers5633688998557455304_ extends Extension.Default<_FunctionTypes._return_P0_E0<? extends List<SNode>>> {
   public Extension_customContainers5633688998557455304_() {
@@ -22,10 +23,9 @@ public class Extension_customContainers5633688998557455304_ extends Extension.De
       public List<SNode> invoke() {
         List<SNode> res = new ArrayList<SNode>();
         // Find the model(s) with custom container declarations 
-        SModel desc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
-        SModel mdl = desc;
+        SModel mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.collections.custom");
         if (mdl != null) {
-          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
+          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.nodes(mdl, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485324l, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"))));
         }
         return res;
       }

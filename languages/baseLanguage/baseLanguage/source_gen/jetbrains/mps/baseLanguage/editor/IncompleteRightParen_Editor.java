@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -44,7 +46,7 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuffer buffer = new StringBuffer(")");
-        for (int i = 1; i < SPropertyOperations.getInteger(node, "count"); i++) {
+        for (int i = 1; i < SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1071364028384826861l, 1071364028384826862l, "count")); i++) {
           buffer.append(")");
         }
         return buffer.toString();
@@ -60,8 +62,8 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_lnoz1c_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     DeleteIncompleteRightParen.setCellActions(editorCell, node, editorContext);
     return editorCell;

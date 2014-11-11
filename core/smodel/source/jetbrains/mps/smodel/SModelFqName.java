@@ -18,13 +18,16 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ImmutableObject;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.annotations.Immutable;
 
 /**
- * use simple String
+ *
+ * @deprecated use simple String or {@link jetbrains.mps.smodel.SModelStereotype#withStereotype(String, String)} instead.
  */
 @Deprecated
-@ImmutableObject
+@Immutable
+@ToRemove(version = 3.2)
 public class SModelFqName implements Comparable<Object> {
   public static SModelFqName fromString(String s) {
     if (s == null) s = "";

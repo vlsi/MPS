@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -19,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory {
@@ -54,7 +55,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       return false;
     }
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
+    return SPropertyOperations.getBoolean(selectedNodeConcept, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1210374656847760938");
@@ -75,7 +76,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, "abstract")) && !(SConceptOperations.isSubConceptOf(it, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"));
+        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1835621062190663819l, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
       }
     }).toListSequence();
   }
@@ -88,7 +89,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null);
+      SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null);
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
     }

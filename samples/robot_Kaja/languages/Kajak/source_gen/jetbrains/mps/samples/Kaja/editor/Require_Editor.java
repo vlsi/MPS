@@ -35,7 +35,7 @@ public class Require_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7hmin7_a0");
     Style style = new StyleImpl();
     KajakStyles_StyleSheet.apply_Command(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

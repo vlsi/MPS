@@ -20,13 +20,18 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -121,11 +126,7 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static List<SNode> getChildren(SNode n) {
-    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : Sequence.fromIterable(n.getChildren())) {
-      ListSequence.fromList(res).addElement(child);
-    }
-    return res;
+    return IterableUtil.asList(n.getChildren());
   }
   /**
    * todo rewrite the code using this
@@ -156,7 +157,20 @@ public class SNodeOperations {
   /**
    * todo rewrite the code via snode methods
    */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
+    if (anchor != null) {
+      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      return;
+    }
+    Iterator<? extends SNode> it = parent.getChildren().iterator();
+    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
+  }
+  /**
+   * todo rewrite the code via snode methods
+   */
+  public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
     if (anchor != null) {
       parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
       return;
@@ -176,7 +190,37 @@ public class SNodeOperations {
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
-    return SNodeUtil.getDebugText(((SNode) node));
+    String roleText = "";
+    if (node.getModel() != null) {
+      SNode parent = node.getParent();
+      roleText = (parent == null ? "[root]" : "[" + node.getContainmentLink().getRoleName() + "]");
+    }
+    String nameText = null;
+    String modelName;
+    try {
+      if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
+        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_LinkDeclaration_role);
+        if ((role != null && role.length() > 0)) {
+          nameText = '\"' + role + '\"';
+        } else {
+          nameText = "<no ref>";
+        }
+      } else if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_INamedConcept)) {
+        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
+        if ((name != null && name.length() > 0)) {
+          nameText = '\"' + name + '\"';
+        } else {
+          nameText = "<no name>";
+        }
+      }
+      nameText = nameText + "[" + node.getNodeId() + "]";
+      SModel model = node.getModel();
+      modelName = (model != null ? model.getModelName() : "<no model>");
+    } catch (Exception e) {
+      nameText = "<??name??>";
+      modelName = "<??model??>";
+    }
+    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
   public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
     final Set<String> augend = new HashSet<String>();
@@ -186,6 +230,13 @@ public class SNodeOperations {
       }
     }
     return augend;
+  }
+  public static SNode getChild(SNode node, SContainmentLink role) {
+    Iterable<? extends SNode> children = node.getChildren(role);
+    if (!(children.iterator().hasNext())) {
+      return null;
+    }
+    return children.iterator().next();
   }
   public static SNode getChild(SNode node, String role) {
     Iterable<? extends SNode> children = node.getChildren(role);
@@ -198,11 +249,11 @@ public class SNodeOperations {
    * This will be replaced by getting resolve info from a reference in a context containing it
    */
   public static String getResolveInfo(SNode n) {
-    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(((SNode) n));
+    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo")));
     if (resolveInfo != null) {
       return resolveInfo;
     }
-    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+    return SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static void copyProperties(SNode from, final SNode to) {
     for (String name : from.getPropertyNames()) {

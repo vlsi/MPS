@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,15 +21,15 @@ public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTyp
   public check_MappingConfiguration_NonTypesystemRule() {
   }
   public void applyRule(final SNode mc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode scriptReference : ListSequence.fromList(SLinkOperations.getTargets(mc, "preMappingScript", true))) {
-      if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "pre_processing", "post_processing"))) {
+    for (SNode scriptReference : ListSequence.fromList(SLinkOperations.getChildren(mc, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1195502100749l, "preMappingScript")))) {
+      if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript")), MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "pre_processing", "post_processing"))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(scriptReference, "pre-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601255636", null, errorTarget);
       }
     }
     // -- 
-    for (SNode scriptReference : ListSequence.fromList(SLinkOperations.getTargets(mc, "postMappingScript", true))) {
-      if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "post_processing", "post_processing"))) {
+    for (SNode scriptReference : ListSequence.fromList(SLinkOperations.getChildren(mc, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1195502346405l, "postMappingScript")))) {
+      if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript")), MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "post_processing", "post_processing"))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(scriptReference, "post-processing script kind is expected", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1195601346473", null, errorTarget);
       }

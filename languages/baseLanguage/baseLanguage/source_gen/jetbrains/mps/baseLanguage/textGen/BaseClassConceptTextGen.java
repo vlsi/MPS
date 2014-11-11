@@ -7,6 +7,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -28,9 +30,9 @@ public abstract class BaseClassConceptTextGen {
     boolean isWrappedElementBefore = true;
     SNode lastMember = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).last();
     for (SNode member : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
-        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
+      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
+        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), textGen);
         textGen.appendNode(member);
         BaseLanguageTextGen.newLine(needsLineAfter && !((lastMember == member)), textGen);
@@ -40,10 +42,10 @@ public abstract class BaseClassConceptTextGen {
         isWrappedElementBefore = false;
       }
     }
-    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
+    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1171626359898l, "staticInitializer")) != null)) {
       textGen.appendWithIndent("static {");
       textGen.increaseDepth();
-      textGen.appendNode(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true));
+      textGen.appendNode(SLinkOperations.getTarget(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1171626359898l, "staticInitializer")));
       textGen.appendNewLine();
       textGen.decreaseDepth();
       textGen.appendWithIndent("}");

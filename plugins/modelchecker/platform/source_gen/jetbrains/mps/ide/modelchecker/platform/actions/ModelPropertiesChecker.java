@@ -22,18 +22,15 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    SModel modelDescriptor = model;
-    if (false) {
-      List<String> errors = new ModelValidator(modelDescriptor).validate();
-      if (!(ListSequence.fromList(errors).isEmpty())) {
-        String extraMessage = ListSequence.fromList(errors).getElement(0);
-        if (ListSequence.fromList(errors).count() == 2) {
-          extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
-        } else if (ListSequence.fromList(errors).count() > 2) {
-          extraMessage += "; ...";
-        }
-        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
+    List<String> errors = new ModelValidator(model).validate();
+    if (!(errors.isEmpty())) {
+      String extraMessage = ListSequence.fromList(errors).getElement(0);
+      if (errors.size() == 2) {
+        extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
+      } else if (errors.size() > 2) {
+        extraMessage += "; ...";
       }
+      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, SModelOperations.getModelName(model) + ": " + NameUtil.formatNumericalString(errors.size(), "unresolved dependency") + " (" + extraMessage + "; see model properties)", null, ModelChecker.SEVERITY_ERROR, "Model properties"));
     }
     monitor.done();
     return results;

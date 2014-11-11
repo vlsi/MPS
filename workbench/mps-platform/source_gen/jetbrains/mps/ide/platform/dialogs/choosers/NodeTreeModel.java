@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 
 public abstract class NodeTreeModel implements TreeModel {
   private static SNodeReference FAKE_ROOT = new SNodePointer(null);
@@ -121,9 +121,9 @@ public abstract class NodeTreeModel implements TreeModel {
       return true;
     }
   }
-  protected static class NodeTreeElementPresentation extends NodePresentation {
+  protected static class NodeTreeElementPresentation extends NodePointerPresentation {
     public NodeTreeElementPresentation(SNodeReference node) {
-      super(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
+      super(node);
     }
     @Override
     public String doGetLocationString() {

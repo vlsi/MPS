@@ -10,9 +10,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,10 +28,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.lang.resources.structure.IconResourceDeclaration");
+            return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029888l, "jetbrains.mps.lang.resources.structure.IconResourceDeclaration"));
           }
         }.compute();
         if (queryResult != null) {
@@ -39,7 +41,7 @@ public class QueriesGenerated {
                 return _quotation_createNode_u7cy7b_a0a0a0a((item));
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "conceptAlias") + "<" + SPropertyOperations.getString((item), "name") + ">";
+                return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + "<" + SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ">";
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -55,7 +57,7 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "declaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029895l, 8974276187400029896l, "declaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

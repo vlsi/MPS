@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,9 +22,9 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
   public check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode constructor = SNodeOperations.getAncestor(constructorInvocation, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false);
+    SNode constructor = SNodeOperations.getNodeAncestor(constructorInvocation, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     if (constructor != null) {
-      SNode statementList = SLinkOperations.getTarget(constructor, "body", true);
+      SNode statementList = SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"));
       SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(statementList);
       if (firstStatement != constructorInvocation) {
         {

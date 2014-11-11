@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -31,18 +33,18 @@ public class SingleLineCommentActions {
 
       SNode selectedNode = editorContext.getSelectedNode();
       SNode selectedPart;
-      if (SNodeOperations.isInstanceOf(selectedNode, "jetbrains.mps.baseLanguage.structure.CommentPart")) {
-        selectedPart = SNodeOperations.cast(selectedNode, "jetbrains.mps.baseLanguage.structure.CommentPart");
-      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(selectedNode), "jetbrains.mps.baseLanguage.structure.CommentPart")) {
+      if (SNodeOperations.isInstanceOf(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
+        selectedPart = SNodeOperations.cast(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"));
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(selectedNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
         //  commented statement comes in selection 
-        selectedPart = SNodeOperations.cast(SNodeOperations.getParent(selectedNode), "jetbrains.mps.baseLanguage.structure.CommentPart");
+        selectedPart = SNodeOperations.cast(SNodeOperations.getParent(selectedNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"));
       } else {
         return;
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).last() == selectedPart) {
-        SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).last() == selectedPart) {
+        SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), null));
       } else {
-        SNodeOperations.insertNextSiblingChild(selectedPart, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentPart", null));
+        SNodeOperations.insertNextSiblingChild(selectedPart, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"), null));
       }
     }
   }

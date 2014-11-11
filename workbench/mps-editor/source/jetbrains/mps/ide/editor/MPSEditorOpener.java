@@ -27,20 +27,21 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Component;
 
@@ -61,33 +62,6 @@ public class MPSEditorOpener {
     }
 
     return new NodeEditor(operationContext, node);
-  }
-
-  /**
-   * TODO: not used, remove before MPS 3.0
-   *
-   * @deprecated use openNode(SNode, IOperationContext, boolean, boolean) instead
-   */
-  @Deprecated
-  public void openNode(final SNode node) {
-    if (node == null) return;
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
-
-        ModuleContext context = new ModuleContext(node.getModel().getModule(), ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
-      }
-    });
-  }
-
-  /**
-   * @deprecated use openNode(SNode, IOperationContext, boolean, boolean) instead
-   */
-  @Deprecated
-  public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
   }
 
   /*
@@ -115,9 +89,8 @@ public class MPSEditorOpener {
       DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
       FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
       NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
+      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUpdater().getInitialEditorHints());
     }
-
 
 
     final jetbrains.mps.openapi.editor.EditorComponent inspector = getInspectorComponent();
@@ -250,13 +223,17 @@ public class MPSEditorOpener {
   }
 
   private boolean restorePrevSelectionInInspector(Editor nodeEditor, IOperationContext context, InspectorTool inspectorTool) {
-    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) return false;
+    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
+      return false;
+    }
     NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if (nec == null || nec.getLastInspectedNode() == null) return false;
+    if (nec.getLastInspectedNode() == null) {
+      return false;
+    }
 
     DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUseCustomHints() ? nec.getEnabledHints() : null);
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUpdater().getInitialEditorHints());
     return true;
   }
 }

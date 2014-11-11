@@ -9,12 +9,15 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -51,7 +54,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "template", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")) != null;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1205436780371");
@@ -72,7 +75,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
       return "Convert to Inline Template";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", true, new String[]{});
+      List<SNode> TFs = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), true, new SConcept[]{});
       if (ListSequence.fromList(TFs).isEmpty()) {
         JOptionPane.showMessageDialog(null, "No fragments found");
         return;
@@ -86,8 +89,8 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
       SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
       SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"));
       SNodeOperations.deleteNode(TFtoDelete);
-      SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
-      SLinkOperations.setTarget(inlineTemplate, "templateNode", fragmentToSet, true);
+      SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
+      SLinkOperations.setTarget(inlineTemplate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"), fragmentToSet);
       // ------ 
       int option = JOptionPane.showConfirmDialog(null, "Delete old template?", "", JOptionPane.YES_NO_OPTION);
       if (option == JOptionPane.YES_OPTION) {

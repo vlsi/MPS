@@ -18,8 +18,10 @@
     <model ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" name="jetbrains.mps.lang.smodel.behavior" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -37,10 +39,14 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112056943463" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112058030570" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
@@ -48,8 +54,10 @@
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1138079221458" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1138079416598" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" />
@@ -60,6 +68,7 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1154465273778" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1154622616118" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158700664498" name="jetbrains.mps.lang.actions.structure.NodeFactories" />
@@ -67,16 +76,20 @@
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158701162220" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174650418652" name="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176543928247" name="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176558773329" name="jetbrains.mps.lang.typesystem.structure.CoerceStatement" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177323996388" name="jetbrains.mps.lang.actions.structure.AddMenuPart" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177333529597" name="jetbrains.mps.lang.actions.structure.ConceptPart" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177398027324" name="jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177413882405" name="jetbrains.mps.lang.actions.structure.RemoveByConditionPart" />
@@ -86,21 +99,31 @@
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177498013932" name="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177498071304" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177498227294" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177568407352" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1178537049112" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1178539929008" name="jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1178541723620" name="jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1178870617262" name="jetbrains.mps.lang.typesystem.structure.CoerceExpression" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1178871491133" name="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1179456248444" name="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1180111159572" name="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1196433923911" name="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/767145758118872828" name="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/767145758118872833" name="jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/5584396657084912703" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/5584396657084920413" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -131,9 +154,11 @@
     <refRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411/1153944258490" name="variable" />
     <refRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158700725281/1158700943156" name="applicableConcept" />
     <refRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174642788531/1174642800329" name="concept" />
+    <refRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174650418652/1174650432090" name="applicableNode" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" name="conceptDeclaration" />
     <refRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177333529597/1177333551023" name="concept" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" name="conceptDeclaraton" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" name="fieldDeclaration" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886295" name="lValue" />
@@ -171,6 +196,9 @@
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158700725281/1158701448518" name="setupFunction" />
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176543928247/1176543945045" name="subtypeExpression" />
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176543928247/1176543950311" name="supertypeExpression" />
+    <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176558773329/1176558868203" name="body" />
+    <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176558773329/1176558876970" name="pattern" />
+    <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176558773329/1176558919376" name="nodeToCoerce" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865/1177027386292" name="conceptArgument" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112058030570/1177324142645" name="part" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177333529597/1177333559040" name="part" />
@@ -185,11 +213,14 @@
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1178870617262/1178870894644" name="pattern" />
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1178870617262/1178870894645" name="nodeToCoerce" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1178539929008/1179456561288" name="initializerBlock" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180031783296/1180031783297" name="conceptArgument" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1180111159572/1180111489972" name="nodeBlock" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402/1188208488637" name="annotation" />
     <childRole id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785113/1196350785114" name="quotedNode" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327/1206733650006" name="conceptArgument" />
+    <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176558773329/1220447035659" name="elseClause" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
@@ -216,6 +247,7 @@
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" implicit="true" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" implicit="true" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <contents>
     <node concept="abtv.1112056943463" id="1138078942005" info="ng">
@@ -376,6 +408,37 @@
                   <property role="vg0i.6329021646629104957.6329021646629104958" value="is concept ?" />
                 </node>
               </node>
+              <node concept="vg0i.1068580123159" id="991966736889781245" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="991966736889781246" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068580123155" id="991966736889781247" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068498886294" id="991966736889781248" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1068580123137" id="991966736889781249" role="vg0i.1215693861676.1068498886297" info="nn">
+                        <property role="vg0i.1068580123137.1068580123138" value="true" />
+                      </node>
+                      <node concept="vg0i.1197027756228" id="991966736889781250" role="vg0i.1215693861676.1068498886295" info="nn">
+                        <node concept="vg0i.1068498886296" id="991966736889781251" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1206377976331" resolveInfo="result" />
+                        </node>
+                        <node concept="vg0i.1197029447546" id="991966736889781252" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1197029447546.1197029500499" target="1206377822467" resolveInfo="myToConcept" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1073239437375" id="991966736889781253" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1070534058343" id="991966736889781254" role="vg0i.1081773326031.1081773367579" info="nn" />
+                  <node concept="swut.1178871491133" id="991966736889781255" role="vg0i.1081773326031.1081773367580" info="nn">
+                    <node concept="vg0i.1068498886296" id="991966736889781256" role="swut.1178870617262.1178870894645" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1206377950230" resolveInfo="leftType" />
+                    </node>
+                    <node concept="swut.1174642788531" id="991966736889781257" role="swut.1178870617262.1178870894644" info="ig">
+                      <property role="asn4.1169194658468.1169194664001" value="v" />
+                      <reference role="swut.1174642788531.1174642800329" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="vg0i.1068580123159" id="1206377950242" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1068580123136" id="1206377950243" role="vg0i.1068580123159.1068580123161" info="sn">
                   <node concept="vg0i.1068580123155" id="1206378044911" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -387,8 +450,8 @@
                         <node concept="vg0i.1068498886296" id="4265636116363066433" role="vg0i.1197027756228.1197027771414" info="nn">
                           <reference role="vg0i.1068498886296.1068581517664" target="1206377976331" resolveInfo="result" />
                         </node>
-                        <node concept="vg0i.1197029447546" id="1206378050634" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="vg0i.1197029447546.1197029500499" target="1206377822467" resolveInfo="myToConcept" />
+                        <node concept="vg0i.1197029447546" id="8828148184963775683" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1197029447546.1197029500499" target="8828148184963769620" resolveInfo="myToSConcept" />
                         </node>
                       </node>
                     </node>
@@ -401,8 +464,8 @@
                       <reference role="vg0i.1068498886296.1068581517664" target="1206377950230" resolveInfo="leftType" />
                     </node>
                     <node concept="swut.1174642788531" id="1206377950248" role="swut.1178870617262.1178870894644" info="ig">
-                      <property role="asn4.1169194658468.1169194664001" value="v" />
-                      <reference role="swut.1174642788531.1174642800329" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                      <property role="asn4.1169194658468.1169194664001" value="sConceptTypeSConcept" />
+                      <reference role="swut.1174642788531.1174642800329" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
                     </node>
                   </node>
                 </node>
@@ -806,6 +869,35 @@
                   </node>
                   <node concept="vg0i.1197029447546" id="1206378233367" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1197029447546.1197029500499" target="1206377822467" resolveInfo="myToConcept" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.6329021646629104954" id="8828148184963776371" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.6329021646629104957" id="8828148184963776372" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+                  <property role="vg0i.6329021646629104957.6329021646629104958" value="is sconcept ?" />
+                </node>
+              </node>
+              <node concept="vg0i.1068580123159" id="8828148184963776373" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="8828148184963776374" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068581242878" id="8828148184963776375" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1081516740877" id="8828148184963776376" role="vg0i.1068581242878.1068581517676" info="nn">
+                      <node concept="vg0i.1197027756228" id="8828148184963776377" role="vg0i.1081516740877.1081516765348" info="nn">
+                        <node concept="vg0i.1068498886296" id="8828148184963776378" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1180539443585" resolveInfo="parameterOp" />
+                        </node>
+                        <node concept="4ia1.1179409122411" id="8828148184963782356" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="tpeu.8828148184963745087" resolveInfo="applicableToSConcept" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1197027756228" id="8828148184963776380" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="abtv.1178541723620" id="8828148184963776381" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1206377916680" resolveInfo="appTypesInfo" />
+                  </node>
+                  <node concept="vg0i.1197029447546" id="8828148184963780283" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1197029447546.1197029500499" target="8828148184963769620" resolveInfo="myToSConcept" />
                   </node>
                 </node>
               </node>
@@ -2463,6 +2555,14 @@
     <node concept="vg0i.1068390468198" id="1206377804308" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="ApplicableTypesInfo" />
       <property role="asn4.1133920641626.1193676396447" value="substitute" />
+      <node concept="vg0i.1068390468200" id="8828148184963769620" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="myToSConcept" />
+        <node concept="vg0i.1068580123137" id="8828148184963769621" role="vg0i.1068431474542.1068431790190" info="nn">
+          <property role="vg0i.1068580123137.1068580123138" value="false" />
+        </node>
+        <node concept="vg0i.1070534644030" id="8828148184963769622" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+        <node concept="vg0i.1146644602865" id="8828148184963769623" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
       <node concept="vg0i.1068390468200" id="1206377822467" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="myToConcept" />
         <node concept="vg0i.1068580123137" id="1206377849025" role="vg0i.1068431474542.1068431790190" info="nn">
@@ -2470,6 +2570,9 @@
         </node>
         <node concept="vg0i.1070534644030" id="1206377828679" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
         <node concept="vg0i.1146644602865" id="1206377822468" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1188207840427" id="8828148184963770874" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Deprecated" resolveInfo="Deprecated" />
+        </node>
       </node>
       <node concept="vg0i.1068390468200" id="1206377824736" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="myToNode" />
@@ -2486,22 +2589,6 @@
         </node>
         <node concept="vg0i.1146644602865" id="1206377825958" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1070534644030" id="1206377863920" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-      </node>
-      <node concept="vg0i.1068390468200" id="1240146370519" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="myToEnum" />
-        <node concept="vg0i.1146644602865" id="1240146375865" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123137" id="1240146385285" role="vg0i.1068431474542.1068431790190" info="nn">
-          <property role="vg0i.1068580123137.1068580123138" value="false" />
-        </node>
-        <node concept="vg0i.1070534644030" id="1240146378642" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-      </node>
-      <node concept="vg0i.1068390468200" id="1240170392511" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="myToEnumMember" />
-        <node concept="vg0i.1068580123137" id="1240170392514" role="vg0i.1068431474542.1068431790190" info="nn">
-          <property role="vg0i.1068580123137.1068580123138" value="false" />
-        </node>
-        <node concept="vg0i.1070534644030" id="1240170392513" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-        <node concept="vg0i.1146644602865" id="1240170392512" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
       <node concept="vg0i.1068390468200" id="572489343766100875" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="myLinkAccess" />
@@ -2736,6 +2823,121 @@
               <node concept="vg0i.1068581242878" id="1926293835606292566" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1068580123137" id="1926293835606294715" role="vg0i.1068581242878.1068581517676" info="nn">
                   <property role="vg0i.1068580123137.1068580123138" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="abtv.1112056943463" id="9116031298980695917" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="operation" />
+      <node concept="abtv.1112058030570" id="9116031298980695918" role="abtv.1112056943463.1112058057696" info="ig">
+        <reference role="abtv.1112058030570.1112058088712" target="tp25.1138411891628" resolveInfo="SNodeOperation" />
+        <node concept="abtv.1177413882405" id="9116031298980695923" role="abtv.1112058030570.1177324142645" info="ng">
+          <node concept="abtv.1177413954598" id="9116031298980695924" role="abtv.1177413882405.1177414109676" info="in">
+            <node concept="vg0i.1068580123136" id="9116031298980695925" role="vg0i.1137021947720.1137022507850" info="sn">
+              <node concept="vg0i.1068581242864" id="9116031298980704345" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="9116031298980704346" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="result" />
+                  <node concept="vg0i.1107535904670" id="9116031298980704347" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="vg0i.1107535904670.1107535924139" target="1206377804308" resolveInfo="ApplicableTypesInfo" />
+                  </node>
+                  <node concept="vg0i.1145552977093" id="9116031298980704348" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <node concept="vg0i.1212685548494" id="9116031298980704349" role="vg0i.1145552977093.1145553007750" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="1206378005506" resolveInfo="ApplicableTypesInfo" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068581242864" id="9116031298980704350" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="9116031298980704351" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="leftExpression" />
+                  <node concept="4ia1.1138055754698" id="9116031298980704352" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="4ia1.1138055754698.1138405853777" target="tpee.1068431790191" resolveInfo="Expression" />
+                  </node>
+                  <node concept="vg0i.1197027756228" id="9116031298980704353" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <node concept="4ia1.1140137987495" id="9116031298980704354" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="4ia1.1140137987495.1140138128738" target="tpee.1197027756228" resolveInfo="DotExpression" />
+                      <node concept="abtv.1154465273778" id="9116031298980704355" role="4ia1.1140137987495.1140138123956" info="nn" />
+                    </node>
+                    <node concept="4ia1.1138056143562" id="9116031298980704356" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="4ia1.1138056143562.1138056516764" target="tpee.1197027771414" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068581242864" id="9116031298980704357" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="9116031298980704358" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="leftType" />
+                  <node concept="4ia1.1138055754698" id="9116031298980704359" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                  <node concept="vg0i.1197027756228" id="9116031298980704360" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <node concept="vg0i.1068498886296" id="9116031298980704361" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="9116031298980704351" resolveInfo="leftExpression" />
+                    </node>
+                    <node concept="swut.1176544042499" id="9116031298980704362" role="vg0i.1197027756228.1197027833540" info="nn" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123159" id="9116031298980939812" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="9116031298980939815" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068581242878" id="9116031298980945726" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068580123137" id="9116031298980946930" role="vg0i.1068581242878.1068581517676" info="nn">
+                      <property role="vg0i.1068580123137.1068580123138" value="false" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1081516740877" id="9116031298980948191" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1197027756228" id="9116031298980948193" role="vg0i.1081516740877.1081516765348" info="nn">
+                    <node concept="abtv.1177568407352" id="9116031298980948194" role="vg0i.1197027756228.1197027771414" info="nn" />
+                    <node concept="4ia1.1139621453865" id="9116031298980948195" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <node concept="4ia1.1177026924588" id="9116031298980948196" role="4ia1.1139621453865.1177027386292" info="nn">
+                        <reference role="4ia1.1177026924588.1177026940964" target="tp25.334628810661441841" resolveInfo="AsSConcept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="swut.1176558773329" id="9116031298980708103" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="9116031298980708105" role="swut.1176558773329.1176558868203" info="sn">
+                  <node concept="vg0i.1068581242878" id="9116031298980713684" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1081516740877" id="9116031298980835554" role="vg0i.1068581242878.1068581517676" info="nn">
+                      <node concept="vg0i.1079359253375" id="9116031298986646209" role="vg0i.1081516740877.1081516765348" info="nn">
+                        <node concept="vg0i.1197027756228" id="9116031298986673441" role="vg0i.1079359253375.1079359253376" info="nn">
+                          <node concept="vg0i.1197027756228" id="9116031298986669202" role="vg0i.1197027756228.1197027771414" info="nn">
+                            <node concept="vg0i.1197027756228" id="9116031298986663820" role="vg0i.1197027756228.1197027771414" info="nn">
+                              <node concept="swut.1174650418652" id="9116031298986663052" role="vg0i.1197027756228.1197027771414" info="nn">
+                                <reference role="swut.1174650418652.1174650432090" target="9116031298980709484" resolveInfo="nodeType" />
+                              </node>
+                              <node concept="4ia1.1138056143562" id="9116031298986667559" role="vg0i.1197027756228.1197027833540" info="nn">
+                                <reference role="4ia1.1138056143562.1138056516764" target="tp25.1138405853777" />
+                              </node>
+                            </node>
+                            <node concept="4ia1.334628810661441841" id="9116031298986671228" role="vg0i.1197027756228.1197027833540" info="nn" />
+                          </node>
+                          <node concept="4ia1.1180031783296" id="9116031298986675004" role="vg0i.1197027756228.1197027833540" info="nn">
+                            <node concept="4ia1.1177026924588" id="9116031298986676295" role="4ia1.1180031783296.1180031783297" info="nn">
+                              <reference role="4ia1.1177026924588.1177026940964" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1068498886296" id="9116031298980708805" role="swut.1176558773329.1176558919376" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="9116031298980704358" resolveInfo="leftType" />
+                </node>
+                <node concept="swut.1174642788531" id="9116031298980709484" role="swut.1176558773329.1176558876970" info="ig">
+                  <property role="asn4.1169194658468.1169194664001" value="nodeType" />
+                  <reference role="swut.1174642788531.1174642800329" target="tp25.1138055754698" resolveInfo="SNodeType" />
+                </node>
+                <node concept="vg0i.1068580123136" id="9116031298980711623" role="swut.1176558773329.1220447035659" info="sn">
+                  <node concept="vg0i.1068581242878" id="9116031298980711622" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068580123137" id="9116031298980712986" role="vg0i.1068581242878.1068581517676" info="nn">
+                      <property role="vg0i.1068580123137.1068580123138" value="false" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

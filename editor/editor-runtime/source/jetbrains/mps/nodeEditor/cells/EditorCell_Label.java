@@ -346,7 +346,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
     TextLine textLine = getRenderedTextLine();
     boolean toShowCaret = toShowCaret();
     boolean selected = isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted();

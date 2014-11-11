@@ -38,13 +38,12 @@ import java.util.Enumeration;
 import java.util.List;
 
 public class SModelsSubtree {
-  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
-    SModule module = operationContext.getModule();
-    assert module != null;
-    create(rootTreeNode, operationContext, IterableUtil.asList(module.getModels()), false);
+
+  public static void create(MPSTreeNode rootTreeNode, SModule module) {
+    create(rootTreeNode, module, IterableUtil.asList(module.getModels()), false);
   }
 
-  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModel> models, boolean dropMiddleNodes) {
+  private static void create(MPSTreeNode rootTreeNode, SModule contextModule, List<SModel> models, boolean dropMiddleNodes) {
     List<SModel> regularModels = new ArrayList<SModel>();
     List<SModel> tests = new ArrayList<SModel>();
     List<SModel> stubs = new ArrayList<SModel>();
@@ -68,9 +67,8 @@ public class SModelsSubtree {
       }
     }
 
-    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
+    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
-      SModule contextModule = operationContext.getModule();
       if (contextModule instanceof Language) {
         for (SModelTreeNode treeNode : regularModelNodes) {
           rootTreeNode.add(treeNode);
@@ -90,12 +88,12 @@ public class SModelsSubtree {
     if (!tests.isEmpty()) {
       SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
 
-      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext, isNeedBuildChildModels(rootTreeNode));
+      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode testNode : testNodes) {
         builder.addNode(testNode);
       }
 
-      TestsTreeNode testsNode = new TestsTreeNode(operationContext);
+      TestsTreeNode testsNode = new TestsTreeNode();
       builder.fillNode(testsNode);
 
       if (!dropMiddleNodes) {
@@ -110,12 +108,12 @@ public class SModelsSubtree {
 
     if (!stubs.isEmpty()) {
       SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-      List<SModelTreeNode> stubNodes = getRootModelTreeNodes(stubs, operationContext, isNeedBuildChildModels(rootTreeNode));
+      List<SModelTreeNode> stubNodes = getRootModelTreeNodes(stubs, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode treeNode : stubNodes) {
         builder.addNode(treeNode);
       }
 
-      StubsTreeNode stubsNode = new StubsTreeNode(operationContext);
+      StubsTreeNode stubsNode = new StubsTreeNode();
       builder.fillNode(stubsNode);
 
       if (!dropMiddleNodes) {
@@ -138,7 +136,7 @@ public class SModelsSubtree {
     return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
   }
 
-  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModel> models, IOperationContext context, boolean isNeedBuildChildModels) {
+  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModel> models, boolean isNeedBuildChildModels) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     List<SModel> sortedModels = SortUtil.sortModels(models);
     if (!sortedModels.isEmpty()) {
@@ -147,7 +145,7 @@ public class SModelsSubtree {
         SModel rootModelDescriptor = sortedModels.get(rootIndex);
         int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(
             SModelStereotype.withoutStereotype(rootModelDescriptor.getReference().getModelName())));
-        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
+        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, countNamePart);
         result.add(treeNode);
         rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
       }
@@ -160,9 +158,8 @@ public class SModelsSubtree {
     while (index < candidates.size()) {
       SModel candidate = candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
-        IOperationContext context = treeNode.getOperationContext();
-        int countNamePart = getCountNamePart(candidate, SNodeOperations.getModelLongName(treeNode.getSModelDescriptor()));
-        SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, context, countNamePart);
+        int countNamePart = getCountNamePart(candidate, SNodeOperations.getModelLongName(treeNode.getModel()));
+        SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, countNamePart);
         treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, candidates, index);
       } else {
@@ -179,8 +176,8 @@ public class SModelsSubtree {
   }
 
   public static class StubsTreeNode extends TextTreeNode implements StereotypeProvider {
-    public StubsTreeNode(IOperationContext context) {
-      super("stubs", context);
+    public StubsTreeNode() {
+      super("stubs");
 
       setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
       setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
@@ -198,8 +195,8 @@ public class SModelsSubtree {
   }
 
   public static class TestsTreeNode extends TextTreeNode implements StereotypeProvider {
-    public TestsTreeNode(IOperationContext context) {
-      super("tests", context);
+    public TestsTreeNode() {
+      super("tests");
 
       setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
       setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);

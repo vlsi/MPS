@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -63,14 +66,14 @@ public class SafeRemoveConstant_Intention implements IntentionFactory {
       return "Safely Remove Constant";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      Iterable<SNode> allReferences = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constants", false, false), "org.jetbrains.mps.samples.Constants.structure.ConstantReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> allReferences = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912535l, "org.jetbrains.mps.samples.Constants.structure.Constants"), false, false), MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, "original", false) == node;
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, 3990190717072393830l, "original")) == node;
         }
       });
       Sequence.fromIterable(allReferences).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.replaceWithAnother(it, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "initializer", true)));
+          SNodeOperations.replaceWithAnother(it, SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, 2001769927721010657l, "initializer"))));
         }
       });
       SNodeOperations.deleteNode(node);

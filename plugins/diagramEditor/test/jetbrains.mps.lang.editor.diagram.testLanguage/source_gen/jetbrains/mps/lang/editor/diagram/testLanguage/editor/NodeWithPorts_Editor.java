@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,50 +61,50 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
       super(editorContext, node);
       myPropertyCell_t9c2f5_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "x");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "x", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a0a);
       myPropertyCell_t9c2f5_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_t9c2f5_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "y");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "y", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a1a);
       myPropertyCell_t9c2f5_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_t9c2f5_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "width");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706498l, "width"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "width", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706498l, "width"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a2a);
       myPropertyCell_t9c2f5_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myPropertyCell_t9c2f5_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "height");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706500l, "height"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "height", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706500l, "height"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a3a);
       myPropertyCell_t9c2f5_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       myPropertyCell_t9c2f5_a4a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "lineWidth");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414469728l, "lineWidth"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "lineWidth", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414469728l, "lineWidth"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a4a);
@@ -116,8 +118,8 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
       myPropertyCell_t9c2f5_a2a.synchronize();
       myPropertyCell_t9c2f5_a3a.synchronize();
       myPropertyCell_t9c2f5_a4a.synchronize();
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "inputs", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "outputs", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
+      syncPortNodes(SLinkOperations.getChildren(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414436925l, "inputs")), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
+      syncPortNodes(SLinkOperations.getChildren(getSNode(), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414436946l, "outputs")), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {

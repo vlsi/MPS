@@ -20,11 +20,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public abstract class SNodeTextGen {
@@ -89,7 +89,7 @@ public abstract class SNodeTextGen {
     if (node == null) {
       myBuffer.append("???");
       if (mySNode != null) {
-        myBuffer.foundError("possible broken reference in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(mySNode), mySNode, null);
+        myBuffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(mySNode), mySNode, null);
       }
       return;
     }
@@ -119,8 +119,8 @@ public abstract class SNodeTextGen {
 
   public void foundError(@Nullable String info) {
     String message = info != null ?
-      "textgen error: '" + info + "' in " + SNodeUtil.getDebugText(getSNode()) :
-      "textgen error in " + SNodeUtil.getDebugText(getSNode());
+      "textgen error: '" + info + "' in " + SNodeOperations.getDebugText(getSNode()) :
+      "textgen error in " + SNodeOperations.getDebugText(getSNode());
     getBuffer().foundError(message, getSNode(), new Throwable());
   }
 

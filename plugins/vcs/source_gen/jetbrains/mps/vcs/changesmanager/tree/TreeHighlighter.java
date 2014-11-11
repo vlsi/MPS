@@ -21,18 +21,22 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.apache.log4j.Level;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.ide.ThreadUtils;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
@@ -46,11 +50,9 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelAdapter;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
-import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -126,16 +128,14 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
       myCommandQueue.runTask(new Runnable() {
         public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              synchronized (myFeaturesHolder) {
-                // check if node isn't already removed from tree 
-                if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
-                  rehighlightNode(node, feature);
-                }
-              }
-            }
-          });
+          final boolean featureIsStillThere;
+          synchronized (myFeaturesHolder) {
+            // check if node isn't already removed from tree 
+            featureIsStillThere = myFeaturesHolder.getNodesByFeature(feature).contains(node);
+          }
+          if (featureIsStillThere) {
+            rehighlightNode(node, feature);
+          }
         }
       });
     }
@@ -156,38 +156,68 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
   private void unhighlightNode(@NotNull MPSTreeNode node) {
-    node.removeTreeMessages(this, true);
-  }
-  private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull Feature feature) {
-    unhighlightNode(node);
-
-    SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
-    if (model instanceof EditableSModel && !(model.isReadOnly())) {
-      if (feature instanceof ModelFeature) {
-        // do not try to compute changes in case we need only model status 
-        TreeMessage message = getMessage((ModelFeature) feature);
-        if (message != null) {
-          node.addTreeMessage(message);
-        }
-        return;
-      }
-
-      EditableSModel emd = (EditableSModel) model;
-      myRegistry.getCurrentDifference(emd).setEnabled(true);
-
-      ModelChange change = myMap.get(feature);
-      if (change == null) {
-        change = myMap.getAddedAncestorValue(feature);
-      }
-      if (change != null) {
-        node.addTreeMessage(getMessage(change, emd));
-      } else if (myMap.isAncestorOfAddedFeature(feature)) {
-        node.addTreeMessage(getMessage(FileStatus.MODIFIED));
-      }
+    if (!(node.removeTreeMessages(this).isEmpty())) {
+      updatePresentation(node);
     }
   }
+  /**
+   * This method runs with model read lock, and shall own lock on myFeatureHolder as it might lead 
+   * to a deadlock (MPSTree rebuilds itself in a model read, thus treeNodeAdded and registerNode keep model read + myFeatureHolder, and if this method
+   * is invoked with myFeatureHolder lock, then we get opposite order of the locks)
+   */
+  private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull final Feature feature) {
+    unhighlightNode(node);
+
+    final Project mpsProject = ProjectHelper.toMPSProject(myRegistry.getProject());
+    AbstractComputeRunnable<TreeMessage> cr = new AbstractComputeRunnable<TreeMessage>() {
+      protected TreeMessage compute() {
+        SModel model = feature.getModelReference().resolve(mpsProject.getRepository());
+        if (model instanceof EditableSModel && !(model.isReadOnly())) {
+          EditableSModel emd = (EditableSModel) model;
+          if (feature instanceof ModelFeature) {
+            // do not try to compute changes in case we need only model status 
+            return getMessage(emd);
+          }
+
+          myRegistry.getCurrentDifference(emd).setEnabled(true);
+
+          ModelChange change = myMap.get(feature);
+          if (change == null) {
+            change = myMap.getAddedAncestorValue(feature);
+          }
+          if (change != null) {
+            return getMessage(change, emd);
+          } else if (myMap.isAncestorOfAddedFeature(feature)) {
+            return getMessage(FileStatus.MODIFIED);
+          }
+        }
+        return null;
+      }
+    };
+    mpsProject.getModelAccess().runReadAction(cr);
+    TreeMessage message = cr.getResult();
+    if (message != null) {
+      node.addTreeMessage(message);
+      updatePresentation(node);
+    }
+  }
+  private void updatePresentation(final MPSTreeNode treeNode) {
+    // schedules node update to run in correct thread 
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        treeNode.renewPresentation();
+      }
+    });
+  }
   private void rehighlightFeature(@NotNull Feature feature) {
-    for (MPSTreeNode node : CollectionSequence.fromCollection(myFeaturesHolder.getNodesByFeature(feature))) {
+    List<MPSTreeNode> toUpdate = new ArrayList<MPSTreeNode>();
+    synchronized (myFeaturesHolder) {
+      Collection<MPSTreeNode> nodesByFeature = myFeaturesHolder.getNodesByFeature(feature);
+      if (nodesByFeature != null) {
+        toUpdate.addAll(nodesByFeature);
+      }
+    }
+    for (MPSTreeNode node : ListSequence.fromList(toUpdate)) {
       rehighlightNode(node, feature);
     }
   }
@@ -195,23 +225,31 @@ public class TreeHighlighter implements TreeMessageOwner {
     if (myTree.isDisposed()) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final List<Feature> toCheck = new ArrayList<Feature>();
+    synchronized (myFeaturesHolder) {
+      SModelReference modelRef = feature.getModelReference();
+      toCheck.addAll(myFeaturesHolder.getFeaturesByModelReference(modelRef));
+    }
+    final List<Feature> toUpdate = new ArrayList<Feature>();
+    toUpdate.add(feature);
+    final Project mpsProject = ProjectHelper.toMPSProject(myRegistry.getProject());
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        synchronized (myFeaturesHolder) {
-          rehighlightFeature(feature);
-          SModelReference modelRef = feature.getModelReference();
-          for (Feature anotherFeature : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {
-            if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-              public boolean accept(Feature a) {
-                return feature.equals(a);
-              }
-            })) {
-              rehighlightFeature(anotherFeature);
+        for (Feature anotherFeature : ListSequence.fromList(toCheck)) {
+          // getAncestors might require (see NodeFeature) model read access, which shall not be under myFeaturesHolder lock 
+          if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+            public boolean accept(Feature a) {
+              return feature.equals(a);
             }
+          })) {
+            toUpdate.add(anotherFeature);
           }
         }
       }
     });
+    for (Feature f : ListSequence.fromList(toUpdate)) {
+      rehighlightFeature(f);
+    }
   }
 
   private final Update rehighlightAllFeaturesUpdate = new Update(this) {
@@ -225,11 +263,7 @@ public class TreeHighlighter implements TreeMessageOwner {
         // re-queue, it will be executed in next batch after delay 
         rehighlightAllFeaturesLater();
       } else {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            rehighlightAllFeaturesNow();
-          }
-        });
+        rehighlightAllFeaturesNow();
       }
     }
   };
@@ -237,11 +271,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     myQueue.queue(rehighlightAllFeaturesUpdate);
   }
   private void rehighlightAllFeaturesNow() {
-    ModelAccess.assertLegalRead();
+    List<Feature> toUpdate = new ArrayList<Feature>();
     synchronized (myFeaturesHolder) {
-      for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
-        rehighlightFeatureAndDescendants(f);
-      }
+      toUpdate.addAll(myFeaturesHolder.getAllModelFeatures());
+    }
+    for (Feature f : ListSequence.fromList(toUpdate)) {
+      rehighlightFeatureAndDescendants(f);
     }
   }
 
@@ -257,7 +292,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     switch (modelChange.getType()) {
       case ADD:
         if (modelChange instanceof AddRootChange) {
-          Project project = myRegistry.getProject();
+          com.intellij.openapi.project.Project project = myRegistry.getProject();
           FileStatus modelStatus = getModelFileStatus(modelDescriptor, project);
           if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
             return getMessage(modelStatus);
@@ -274,17 +309,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
   @Nullable
-  private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
-    SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
-    if (md instanceof EditableSModel) {
-      FileStatus status = getModelFileStatus((EditableSModel) md, myRegistry.getProject());
-      return (status == null ? null : getMessage(status));
-    } else {
-      return null;
-    }
+  private TreeMessage getMessage(@NotNull EditableSModel md) {
+    FileStatus status = getModelFileStatus(md, myRegistry.getProject());
+    return (status == null ? null : getMessage(status));
   }
   @Nullable
-  private static FileStatus getModelFileStatus(@NotNull EditableSModel ed, @NotNull Project project) {
+  private static FileStatus getModelFileStatus(@NotNull EditableSModel ed, @NotNull com.intellij.openapi.project.Project project) {
     DataSource ds = ed.getSource();
     IFile file = null;
     if (ds instanceof FileDataSource) {

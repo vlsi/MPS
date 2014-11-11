@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.CopyUtil;
@@ -33,7 +35,7 @@ public class IntentionUtils {
           }
         }
         if (matches_k79hya_a0a1) {
-          return (ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).count() == 1 ? optimizeNode(ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).getElement(0)) : null);
+          return (ListSequence.fromList(SLinkOperations.getChildren(matchedNode_k79hya_a0b, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1 ? optimizeNode(ListSequence.fromList(SLinkOperations.getChildren(matchedNode_k79hya_a0b, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).getElement(0)) : null);
         } else {
           boolean matches_k79hya_b0a1 = false;
           {
@@ -43,7 +45,7 @@ public class IntentionUtils {
             }
           }
           if (matches_k79hya_b0a1) {
-            return optimizeNode(SLinkOperations.getTarget(matchedNode_k79hya_a0b, "statements", true));
+            return optimizeNode(SLinkOperations.getTarget(matchedNode_k79hya_a0b, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
           } else {
             boolean matches_k79hya_c0a1 = false;
             {
@@ -70,10 +72,10 @@ public class IntentionUtils {
       return null;
     }
 
-    SNode ternaryOperator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
-    SLinkOperations.setTarget(ternaryOperator, "condition", (SNode) CopyUtil.copy(condition), true);
-    SLinkOperations.setTarget(ternaryOperator, "ifTrue", (SNode) CopyUtil.copy(diff._0()), true);
-    SLinkOperations.setTarget(ternaryOperator, "ifFalse", (SNode) CopyUtil.copy(diff._1()), true);
+    SNode ternaryOperator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
+    SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"), (SNode) CopyUtil.copy(condition));
+    SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"), (SNode) CopyUtil.copy(diff._0()));
+    SLinkOperations.setTarget(ternaryOperator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"), (SNode) CopyUtil.copy(diff._1()));
 
     SNodeOperations.replaceWithAnother(diff._0(), ternaryOperator);
     return statement1;
@@ -95,12 +97,12 @@ public class IntentionUtils {
     return (isDiffCanBeConvertedToTernary(currentDiff) ? currentDiff : null);
   }
   /*package*/ static boolean isDiffCanBeConvertedToTernary(Tuples._2<SNode, SNode> diff) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(diff._0()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(diff._0()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       return false;
     }
     // todo: i don't think that this code is true 
-    SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+    SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+    return SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
   }
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
@@ -110,16 +112,16 @@ public class IntentionUtils {
     SNode concept = SNodeOperations.getConceptDeclaration(node1);
 
     // todo: use ConceptRegistry/SConcept when it will possible 
-    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
+    for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getPropertyDeclarations())) {
       SNode property = ((SNode) _property);
-      if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
+      if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), node2.getProperty(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
       SNode linkDeclaration = (SNode) _link;
-      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")) {
+      if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference")) {
         if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
           return MultiTuple.<SNode,SNode>from(node1, node2);
         }
@@ -127,10 +129,10 @@ public class IntentionUtils {
     }
 
     Tuples._2<SNode, SNode> currentResult = null;
-    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
+    for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(SNodeOperations.asNode(concept)).getLinkDeclarationsExcludingOverridden())) {
       SNode linkDeclaration = (SNode) _link;
 
-      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
+      if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
         List<SNode> children1 = SNodeOperations.getChildren(node1, linkDeclaration);
         List<SNode> children2 = SNodeOperations.getChildren(node2, linkDeclaration);
 
@@ -164,42 +166,42 @@ public class IntentionUtils {
 
   public static SNode negateBooleanNodes(SNode node) {
     SNode clone = SNodeOperations.copyNode(node);
-    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-      SPropertyOperations.set(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (!(SPropertyOperations.getBoolean(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value"))));
+    if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
+      SPropertyOperations.set(SNodeOperations.cast(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "" + (!(SPropertyOperations.getBoolean(SNodeOperations.cast(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")))));
       return clone;
     }
-    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.NotExpression"), "expression", true);
+    if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression"))) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
     }
-    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+    if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       SNode replacement;
-      if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.LessThanExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", null);
-      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression")) {
-        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
+      if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073239437375l, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123152l, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506762703l, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153422305557l, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153417849900l, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506773034l, "jetbrains.mps.baseLanguage.structure.LessThanExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506773034l, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153417849900l, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"), null);
+      } else if (SNodeOperations.isInstanceOf(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153422305557l, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"))) {
+        replacement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081506762703l, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"), null);
       } else {
-        SNode notNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
-        SLinkOperations.setTarget(notNode, "expression", clone, true);
+        SNode notNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression"), null);
+        SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), clone);
         return notNode;
       }
-      SLinkOperations.setTarget(replacement, "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), true);
-      SLinkOperations.setTarget(replacement, "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), true);
+      SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(SNodeOperations.cast(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SLinkOperations.getTarget(SNodeOperations.cast(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
       return replacement;
     }
-    SNode notNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
-    SLinkOperations.setTarget(notNode, "expression", clone, true);
+    SNode notNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression"), null);
+    SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), clone);
     return notNode;
   }
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {

@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,7 +28,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   }
   @Override
   public SNode createNewMethod() {
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
   }
   @Override
   public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
@@ -36,10 +38,10 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   public SNode getContainerMethod() {
     SNode node = ListSequence.fromList(this.myNodesToRefactor).first();
     while (node != null) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
         return node;
       }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
         return node;
       }
       node = SNodeOperations.getParent(node);
@@ -49,11 +51,11 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   @Override
   public SNode getContainerReturnType() {
     SNode containerMethod = this.getContainerMethod();
-    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
+    if (SNodeOperations.isInstanceOf(containerMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(containerMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")));
     }
-    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
-      return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+    if (SNodeOperations.isInstanceOf(containerMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
+      return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(containerMethod, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction")), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     }
     return null;
   }

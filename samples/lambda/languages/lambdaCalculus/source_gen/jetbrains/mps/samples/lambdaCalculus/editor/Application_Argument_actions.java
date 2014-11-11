@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Application_Argument_actions {
@@ -27,7 +29,7 @@ public class Application_Argument_actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode function = SLinkOperations.getTarget(node, "function", true);
+      SNode function = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"));
       SNodeOperations.replaceWithAnother(node, function);
     }
   }
@@ -43,7 +45,7 @@ public class Application_Argument_actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode function = SLinkOperations.getTarget(node, "function", true);
+      SNode function = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"));
       SNodeOperations.replaceWithAnother(node, function);
     }
   }

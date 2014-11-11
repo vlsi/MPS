@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import java.util.Collections;
@@ -46,9 +48,9 @@ public class MigrationDataUtil {
       throw new RuntimeException();
     }
     for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
-      SNode stepData = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.migration.util.structure.StepData", null);
-      SLinkOperations.setTarget(stepData, "script", createMigrationScriptReference_hzite5_a0b0g0a(p._0().getModuleReference().toString(), p._0().getFromVersion()), true);
-      SLinkOperations.setTarget(stepData, "data", p._1(), true);
+      SNode stepData = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData"));
+      SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script"), createMigrationScriptReference_hzite5_a0b0g0a(p._0().getModuleReference().toString(), p._0().getFromVersion()));
+      SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"), p._1());
     }
     try {
       factory.save(model, dataSource);
@@ -74,8 +76,8 @@ public class MigrationDataUtil {
       throw new RuntimeException(e);
     }
 
-    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.migration.util.structure.StepData"))) {
-      ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(root, "script", true), "module")), SPropertyOperations.getInteger(SLinkOperations.getTarget(root, "script", true), "fromVersion")), SLinkOperations.getTarget(root, "data", true)));
+    for (SNode root : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData")))) {
+      ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"))), SPropertyOperations.getInteger(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"))), SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"))));
     }
     return result;
   }
@@ -102,8 +104,8 @@ public class MigrationDataUtil {
   private static SNode createMigrationScriptReference_hzite5_a0b0g0a(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", null, false);
-    n1.setProperty("module", String.valueOf(p0));
-    n1.setProperty("fromVersion", String.valueOf(p1));
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"), String.valueOf(p0));
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"), String.valueOf(p1));
     return n1;
   }
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {

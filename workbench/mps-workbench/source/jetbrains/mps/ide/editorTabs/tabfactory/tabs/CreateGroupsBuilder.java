@@ -121,8 +121,8 @@ public class CreateGroupsBuilder {
       final Runnable r2 = new Runnable() {
         @Override
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), SNodeUtil.property_BaseConcept_virtualPackage);
-          SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), SNodeUtil.propertyName_BaseConcept_virtualPackage);
+          SNodeAccessUtil.setProperty(created[0], SNodeUtil.propertyName_BaseConcept_virtualPackage, mainPack);
           myCallback.changeNode(created[0]);
         }
       };

@@ -6,12 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,14 +24,14 @@ public class ModuleReferenceExpression_Behavior {
   }
   @Nullable
   public static SModule call_getModule_4040588429969043137(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "moduleId") == null) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId")) == null) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
+    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId"))));
   }
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
-    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"))));
+    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
   }
   @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {

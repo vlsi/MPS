@@ -9,25 +9,27 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAfterDotExpression extends DataFlowConstructor {
   public RuleAfterDotExpression() {
   }
   public boolean isApplicable(SNode node) {
-    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
+    return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DotExpression";
   }
   public void performActions(Program o, SNode node) {
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "operation", true), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
       {
-        Object object = SLinkOperations.getTarget(node, "operand", true);
+        Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
         if (((Program) o).contains(object)) {
           boolean before = false;
           int position = ((Program) (o)).getEnd(object);
-          Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
+          Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
           instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432385");
           instruction.setSource(node);
           ((Program) (o)).insert(instruction, position, true, before);

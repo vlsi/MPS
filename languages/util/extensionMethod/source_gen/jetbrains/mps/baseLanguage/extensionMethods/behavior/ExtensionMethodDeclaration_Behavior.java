@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -12,23 +14,23 @@ public class ExtensionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getThisType_8022092943109893938(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"), "type", true);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1894531970723270160l, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(6757083949642499970l, -9110065865172803712l), 1894531970723270160l, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension")), MetaAdapterFactory.getContainmentLink(new UUID(6757083949642499970l, -9110065865172803712l), 1894531970723270160l, 1894531970723323134l, "type"));
     } else {
-      return SLinkOperations.getTarget(thisNode, "extendedType", true);
+      return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(6757083949642499970l, -9110065865172803712l), 1550313277222152185l, 8022092943109605394l, "extendedType"));
     }
   }
   public static SNode call_getClassifier_7685333756920241018(SNode thisNode) {
     SNode type = ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(thisNode);
     SNode classifierType;
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      classifierType = SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      classifierType = SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     } else {
       classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     }
     if (classifierType == null) {
       return null;
     }
-    return SLinkOperations.getTarget(classifierType, "classifier", false);
+    return SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
   }
 }

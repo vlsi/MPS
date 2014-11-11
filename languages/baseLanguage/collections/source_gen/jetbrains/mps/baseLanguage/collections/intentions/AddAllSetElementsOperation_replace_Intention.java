@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -62,7 +64,7 @@ public class AddAllSetElementsOperation_replace_Intention implements IntentionFa
       return "Replace Deprecated Operation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_vjw581_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "argument", true))));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_vjw581_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226592602759l, 1226592623721l, "argument")))));
     }
     public IntentionDescriptor getDescriptor() {
       return AddAllSetElementsOperation_replace_Intention.this;
@@ -75,7 +77,7 @@ public class AddAllSetElementsOperation_replace_Intention implements IntentionFa
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 540871147943773365l, 540871147943773366l, "argument"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

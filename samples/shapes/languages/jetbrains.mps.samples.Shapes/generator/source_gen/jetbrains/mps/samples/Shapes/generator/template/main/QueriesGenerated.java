@@ -5,6 +5,8 @@ package jetbrains.mps.samples.Shapes.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -14,42 +16,42 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_5898776707557736279(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707557582396(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558014758(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "x");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474713l, "x"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558016314(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "y");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474715l, "y"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558017922(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "radius");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558019582(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "radius");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558026861(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "upperLeftX");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474723l, "upperLeftX"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558028409(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "upperLeftY");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474725l, "upperLeftY"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558030009(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "size");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size"));
   }
   public static Object propertyMacro_GetPropertyValue_5898776707558031661(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "size");
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size"));
   }
   public static Object referenceMacro_GetReferent_6037902070683321763(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474657l, 4191445539799470732l, "color")), MetaAdapterFactory.getReferenceLink(new UUID(1637898168350624965l, -8992988694412354753l), 4191445539799302575l, 4191445539799302810l, "color"));
   }
   public static Object referenceMacro_GetReferent_6037902070683332881(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474657l, 4191445539799470732l, "color")), MetaAdapterFactory.getReferenceLink(new UUID(1637898168350624965l, -8992988694412354753l), 4191445539799302575l, 4191445539799302810l, "color"));
   }
   public static Iterable<SNode> sourceNodesQuery_5898776707557819858(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "shapes", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557467933l, 5898776707557489223l, "shapes"));
   }
 }

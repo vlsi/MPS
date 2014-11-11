@@ -27,6 +27,8 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -48,8 +50,8 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("UQN_property_tokens");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UnknownQualifiedName.UnknownNameRef_generic_cellMenu_rqmr32_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -69,7 +71,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       }).toListSequence();
 
@@ -81,7 +83,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       SNode chosen = parameterObject;
       String className = BehaviorReflection.invokeVirtual(String.class, chosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
 
-      String tokens = SPropertyOperations.getString(node, "tokens");
+      String tokens = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"));
       int i = tokens.indexOf(".", 0);
 
       while (i >= 0) {
@@ -93,23 +95,23 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
 
         if (Sequence.fromIterable(Members.visibleStaticFields(chosen, node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+            return memberCandidateName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).isNotEmpty() || Sequence.fromIterable(Members.visibleEnumConstants(chosen)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+            return memberCandidateName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).isNotEmpty()) {
 
           // found 
-          SPropertyOperations.set(node, "tokens", className + "." + remaining);
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), className + "." + remaining);
           return;
         }
 
         i = nextDot;
       }
 
-      SPropertyOperations.set(node, "tokens", className);
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), className);
 
     }
     public boolean isReferentPresentation() {

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -15,7 +17,7 @@ public class DependentTypeDeclaration_Behavior {
   }
   public static SNode call_getType_3751132065236798250(SNode thisNode, SNode node) {
     try {
-      String className = SNodeOperations.getModel(thisNode).getModelName() + "." + ClassLikeDescriptor_Behavior.call_getGeneratedClassName_3384419124890285894(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", false, false));
+      String className = SNodeOperations.getModel(thisNode).getModelName() + "." + ClassLikeDescriptor_Behavior.call_getGeneratedClassName_3384419124890285894(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor"), false, false));
       SModule classModule = thisNode.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
@@ -24,17 +26,17 @@ public class DependentTypeDeclaration_Behavior {
           return ((SNode) m.invoke(null, node));
         }
       }
-      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
     } catch (Exception e) {
       e.printStackTrace();
-      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
     }
   }
   public static String call_getGeneratedMethodName_2546325654728395319(SNode thisNode) {
-    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false) != null)) {
-      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name");
+    if ((SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767076l, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"), false, false) != null)) {
+      return SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767079l, "jetbrains.mps.lang.classLike.structure.MethodDescriptor"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767076l, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
-      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_ret";
+      return SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767079l, "jetbrains.mps.lang.classLike.structure.MethodDescriptor"), false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_ret";
     }
   }
 }

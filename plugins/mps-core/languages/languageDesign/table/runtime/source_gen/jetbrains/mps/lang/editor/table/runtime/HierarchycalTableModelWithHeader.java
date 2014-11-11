@@ -8,8 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 
 public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
@@ -17,7 +18,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   public HierarchycalTableModelWithHeader(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration, @NotNull SNode headerCellsLinkDeclaration) {
     super(tableNode, rowsLinkDeclaration, cellsLinkDeclaration);
     myHeaderColumnsLinkDeclaration = headerCellsLinkDeclaration;
-    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(getTableNode()))).contains(myHeaderColumnsLinkDeclaration);
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(getTableNode())))).contains(myHeaderColumnsLinkDeclaration);
     assert ListSequence.fromList(getHeaderColumns()).count() == getColumnCount();
   }
   @Override
@@ -56,7 +57,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   }
   @Override
   public void insertColumn(int columnNumber) {
-    Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
+    Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), columnNumber);
     super.insertColumn(columnNumber);
   }
   private List<SNode> getHeaderColumns() {

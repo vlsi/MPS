@@ -5,6 +5,7 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" />
     <lang id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5864553086652219116" name="jetbrains.mps.lang.plugin.structure.IdeaPluginDependency" />
     <concept id="ef7bf5ac-d06c-4342-b11d-e42104eb9343/7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" />
@@ -39,17 +40,17 @@
       <property role="79nr.5023285075122009364.5023285075122009369" value="3.2" />
       <property role="79nr.5023285075122009364.5023285075122009371" value="JetBrains" />
       <property role="79nr.5023285075122009364.5023285075122009372" value="http://www.jetbrains.com/mps/" />
-      <property role="79nr.5023285075122009364.5023285075122009373" value="129.1" />
+      <property role="79nr.5023285075122009364.5023285075122009373" value="139.1" />
       <property role="79nr.5023285075122009364.8842945788826116904" value="true" />
       <property role="79nr.5023285075122009364.1573568368168371217" value="true" />
       <property role="79nr.5023285075122009364.4167053799973858143" value="/MPS_16.png" />
-      <node concept="79nr.5864553086652219116" id="375000982841836968" role="79nr.5023285075122009364.5864553086652219115" info="ng">
+      <node concept="79nr.5864553086652219116" id="375000982841836968" role="79nr.5023285075122009364.5864553086652219115" info="lg">
         <property role="79nr.5864553086652219116.5864553086652219119" value="jetbrains.mps.debugger.java" />
       </node>
-      <node concept="79nr.5864553086652219116" id="375000982841836970" role="79nr.5023285075122009364.5864553086652219115" info="ng">
+      <node concept="79nr.5864553086652219116" id="375000982841836970" role="79nr.5023285075122009364.5864553086652219115" info="lg">
         <property role="79nr.5864553086652219116.5864553086652219119" value="jetbrains.mps.debugger.api" />
       </node>
-      <node concept="79nr.5864553086652219116" id="4606196714809431209" role="79nr.5023285075122009364.5864553086652219115" info="ng">
+      <node concept="79nr.5864553086652219116" id="4606196714809431209" role="79nr.5023285075122009364.5864553086652219115" info="lg">
         <property role="79nr.5864553086652219116.5864553086652219119" value="jetbrains.mps.execution-api" />
       </node>
     </node>

@@ -30,7 +30,7 @@ import java.util.Iterator;
  * Given ConceptA implements I1, I2 and ConceptB extends ConceptA implements I3, I4, interface I3 extends I5, interface I5 extends I1, and ConceptB as starting point,
  * the order would be ConceptB, ConceptA, I3, I4, I1, I2, I5, I1
  *
- * Note, same concept may appear few times in this iterator, no unique filtering is done
+ * Note, same concept may appear few times in this iterator, no unique filtering is done. Use {@link org.jetbrains.mps.util.UniqueIterator} if necessary.
  *
  * FIXME functionality of this class shall get exposed from SConcept API
  * (likely, in addition to public iterator not to limit to single iteration approach, i.e. depth or breadth first).

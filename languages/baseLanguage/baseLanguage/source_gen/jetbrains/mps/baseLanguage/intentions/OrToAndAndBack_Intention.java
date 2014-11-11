@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -48,7 +50,7 @@ public class OrToAndAndBack_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.OrExpression");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"));
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_x6eozt_a0a0k(SNodeOperations.getParent(childNode), node);
@@ -69,26 +71,26 @@ public class OrToAndAndBack_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ? "Turn to Or" : "Turn to And");
+      return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression")) ? "Turn to Or" : "Turn to And");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode operation = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null));
-      SNode leftCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "leftExpression", true));
-      SNode rightCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "rightExpression", true));
-      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
-        if (SNodeOperations.isInstanceOf(leftCandidate, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
-          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-          SLinkOperations.setTarget(parens, "expression", leftCandidate, true);
+      SNode operation = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression")) ? SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression")) : SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression")));
+      SNode leftCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      SNode rightCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
+      if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
+        if (SNodeOperations.isInstanceOf(leftCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
+          SNode parens = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
+          SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), leftCandidate);
           leftCandidate = parens;
         }
-        if (SNodeOperations.isInstanceOf(rightCandidate, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
-          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-          SLinkOperations.setTarget(parens, "expression", rightCandidate, true);
+        if (SNodeOperations.isInstanceOf(rightCandidate, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
+          SNode parens = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
+          SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), rightCandidate);
           rightCandidate = parens;
         }
       }
-      SLinkOperations.setTarget(operation, "leftExpression", leftCandidate, true);
-      SLinkOperations.setTarget(operation, "rightExpression", rightCandidate, true);
+      SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), leftCandidate);
+      SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), rightCandidate);
       SNodeOperations.replaceWithAnother(node, operation);
     }
     public IntentionDescriptor getDescriptor() {

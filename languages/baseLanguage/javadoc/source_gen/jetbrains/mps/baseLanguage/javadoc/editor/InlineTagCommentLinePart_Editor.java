@@ -36,9 +36,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xnhqer_a0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -49,9 +49,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xnhqer_b0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
     InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -81,9 +81,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_xnhqer_d0");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "brace");
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
     editorCell.getStyle().putAll(style);
     InlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

@@ -6,14 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelIdentity_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_create_9032177546942789358(SAbstractConcept thisConcept, SModel where, SModel toIdentify) {
-    SNode rv = SModelOperations.createNewNode(where, null, "jetbrains.mps.lang.generator.structure.TrivialModelId");
-    SPropertyOperations.set(rv, "modelName", SModelOperations.getModelName(toIdentify));
+    SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546942789835l, "jetbrains.mps.lang.generator.structure.TrivialModelId"));
+    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546942789835l, 9032177546942789839l, "modelName"), SModelOperations.getModelName(toIdentify));
     return rv;
   }
 }

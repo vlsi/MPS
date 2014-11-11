@@ -6,6 +6,7 @@
     <lang id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" />
     <lang id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/342830306171203038" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" />
@@ -30,6 +31,7 @@
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812" name="jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4380385936562003279" name="jetbrains.mps.build.structure.BuildString" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132281259" name="jetbrains.mps.build.structure.BuildCustomWorkflow" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183250894" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary" />
@@ -45,7 +47,9 @@
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6967233722066057020" name="jetbrains.mps.build.structure.BuildLayout_War" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050074" name="jetbrains.mps.build.structure.BuildLayout_Jar" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" />
@@ -365,7 +369,7 @@
               <reference role="219m.841011766565753074.841011766565753076" target="6520682027041143042" resolveInfo="A" />
             </node>
             <node concept="219m.841011766565753074" id="6921160174096662220" role="219m.4701820937132344003.7389400916848037006" info="ng">
-              <reference role="219m.841011766565753074.841011766565753076" target="6921160174096661138" />
+              <reference role="219m.841011766565753074.841011766565753076" target="6921160174096661138" resolveInfo="module-A.jar" />
             </node>
             <node concept="219m.841011766565753074" id="1368030936106779241" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <reference role="219m.841011766565753074.841011766565753076" target="3558796834797437759" />
@@ -1053,7 +1057,7 @@
           <property role="219m.342830306171203038.342830306171239596" value="abcde.jar" />
           <property role="219m.342830306171203038.342830306171234560" value="true" />
           <node concept="219m.5610619299014531647" id="5680938682773932510" role="219m.342830306171203038.342830306171234561" info="ng">
-            <reference role="219m.5610619299014531647.5610619299014531648" target="342830306171364716" />
+            <reference role="219m.5610619299014531647.5610619299014531648" target="342830306171364716" resolveInfo="AaLibs.zip" />
           </node>
         </node>
       </node>

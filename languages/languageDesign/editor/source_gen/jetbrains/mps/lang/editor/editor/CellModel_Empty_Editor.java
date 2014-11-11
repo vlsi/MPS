@@ -23,7 +23,7 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_uq4f57_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_uq4f57_a0(editorContext, node));
     return editorCell;
@@ -37,7 +37,7 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_uq4f57_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_uq4f57_a0_0(editorContext, node));
     return editorCell;

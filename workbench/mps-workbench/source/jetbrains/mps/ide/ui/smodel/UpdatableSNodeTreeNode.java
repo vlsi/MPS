@@ -21,7 +21,6 @@ import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -32,29 +31,23 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// FIXME seems like favorites view is the only client for this tree node, shall reuse some other tree node instead?
 public class UpdatableSNodeTreeNode extends SNodeTreeNode {
+  private final Project myProject;
   private SNodeTreeUpdater myTreeUpdater;
   private SModelEventsListener myEventsListener;
   private SimpleModelListener mySNodeModelListener;
   private SModelRepositoryListener myModelRepositoryListener;
 
-  public UpdatableSNodeTreeNode(SNode node, IOperationContext operationContext) {
-    super(node, operationContext);
-  }
-
-  public UpdatableSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-    super(node, role, operationContext);
-  }
-
-  public UpdatableSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-    super(node, role, operationContext, condition);
+  public UpdatableSNodeTreeNode(Project mpsProject, SNode node) {
+    super(node);
+    myProject = mpsProject;
   }
 
   private void addListeners() {
@@ -105,7 +98,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       }
     };
     if (getModelDescriptor() instanceof EditableSModel) {
-      myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
+      myTreeUpdater = new MySNodeTreeUpdater(myProject, this);
     }
     addListeners();
   }

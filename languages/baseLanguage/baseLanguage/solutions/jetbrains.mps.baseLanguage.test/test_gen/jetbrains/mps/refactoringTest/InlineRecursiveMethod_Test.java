@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class InlineRecursiveMethod_Test extends BaseTransformationTest {
@@ -21,7 +23,7 @@ public class InlineRecursiveMethod_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_InlineRecursiveMethod() throws Exception {
       this.addNodeById("1230052989283");
-      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230052989285"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getErrors() != null);
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230052989285"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))).getErrors() != null);
     }
   }
 }

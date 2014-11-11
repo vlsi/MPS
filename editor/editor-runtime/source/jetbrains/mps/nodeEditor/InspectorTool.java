@@ -53,8 +53,6 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.HashSet;
-import java.util.Set;
 
 public class InspectorTool extends BaseTool implements EditorInspector, ProjectComponent {
   public static final String ID = "Inspector";
@@ -139,7 +137,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myComponent;
   }
 
-  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, Set<String> enabledHints) {
+  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, String[] enabledHints) {
     if (node instanceof jetbrains.mps.smodel.SNode && !SNodeUtil.isAccessible(node, myInspectorComponent.getRepository())) {
       // Note: inspector does not support disposed nodes. If we get one, just clear the tool.
       // The editor holds references to nodes between read actions and these references are updated asynchronously.
@@ -148,13 +146,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     }
 
     myFileEditor = fileEditor;
-    if (enabledHints != null) {
-      myInspectorComponent.setUseCustomHints(true);
-      myInspectorComponent.setEnabledHints(enabledHints);
-    } else {
-      myInspectorComponent.setUseCustomHints(false);
-      myInspectorComponent.setEnabledHints(new HashSet<String>());
-    }
+    myInspectorComponent.getUpdater().setInitialEditorHints(enabledHints);
     myInspectorComponent.editNode(node);
     myMessagePanel.setNode(node);
   }

@@ -4,10 +4,12 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeWithSize_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "width", "" + (60));
-    SPropertyOperations.set(thisNode, "height", "" + (40));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706498l, "width"), "" + (60));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706500l, "height"), "" + (40));
   }
 }

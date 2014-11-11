@@ -17,6 +17,7 @@ import javax.swing.Action;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Set;
 import jetbrains.mps.smodel.ModelAccess;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
@@ -37,7 +38,6 @@ public class HintsDialog extends DialogWrapper {
   private JRadioButton myCustomRadioButton;
   private ConceptEditorHintSettings mySettings;
 
-
   public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, ConceptEditorHintSettings settings, EditorComponent component) {
     super(project, true);
     myPage = page;
@@ -46,6 +46,7 @@ public class HintsDialog extends DialogWrapper {
     setTitle("Push Editor Hints");
     init();
   }
+
   @Nullable
   protected JComponent createCenterPanel() {
     return myMainPanel;
@@ -60,28 +61,27 @@ public class HintsDialog extends DialogWrapper {
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
 
-
-
   @Override
   protected void doOKAction() {
-    if (myDefaultRadioButton.isSelected()) {
-      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseCustomHints(false);
-    } else {
-      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setUseCustomHints(true);
+    String[] initialEditorHints = null;
+
+    if (!(myDefaultRadioButton.isSelected())) {
       myPage.commit();
-      ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).setEnabledHints(mySettings.getEnabledHints());
+      Set<String> enabledHints = mySettings.getEnabledHints();
+      initialEditorHints = enabledHints.toArray(new String[enabledHints.size()]);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myComponent.rebuildEditorContent();
-      }
-    });
+    boolean rebuildRequired = myComponent.getUpdater().setInitialEditorHints(initialEditorHints);
+    if (rebuildRequired) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          myComponent.rebuildEditorContent();
+        }
+      });
+    }
 
     super.doOKAction();
   }
-
-
 
   @Override
   protected void init() {
@@ -103,7 +103,7 @@ public class HintsDialog extends DialogWrapper {
     myButtonGroup.add(myDefaultRadioButton);
     myButtonGroup.add(myCustomRadioButton);
 
-    boolean useCustomHints = ((jetbrains.mps.nodeEditor.EditorComponent) myComponent).getUseCustomHints();
+    boolean useCustomHints = myComponent.getUpdater().getInitialEditorHints() != null;
     myDefaultRadioButton.setSelected(!(useCustomHints));
     myCustomRadioButton.setSelected(useCustomHints);
     setPanelEnabled(myPage.getComponent(), useCustomHints);
@@ -120,6 +120,7 @@ public class HintsDialog extends DialogWrapper {
     myMainPanel.add(scrollPane, BorderLayout.CENTER);
     super.init();
   }
+
   private void setPanelEnabled(JComponent panel, boolean enabled) {
     for (Component component : panel.getComponents()) {
       component.setEnabled(enabled);
@@ -135,6 +136,4 @@ public class HintsDialog extends DialogWrapper {
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
-
 }

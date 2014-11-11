@@ -4,11 +4,13 @@ package jetbrains.mps.ide.ui.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class NodeAttributesUtil {
   public static boolean isDeprecatedNode(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable") && (AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")) != null);
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224848324737l, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable")) && (AttributeOperations.getAttribute(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224848324737l, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")) != null);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -54,6 +55,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -88,6 +90,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
+  private final ProjectView myProjectView;
   private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
@@ -110,13 +113,18 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   };
 
-  protected BaseLogicalViewProjectPane(Project project) {
+  protected BaseLogicalViewProjectPane(Project project, ProjectView projectView) {
     super(project);
+    myProjectView = projectView;
   }
 
-  public abstract Project getProject();
+  public Project getProject() {
+    return myProject;
+  }
 
-  public abstract ProjectView getProjectView();
+  public ProjectView getProjectView() {
+    return myProjectView;
+  };
 
   public abstract void rebuild();
 
@@ -259,7 +267,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public List<SModel> getSelectedModels() {
     List<SModel> result = new ArrayList<SModel>();
     for (SModelTreeNode node : getSelectedTreeNodes(SModelTreeNode.class)) {
-      result.add(node.getSModelDescriptor());
+      result.add(node.getModel());
     }
     return result;
   }
@@ -267,7 +275,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public SModel getSelectedModel() {
     SModelTreeNode selectedTreeNode = getSelectedTreeNode(SModelTreeNode.class);
     if (selectedTreeNode == null) return null;
-    return selectedTreeNode.getSModelDescriptor();
+    return selectedTreeNode.getModel();
   }
 
   public SModel getContextModel() {
@@ -276,7 +284,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
-    return ((SModelTreeNode) treeNode).getSModelDescriptor();
+    return ((SModelTreeNode) treeNode).getModel();
   }
 
   public SModule getSelectedModule() {
@@ -325,8 +333,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     TreePath[] selection = getTree().getSelectionPaths();
     if (selection == null) return null;
     if (selection.length > 0) {
-      MPSTreeNode lastPathComponent = (MPSTreeNode) selection[0].getLastPathComponent();
-      return lastPathComponent.getOperationContext();
+      return new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
     }
     return null;
   }
@@ -368,9 +375,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
-  public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
-    ModelAccess.assertLegalWrite();
-    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getParent() == null));
+  public void editNode(final SNode node, jetbrains.mps.project.Project mpsProject, final boolean focus) {
+    mpsProject.getModelAccess().checkWriteAccess();
+    NavigationSupport.getInstance().openNode(mpsProject, node, focus, !(node.getModel() != null && node.getParent() == null));
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

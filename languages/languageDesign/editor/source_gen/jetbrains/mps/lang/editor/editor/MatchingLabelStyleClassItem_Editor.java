@@ -17,6 +17,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -78,13 +80,13 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uvxm5p_a2a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "query", true) == null && !(SPropertyOperations.getBoolean(node, "hasNoLabel"));
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 1236443321503l, "query")) == null && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 5915179142332960580l, "hasNoLabel")));
   }
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 5915179142332960580l, "hasNoLabel"), "" + (true));
     }
     public String getMatchingText() {
       return "null";
@@ -101,13 +103,13 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 1236443321503l, "query")) == null) && SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 5915179142332960580l, "hasNoLabel"));
   }
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 5915179142332960580l, "hasNoLabel"), "" + (false));
     }
     public String getMatchingText() {
       return "label name";
@@ -136,6 +138,6 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "query", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 1236443321503l, "query")) != null;
   }
 }

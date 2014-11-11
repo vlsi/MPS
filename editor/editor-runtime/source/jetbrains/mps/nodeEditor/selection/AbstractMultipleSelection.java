@@ -130,7 +130,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
         label.setCaretEnabled(false);
       }
 
-      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paint(g, ParentSettings.createDefaultSetting());
+      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paint(g);
       if (cell instanceof EditorCell_Label && !wasSelected) {
         EditorCell_Label label = (EditorCell_Label) cell;
         label.setCaretEnabled(wasCaretEnabled);

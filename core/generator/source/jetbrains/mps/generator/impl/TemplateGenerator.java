@@ -52,6 +52,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -802,7 +803,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     private void reportBrokenRef(@NotNull SNode inputNode, @NotNull SReference ref) {
       getLogger().error(inputNode.getReference(),
-          String.format("broken reference '%s' in %s (target model is null)", ref.getRole(), SNodeUtil.getDebugText(inputNode)),
+          String.format("broken reference '%s' in %s (target model is null)", ref.getRole(), SNodeOperations.getDebugText(inputNode)),
           GeneratorUtil.describeIfExists(inputNode, "input node"));
     }
 
@@ -859,7 +860,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
-                  String.format(msg, inputReference.getRole(), SNodeUtil.getDebugText(inputNode), inputReference.getClass().getName()));
+                  String.format(msg, inputReference.getRole(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
             }
             continue;
           }

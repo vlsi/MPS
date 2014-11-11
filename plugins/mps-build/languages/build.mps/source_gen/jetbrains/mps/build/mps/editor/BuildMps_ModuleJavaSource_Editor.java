@@ -16,6 +16,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class BuildMps_ModuleJavaSource_Editor extends DefaultNodeEditor {
@@ -64,7 +66,7 @@ public class BuildMps_ModuleJavaSource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uf20rn_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isGenerated");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149588970l, 5970181360963003994l, "isGenerated"));
   }
   private EditorCell createCollection_uf20rn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

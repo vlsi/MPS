@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
@@ -17,19 +19,19 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
   private SNode myExpression;
   /*package*/ ExtractMethodFromExpressionRefactoring(ExtractMethodRefactoringParameters params) {
     super(params);
-    this.myExpression = SNodeOperations.cast(ListSequence.fromList(params.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression");
+    this.myExpression = SNodeOperations.cast(ListSequence.fromList(params.getNodesToRefactor()).first(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
   }
   @Override
   protected SNode createMethodBody() {
-    SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-    if (SNodeOperations.isInstanceOf(this.getMethodType(), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SLinkOperations.setTarget(expressionStatement, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(expressionStatement);
+    SNode body = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
+    if (SNodeOperations.isInstanceOf(this.getMethodType(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      SNode expressionStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+      SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), SNodeOperations.cast(CopyUtil.copy(this.myExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
+      ListSequence.fromList(SLinkOperations.getChildren(body, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(expressionStatement);
     } else {
-      SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-      SLinkOperations.setTarget(ret, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(ret);
+      SNode ret = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
+      SLinkOperations.setTarget(ret, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), SNodeOperations.cast(CopyUtil.copy(this.myExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
+      ListSequence.fromList(SLinkOperations.getChildren(body, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(ret);
     }
     return body;
   }
@@ -44,6 +46,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
   @Override
   public SNode getMethodType() {
     SNode typeOf = TypeChecker.getInstance().getTypeOf(this.myExpression);
-    return SNodeOperations.cast(typeOf, "jetbrains.mps.baseLanguage.structure.Type");
+    return SNodeOperations.cast(typeOf, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"));
   }
 }

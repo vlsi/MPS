@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -498,7 +497,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   public void fold(boolean programmaticaly) {
-    if (!canBePossiblyFolded()) return;
+    if (!isFoldable()) return;
     if (isFolded()) {
       // updating editor's myFoldedCells set (sometimes this method is called from Memento) 
       getEditor().setFolded(this, true);
@@ -609,26 +608,34 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public boolean canBePossiblyFolded() {
-    return myCanBeFolded && myCellLayout.canBeFolded();
+    return isFoldable();
   }
 
   @Override
   public boolean isFoldable() {
-    return canBePossiblyFolded();
+    return myCanBeFolded && myCellLayout.canBeFolded();
   }
 
-  public void setCanBeFolded(boolean canBeFolded) {
-    boolean wasPossiblyFolded = canBePossiblyFolded();
-    myCanBeFolded = canBeFolded;
+  public void setFoldable(boolean foldable) {
+    boolean wasPossiblyFolded = isFoldable();
+    myCanBeFolded = foldable;
 
     if (isInTree()) {
-      if (wasPossiblyFolded && !canBePossiblyFolded()) {
+      if (wasPossiblyFolded && !isFoldable()) {
         getEditor().getCellTracker().removeFoldableCell(this);
       }
-      if (!wasPossiblyFolded && canBePossiblyFolded()) {
+      if (!wasPossiblyFolded && isFoldable()) {
         getEditor().getCellTracker().addFoldableCell(this);
       }
     }
+  }
+
+  /**
+   * @deprecated since MPS 3.2 use setFoldable()
+   */
+  @Deprecated
+  public void setCanBeFolded(boolean canBeFolded) {
+    setFoldable(canBeFolded);
   }
 
   public void unfold(boolean programmaticaly) {
@@ -654,20 +661,32 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void paint(Graphics g, ParentSettings parentSettings) {
-    ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
-    if (!settings.isSelectionPainted()) {
-      settings = (paintBackground(g, parentSettings));
-    }
-    paintSelectionIfRequired(g, parentSettings);
+  public void paintCell(Graphics g, ParentSettings parentSettings) {
+    ParentSettings settings = fillBackground(g, parentSettings);
     paintContent(g, parentSettings);
+    paintChildCells(g, settings);
+  }
 
+  protected void paintChildCells(Graphics g, ParentSettings settings) {
     for (EditorCell child : this) {
       if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paint(g, settings);
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintCell(g, settings);
       }
     }
-    paintDecorations(g);
+  }
+
+  @Override
+  public void paintDecorations(Graphics g) {
+    super.paintDecorations(g);
+    paintChildDecorations(g);
+  }
+
+  protected void paintChildDecorations(Graphics g) {
+    for (EditorCell child : this) {
+      if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintDecorations(g);
+      }
+    }
   }
 
   @Override
@@ -698,7 +717,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
   @Override
@@ -721,26 +740,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
-    if (!parentSettings.isSkipBackground()) {
-      if (getCellBackgroundColor() != null) {
-        g.setColor(getCellBackgroundColor());
-        List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
-        for (Rectangle part : selection) {
-          g.fillRect(part.x, part.y, part.width, part.height);
-        }
-      }
+  protected void paintBackground(Graphics g) {
+    List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+    for (Rectangle part : selection) {
+      g.fillRect(part.x, part.y, part.width, part.height);
     }
-    boolean hasMessages = false;
-
-    List<EditorMessage> messages = getMessages(EditorMessage.class);
-    for (EditorMessage message : messages) {
-      if (message != null && message.isBackground()) {
-        message.paint(g, getEditor(), this);
-        hasMessages = true;
-      }
-    }
-    return ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
   }
 
   @Override
@@ -899,14 +903,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       getEditor().getSelectionManager().addSelectionListener(myLastCellSelectionListener);
     }
 
-    if (canBePossiblyFolded()) {
+    if (isFoldable()) {
       getEditor().getCellTracker().addFoldableCell(this);
     }
   }
 
   @Override
   public void onRemove() {
-    if (canBePossiblyFolded()) {
+    if (isFoldable()) {
       getEditor().getCellTracker().removeFoldableCell(this);
     }
     removeUnfoldingListener();
@@ -1048,7 +1052,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public void paintContent(Graphics g, ParentSettings parentSettings) {
+    protected void paintContent(Graphics g, ParentSettings parentSettings) {
       if (!myIsEnabled) return;
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeLeaf_Intention implements IntentionFactory {
@@ -55,10 +57,10 @@ public class ChangeLeaf_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "leaf") ? "Make Non Leaf" : "Make Leaf");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816793407210l, "leaf")) ? "Make Non Leaf" : "Make Leaf");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "leaf", "" + (!(SPropertyOperations.getBoolean(node, "leaf"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816793407210l, "leaf"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816793407210l, "leaf")))));
     }
     public IntentionDescriptor getDescriptor() {
       return ChangeLeaf_Intention.this;

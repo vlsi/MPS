@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -16,9 +18,9 @@ public class CustomOperatorUsage_Behavior {
   }
   public static List<SNode> call_getVisibleCustomOperators_1141736782992984505(SAbstractConcept thisConcept, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> containers = SModelOperations.getRootsIncludingImported(model, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer");
+    List<SNode> containers = SModelOperations.rootsIncludingImported(model, MetaAdapterFactory.getConcept(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470139399l, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
     for (SNode container : containers) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(container, "customOperators", true)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470139399l, 2838654975956759196l, "customOperators"))));
     }
     return result;
   }

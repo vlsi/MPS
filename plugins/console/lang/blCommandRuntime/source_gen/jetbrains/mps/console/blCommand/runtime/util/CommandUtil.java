@@ -24,6 +24,8 @@ import org.apache.log4j.Level;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,7 +49,7 @@ public class CommandUtil {
   public static Iterable<SNode> nodes(ConsoleScope scope) {
     return Sequence.fromIterable(models(scope)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.getNodes(it, null);
+        return SModelOperations.nodes(it, null);
       }
     });
   }
@@ -101,8 +103,8 @@ public class CommandUtil {
   }
 
   public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
-    SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
-    SPropertyOperations.set(nodeWithClosure, "text", text);
+    SNode nodeWithClosure = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 1111629987770987206l, "jetbrains.mps.console.base.structure.NodeWithClosure"));
+    SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), text);
     ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
     console.addNode(nodeWithClosure);
   }
@@ -175,8 +177,8 @@ public class CommandUtil {
   }
 
   public static void addNodeReference(ConsoleStream console, SNode target) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferencePresentation", null);
-    SLinkOperations.setTarget(node, "target", target, false);
+    SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037383180l, "jetbrains.mps.console.base.structure.NodeReferencePresentation"));
+    SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"), target);
     console.addNode(node);
   }
 
@@ -184,9 +186,9 @@ public class CommandUtil {
     StringWriter writer = new StringWriter();
     exception.printStackTrace(new PrintWriter(writer));
 
-    SNode exceptionHolder = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.ExceptionHolder", null);
-    SPropertyOperations.set(exceptionHolder, "stackTrace", writer.toString());
-    SPropertyOperations.set(exceptionHolder, "text", exception.getClass().getName());
+    SNode exceptionHolder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 6558068108107691796l, "jetbrains.mps.console.blCommand.structure.ExceptionHolder"));
+    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(new UUID(1911026821630280634l, -8343922105556474022l), 6558068108107691796l, 6558068108108282025l, "stackTrace"), writer.toString());
+    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), exception.getClass().getName());
     console.addNode(exceptionHolder);
   }
 

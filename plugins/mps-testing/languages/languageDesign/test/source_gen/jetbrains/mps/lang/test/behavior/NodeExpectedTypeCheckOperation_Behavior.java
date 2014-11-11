@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -16,9 +18,9 @@ public class NodeExpectedTypeCheckOperation_Behavior {
     final SNode operation = thisNode;
     PerformUtil.checkNodeWithTypeCheckingAction(node, new NodeTypeCheckingAction(operation) {
       public void checkOperation(TypeCheckingContext context) {
-        if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation")) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4395293866213195846l, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"))) {
           SNode type1 = TypeChecker.getInstance().getInequalitiesForHole(getNodeToCheck(), false).getExpectedType();
-          SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"), "type", true);
+          SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4395293866213195846l, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215526290564l, 1215526393912l, "type"));
           NodeCheckerUtil.assertTypesAreTheSame(getNodeToCheck(), type1, type2);
         }
       }

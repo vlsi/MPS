@@ -6,6 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +16,7 @@ public class MeetType_comparable_with_arguments_ComparisonRule extends Compariso
   public MeetType_comparable_with_arguments_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    for (SNode arg : SLinkOperations.getTargets(node2, "argument", true)) {
+    for (SNode arg : SLinkOperations.getChildren(node2, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
       if (MatchingUtil.matchNodes(arg, node1)) {
         return true;
       }

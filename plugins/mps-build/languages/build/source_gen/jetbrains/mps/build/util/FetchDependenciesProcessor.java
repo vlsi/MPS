@@ -5,6 +5,9 @@ package jetbrains.mps.build.util;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,22 +30,22 @@ public class FetchDependenciesProcessor {
     VisibleArtifacts artifacts = new VisibleArtifacts(project, genContext);
     artifacts.collect();
     UnpackHelper helper = new UnpackHelper(artifacts, genContext);
-    for (SNode dep : SNodeOperations.getDescendants(project, "jetbrains.mps.build.structure.BuildExternalDependency", false, new String[]{})) {
+    for (SNode dep : SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 841011766566205091l, "jetbrains.mps.build.structure.BuildExternalDependency"), false, new SConcept[]{})) {
       BehaviorReflection.invokeVirtual(Void.class, dep, "virtual_fetchDependencies_5908258303322131137", new Object[]{artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper)});
     }
     helper.eval();
 
     List<SNode> statements = helper.getStatements();
     if (!(ListSequence.fromList(statements).isEmpty())) {
-      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.structure.BuildCustomWorkflow");
-      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfTaskPart");
-      SLinkOperations.setTarget(taskpart, "task", SLinkOperations.getTarget(_quotation_createNode_t02zqv_a0a2a7a3(), "target", false), false);
-      ListSequence.fromList(SLinkOperations.getTargets(wf, "parts", true)).addElement(taskpart);
-      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, "jetbrains.mps.build.workflow.structure.BwfSubTask");
-      SPropertyOperations.set(stask, "name", "fetch");
-      ListSequence.fromList(SLinkOperations.getTargets(taskpart, "subTasks", true)).addElement(stask);
-      ListSequence.fromList(SLinkOperations.getTargets(stask, "statements", true)).addSequence(ListSequence.fromList(statements));
-      ListSequence.fromList(SLinkOperations.getTargets(project, "aspects", true)).addElement(wf);
+      SNode wf = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132281259l, "jetbrains.mps.build.structure.BuildCustomWorkflow"));
+      SNode taskpart = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
+      SLinkOperations.setTarget(taskpart, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032825l, "task"), SLinkOperations.getTarget(_quotation_createNode_t02zqv_a0a2a7a3(), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, 2769948622284574295l, "target")));
+      ListSequence.fromList(SLinkOperations.getChildren(wf, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132281259l, 4701820937132281260l, "parts"))).addElement(taskpart);
+      SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, "jetbrains.mps.build.workflow.structure.BwfSubTask"));
+      SPropertyOperations.set(stask, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "fetch");
+      ListSequence.fromList(SLinkOperations.getChildren(taskpart, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 3961775458390032824l, 3961775458390032826l, "subTasks"))).addElement(stask);
+      ListSequence.fromList(SLinkOperations.getChildren(stask, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284606050l, "statements"))).addSequence(ListSequence.fromList(statements));
+      ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 3542413272732620719l, "aspects"))).addElement(wf);
     }
   }
   private class RequiredDependenciesBuilderImpl implements RequiredDependenciesBuilder {
@@ -103,7 +106,7 @@ public class FetchDependenciesProcessor {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, false);
-    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7128123785277844790")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, 2769948622284574295l, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, 2769948622284574295l, "target"), quotedNode_1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7128123785277844790")));
     return quotedNode_1;
   }
 }

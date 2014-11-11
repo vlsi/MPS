@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -16,17 +18,17 @@ public class RunConfiguration_Behavior {
   }
   @Nullable
   public static SNode call_getExecutor_3754890006475713427(final SNode thisNode) {
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(thisNode), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "configuration", false) == thisNode;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration")) == thisNode;
       }
     });
   }
   public static boolean call_isForeign_4042467058397504911(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "configurationKind", false) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171345993l, 2401501559171353314l, "configurationKind")) == null)) {
       return false;
     }
-    return neq_g3syr7_a0b0c(SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "configurationKind", false)), SNodeOperations.getModel(thisNode));
+    return neq_g3syr7_a0b0c(SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171345993l, 2401501559171353314l, "configurationKind"))), SNodeOperations.getModel(thisNode));
   }
   public static String call_getGeneratedFactoryName_2256484787298832736(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{}) + "_Factory";

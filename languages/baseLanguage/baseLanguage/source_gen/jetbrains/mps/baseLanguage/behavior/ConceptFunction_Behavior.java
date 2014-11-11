@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
@@ -22,7 +22,7 @@ public class ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_usesParameterObject_1262430001741497984", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_usesParameterObject_1262430001741497984", new Object[]{});
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return null;
@@ -31,38 +31,38 @@ public class ConceptFunction_Behavior {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
   public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
-    return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
+    return SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "body", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"));
   }
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (thisNode == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
     return (List<SNode>) result;
   }
   public static boolean call_isReturnOnly_3745452943050787634(SNode thisNode) {
-    if (!(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "body", true)))) {
+    if (!(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"))))) {
       return false;
     }
-    SNode stmt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first();
-    return SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") || SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+    SNode stmt = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
+    return SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) || SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
   }
   public static String virtual_getName_1216468837268(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
   public static String call_getHeader_2866018809101862250(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     // by default 'alias' is not shown. 
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_showName_1262430001741498082", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_showName_1262430001741498082", new Object[]{})) {
       result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1216468837268", new Object[]{}));
     }
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
@@ -80,7 +80,7 @@ public class ConceptFunction_Behavior {
         result.append(", ");
       }
       isFirst = false;
-      result.append(SPropertyOperations.getString(cfp, "conceptAlias"));
+      result.append(SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")));
     }
     result.append(")->");
     SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
@@ -107,10 +107,10 @@ public class ConceptFunction_Behavior {
     {
       SNode concept_b0m;
       concept_b0m = kind;
-      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_b0m), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_b0m), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
         return new EmptyScope();
       }
     }

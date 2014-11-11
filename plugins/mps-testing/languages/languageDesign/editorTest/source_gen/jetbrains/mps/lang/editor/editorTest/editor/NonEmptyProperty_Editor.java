@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -26,7 +28,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vbxoaj_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_vbxoaj_a0(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "value")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(-9083571638034871021l, -6862973283068073801l), 5633355289409839142l, 5633355289409839143l, "value"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_vbxoaj_b0(editorContext, node));
     }
     return editorCell;

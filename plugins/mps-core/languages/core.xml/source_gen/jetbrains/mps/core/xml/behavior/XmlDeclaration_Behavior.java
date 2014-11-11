@@ -4,11 +4,13 @@ package jetbrains.mps.core.xml.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class XmlDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "version", "1.0");
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 5491461270226117667l, "version"), "1.0");
   }
   public static boolean virtual_isSingle_1262430001741497810(SAbstractConcept thisConcept) {
     return true;

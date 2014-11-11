@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -13,18 +15,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public final class ThrownTypeVariableReferencesHelper {
   public static SNode retrieveClassifier(final SNode currentType) {
     SNode myClassifier;
-    if (SNodeOperations.isInstanceOf(currentType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+    if (SNodeOperations.isInstanceOf(currentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       Set<SNode> visited = SetSequence.fromSet(new HashSet<SNode>());
-      SNode looseType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(currentType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "virtual_getLooseType_5744862332972792015", new Object[]{visited});
-      while (looseType != null && SNodeOperations.isInstanceOf(looseType, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-        looseType = SLinkOperations.getTarget(SNodeOperations.cast(looseType, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
+      SNode looseType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(currentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), "virtual_getLooseType_5744862332972792015", new Object[]{visited});
+      while (looseType != null && SNodeOperations.isInstanceOf(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
+        looseType = SLinkOperations.getTarget(SNodeOperations.cast(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound"));
       }
-      if (looseType == null || !(SNodeOperations.isInstanceOf(looseType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      if (looseType == null || !(SNodeOperations.isInstanceOf(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")))) {
         return null;
       }
-      myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(looseType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+      myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    } else if (SNodeOperations.isInstanceOf(currentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+      myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(currentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     } else {
-      myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(currentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+      myClassifier = null;
     }
     return myClassifier;
   }

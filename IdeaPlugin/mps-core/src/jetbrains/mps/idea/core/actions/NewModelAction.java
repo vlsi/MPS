@@ -163,7 +163,7 @@ public class NewModelAction extends AnAction {
 
             EditableSModel model = null;
             try {
-              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
             } catch (IOException e) {
               LOG.error("Can't create per-root model " + modelName + " under " + path, e);
             }
@@ -245,6 +245,7 @@ public class NewModelAction extends AnAction {
     dialog.setTitle(MPSBundle.message("create.new.model.dialog.title"));
     for (ModelTemplates template : ModelTemplates.values()) {
       dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.name());
+      dialog.setTemplateKindComponentsVisible(true);
     }
     dialog.getNameField().setText(myModelPrefix);
     dialog.show();

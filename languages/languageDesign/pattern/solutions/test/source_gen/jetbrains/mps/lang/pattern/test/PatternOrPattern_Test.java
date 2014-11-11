@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -68,7 +71,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_qttyfe_ = "ifTrue";
+            SContainmentLink childRole_qttyfe_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue");
             if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a0a1a2c, childRole_qttyfe_, 1))) {
               return false;
             }
@@ -80,7 +83,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
                   return false;
                 }
                 {
-                  String childRole_qttyfe__0 = "statement";
+                  SContainmentLink childRole_qttyfe__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement");
                   if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a0a0b0c2, childRole_qttyfe__0, 1))) {
                     return false;
                   }
@@ -93,7 +96,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
             }
           }
           {
-            String childRole_qttyfe__1 = "condition";
+            SContainmentLink childRole_qttyfe__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition");
             if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a0a1a2c, childRole_qttyfe__1, 1))) {
               return false;
             }
@@ -154,7 +157,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qttyfe__2 = "leftExpression";
+              SContainmentLink childRole_qttyfe__2 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a0a0a0b0c2, childRole_qttyfe__2, 1))) {
                 return false;
               }
@@ -167,7 +170,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qttyfe__3 = "rightExpression";
+              SContainmentLink childRole_qttyfe__3 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a0a0a0b0c2, childRole_qttyfe__3, 1))) {
                 return false;
               }
@@ -205,7 +208,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               return false;
             }
             {
-              String childRole_qttyfe__4 = "leftExpression";
+              SContainmentLink childRole_qttyfe__4 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a1a0a0b0c2, childRole_qttyfe__4, 1))) {
                 return false;
               }
@@ -220,7 +223,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               }
             }
             {
-              String childRole_qttyfe__5 = "rightExpression";
+              SContainmentLink childRole_qttyfe__5 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
               if (!(PatternUtil.hasNChildren(nodeToMatch_qttyfe_a1a0a0b0c2, childRole_qttyfe__5, 1))) {
                 return false;
               }
@@ -258,22 +261,22 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, false);
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", null, null, false);
-      quotedNode_2.addChild("statement", quotedNode_4);
-      quotedNode_1.addChild("ifTrue", quotedNode_2);
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), quotedNode_4);
+      quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
-      quotedNode_3.addChild("rightExpression", quotedNode_5);
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), quotedNode_5);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
-      quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
-      quotedNode_3.addChild("leftExpression", quotedNode_6);
-      quotedNode_1.addChild("condition", quotedNode_3);
+      quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), quotedNode_6);
+      quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), quotedNode_3);
       return quotedNode_1;
     }
     private static SNode _quotation_createNode_qttyfe_a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~BufferedOutputStream")));
       return quotedNode_1;
     }
   }

@@ -4,10 +4,10 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -15,14 +15,14 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Table_Behavior {
   public static void init(SNode thisNode) {
-    for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
-      SNode row = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
-      for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
-        SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
-        SPropertyOperations.set(dataCell, "value", "$" + i + " " + j + "$");
-        ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).addElement(dataCell);
+    for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
+      SNode row = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, "jetbrains.mps.lang.editor.tableTests.structure.Row"));
+      for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
+        SNode dataCell = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell"));
+        SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, 2882388703616155301l, "value"), "$" + i + " " + j + "$");
+        ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).addElement(dataCell);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rows", true)).addElement(row);
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).addElement(row);
     }
   }
   public static int virtual_getInitialColumnCount_1262430001741498026(SAbstractConcept thisConcept) {

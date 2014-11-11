@@ -4,6 +4,8 @@ package jetbrains.mps.idea.java.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -11,16 +13,16 @@ public class ClassUtil {
 
   public static String getClassFQName(SNode claz) {
 
-    SNode curr = SNodeOperations.cast(((SNode) claz), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode curr = SNodeOperations.cast(((SNode) claz), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     StringBuilder sb = new StringBuilder();
     do {
-      sb.insert(0, SPropertyOperations.getString(curr, "name"));
+      sb.insert(0, SPropertyOperations.getString(curr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       sb.insert(0, ".");
       SNode parent = SNodeOperations.getParent(curr);
-      if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (!(SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
         break;
       }
-      curr = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.Classifier");
+      curr = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     } while (curr != null);
 
     String pkgName = SModelStereotype.withoutStereotype(claz.getModel().getModelName());

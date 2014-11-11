@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,10 +19,10 @@ public class MappingLabelUtil {
   }
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
     SNode mappingLabel = null;
-    List<SNode> mappingConfigurations = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+    List<SNode> mappingConfigurations = SModelOperations.rootsIncludingImported(SNodeOperations.getModel(templateNode), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
     for (SNode mc : ListSequence.fromList(mappingConfigurations)) {
-      for (SNode ml : ListSequence.fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
-        if (labelName.equals(SPropertyOperations.getString(ml, "name"))) {
+      for (SNode ml : ListSequence.fromList(SLinkOperations.getChildren(mc, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel")))) {
+        if (labelName.equals(SPropertyOperations.getString(ml, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
           mappingLabel = ml;
           break;
         }
@@ -29,23 +31,23 @@ public class MappingLabelUtil {
     // ---- 
     if (mappingLabel == null) {
       SNode mc;
-      List<SNode> localMCs = SModelOperations.getRoots(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+      List<SNode> localMCs = SModelOperations.roots(SNodeOperations.getModel(templateNode), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       if (ListSequence.fromList(localMCs).isNotEmpty()) {
         mc = ListSequence.fromList(localMCs).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).isNotEmpty();
+            return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"))).isNotEmpty();
           }
         }).first();
         if (mc == null) {
           mc = ListSequence.fromList(localMCs).first();
         }
       } else {
-        mc = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
-        SPropertyOperations.set(mc, "name", "MappingLabels");
+        mc = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(templateNode), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), null);
+        SPropertyOperations.set(mc, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "MappingLabels");
       }
       // new mapping label 
-      SNode newLabel = SNodeFactoryOperations.addNewChild(mc, "mappingLabel", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration");
-      SPropertyOperations.set(newLabel, "name", labelName);
+      SNode newLabel = SNodeFactoryOperations.addNewChild(mc, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1200911316486l, "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration"));
+      SPropertyOperations.set(newLabel, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), labelName);
       mappingLabel = newLabel;
     }
     return mappingLabel;

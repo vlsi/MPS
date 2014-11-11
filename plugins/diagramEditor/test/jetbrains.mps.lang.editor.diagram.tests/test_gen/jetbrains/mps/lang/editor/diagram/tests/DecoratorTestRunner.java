@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import java.awt.image.BufferedImage;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 
@@ -26,7 +26,7 @@ public class DecoratorTestRunner {
     ModelAccess.instance().flushEventQueue();
     EditorCell cell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
     if (cell instanceof AbstractJetpadCell) {
-      ((AbstractJetpadCell) cell).paint(null, new ParentSettings());
+      ((AbstractJetpadCell) cell).paint(new BufferedImage(cell.getWidth(), cell.getHeight(), BufferedImage.TYPE_INT_RGB).getGraphics());
     }
     return getMapper(node, editorComponent);
   }

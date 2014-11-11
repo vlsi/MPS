@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,22 +29,22 @@ public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesy
     if (!(SNodeOperations.getModel(ms).getModule() instanceof Language)) {
       return;
     }
-    List<SNode> scripts = SModelOperations.getRoots(SNodeOperations.getModel(ms), "jetbrains.mps.lang.migration.structure.MigrationScript");
+    List<SNode> scripts = SModelOperations.roots(SNodeOperations.getModel(ms), MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"));
     int scNum = ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, "fromVersion") == SPropertyOperations.getInteger(ms, "fromVersion");
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) == SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
       }
     }).count();
     if (scNum > 1) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, "" + scNum + " scripts found for version " + SPropertyOperations.getInteger(ms, "fromVersion"), "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "3334914821927938382", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, "" + scNum + " scripts found for version " + SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")), "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "3334914821927938382", null, errorTarget);
       }
     }
 
     Language language = (Language) SNodeOperations.getModel(ms).getModule();
     int langVersion = language.getLanguageVersion();
-    final int msTargetVer = SPropertyOperations.getInteger(ms, "fromVersion") + 1;
+    final int msTargetVer = SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) + 1;
     int delta = msTargetVer - langVersion;
     if (delta == 0) {
       return;
@@ -50,12 +52,12 @@ public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesy
 
     if (ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, "fromVersion") == msTargetVer;
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) == msTargetVer;
       }
     }).isEmpty()) {
       if (ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getInteger(it, "fromVersion") > msTargetVer;
+          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion")) > msTargetVer;
         }
       }).isEmpty()) {
         {

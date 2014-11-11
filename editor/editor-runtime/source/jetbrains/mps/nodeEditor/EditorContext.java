@@ -20,6 +20,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -143,7 +144,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((EditorComponent) getEditorComponent()).getUpdater().updateRootCell(node, events);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((UpdaterImpl) getEditorComponent().getUpdater()).updateRootCell(node, events);
   }
 
   /**
@@ -151,7 +152,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((EditorComponent) getEditorComponent()).getUpdater().updateRootCell(node, events);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((UpdaterImpl) getEditorComponent().getUpdater()).updateRootCell(node, events);
   }
 
   /**

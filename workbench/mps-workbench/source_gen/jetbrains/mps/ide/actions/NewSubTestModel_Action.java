@@ -17,7 +17,6 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModelInternal;
@@ -88,8 +87,7 @@ public class NewSubTestModel_Action extends BaseAction {
       final Wrappers._T<SModel> result = new Wrappers._T<SModel>();
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
-          result.value = SModuleOperations.createModelWithAdjustments(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
+          result.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
           SModel createdModel = result.value;
           SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model"));
           ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);

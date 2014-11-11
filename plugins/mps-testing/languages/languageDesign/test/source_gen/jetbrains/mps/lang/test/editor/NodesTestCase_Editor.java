@@ -28,6 +28,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -63,12 +65,12 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_58c6e4_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_58c6e4_b0a(editorContext, node));
@@ -101,7 +103,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nodes");
     editorCell.setCellId("Constant_58c6e4_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.UNDERLINED, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -110,12 +112,12 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_58c6e4_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_58c6e4_b2a(editorContext, node));
@@ -172,7 +174,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test methods");
     editorCell.setCellId("Constant_58c6e4_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.UNDERLINED, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -181,12 +183,12 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_f0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_58c6e4_a5a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_58c6e4_b5a(editorContext, node));
@@ -243,7 +245,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "utility methods");
     editorCell.setCellId("Constant_58c6e4_h0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.UNDERLINED, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -252,12 +254,12 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_i0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_58c6e4_a8a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_58c6e4_b8a(editorContext, node));
@@ -347,9 +349,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
         } else if (text.equals("false")) {
-          SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
         }
       }
       public boolean isValidText(String text) {
@@ -368,7 +370,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_a0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
     }
     public String getMatchingText() {
       return "false";
@@ -378,7 +380,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_b0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
     }
     public String getMatchingText() {
       return "true";
@@ -404,9 +406,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.set(node, "needsNoWriteAction", "" + (false));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (false));
         } else if (text.equals("false")) {
-          SPropertyOperations.set(node, "needsNoWriteAction", "" + (true));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (true));
         }
       }
       public boolean isValidText(String text) {
@@ -425,7 +427,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_a0b1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "needsNoWriteAction", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (true));
     }
     public String getMatchingText() {
       return "false";
@@ -435,7 +437,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_b0b1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "needsNoWriteAction", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (false));
     }
     public String getMatchingText() {
       return "true";

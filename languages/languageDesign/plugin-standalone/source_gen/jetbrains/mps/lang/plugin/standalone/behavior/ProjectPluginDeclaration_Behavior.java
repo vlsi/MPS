@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -13,14 +15,14 @@ public class ProjectPluginDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_481983775135178936(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_CustomProjectPlugin";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_CustomProjectPlugin";
   }
   public static String call_getGeneratedClassFQName_481983775135178947(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ProjectPluginDeclaration_Behavior.call_getGeneratedName_481983775135178936(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", null);
-    SLinkOperations.setTarget(type, "plugin", thisNode, false);
+    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178856l, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType"));
+    SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178856l, 481983775135178858l, "plugin"), thisNode);
     return type;
   }
 }

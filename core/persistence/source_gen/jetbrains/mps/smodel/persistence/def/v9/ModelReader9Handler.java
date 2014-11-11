@@ -168,8 +168,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
-      fieldmodel = new DefaultSModel(ref);
-      fieldmodel.setPersistenceVersion(9);
+      fieldmodel = new DefaultSModel(ref, fieldheader);
+      fieldmodel.getSModelHeader().setPersistenceVersion(9);
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
       ModelLoadResult result = new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
       result.setState((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ((fieldstripImplementation ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
@@ -187,6 +187,16 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("doNotGenerate".equals(name)) {
         fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
+        return;
+      }
+      if ("content".equals(name)) {
+        if ("header".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_HEADER);
+        } else if ("root".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_ROOT);
+        } else {
+          throw new SAXException("unknown content attribute value: " + value);
+        }
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -618,7 +628,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
       // can be root 
-      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), (attrs.getValue("role") == null ? null : fieldhelper.readNodeRole(attrs.getValue("role"))));
+      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), fieldhelper.readNodeRole(attrs.getValue("role")));
     }
     @Override
     protected String[] requiredAttributes() {

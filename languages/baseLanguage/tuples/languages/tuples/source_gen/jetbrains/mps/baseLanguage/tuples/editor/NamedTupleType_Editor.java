@@ -11,11 +11,11 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -73,7 +73,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2ojjgh_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2ojjgh_b0a(editorContext, node));
@@ -81,12 +81,12 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2ojjgh_a0a(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")));
   }
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getLeftBracket_1262430001741497792", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getLeftBracket_1262430001741497792", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -140,10 +140,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
           String sep = "";
           for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
-              return SLinkOperations.getTargets(ntd, "component", true);
+              return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
             }
           })) {
-            sb.append(sep).append(SPropertyOperations.getString(ntcd, "name"));
+            sb.append(sep).append(SPropertyOperations.getString(ntcd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
             sep = ", ";
           }
           return sb.toString();
@@ -158,7 +158,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
@@ -166,7 +166,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_c0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRightBracket_1262430001741497990", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getRightBracket_1262430001741497990", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -179,7 +179,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_c0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -187,13 +187,13 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2ojjgh_a1a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_2ojjgh_a1a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
   }
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
@@ -223,8 +223,8 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2ojjgh_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2ojjgh_b2a(editorContext, node));
@@ -232,15 +232,15 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty();
   }
   private EditorCell createConstant_2ojjgh_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_2ojjgh_a2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -302,7 +302,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2ojjgh_c2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -312,7 +312,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2ojjgh_a_0");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_2ojjgh_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2ojjgh_b0_0(editorContext, node));
@@ -322,7 +322,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_a0_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_2ojjgh_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2ojjgh_b0a_0(editorContext, node));
@@ -420,7 +420,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_2ojjgh_a0c0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
       if (renderingCondition_2ojjgh_a0a0c0a(node, editorContext)) {
         editorCell.addEditorCell(this.createComponent_2ojjgh_a0a2a0(editorContext, node));
@@ -432,7 +432,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext) {
-      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
+      return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isNotEmpty();
     }
   }
   private EditorCell createCollection_2ojjgh_b0_0(EditorContext editorContext, SNode node) {
@@ -446,7 +446,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "components:");
     editorCell.setCellId("Constant_2ojjgh_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -487,11 +487,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
-              return SLinkOperations.getTargets(ntd, "component", true);
+              return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
             }
           }).select(new ISelector<SNode, String>() {
             public String select(SNode c) {
-              return ((SPropertyOperations.getBoolean(c, "final") ? "final " : "")) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(c, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}) + " " + SPropertyOperations.getString(c, "name") + ";";
+              return ((SPropertyOperations.getBoolean(c, MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final")) ? "final " : "")) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(c, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1239462974287l, "type")), "virtual_getPresentation_1213877396640", new Object[]{}) + " " + SPropertyOperations.getString(c, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ";";
             }
           }), "\n");
         }

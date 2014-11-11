@@ -7,13 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 
 public class IsRefactoringApplicableHint implements ParametersInformation<SNode> {
   public IsRefactoringApplicableHint() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, "refactoring", false));
+    return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6598645150040035709l, 6598645150040035710l, "refactoring")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     RefExpressionParamUtil.xxx(node, parameterObject, styledText, false);

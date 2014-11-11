@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -60,26 +62,26 @@ public class XmlTextValue_text extends KeyMapImpl {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
       }
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
+      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart"))) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute")))) {
         return false;
       }
-      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
-      SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
-      int currIndex = ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).indexOf(node);
+      SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"));
+      int currIndex = ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).indexOf(node);
 
-      String currText = SPropertyOperations.getString(node, "text");
+      String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"));
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlTextValue");
-        SPropertyOperations.set(newText, "text", currText.substring(index));
-        SPropertyOperations.set(node, "text", currText.substring(0, index));
-        ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newText);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"));
+        SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), currText.substring(index));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), currText.substring(0, index));
+        ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlEntityRefValue");
-      SPropertyOperations.set(newRef, "entityName", "quot");
-      ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541921l, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"));
+      SPropertyOperations.set(newRef, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541921l, 6666499814681543256l, "entityName"), "quot");
+      ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }
     public String getKeyStroke() {
@@ -122,25 +124,25 @@ public class XmlTextValue_text extends KeyMapImpl {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
       }
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
+      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart"))) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute")))) {
         return false;
       }
-      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text")));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
-      SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
-      int currIndex = ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).indexOf(node);
+      SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"));
+      int currIndex = ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).indexOf(node);
 
-      String currText = SPropertyOperations.getString(node, "text");
+      String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"));
       if (index < currText.length()) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlTextValue");
-        SPropertyOperations.set(newText, "text", currText.substring(index));
-        SPropertyOperations.set(node, "text", currText.substring(0, index));
-        ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newText);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"));
+        SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), currText.substring(index));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), currText.substring(0, index));
+        ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).insertElement(currIndex + 1, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlEntityRefValue");
-      ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541921l, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"));
+      ListSequence.fromList(SLinkOperations.getChildren(attr, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }
     public String getKeyStroke() {

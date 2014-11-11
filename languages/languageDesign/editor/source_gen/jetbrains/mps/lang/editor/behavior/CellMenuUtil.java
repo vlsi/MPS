@@ -4,16 +4,18 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellMenuUtil {
   private CellMenuUtil() {
   }
   public static SNode getEditedFeature(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract")) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1164824854750l, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"))) {
       return getEditedFeature(SNodeOperations.getParent(node));
     }
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")) {
-      return CellMenuDescriptor_Behavior.call_getEditedFeature_1220342015727(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1164824717996l, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"))) {
+      return CellMenuDescriptor_Behavior.call_getEditedFeature_1220342015727(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1164824717996l, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
     }
     return null;
   }

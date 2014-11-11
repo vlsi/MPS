@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -58,7 +59,7 @@ class TreeStructureUpdate implements MPSTreeNodeListener {
       final SModelTreeNode mn = (SModelTreeNode) treeNode;
       if (mn.getModel() instanceof EditableSModel) {
         assert !myListeners.containsKey(mn);
-        final ModelChangeListener l = new ModelChangeListener(mn);
+        final ModelChangeListener l = new ModelChangeListener(myProjectTree.getProject(), mn);
         myEventsListener.registerListener(l);
         myListeners.put(mn, l);
       }
@@ -83,11 +84,12 @@ class TreeStructureUpdate implements MPSTreeNodeListener {
   public void beforeTreeDisposed(MPSTree tree) {}
 
   private static class ModelChangeListener implements SModelEventsDispatcher.SModelEventsListener {
-    @NotNull
+    private final Project myProject;
     private final SModelTreeNode myTreeNode;
     private ModelStructureUpdate myUpdater;
 
-    public ModelChangeListener(@NotNull SModelTreeNode treeNode) {
+    public ModelChangeListener(@NotNull Project project, @NotNull SModelTreeNode treeNode) {
+      myProject = project;
       myTreeNode = treeNode;
     }
 
@@ -100,7 +102,7 @@ class TreeStructureUpdate implements MPSTreeNodeListener {
     @Override
     public void eventsHappened(List<SModelEvent> events) {
       if (myUpdater == null) {
-        myUpdater = new ModelStructureUpdate(myTreeNode.getOperationContext().getProject(), myTreeNode);
+        myUpdater = new ModelStructureUpdate(myProject, myTreeNode);
         myUpdater.setDependencyRecorder(myTreeNode.getDependencyRecorder());
       }
       myUpdater.eventsHappenedInCommand(events);

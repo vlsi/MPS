@@ -5,14 +5,16 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MakeInnerClassStatic_QuickFix extends QuickFix_Runtime {
   public MakeInnerClassStatic_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Make '" + SPropertyOperations.getString(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "name") + "' static";
+    return "Make '" + SPropertyOperations.getString(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' static";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "nonStatic", "" + (false));
+    SPropertyOperations.set(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (false));
   }
 }

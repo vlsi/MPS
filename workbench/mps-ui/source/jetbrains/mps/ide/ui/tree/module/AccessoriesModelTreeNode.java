@@ -39,7 +39,7 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
 
   public List<String> validate() {
     List<String> errors = new ArrayList<String>();
-    Language lang = myProjectLanguageTreeNode.getLanguage();
+    Language lang = myProjectLanguageTreeNode.getModule();
     //this check is wrong in common as we don't know what the user wants to do with the acc model in build.
     //but I'll not delete it until accessories removal just to have some warning on project consistency
     for (SModelReference accessory : lang.getModuleDescriptor().getAccessoryModels()) {

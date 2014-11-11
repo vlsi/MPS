@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -20,22 +22,22 @@ public class ClassCreator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
-    SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(classifierType, "classifier", classConcept, false);
-    for (SNode typeParameter : SLinkOperations.getTargets(thisNode, "typeParameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(SNodeOperations.copyNode(typeParameter));
+    SNode classConcept = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+    SNode classifierType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+    SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), classConcept);
+    for (SNode typeParameter : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter"))) {
+      ListSequence.fromList(SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(SNodeOperations.copyNode(typeParameter));
     }
     return classifierType;
   }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classConcept = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if ((classConcept != null)) {
       return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
     }
 
     // special logic for java stubs 
-    SReference cRef = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+    SReference cRef = SNodeOperations.getReference(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if (cRef == null) {
       return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
     }
@@ -48,7 +50,7 @@ public class ClassCreator_Behavior {
     if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(targetModel)) && targetId != null) {
       String constructorId = targetId.toString();
       String classId = constructorId.substring(0, constructorId.indexOf("."));
-      classConcept = SNodeOperations.cast(targetModel.getNode(jetbrains.mps.smodel.SNodeId.fromString(classId)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      classConcept = SNodeOperations.cast(targetModel.getNode(jetbrains.mps.smodel.SNodeId.fromString(classId)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
 

@@ -16,7 +16,7 @@ public class EditorCell_VerticalLine extends EditorCell_Basic {
     super(context, node);
   }
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
     if (this.isSelected()) {
       g.setColor(Color.BLACK);
       EditorCell_Collection parent = this.getParent();

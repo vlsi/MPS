@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -21,7 +23,7 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
   public check_UnknownNameRef_NonTypesystemRule() {
   }
   public void applyRule(final SNode unkName, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(unkName), "jetbrains.mps.baseLanguage.structure.UnknownNameRef"))) {
+    if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(unkName)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8473865358220097975l, "jetbrains.mps.baseLanguage.structure.UnknownNameRef")))) {
       // it's subconcept, leave the work to them 
       return;
     }

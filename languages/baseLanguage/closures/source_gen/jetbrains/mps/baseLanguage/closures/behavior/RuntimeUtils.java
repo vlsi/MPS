@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -33,8 +35,8 @@ public class RuntimeUtils {
     synchronized (RuntimeUtils.class) {
       if (RUNTIME_CLASSIFIERS == null) {
         RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
-        for (SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
+        for (SNode cls : SModelOperations.nodes(getRuntimeModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+          MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName")), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
           @Override
@@ -53,20 +55,20 @@ public class RuntimeUtils {
     synchronized (RuntimeUtils.class) {
       if (STATIC_RUNTIME_CLASSIFIERS == null) {
         STATIC_RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
-        for (SNode cls : ListSequence.fromList(SModelOperations.getRoots(getStaticRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")).translate(new ITranslator2<SNode, SNode>() {
+        for (SNode cls : ListSequence.fromList(SModelOperations.roots(getStaticRuntimeModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
-            return SLinkOperations.getTargets(it, "member", true);
+            return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"));
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+            return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
           }
         })) {
-          MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
+          MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName")), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
           @Override

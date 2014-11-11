@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,28 +22,28 @@ public class ChangeMethodSignatureRefactoring {
     this.myDeclaration = declaration;
   }
   public void doRefactoring() {
-    SPropertyOperations.set(this.myDeclaration, "name", SPropertyOperations.getString(this.myParameters.getDeclaration(), "name"));
+    SPropertyOperations.set(this.myDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(this.myParameters.getDeclaration(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     if (this.myParameters.isReturnValueChanged()) {
-      SLinkOperations.setTarget(this.myDeclaration, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(this.myParameters.getDeclaration(), "returnType", true)), true);
+      SLinkOperations.setTarget(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"))));
     }
-    if (SNodeOperations.isInstanceOf(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible")) {
+    if (SNodeOperations.isInstanceOf(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
       if (this.myParameters.isVisibilityChanged()) {
-        SLinkOperations.setTarget(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", SLinkOperations.getTarget(SNodeOperations.cast(this.myParameters.getDeclaration(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(this.myDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SLinkOperations.getTarget(SNodeOperations.cast(this.myParameters.getDeclaration(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
       }
     }
     this.changeParameters();
-    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).clear();
-    for (SNode throwItem : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "throwsItem", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).addElement(SNodeOperations.copyNode(throwItem));
+    ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).clear();
+    for (SNode throwItem : ListSequence.fromList(SLinkOperations.getChildren(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem")))) {
+      ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).addElement(SNodeOperations.copyNode(throwItem));
     }
     for (SNode node : ListSequence.fromList(this.myUssages)) {
       MethodCallAdapter call = new MethodCallAdapter(node);
       List<SNode> oldArgs = call.getMethodArguments();
       call.removeArguments();
-      for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
+      for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")))) {
         int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getNodeId().toString());
         if (index == -1) {
-          call.addArgument(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
+          call.addArgument(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534058343l, "jetbrains.mps.baseLanguage.structure.NullLiteral")));
         } else {
           call.addArgument(ListSequence.fromList(oldArgs).getElement(index));
         }
@@ -52,17 +54,17 @@ public class ChangeMethodSignatureRefactoring {
     return myDeclaration;
   }
   private void changeParameters() {
-    List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
-    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
-    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
+    List<SNode> oldParams = SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"));
+    ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).clear();
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(this.myParameters.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")))) {
       int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getNodeId().toString());
       if (index == -1) {
-        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(SNodeOperations.copyNode(parameter));
+        ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(SNodeOperations.copyNode(parameter));
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(ListSequence.fromList(oldParams).getElement(index));
-        SNode newParam = ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).last();
-        SPropertyOperations.set(newParam, "name", SPropertyOperations.getString(parameter, "name").substring(0));
-        SLinkOperations.setTarget(newParam, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, "type", true)), true);
+        ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(ListSequence.fromList(oldParams).getElement(index));
+        SNode newParam = ListSequence.fromList(SLinkOperations.getChildren(this.myDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).last();
+        SPropertyOperations.set(newParam, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(parameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).substring(0));
+        SLinkOperations.setTarget(newParam, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(SLinkOperations.getTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))));
       }
     }
   }
@@ -70,6 +72,6 @@ public class ChangeMethodSignatureRefactoring {
     this.myUssages = ussages;
   }
   public static boolean isApplicable(SNode node) {
-    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null) && (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
   }
 }

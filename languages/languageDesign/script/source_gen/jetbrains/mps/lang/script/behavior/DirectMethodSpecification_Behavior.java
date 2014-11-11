@@ -5,11 +5,13 @@ package jetbrains.mps.lang.script.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DirectMethodSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_7941431147614164371(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "methodDeclaration", false), "virtual_getPresentation_1213877396640", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 2291767839159498115l, 2291767839159499865l, "methodDeclaration")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 }

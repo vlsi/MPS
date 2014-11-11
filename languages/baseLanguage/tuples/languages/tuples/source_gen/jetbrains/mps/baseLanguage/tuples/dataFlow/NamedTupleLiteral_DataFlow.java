@@ -8,13 +8,15 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NamedTupleLiteral_DataFlow extends DataFlowBuilder {
   public NamedTupleLiteral_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode cref : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentRef", true))) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(cref, "value", true));
+    for (SNode cref : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560910577l, "componentRef")))) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(cref, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560837729l, "value")));
     }
   }
 }

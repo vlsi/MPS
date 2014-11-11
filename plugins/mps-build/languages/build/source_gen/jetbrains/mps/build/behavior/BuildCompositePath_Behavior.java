@@ -4,6 +4,8 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,26 +21,26 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildCompositePath_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "head", "");
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"), "");
   }
   public static String call_getPath_8618885170173674800(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "tail", true) != null)) {
-      return SPropertyOperations.getString(thisNode, "head") + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail")) != null)) {
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head")) + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail")));
     }
-    return SPropertyOperations.getString(thisNode, "head");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
   }
   public static String call_getLastSegment_1368030936106771152(SNode thisNode, MacroHelper helper) {
     SNode last = thisNode;
-    while ((SLinkOperations.getTarget(last, "tail", true) != null)) {
-      last = SLinkOperations.getTarget(last, "tail", true);
+    while ((SLinkOperations.getTarget(last, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail")) != null)) {
+      last = SLinkOperations.getTarget(last, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"));
     }
-    return SPropertyOperations.getString(last, "head");
+    return SPropertyOperations.getString(last, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
   }
   public static String call_getPathToHead_3968971886499106107(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) {
-      return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) + "/" + SPropertyOperations.getString(thisNode, "head");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) {
+      return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) + "/" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
     }
-    return SPropertyOperations.getString(thisNode, "head");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"));
   }
   public static List<String> call_getHeadSuggestions_4959435991187212109(SNode thisNode, String basePath) {
     String relativePath = basePath;
@@ -46,8 +48,8 @@ public class BuildCompositePath_Behavior {
       return ListSequence.fromList(new ArrayList<String>());
     }
 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) {
-      relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"))) {
+      relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath")));
     }
 
     IFile file = FileSystem.getInstance().getFileByPath(relativePath);
@@ -70,7 +72,7 @@ public class BuildCompositePath_Behavior {
     }, true).toListSequence();
   }
   public static IFile call_getFile_841084130032784919(SNode thisNode, Context context) {
-    String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
+    String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
     if ((basePath == null || basePath.length() == 0)) {
       return null;
     }

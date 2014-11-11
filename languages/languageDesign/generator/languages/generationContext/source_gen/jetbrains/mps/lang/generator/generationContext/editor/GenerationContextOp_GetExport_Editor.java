@@ -112,7 +112,7 @@ public class GenerationContextOp_GetExport_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5hlhec_d0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

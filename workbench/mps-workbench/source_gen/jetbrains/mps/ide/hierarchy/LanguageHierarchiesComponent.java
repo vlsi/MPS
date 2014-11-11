@@ -36,6 +36,8 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -216,7 +218,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     SModel structureModel = myLanguage.getStructureModelDescriptor();
     SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
 outer:
-    for (SNode concept : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    for (SNode concept : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode parentConcept = concept;
       LanguageHierarchiesComponent.ConceptContainer prevConceptContainer = null;
       while (parentConcept != null && parentConcept != baseConcept && !((mySkipAncestors && SNodeOperations.getModel(parentConcept) != structureModel))) {
@@ -230,7 +232,7 @@ outer:
           continue outer;
         }
         processed.put(parentConcept, newConceptContainer);
-        parentConcept = SLinkOperations.getTarget(parentConcept, "extends", false);
+        parentConcept = SLinkOperations.getTarget(parentConcept, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       }
       if (prevConceptContainer != null) {
         result.add(prevConceptContainer);
@@ -378,8 +380,8 @@ outer:
         myColor = ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f);
       }
       myOperationContext = myComponent.myOperationContext;
-      myRootable = SPropertyOperations.getBoolean(conceptDeclaration, "rootable");
-      myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
+      myRootable = SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
+      myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"));
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
@@ -415,7 +417,7 @@ outer:
       });
     }
     public SNode getNode() {
-      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     }
     public void paint(Graphics graphics) {
       Graphics2D g = (Graphics2D) graphics;
@@ -455,7 +457,7 @@ outer:
           if (conceptDeclaration == null) {
             return "";
           }
-          String name = SPropertyOperations.getString(conceptDeclaration, "name");
+          String name = SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           return (name != null ? name : "");
         }
       });

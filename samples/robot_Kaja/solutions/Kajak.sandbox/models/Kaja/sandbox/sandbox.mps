@@ -6,10 +6,13 @@
     <lang id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja" />
     <lang id="44306fd2-ef94-4b56-9806-d9ab509536db" name="jetbrains.mps.samples.KajaAndOr" />
     <lang id="b56912a3-674f-4530-b0cf-55261b526a1f" name="jetbrains.mps.samples.KajaSceneConstruction" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/859008965969439768" name="jetbrains.mps.samples.Kaja.structure.IsFull" />
     <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253578" name="jetbrains.mps.samples.KajaAndOr.structure.And" />
+    <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785" name="jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator" />
     <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273550864" name="jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall" />
     <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608254" name="jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark" />
+    <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255" name="jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054" name="jetbrains.mps.samples.Kaja.structure.TraceMessage" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110" name="jetbrains.mps.samples.Kaja.structure.Script" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559138" name="jetbrains.mps.samples.Kaja.structure.Step" />

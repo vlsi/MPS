@@ -15,11 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.List;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * User: shatalin
@@ -27,29 +23,20 @@ import java.util.List;
  */
 public interface Updater {
   /**
-   * This method should be used to perform incremental update of the associated editor
-   * content (tree of EditorCells) to reflect changes captured within passed list of
-   * model events.
+   * This method should be used to force full update process of the associated editor
+   * content (tree of EditorCells)
    * <p/>
    * New UpdateSession instance will be created within this method and will be available
    * via getCurrentUpdateSession() method until the end of update process, so it can be
    * used from any code called as a sub-sequence of this method execution. E.g. the code
    * generated from the editor aspect of any language.
    * <p/>
-   * This method will setting new rootCell for the associated EditorComponent.
+   * This method will set new rootCell for the associated EditorComponent.
    * <p/>
    * Internal update process-specific information about the model will be collected during
-   * this method execution, so it is important to always use this method to update root
-   * cell of the associated EditorComponent.
-   * <p/>
-   * null can be passed as an events parameter to invoke complete editor cell tree rebuild
-   * process. It can be useful in the case of "unknown" model changes performed to rebuild
-   * editor content and in the same time let Updater track any future changed correctly.
-   *
-   * @param events - model events collected since last update session or null if editor
-   *               should be re-created completely
+   * this method execution and used later to update the editor incrementally.
    */
-  void update(List<SModelEvent> events);
+  void update();
 
   /**
    * @return currently running update session or null if editor update was not executed
@@ -57,7 +44,8 @@ public interface Updater {
   UpdateSession getCurrentUpdateSession();
 
   /**
-   * Use this method to force Updater to process all accumulated model events synchronously.
+   * Use this method to force Updater to process all accumulated model events synchronously
+   * and update associated Editor in accordance.
    */
   void flushModelEvents();
 
@@ -74,4 +62,24 @@ public interface Updater {
    * @param listener - listener to remove
    */
   void removeListener(UpdaterListener listener);
+
+  /**
+   * Use this method to specify initial set of editor hints used by updater process to create
+   * EditorCell tree for the current editor. If null specified then default project-wide hints
+   * settings will be used.
+   * <p/>
+   * Return boolean value reflecting the fact that list of initialEditorHints were updated, so
+   * client should call explicit editor update (rebuild editor) in order to refresh current
+   * editor in accordance.
+   *
+   * @param hints array of hints or null if default settings should be used
+   * @return true if set of initialEditorHints were updated
+   */
+  boolean setInitialEditorHints(@Nullable String[] hints);
+
+  /**
+   * @return Currently used set of initialEditorHints or null if default project-wide settings are used.
+   */
+  @Nullable
+  String[] getInitialEditorHints();
 }

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class BaseTestBody {
   public SModel myModel;
@@ -29,7 +32,7 @@ public class BaseTestBody {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
         SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
-        for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotation", false, new String[]{}))) {
+        for (SNode a : ListSequence.fromList(SNodeOperations.getNodeDescendants(copy, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1228584180295l, "jetbrains.mps.lang.test.structure.INodeAnnotation"), false, new SConcept[]{}))) {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.addRootNode(copy);

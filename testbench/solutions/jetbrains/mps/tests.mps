@@ -73,6 +73,7 @@
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479" name="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599480" name="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599481" name="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
+    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599482" name="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506909" name="moduleFQName" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506910" name="moduleID" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599482/8605005254686522462" name="muted" />
@@ -1270,6 +1271,9 @@
       <node concept="2ogp.4504141816188599479" id="3336561591622013318" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.346011455438315300" resolveInfo="AddFieldNotAllowed" />
       </node>
+      <node concept="2ogp.4504141816188599479" id="8573539357028350066" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.1774243543380527900" resolveInfo="AddFinalInStaticField" />
+      </node>
       <node concept="2ogp.4504141816188599479" id="3336561591622013427" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.346011455435677587" resolveInfo="AddInterfaceCaret" />
       </node>
@@ -1287,6 +1291,15 @@
       </node>
       <node concept="2ogp.4504141816188599479" id="3336561591622013325" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.346011455438311529" resolveInfo="AddMethodNotAllowed" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="8573539357028351894" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.1774243543380573002" resolveInfo="AddStaticInField" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="8573539357028352568" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.1774243543380573160" resolveInfo="AddTransientInField" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="8573539357028353243" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.1774243543380572775" resolveInfo="AddVolatileInField" />
       </node>
       <node concept="2ogp.4504141816188599479" id="7028565456866975093" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.7888701088960204110" resolveInfo="AddVariableDeclarationCaret" />
@@ -1658,7 +1671,28 @@
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.7045533117182160904" resolveInfo="EmptyEnumConstantCreationWithConstructorTest" />
       </node>
       <node concept="2ogp.4504141816188599479" id="6615512484320948256" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478055586441" resolveInfo="RemoveFinalInStaticFieldBackspace" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485552438" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.6615512484320057805" resolveInfo="RemoveStaticInInterface" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485554226" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478053219702" resolveInfo="RemoveStaticInStaticFieldBackspace1" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485556300" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478055587551" resolveInfo="RemoveStaticInStaticFieldBackspace2" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485557900" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478053332960" resolveInfo="RemoveStaticInStaticFieldDelete1" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485558571" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478055587353" resolveInfo="RemoveStaticInStaticFieldDelete2" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485554893" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478055586918" resolveInfo="RemoveTransientInFieldDelete" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="5113291369485555561" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.2738496478055586646" resolveInfo="RemoveVolatileInStaticFieldBackspace" />
       </node>
       <node concept="2ogp.4504141816188599479" id="4246614868164096905" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.1989240834983537719" resolveInfo="SurroundExpressionWithParenthesis" />
@@ -2838,9 +2872,6 @@
       </node>
       <node concept="2ogp.4504141816188599479" id="4246614868164096842" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.8630667313531347630" resolveInfo="EditorCellSomeProblem" />
-      </node>
-      <node concept="2ogp.4504141816188599479" id="4246614868164096851" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
-        <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.3294454325389348340" resolveInfo="IntelligentInputWithSubstitutionChooser" />
       </node>
       <node concept="2ogp.4504141816188599479" id="4246614868164096857" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ryl9.7428162988804675173" resolveInfo="SelectionOfWrappedCell" />

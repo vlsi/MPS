@@ -20,6 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -45,7 +47,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_rpujt6_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rpujt6_b0a(editorContext, node));
@@ -78,7 +80,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_rpujt6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_rpujt6_b1a(editorContext, node));
@@ -89,7 +91,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_rpujt6_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +111,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     String path = null;
     SModule module = SNodeOperations.getModel(node).getModule();
     if (module instanceof AbstractModule) {
-      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, "iconPath"));
+      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036234483l, 5117350825036235732l, "iconPath")));
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
@@ -117,7 +119,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createImage_rpujt6_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rpujt6_b0b1a(editorContext, node));
@@ -127,7 +129,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return SPropertyOperations.getString(node, "iconPath");
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036234483l, 5117350825036235732l, "iconPath"));
       }
     }).invoke());
     editorCell.setCellId("Image_rpujt6_a0b1a");
@@ -155,7 +157,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_rpujt6_a1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

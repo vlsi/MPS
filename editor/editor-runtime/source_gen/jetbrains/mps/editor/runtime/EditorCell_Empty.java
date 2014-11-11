@@ -16,6 +16,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
 public class EditorCell_Empty extends EditorCell_Basic {
@@ -26,7 +27,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     this.myTextLine.setCaretEnabled(true);
   }
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  protected void paintContent(Graphics g, ParentSettings parentSettings) {
     this.myTextLine.setShowCaret(this.myCaretVisible && this.isWithinSelection() && this.getEditor().hasFocus());
     this.myTextLine.paint(g, this.myX + this.myGapLeft, this.myY);
   }
@@ -89,15 +90,15 @@ public class EditorCell_Empty extends EditorCell_Basic {
   private boolean applyLeftTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
-    cellForNewNode.getSTHintCell().changeText(text);
-    cellForNewNode.getSTHintCell().end();
+    STHintUtil.getSTHintCell(cellForNewNode).changeText(text);
+    STHintUtil.getSTHintCell(cellForNewNode).end();
     return true;
   }
   private boolean applyRightTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.RIGHT_TRANSFORM);
     ltAction.execute(editorContext);
-    cellForNewNode.getSTHintCell().changeText(text);
-    cellForNewNode.getSTHintCell().end();
+    STHintUtil.getSTHintCell(cellForNewNode).changeText(text);
+    STHintUtil.getSTHintCell(cellForNewNode).end();
     return true;
   }
   @Override

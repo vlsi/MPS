@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -21,10 +23,10 @@ public class LanguageDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isLanguageAspectEmpty_3064888218669923940(SNode thisNode, LanguageAspect languageAspect, TemplateQueryContext genContext) {
-    SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-815987583431389189l, -7637943166127244904l), 9020561928507175845l, 1698302279987270971l, "language")), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
-      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "language", true), "namespace"));
+      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-815987583431389189l, -7637943166127244904l), 9020561928507175845l, 1698302279987270971l, "language")), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-815987583431389189l, -7637943166127244904l), 9020561928507175845l, 1698302279987270971l, "language")), MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace")));
       return true;
     }
     SModel ts = languageAspect.get(l);
@@ -33,9 +35,9 @@ public class LanguageDescriptor_Behavior {
     }
     SModel m = ts;
     if (m == null) {
-      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
+      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-815987583431389189l, -7637943166127244904l), 9020561928507175845l, 1698302279987270971l, "language")), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return true;
     }
-    return ListSequence.fromList(SModelOperations.getRoots(m, null)).isEmpty();
+    return ListSequence.fromList(SModelOperations.roots(m, null)).isEmpty();
   }
 }

@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.sidetransform;
 
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * User: shatalin
@@ -37,28 +38,28 @@ public class STHintUtil {
   private static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
   public static void addRightTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
-    SNodeAccessUtil.setProperty(node, RIGHT_TRANSFORM_HINT, "true");
+    node.setProperty(RIGHT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
   }
 
   public static void addLeftTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
-    SNodeAccessUtil.setProperty(node, LEFT_TRANSFORM_HINT, "true");
+    node.setProperty(LEFT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
   }
 
   public static boolean hasRightTransformHint(SNode node) {
-    return SNodeAccessUtil.getProperty(node, RIGHT_TRANSFORM_HINT) != null;
+    return node.getProperty(RIGHT_TRANSFORM_HINT) != null;
   }
 
   public static boolean hasLeftTransformHint(SNode node) {
-    return SNodeAccessUtil.getProperty(node, LEFT_TRANSFORM_HINT) != null;
+    return node.getProperty(LEFT_TRANSFORM_HINT) != null;
   }
 
   public static void removeTransformHints(SNode node) {
-    SNodeAccessUtil.setProperty(node, LEFT_TRANSFORM_HINT, null);
-    SNodeAccessUtil.setProperty(node, RIGHT_TRANSFORM_HINT, null);
+    node.setProperty(LEFT_TRANSFORM_HINT, null);
+    node.setProperty(RIGHT_TRANSFORM_HINT, null);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, null);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
   }
@@ -70,4 +71,43 @@ public class STHintUtil {
   public static String getTransformHintAnchorTag(SNode node) {
     return (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
   }
+
+  public static EditorCell_STHint getSTHintCell(EditorCell cell) {
+    SNode node = cell.getSNode();
+    if (node == null) {
+      return null;
+    }
+
+    EditorCell bigCell = cell.getEditorComponent().findNodeCell(node);
+    String anchorId = getTransformHintAnchorCellId(node);
+    if (anchorId == null) {
+      // TODO: should never be null!..
+      if (bigCell != null && bigCell.getParent() != null) {
+        for (EditorCell sibling : bigCell.getParent()) {
+          if (sibling instanceof EditorCell_STHint) {
+            return (EditorCell_STHint) sibling;
+          }
+        }
+      }
+      return null;
+    }
+
+    EditorCell anchorCell = cell.getEditorComponent().findCellWithId(node, anchorId);
+    if (anchorCell == null) {
+      return null;
+    }
+
+    assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
+    EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
+    if (nextSibling instanceof EditorCell_STHint) {
+      return (EditorCell_STHint) nextSibling;
+    }
+
+    EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
+    if (prevSibling instanceof EditorCell_STHint) {
+      return (EditorCell_STHint) prevSibling;
+    }
+    return null;
+  }
+
 }

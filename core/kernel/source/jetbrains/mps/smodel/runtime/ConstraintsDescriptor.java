@@ -16,13 +16,22 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface ConstraintsDescriptor {
+  @Deprecated
   String getConceptFqName();
+
+  SConceptId getConceptId();
 
   boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
@@ -33,8 +42,16 @@ public interface ConstraintsDescriptor {
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
   @NotNull
+  PropertyConstraintsDescriptor getProperty(SPropertyId property);
+
+  @Deprecated
+  @NotNull
   PropertyConstraintsDescriptor getProperty(String name);
 
+  @NotNull
+  ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink);
+
+  @Deprecated
   @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
@@ -47,5 +64,5 @@ public interface ConstraintsDescriptor {
   @Nullable
   String getAlternativeIcon(SNode node);
 
-  String getDefaultConcreteConceptFqName();
+  SConceptId getDefaultConcreteConceptId();
 }

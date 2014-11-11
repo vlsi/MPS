@@ -4,21 +4,23 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SConstraintsUtil {
   public static final String concept_ConceptConstraints = "jetbrains.mps.lang.constraints.structure.ConceptConstraints";
   public SConstraintsUtil() {
   }
   public static SNode getConceptConstraints_CanBeAncestor(SNode node) {
-    return SLinkOperations.getTarget(node, "canBeAncestor", true);
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 7852712695066883424l, "canBeAncestor"));
   }
   public static SNode getConceptConstraints_CanBeChild(SNode node) {
-    return SLinkOperations.getTarget(node, "canBeChild", true);
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213106463729l, "canBeChild"));
   }
   public static SNode getConceptConstraints_CanBeParent(SNode node) {
-    return SLinkOperations.getTarget(node, "canBeParent", true);
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213106478122l, "canBeParent"));
   }
   public static SNode getConceptConstraints_CanBeRoot(SNode node) {
-    return SLinkOperations.getTarget(node, "canBeRoot", true);
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1227085062429l, "canBeRoot"));
   }
 }

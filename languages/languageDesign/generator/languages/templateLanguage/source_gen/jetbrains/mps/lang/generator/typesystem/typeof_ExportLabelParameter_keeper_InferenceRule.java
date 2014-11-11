@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,11 +20,11 @@ public class typeof_ExportLabelParameter_keeper_InferenceRule extends AbstractIn
   public typeof_ExportLabelParameter_keeper_InferenceRule() {
   }
   public void applyRule(final SNode keeperParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode label = SNodeOperations.getAncestor(keeperParameter, "jetbrains.mps.lang.generator.structure.ExportLabel", false, false);
+    SNode label = SNodeOperations.getNodeAncestor(keeperParameter, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 494100551407614666l, "jetbrains.mps.lang.generator.structure.ExportLabel"), false, false);
     {
       SNode _nodeToCheck_1029348928467 = keeperParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "8915420221429745333", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "8915420221429745077", true), (SNode) _quotation_createNode_264ht4_a0b0b(SLinkOperations.getTarget(label, "dataHolder", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "8915420221429745077", true), (SNode) _quotation_createNode_264ht4_a0b0b(SLinkOperations.getTarget(label, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 494100551407614666l, 494100551407752158l, "dataHolder"))), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -41,7 +43,7 @@ public class typeof_ExportLabelParameter_keeper_InferenceRule extends AbstractIn
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

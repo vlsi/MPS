@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,7 +47,7 @@ public class IntroduceConstant_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constant", false, false) != null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"), false, false) != null;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)", "3986994675334574125");
@@ -66,12 +68,12 @@ public class IntroduceConstant_Intention implements IntentionFactory {
       return "Introduce Constant";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode constant = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.Constant", null);
-      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constant", false, false), constant);
-      SNode constantReference = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.ConstantReference", null);
-      SLinkOperations.setTarget(constantReference, "original", constant, false);
+      SNode constant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"));
+      SNodeOperations.insertPrevSiblingChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"), false, false), constant);
+      SNode constantReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"));
+      SLinkOperations.setTarget(constantReference, MetaAdapterFactory.getReferenceLink(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, 3990190717072393830l, "original"), constant);
       SNodeOperations.replaceWithAnother(node, constantReference);
-      SLinkOperations.setTarget(constant, "initializer", node, true);
+      SLinkOperations.setTarget(constant, MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, 2001769927721010657l, "initializer"), node);
       editorContext.selectWRTFocusPolicy(constant);
     }
     public IntentionDescriptor getDescriptor() {

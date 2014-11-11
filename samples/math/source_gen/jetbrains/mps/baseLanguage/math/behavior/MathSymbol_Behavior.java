@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.math.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -14,11 +16,11 @@ public class MathSymbol_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void call_getVisibleIndices_1236440390782(SNode thisNode, SNode sender, List<SNode> indices) {
-    SNode sI = SNodeOperations.getAncestor(sender, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", true, false);
-    if (sI != SLinkOperations.getTarget(thisNode, "var", true)) {
-      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, "var", true));
+    SNode sI = SNodeOperations.getNodeAncestor(sender, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589266912l, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex"), true, false);
+    if (sI != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var"))) {
+      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")));
     }
-    SNode ms = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.math.structure.MathSymbol", false, false);
+    SNode ms = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), false, false);
     if (ms != null) {
       MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, thisNode, indices);
     }

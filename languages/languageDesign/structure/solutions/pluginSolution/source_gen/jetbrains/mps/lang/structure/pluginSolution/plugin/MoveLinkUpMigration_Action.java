@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -65,7 +67,7 @@ public class MoveLinkUpMigration_Action extends BaseAction {
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")))) {
           node = null;
         }
       }
@@ -119,9 +121,9 @@ public class MoveLinkUpMigration_Action extends BaseAction {
             return;
           }
           Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
-          ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "linkDeclaration", true)).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
-          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
-          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), "role", SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "role") + "_old");
+          ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
+          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224240836180l, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")));
+          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "_old");
         }
       });
 

@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -14,19 +16,19 @@ public class TestInfo_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_reOpenProject_1031873601093419509(SAbstractConcept thisConcept, SModel model) {
-    List<SNode> infos = SModelOperations.getRoots(model, "jetbrains.mps.lang.test.structure.TestInfo");
+    List<SNode> infos = SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 5097124989038916362l, "jetbrains.mps.lang.test.structure.TestInfo"));
     if (ListSequence.fromList(infos).isEmpty()) {
       return false;
     }
     SNode testInfo = ListSequence.fromList(infos).first();
-    return SPropertyOperations.getBoolean(testInfo, "reOpenProject");
+    return SPropertyOperations.getBoolean(testInfo, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 5097124989038916362l, 1031873601093404121l, "reOpenProject"));
   }
   public static String call_getProjectPath_5097124989038916375(SAbstractConcept thisConcept, SModel model) {
-    List<SNode> infos = SModelOperations.getRoots(model, "jetbrains.mps.lang.test.structure.TestInfo");
+    List<SNode> infos = SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 5097124989038916362l, "jetbrains.mps.lang.test.structure.TestInfo"));
     if (ListSequence.fromList(infos).isEmpty()) {
       return null;
     }
     SNode testInfo = ListSequence.fromList(infos).first();
-    return SPropertyOperations.getString(testInfo, "projectPath");
+    return SPropertyOperations.getString(testInfo, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 5097124989038916362l, 5097124989038916363l, "projectPath"));
   }
 }

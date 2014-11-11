@@ -45,6 +45,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -229,7 +230,8 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       sourceRoot = (sourceRoot != null && sourceRoot.equals(tmpSR)) ? sourceRoot : tmpSR;
     }
 
-    IFile folder = FileSystem.getInstance().getFileByPath(sourceRoot);
+    String path = options.containsKey(ModelFactory.OPTION_RELPATH) ? sourceRoot + File.separatorChar + options.get(ModelFactory.OPTION_RELPATH) : sourceRoot;
+    IFile folder = FileSystem.getInstance().getFileByPath(path);
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
       throw new IOException("model already exists");
     }

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -22,12 +24,12 @@ public class typeof_XMLSAXChildRule_InferenceRule extends AbstractInferenceRule_
   public typeof_XMLSAXChildRule_InferenceRule() {
   }
   public void applyRule(final SNode childRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(childRule, "rule", false) == null) {
+    if (SLinkOperations.getTarget(childRule, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")) == null) {
       return;
     }
 
-    List<SNode> actualArgument = SLinkOperations.getTargets(childRule, "actualArgument", true);
-    List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(childRule, "rule", false), "params", true);
+    List<SNode> actualArgument = SLinkOperations.getChildren(childRule, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 1068499141038l, "actualArgument"));
+    List<SNode> params = SLinkOperations.getChildren(SLinkOperations.getTarget(childRule, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 980633948634473186l, "params"));
     if (ListSequence.fromList(actualArgument).count() != ListSequence.fromList(params).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -49,7 +51,7 @@ public class typeof_XMLSAXChildRule_InferenceRule extends AbstractInferenceRule_
           {
             SNode _nodeToCheck_1029348928467 = arg_var;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "4720003541459243546", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "4720003541459240933", true), (SNode) SLinkOperations.getTarget(param_var, "type", true), true, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "4720003541459240933", true), (SNode) SLinkOperations.getTarget(param_var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), true, true, _info_12389875345);
           }
         }
       }

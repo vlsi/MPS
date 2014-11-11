@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -18,11 +20,11 @@ public class check_EditorComponentDeclaration_NonTypesystemRule extends Abstract
   public check_EditorComponentDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode reference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode editorComponent = SNodeOperations.as(SNodeOperations.getParent(reference), "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
-    if (editorComponent == null || SLinkOperations.getTarget(reference, "editorComponent", false) == null) {
+    SNode editorComponent = SNodeOperations.as(SNodeOperations.getParent(reference), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
+    if (editorComponent == null || SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 7033942394256351208l, 7033942394256351817l, "editorComponent")) == null) {
       return;
     }
-    if (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, "editorComponent", false), "overridenEditorComponent", true) != null) {
+    if (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 7033942394256351208l, 7033942394256351817l, "editorComponent")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(reference, "Overriden EditorComponent is overriding another editor component. It's possible to override only main editor component directly.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "608335627140284576", null, errorTarget);

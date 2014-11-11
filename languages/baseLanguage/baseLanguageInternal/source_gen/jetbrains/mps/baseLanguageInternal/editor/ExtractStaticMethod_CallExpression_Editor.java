@@ -29,7 +29,7 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
     editorCell.setCellId("Collection_vnpzmb_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_vnpzmb_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_vnpzmb_b0(editorContext, node));
@@ -76,7 +76,7 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

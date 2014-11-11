@@ -23,7 +23,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
@@ -67,7 +69,11 @@ public class NodesReader {
   }
 
   public Pair<SContainmentLink, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
-    SConceptId cid = readConceptId(is);
+    byte b = is.readByte();
+    SConceptId cid = null;
+    if (b == 0x71) {
+      cid = readConceptId(is);
+    }
     String cname = is.readString();
     SNodeId nodeId = is.readNodeId();
     String linkStr = is.readString();
@@ -85,7 +91,7 @@ public class NodesReader {
     }
     // TODO report if (nodeInfo != 0 && myEnv != null) .. myEnv.nodeRoleRead/conceptRead();
 
-    SConceptAdapterById c = new SConceptAdapterById(cid, cname);
+    SConceptAdapter c = cid == null ? new SConceptAdapterByName(cname) : new SConceptAdapterById(cid, cname);
     jetbrains.mps.smodel.SNode node = interfaceNode
         ? new InterfaceSNode(c)
         : new jetbrains.mps.smodel.SNode(c);
@@ -146,7 +152,7 @@ public class NodesReader {
             modelRef,
             targetNodeId,
             resolveInfo);
-        node.setReference(reference.getReferenceLink(), reference);
+        node.setReference(reference.getLink(), reference);
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
             sref,
@@ -156,7 +162,7 @@ public class NodesReader {
         if (origin != null) {
           reference.setOrigin(origin);
         }
-        node.setReference(reference.getReferenceLink(), reference);
+        node.setReference(reference.getLink(), reference);
       } else {
         throw new IOException("unknown reference type");
       }

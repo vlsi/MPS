@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -26,8 +28,8 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.AbstractCommand"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", "jetbrains.mps.samples.Kaja.structure.EmptyLine");
-        return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).first();
+        SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039740438l, "jetbrains.mps.samples.Kaja.structure.EmptyLine"));
+        return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).first();
       }
       public String getMatchingText(String pattern) {
         return "else";
@@ -46,16 +48,16 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_3308300503040148314(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isEmpty();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IfStatement_859008965969370131(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.While"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode whileNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.While");
-        SLinkOperations.setTarget(whileNode, "condition", SLinkOperations.getTarget(_context.getSourceNode(), "condition", true), true);
-        SLinkOperations.setTarget(whileNode, "body", SLinkOperations.getTarget(_context.getSourceNode(), "trueBranch", true), true);
-        return SLinkOperations.getTarget(whileNode, "condition", true);
+        SNode whileNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, "jetbrains.mps.samples.Kaja.structure.While"));
+        SLinkOperations.setTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition")));
+        SLinkOperations.setTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch")));
+        return SLinkOperations.getTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition"));
       }
       public String getMatchingText(String pattern) {
         return "while";
@@ -74,14 +76,14 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_859008965969370132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isEmpty();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_7446293342517269099(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.Not"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not");
-        return SLinkOperations.setTarget(notNode, "original", _context.getSourceNode(), true);
+        SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, "jetbrains.mps.samples.Kaja.structure.Not"));
+        return SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, 3308300503039654067l, "original"), _context.getSourceNode());
       }
       public String getMatchingText(String pattern) {
         return "not";
@@ -100,7 +102,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LogicalExpression_7446293342517448132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not"));
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, "jetbrains.mps.samples.Kaja.structure.Not")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_7446293342517448131(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -116,15 +118,15 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode expression;
               if ((item).equals("heading")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Heading", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039683649l, "jetbrains.mps.samples.Kaja.structure.Heading"));
               } else if ((item).equals("mark")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsMark", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436186598l, "jetbrains.mps.samples.Kaja.structure.IsMark"));
               } else if ((item).equals("full")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsFull", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 859008965969439768l, "jetbrains.mps.samples.Kaja.structure.IsFull"));
               } else if ((item).equals("wall")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsWall", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647788l, "jetbrains.mps.samples.Kaja.structure.IsWall"));
               } else if ((item).equals("looking")) {
-                expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Looking", null);
+                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 7060824959893078082l, "jetbrains.mps.samples.Kaja.structure.Looking"));
               } else {
                 throw new IllegalArgumentException("Cannot find a match for " + (item));
               }
@@ -154,10 +156,10 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.IfStatement"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode ifNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.IfStatement");
-        SLinkOperations.setTarget(ifNode, "condition", SLinkOperations.getTarget(_context.getSourceNode(), "condition", true), true);
-        SLinkOperations.setTarget(ifNode, "trueBranch", SLinkOperations.getTarget(_context.getSourceNode(), "body", true), true);
-        return SLinkOperations.getTarget(ifNode, "condition", true);
+        SNode ifNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, "jetbrains.mps.samples.Kaja.structure.IfStatement"));
+        SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition")));
+        SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body")));
+        return SLinkOperations.getTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition"));
       }
       public String getMatchingText(String pattern) {
         return "if";

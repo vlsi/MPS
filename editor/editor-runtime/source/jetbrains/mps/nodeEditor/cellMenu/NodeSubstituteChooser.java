@@ -19,33 +19,27 @@ import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
+import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.KeyboardHandler;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WindowsUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -53,21 +47,16 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.DefaultListModel;
-import javax.swing.Icon;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JWindow;
-import javax.swing.ListCellRenderer;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataListener;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Window;
@@ -87,9 +76,6 @@ import java.util.List;
 public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
-  public static final int PREFERRED_WIDTH = 300;
-  public static final int PREFERRED_HEIGHT = 200;
-
   private PopupWindow myPopupWindow = null;
   private boolean myChooserActivated = false;
   private boolean myPopupActivated;
@@ -104,6 +90,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private SubstituteInfo myNodeSubstituteInfo;
   private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
   private boolean myMenuEmpty;
+  private NodeItemCellRenderer myCellRenderer;
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -145,6 +132,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public void setPatternEditor(NodeSubstitutePatternEditor patternEditor) {
     myPatternEditor = patternEditor;
+    getCellRenderer().setPatternEditor(myPatternEditor);
   }
 
   public void setContextCell(EditorCell contextCell) {
@@ -162,6 +150,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myPatternEditor;
   }
 
+  NodeItemCellRenderer getCellRenderer() {
+    if (myCellRenderer == null) {
+      myCellRenderer = new NodeItemCellRenderer(getPatternEditor());
+    }
+    return myCellRenderer;
+  }
+
   public boolean isVisible() {
     return myChooserActivated;
   }
@@ -170,28 +165,25 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myMenuEmpty;
   }
 
+
   public void setVisible(boolean visible) {
     if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
-        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
-        myNodeSubstituteInfo.invalidateActions();
         rebuildMenuEntries();
+        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
+        getPopupWindow().setSelectionIndex(0);
         if (canShowPopup) {
           getPopupWindow().setVisible(true);
-          getPopupWindow().relayout();
-        } else {
-          getPopupWindow().initListModel();
+          getPopupWindow().scrollToSelection();
         }
-        getPopupWindow().setSelectionIndex(0);
-        getPopupWindow().scrollToSelection();
         myPopupActivated = true;
       } else {
         if (canShowPopup) {
           getPopupWindow().setVisible(false);
+          getPopupWindow().done();
           getPatternEditor().done();
-          getPopupWindow().setRelativeCell(null);
         }
         myNodeSubstituteInfo.invalidateActions();
         myPopupActivated = false;
@@ -255,14 +247,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       matchingActions = getMatchingActions(trimPattern, false);
     }
     try {
-      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
-
-      if (myIsSmart /*&& false*/) {
+      if (myIsSmart) {
         sortSmartActions(matchingActions);
+      } else {
+        Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
       }
     } catch (Exception e) {
       LOG.error(e, e);
     }
+
 
     mySubstituteActions = matchingActions;
     if (mySubstituteActions.size() == 0) {
@@ -270,7 +263,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       mySubstituteActions.add(new AbstractNodeSubstituteAction() {
         @Override
         public String getMatchingText(String pattern) {
-          return "No variants for \"" + getPatternEditor().getPattern() + "\"";
+          return "No suggestions for \"" + getPatternEditor().getPattern() + "\"";
         }
 
         @Override
@@ -285,45 +278,23 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       });
     }
 
-    int textLength = 0;
-    int descriptionLength = 0;
-    for (SubstituteAction item : mySubstituteActions) {
-      try {
-        textLength = Math.max(textLength, getTextLength(item, pattern));
-        descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
-      } catch (Throwable t) {
-        LOG.error(t, t);
-      }
-    }
+    getPopupWindow().updateListDimension(getCellRenderer().getMaxDimension(mySubstituteActions));
+    getPopupWindow().initListModel();
   }
 
   private void sortSmartActions(List<SubstituteAction> matchingActions) {
     Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
   }
 
-  private int getDescriptionLength(SubstituteAction action, String pattern) {
-    String descriptionText = action.getDescriptionText(pattern);
-    if (descriptionText == null) {
-      descriptionText = "";
-    }
-    return descriptionText.length();
-  }
-
-  private int getTextLength(SubstituteAction action, String pattern) {
-    String text = action.getVisibleMatchingText(pattern);
-    if (text == null) {
-      text = "";
-    }
-    return text.length();
-  }
-
   @Override
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
+        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
-        relayoutPopupMenu();
-        tryToApplyIntelligentInput();
+        getPopupWindow().scrollToAction(actionToSelect);
+        getPopupWindow().pack();
+        getPopupWindow().repaint();
       }
       return true;
     }
@@ -347,11 +318,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
+        SubstituteAction actionToSelect = getPopupWindow().getCurrentSelectedSubstituteAction();
         rebuildMenuEntries();
+        getPopupWindow().scrollToAction(actionToSelect);
         if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
-          relayoutPopupMenu();
+          getPopupWindow().pack();
+          getPopupWindow().repaint();
         }
-        tryToApplyIntelligentInput();
       }
       return true;
     }
@@ -440,11 +413,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     });
   }
 
-  public void doSubstituteSelection(String pattern, int index) {
-    List<SubstituteAction> actions = getMatchingActions(pattern, false);
-    actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
-  }
-
   private void repaintPopupMenu() {
     if (myPopupActivated) {
       getPopupWindow().scrollToSelection();
@@ -452,35 +420,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  private void relayoutPopupMenu() {
-    if (myPopupActivated) {
-      getPopupWindow().relayout();
-      getPopupWindow().repaint();
-    }
-  }
 
   public void dispose() {
     if (myPopupWindow != null) {
       myPopupWindow.getParent().remove(myPopupWindow);
       myPopupWindow.dispose();
       myPopupWindow = null;
-    }
-  }
-
-  private void tryToApplyIntelligentInput() {
-    final String pattern = getPatternEditor().getPattern();
-    if (pattern.length() == 0) {
-      return;
-    }
-
-    String prefix = pattern.substring(0, pattern.length() - 1);
-    if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
-        myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
-
-      EditorCell cell = myEditorComponent.getSelectedCell();
-      if (cell instanceof EditorCell_Label) {
-        IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern, CellSide.RIGHT);
-      }
     }
   }
 
@@ -495,25 +440,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
+    private final int MAX_LOOKUP_LIST_HEIGHT = 11;
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
     private final Color FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
     private final Color SELECTED_BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
     private final Color SELECTED_FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
-    private JList myList = new JBList(new DefaultListModel()) {
-      @Override
-      public Dimension getPreferredScrollableViewportSize() {
-        Dimension preferredSize = getPreferredSize();
-        if (preferredSize.getWidth() < PREFERRED_WIDTH) {
-          preferredSize.width = PREFERRED_WIDTH;
-        }
-        if (preferredSize.getHeight() > PREFERRED_HEIGHT) {
-          preferredSize.height = PREFERRED_HEIGHT;
-        }
-        return preferredSize;
-      }
-    };
-    private NodeItemCellRenderer myCellRenderer;
+    private JList myList = new JBList(new DefaultListModel());
+
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
         JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -523,14 +457,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       public void componentMoved(ComponentEvent e) {
         if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
-        getPopupWindow().relayout();
         getPatternEditor().setLocation(myPatternEditorLocation);
       }
     };
 
     public PopupWindow(final Window owner) {
       super(owner);
-
       getOwner().addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -560,7 +492,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
 
-      myList.setCellRenderer(myCellRenderer = new NodeItemCellRenderer());
+      myList.setCellRenderer(getCellRenderer());
 
       add(myScroller);
 
@@ -568,9 +500,27 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myScroller.getVerticalScrollBar().setFocusable(false);
 
       myList.setFocusable(false);
-      pack();
+      setLayout(new AbstractLayoutManager() {
+        @Override
+        public Dimension preferredLayoutSize(Container parent) {
+          int height = myScroller.getPreferredSize().height;
+          int width = myScroller.getPreferredSize().width;
+          if (myList.getModel().getSize() > myList.getVisibleRowCount() && myList.getVisibleRowCount() > 1) {
+            height -= myList.getFixedCellHeight() / 2;
+          }
+          return new Dimension(width, height);
+        }
+
+        @Override
+        public void layoutContainer(Container parent) {
+          relayout();
+        }
+      });
     }
 
+    public void done() {
+      setRelativeCell(null);
+    }
 
     @Override
     public void dispose() {
@@ -579,9 +529,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       super.dispose();
     }
 
-    public int getFontWidth() {
-      return getFontMetrics(myList.getFont()).stringWidth("x");
+    public SubstituteAction getCurrentSelectedSubstituteAction() {
+      int selectionIndex = getSelectionIndex();
+      if (selectionIndex != -1) {
+        return ((SubstituteAction) myList.getModel().getElementAt(selectionIndex));
+      } else {
+        return null;
+      }
     }
+
 
     public void setRelativeCell(EditorCell cell) {
       myRelativeCell = cell;
@@ -600,49 +556,48 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectedIndex(index);
     }
 
-    public String getSelectedText(final String pattern) {
-      if (getSelectionIndex() != -1) {
-        String result = ModelAccess.instance().runReadAction(new Computable<String>() {
-          @Override
-          public String compute() {
-            return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
-          }
-        });
-        return result != null ? result : "";
-      }
-      return "";
-    }
 
-    public void relayout() {
+    private void relayout() {
+      if (!myPatternEditor.isActivated()) {
+        return;
+      }
       Point location = myPatternEditor.getLeftBottomPosition();
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
-      if (location.getY() + PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
-        getPopupWindow().setPosition(PopupWindowPosition.TOP);
+      Dimension preferredSize = getPreferredSize();
+      if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150 && location.getY() - getPatternEditor().getHeight() / 2 > deviceBounds.y + deviceBounds.height / 2) {
+        setPosition(PopupWindowPosition.TOP);
       } else {
-        getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
+        setPosition(PopupWindowPosition.BOTTOM);
+      }
+
+
+      if (getPosition() == PopupWindowPosition.TOP && myList.getFixedCellHeight() != 0) {
+        double maxHeight = location.getY() - getPatternEditor().getHeight() - deviceBounds.y;
+        double visibleRowCount = maxHeight / myList.getFixedCellHeight();
+        if (visibleRowCount < myList.getVisibleRowCount()) {
+          if (visibleRowCount <= 1) {
+            myList.setVisibleRowCount(1);
+          } else {
+            myList.setVisibleRowCount((int) visibleRowCount);
+          }
+          preferredSize = getPreferredSize();
+        }
+      }
+
+      if (preferredSize.getWidth() >= deviceBounds.width) {
+        setSize(deviceBounds.width, preferredSize.height);
+      } else {
+        setSize(preferredSize);
       }
 
       Point newLocation = location;
 
-      int oldIndex = getSelectionIndex();
-
-      initListModel();
-
-      if (oldIndex != -1) {
-        setSelectionIndex(oldIndex);
-        scrollToSelection();
-      }
-      pack();
-
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - getPatternEditor().getHeight());
       }
 
-      if (getWidth() >= deviceBounds.width) {
-        setSize(deviceBounds.width, getSize().height + myList.getFontMetrics(myList.getFont()).getHeight());
-      }
 
       if (newLocation.x < deviceBounds.x) {
         newLocation.x = deviceBounds.x;
@@ -654,10 +609,26 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       setLocation(newLocation);
 
-      synchronized (getTreeLock()) {
-        validateTree();
+      myScroller.setSize(getSize());
+      myScroller.validate();
+    }
+
+    public void scrollToAction(SubstituteAction action) {
+      int oldIndex = 0;
+      if (action != null) {
+        int newIndexOfLastSelectedAction = mySubstituteActions.indexOf(action);
+        if (newIndexOfLastSelectedAction != -1) {
+          oldIndex = newIndexOfLastSelectedAction;
+        }
       }
-      repaint();
+      setSelectionIndex(oldIndex);
+      scrollToSelection();
+    }
+
+    public void updateListDimension(Dimension dimension) {
+      myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
+      myList.setFixedCellHeight(dimension.height);
+      myList.setFixedCellWidth(dimension.width);
     }
 
     private void initListModel() {
@@ -691,127 +662,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.ensureIndexIsVisible(getSelectionIndex());
     }
 
-    public PopupWindowPosition getPosition() {
+    private PopupWindowPosition getPosition() {
       return myPosition;
     }
 
-    public void setPosition(PopupWindowPosition position) {
+    private void setPosition(PopupWindowPosition position) {
       myPosition = position;
     }
   }
 
-  private class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
-    private JLabel myLeft = new JLabel("", JLabel.LEFT);
-    private JLabel myRight = new JLabel("", JLabel.RIGHT);
-    private static final int HORIZONTAL_GAP = 10;
-    private boolean myLightweightMode = false;
-    private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
-    private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
-    private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
-    private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
-
-    private NodeItemCellRenderer() {
-      setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
-      myLeft.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      myRight.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      add(myLeft, BorderLayout.WEST);
-      add(myRight, BorderLayout.EAST);
-    }
-
-    @Override
-    public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          setupThis(list, value, isSelected);
-        }
-      });
-
-      return this;
-    }
-
-    private void setupThis(JList list, Object value, boolean isSelected) {
-      SubstituteAction action = (SubstituteAction) value;
-      String pattern = getPatternEditor().getPattern();
-
-      if (!myLightweightMode) {
-        try {
-          Icon icon;
-          SNode iconNode = action.getIconNode(pattern);
-          if (iconNode != null) {
-            icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
-                IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
-          } else {
-            icon = IdeIcons.DEFAULT_ICON;
-          }
-          myLeft.setIcon(icon);
-        } catch (Throwable t) {
-          LOG.error(null, t);
-        }
-      }
-
-      try {
-        int style;
-        if (action.getParameterObject() instanceof SNode) {
-          style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
-        } else {
-          style = Font.PLAIN;
-        }
-        int oldStyle = myLeft.getFont().getStyle();
-
-        if (oldStyle != style) {
-          myLeft.setFont(myLeft.getFont().deriveFont(style));
-          myRight.setFont(myRight.getFont().deriveFont(style));
-        }
-
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-
-      try {
-        if (!isSelected) {
-          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_HIGHLIGHT_COLOR));
-        } else {
-          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_SELECTION_HIGHLIGHT_COLOR));
-        }
-      } catch (Throwable t) {
-        myLeft.setText("!Exception was thrown!");
-        LOG.error(null, t);
-      }
-
-      try {
-        myRight.setText(action.getDescriptionText(pattern));
-      } catch (Throwable t) {
-        myRight.setText("!Exception was thrown!");
-        LOG.error(null, t);
-      }
-
-      if (isSelected) {
-        setBackground(list.getSelectionBackground());
-        setForeground(list.getSelectionForeground());
-        myLeft.setForeground(list.getSelectionForeground());
-        myRight.setForeground(list.getSelectionForeground());
-      } else {
-        setBackground(list.getBackground());
-        setForeground(list.getForeground());
-        myLeft.setForeground(list.getForeground());
-        myRight.setForeground(list.getForeground());
-      }
-
-      //todo hack
-      myLeft.setPreferredSize(null);
-      Dimension oldPreferredSize = myLeft.getPreferredSize();
-      myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
-    }
-
-    private String colorToHtml(Color color) {
-      String rgb = Integer.toHexString(color.getRGB());
-      return rgb.substring(2, rgb.length());
-    }
-
-    public void setLightweightMode(boolean isLightweightMode) {
-      myLightweightMode = isLightweightMode;
-    }
-  }
 }

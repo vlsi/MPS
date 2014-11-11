@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -35,13 +37,13 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ITestCase");
     editorCell.setCellId("Constant_aryab1_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, TestCaseRef_Editor._StyleParameter_QueryFunction_aryab1_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.STRIKE_OUT, 0, TestCaseRef_Editor._StyleParameter_QueryFunction_aryab1_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_aryab1_a0a0(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getBoolean(node, "muted");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599482l, 8605005254686522462l, "muted"));
   }
   private EditorCell createRefCell_aryab1_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);

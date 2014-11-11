@@ -140,7 +140,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return visitor.getIntentionType();
   }
 
-  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node,
+  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, @NotNull final SNode node,
       final EditorContext context) {
     ModelAccess.assertLegalRead();
     checkLoaded();
@@ -179,9 +179,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         });
   }
 
-  private List<IntentionExecutable> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean isAncestor,
+  private List<IntentionExecutable> getAvailableIntentionsForExactNode(@NotNull final SNode node, @NotNull final EditorContext context, boolean isAncestor,
       Filter filter) {
-    assert node != null : "node == null - inconsistent editor state";
     CollectAvailableIntentionsVisitor visitor = new CollectAvailableIntentionsVisitor();
     visitIntentions(node, visitor, filter, isAncestor, context);
 

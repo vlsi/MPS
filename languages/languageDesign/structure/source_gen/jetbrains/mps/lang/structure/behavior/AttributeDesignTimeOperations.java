@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.structure.constraints.ConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -15,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,14 +26,14 @@ import java.util.LinkedHashSet;
 public class AttributeDesignTimeOperations {
   public static Iterable<SNode> getApplicableAttributes(SNode accessNode, final SNode attributeType) {
     // todo: should be node<ACD> 
-    final SNode nodeConcept = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(accessNode), "concept", false);
+    final SNode nodeConcept = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(accessNode), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
     if ((nodeConcept == null)) {
       return null;
     }
     ConceptsScope conceptsScope = new ConceptsScope(accessNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     return Sequence.fromIterable(conceptsScope.getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -41,9 +42,9 @@ public class AttributeDesignTimeOperations {
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // todo: why not getAttributeRole? 
-        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role")) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
+        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550663l, "role"))) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SConceptOperations.isSubConceptOf(nodeConcept, NameUtil.nodeFQName(it));
+            return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(nodeConcept), SNodeOperations.asSConcept(it));
           }
         });
       }
@@ -58,9 +59,9 @@ public class AttributeDesignTimeOperations {
     }
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "multiple", true) != null);
+        return (SLinkOperations.getTarget(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550186l, "multiple")) != null);
       }
-    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "multiple", true), "value");
+    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550186l, "multiple")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 6054523464626862044l, 6054523464626875854l, "value"));
   }
   @Nullable
   public static String getAttributeRole(SNode attributeDeclaration) {
@@ -69,9 +70,9 @@ public class AttributeDesignTimeOperations {
     }
     return SPropertyOperations.getString(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role"));
+        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550663l, "role")));
       }
-    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role");
+    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831955550663l, "role"));
   }
   public static Iterable<SNode> getApplicableConcepts(SNode attributeDeclaration) {
     if (!(isAttributeDeclaration(attributeDeclaration))) {
@@ -79,13 +80,13 @@ public class AttributeDesignTimeOperations {
     }
     return SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "attributed", true)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 2992811758677295509l, 7588428831947959310l, "attributed"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, "concept", false) != null);
+            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 6054523464627964745l, 6054523464627965081l, "concept")) != null);
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "concept", false);
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 6054523464627964745l, 6054523464627965081l, "concept"));
           }
         });
       }
@@ -100,7 +101,7 @@ public class AttributeDesignTimeOperations {
     Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
     while ((conceptDeclaration != null) && !(SetSequence.fromSet(concepts).contains(conceptDeclaration))) {
       SetSequence.fromSet(concepts).addElement(conceptDeclaration);
-      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
     }
     return concepts;
   }

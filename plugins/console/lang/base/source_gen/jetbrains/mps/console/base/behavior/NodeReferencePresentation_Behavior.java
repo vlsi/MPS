@@ -4,13 +4,15 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.project.Project;
 
 public class NodeReferencePresentation_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "referencePresentation", BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation"), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_canExecute_3282455643657932881", new Object[]{});

@@ -23,6 +23,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
@@ -78,7 +80,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     List<KeyMap> keyMaps;
     if (editorModel != null) {
       keyMaps = ListSequence.fromList(new ArrayList<KeyMap>());
-      for (SNode keyMapDeclaration : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"))) {
+      for (SNode keyMapDeclaration : ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration")))) {
         try {
           Class<KeyMap> keyMapClass = findKeyMapClassByDeclaration(keyMapDeclaration);
           if (keyMapClass != null) {

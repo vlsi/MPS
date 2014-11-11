@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
@@ -15,7 +17,7 @@ public class SwitchMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_i6m7ss_a0a = new SwitchMacro_Behavior.Pattern_i6m7ss_a0a0a0a1();
-      SNode coercedNode_i6m7ss_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_i6m7ss_a0a);
+      SNode coercedNode_i6m7ss_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1168380395224l, "sourceNodeQuery"))), pattern_i6m7ss_a0a);
       if (coercedNode_i6m7ss_a0a != null) {
         return ((SNode) pattern_i6m7ss_a0a.getFieldValue("patternVar_concept"));
       } else {
@@ -33,7 +35,7 @@ public class SwitchMacro_Behavior {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_i6m7ss_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_i6m7ss_a0a0a0.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_i6m7ss_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
       }
       return true;
     }

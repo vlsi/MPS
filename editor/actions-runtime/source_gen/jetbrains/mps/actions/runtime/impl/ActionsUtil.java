@@ -4,11 +4,13 @@ package jetbrains.mps.actions.runtime.impl;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ActionsUtil {
   public ActionsUtil() {
   }
   public static boolean isInstanceOfIType(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IType");
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1234971358450l, "jetbrains.mps.lang.core.structure.IType"));
   }
 }
