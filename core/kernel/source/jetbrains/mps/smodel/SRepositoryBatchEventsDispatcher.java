@@ -77,10 +77,14 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   @Override
   public void actionFinished() {
     List<SRepositoryEvent> batchedEvents;
-    do {
-      batchedEvents = myBatchEventsProcessor.tryFinishBatching();
-      fireModuleEvents(batchedEvents);
-    } while (!batchedEvents.isEmpty());
+    try {
+      do {
+        batchedEvents = myBatchEventsProcessor.flush();
+        fireModuleEvents(batchedEvents);
+      } while (!batchedEvents.isEmpty());
+    } finally {
+      myBatchEventsProcessor.finishBatching();
+    }
   }
 
   public final void addRepositoryBatchEventsListener(SRepositoryBatchListener listener) {

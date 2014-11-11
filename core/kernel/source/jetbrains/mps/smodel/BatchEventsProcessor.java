@@ -67,13 +67,6 @@ public class BatchEventsProcessor {
    * stops listening to SRepository, if no new events are discovered
    * @return result of batching: a list of SRepositoryEvents
    */
-  public List<SRepositoryEvent> tryFinishBatching() {
-    if (!myBatchStarted) throw new IllegalStateException("Batching has not been even started");
-    List<SRepositoryEvent> result = flush();
-    if (result.isEmpty()) finishBatching();
-    return result;
-  }
-
   public List<SRepositoryEvent> flush() {
     synchronized (LOCK) {
       if (!myBatchStarted) {
@@ -86,7 +79,8 @@ public class BatchEventsProcessor {
     }
   }
 
-  private void finishBatching() {
+  public void finishBatching() {
+    if (!myBatchStarted) throw new IllegalStateException("Batching has not been even started");
     myBatchStarted = false;
     myRepository.removeRepositoryListener(mySRepositoryListener);
   }
