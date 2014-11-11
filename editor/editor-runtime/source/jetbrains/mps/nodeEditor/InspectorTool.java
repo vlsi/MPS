@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.designer.LightToolWindowManager;
 import com.intellij.ide.DataManager;
+import com.intellij.ide.plugins.cl.PluginClassLoader;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -25,6 +27,8 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -63,7 +67,12 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
-    super(project, ID, 2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
+    super(project, ID, amIInPlugin() ? -1 : 2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
+  }
+
+  // Remove after fix of
+  private static boolean amIInPlugin() {
+    return InspectorTool.class.getClassLoader() instanceof PluginClassLoader;
   }
 
   @Override
