@@ -148,6 +148,7 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(LanguageRuntime languageRuntime, StructureAspectDescriptor structureDescriptor) {
     Language language = (Language) myModuleRepository.getModuleByFqName(languageRuntime.getNamespace());
+    assert language != null : "Language " + languageRuntime.getNamespace() + " is not registered";
     org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptySet();
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
