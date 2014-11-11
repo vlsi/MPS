@@ -35,7 +35,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SConcept)) return false;
+    if (!(obj instanceof SConceptAdapter)) return false;
     return myFqName.equals(((SConceptAdapter) obj).myFqName);
   }
 
