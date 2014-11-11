@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
@@ -121,7 +120,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       }));
       Assert.assertTrue(Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022354866"), MetaAdapterFactory.getConcept(new UUID(-5752535300696554171l, -8216104078447456642l), 2854075155748534270l, "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept")))).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return SLinkOperations.findLinkDeclaration(it) == ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)", "2854075155748534270"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).first();
+          return SLinkOperations.findLinkDeclaration(it) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(new UUID(-5752535300696554171l, -8216104078447456642l), 2854075155748534270l, 2854075155748534272l, "specializedRightChild"));
         }
       }).isEmpty());
     }

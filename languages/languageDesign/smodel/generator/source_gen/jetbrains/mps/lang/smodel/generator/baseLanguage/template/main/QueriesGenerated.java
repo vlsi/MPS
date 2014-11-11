@@ -702,10 +702,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 2644386474300074836l, 2644386474300074837l, "conceptDeclaration"));
   }
   public static SNode sourceNodeQuery_81088748285026664(final SourceSubstituteMacroNodeContext _context) {
-    return LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1226359078165l, 1226359192215l, "linkDeclaration")));
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1226359078165l, 1226359192215l, "linkDeclaration"));
   }
   public static SNode sourceNodeQuery_6506750610319363119(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 2644386474301421077l, 2644386474301421079l, "linkDeclaration"));
+    return LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 2644386474301421077l, 2644386474301421079l, "linkDeclaration")));
   }
   public static SNode sourceNodeQuery_6506750610319360833(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 2644386474302386080l, 2644386474302386082l, "propertyDeclaration"));
