@@ -78,7 +78,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     private EditorCell createModelAccess_boi5ax_a0a0a(final EditorContext editorContext, final SNode node) {
       ModelAccessor modelAccessor = new ModelAccessor() {
         public String getText() {
-          return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getNodeAncestor(node, null, false, true), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+          return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getNodeAncestor(node, null, false, true), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
         public void setText(String text) {
         }

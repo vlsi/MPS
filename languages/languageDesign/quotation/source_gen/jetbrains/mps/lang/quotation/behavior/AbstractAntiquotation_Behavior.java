@@ -26,8 +26,8 @@ public class AbstractAntiquotation_Behavior {
     SNode node = thisNode;
     int metaLevelChange = 0;
     while ((node != null)) {
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
-        metaLevelChange += BehaviorReflection.invokeVirtual(Integer.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")), "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
+        metaLevelChange += BehaviorReflection.invokeVirtual(Integer.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")), "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
       }
       if (metaLevelChange == 0) {
         break;

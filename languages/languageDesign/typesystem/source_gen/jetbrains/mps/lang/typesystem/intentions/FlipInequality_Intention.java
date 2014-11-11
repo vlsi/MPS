@@ -66,13 +66,13 @@ public class FlipInequality_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663239020l, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"), null);
+        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663239020l, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"), null);
+        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663239020l, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement")), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 3585736512129529703l, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179832490862l, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"), null);
+        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179832490862l, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement")), null);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179832490862l, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"))) {
-        newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 3585736512129529703l, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"), null);
+        newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 3585736512129529703l, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement")), null);
       } else {
         return;
       }

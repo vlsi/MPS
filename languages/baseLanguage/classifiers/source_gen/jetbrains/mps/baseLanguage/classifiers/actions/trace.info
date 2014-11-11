@@ -24,25 +24,25 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036c(jetbrains.mps.baseLanguage.classifiers.actions)/1205921317631">
     <file name="QueriesGenerated.java">
-      <node id="1205921475017" at="36,30,37,469" concept="4" />
-      <node id="1205921492526" at="38,222,39,217" concept="5" />
-      <node id="1205921502269" at="40,16,41,353" concept="5" />
-      <node id="1219065400804" at="46,32,47,638" concept="5" />
+      <node id="1205921475017" at="36,30,37,495" concept="4" />
+      <node id="1205921492526" at="38,231,39,226" concept="5" />
+      <node id="1205921502269" at="40,16,41,362" concept="5" />
+      <node id="1219065400804" at="46,32,47,664" concept="5" />
       <node id="4593153787954362737" at="55,44,56,192" concept="5" />
-      <node id="1205921924105" at="62,98,63,230" concept="4" />
-      <node id="1205921931192" at="63,230,64,375" concept="1" />
+      <node id="1205921924105" at="62,98,63,272" concept="4" />
+      <node id="1205921931192" at="63,272,64,417" concept="1" />
       <node id="1219065462506" at="65,42,66,574" concept="1" />
       <node id="1205922134204" at="67,17,68,327" concept="1" />
       <node id="1205922146629" at="68,327,69,30" concept="5" />
-      <node id="1205921443931" at="78,184,79,460" concept="5" />
+      <node id="1205921443931" at="78,184,79,486" concept="5" />
       <node id="1205921500922" at="40,14,42,9" concept="0" />
-      <node id="1219065456907" at="64,375,67,17" concept="2" />
+      <node id="1219065456907" at="64,417,67,17" concept="2" />
       <node id="1205921340852" at="78,0,81,0" concept="6" trace="nodeSubstituteActionsBuilder_Precondition_Expression_1205921340852#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <node id="1205921482811" at="37,469,42,9" concept="2" />
-      <scope id="1205921482812" at="38,222,39,217" />
-      <scope id="1205921500923" at="40,16,41,353" />
+      <node id="1205921482811" at="37,495,42,9" concept="2" />
+      <scope id="1205921482812" at="38,231,39,226" />
+      <scope id="1205921500923" at="40,16,41,362" />
       <scope id="1219065456908" at="65,42,66,574" />
-      <scope id="1205921340853" at="78,184,79,460" />
+      <scope id="1205921340853" at="78,184,79,486" />
       <scope id="1205921340852" at="78,0,81,0">
         <var name="_context" id="1205921340852" />
         <var name="operationContext" id="1205921340852" />
@@ -55,8 +55,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036c(jetbrains.mps.baseLanguage.classifiers.actions)/1219068300354">
     <file name="QueriesGenerated.java">
       <node id="1219068300361" at="85,42,86,119" concept="5" />
-      <node id="1219068300367" at="92,100,93,249" concept="4" />
-      <node id="1219068300373" at="93,249,94,192" concept="1" />
+      <node id="1219068300367" at="92,100,93,291" concept="4" />
+      <node id="1219068300373" at="93,291,94,192" concept="1" />
       <node id="1219068300380" at="94,192,95,81" concept="1" />
       <node id="1219068300385" at="95,81,96,26" concept="5" />
       <node id="1219068300389" at="98,59,99,34" concept="5" />
@@ -75,8 +75,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036c(jetbrains.mps.baseLanguage.classifiers.actions)/1827366433118293076">
     <file name="PasteWrappers.java">
-      <node id="1827366433118313390" at="30,55,31,221" concept="4" />
-      <node id="1827366433118323141" at="31,221,32,350" concept="1" />
+      <node id="1827366433118313390" at="30,55,31,256" concept="4" />
+      <node id="1827366433118323141" at="31,256,32,350" concept="1" />
       <node id="1827366433118394411" at="32,350,33,432" concept="1" />
       <node id="1827366433118707247" at="33,432,34,372" concept="1" />
       <node id="1827366433118846682" at="34,372,35,360" concept="1" />
@@ -96,7 +96,7 @@
       <scope id="1827366433118293701" at="30,55,46,19">
         <var name="imd" id="1827366433118313393" />
       </scope>
-      <unit id="1827366433121036220" at="41,466,45,9" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers$2" />
+      <unit id="1827366433121036220" at="41,474,45,9" name="jetbrains.mps.baseLanguage.classifiers.actions.PasteWrappers$2" />
     </file>
   </root>
 </debug-info>

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConstraintsUtil {
   private ConstraintsUtil() {
@@ -20,6 +20,6 @@ public class ConstraintsUtil {
       return false;
     }
 
-    return ListSequence.fromList(SNodeOperations.getNodeAncestorsWhereConceptInList(node, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194413805l, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration")}, false)).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeAncestorsWhereConceptInList(node, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194413805l, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration")}, false)).isNotEmpty();
   }
 }

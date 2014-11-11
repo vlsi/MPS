@@ -28,8 +28,8 @@ public class BaseConcept_Behavior {
     return new ArrayList<Icon>();
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (name != null) {
         return name;
       }
@@ -56,7 +56,7 @@ public class BaseConcept_Behavior {
       return 0;
     }
     int metalevel = 0;
-    for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
+    for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
       metalevel += BehaviorReflection.invokeVirtual(Integer.TYPE, metaLevelChanger, "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
     }
     return metalevel;

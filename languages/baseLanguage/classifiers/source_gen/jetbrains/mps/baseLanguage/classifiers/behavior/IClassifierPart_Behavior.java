@@ -16,8 +16,8 @@ public class IClassifierPart_Behavior {
   public static List<SNode> call_getMembers_1213877255431(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(thisNode)) {
-      if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")));
+      if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
+        ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")));
       }
     }
     return result;

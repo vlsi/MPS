@@ -285,7 +285,7 @@
       </scope>
       <scope id="6648795410103988026" at="83,29,175,8" />
       <scope id="6648795410103988026" at="83,0,177,0" />
-      <unit id="4902420589302875797" at="112,254,116,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="4902420589302875797" at="112,263,116,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
       <unit id="4902420589302875808" at="116,38,120,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
       <unit id="4902420589302875823" at="120,37,124,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
       <unit id="4902420589302875893" at="139,37,143,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />

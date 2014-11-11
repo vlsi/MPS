@@ -65,8 +65,8 @@ public abstract class Scope {
     SNode curr = node;
     SNode prev = fromChild;
     while (curr != null) {
-      if (SNodeOperations.isInstanceOf(curr, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
+      if (SNodeOperations.isInstanceOf(curr, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
+        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
         if (scope != null) {
           return scope;
         }
@@ -80,8 +80,8 @@ public abstract class Scope {
    * Get scope for smart reference, when node doesn't exist yet
    */
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
+      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3734116213129792499l, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
       if (scope != null) {
         return scope;
       }

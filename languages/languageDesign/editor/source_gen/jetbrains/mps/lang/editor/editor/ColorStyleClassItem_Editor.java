@@ -113,7 +113,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_b0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1225456267680l, "jetbrains.mps.lang.editor.structure.RGBColor"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1225456267680l, "jetbrains.mps.lang.editor.structure.RGBColor")));
     }
     public String getMatchingText() {
       return "#RRGGBB";
@@ -123,7 +123,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_c0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1176809959526l, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1176809959526l, "jetbrains.mps.lang.editor.structure.QueryFunction_Color")));
     }
     public String getMatchingText() {
       return "query";
@@ -175,7 +175,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_b0d0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1225456267680l, "jetbrains.mps.lang.editor.structure.RGBColor"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1225456267680l, "jetbrains.mps.lang.editor.structure.RGBColor")));
     }
     public String getMatchingText() {
       return "#RRGGBB";
@@ -185,7 +185,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public ColorStyleClassItem_generic_cellMenu_azr75j_c0d0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1176809959526l, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1176809959526l, "jetbrains.mps.lang.editor.structure.QueryFunction_Color")));
     }
     public String getMatchingText() {
       return "query";

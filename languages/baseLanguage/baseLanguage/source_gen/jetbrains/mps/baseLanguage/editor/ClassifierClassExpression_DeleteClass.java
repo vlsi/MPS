@@ -29,7 +29,7 @@ public class ClassifierClassExpression_DeleteClass {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"));
-      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"));
+      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference")));
       SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, 7812779912047934386l, "classifier"), classifier);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, ref, SelectionManager.LAST_CELL, -1);
     }
@@ -44,7 +44,7 @@ public class ClassifierClassExpression_DeleteClass {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"));
-      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"));
+      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference")));
       SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 7812779912047922391l, 7812779912047934386l, "classifier"), classifier);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, ref, SelectionManager.LAST_CELL, -1);
     }

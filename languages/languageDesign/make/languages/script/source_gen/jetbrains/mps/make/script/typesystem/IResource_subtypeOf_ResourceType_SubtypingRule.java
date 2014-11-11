@@ -22,7 +22,7 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
   }
   public SNode getSubOrSuperType(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_f565s9_a0a0a0b(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))})) {
-      SNode rt = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, "jetbrains.mps.make.script.structure.ResourceType"));
+      SNode rt = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, "jetbrains.mps.make.script.structure.ResourceType")));
       SLinkOperations.setTarget(rt, MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, 3308693286243004242l, "classifierType"), SNodeOperations.copyNode(ct));
       return rt;
     }

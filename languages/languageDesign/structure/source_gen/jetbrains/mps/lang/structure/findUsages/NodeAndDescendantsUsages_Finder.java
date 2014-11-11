@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 
@@ -39,7 +39,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     try {
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(node);
-      for (SNode child : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{}))) {
+      for (SNode child : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, false, new SAbstractConcept[]{}))) {
         SetSequence.fromSet(nodes).addElement(child);
       }
       // 

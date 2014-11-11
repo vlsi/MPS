@@ -70,8 +70,8 @@ public abstract class IntroduceVariableRefactoring {
   }
   private SNode getExpressionType(SNode node) {
     SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
-    if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206036041805l, "jetbrains.mps.baseLanguage.structure.IInternalType"))) {
-      expressionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expressionType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206036041805l, "jetbrains.mps.baseLanguage.structure.IInternalType")), "virtual_getPublicType_1213877443338", new Object[]{});
+    if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206036041805l, "jetbrains.mps.baseLanguage.structure.IInternalType"))) {
+      expressionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expressionType, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206036041805l, "jetbrains.mps.baseLanguage.structure.IInternalType")), "virtual_getPublicType_1213877443338", new Object[]{});
     }
     if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       SNode exprClassifier = SLinkOperations.getTarget(SNodeOperations.cast(expressionType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));

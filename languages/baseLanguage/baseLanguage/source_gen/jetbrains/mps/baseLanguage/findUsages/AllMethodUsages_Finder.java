@@ -64,7 +64,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
         sm.start("", ListSequence.fromList(methodDeclarations).count());
         for (SNode methodDeclaration : methodDeclarations) {
           for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, sm.subTask(1)))) {
-            if (!(SNodeOperations.isInstanceOf(nodeUsage, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
+            if (!(SNodeOperations.isInstanceOf(nodeUsage, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
               continue;
             }
             ListSequence.fromList(_results).addElement(nodeUsage);

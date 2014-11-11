@@ -13,8 +13,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/1174510749043">
     <file name="QueriesGenerated.java">
-      <node id="2588298302277920393" at="34,110,35,256" concept="4" />
-      <node id="2588298302277788562" at="35,256,36,437" concept="5" />
+      <node id="2588298302277920393" at="34,110,35,265" concept="4" />
+      <node id="2588298302277788562" at="35,265,36,437" concept="5" />
       <node id="1222259399335" at="38,104,39,391" concept="5" />
       <node id="1222261190847" at="41,104,42,403" concept="5" />
       <node id="1222261666802" at="44,104,45,397" concept="5" />
@@ -53,7 +53,7 @@
         <var name="result" id="7048923897763033473" />
       </scope>
       <scope id="7048923897763033581" at="251,120,256,7" />
-      <unit id="8022472963610891783" at="252,300,256,5" name="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="8022472963610891783" at="252,308,256,5" name="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/1174510782150">
@@ -78,10 +78,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/1174512791870">
     <file name="QueriesGenerated.java">
-      <node id="1174655315774" at="76,106,77,258" concept="4" />
-      <node id="1174655315781" at="77,258,78,62" concept="5" />
-      <node id="1174655243993" at="80,106,81,258" concept="4" />
-      <node id="1174655180379" at="81,258,82,62" concept="5" />
+      <node id="1174655315774" at="76,106,77,267" concept="4" />
+      <node id="1174655315781" at="77,267,78,62" concept="5" />
+      <node id="1174655243993" at="80,106,81,267" concept="4" />
+      <node id="1174655180379" at="81,267,82,62" concept="5" />
       <node id="1174512831904" at="158,102,159,194" concept="5" />
       <node id="1174512914029" at="161,102,162,192" concept="5" />
       <node id="1174512940108" at="164,102,165,192" concept="5" />
@@ -130,10 +130,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/1175155416895">
     <file name="QueriesGenerated.java">
-      <node id="1175155530357" at="94,106,95,258" concept="4" />
-      <node id="1175155530364" at="95,258,96,62" concept="5" />
-      <node id="1175155561800" at="98,106,99,258" concept="4" />
-      <node id="1175155561807" at="99,258,100,62" concept="5" />
+      <node id="1175155530357" at="94,106,95,267" concept="4" />
+      <node id="1175155530364" at="95,267,96,62" concept="5" />
+      <node id="1175155561800" at="98,106,99,267" concept="4" />
+      <node id="1175155561807" at="99,267,100,62" concept="5" />
       <node id="1175155653748" at="179,102,180,194" concept="5" />
       <node id="1175155640275" at="182,102,183,192" concept="5" />
       <node id="1175155751657" at="185,102,186,192" concept="5" />
@@ -158,10 +158,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/1175169578541">
     <file name="QueriesGenerated.java">
-      <node id="1175169644826" at="102,106,103,258" concept="4" />
-      <node id="1175169644833" at="103,258,104,62" concept="5" />
-      <node id="1175169660254" at="106,106,107,258" concept="4" />
-      <node id="1175169660261" at="107,258,108,62" concept="5" />
+      <node id="1175169644826" at="102,106,103,267" concept="4" />
+      <node id="1175169644833" at="103,267,104,62" concept="5" />
+      <node id="1175169660254" at="106,106,107,267" concept="4" />
+      <node id="1175169660261" at="107,267,108,62" concept="5" />
       <node id="1175169709750" at="194,102,195,194" concept="5" />
       <node id="1175169787005" at="197,102,198,192" concept="5" />
       <node id="1175169845600" at="200,102,201,192" concept="5" />

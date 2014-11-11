@@ -18,8 +18,8 @@ public class PlaceholderModifier_Behavior {
     ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(PlaceholderModifier_Behavior.call_create_9097849371503335421(thisNode));
   }
   public static SNode call_create_9097849371503335421(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"));
-    SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, 6478870542308703669l, "decl"), SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, "jetbrains.mps.lang.classLike.structure.ClassLikeMember"), false, false));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder")));
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, 6478870542308703669l, "decl"), SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, "jetbrains.mps.lang.classLike.structure.ClassLikeMember"), false, false));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, 6478870542308703667l, "caption"), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010669353l, 8264762413010669653l, "caption")));
     return result;
   }

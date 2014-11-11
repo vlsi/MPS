@@ -28,7 +28,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.event.SModelChildEvent;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -247,7 +247,7 @@ public class LanguageErrorsComponent {
       SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getChild());
     }
     if (event.isAdded()) {
-      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, false, new SConcept[]{})));
+      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, false, new SAbstractConcept[]{})));
       SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
     }
   }

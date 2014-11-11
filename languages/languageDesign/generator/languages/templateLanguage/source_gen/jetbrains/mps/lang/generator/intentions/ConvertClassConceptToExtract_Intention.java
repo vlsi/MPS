@@ -73,7 +73,7 @@ public class ConvertClassConceptToExtract_Intention implements IntentionFactory 
       return "Convert ClassConcept to ExtractStaticInnerClassConcept";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 937236280924494202l, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept"), null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 937236280924494202l, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept")), null);
       for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(newNode)) {
         newNode.removeChild(child);
       }

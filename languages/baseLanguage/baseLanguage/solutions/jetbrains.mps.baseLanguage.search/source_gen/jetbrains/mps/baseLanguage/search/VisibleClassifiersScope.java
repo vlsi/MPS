@@ -42,7 +42,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
   @Override
   public boolean isInScope(SNode node) {
     // speed up IVisible nodes with context 
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")))) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("isInScope(" + node + ") - not instance of IVisible");
       }
@@ -52,7 +52,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     if ((getConstraint() & NON_FINAL) != 0 && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
       return false;
     }
-    return VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")));
+    return VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, "jetbrains.mps.baseLanguage.structure.IVisible")));
   }
   protected static Logger LOG = LogManager.getLogger(VisibleClassifiersScope.class);
 }

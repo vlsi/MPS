@@ -36,9 +36,9 @@ public class LocalVariablesScope extends AbstractSearchScope {
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (this.myLocalVariables == null) {
       this.myLocalVariables = new ArrayList<SNode>();
-      SNode statementList = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElementList")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238805530342l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"));
+      SNode statementList = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElementList")), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238805530342l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"));
       if (statementList != null) {
-        SNode currentStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
+        SNode currentStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(this.myContextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
         this._populateLocalVariables(statementList, currentStatement, this.myLocalVariables);
       }
       // specially process loop variables 
@@ -92,9 +92,9 @@ public class LocalVariablesScope extends AbstractSearchScope {
     if (statementList != beforeStatement) {
       this._populateLocalVariablesFromList(statementList, beforeStatement, result);
     }
-    SNode containingStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(statementList, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
+    SNode containingStatement = SNodeOperations.as(LocalVariablesScope.findThisOrParent(statementList, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ILocalVariableElement")), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"));
     if (containingStatement != null) {
-      statementList = SNodeOperations.getNodeAncestor(containingStatement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238805530342l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), false, false);
+      statementList = SNodeOperations.getNodeAncestor(containingStatement, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238805530342l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), false, false);
       this._populateLocalVariables(statementList, containingStatement, result);
     }
   }
@@ -108,7 +108,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (sNode == beforeStatement) {
         break;
       }
-      if (!(SNodeOperations.isInstanceOf(sNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement")))) {
+      if (!(SNodeOperations.isInstanceOf(sNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1238803202705l, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement")))) {
         continue;
       }
       SNode declNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Object[]{});

@@ -73,7 +73,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag")) == false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+        SNode newNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem")));
         SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
         SNodeOperations.replaceWithAnother(node, newNode);
       }
@@ -92,11 +92,11 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         return "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        List<SNode> paddingRight = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, "jetbrains.mps.lang.editor.structure.IStyleContainer")), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        List<SNode> paddingRight = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, "jetbrains.mps.lang.editor.structure.IStyleContainer")), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
         return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag")) == false && ListSequence.fromList(paddingRight).isNotEmpty();
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233759184865l, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
+        SNode newNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233759184865l, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem")));
         SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
         SNodeOperations.replaceWithAnother(node, newNode);
       }
@@ -118,13 +118,13 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag")) == false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, "jetbrains.mps.lang.editor.structure.IStyleContainer")), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
+        List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, "jetbrains.mps.lang.editor.structure.IStyleContainer")), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
         if (ListSequence.fromList(paddingRigth).isNotEmpty()) {
-          SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233759184865l, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"));
+          SNode newNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233759184865l, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem")));
           SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
           SNodeOperations.insertNextSiblingChild(node, newNode);
         }
-        SNode newNode2 = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+        SNode newNode2 = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem")));
         SPropertyOperations.set(newNode2, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
         SNodeOperations.insertNextSiblingChild(node, newNode2);
       }
@@ -157,7 +157,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         return false;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode newNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"));
+        SNode newNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1233758997495l, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem")));
         SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(newNode);
       }

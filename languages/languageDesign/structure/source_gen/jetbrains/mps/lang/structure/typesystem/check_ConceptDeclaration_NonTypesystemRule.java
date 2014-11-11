@@ -25,11 +25,11 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     Iterable<SNode> allSuperConcepts = AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(conceptDeclaration, false);
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart")));
+        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart")));
       }
     }) && Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a0b0b_0(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart"))) || eq_idyjwe_a0a0a0a0a0a0b0b(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
+        return eq_idyjwe_a0a0a0a0a0a0b0b_0(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart"))) || eq_idyjwe_a0a0a0a0a0a0b0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
       }
     })) {
       {

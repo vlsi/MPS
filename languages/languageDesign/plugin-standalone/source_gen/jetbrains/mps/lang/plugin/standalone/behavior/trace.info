@@ -207,8 +207,8 @@
     <file name="ProjectPluginDeclaration_Behavior.java">
       <node id="481983775135178939" at="17,81,18,232" concept="3" />
       <node id="481983775135178950" at="20,88,21,223" concept="3" />
-      <node id="481983775135178964" at="23,72,24,226" concept="2" />
-      <node id="481983775135178970" at="24,226,25,191" concept="1" />
+      <node id="481983775135178964" at="23,72,24,311" concept="2" />
+      <node id="481983775135178970" at="24,311,25,191" concept="1" />
       <node id="481983775135178977" at="25,191,26,16" concept="3" />
       <node id="481983775135178933" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="481983775135178933" at="17,0,20,0" concept="4" trace="call_getGeneratedName_481983775135178936#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -273,8 +273,8 @@
     <file name="ApplicationPluginDeclaration_Behavior.java">
       <node id="481983775135179017" at="17,81,18,236" concept="3" />
       <node id="481983775135179028" at="20,88,21,227" concept="3" />
-      <node id="481983775135179042" at="23,72,24,230" concept="2" />
-      <node id="481983775135179048" at="24,230,25,191" concept="1" />
+      <node id="481983775135179042" at="23,72,24,315" concept="2" />
+      <node id="481983775135179048" at="24,315,25,191" concept="1" />
       <node id="481983775135179055" at="25,191,26,16" concept="3" />
       <node id="481983775135179013" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="481983775135179013" at="17,0,20,0" concept="4" trace="call_getGeneratedName_481983775135179014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

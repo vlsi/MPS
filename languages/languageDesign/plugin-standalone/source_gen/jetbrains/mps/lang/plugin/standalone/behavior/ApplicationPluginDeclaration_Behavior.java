@@ -21,7 +21,7 @@ public class ApplicationPluginDeclaration_Behavior {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_481983775135179014(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178831l, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType"));
+    SNode type = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178831l, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType")));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178831l, 481983775135178833l, "plugin"), thisNode);
     return type;
   }

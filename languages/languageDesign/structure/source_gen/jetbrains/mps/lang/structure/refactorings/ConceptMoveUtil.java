@@ -21,7 +21,7 @@ public class ConceptMoveUtil {
   public ConceptMoveUtil() {
   }
   public static List<SNode> getConceptsAspects(final List<SNode> concepts, SModel aspectModel) {
-    return ListSequence.fromList(SModelOperations.roots(aspectModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(aspectModel, MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         List<SNode> baseConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
         return ListSequence.fromList(baseConcepts).isNotEmpty() && ListSequence.fromList(concepts).containsSequence(ListSequence.fromList(baseConcepts));

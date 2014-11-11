@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import java.util.LinkedHashSet;
@@ -148,7 +148,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
         if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
           for (SNode type : SLinkOperations.getChildren((SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(type);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SConcept[]{})));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SAbstractConcept[]{})));
           }
         } else {
           for (SNode typeVariableDecl : SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))) {
@@ -159,17 +159,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
           SNode classifierType0 = SLinkOperations.getTarget((SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
           if (classifierType0 != null) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType0);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType0, null, false, new SConcept[]{})));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType0, null, false, new SAbstractConcept[]{})));
           }
           for (SNode classifierType1 : SLinkOperations.getChildren((SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"))) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType1);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType1, null, false, new SConcept[]{})));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType1, null, false, new SAbstractConcept[]{})));
           }
         } else
         if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
           for (SNode classifierType : SLinkOperations.getChildren((SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) {
             SetSequence.fromSet(this.myDependsOnNodes).addElement(classifierType);
-            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType, null, false, new SConcept[]{})));
+            SetSequence.fromSet(this.myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(classifierType, null, false, new SAbstractConcept[]{})));
           }
         }
       }
@@ -356,7 +356,7 @@ forEachInAllMethods:
             continue;
           }
           SetSequence.fromSet(myDependsOnNodes).addElement(type);
-          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SConcept[]{})));
+          SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(type, null, false, new SAbstractConcept[]{})));
         }
       }
     }

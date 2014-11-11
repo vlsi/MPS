@@ -102,7 +102,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     public UnderlinedStyleClassItem_generic_cellMenu_4fi5xp_b0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414999511l, 1221219051630l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1221062700015l, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414999511l, 1221219051630l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1221062700015l, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined")));
     }
     public String getMatchingText() {
       return "query";

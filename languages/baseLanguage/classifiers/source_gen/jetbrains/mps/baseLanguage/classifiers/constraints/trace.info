@@ -93,7 +93,7 @@
       <node id="1218737395370" at="58,142,59,325" concept="7" />
       <node id="1213107438049" at="62,63,63,58" concept="7" />
       <node id="1213107438049" at="67,7,68,22" concept="7" />
-      <node id="1213107438052" at="70,148,71,446" concept="7" />
+      <node id="1213107438052" at="70,148,71,472" concept="7" />
       <node id="1213107438049" at="73,0,74,0" concept="9" trace="canBeChildBreakingPoint" />
       <node id="1213107438049" at="74,0,75,0" concept="9" trace="breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3" />
       <node id="1213107438049" at="28,0,31,0" concept="1" trace="ThisClassifierExpression_Constraints#()V" />
@@ -114,7 +114,7 @@
       <scope id="1213107438049" at="50,44,51,20" />
       <scope id="1218737393728" at="58,142,59,325" />
       <scope id="1213107438049" at="62,63,63,58" />
-      <scope id="1213107438051" at="70,148,71,446" />
+      <scope id="1213107438051" at="70,148,71,472" />
       <scope id="1213107438049" at="28,0,31,0" />
       <scope id="1213107438049" at="70,0,73,0">
         <var name="childConcept" id="1213107438049" />
@@ -157,7 +157,7 @@
       <node id="1216915253694" at="31,46,32,106" concept="11" />
       <node id="1216915253694" at="35,98,36,135" concept="6" />
       <node id="1216915253694" at="39,44,40,20" concept="7" />
-      <node id="1216915305632" at="47,142,48,265" concept="6" />
+      <node id="1216915305632" at="47,142,48,274" concept="6" />
       <node id="1227876796076" at="50,47,51,309" concept="7" />
       <node id="1216915363805" at="53,32,54,31" concept="7" />
       <node id="1216915253694" at="57,63,58,58" concept="7" />
@@ -167,7 +167,7 @@
       <node id="1227876796072" at="50,0,53,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1216915253694" at="38,0,42,0" concept="5" trace="hasOwnScopeProvider#()Z" />
       <node id="1216915253694" at="56,0,60,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1216915319724" at="48,265,53,32" concept="2" />
+      <node id="1216915319724" at="48,274,53,32" concept="2" />
       <node id="1216915253694" at="46,0,56,0" concept="5" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="1216915253694" at="44,56,60,10" concept="7" />
       <node id="1216915253694" at="42,0,62,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -211,7 +211,7 @@
       <node id="1217433542422" at="32,51,33,67" concept="2" />
       <node id="1217433542422" at="34,5,35,0" concept="8" />
       <node id="1217433542422" at="35,0,36,18" concept="7" />
-      <node id="1217434129978" at="38,148,39,462" concept="6" />
+      <node id="1217434129978" at="38,148,39,488" concept="6" />
       <node id="1217434234154" at="40,26,41,19" concept="7" />
       <node id="1217434214154" at="42,5,43,231" concept="6" />
       <node id="1217434247257" at="44,29,45,19" concept="7" />
@@ -221,7 +221,7 @@
       <node id="1217433542422" at="53,0,54,0" concept="9" trace="canBeChildBreakingPoint" />
       <node id="1217433542422" at="21,0,24,0" concept="1" trace="SuperClassifierExpresson_Constraints#()V" />
       <node id="1217433542422" at="31,0,34,5" concept="4" />
-      <node id="1217434225796" at="39,462,42,5" concept="4" />
+      <node id="1217434225796" at="39,488,42,5" concept="4" />
       <node id="1217434240304" at="43,231,46,5" concept="4" />
       <node id="1217434280830" at="47,172,50,5" concept="4" />
       <node id="1217433542422" at="24,0,28,0" concept="5" trace="hasOwnCanBeChildMethod#()Z" />
@@ -270,7 +270,7 @@
       <node id="4448365440080463734" at="28,51,29,67" concept="2" />
       <node id="4448365440080463734" at="30,5,31,0" concept="8" />
       <node id="4448365440080463734" at="31,0,32,18" concept="7" />
-      <node id="4448365440080464127" at="34,148,35,244" concept="7" />
+      <node id="4448365440080464127" at="34,148,35,253" concept="7" />
       <node id="4448365440080463734" at="37,0,38,0" concept="9" trace="canBeChildBreakingPoint" />
       <node id="4448365440080463734" at="17,0,20,0" concept="1" trace="DefaultClassifierFieldDeclaration_Constraints#()V" />
       <node id="4448365440080463734" at="27,0,30,5" concept="4" />
@@ -280,7 +280,7 @@
       <scope id="4448365440080463734" at="17,58,18,106" />
       <scope id="4448365440080463734" at="21,43,22,16" />
       <scope id="4448365440080463734" at="28,51,29,67" />
-      <scope id="4448365440080463940" at="34,148,35,244" />
+      <scope id="4448365440080463940" at="34,148,35,253" />
       <scope id="4448365440080463734" at="17,0,20,0" />
       <scope id="4448365440080463734" at="34,0,37,0">
         <var name="childConcept" id="4448365440080463734" />

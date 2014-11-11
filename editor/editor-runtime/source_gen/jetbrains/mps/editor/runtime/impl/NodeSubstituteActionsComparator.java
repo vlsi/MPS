@@ -46,13 +46,13 @@ public class NodeSubstituteActionsComparator implements Comparator<SubstituteAct
       return -1;
     }
 
-    SNode container1 = SNodeOperations.getNodeAncestor(node1, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
-    SNode container2 = SNodeOperations.getNodeAncestor(node2, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
+    SNode container1 = SNodeOperations.getNodeAncestor(node1, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
+    SNode container2 = SNodeOperations.getNodeAncestor(node2, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), true, false);
     if (container1 == container2) {
       return 0;
     }
     while (container1 != null) {
-      container1 = SNodeOperations.getNodeAncestor(container1, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), false, false);
+      container1 = SNodeOperations.getNodeAncestor(container1, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1233160296597l, "jetbrains.mps.lang.core.structure.IContainer"), false, false);
       if (container1 == container2) {
         return -1;
       }

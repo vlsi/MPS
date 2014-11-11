@@ -68,7 +68,7 @@ public class ChangeProperty_Intention implements IntentionFactory {
       return "Replace Concept Property by Transactional Property";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode transactional = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1216380990741l, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), node);
+      SNode transactional = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1216380990741l, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty")), node);
       SLinkOperations.setTarget(transactional, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1216380990741l, 1216381219207l, "property"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), null);
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
