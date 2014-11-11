@@ -376,7 +376,6 @@
     <refRole id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662/1205756909548" name="member" />
     <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208/1217252646389" name="key" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224573963862/1224573974191" name="enumClass" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639/1241540960362" name="constructorDeclaration" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074/841011766565753076" name="target" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702017/4903714810883702018" name="macro" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299013057363/5610619299013057365" name="target" />
@@ -2618,7 +2617,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469655144" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469655145" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469655146" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="dbrf.~JPanel%d&lt;init&gt;(java%dawt%dLayoutManager,boolean)" resolveInfo="JPanel" />
             <reference role="vg0i.1204053956946.1068499141037" target="dbrf.~JPanel%d&lt;init&gt;(java%dawt%dLayoutManager)" resolveInfo="JPanel" />
             <node concept="vg0i.1145552977093" id="8722937377469655147" role="vg0i.1204053956946.1068499141038" info="nn">
               <node concept="vg0i.1212685548494" id="8722937377469655148" role="vg0i.1145552977093.1145553007750" info="nn">
@@ -3155,7 +3153,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469655380" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469655381" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469655382" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="8722937377469655472" resolveInfo="CheckBoxNode" />
             <reference role="vg0i.1204053956946.1068499141037" target="8722937377469655472" resolveInfo="CheckBoxNode" />
             <node concept="vg0i.1068498886296" id="3021153905151609915" role="vg0i.1204053956946.1068499141038" info="nn">
               <reference role="vg0i.1068498886296.1068581517664" target="8722937377469655385" resolveInfo="data" />
@@ -3546,7 +3543,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469655786" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469655787" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469655788" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="dbrf.~JPanel%d&lt;init&gt;(java%dawt%dLayoutManager,boolean)" resolveInfo="JPanel" />
             <reference role="vg0i.1204053956946.1068499141037" target="dbrf.~JPanel%d&lt;init&gt;(java%dawt%dLayoutManager)" resolveInfo="JPanel" />
             <node concept="vg0i.1145552977093" id="8722937377469655789" role="vg0i.1204053956946.1068499141038" info="nn">
               <node concept="vg0i.1212685548494" id="8722937377469655790" role="vg0i.1145552977093.1145553007750" info="nn">
@@ -6747,7 +6743,6 @@
           <node concept="vg0i.1068580123136" id="8722937377469656087" role="vg0i.1068580123132.1068580123135" info="sn">
             <node concept="vg0i.1070475587102" id="8722937377469656088" role="vg0i.1068580123136.1068581517665" info="nn">
               <reference role="vg0i.1204053956946.1068499141037" target="vzc2.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dui%dtree%dmodule%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
-              <reference role="vg0i.1241540912639.1241540960362" target="vzc2.~NamespaceTreeBuilder%d&lt;init&gt;(jetbrains%dmps%dide%dui%dtree%dmodule%dNamespaceTreeBuilder$NamespaceNodeBuilder)" resolveInfo="NamespaceTreeBuilder" />
               <node concept="vg0i.1145552977093" id="8722937377469656089" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1182160077978" id="8722937377469656090" role="vg0i.1145552977093.1145553007750" info="nn">
                   <node concept="vg0i.1170345865475" id="8722937377469656091" role="vg0i.1182160077978.1182160096073" info="ig">
@@ -7035,7 +7030,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469656720" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469656721" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469656722" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="8722937377469657664" resolveInfo="TwoOptionsStep" />
             <reference role="vg0i.1204053956946.1068499141037" target="8722937377469657664" resolveInfo="TwoOptionsStep" />
             <node concept="vg0i.1081236700937" id="944342063939090420" role="vg0i.1204053956946.1068499141038" info="nn">
               <reference role="vg0i.1204053956946.1068499141037" target="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
@@ -7682,7 +7676,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469657002" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469657003" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469657004" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="8722937377469657664" resolveInfo="TwoOptionsStep" />
             <reference role="vg0i.1204053956946.1068499141037" target="8722937377469657664" resolveInfo="TwoOptionsStep" />
             <node concept="vg0i.1081236700937" id="944342063938951769" role="vg0i.1204053956946.1068499141038" info="nn">
               <reference role="vg0i.1204053956946.1068499141037" target="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
@@ -10243,7 +10236,6 @@
         <node concept="vg0i.1146644602865" id="8722937377469658195" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="8722937377469658196" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.1070475587102" id="8722937377469658197" role="vg0i.1068580123136.1068581517665" info="nn">
-            <reference role="vg0i.1241540912639.1241540960362" target="bktd.~AbstractWizard%d&lt;init&gt;(java%dlang%dString,java%dawt%dComponent)" resolveInfo="AbstractWizard" />
             <reference role="vg0i.1204053956946.1068499141037" target="bktd.~AbstractWizard%d&lt;init&gt;(java%dlang%dString,com%dintellij%dopenapi%dproject%dProject)" resolveInfo="AbstractWizard" />
             <node concept="vg0i.1068498886296" id="3021153905150331250" role="vg0i.1204053956946.1068499141038" info="nn">
               <reference role="vg0i.1068498886296.1068581517664" target="8722937377469658218" resolveInfo="title" />

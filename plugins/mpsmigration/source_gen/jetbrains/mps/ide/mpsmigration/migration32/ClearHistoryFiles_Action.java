@@ -60,7 +60,7 @@ public class ClearHistoryFiles_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModule> modulesWithGenerators = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+      Iterable<? extends SModule> modulesWithGenerators = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       Sequence.fromIterable(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();

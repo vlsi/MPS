@@ -26,7 +26,7 @@ public class DeleteTransient {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, 8606350594693632173l, "isTransient"), "" + (false));
-      editorContext.selectWRTFocusPolicy(node);
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
   public static class DeleteTransient_BACKSPACE extends AbstractCellAction {
@@ -39,7 +39,7 @@ public class DeleteTransient {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, 8606350594693632173l, "isTransient"), "" + (false));
-      editorContext.selectWRTFocusPolicy(node);
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }
 }

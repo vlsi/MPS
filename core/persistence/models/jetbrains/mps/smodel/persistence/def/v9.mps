@@ -455,9 +455,12 @@
                 </node>
                 <node concept="vg0i.1145552977093" id="7167172773708890403" role="vg0i.1215693861676.1068498886297" info="nn">
                   <node concept="vg0i.1212685548494" id="7167172773708890404" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DefaultSModel%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)" resolveInfo="DefaultSModel" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DefaultSModel%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference,jetbrains%dmps%dsmodel%dSModelHeader)" resolveInfo="DefaultSModel" />
                     <node concept="vg0i.1068498886296" id="4072482659871802950" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="4072482659871316676" resolveInfo="ref" />
+                    </node>
+                    <node concept="10pn.2264311582634140384" id="5636412444189304477" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <reference role="10pn.2264311582634140384.2264311582634140385" target="7167172773708890191" resolveInfo="header" />
                     </node>
                   </node>
                 </node>
@@ -465,11 +468,16 @@
             </node>
             <node concept="vg0i.1068580123155" id="7167172773708890413" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="7167172773708890414" role="vg0i.1068580123155.1068580123156" info="nn">
-                <node concept="10pn.2264311582634140384" id="7167172773708890415" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="10pn.2264311582634140384.2264311582634140385" target="7167172773708890193" resolveInfo="model" />
+                <node concept="vg0i.1197027756228" id="5636412444189305416" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="10pn.2264311582634140384" id="7167172773708890415" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="10pn.2264311582634140384.2264311582634140385" target="7167172773708890193" resolveInfo="model" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="5636412444189306519" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DefaultSModel%dgetSModelHeader()%cjetbrains%dmps%dsmodel%dSModelHeader" resolveInfo="getSModelHeader" />
+                  </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="7167172773708890416" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DefaultSModel%dsetPersistenceVersion(int)%cvoid" resolveInfo="setPersistenceVersion" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelHeader%dsetPersistenceVersion(int)%cvoid" resolveInfo="setPersistenceVersion" />
                   <node concept="vg0i.1068580320020" id="7167172773709014809" role="vg0i.1204053956946.1068499141038" info="nn">
                     <property role="vg0i.1068580320020.1068580320021" value="9" />
                   </node>

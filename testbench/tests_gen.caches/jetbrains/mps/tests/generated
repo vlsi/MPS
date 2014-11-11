@@ -1,3 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d9u8kvlfzf8x3vg77xxobahy9ycwxv4" />
+<dependencies version="2" modelHash="-6ki887bkk4u3aip0tlwgu51k83dtlck">
+  <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="a2c2060ju2z227ql2cn18rdg5kru8jo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="-3zd517i81lvld2qcibrb040ixw052a5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
+  <dep model="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)" hash="-6nt2288k9f51hehzsev3osocl3llf1d" />
+  <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" hash="50w9ddyuhtq971gf2rgtwij78rktqa9" />
+  <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" hash="-8sicgll57kx2m0bfzum035s77veseub" />
+  <dep model="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" hash="-3tbp29r131hsicap3di93z52132gsuw" />
+  <dep model="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)" hash="-1500l38brvffqvszws1e40u3r4coryy" />
+  <dep model="r:00000000-0000-4000-0000-011c895903c2(jetbrains.mps.baseLanguage.collections.unittest.simple_operations)" hash="-86kiy5xtt2kjn5mt71e5iaghvoxjjf" />
+  <dep model="r:00000000-0000-4000-0000-011c895903c3(jetbrains.mps.baseLanguage.collections.unittest.skip_take_test)" hash="44owha47q2gv3ig50f2uj1v2tkk9cwr" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ed(jetbrains.mps.internalCollections.test.basicOperations)" hash="-arkrdxf26f700xpib75idkcbotytmsa" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" hash="-b14npp6yso5puv1n1vujjutrnxptqz0" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)" hash="6feplv7p8xo5zqsb6hyqa3qef7muv8e" />
+  <dep model="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)" hash="-1dq2ftvra0om1f0lrhhcmlfgq4f98h2" />
+  <dep model="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" hash="e92uszkk2a8sw5fce23l6fhbxf704m8" />
+  <dep model="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)" hash="-da2olx0lkeyws9txjbalzicofrxz5ln" />
+  <dep model="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)" hash="-7di38fxstbqk1f0bxixj2jp5hiumnj1" />
+  <dep model="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" hash="3s0276yu6pcymvrub7bvxfowwt3ltzr" />
+  <dep model="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)" hash="4q094eq5jwpk5ji1pjyj81v0vx0ffkr" />
+  <dep model="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)" hash="-3fllwyya85hna2zz8ruhexjz4zhuwg9" />
+  <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="8tqmphcpnm0clsu6snnzccgdi6z1enf" />
+  <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="-41isf47zryic71q8a8dbp4cgeh1bqka" />
+  <dep model="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)" hash="-kg2x9gaxv2z0feyfeuypot9l7s902o" />
+  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="-55oq6i7khq2u9g7psw3q2nntlr22r85" />
+  <dep model="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)" hash="248tb867h96wimezqezep7zgrt1x219" />
+  <dep model="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)" hash="-de9brotgn4hdj9r81viwcai9r2l158v" />
+  <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" hash="-9b7yktqp3ib116cu77ml3uc0gn1l0xp" />
+  <dep model="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)" hash="atvtm6cwabmfdc5zugfh34j1p0mh29n" />
+  <dep model="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)" hash="-exzlg98w8327w0thvw8egp9w35wkgtf" />
+  <dep model="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)" hash="b6r337y68dwfwukcr1dlk4p9cfbzmxi" />
+  <dep model="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)" hash="-1ll2xet1vnrc3g1omk2zr2arw0d4xm0" />
+  <dep model="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)" hash="bcjrltkqnjj5aqljt0lanae0yvwy400" />
+  <dep model="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)" hash="6etsfkrc1mrwtb0inkpyujnd00uaqu5" />
+  <dep model="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)" hash="-dg022w28apaqjopoly49b4999px9qs8" />
+  <dep model="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" hash="9jnxo93s6x9d4cw8s5in93uzvt9xxw1" />
+  <dep model="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" hash="-au8o1id8bg0bqzy7b7sk8g5mehlmftw" />
+  <dep model="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)" hash="-ae5i6qos89j0ugfik02ymzb59r3cdv8" />
+  <dep model="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)" hash="-dc2c7fb38pm2uqzuz9z28o9k4mb99j4" />
+  <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)" hash="-de76m7m6g4gm4cz43lpez6edmmpnq07" />
+  <dep model="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" hash="-d8uxixb0hmbpxiggfu829rzet22jlzp" />
+  <dep model="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)" hash="-evq3vrn3vzj793y6l536m68xlm8faid" />
+  <dep model="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)" hash="2e0b2itg3q5le54nywi4u68o1sfyms1" />
+  <dep model="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)" hash="-crt8u4ibpjosfqy60wixvo58qgn8wm4" />
+  <dep model="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest@tests)" hash="t9z83i27owzgnc5mj6riohsmuix8hu" />
+  <dep model="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)" hash="-1zlbg2khhw995qxe2mw95nalrbfmdex" />
+  <dep model="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)" hash="8se3u63nka7st75kjdtaei64q989x6c" />
+  <dep model="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" hash="-at3d75zchdxwunl6oulmf2ekkzhy0n2" />
+  <dep model="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" hash="es6lwjls4s9zbfoexqp7bdv018vxydd" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
+  <dep model="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" hash="-df5hmxcbmjs8y0u0zyy8gl3ahiva0dj" />
+  <dep model="r:cebb2076-d3b2-4d62-a59a-225f2f665af5(jetbrains.mps.vcs@tests)" hash="-e5ig3w3jmay3ebna0isykbtqrsf2ufw" />
+  <dep model="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" hash="-rklm0tsjh1l1ag5eznmxd191utdvgy" />
+  <dep model="r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)" hash="79dpenruwf9xcnqxmd3w409i7hk0we0" />
+  <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" hash="8casnp1hj3f7joxn4ls3jfe5400h187" />
+  <dep model="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)" hash="-6iltz9dtd1yqdcyo9grdwa9rg663hio" />
+  <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)" hash="29mol2kko88oye3d0n539vcj24kn1yq" />
+  <dep model="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" hash="-2t9rg6qz7kmqoubqetun92rwyo704kv" />
+  <dep model="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)" hash="-6uhhtzz9afy97f4w6eo0n7j4jlg0c0h" />
+  <dep model="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" hash="8zyfva76aj8zrvu036jl4jrs9wlcsiw" />
+  <dep model="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" hash="8xbx0kn4j5jpg0pt9cvbszlnie7fe94" />
+  <dep model="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" hash="-eazst7m1mg4rqaqv1k1rm8jcs0s5ft3" />
+  <dep model="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" hash="26d4fe3yw39y2w8zlcrx5lap9fs5xsn" />
+  <dep model="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)" hash="42ddg8yb98ixqr3cckdc8mutpvw8weo" />
+  <dep model="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" hash="2kykago31v8v8kksl4gv2sa7352uozh" />
+  <dep model="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)" hash="tpsknznsnwv6r04yqibryhazqnqpnu" />
+  <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" hash="c6pitoezyh5jxxhxrqcmnzbax9zw48d" />
+  <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="-5f2g14founpxu6glxm3ec5idhlqv9wv" />
+  <dep model="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" hash="-av2hwn9nqxdvq44vzqvjhyova5bjvab" />
+  <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" hash="-205x6zmt8x6bt5qo9gvhxowgfnnxpv" />
+  <common hash="-6ki887bkk4u3aip0tlwgu51k83dtlck" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2712670354707832463" name="closures.test">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" />
+    <file name="TestModule_closures_test.java" />
+  </source>
+  <source id="2712670354707832478" name="jetbrains.mps.baseLanguage.closures.unittest">
+    <dep model="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_closures_unittest.java" />
+  </source>
+  <source id="2712670354707832483" name="collections_unittest">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903c0(jetbrains.mps.baseLanguage.collections.unittest.query_operations)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903c2(jetbrains.mps.baseLanguage.collections.unittest.simple_operations)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903c3(jetbrains.mps.baseLanguage.collections.unittest.skip_take_test)" />
+    <file name="TestModule_collections_unittest.java" />
+  </source>
+  <source id="2712670354707832508" name="collections_trove.test">
+    <dep model="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" />
+    <dep model="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)" />
+    <file name="TestModule_collections_trove_test.java" />
+  </source>
+  <source id="2712670354707832514" name="internalCollections.test">
+    <dep model="r:00000000-0000-4000-0000-011c895903ed(jetbrains.mps.internalCollections.test.basicOperations)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)" />
+    <file name="TestModule_internalCollections_test.java" />
+  </source>
+  <source id="2712670354707832565" name="jetbrains.mps.debugger.java.runtime.tests">
+    <dep model="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_debugger_java_runtime_tests.java" />
+  </source>
+  <source id="2712670354707844815" name="jetbrains.mps.traceInfo.test">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" />
+    <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" />
+    <file name="TestModule_jetbrains_mps_traceInfo_test.java" />
+  </source>
+  <source id="2712670354707847775" name="jetbrains.mps.lang.editor.tests">
+    <dep model="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)" />
+    <dep model="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" />
+    <dep model="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" />
+    <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" />
+    <file name="TestModule_jetbrains_mps_lang_editor_tests.java" />
+  </source>
+  <source id="2712670354707847785" name="jetbrains.mps.lang.editor.table.tests">
+    <dep model="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)" />
+    <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)" />
+    <dep model="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)" />
+    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)" />
+    <file name="TestModule_jetbrains_mps_lang_editor_table_tests.java" />
+  </source>
+  <source id="2712670354707847839" name="jetbrains.mps.make.tests">
+    <dep model="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)" />
+    <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" />
+    <file name="TestModule_jetbrains_mps_make_tests.java" />
+  </source>
+  <source id="2712670354707847853" name="jetbrains.mps.lang.pattern.test">
+    <dep model="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)" />
+    <file name="TestModule_jetbrains_mps_lang_pattern_test.java" />
+  </source>
+  <source id="2712670354707847868" name="jetbrains.mps.smodel.test">
+    <dep model="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)" />
+    <dep model="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)" />
+    <file name="TestModule_jetbrains_mps_smodel_test.java" />
+  </source>
+  <source id="2712670354707847876" name="jetbrains.mps.lang.smodel.unittest">
+    <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" />
+    <file name="TestModule_jetbrains_mps_lang_smodel_unittest.java" />
+  </source>
+  <source id="2712670354707941338" name="jetbrains.mps.baseLanguage.math.tests">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_math_tests.java" />
+  </source>
+  <source id="2712670354707941345" name="jetbrains.mps.baseLanguage.regexp.unittest">
+    <dep model="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" />
+  </source>
+  <source id="1209025552055518728" name="jetbrains.mps.baseLanguage.tuples.test">
+    <dep model="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_tuples_test.java" />
+  </source>
+  <source id="3034322180552461514" name="jetbrains.mps.baseLanguage.unitTest.sandbox">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox.java" />
+  </source>
+  <source id="8565053360342421683" name="jetbrains.mps.traceInfo.testWeaving">
+    <dep model="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" />
+    <file name="TestModule_jetbrains_mps_traceInfo_testWeaving.java" />
+  </source>
+  <source id="1538369951873468539" name="jetbrains.mps.execution.impl.tests">
+    <file name="TestModule_jetbrains_mps_execution_impl_tests.java" />
+  </source>
+  <source id="5934496548013521234" name="jetbrains.mps.transformation.test.inputModels">
+    <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" />
+    <file name="TestModule_jetbrains_mps_transformation_test_inputModels.java" />
+  </source>
+  <source id="2622946712629076727" name="jetbrains.mps.lang.extension.tests">
+    <dep model="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)" />
+    <file name="TestModule_jetbrains_mps_lang_extension_tests.java" />
+  </source>
+  <source id="3323419009398480325" name="jetbrains.mps.kernel.tests">
+    <dep model="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" />
+    <file name="TestModule_jetbrains_mps_kernel_tests.java" />
+  </source>
+  <source id="3186742424690919238" name="jetbrains.mps.generator.tests">
+    <dep model="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_generator_tests.java" />
+  </source>
+  <source id="2684968190509519315" name="jetbrains.mps.build.tests">
+    <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_build_tests.java" />
+  </source>
+  <source id="4246614868164057750" name="jetbrains.mps.execution.impl.tests.sandbox">
+    <file name="TestModule_jetbrains_mps_execution_impl_tests_sandbox.java" />
+  </source>
+  <source id="3611349286777542940" name="jetbrains.mps.testActions">
+    <dep model="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)" />
+    <file name="TestModule_jetbrains_mps_testActions.java" />
+  </source>
+  <source id="4246614868164057759" name="jetbrains.mps.samples.agreement.framework">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" />
+    <file name="TestModule_jetbrains_mps_samples_agreement_framework.java" />
+  </source>
+  <source id="7327404875649061237" name="jetbrains.mps.lang.traceable.operations.test">
+    <dep model="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_lang_traceable_operations_test.java" />
+  </source>
+  <source id="4246614868164057754" name="jetbrains.mps.ide.vcs">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)" />
+    <dep model="r:cebb2076-d3b2-4d62-a59a-225f2f665af5(jetbrains.mps.vcs@tests)" />
+    <dep model="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" />
+    <file name="TestModule_jetbrains_mps_ide_vcs.java" />
+  </source>
+  <source id="4246614868164094814" name="jetbrains.mps.baseLanguage.unittest">
+    <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_unittest.java" />
+  </source>
+  <source id="7092489630493754343" name="jetbrains.mps.ide.java.tests">
+    <dep model="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)" />
+    <file name="TestModule_jetbrains_mps_ide_java_tests.java" />
+  </source>
+  <source id="4246614868164057743" name="jetbrains.mps.lang.test.sandbox">
+    <dep model="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)" />
+    <dep model="r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)" />
+    <file name="TestModule_jetbrains_mps_lang_test_sandbox.java" />
+  </source>
+  <source id="4195712261513837590" name="jetbrains.mps.testRead">
+    <dep model="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" />
+    <file name="TestModule_jetbrains_mps_testRead.java" />
+  </source>
+  <source id="4246614868164057769" name="jetbrains.mps.samples.secretCompartment.runtime">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)" />
+    <file name="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" />
+  </source>
+  <source id="4246614868164096671" name="jetbrains.mps.baseLanguage.test">
+    <dep model="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)" />
+    <dep model="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)" />
+    <dep model="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
+    <dep model="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest@tests)" />
+    <dep model="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_test.java" />
+  </source>
+  <source id="7917427600705105663" name="jetbrains.mps.lang.actions.test">
+    <dep model="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)" />
+    <file name="TestModule_jetbrains_mps_lang_actions_test.java" />
+  </source>
+  <source id="4201170947328891620" name="jetbrains.mps.lang.editor.multiple.tests">
+    <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" />
+    <dep model="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" />
+    <file name="TestModule_jetbrains_mps_lang_editor_multiple_tests.java" />
+  </source>
+  <source id="3005375224929183746" name="jetbrains.mps.lang.editor.diagram.tests">
+    <dep model="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_lang_editor_diagram_tests.java" />
+  </source>
+  <source id="7261441936922900508" name="jetbrains.mps.baseLanguage.doubleDispatch.test">
+    <dep model="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguage_doubleDispatch_test.java" />
+  </source>
+  <source id="7261441936922902219" name="jetbrains.mps.baseLanguageInternal.test">
+    <dep model="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)" />
+    <file name="TestModule_jetbrains_mps_baseLanguageInternal_test.java" />
+  </source>
+  <source id="7261441936923577467" name="jetbrains.mps.samples.xmlPersistence">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)" />
+    <file name="TestModule_jetbrains_mps_samples_xmlPersistence.java" />
+  </source>
+  <source id="7261441936923588597" name="jetbrains.mps.testbench">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
+    <dep model="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)" />
+    <file name="TestModule_jetbrains_mps_testbench.java" />
+  </source>
+  <source id="7261441936923591989" name="jetbrains.mps.testbench.make">
+    <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
+    <dep model="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
+    <dep model="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" />
+    <file name="TestModule_jetbrains_mps_testbench_make.java" />
+  </source>
+</dependencies>
 

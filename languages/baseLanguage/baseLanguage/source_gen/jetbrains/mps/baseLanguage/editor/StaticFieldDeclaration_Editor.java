@@ -85,7 +85,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
-    editorCell.setCellId("Constant_t6d1qn_d0");
+    editorCell.setCellId("staticModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -102,7 +102,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
-    editorCell.setCellId("Constant_t6d1qn_e0");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -122,7 +122,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
-    editorCell.setCellId("Constant_t6d1qn_f0");
+    editorCell.setCellId("transientModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -142,7 +142,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
-    editorCell.setCellId("Constant_t6d1qn_g0");
+    editorCell.setCellId("volatileModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -339,7 +339,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_e0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile:");
-    editorCell.setCellId("Constant_t6d1qn_e0_0");
+    editorCell.setCellId("Constant_t6d1qn_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -365,7 +365,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_t6d1qn_g0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient:");
-    editorCell.setCellId("Constant_t6d1qn_g0_0");
+    editorCell.setCellId("Constant_t6d1qn_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -76,9 +76,6 @@
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.dialogs.DialogDimensionsSettings</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
     <component>

@@ -2002,7 +2002,7 @@
       <node id="7316240245138670408" at="444,5,447,5" concept="8" />
       <node id="7316240245138670456" at="451,67,454,9" concept="8" />
       <node id="7316240245138669474" at="489,571,492,9" concept="8" />
-      <node id="910113892395602164" at="505,0,508,0" concept="9" trace="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
+      <node id="5636412444187832281" at="505,0,508,0" concept="9" trace="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
       <node id="1517654889517302028" at="511,28,514,7" concept="8" />
       <node id="7316240245138669508" at="518,63,521,9" concept="8" />
       <node id="7316240245138669640" at="535,61,538,7" concept="8" />
@@ -2192,7 +2192,7 @@
       <scope id="7316240245138670431" at="445,31,446,205" />
       <scope id="7316240245138670457" at="452,24,453,19" />
       <scope id="7316240245138669476" at="490,24,491,380" />
-      <scope id="910113892395602165" at="505,44,506,56" />
+      <scope id="5636412444187832282" at="505,44,506,56" />
       <scope id="1517654889517302031" at="512,214,513,746" />
       <scope id="7316240245138669509" at="519,54,520,128" />
       <scope id="7316240245138669641" at="536,70,537,17" />
@@ -2302,8 +2302,8 @@
       <scope id="7316240245138670341" at="414,47,417,5">
         <var name="sp" id="7316240245138670348" />
       </scope>
-      <scope id="910113892395602164" at="505,0,508,0">
-        <var name="it" id="910113892395602164" />
+      <scope id="5636412444187832281" at="505,0,508,0">
+        <var name="it" id="5636412444187832281" />
       </scope>
       <scope id="1517654889515979068" at="511,28,514,7" />
       <scope id="7316240245138670024" at="553,0,556,0">
@@ -2715,7 +2715,7 @@
       <unit id="7316240245138669217" at="291,631,295,7" name="jetbrains.mps.build.mps.util.ModuleChecker$7" />
       <unit id="7316240245138669117" at="300,267,304,9" name="jetbrains.mps.build.mps.util.ModuleChecker$8" />
       <unit id="7316240245138668711" at="346,66,350,9" name="jetbrains.mps.build.mps.util.ModuleChecker$10" />
-      <unit id="910113892395602164" at="504,166,508,5" name="jetbrains.mps.build.mps.util.ModuleChecker$11" />
+      <unit id="5636412444187832281" at="504,166,508,5" name="jetbrains.mps.build.mps.util.ModuleChecker$11" />
       <unit id="7316240245138670024" at="552,67,556,9" name="jetbrains.mps.build.mps.util.ModuleChecker$12" />
       <unit id="7316240245138670133" at="622,69,626,11" name="jetbrains.mps.build.mps.util.ModuleChecker$14" />
       <unit id="1166006460407397068" at="709,117,713,5" name="jetbrains.mps.build.mps.util.ModuleChecker$15" />
