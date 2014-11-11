@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -45,9 +46,9 @@ public class ClassLoadingBroadCaster {
     myClassesHandlers.remove(handler);
   }
 
-  public void onUnload(Collection<? extends SModuleReference> refsToUnload) {
-    if (refsToUnload.size() == 0) return;
-    Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
+  public Collection<? extends ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+    if (refsToUnload.size() == 0) return Collections.emptySet();
+    final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
     for (ReloadableModule loadedModule : myLoadedModules) {
       ReloadableModuleBase loadedModule1 = (ReloadableModuleBase) loadedModule;
       SModuleReference mRef = loadedModule1.getModuleReference();
@@ -56,7 +57,13 @@ public class ClassLoadingBroadCaster {
     if (modulesToUnload.size() != refsToUnload.size()) throw new IllegalArgumentException("Loaded modules do not match given refs");
     myLoadedModules.removeAll(modulesToUnload);
 
-    for (MPSClassesListener listener : myClassesHandlers) listener.beforeClassesUnloaded(modulesToUnload);
+    myModelAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (MPSClassesListener listener : myClassesHandlers) listener.beforeClassesUnloaded(modulesToUnload);
+      }
+    });
+    return modulesToUnload;
   }
 
   public void onLoad(Collection<? extends ReloadableModule> toLoad) {

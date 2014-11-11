@@ -234,7 +234,7 @@ public class ClassLoadersHolder {
    * Class loading progress of each MPS-loadable module.
    *
    * Module lifecycle:
-   * At first the module is UNLOADED. It comes to repository, then a call of {@link ClassLoaderManager#preLoadModules(Iterable)} happens.
+   * At first the module is UNLOADED. It comes to repository, then a call of {@link ClassLoaderManager#preLoadModules(Iterable, org.jetbrains.mps.openapi.util.ProgressMonitor)} happens.
    * Then we check whether the module's dependencies are valid to load (and some other conditions). If everything is okay then we send
    * broadcast notification to the clients of {@link jetbrains.mps.classloading.MPSClassesListener}. The state of module is changed to
    * LAZY_LOADED at that moment.

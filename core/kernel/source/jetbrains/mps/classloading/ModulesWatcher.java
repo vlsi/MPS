@@ -252,8 +252,13 @@ public class ModulesWatcher {
     return deps;
   }
 
+  /**
+   * Note: here we are interested in the actual status of module. (not {@link ReferenceStorage#resolveRef})
+   * if it has been already disposed but still remains in our graphs (i.e. ClassLoader is not disposed yet [!]),
+   * we need to mark it invalid
+   */
   private boolean isModuleDisposed(SModuleReference mRef) {
-    return resolveRef(mRef) == null;
+    return mRef.resolve(myRepository) == null;
   }
 
   @Nullable
@@ -262,6 +267,8 @@ public class ModulesWatcher {
   }
 
   private Collection<? extends SModuleReference> findInvalidModules() {
+    myRepository.getModelAccess().checkReadAccess();
+
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
@@ -345,7 +352,7 @@ public class ModulesWatcher {
     }
   }
 
-  Collection<? extends ReloadableModuleBase> resolveRefs(final Iterable<? extends SModuleReference> refs) {
+  private Collection<? extends ReloadableModuleBase> resolveRefs(final Iterable<? extends SModuleReference> refs) {
     final Collection<ReloadableModuleBase> modules = new LinkedHashSet<ReloadableModuleBase>();
     for (SModuleReference mRef : refs) {
       ReloadableModule module = resolveRef(mRef);

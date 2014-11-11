@@ -238,22 +238,30 @@ public class ClassLoaderManager implements CoreComponent {
    * These clients need to be rewritten in a lazy way, i.e. using only #getClass [#getClassLoader] method.
    * @deprecated there is an intention to get rid of {@link MPSClassesListener} clients. When it's done we are able to remove this method.
    */
-  void preLoadModules(Iterable<? extends ReloadableModule> modules) {
-    Set<ReloadableModule> modulesPreLoad = filterModules(modules, myValidCondition);
-    if (modulesPreLoad.isEmpty()) return;
+  Collection<? extends ReloadableModule> preLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
+    monitor.start("Pre-loading modules...", 1);
+    try {
+      Set<ReloadableModule> modulesPreLoad = filterModules(modules, myValidCondition);
+      if (modulesPreLoad.isEmpty()) return Collections.emptySet();
 
-    // transitive closure
-    modulesPreLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesPreLoad));
-    modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myValidCondition);
-    if (modulesPreLoad.isEmpty()) return;
+      // transitive closure
+      modulesPreLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesPreLoad));
+      modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myValidCondition);
+      if (modulesPreLoad.isEmpty()) return Collections.emptySet();
+      monitor.advance(1);
 
-    // add valid back dependencies too; [if now (with new modules) they are fine to load]
-    modulesPreLoad.addAll(myModulesWatcher.getResolvedBackDependencies(modulesPreLoad));
-    modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
-    if (modulesPreLoad.isEmpty()) return;
+      // add valid back dependencies too; [if now (with new modules) they are fine to load]
+      modulesPreLoad.addAll(myModulesWatcher.getResolvedBackDependencies(modulesPreLoad));
+      modulesPreLoad = filterModules(modulesPreLoad, myUnloadedCondition, myMPSLoadableCondition, myValidCondition);
+      if (modulesPreLoad.isEmpty()) return Collections.emptySet();
 
-    Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
-    myBroadCaster.onLoad(modulesToNotify);
+      Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.onLazyLoaded(modulesPreLoad);
+      myBroadCaster.onLoad(modulesToNotify);
+
+      return modulesToNotify;
+    } finally {
+      monitor.done();
+    }
   }
 
   /**
@@ -269,21 +277,27 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #myValidCondition
    */
   @NotNull
-  private Collection<? extends ReloadableModule> doLoadModules(Iterable<? extends ReloadableModule> modules, @NotNull ProgressMonitor monitor) {
-    Condition<ReloadableModule> notLoadedCondition = negateCondition(myLoadedCondition);
-    Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
-    if (modulesToLoad.isEmpty()) return Collections.emptySet();
+  private Collection<? extends ReloadableModule> doLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
+    monitor.start("Loading modules...", 1);
+    try {
+      Condition<ReloadableModule> notLoadedCondition = negateCondition(myLoadedCondition);
+      Set<ReloadableModule> modulesToLoad = new LinkedHashSet<ReloadableModule>(filterModules(modules, myWatchableCondition, myValidCondition));
+      if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-    // transitive closure
-    modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
-    modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, notLoadedCondition);
-    if (modulesToLoad.isEmpty()) return Collections.emptySet();
+      // transitive closure
+      modulesToLoad.addAll(myModulesWatcher.getResolvedDependencies(modulesToLoad));
+      modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, notLoadedCondition);
+      if (modulesToLoad.isEmpty()) return Collections.emptySet();
 
-    LOG.debug("Loading " + modulesToLoad.size() + " modules");
-    Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-    myBroadCaster.onLoad(modulesToNotify);
+      LOG.debug("Loading " + modulesToLoad.size() + " modules");
+      monitor.advance(1);
+      Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
+      myBroadCaster.onLoad(modulesToNotify);
 
-    return modulesToLoad;
+      return modulesToLoad;
+    } finally {
+      monitor.done();
+    }
   }
 
   /**
@@ -293,25 +307,25 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #myMPSLoadableCondition
    */
   @NotNull
-  private Collection<? extends SModuleReference> doUnloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+  private Collection<? extends ReloadableModule> doUnloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
     monitor.start("Unloading modules...", 1);
     try {
       Condition<SModuleReference> loadedCondition = negateCondition(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
-      if (modulesToUnload.isEmpty()) return modulesToUnload;
+      if (modulesToUnload.isEmpty()) return Collections.emptySet();
 
       // transitive closure
       Collection<? extends SModuleReference> modulesAndBackDeps = myModulesWatcher.getBackDependencies(modulesToUnload);
       modulesToUnload = filterModules(modulesAndBackDeps, loadedCondition);
-      if (modulesToUnload.isEmpty()) return modulesToUnload;
+      if (modulesToUnload.isEmpty()) return Collections.emptySet();
 
       LOG.debug("Unloading " + modulesToUnload.size() + " modules");
       monitor.step("Disposing old class loaders...");
-      myBroadCaster.onUnload(modulesToUnload);
+      Collection<? extends ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
       myClassLoadersHolder.doUnloadModules(modulesToUnload);
       monitor.advance(1);
 
-      return modulesToUnload;
+      return unloadedModules;
     } finally {
       monitor.done();
     }
@@ -364,10 +378,11 @@ public class ClassLoaderManager implements CoreComponent {
       refresh();
       myModulesWatcher.onModulesReloaded(modulesToReload);
       Collection<? extends SModuleReference> moduleRefs = myModulesWatcher.getModuleRefs(modulesToReload);
-      Collection<? extends ReloadableModule> unloadedModules = myModulesWatcher.resolveRefs(doUnloadModules(moduleRefs, monitor.subTask(1)));
+      Collection<? extends ReloadableModule> unloadedModules = doUnloadModules(moduleRefs, monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
-      Collection<ReloadableModule> loadedModules = new LinkedHashSet(doLoadModules(modulesToReload, monitor.subTask(1)));
+      Collection<ReloadableModule> loadedModules = new LinkedHashSet(preLoadModules(modulesToReload, monitor.subTask(1)));
       LOG.info("Reloaded " + loadedModules.size() + " modules");
+
       return loadedModules;
     } finally {
       monitor.done();

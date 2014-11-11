@@ -17,6 +17,7 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
@@ -30,13 +31,10 @@ import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myManager;
@@ -77,7 +75,7 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private void loadModules(List<ReloadableModule> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
     myModulesWatcher.onModulesAdded(modules);
-    myManager.preLoadModules(modules);
+    myManager.preLoadModules(modules, new EmptyProgressMonitor());
   }
 
   private void unloadModules(List<SModuleReference> modules) {
