@@ -51,7 +51,7 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
-      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683218683l, "jetbrains.mps.build.structure.BuildLayout_PureNode"));
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683218683l, "jetbrains.mps.build.structure.BuildLayout_PureNode"));
     }
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287739114l, "jetbrains.mps.build.structure.BuildInputResourceSet"))) {
       return false;

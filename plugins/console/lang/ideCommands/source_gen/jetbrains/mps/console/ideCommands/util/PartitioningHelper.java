@@ -19,6 +19,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -77,7 +78,7 @@ public class PartitioningHelper {
       console.addText(" [ " + (step + 1) + " ]\n");
       List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
       for (Pair<String, TemplateMappingConfiguration> string : strings) {
-        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"));
+        SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator")));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, 3894227536041893247l, "moduleId"), string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), string.o1);
         console.addText(" ");

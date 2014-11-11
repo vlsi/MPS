@@ -106,7 +106,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a9a4(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
@@ -116,7 +116,7 @@ public class JavaExternalLibraryHelper {
         genContext.showErrorMessage(pe, "no content location for " + BehaviorReflection.invokeVirtual(String.class, pe, "virtual_getPresentation_1213877396640", new Object[]{}) + " (unsupported layout element)");
         continue;
       }
-      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"));
+      SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts")));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a3a01a4(val));
       ListSequence.fromList(SLinkOperations.getChildren(propertyNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"))).addElement(_quotation_createNode_g6ffke_a0a4a01a4());
       ListSequence.fromList(result).addElement(propertyNode);

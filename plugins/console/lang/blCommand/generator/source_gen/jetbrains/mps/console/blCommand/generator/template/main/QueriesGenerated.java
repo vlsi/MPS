@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -44,7 +44,7 @@ public class QueriesGenerated {
     return functionType != null;
   }
   public static boolean baseMappingRule_Condition_3786816536599965790(final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 7600370246417552247l, "jetbrains.mps.console.blCommand.structure.PrintExpression"), false, new SConcept[]{})).isEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 7600370246417552247l, "jetbrains.mps.console.blCommand.structure.PrintExpression"), false, new SAbstractConcept[]{})).isEmpty();
   }
   public static Object propertyMacro_GetPropertyValue_5842059399449233666(final PropertyMacroContext _context) {
     return _context.createUniqueName("context", _context.getNode());

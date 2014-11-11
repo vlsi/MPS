@@ -12,16 +12,16 @@
       <unit at="26,0,71,0" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
     </file>
     <file name="PasteWrappers.java">
-      <unit at="19,49,31,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
-      <unit at="32,49,44,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
-      <unit at="16,0,48,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
+      <unit at="20,49,32,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
+      <unit at="33,49,45,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
+      <unit at="17,0,49,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
     </file>
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">
     <file name="QueriesGenerated.java">
-      <node id="2087237500476347103" at="27,163,28,381" concept="1" />
+      <node id="2087237500476347103" at="27,163,28,423" concept="1" />
       <node id="2087237500476328252" at="27,0,30,0" concept="5" trace="nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="2087237500476328253" at="27,163,28,381" />
+      <scope id="2087237500476328253" at="27,163,28,423" />
       <scope id="2087237500476328252" at="27,0,30,0">
         <var name="_context" id="2087237500476328252" />
         <var name="operationContext" id="2087237500476328252" />
@@ -77,16 +77,16 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/6961633949328001911">
     <file name="PasteWrappers.java">
-      <node id="6961633949329748703" at="26,55,27,236" concept="3" />
-      <node id="6961633949329748709" at="27,236,28,217" concept="1" />
-      <node id="6961633949329748715" at="28,217,29,22" concept="4" />
-      <node id="6961633949328078376" at="39,55,40,236" concept="3" />
-      <node id="6961633949328086842" at="40,236,41,217" concept="1" />
-      <node id="6961633949328133481" at="41,217,42,22" concept="4" />
-      <scope id="6961633949329748702" at="26,55,29,22">
+      <node id="6961633949329748703" at="27,55,28,271" concept="3" />
+      <node id="6961633949329748709" at="28,271,29,217" concept="1" />
+      <node id="6961633949329748715" at="29,217,30,22" concept="4" />
+      <node id="6961633949328078376" at="40,55,41,271" concept="3" />
+      <node id="6961633949328086842" at="41,271,42,217" concept="1" />
+      <node id="6961633949328133481" at="42,217,43,22" concept="4" />
+      <scope id="6961633949329748702" at="27,55,30,22">
         <var name="result" id="6961633949329748704" />
       </scope>
-      <scope id="6961633949328073115" at="39,55,42,22">
+      <scope id="6961633949328073115" at="40,55,43,22">
         <var name="result" id="6961633949328078379" />
       </scope>
     </file>

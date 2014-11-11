@@ -222,18 +222,18 @@
   </root>
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/1594211126127855068">
     <file name="ConsoleType_Behavior.java">
-      <node id="1594211126127855087" at="13,80,14,219" concept="5" />
-      <node id="1594211126127855068" at="11,0,13,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1594211126127855068" at="13,0,16,0" concept="6" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1594211126127855070" at="11,43,11,43" />
-      <scope id="1594211126127855073" at="13,80,14,219" />
-      <scope id="1594211126127855068" at="11,0,13,0">
+      <node id="1594211126127855087" at="14,80,15,254" concept="5" />
+      <node id="1594211126127855068" at="12,0,14,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1594211126127855068" at="14,0,17,0" concept="6" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1594211126127855070" at="12,43,12,43" />
+      <scope id="1594211126127855073" at="14,80,15,254" />
+      <scope id="1594211126127855068" at="12,0,14,0">
         <var name="thisNode" id="1594211126127855068" />
       </scope>
-      <scope id="1594211126127855068" at="13,0,16,0">
+      <scope id="1594211126127855068" at="14,0,17,0">
         <var name="thisNode" id="1594211126127855068" />
       </scope>
-      <unit id="1594211126127855068" at="10,0,17,0" name="jetbrains.mps.execution.configurations.behavior.ConsoleType_Behavior" />
+      <unit id="1594211126127855068" at="11,0,18,0" name="jetbrains.mps.execution.configurations.behavior.ConsoleType_Behavior" />
     </file>
   </root>
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/3642991921658055425">

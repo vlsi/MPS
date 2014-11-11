@@ -412,7 +412,7 @@
   </root>
   <root nodeRef="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)/4697196167065854783">
     <file name="NoReturnInsideParallelFor_NonTypesystemRule.java">
-      <node id="4697196167065941944" at="28,39,29,246" concept="6" />
+      <node id="4697196167065941944" at="28,39,29,255" concept="6" />
       <node id="4697196167065890748" at="33,9,34,62" concept="5" />
       <node id="4697196167065890748" at="34,62,35,318" concept="5" />
       <node id="4697196167065890748" at="36,11,37,167" concept="5" />
@@ -433,7 +433,7 @@
       <node id="4697196167065858715" at="26,124,42,7" concept="2" />
       <node id="4697196167065854783" at="26,0,44,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4697196167065854783" at="24,56,24,56" />
-      <scope id="4697196167065941941" at="28,39,29,246" />
+      <scope id="4697196167065941941" at="28,39,29,255" />
       <scope id="4697196167065854783" at="44,46,45,73" />
       <scope id="4697196167065854783" at="53,30,54,17" />
       <scope id="4697196167065854783" at="24,0,26,0" />
@@ -466,7 +466,7 @@
         <var name="status" id="4697196167065854783" />
         <var name="typeCheckingContext" id="4697196167065854783" />
       </scope>
-      <unit id="4697196167065941940" at="27,268,31,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule$1" />
+      <unit id="4697196167065941940" at="27,276,31,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule$1" />
       <unit id="4697196167065890744" at="31,20,42,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule$2" />
       <unit id="4697196167065854783" at="23,0,57,0" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoReturnInsideParallelFor_NonTypesystemRule" />
     </file>
@@ -521,7 +521,7 @@
         <var name="status" id="4697196167065890753" />
         <var name="typeCheckingContext" id="4697196167065890753" />
       </scope>
-      <unit id="4697196167065941780" at="27,267,31,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule$1" />
+      <unit id="4697196167065941780" at="27,275,31,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule$1" />
       <unit id="4697196167065941899" at="31,20,38,5" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule$2" />
       <unit id="4697196167065890753" at="23,0,53,0" name="org.jetbrains.mps.samples.ParallelFor.typesystem.NoBreakInsideParallelFor_NonTypesystemRule" />
     </file>

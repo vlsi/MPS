@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -39,7 +40,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -147,8 +147,8 @@ public class CollectTests_Action extends BaseAction {
                   ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
                     public void run() {
                       if (suite.value == null) {
-                        suite.value = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"));
-                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef"), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef"));
+                        suite.value = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite")));
+                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
                         SModuleReference mref = module.getModuleReference();
                         SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName"), mref.getModuleName());
                         SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506910l, "moduleID"), mref.getModuleId().toString());
@@ -177,7 +177,7 @@ public class CollectTests_Action extends BaseAction {
     return md instanceof EditableSModel && !(md.isReadOnly());
   }
   private boolean isUserEditableGeneratableModel(SModel md, final Map<String, Object> _params) {
-    return CollectTests_Action.this.isUserEditableModel(md, _params) && SNodeOperations.isGeneratable(md);
+    return CollectTests_Action.this.isUserEditableModel(md, _params) && jetbrains.mps.util.SNodeOperations.isGeneratable(md);
   }
   private List<SModuleReference> allSolutions(final Map<String, Object> _params) {
     Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);

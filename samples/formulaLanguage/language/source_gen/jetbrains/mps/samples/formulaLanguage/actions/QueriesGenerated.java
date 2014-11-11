@@ -43,7 +43,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784858617l, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"));
+            SNode res = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784858617l, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant")));
             SPropertyOperations.set(res, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784858617l, 1111784874587l, "value"), "" + (Integer.parseInt(pattern)));
             return res;
           }
@@ -72,7 +72,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode res = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"));
+            SNode res = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant")));
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(res, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern + "0");
             } else {

@@ -180,127 +180,127 @@
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640439">
     <file name="ChangeMethodSignatureDialog.java">
-      <node id="6812098398776640577" at="41,0,42,0" concept="3" trace="myDeclaration" />
-      <node id="6812098398776640580" at="42,0,43,0" concept="3" trace="myParameters" />
-      <node id="6812098398776640583" at="43,0,44,0" concept="3" trace="myOperationContext" />
-      <node id="6417062058649972775" at="44,0,45,0" concept="3" trace="myTempModel" />
-      <node id="6812098398776640586" at="45,0,46,0" concept="3" trace="myEditor" />
-      <node id="6352952732704932543" at="46,0,47,0" concept="3" trace="myProject" />
-      <node id="6812098398776640589" at="47,0,48,0" concept="3" trace="myRefactorings" />
-      <node id="6812098398776640599" at="49,141,50,25" concept="12" />
-      <node id="6812098398776640602" at="50,25,51,40" concept="2" />
-      <node id="6352952732704947404" at="51,40,52,57" concept="2" />
-      <node id="6812098398776640606" at="52,57,53,47" concept="2" />
-      <node id="6812098398776640612" at="53,47,54,30" concept="2" />
-      <node id="6812098398776640618" at="54,30,55,55" concept="9" />
-      <node id="6812098398776640623" at="57,25,58,107" concept="2" />
-      <node id="6812098398776640632" at="60,7,61,11" concept="2" />
-      <node id="6812098398776640444" at="63,46,64,50" concept="7" />
-      <node id="6812098398776640454" at="66,25,67,101" concept="7" />
-      <node id="6812098398776640462" at="67,101,68,381" concept="2" />
-      <node id="6417062058650018023" at="68,381,69,0" concept="10" />
-      <node id="6417062058650090610" at="69,0,70,104" concept="2" />
-      <node id="6417062058650170253" at="70,104,71,55" concept="2" />
-      <node id="1757086175615337851" at="71,55,72,69" concept="2" />
-      <node id="6417062058650961225" at="72,69,73,0" concept="10" />
-      <node id="4299146301108359919" at="73,0,74,90" concept="2" />
-      <node id="4299146301108606463" at="74,90,75,49" concept="2" />
-      <node id="6812098398776640552" at="77,7,78,58" concept="2" />
-      <node id="6812098398776640559" at="78,58,79,29" concept="2" />
-      <node id="6812098398776640568" at="79,29,80,17" concept="8" />
-      <node id="6812098398776640575" at="82,70,83,26" concept="8" />
-      <node id="6812098398776640647" at="87,44,88,51" concept="7" />
-      <node id="6812098398776640654" at="88,51,89,52" concept="7" />
-      <node id="6812098398776640659" at="89,52,90,37" concept="2" />
-      <node id="6812098398776640665" at="90,37,91,38" concept="2" />
-      <node id="6812098398776640676" at="91,38,92,16" concept="2" />
-      <node id="6812098398776640682" at="92,16,93,16" concept="2" />
-      <node id="6812098398776640688" at="93,16,94,18" concept="2" />
-      <node id="6812098398776640694" at="94,18,95,18" concept="2" />
-      <node id="6812098398776640700" at="95,18,96,47" concept="2" />
-      <node id="6812098398776640708" at="96,47,97,17" concept="8" />
-      <node id="6812098398776640714" at="100,40,101,108" concept="7" />
-      <node id="6352952732705344420" at="104,67,105,110" concept="7" />
-      <node id="6812098398776640738" at="107,29,108,223" concept="2" />
-      <node id="6812098398776640754" at="112,7,113,77" concept="2" />
-      <node id="6812098398776640759" at="113,77,114,94" concept="2" />
-      <node id="6812098398776640769" at="115,73,116,120" concept="2" />
-      <node id="5918389564640884313" at="117,5,118,32" concept="2" />
-      <node id="6812098398776640787" at="122,27,123,31" concept="2" />
-      <node id="6812098398776640792" at="123,31,124,22" concept="2" />
-      <node id="1757086175615580943" at="128,27,129,61" concept="2" />
-      <node id="4047697989688179897" at="129,61,130,29" concept="2" />
-      <node id="6812098398776640799" at="133,5,134,20" concept="2" />
-      <node id="6352952732704990166" at="57,0,60,0" concept="6" trace="run#()V" />
-      <node id="6812098398776640570" at="82,0,85,0" concept="6" trace="getAllRefactorings#()Ljava/util/List;" />
-      <node id="6352952732705383184" at="107,0,110,0" concept="6" trace="run#()V" />
-      <node id="6812098398776640765" at="114,94,117,5" concept="4" />
-      <node id="6812098398776640785" at="121,28,125,5" concept="5" />
-      <node id="1757086175615580941" at="128,0,132,0" concept="6" trace="run#()V" />
-      <node id="6352952732704967237" at="55,55,60,7" concept="2" />
-      <node id="6352952732705249510" at="105,110,110,11" concept="2" />
-      <node id="1757086175615720616" at="126,30,132,9" concept="2" />
-      <node id="6417062058651059730" at="125,5,133,5" concept="5" />
-      <node id="6812098398776640728" at="103,0,112,0" concept="6" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="6352952732705089881" at="66,0,77,0" concept="6" trace="run#()V" />
-      <node id="6812098398776640720" at="101,108,112,7" concept="2" />
-      <node id="6352952732705016228" at="64,50,77,7" concept="2" />
-      <node id="6812098398776640595" at="49,0,63,0" concept="1" trace="ChangeMethodSignatureDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <node id="6812098398776640642" at="85,0,99,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="6812098398776640781" at="120,0,136,0" concept="6" trace="dispose#()V" />
-      <node id="6812098398776640440" at="63,0,82,0" concept="6" trace="createSingnaturePanel#()Ljavax/swing/JComponent;" />
-      <node id="6812098398776640710" at="99,0,120,0" concept="6" trace="doRefactoringAction#()V" />
-      <scope id="6352952732704990167" at="57,25,58,107" />
-      <scope id="6812098398776640574" at="82,70,83,26" />
-      <scope id="6352952732705383185" at="107,29,108,223" />
-      <scope id="6812098398776640768" at="115,73,116,120" />
-      <scope id="6812098398776640786" at="122,27,124,22" />
-      <scope id="1757086175615580942" at="128,27,130,29" />
-      <scope id="6352952732704990166" at="57,0,60,0" />
-      <scope id="6812098398776640570" at="82,0,85,0" />
-      <scope id="6352952732705383184" at="107,0,110,0" />
-      <scope id="6812098398776640765" at="114,94,117,5">
+      <node id="6812098398776640577" at="42,0,43,0" concept="3" trace="myDeclaration" />
+      <node id="6812098398776640580" at="43,0,44,0" concept="3" trace="myParameters" />
+      <node id="6812098398776640583" at="44,0,45,0" concept="3" trace="myOperationContext" />
+      <node id="6417062058649972775" at="45,0,46,0" concept="3" trace="myTempModel" />
+      <node id="6812098398776640586" at="46,0,47,0" concept="3" trace="myEditor" />
+      <node id="6352952732704932543" at="47,0,48,0" concept="3" trace="myProject" />
+      <node id="6812098398776640589" at="48,0,49,0" concept="3" trace="myRefactorings" />
+      <node id="6812098398776640599" at="50,141,51,25" concept="12" />
+      <node id="6812098398776640602" at="51,25,52,40" concept="2" />
+      <node id="6352952732704947404" at="52,40,53,57" concept="2" />
+      <node id="6812098398776640606" at="53,57,54,47" concept="2" />
+      <node id="6812098398776640612" at="54,47,55,30" concept="2" />
+      <node id="6812098398776640618" at="55,30,56,55" concept="9" />
+      <node id="6812098398776640623" at="58,25,59,107" concept="2" />
+      <node id="6812098398776640632" at="61,7,62,11" concept="2" />
+      <node id="6812098398776640444" at="64,46,65,50" concept="7" />
+      <node id="6812098398776640454" at="67,25,68,101" concept="7" />
+      <node id="6812098398776640462" at="68,101,69,416" concept="2" />
+      <node id="6417062058650018023" at="69,416,70,0" concept="10" />
+      <node id="6417062058650090610" at="70,0,71,104" concept="2" />
+      <node id="6417062058650170253" at="71,104,72,55" concept="2" />
+      <node id="1757086175615337851" at="72,55,73,69" concept="2" />
+      <node id="6417062058650961225" at="73,69,74,0" concept="10" />
+      <node id="4299146301108359919" at="74,0,75,90" concept="2" />
+      <node id="4299146301108606463" at="75,90,76,49" concept="2" />
+      <node id="6812098398776640552" at="78,7,79,58" concept="2" />
+      <node id="6812098398776640559" at="79,58,80,29" concept="2" />
+      <node id="6812098398776640568" at="80,29,81,17" concept="8" />
+      <node id="6812098398776640575" at="83,70,84,26" concept="8" />
+      <node id="6812098398776640647" at="88,44,89,51" concept="7" />
+      <node id="6812098398776640654" at="89,51,90,52" concept="7" />
+      <node id="6812098398776640659" at="90,52,91,37" concept="2" />
+      <node id="6812098398776640665" at="91,37,92,38" concept="2" />
+      <node id="6812098398776640676" at="92,38,93,16" concept="2" />
+      <node id="6812098398776640682" at="93,16,94,16" concept="2" />
+      <node id="6812098398776640688" at="94,16,95,18" concept="2" />
+      <node id="6812098398776640694" at="95,18,96,18" concept="2" />
+      <node id="6812098398776640700" at="96,18,97,47" concept="2" />
+      <node id="6812098398776640708" at="97,47,98,17" concept="8" />
+      <node id="6812098398776640714" at="101,40,102,108" concept="7" />
+      <node id="6352952732705344420" at="105,67,106,110" concept="7" />
+      <node id="6812098398776640738" at="108,29,109,223" concept="2" />
+      <node id="6812098398776640754" at="113,7,114,77" concept="2" />
+      <node id="6812098398776640759" at="114,77,115,94" concept="2" />
+      <node id="6812098398776640769" at="116,73,117,120" concept="2" />
+      <node id="5918389564640884313" at="118,5,119,32" concept="2" />
+      <node id="6812098398776640787" at="123,27,124,31" concept="2" />
+      <node id="6812098398776640792" at="124,31,125,22" concept="2" />
+      <node id="1757086175615580943" at="129,27,130,61" concept="2" />
+      <node id="4047697989688179897" at="130,61,131,29" concept="2" />
+      <node id="6812098398776640799" at="134,5,135,20" concept="2" />
+      <node id="6352952732704990166" at="58,0,61,0" concept="6" trace="run#()V" />
+      <node id="6812098398776640570" at="83,0,86,0" concept="6" trace="getAllRefactorings#()Ljava/util/List;" />
+      <node id="6352952732705383184" at="108,0,111,0" concept="6" trace="run#()V" />
+      <node id="6812098398776640765" at="115,94,118,5" concept="4" />
+      <node id="6812098398776640785" at="122,28,126,5" concept="5" />
+      <node id="1757086175615580941" at="129,0,133,0" concept="6" trace="run#()V" />
+      <node id="6352952732704967237" at="56,55,61,7" concept="2" />
+      <node id="6352952732705249510" at="106,110,111,11" concept="2" />
+      <node id="1757086175615720616" at="127,30,133,9" concept="2" />
+      <node id="6417062058651059730" at="126,5,134,5" concept="5" />
+      <node id="6812098398776640728" at="104,0,113,0" concept="6" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="6352952732705089881" at="67,0,78,0" concept="6" trace="run#()V" />
+      <node id="6812098398776640720" at="102,108,113,7" concept="2" />
+      <node id="6352952732705016228" at="65,50,78,7" concept="2" />
+      <node id="6812098398776640595" at="50,0,64,0" concept="1" trace="ChangeMethodSignatureDialog#(Lcom/intellij/openapi/project/Project;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="6812098398776640642" at="86,0,100,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="6812098398776640781" at="121,0,137,0" concept="6" trace="dispose#()V" />
+      <node id="6812098398776640440" at="64,0,83,0" concept="6" trace="createSingnaturePanel#()Ljavax/swing/JComponent;" />
+      <node id="6812098398776640710" at="100,0,121,0" concept="6" trace="doRefactoringAction#()V" />
+      <scope id="6352952732704990167" at="58,25,59,107" />
+      <scope id="6812098398776640574" at="83,70,84,26" />
+      <scope id="6352952732705383185" at="108,29,109,223" />
+      <scope id="6812098398776640768" at="116,73,117,120" />
+      <scope id="6812098398776640786" at="123,27,125,22" />
+      <scope id="1757086175615580942" at="129,27,131,29" />
+      <scope id="6352952732704990166" at="58,0,61,0" />
+      <scope id="6812098398776640570" at="83,0,86,0" />
+      <scope id="6352952732705383184" at="108,0,111,0" />
+      <scope id="6812098398776640765" at="115,94,118,5">
         <var name="method" id="6812098398776640766" />
       </scope>
-      <scope id="1757086175615580941" at="128,0,132,0" />
-      <scope id="6812098398776640734" at="104,67,110,11">
+      <scope id="1757086175615580941" at="129,0,133,0" />
+      <scope id="6812098398776640734" at="105,67,111,11">
         <var name="modelAccess" id="6352952732705344421" />
       </scope>
-      <scope id="6417062058651059733" at="126,30,132,9" />
-      <scope id="6352952732705089882" at="66,25,75,49">
+      <scope id="6417062058651059733" at="127,30,133,9" />
+      <scope id="6352952732705089882" at="67,25,76,49">
         <var name="baseMethodDeclaration" id="6812098398776640455" />
       </scope>
-      <scope id="6812098398776640728" at="103,0,112,0">
+      <scope id="6812098398776640728" at="104,0,113,0">
         <var name="indicator" id="6812098398776640731" />
       </scope>
-      <scope id="6812098398776640646" at="87,44,97,17">
+      <scope id="6812098398776640646" at="88,44,98,17">
         <var name="c" id="6812098398776640655" />
         <var name="panel" id="6812098398776640648" />
       </scope>
-      <scope id="6352952732705089881" at="66,0,77,0" />
-      <scope id="6812098398776640598" at="49,141,61,11" />
-      <scope id="6812098398776640784" at="121,28,134,20" />
-      <scope id="6812098398776640595" at="49,0,63,0">
+      <scope id="6352952732705089881" at="67,0,78,0" />
+      <scope id="6812098398776640598" at="50,141,62,11" />
+      <scope id="6812098398776640784" at="122,28,135,20" />
+      <scope id="6812098398776640595" at="50,0,64,0">
         <var name="node" id="6812098398776640637" />
         <var name="operationContext" id="6812098398776640639" />
         <var name="project" id="6812098398776640634" />
       </scope>
-      <scope id="6812098398776640642" at="85,0,99,0" />
-      <scope id="6812098398776640781" at="120,0,136,0" />
-      <scope id="6812098398776640443" at="63,46,80,17">
+      <scope id="6812098398776640642" at="86,0,100,0" />
+      <scope id="6812098398776640781" at="121,0,137,0" />
+      <scope id="6812098398776640443" at="64,46,81,17">
         <var name="panel" id="6812098398776640445" />
       </scope>
-      <scope id="6812098398776640713" at="100,40,118,32">
+      <scope id="6812098398776640713" at="101,40,119,32">
         <var name="methodsToRefactor" id="6812098398776640715" />
       </scope>
-      <scope id="6812098398776640440" at="63,0,82,0" />
-      <scope id="6812098398776640710" at="99,0,120,0" />
-      <unit id="6352952732704990166" at="56,65,60,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
-      <unit id="6352952732705383184" at="106,38,110,9" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
-      <unit id="1757086175615580941" at="127,68,132,7" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
-      <unit id="6812098398776640726" at="102,42,112,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
-      <unit id="6352952732705089881" at="65,66,77,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$2" />
-      <unit id="6812098398776640439" at="40,0,137,0" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
+      <scope id="6812098398776640440" at="64,0,83,0" />
+      <scope id="6812098398776640710" at="100,0,121,0" />
+      <unit id="6352952732704990166" at="57,65,61,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$1" />
+      <unit id="6352952732705383184" at="107,38,111,9" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
+      <unit id="1757086175615580941" at="128,68,133,7" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$4" />
+      <unit id="6812098398776640726" at="103,42,113,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$3" />
+      <unit id="6352952732705089881" at="66,66,78,5" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog$2" />
+      <unit id="6812098398776640439" at="41,0,138,0" name="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
     </file>
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640803">

@@ -110,7 +110,7 @@ public class QueriesGenerated {
           }
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), context);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))), context);
             return _context.getParentNode();
           }
         });
@@ -159,7 +159,7 @@ public class QueriesGenerated {
 
                 SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item)));
                 if ((item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")) {
-                  SLinkOperations.addNewChild(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 9187447745748949838l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child"));
+                  SLinkOperations.addNewChild(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 9187447745748949838l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child")));
                 }
                 return result;
               }
@@ -294,8 +294,8 @@ public class QueriesGenerated {
             tmpVar = tmpVar && model != null;
             tmpVar = tmpVar && operationContext != null;
 
-            SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"));
-            SLinkOperations.addNewChild(result, MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 9187447745748949838l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child"));
+            SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")));
+            SLinkOperations.addNewChild(result, MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442169l, 9187447745748951875l, "child1"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 9187447745748949838l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child")));
             return result;
           }
           @Override
@@ -374,7 +374,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 3213804652571075891l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
+            return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 3213804652571075891l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept")));
           }
           public boolean hasSubstitute() {
             return true;
@@ -397,7 +397,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442509l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2"));
+            return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 2550657305103442509l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2")));
           }
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
@@ -465,7 +465,7 @@ public class QueriesGenerated {
             // Check if we have read access here 
             String name = SPropertyOperations.getString(nodeToWrap, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
 
-            SNode wrapperNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper"));
+            SNode wrapperNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper")));
             SLinkOperations.setTarget(wrapperNode, MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, 5164819300892650847l, "childToWrap"), nodeToWrap);
             return wrapperNode;
           }
@@ -637,7 +637,7 @@ public class QueriesGenerated {
             tmpVar = tmpVar && operationContext != null;
             tmpVar = tmpVar && editorContext != null;
 
-            SNode wrapperNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper"));
+            SNode wrapperNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper")));
             SLinkOperations.setTarget(wrapperNode, MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 5164819300892650829l, 5164819300892650847l, "childToWrap"), nodeToWrap);
             return wrapperNode;
           }
@@ -663,7 +663,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"));
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1")));
       }
       public String getMatchingText(String pattern) {
         return "child1";
@@ -685,7 +685,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"));
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 4942308145797614619l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1")));
       }
       public String getMatchingText(String pattern) {
         return "child1";

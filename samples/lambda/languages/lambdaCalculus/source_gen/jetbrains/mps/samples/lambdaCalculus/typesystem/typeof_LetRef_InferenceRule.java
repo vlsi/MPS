@@ -14,7 +14,7 @@ import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -26,7 +26,7 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
 
     SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")), MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, 4939219901991602080l, "value")), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
     Map<String, SNode> map = MapSequence.fromMap(new HashMap<String, SNode>());
-    for (SNode t : SNodeOperations.getNodeDescendants(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"), false, new SConcept[]{})) {
+    for (SNode t : SNodeOperations.getNodeDescendants(type, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"), false, new SAbstractConcept[]{})) {
       final SNode v_typevar_464844656889754475 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode varNode = typeCheckingContext.getRepresentative(v_typevar_464844656889754475);
       if (!(MapSequence.fromMap(map).containsKey(SPropertyOperations.getString(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {

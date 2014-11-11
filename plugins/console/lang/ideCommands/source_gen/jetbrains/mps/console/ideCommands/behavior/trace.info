@@ -106,8 +106,8 @@
       <node id="2087237500458009277" at="38,32,39,65" concept="4" />
       <node id="879099975775241082" at="39,65,40,49" concept="9" />
       <node id="879099975775446935" at="40,49,41,32" concept="4" />
-      <node id="2348043250036510916" at="41,32,42,234" concept="9" />
-      <node id="2348043250036530742" at="42,234,43,229" concept="4" />
+      <node id="2348043250036510916" at="41,32,42,269" concept="9" />
+      <node id="2348043250036530742" at="42,269,43,229" concept="4" />
       <node id="2348043250036644456" at="43,229,44,209" concept="4" />
       <node id="2348043250035845890" at="44,209,45,41" concept="4" />
       <node id="783234604506122156" at="45,41,46,32" concept="4" />
@@ -158,8 +158,8 @@
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458473183">
     <file name="SubtreeStatisticsTarget_Behavior.java">
       <node id="2087237500458561738" at="23,130,24,342" concept="9" />
-      <node id="2087237500458792365" at="24,342,25,105" concept="9" />
-      <node id="2087237500458509014" at="25,105,26,23" concept="9" />
+      <node id="2087237500458792365" at="24,342,25,113" concept="9" />
+      <node id="2087237500458509014" at="25,113,26,23" concept="9" />
       <node id="2087237500458509018" at="26,23,27,23" concept="9" />
       <node id="2087237500458509026" at="28,33,29,75" concept="4" />
       <node id="2087237500458509035" at="29,75,30,91" concept="4" />
@@ -169,13 +169,13 @@
       <node id="2087237500458509084" at="34,104,35,104" concept="4" />
       <node id="2087237500458509091" at="35,104,36,0" concept="11" />
       <node id="2087237500458509092" at="36,0,37,18" concept="10" />
-      <node id="5207260697411842270" at="39,110,40,263" concept="10" />
+      <node id="5207260697411842270" at="39,110,40,271" concept="10" />
       <node id="2087237500458473183" at="21,0,23,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2087237500458473183" at="39,0,42,0" concept="12" trace="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />
       <node id="2087237500458509022" at="27,23,31,5" concept="6" />
       <node id="2087237500458473183" at="23,0,39,0" concept="12" trace="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />
       <scope id="2087237500458473348" at="21,43,21,43" />
-      <scope id="5207260697411840016" at="39,110,40,263" />
+      <scope id="5207260697411840016" at="39,110,40,271" />
       <scope id="2087237500458473183" at="21,0,23,0">
         <var name="thisNode" id="2087237500458473183" />
       </scope>

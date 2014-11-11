@@ -107,7 +107,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     EditorCell cell = super.getCell(editor);
     if (cell != null && cell.isBig() && !(isDirectCell(cell))) {
       SNode node = getNode();
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
         cell = CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
       }
     }

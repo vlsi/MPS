@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 @Generated
 public class QueriesGenerated {
@@ -77,7 +77,7 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1197241595255(final SourceSubstituteMacroNodesContext _context) {
     SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197149564476l, 1197223095983l, "state"));
-    return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(7603857644014030527l, -6707735206917717554l), 1197240155690l, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"), false, new SConcept[]{});
+    return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(7603857644014030527l, -6707735206917717554l), 1197240155690l, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"), false, new SAbstractConcept[]{});
   }
   public static Iterable<SNode> sourceNodesQuery_199058371937525658(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, 1197252952541l, "testMethod"));

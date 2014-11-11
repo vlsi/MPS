@@ -27,7 +27,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode pd = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390522561l, "jetbrains.mps.core.properties.structure.PropertiesDeclaration"), null);
+            SNode pd = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390522561l, "jetbrains.mps.core.properties.structure.PropertiesDeclaration")), null);
             if (!((pattern == null || pattern.length() == 0))) {
               String name = pattern;
               if (pattern.endsWith("=")) {

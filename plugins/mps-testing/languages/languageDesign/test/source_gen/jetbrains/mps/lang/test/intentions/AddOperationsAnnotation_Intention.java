@@ -72,7 +72,7 @@ public class AddOperationsAnnotation_Intention implements IntentionFactory {
       return "Add Node Operations Test Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnottation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"), null);
+      SNode newAnottation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")), null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnottation);
       SelectionUtil.selectCell(editorContext, newAnottation, "operationCell");
     }

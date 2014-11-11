@@ -58,7 +58,7 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_tclrnl_a0a(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724153083947l, "jetbrains.mps.build.structure.BuildSourceSetContainer")));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724153083947l, "jetbrains.mps.build.structure.BuildSourceSetContainer")));
   }
   public static class ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0() {

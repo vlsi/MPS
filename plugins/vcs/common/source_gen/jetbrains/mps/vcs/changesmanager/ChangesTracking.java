@@ -46,7 +46,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -273,7 +273,7 @@ public class ChangesTracking {
   private void removeDescendantChanges(SNodeId nodeId) {
     SNode oldNode = getOldNode(nodeId);
     assert oldNode != null;
-    for (SNode d : ListSequence.fromList(SNodeOperations.getNodeDescendants(oldNode, null, true, new SConcept[]{}))) {
+    for (SNode d : ListSequence.fromList(SNodeOperations.getNodeDescendants(oldNode, null, true, new SAbstractConcept[]{}))) {
       removeChanges(d.getNodeId(), ModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModelChange>() {
         public Boolean invoke(ModelChange ch) {
           return true;

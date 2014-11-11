@@ -213,7 +213,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6720907903633293832l, "debuggerConfiguration"), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 6720907903633266421l, "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6720907903633293832l, "debuggerConfiguration"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 6720907903633266421l, "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration")));
     }
     public String getMatchingText() {
       return "debug";

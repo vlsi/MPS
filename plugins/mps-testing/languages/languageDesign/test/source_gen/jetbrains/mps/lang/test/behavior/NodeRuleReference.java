@@ -35,7 +35,7 @@ public class NodeRuleReference {
   }
 
   private boolean isMessageStatement() {
-    return SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"));
+    return SNodeOperations.isInstanceOf(ruleNode, MetaAdapterFactory.getInterfaceConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"));
   }
 
 }
