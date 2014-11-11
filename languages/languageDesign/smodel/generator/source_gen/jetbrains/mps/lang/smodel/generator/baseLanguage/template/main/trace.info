@@ -798,8 +798,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1181945881357">
     <file name="QueriesGenerated.java">
-      <node id="9116031298984997539" at="1124,108,1125,873" concept="4" />
-      <scope id="9116031298984997431" at="1124,108,1125,873" />
+      <node id="5359028104620234461" at="1124,108,1125,873" concept="4" />
+      <scope id="5359028104620234460" at="1124,108,1125,873" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1181950938878">
