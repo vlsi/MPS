@@ -44,7 +44,7 @@ public class SInterfaceConceptDefaultAdapter implements SConcept {
   @Nullable
   @Override
   public SConcept getSuperConcept() {
-    return SNodeUtil.concept_BaseConcept;
+    return (SConcept) SNodeUtil.concept_BaseConcept;
   }
 
   @Override
