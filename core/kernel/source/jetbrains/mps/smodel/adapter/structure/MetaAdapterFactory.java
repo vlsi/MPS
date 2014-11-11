@@ -22,12 +22,14 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -42,6 +44,10 @@ public abstract class MetaAdapterFactory {
 
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
     return new SConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
+  }
+
+  public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
+    return new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
