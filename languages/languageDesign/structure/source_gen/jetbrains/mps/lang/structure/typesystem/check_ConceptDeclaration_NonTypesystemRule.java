@@ -10,7 +10,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,11 +25,11 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     Iterable<SNode> allSuperConcepts = AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(conceptDeclaration, false);
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a1a1(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.InterfacePart"));
+        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart")));
       }
     }) && Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a0b0b_0(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ImplementationPart")) || eq_idyjwe_a0a0a0a0a0a0b0b(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ImplementationWithStubPart"));
+        return eq_idyjwe_a0a0a0a0a0a0b0b_0(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart"))) || eq_idyjwe_a0a0a0a0a0a0b0b(it, SNodeOperations.asNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
       }
     })) {
       {
