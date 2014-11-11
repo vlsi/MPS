@@ -52,6 +52,8 @@ public interface ConceptDescriptor {
   @Nullable
   SConceptId getSuperConceptId();
 
+  boolean isAssignableTo(SConceptId conceptId);
+
   List<SConceptId> getParentsIds();
 
   Set<SConceptId> getAncestorsIds();
@@ -60,14 +62,13 @@ public interface ConceptDescriptor {
   @Nullable
   String getSuperConcept();
 
-  @Deprecated //suppose it should be done in SConcept [Mihail M]
+  @Deprecated
   boolean isAssignableTo(String toConceptFqName);
 
   @Deprecated
-    // LanguageHierarchyCache replace
   List<String> getParentsNames();
 
-  @Deprecated //suppose it should be done in SConcept [Mihail M]
+  @Deprecated
   Set<String> getAncestorsNames();
 
   //------------ props

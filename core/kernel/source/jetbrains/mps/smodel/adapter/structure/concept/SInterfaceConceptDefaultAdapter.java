@@ -31,6 +31,10 @@ import java.util.Collections;
 
 public class SInterfaceConceptDefaultAdapter implements SConcept {
 
+  public SInterfaceConcept getInterfaceConcept() {
+    return myInterfaceConcept;
+  }
+
   private SInterfaceConcept myInterfaceConcept;
 
   public SInterfaceConceptDefaultAdapter(SInterfaceConcept interfaceConcept) {
@@ -107,5 +111,15 @@ public class SInterfaceConceptDefaultAdapter implements SConcept {
   @Override
   public SAbstractLink getLink(String role) {
     return myInterfaceConcept.getLink(role);
+  }
+
+  @Override
+  public int hashCode() {
+    return myInterfaceConcept.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof SInterfaceConceptDefaultAdapter && myInterfaceConcept.equals(((SInterfaceConceptDefaultAdapter) obj).myInterfaceConcept);
   }
 }
