@@ -520,6 +520,9 @@
       <node concept="4jta.1169127622168" id="1262430001741717306" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
       </node>
+      <node concept="4jta.1169127622168" id="6579840439422702054" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1742226163722651198" resolveInfo="IBinaryLike" />
+      </node>
     </node>
     <node concept="4jta.1071489090640" id="1145567426890" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
