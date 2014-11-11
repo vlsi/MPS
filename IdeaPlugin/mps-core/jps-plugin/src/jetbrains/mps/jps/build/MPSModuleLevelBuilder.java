@@ -94,17 +94,45 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                         final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
+
+      final List<ModuleBuildTarget> targets = new ArrayList<ModuleBuildTarget>(3);
+      dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
+        @Override
+        public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor javaSourceRootDescriptor) throws IOException {
+          targets.add(target);
+          return true;
+        }
+      });
+
       boolean isMPSChunk = false;
+      // MPS-20569 different description: Compile files/package action doesn't compile generated java sources
+      boolean sourceGenNotInScope = false;
       for (JpsModule jpsModule : moduleChunk.getModules()) {
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
-        if (extension != null) {
-          isMPSChunk = true;
-          break;
+        if (extension == null) {
+          continue;
+        }
+        isMPSChunk = true;
+        boolean inScope = false;
+        for (ModuleBuildTarget target : targets) {
+          if (compileContext.getScope().isAffected(target, new File(extension.getConfiguration().getGeneratorOutputPath()))) {
+            // at least one build target has it in scope
+            inScope = true;
+            break;
+          }
+          if (!inScope) {
+            sourceGenNotInScope = true;
+            break;
+          }
         }
       }
 
       if (!isMPSChunk) {
         return status;
+      }
+      if (sourceGenNotInScope) {
+        compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, "Compile scope is too narrow. MPS generated sources would be out of scope" ));
+        return ExitCode.ABORT;
       }
 
       JpsMPSRepositoryFacade.getInstance().init(compileContext);
