@@ -74,7 +74,7 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
                 return new FilteringScope(ScopeUtil.getVisibleArtifactsScope(contextProject, true)) {
                   @Override
                   public boolean isExcluded(SNode node) {
-                    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")));
+                    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")));
                   }
                 };
               }

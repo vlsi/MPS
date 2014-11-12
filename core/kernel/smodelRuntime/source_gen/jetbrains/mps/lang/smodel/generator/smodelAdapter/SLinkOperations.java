@@ -6,9 +6,9 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -27,6 +27,18 @@ public class SLinkOperations {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
+  }
+  public static SNode findLinkDeclaration(SReferenceLink link) {
+    if (link == null) {
+      return null;
+    }
+    return link.getDeclarationNode();
+  }
+  public static SNode findLinkDeclaration(SContainmentLink link) {
+    if (link == null) {
+      return null;
+    }
+    return link.getDeclarationNode();
   }
   public static SNode getTarget(SNode node, SContainmentLink role) {
     if (node == null) {

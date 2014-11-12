@@ -105,8 +105,6 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.CreateListAntiquotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.CreatePropertyAntiquotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.CreateReferenceAntiquotation_Intention" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.intentions.QuotationConverter" file="QuotationConverter.java">

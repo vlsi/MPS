@@ -40,8 +40,8 @@
       <node id="1218807115883" at="74,5,75,125" concept="5" />
       <node id="1218807115883" at="75,125,76,62" concept="5" />
       <node id="1218807981368" at="79,44,80,199" concept="6" />
-      <node id="1218808137404" at="86,98,87,147" concept="5" />
-      <node id="1218808168095" at="87,147,88,204" concept="1" />
+      <node id="1218808137404" at="86,98,87,291" concept="5" />
+      <node id="1218808168095" at="87,291,88,204" concept="1" />
       <node id="1218808163982" at="88,204,89,30" concept="6" />
       <node id="1218970721071" at="92,210,93,40" concept="6" />
       <node id="1218970752649" at="94,221,95,41" concept="6" />
@@ -54,8 +54,8 @@
       <node id="533513771124205727" at="113,525,114,525" concept="1" />
       <node id="8570142701002130741" at="114,525,115,525" concept="1" />
       <node id="1227641889592" at="115,525,116,28" concept="6" />
-      <node id="1218808212950" at="122,98,123,151" concept="5" />
-      <node id="1218808212956" at="123,151,124,189" concept="1" />
+      <node id="1218808212950" at="122,98,123,295" concept="5" />
+      <node id="1218808212956" at="123,295,124,189" concept="1" />
       <node id="1218808212963" at="124,189,125,30" concept="6" />
       <node id="47694270442131074" at="127,64,128,250" concept="6" />
       <node id="1218807115883" at="134,5,135,18" concept="6" />
@@ -236,9 +236,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959035f(jetbrains.mps.lang.plugin.actions)/315309404903965692">
     <file name="QueriesGenerated.java">
-      <node id="315309404903965696" at="43,154,44,365" concept="1" />
+      <node id="315309404903965696" at="43,154,44,400" concept="1" />
       <node id="315309404903965694" at="43,0,46,0" concept="7" trace="nodeFactory_NodeSetup_ActionParameter_315309404903965694#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="315309404903965695" at="43,154,44,365" />
+      <scope id="315309404903965695" at="43,154,44,400" />
       <scope id="315309404903965694" at="43,0,46,0">
         <var name="_context" id="315309404903965694" />
         <var name="operationContext" id="315309404903965694" />
@@ -248,12 +248,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959035f(jetbrains.mps.lang.plugin.actions)/485694842828664420">
     <file name="QueriesGenerated.java">
       <node id="485694842828666241" at="35,146,36,238" concept="5" />
-      <node id="485694842828666302" at="37,38,38,307" concept="1" />
-      <node id="485694842828666260" at="39,5,40,475" concept="5" />
-      <node id="485694842828666269" at="40,475,41,173" concept="1" />
+      <node id="485694842828666302" at="37,38,38,451" concept="1" />
+      <node id="485694842828666260" at="39,5,40,624" concept="5" />
+      <node id="485694842828666269" at="40,624,41,173" concept="1" />
       <node id="485694842828666247" at="36,238,39,5" concept="3" />
       <node id="485694842828664422" at="35,0,43,0" concept="7" trace="nodeFactory_NodeSetup_ToolTab_485694842828664422#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="485694842828666248" at="37,38,38,307" />
+      <scope id="485694842828666248" at="37,38,38,451" />
       <scope id="485694842828664423" at="35,146,41,173">
         <var name="disposeTabClosure" id="485694842828666242" />
         <var name="pd" id="485694842828666261" />

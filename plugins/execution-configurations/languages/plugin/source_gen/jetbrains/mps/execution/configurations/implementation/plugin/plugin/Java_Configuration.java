@@ -52,7 +52,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.execution.util.structure.IMainClass", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(5525638636287967733l, -8459132261929236328l), 4666195181811081429l, "jetbrains.mps.execution.util.structure.IMainClass")), "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(node);
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(5525638636287967733l, -8459132261929236328l), 4666195181811081429l, "jetbrains.mps.execution.util.structure.IMainClass")), "virtual_isNodeRunnable_4666195181811081448", new Object[]{}) && Java_Command.isUnitNode(node);
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();

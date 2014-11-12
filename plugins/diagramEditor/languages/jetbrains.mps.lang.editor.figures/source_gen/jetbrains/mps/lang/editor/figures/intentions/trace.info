@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/2084788800270642821">
@@ -38,7 +38,7 @@
       <node id="2084788800270642821" at="78,5,79,30" concept="7" />
       <node id="2084788800270642824" at="84,87,85,253" concept="7" />
       <node id="2084788800270642838" at="88,177,89,171" concept="2" />
-      <node id="2084788800270642853" at="90,14,91,386" concept="2" />
+      <node id="2084788800270642853" at="90,14,91,421" concept="2" />
       <node id="2084788800270642821" at="94,48,95,68" concept="7" />
       <node id="2084788800270642821" at="28,0,30,0" concept="1" trace="AddRemoveFigureParameterAttributeMethod_Intention#()V" />
       <node id="2084788800270642821" at="82,0,84,0" concept="1" trace="IntentionImplementation#()V" />
@@ -80,7 +80,7 @@
       <scope id="2084788800270642821" at="76,37,77,155" />
       <scope id="2084788800270642823" at="84,87,85,253" />
       <scope id="2084788800270642837" at="88,177,89,171" />
-      <scope id="2084788800270642852" at="90,14,91,386" />
+      <scope id="2084788800270642852" at="90,14,91,421" />
       <scope id="2084788800270642821" at="94,48,95,68" />
       <scope id="2084788800270642821" at="28,0,30,0" />
       <scope id="2084788800270642821" at="82,0,84,0" />
@@ -142,7 +142,7 @@
       <node id="5422656561926830596" at="64,5,65,30" concept="7" />
       <node id="5422656561927423543" at="70,87,71,218" concept="7" />
       <node id="5422656561927871363" at="74,162,75,156" concept="2" />
-      <node id="5422656561927970232" at="76,14,77,356" concept="2" />
+      <node id="5422656561927970232" at="76,14,77,391" concept="2" />
       <node id="5422656561926830596" at="80,48,81,53" concept="7" />
       <node id="5422656561926830596" at="26,0,28,0" concept="1" trace="AddRemoveFigureAttribute_Intention#()V" />
       <node id="5422656561926830596" at="68,0,70,0" concept="1" trace="IntentionImplementation#()V" />
@@ -179,7 +179,7 @@
       <scope id="5422656561926830596" at="62,37,63,140" />
       <scope id="5422656561926830598" at="70,87,71,218" />
       <scope id="5422656561927820727" at="74,162,75,156" />
-      <scope id="5422656561927956018" at="76,14,77,356" />
+      <scope id="5422656561927956018" at="76,14,77,391" />
       <scope id="5422656561926830596" at="80,48,81,53" />
       <scope id="5422656561926830596" at="26,0,28,0" />
       <scope id="5422656561926830596" at="68,0,70,0" />
@@ -243,7 +243,7 @@
       <node id="5422656561930152815" at="78,5,79,30" concept="7" />
       <node id="5422656561930160589" at="84,87,85,252" concept="7" />
       <node id="5422656561930173563" at="88,176,89,170" concept="2" />
-      <node id="5422656561930173578" at="90,14,91,384" concept="2" />
+      <node id="5422656561930173578" at="90,14,91,419" concept="2" />
       <node id="5422656561930152815" at="94,48,95,67" concept="7" />
       <node id="5422656561930152815" at="28,0,30,0" concept="1" trace="AddRemoveFigureParameterAttributeField_Intention#()V" />
       <node id="5422656561930152815" at="82,0,84,0" concept="1" trace="IntentionImplementation#()V" />
@@ -285,7 +285,7 @@
       <scope id="5422656561930152815" at="76,37,77,154" />
       <scope id="5422656561930152817" at="84,87,85,252" />
       <scope id="5422656561930173562" at="88,176,89,170" />
-      <scope id="5422656561930173577" at="90,14,91,384" />
+      <scope id="5422656561930173577" at="90,14,91,419" />
       <scope id="5422656561930152815" at="94,48,95,67" />
       <scope id="5422656561930152815" at="28,0,30,0" />
       <scope id="5422656561930152815" at="82,0,84,0" />
@@ -353,7 +353,7 @@
       <node id="7319867929567458794" at="81,87,82,259" concept="7" />
       <node id="7319867929567482201" at="82,259,83,0" concept="8" />
       <node id="7319867929567458808" at="86,183,87,177" concept="2" />
-      <node id="7319867929567458823" at="88,14,89,398" concept="2" />
+      <node id="7319867929567458823" at="88,14,89,433" concept="2" />
       <node id="7319867929567458791" at="92,48,93,83" concept="7" />
       <node id="7319867929567458791" at="28,0,30,0" concept="1" trace="AddRemoveFigureParameterAttributePropertySpecification_Intention#()V" />
       <node id="7319867929567458791" at="79,0,81,0" concept="1" trace="IntentionImplementation#()V" />
@@ -392,7 +392,7 @@
       <scope id="7319867929567458791" at="69,35,70,17" />
       <scope id="7319867929567458791" at="73,37,74,170" />
       <scope id="7319867929567458807" at="86,183,87,177" />
-      <scope id="7319867929567458822" at="88,14,89,398" />
+      <scope id="7319867929567458822" at="88,14,89,433" />
       <scope id="7319867929567458791" at="92,48,93,83" />
       <scope id="7319867929567458791" at="28,0,30,0" />
       <scope id="7319867929567458791" at="79,0,81,0" />

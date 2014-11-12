@@ -68,7 +68,7 @@ public class SurroundWithNegation_Intention implements IntentionFactory {
       return "!(expr)";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.NotExpression");
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression")));
     }
     public IntentionDescriptor getDescriptor() {
       return SurroundWithNegation_Intention.this;

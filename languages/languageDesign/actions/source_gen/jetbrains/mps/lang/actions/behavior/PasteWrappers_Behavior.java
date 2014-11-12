@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PasteWrappers_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +23,7 @@ public class PasteWrappers_Behavior {
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode pasteWrapper = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, "jetbrains.mps.lang.actions.structure.PasteWrapper"));
+    SNode pasteWrapper = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, "jetbrains.mps.lang.actions.structure.PasteWrapper")));
     SLinkOperations.setTarget(pasteWrapper, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135315536l, 1221135563864l, "sourceConcept"), baseConcept);
     ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1221135252814l, 1221135321084l, "wrapper"))).addElement(pasteWrapper);
   }

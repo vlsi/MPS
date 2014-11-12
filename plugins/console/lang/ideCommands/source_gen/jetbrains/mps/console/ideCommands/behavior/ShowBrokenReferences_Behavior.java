@@ -39,7 +39,7 @@ public class ShowBrokenReferences_Behavior {
           console.addText("node  id = " + ref.getTargetNodeId());
           SNode targetNode = ref.getSourceNode();
           console.addText("\n");
-          SNode clickableNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250036118117l, "jetbrains.mps.console.base.structure.NodeReferenceString"));
+          SNode clickableNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250036118117l, "jetbrains.mps.console.base.structure.NodeReferenceString")));
           SPropertyOperations.set(clickableNode, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation"), "Go to enclosing node");
           SLinkOperations.setTarget(clickableNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"), targetNode);
           console.addNode(clickableNode);

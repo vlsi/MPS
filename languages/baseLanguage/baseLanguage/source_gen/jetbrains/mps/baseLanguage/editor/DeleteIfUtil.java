@@ -25,7 +25,7 @@ public class DeleteIfUtil {
         }
       });
     } else {
-      SNode statement = SNodeFactoryOperations.replaceWithNewChild(ifStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement");
+      SNode statement = SNodeFactoryOperations.replaceWithNewChild(ifStatement, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")));
       SLinkOperations.setTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")));
     }
     SNodeOperations.deleteNode(ifStatement);

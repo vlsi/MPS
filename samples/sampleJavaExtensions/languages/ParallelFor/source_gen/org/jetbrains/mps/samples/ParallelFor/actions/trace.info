@@ -19,15 +19,15 @@
   <root nodeRef="r:d37d8304-386b-47d4-9fb0-209be430470a(org.jetbrains.mps.samples.ParallelFor.actions)/7704855178158936235">
     <file name="QueriesGenerated.java">
       <node id="7704855178166878241" at="36,94,37,118" concept="3" />
-      <node id="7704855178166878252" at="38,32,39,402" concept="1" />
-      <node id="7704855178166878262" at="40,16,41,409" concept="1" />
-      <node id="7704855178166878270" at="41,409,42,582" concept="1" />
+      <node id="7704855178166878252" at="38,32,39,437" concept="1" />
+      <node id="7704855178166878262" at="40,16,41,444" concept="1" />
+      <node id="7704855178166878270" at="41,444,42,582" concept="1" />
       <node id="7704855178166878279" at="43,9,44,220" concept="4" />
       <node id="7704855178158936753" at="62,203,63,224" concept="4" />
       <node id="7704855178166683009" at="68,94,69,118" concept="3" />
-      <node id="7704855178158993534" at="70,32,71,402" concept="1" />
-      <node id="7704855178166705019" at="72,16,73,409" concept="1" />
-      <node id="7704855178166732637" at="73,409,74,582" concept="1" />
+      <node id="7704855178158993534" at="70,32,71,437" concept="1" />
+      <node id="7704855178166705019" at="72,16,73,444" concept="1" />
+      <node id="7704855178166732637" at="73,444,74,582" concept="1" />
       <node id="7704855178166784481" at="75,9,76,220" concept="4" />
       <node id="7704855178158993524" at="94,203,95,224" concept="4" />
       <node id="7704855178166878260" at="40,14,43,9" concept="0" />
@@ -36,9 +36,9 @@
       <node id="7704855178158993522" at="94,0,97,0" concept="5" trace="sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178158993522#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <node id="7704855178166878247" at="37,118,43,9" concept="2" />
       <node id="7704855178166699602" at="69,118,75,9" concept="2" />
-      <scope id="7704855178166878251" at="38,32,39,402" />
+      <scope id="7704855178166878251" at="38,32,39,437" />
       <scope id="7704855178158936540" at="62,203,63,224" />
-      <scope id="7704855178166699604" at="70,32,71,402" />
+      <scope id="7704855178166699604" at="70,32,71,437" />
       <scope id="7704855178158993523" at="94,203,95,224" />
       <scope id="7704855178166878261" at="40,16,42,582" />
       <scope id="7704855178166704713" at="72,16,74,582" />

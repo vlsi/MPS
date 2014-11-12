@@ -18,7 +18,7 @@ public class NodeErrorCheckOperation_Behavior {
   }
   public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
     assert BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachReference_2893471348147804024", new Object[]{reference});
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4531408400484511853l, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference")));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4531408400484511853l, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference"))));
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), SNodeOperations.cast(reference, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1175517767210l, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement")));
   }
   public static SNode virtual_getReference_8333855927540237654(SNode thisNode) {

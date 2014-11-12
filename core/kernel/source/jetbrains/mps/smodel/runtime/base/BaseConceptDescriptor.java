@@ -16,15 +16,22 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 
 import java.util.Set;
 
 public abstract class BaseConceptDescriptor implements ConceptDescriptor {
+
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
     return getAncestorsNames().contains(toConceptFqName);
+  }
+
+  @Override
+  public boolean isAssignableTo(SConceptId conceptId) {
+    return getAncestorsIds().contains(conceptId);
   }
 
   @Override

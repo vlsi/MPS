@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
@@ -67,8 +68,8 @@ public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex")))));
       if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex"))) {
         if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632085l, "isApplicable")) == null)) {
-          SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint"), MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3104811047188253540l, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint"));
-          SLinkOperations.setNewChild(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
+          SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 3104811047188253540l, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint")));
+          SLinkOperations.setNewChild(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
         }
       } else {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 3104811047188238838l, "isApplicableBreakpoint"), null);

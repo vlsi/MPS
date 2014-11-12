@@ -10,7 +10,7 @@ import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -63,7 +63,7 @@ public class InlineMethodModel {
     return null;
   }
   private boolean isContainsSelfCalls() {
-    for (SNode call : ListSequence.fromList(SNodeOperations.getNodeDescendants(getMethod(), null, false, new SConcept[]{}))) {
+    for (SNode call : ListSequence.fromList(SNodeOperations.getNodeDescendants(getMethod(), null, false, new SAbstractConcept[]{}))) {
       if (MethodCallAdapter.isMethodCall(call)) {
         if (new MethodCallAdapter(call).getMethodDeclaration() == getMethod()) {
           return true;

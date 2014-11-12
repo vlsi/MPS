@@ -81,8 +81,8 @@ public class SplitConstantCellIntoWords_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       String text = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389577006l, 1073389577007l, "text")).trim();
-      SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-      SNodeFactoryOperations.setNewChild(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
+      SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")), null);
+      SNodeFactoryOperations.setNewChild(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1106270637846l, "jetbrains.mps.lang.editor.structure.CellLayout_Flow")));
       SNodeOperations.replaceWithAnother(node, collection);
       String[] strings = text.split(" ");
       int i = 0;
@@ -106,11 +106,11 @@ public class SplitConstantCellIntoWords_Intention implements IntentionFactory {
           }
         }
         if (!(leftPaddingSet)) {
-          SNode paddingLeftStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"), "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem");
+          SNode paddingLeftStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1215007883204l, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem")));
           SPropertyOperations.set(paddingLeftStyleClassItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1215007762405l, 1215007802031l, "value"), "0.5");
         }
         if (!(rightPaddingSet)) {
-          SNode paddingRightStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"), "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
+          SNode paddingRightStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1215007897487l, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem")));
           SPropertyOperations.set(paddingRightStyleClassItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1215007762405l, 1215007802031l, "value"), "0.5");
         }
         ListSequence.fromList(SLinkOperations.getChildren(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(constantCell);

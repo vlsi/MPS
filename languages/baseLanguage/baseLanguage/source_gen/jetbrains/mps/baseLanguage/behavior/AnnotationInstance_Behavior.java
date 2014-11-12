@@ -26,7 +26,7 @@ public class AnnotationInstance_Behavior {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_c0a), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188206574119l, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"))) {
         return new NamedElementsScope(methods);
       }
-      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_c0a), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6694311595176645018l, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"))) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_c0a), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6694311595176645018l, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"))) {
         return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
       }
     }

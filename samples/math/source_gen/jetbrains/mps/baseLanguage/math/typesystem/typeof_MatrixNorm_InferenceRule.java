@@ -31,7 +31,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
       final SNode mT = typeCheckingContext.typeOf(SLinkOperations.getTarget(norm, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 920952925470358962l, 758819215871053777l, "mat")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835031830", true);
       typeCheckingContext.whenConcrete(mT, new Runnable() {
         public void run() {
-          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(mT), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")))) {
+          if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(mT), MetaAdapterFactory.getInterfaceConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(norm, "Expression should have matrix or vector type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835032977", null, errorTarget);

@@ -95,7 +95,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     public FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221064706952l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221064706952l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1221057094638l, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer")));
     }
     public String getMatchingText() {
       return "query";

@@ -18,7 +18,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -95,7 +95,7 @@ public class ShowClassInHierarchy_Action extends BaseAction {
         return classifier;
       }
     }
-    SNode outerClass = SNodeOperations.cast(SNodeOperations.getNodeAncestorWhereConceptInList(((SNode) MapSequence.fromMap(_params).get("node")), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")}, true, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    SNode outerClass = SNodeOperations.cast(SNodeOperations.getNodeAncestorWhereConceptInList(((SNode) MapSequence.fromMap(_params).get("node")), new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")}, true, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     return outerClass;
   }
   protected static Logger LOG = LogManager.getLogger(ShowClassInHierarchy_Action.class);

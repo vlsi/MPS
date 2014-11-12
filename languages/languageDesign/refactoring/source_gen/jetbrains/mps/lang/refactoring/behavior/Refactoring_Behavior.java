@@ -19,7 +19,7 @@ public class Refactoring_Behavior {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget")), MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, 6895093993902310806l, "concept"));
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode nodeTarget = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget"));
+    SNode nodeTarget = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, "jetbrains.mps.lang.refactoring.structure.NodeTarget")));
     SLinkOperations.setTarget(nodeTarget, MetaAdapterFactory.getReferenceLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902310764l, 6895093993902310806l, "concept"), baseConcept);
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 6895093993902310998l, "target"), nodeTarget);
   }

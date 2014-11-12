@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -33,7 +33,7 @@ public class ThisEditorNodeExpression_Constraints extends BaseConstraintsDescrip
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getNodeAncestorsWhereConceptInList(parentNode, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1220375669566347117l, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery")}, true) != null;
+    return SNodeOperations.getNodeAncestorsWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1220375669566347117l, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery")}, true) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1220375669567134127");
 }

@@ -33,7 +33,7 @@ public class MigrateNodePropertiesContainer_MigrationScript extends BaseMigratio
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode parent = SNodeOperations.getParent(node);
-        SNode newAnnotation = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+        SNode newAnnotation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
         ListSequence.fromList(SLinkOperations.getChildren(newAnnotation, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507532627l, 1215507909023l, "nodeCheckOperations"))));
         AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
         AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"), null);

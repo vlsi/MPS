@@ -475,12 +475,12 @@ public class SNodeOperations {
     }
     return result;
   }
-  public static SNode insertNewNextSiblingChild(SNode node, SConcept conceptFQName) {
+  public static SNode insertNewNextSiblingChild(SNode node, SConcept concept) {
     if (node == null || node.getParent() == null) {
       return null;
     }
     SNode parent = node.getParent();
-    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, conceptFQName);
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), null, concept);
     if (newChild == null) {
       return null;
     }
@@ -829,10 +829,10 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) node);
+    return MetaAdapterByDeclaration.getInstanceConcept((jetbrains.mps.smodel.SNode) node);
   }
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
-    return asInstanceConcept(asNode(concept));
+    return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {

@@ -60,7 +60,7 @@ public class AddModifiers_Intention implements IntentionFactory {
       return "Add Generic Modifiers";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2323553266850475941l, 2323553266850475953l, "modifiers"), "jetbrains.mps.baseLanguage.structure.Modifier");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2323553266850475941l, 2323553266850475953l, "modifiers"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2403002034744051110l, "jetbrains.mps.baseLanguage.structure.Modifier")));
     }
     public IntentionDescriptor getDescriptor() {
       return AddModifiers_Intention.this;

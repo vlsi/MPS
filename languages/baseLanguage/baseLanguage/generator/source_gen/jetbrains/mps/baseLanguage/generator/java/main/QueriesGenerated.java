@@ -19,7 +19,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -105,7 +105,7 @@ public class QueriesGenerated {
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0w()));
   }
   public static boolean ifMacro_Condition_1201570983175(final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode()) || ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2622108313324567541l, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), false, new SConcept[]{})).isNotEmpty();
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode()) || ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2622108313324567541l, "jetbrains.mps.baseLanguage.structure.PropertyValueReference"), false, new SAbstractConcept[]{})).isNotEmpty();
   }
   public static boolean ifMacro_Condition_1201570447832(final IfMacroContext _context) {
     return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode());

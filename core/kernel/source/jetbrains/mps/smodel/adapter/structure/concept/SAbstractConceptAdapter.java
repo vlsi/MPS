@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -143,10 +144,22 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public boolean isSubConceptOf(SAbstractConcept concept) {
     // todo: hack, need for working node attributes on nodes of not generated concepts
     // todo: remove
-    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) return true;
+    if (SNodeUtil.conceptName_BaseConcept.equals(concept.getQualifiedName())) return true;
 
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return false;
+
+    if (concept instanceof SConceptAdapterById) {
+      return d.isAssignableTo(((SConceptAdapterById) concept).getId());
+    }
+
+    if (concept instanceof SInterfaceConceptAdapterById) {
+      return d.isAssignableTo(((SInterfaceConceptAdapterById) concept).getId());
+    }
+
+    if (concept instanceof SInterfaceConceptDefaultAdapter) {
+      return false;
+    }
 
     return d.isAssignableTo(concept.getQualifiedName());
   }

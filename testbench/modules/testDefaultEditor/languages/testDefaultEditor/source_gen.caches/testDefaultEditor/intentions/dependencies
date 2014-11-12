@@ -62,8 +62,6 @@
   </dependency>
   <dependency className="testDefaultEditor.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention" />
     <classNode dependClassName="testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention" />
     <classNode dependClassName="testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention" />

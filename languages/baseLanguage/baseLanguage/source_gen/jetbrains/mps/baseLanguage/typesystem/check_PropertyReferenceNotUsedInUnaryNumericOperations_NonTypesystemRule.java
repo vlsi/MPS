@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,7 +20,7 @@ public class check_PropertyReferenceNotUsedInUnaryNumericOperations_NonTypesyste
   public check_PropertyReferenceNotUsedInUnaryNumericOperations_NonTypesystemRule() {
   }
   public void applyRule(final SNode propertyReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((SNodeOperations.getNodeAncestorWhereConceptInList(propertyReference, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239709577448l, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239709250944l, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1214918975462l, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1214918800624l, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression")}, false, false) == null))) {
+    if (!((SNodeOperations.getNodeAncestorWhereConceptInList(propertyReference, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239709577448l, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239709250944l, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1214918975462l, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1214918800624l, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression")}, false, false) == null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyReference, "variable expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6861608246278154966", null, errorTarget);
     }

@@ -19,7 +19,7 @@ public class ConstructorDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_isDeprecated_1224609060727", new Object[]{}) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")), "virtual_isDeprecated_1224609060727", new Object[]{}));
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_isDeprecated_1224609060727", new Object[]{}) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable")), "virtual_isDeprecated_1224609060727", new Object[]{}));
   }
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;

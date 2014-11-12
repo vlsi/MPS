@@ -20,15 +20,15 @@
   </root>
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.console.blCommand.actions)/3492877759608901704">
     <file name="QueriesGenerated.java">
-      <node id="3492877759608901836" at="39,152,40,275" concept="1" />
-      <node id="3492877759608986173" at="42,150,43,273" concept="1" />
-      <node id="3492877759609298948" at="45,151,46,270" concept="1" />
+      <node id="3492877759608901836" at="39,152,40,425" concept="1" />
+      <node id="3492877759608986173" at="42,150,43,422" concept="1" />
+      <node id="3492877759609298948" at="45,151,46,414" concept="1" />
       <node id="3492877759608901831" at="39,0,42,0" concept="6" trace="nodeFactory_NodeSetup_ModulesScope_3492877759608901831#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="3492877759608986171" at="42,0,45,0" concept="6" trace="nodeFactory_NodeSetup_ModelScope_3492877759608986171#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="3492877759609298946" at="45,0,48,0" concept="6" trace="nodeFactory_NodeSetup_CustomScope_3492877759609298946#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="3492877759608901832" at="39,152,40,275" />
-      <scope id="3492877759608986172" at="42,150,43,273" />
-      <scope id="3492877759609298947" at="45,151,46,270" />
+      <scope id="3492877759608901832" at="39,152,40,425" />
+      <scope id="3492877759608986172" at="42,150,43,422" />
+      <scope id="3492877759609298947" at="45,151,46,414" />
       <scope id="3492877759608901831" at="39,0,42,0">
         <var name="_context" id="3492877759608901831" />
         <var name="operationContext" id="3492877759608901831" />
@@ -49,8 +49,8 @@
       <node id="3786816536599613947" at="50,5,51,128" concept="4" />
       <node id="3786816536599613947" at="51,128,52,62" concept="4" />
       <node id="3786816536599613947" at="53,133,54,124" concept="4" />
-      <node id="1177403636225" at="56,105,57,166" concept="4" />
-      <node id="3786816536599823257" at="57,166,58,210" concept="1" />
+      <node id="1177403636225" at="56,105,57,316" concept="4" />
+      <node id="3786816536599823257" at="57,316,58,210" concept="1" />
       <node id="1177403662437" at="58,210,59,26" concept="5" />
       <node id="3786816536599653676" at="61,60,62,24" concept="5" />
       <node id="3786816536599613947" at="65,103,66,75" concept="4" />

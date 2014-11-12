@@ -38,7 +38,7 @@ public class SNodeListType_Behavior {
     return true;
   }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1145567426890l, "jetbrains.mps.lang.smodel.structure.SNodeListCreator"));
+    SNode creator = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1145567426890l, "jetbrains.mps.lang.smodel.structure.SNodeListCreator")));
     SLinkOperations.setTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1145567426890l, 1145567471833l, "createdType"), SNodeOperations.copyNode(thisNode));
     return creator;
   }

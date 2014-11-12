@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class wrapMisplacedTernaryOperatorInParens_QuickFix extends QuickFix_Runtime {
   public wrapMisplacedTernaryOperatorInParens_QuickFix() {
@@ -16,7 +16,7 @@ public class wrapMisplacedTernaryOperatorInParens_QuickFix extends QuickFix_Runt
     return "Wrap Misplaced Ternary Operator with Parens";
   }
   public void execute(SNode node) {
-    SNode parens = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+    SNode parens = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
     SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), node);
   }
 }

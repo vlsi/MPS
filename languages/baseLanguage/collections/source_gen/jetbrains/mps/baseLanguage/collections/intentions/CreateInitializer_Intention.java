@@ -69,7 +69,7 @@ public class CreateInitializer_Intention implements IntentionFactory {
       return "Create Initializer";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197686869805l, 1206655950512l, "initializer"), "jetbrains.mps.baseLanguage.collections.structure.MapInitializer");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197686869805l, 1206655950512l, "initializer"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1206655653991l, "jetbrains.mps.baseLanguage.collections.structure.MapInitializer")));
     }
     public IntentionDescriptor getDescriptor() {
       return CreateInitializer_Intention.this;

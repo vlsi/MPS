@@ -29,11 +29,11 @@ public class ArrayCreator_Delete {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode creator = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), true, false);
       if ((creator != null)) {
-        SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, "jetbrains.mps.baseLanguage.structure.ArrayCreator");
+        SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, "jetbrains.mps.baseLanguage.structure.ArrayCreator")));
         SNode componentType = SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, 1154542793668l, "componentType"));
         while (SNodeOperations.isInstanceOf(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
           componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"));
-          SNodeFactoryOperations.addNewChild(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"), "jetbrains.mps.baseLanguage.structure.DimensionExpression");
+          SNodeFactoryOperations.addNewChild(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1184952934362l, "jetbrains.mps.baseLanguage.structure.DimensionExpression")));
         }
         SLinkOperations.setTarget(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184951007469l, "componentType"), componentType);
       }
@@ -50,11 +50,11 @@ public class ArrayCreator_Delete {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode creator = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), true, false);
       if ((creator != null)) {
-        SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, "jetbrains.mps.baseLanguage.structure.ArrayCreator");
+        SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, "jetbrains.mps.baseLanguage.structure.ArrayCreator")));
         SNode componentType = SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, 1154542793668l, "componentType"));
         while (SNodeOperations.isInstanceOf(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
           componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, "jetbrains.mps.baseLanguage.structure.ArrayType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"));
-          SNodeFactoryOperations.addNewChild(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"), "jetbrains.mps.baseLanguage.structure.DimensionExpression");
+          SNodeFactoryOperations.addNewChild(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1184952934362l, "jetbrains.mps.baseLanguage.structure.DimensionExpression")));
         }
         SLinkOperations.setTarget(replacingCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184951007469l, "componentType"), componentType);
       }

@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,20,0" name="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" />
+      <unit at="8,0,15,0" name="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573650">
@@ -187,7 +187,7 @@
         <var name="editorContext" id="3986994675334573802" />
         <var name="node" id="3986994675334573802" />
       </scope>
-      <unit id="3986994675334573864" at="69,524,73,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$1" />
+      <unit id="3986994675334573864" at="69,532,73,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$1" />
       <unit id="3986994675334573883" at="74,56,78,7" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$2" />
       <unit id="3986994675334573802" at="62,0,85,0" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$IntentionImplementation" />
       <unit id="3986994675334573802" at="25,0,86,0" name="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
@@ -210,10 +210,10 @@
       <node id="3986994675334574125" at="59,37,60,133" concept="1" />
       <node id="3986994675334574125" at="61,5,62,30" concept="6" />
       <node id="3986994675334574130" at="67,87,68,34" concept="6" />
-      <node id="3986994675334574155" at="70,78,71,221" concept="5" />
-      <node id="3986994675334574163" at="71,221,72,273" concept="1" />
-      <node id="3986994675334574187" at="72,273,73,239" concept="5" />
-      <node id="3986994675334574182" at="73,239,74,208" concept="1" />
+      <node id="3986994675334574155" at="70,78,71,256" concept="5" />
+      <node id="3986994675334574163" at="71,256,72,273" concept="1" />
+      <node id="3986994675334574187" at="72,273,73,274" concept="5" />
+      <node id="3986994675334574182" at="73,274,74,208" concept="1" />
       <node id="3986994675334574204" at="74,208,75,66" concept="1" />
       <node id="3986994675334574214" at="75,66,76,200" concept="1" />
       <node id="3986994675334574574" at="76,200,77,51" concept="1" />

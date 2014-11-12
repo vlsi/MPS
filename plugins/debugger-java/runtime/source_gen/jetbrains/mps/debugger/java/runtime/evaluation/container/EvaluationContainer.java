@@ -110,7 +110,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 9172312269976647291l, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), "virtual_getCode_317191294093624551", new Object[]{}));
+        return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(9053457975011001859l, -9123640110572141707l), 9172312269976647291l, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept")), "virtual_getCode_317191294093624551", new Object[]{}));
       }
     });
   }
@@ -146,7 +146,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
   }
   protected SNode createEvaluatorNode() {
-    SNode evaluator = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", null);
+    SNode evaluator = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 846214144113532833l, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator")), null);
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 846214144113532833l, 846214144113533056l, "code")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluator;
   }

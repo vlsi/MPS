@@ -68,6 +68,7 @@
     <model ref="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" name="jetbrains.mps.testbench" />
     <model ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" name="jetbrains.mps.lang.editor.style.test" />
     <model ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" name="jetbrains.mps.lang.editor.actions.test" />
+    <model ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" name="jetbrains.mps.smodel.test.concepts@tests" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908" name="jetbrains.mps.testbench.suite.structure.SolutionRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477" name="jetbrains.mps.testbench.suite.structure.ModuleSuite" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479" name="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
@@ -152,6 +153,7 @@
     <import index="gp3f" ref="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" />
     <import index="4o0x" ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" />
     <import index="e6od" ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" />
+    <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" implicit="true" />
   </imports>
   <contents>
@@ -749,6 +751,9 @@
       <node concept="2ogp.1280144168199506908" id="2712670354707847869" role="2ogp.4504141816188599477.1280144168199507080" info="ig">
         <property role="2ogp.1280144168199506908.1280144168199506910" value="d2213aeb-6827-43e6-8179-d5886cfd0bb6" />
         <property role="2ogp.1280144168199506908.1280144168199506909" value="jetbrains.mps.smodel.test" />
+      </node>
+      <node concept="2ogp.4504141816188599479" id="359299525883594954" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
+        <reference role="2ogp.4504141816188599479.4504141816188599488" target="7fk5.359299525883788095" resolveInfo="SConceptHierarchy" />
       </node>
       <node concept="2ogp.4504141816188599479" id="2712670354707847870" role="2ogp.4504141816188599477.4504141816188599486" info="ng">
         <reference role="2ogp.4504141816188599479.4504141816188599488" target="ssms.8758390115028789531" resolveInfo="SNodeGetChildrenOperation" />

@@ -93,9 +93,9 @@ public class Table_Editor extends DefaultNodeEditor {
           }
           @Override
           public void insertRow(int rowNumber) {
-            SNode rowNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
+            SNode rowNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, "jetbrains.mps.lang.editor.tableTests.structure.Row")), null);
             for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).count(); i++) {
-              ListSequence.fromList(SLinkOperations.getChildren(rowNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+              ListSequence.fromList(SLinkOperations.getChildren(rowNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")), null));
             }
             ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).insertElement(rowNumber, rowNode);
           }
@@ -108,7 +108,7 @@ public class Table_Editor extends DefaultNodeEditor {
           @Override
           public void insertColumn(int columnNumber) {
             for (SNode row : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows")))) {
-              ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+              ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).insertElement(columnNumber, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")), null));
             }
           }
         };

@@ -18,6 +18,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
@@ -73,7 +75,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
       EditorCell cell = editorContext.getSelectedCell();
       String linkRole = EditingUtil.getEditedLinkRole(cell);
       SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
+      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 7658393498702771296l, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
     }
     public IntentionDescriptor getDescriptor() {
       return AddTestReferenceAnnotation_Intention.this;

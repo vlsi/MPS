@@ -74,7 +74,7 @@ public class BooleanQuery_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query")) == null)) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1223387125302l, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean")));
       } else {
         SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query")));
       }

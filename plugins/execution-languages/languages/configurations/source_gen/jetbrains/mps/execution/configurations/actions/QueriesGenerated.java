@@ -36,7 +36,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", null);
+                return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983738927l, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")), null);
               }
             });
           }

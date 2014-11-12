@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.util.EqualUtil;
@@ -252,7 +253,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText")));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
@@ -338,7 +339,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText"));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 1622293396948952339l, "jetbrains.mps.core.xml.structure.XmlText")));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);

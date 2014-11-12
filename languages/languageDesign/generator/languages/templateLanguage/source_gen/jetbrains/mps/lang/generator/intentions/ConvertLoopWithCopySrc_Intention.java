@@ -102,7 +102,7 @@ public class ConvertLoopWithCopySrc_Intention implements IntentionFactory {
         if (seen) {
           if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1114706874351l, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"))) {
             SNodeOperations.deleteNode(n);
-            SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro");
+            SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, "jetbrains.mps.lang.generator.structure.CopySrcListMacro")));
           }
           return;
         } else if (n == node) {

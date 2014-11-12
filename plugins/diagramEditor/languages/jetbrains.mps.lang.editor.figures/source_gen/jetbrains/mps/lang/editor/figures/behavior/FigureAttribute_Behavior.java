@@ -9,7 +9,7 @@ import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FigureAttribute_Behavior {
@@ -21,7 +21,7 @@ public class FigureAttribute_Behavior {
   public static Iterable<SNode> call_getPrameterAttributes_5422656561931892777(SNode thisNode) {
     return ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(thisNode))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(new UUID(-2922223385321452486l, -5907006357078305369l), 5422656561929884641l, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), false, new SConcept[]{});
+        return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(new UUID(-2922223385321452486l, -5907006357078305369l), 5422656561929884641l, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), false, new SAbstractConcept[]{});
       }
     });
   }

@@ -168,7 +168,7 @@
         <var name="expectedSysErr" id="8128243960970298458" />
         <var name="process" id="8128243960970298456" />
       </scope>
-      <unit id="2034046503361578133" at="47,248,51,11" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
+      <unit id="2034046503361578133" at="47,257,51,11" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
       <unit id="2034046503361578119" at="44,47,54,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$1" />
       <unit id="8128243960970298364" at="61,45,76,7" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$2" />
       <unit id="8128243960970298272" at="40,0,95,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody" />

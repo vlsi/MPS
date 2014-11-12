@@ -35,7 +35,7 @@ public class Builder_Behavior {
     return false;
   }
   public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept thisConcept, SNode context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getInterfaceConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isLeaf_932644095877881871", new Object[]{}));
       }

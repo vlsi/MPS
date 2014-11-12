@@ -28,7 +28,7 @@ public class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigrationS
         return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text")) == null);
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text"), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine")));
       }
       public boolean isShowAsIntention() {
         return false;

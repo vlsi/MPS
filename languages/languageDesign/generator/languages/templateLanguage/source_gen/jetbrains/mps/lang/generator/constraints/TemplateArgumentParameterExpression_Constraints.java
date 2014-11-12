@@ -56,8 +56,8 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"))) {
-              return SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"));
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"))) {
+              return SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"));
             }
             return new ArrayList<SNode>();
           }
@@ -71,7 +71,7 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925943770");
   private static SNodePointer breakingNode_teh60w_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");

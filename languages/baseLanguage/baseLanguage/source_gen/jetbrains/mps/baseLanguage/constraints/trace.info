@@ -739,7 +739,7 @@
       <node id="1213104847533" at="53,51,54,68" concept="2" />
       <node id="1213104847533" at="55,5,56,0" concept="8" />
       <node id="1213104847533" at="56,0,57,18" concept="6" />
-      <node id="3791592384018057316" at="60,245,61,49" concept="5" />
+      <node id="3791592384018057316" at="60,254,61,49" concept="5" />
       <node id="2949815620936254898" at="61,49,62,177" concept="6" />
       <node id="2949815620936256053" at="63,5,64,16" concept="6" />
       <node id="1213104847533" at="66,0,67,0" concept="9" trace="breakingNode_y7fug_a0a0a0a0a2" />
@@ -762,7 +762,7 @@
       <scope id="7898359107948137249" at="40,118,41,85" />
       <scope id="1213104847533" at="46,44,47,16" />
       <scope id="1213104847533" at="53,51,54,68" />
-      <scope id="2949815620936250002" at="60,245,62,177">
+      <scope id="2949815620936250002" at="60,254,62,177">
         <var name="memberConcept" id="3791592384018057319" />
       </scope>
       <scope id="1213104847533" at="25,0,28,0" />
@@ -1052,18 +1052,18 @@
       <node id="1213104855885" at="41,88,42,123" concept="5" />
       <node id="1213104855885" at="45,37,46,20" concept="6" />
       <node id="1213104855885" at="49,42,50,37" concept="5" />
-      <node id="1213104855885" at="50,37,51,380" concept="0" />
-      <node id="1213104855889" at="50,37,51,380" concept="6" />
+      <node id="1213104855885" at="50,37,51,389" concept="0" />
+      <node id="1213104855889" at="50,37,51,389" concept="6" />
       <node id="1213104855885" at="56,37,57,20" concept="6" />
       <node id="1213104855885" at="60,42,61,43" concept="5" />
       <node id="1213104855885" at="61,43,62,384" concept="0" />
       <node id="1213104855899" at="61,43,62,384" concept="6" />
       <node id="1213104855885" at="67,37,68,20" concept="6" />
       <node id="1213104855885" at="71,42,72,44" concept="5" />
-      <node id="1213104855885" at="72,44,73,386" concept="0" />
-      <node id="1213104855909" at="72,44,73,386" concept="6" />
+      <node id="1213104855885" at="72,44,73,395" concept="0" />
+      <node id="1213104855909" at="72,44,73,395" concept="6" />
       <node id="1213104855885" at="75,7,76,22" concept="6" />
-      <node id="1213107437661" at="78,148,79,403" concept="6" />
+      <node id="1213107437661" at="78,148,79,421" concept="6" />
       <node id="1213104855885" at="81,0,82,0" concept="9" trace="canBeChildBreakingPoint" />
       <node id="1213104855885" at="23,0,26,0" concept="1" trace="ConstructorDeclaration_Constraints#()V" />
       <node id="1213104855885" at="33,0,36,5" concept="3" />
@@ -1084,19 +1084,19 @@
       <scope id="1213104855885" at="27,43,28,16" />
       <scope id="1213104855885" at="34,51,35,67" />
       <scope id="1213104855885" at="45,37,46,20" />
-      <scope id="1213104855888" at="50,37,51,380" />
+      <scope id="1213104855888" at="50,37,51,389" />
       <scope id="1213104855885" at="56,37,57,20" />
       <scope id="1213104855898" at="61,43,62,384" />
       <scope id="1213104855885" at="67,37,68,20" />
-      <scope id="1213104855908" at="72,44,73,386" />
-      <scope id="1213107437660" at="78,148,79,403" />
-      <scope id="1213104855885" at="49,42,51,380">
+      <scope id="1213104855908" at="72,44,73,395" />
+      <scope id="1213107437660" at="78,148,79,421" />
+      <scope id="1213104855885" at="49,42,51,389">
         <var name="propertyName" id="1213104855885" />
       </scope>
       <scope id="1213104855885" at="60,42,62,384">
         <var name="propertyName" id="1213104855885" />
       </scope>
-      <scope id="1213104855885" at="71,42,73,386">
+      <scope id="1213104855885" at="71,42,73,395">
         <var name="propertyName" id="1213104855885" />
       </scope>
       <scope id="1213104855885" at="23,0,26,0" />
@@ -1805,7 +1805,7 @@
       <node id="1225995033549" at="31,5,32,0" concept="8" />
       <node id="1225995033549" at="32,0,33,18" concept="6" />
       <node id="7376433222636453659" at="35,148,36,68" concept="7" />
-      <node id="1225995061669" at="36,68,37,324" concept="6" />
+      <node id="1225995061669" at="36,68,37,396" concept="6" />
       <node id="1225995033549" at="39,0,40,0" concept="9" trace="canBeChildBreakingPoint" />
       <node id="1225995033549" at="18,0,21,0" concept="1" trace="IOperation_Constraints#()V" />
       <node id="1225995033549" at="28,0,31,5" concept="3" />
@@ -1815,7 +1815,7 @@
       <scope id="1225995033549" at="18,35,19,106" />
       <scope id="1225995033549" at="22,43,23,16" />
       <scope id="1225995033549" at="29,51,30,67" />
-      <scope id="1225995041052" at="35,148,37,324" />
+      <scope id="1225995041052" at="35,148,37,396" />
       <scope id="1225995033549" at="18,0,21,0" />
       <scope id="1225995033549" at="21,0,25,0" />
       <scope id="1225995033549" at="35,0,39,0">
@@ -1955,7 +1955,7 @@
       <scope id="2043122710974596224" at="16,0,26,0">
         <var name="node" id="2043122710974596229" />
       </scope>
-      <unit id="8986964027630473418" at="20,248,24,5" name="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil$1" />
+      <unit id="8986964027630473418" at="20,257,24,5" name="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil$1" />
       <unit id="2043122710974596217" at="13,0,30,0" name="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
     </file>
   </root>
@@ -2061,7 +2061,7 @@
       <node id="267392325913486102" at="44,0,45,0" concept="9" trace="canBeParentBreakingPoint" />
       <node id="267392325913486102" at="19,0,22,0" concept="1" trace="StaticFieldDeclaration_Constraints#()V" />
       <node id="267392325913486102" at="29,0,32,5" concept="3" />
-      <node id="267392325913589597" at="37,131,40,7" concept="3" />
+      <node id="267392325913589597" at="37,194,40,7" concept="3" />
       <node id="267392325913486102" at="22,0,26,0" concept="4" trace="hasOwnCanBeParentMethod#()Z" />
       <node id="267392325913589578" at="36,148,41,5" concept="3" />
       <node id="267392325913486102" at="36,0,44,0" concept="10" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
@@ -2071,7 +2071,7 @@
       <scope id="267392325913486102" at="30,51,31,68" />
       <scope id="267392325913589599" at="38,226,39,130" />
       <scope id="267392325913486102" at="19,0,22,0" />
-      <scope id="267392325913589580" at="37,131,40,7" />
+      <scope id="267392325913589580" at="37,194,40,7" />
       <scope id="267392325913486102" at="22,0,26,0" />
       <scope id="267392325913486104" at="36,148,42,16" />
       <scope id="267392325913486102" at="27,188,34,18">
@@ -2601,7 +2601,7 @@
       <node id="5536314641534779166" at="31,5,32,0" concept="8" />
       <node id="5536314641534779166" at="32,0,33,18" concept="6" />
       <node id="5536314641534792877" at="36,213,37,229" concept="5" />
-      <node id="5536314641534792922" at="37,229,38,510" concept="6" />
+      <node id="5536314641534792922" at="37,229,38,576" concept="6" />
       <node id="6624237184121040064" at="40,420,41,18" concept="6" />
       <node id="4727568879455160803" at="43,217,44,18" concept="6" />
       <node id="2580416627846277724" at="46,212,47,18" concept="6" />
@@ -2622,7 +2622,7 @@
       <scope id="6624237184121040045" at="40,420,41,18" />
       <scope id="4727568879455160802" at="43,217,44,18" />
       <scope id="2580416627846277723" at="46,212,47,18" />
-      <scope id="5536314641534792866" at="36,213,38,510">
+      <scope id="5536314641534792866" at="36,213,38,576">
         <var name="variableDeclaration" id="5536314641534792878" />
       </scope>
       <scope id="5536314641534779166" at="18,0,21,0" />

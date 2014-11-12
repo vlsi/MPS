@@ -47,7 +47,7 @@ public class EnumConstantDeclaration_Behavior {
   }
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingEnum = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
-    return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{}));
+    return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{}));
   }
   public static String call_getEnumConstantDeclarationPresentation_8767021959483237039(SNode thisNode) {
     return "Enum constant '" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' in ";
@@ -109,7 +109,7 @@ public class EnumConstantDeclaration_Behavior {
     return methods;
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6617045035157661092l, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6617045035157661092l, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
       Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
       Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -118,7 +118,7 @@ public class EnumConstantDeclaration_Behavior {
       });
       Scope visibleEumMembers = new ListScope(methods) {
         public String getName(SNode child) {
-          return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       };
       return new CompositeScope(visibleMembers, visibleEumMembers);

@@ -46,7 +46,7 @@ public class PropertyMessageTarget_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode messageStatement = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), true, false);
+            SNode messageStatement = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), true, false);
             if (messageStatement == null) {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }

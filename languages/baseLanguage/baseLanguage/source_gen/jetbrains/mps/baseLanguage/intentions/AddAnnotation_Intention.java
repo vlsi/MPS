@@ -80,7 +80,7 @@ public class AddAnnotation_Intention implements IntentionFactory {
       return "Add Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+      SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")));
       editorContext.selectWRTFocusPolicy(annotationInstance);
     }
     public IntentionDescriptor getDescriptor() {

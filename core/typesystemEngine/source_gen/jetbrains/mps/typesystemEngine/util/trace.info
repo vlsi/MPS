@@ -22,7 +22,7 @@
       <node id="1883223317721340785" at="48,221,49,55" concept="2" />
       <node id="1883223317721340789" at="49,55,50,238" concept="2" />
       <node id="1883223317721340796" at="51,15,52,48" concept="2" />
-      <node id="1883223317720979926" at="59,55,60,208" concept="5" />
+      <node id="1883223317720979926" at="59,55,60,243" concept="5" />
       <node id="1883223317720980006" at="61,200,62,209" concept="5" />
       <node id="1883223317720980023" at="63,204,64,245" concept="2" />
       <node id="1883223317720980049" at="66,202,67,211" concept="5" />
@@ -34,7 +34,7 @@
       <node id="1883223317720979945" at="81,12,82,246" concept="2" />
       <node id="1883223317720979957" at="82,246,83,246" concept="2" />
       <node id="1883223317720980072" at="84,5,85,20" concept="6" />
-      <node id="4545016991847814858" at="87,55,88,208" concept="5" />
+      <node id="4545016991847814858" at="87,55,88,243" concept="5" />
       <node id="4545016991847814931" at="89,200,90,209" concept="5" />
       <node id="4545016991847814946" at="91,204,92,245" concept="2" />
       <node id="4545016991847814972" at="94,202,95,211" concept="5" />
@@ -109,8 +109,8 @@
       <node id="6007597446559193325" at="131,0,147,0" concept="7" trace="meetNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1883223317721339522" at="21,56,39,5" concept="0" />
       <node id="1883223317721340762" at="39,5,57,5" concept="0" />
-      <node id="1883223317720979933" at="60,208,84,5" concept="4" />
-      <node id="4545016991847814864" at="88,208,112,5" concept="4" />
+      <node id="1883223317720979933" at="60,243,84,5" concept="4" />
+      <node id="4545016991847814864" at="88,243,112,5" concept="4" />
       <node id="1883223317720979918" at="59,0,87,0" concept="7" trace="join#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1883223317720980152" at="87,0,115,0" concept="7" trace="meet#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1883223317720979806" at="21,0,59,0" concept="7" trace="processMeetsAndJoins#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -9,16 +9,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class PatternExpression_DataFlow extends DataFlowBuilder {
   public PatternExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode antiquotation : SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), false, new SConcept[]{})) {
+    for (SNode antiquotation : SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), false, new SAbstractConcept[]{})) {
       _context.getBuilder().build((SNode) antiquotation);
     }
-    for (SNode patternVar : SNodeOperations.getNodeDescendantsWhereConceptInList(_context.getNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")}, false, new SConcept[]{})) {
+    for (SNode patternVar : SNodeOperations.getNodeDescendantsWhereConceptInList(_context.getNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")}, false, new SAbstractConcept[]{})) {
       _context.getBuilder().build((SNode) patternVar);
     }
   }

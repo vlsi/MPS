@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -97,7 +96,7 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
       return targetName;
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))), null);
+      SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))), null);
       AlterStatementListContainerFactoryUtils.buildContainerIfPossible(node, newInitializedInstance);
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
       editorContext.selectWRTFocusPolicy(newInitializedInstance);

@@ -60,7 +60,7 @@ public class AddParameterBlockDocTag_Intention implements IntentionFactory {
       return "Add @param Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"), "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag")));
       BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
     public IntentionDescriptor getDescriptor() {

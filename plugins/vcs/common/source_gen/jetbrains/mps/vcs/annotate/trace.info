@@ -982,7 +982,7 @@
       <scope id="5841940560826267452" at="608,0,711,0">
         <var name="event" id="5841940560826267455" />
       </scope>
-      <unit id="653763136285346347" at="142,192,146,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$1" />
+      <unit id="653763136285346347" at="142,200,146,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$1" />
       <unit id="3473830552709780110" at="171,118,175,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$3" />
       <unit id="9101534317544078090" at="192,140,196,5" name="jetbrains.mps.vcs.annotate.AnnotationColumn$4" />
       <unit id="2034046503361561197" at="220,110,224,13" name="jetbrains.mps.vcs.annotate.AnnotationColumn$7" />

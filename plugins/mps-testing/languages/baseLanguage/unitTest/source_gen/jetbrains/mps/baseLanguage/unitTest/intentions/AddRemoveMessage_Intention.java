@@ -62,7 +62,7 @@ public class AddRemoveMessage_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message")), MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, 1172073511101l, "message")) == null)) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message"), "jetbrains.mps.baseLanguage.unitTest.structure.Message");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, "jetbrains.mps.baseLanguage.unitTest.structure.Message")));
       } else {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message"), null);
       }

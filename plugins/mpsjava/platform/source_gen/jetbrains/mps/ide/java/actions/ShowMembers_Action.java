@@ -37,7 +37,7 @@ public class ShowMembers_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1194952169813l, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1194952169813l, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false) != null);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -93,7 +93,7 @@ public class ShowMembers_Action extends BaseAction {
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1194952169813l, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
+          SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1194952169813l, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
           title.value = container.getPresentation();
           model.value = new MemberContainerStructureModel(container);
         }

@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,18,0" name="jetbrains.mps.baseLanguage.classifiers.intentions.IntentionsDescriptor" />
+      <unit at="8,0,13,0" name="jetbrains.mps.baseLanguage.classifiers.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590372(jetbrains.mps.baseLanguage.classifiers.intentions)/1218968276327">
@@ -23,14 +23,14 @@
       <node id="1218968276327" at="39,44,40,17" concept="6" />
       <node id="1218968276327" at="43,53,44,19" concept="6" />
       <node id="1218968276327" at="45,5,46,16" concept="6" />
-      <node id="1218968276355" at="48,91,49,452" concept="6" />
+      <node id="1218968276355" at="48,91,49,470" concept="6" />
       <node id="1218968276327" at="51,53,52,138" concept="6" />
       <node id="1218968276327" at="54,35,55,17" concept="6" />
       <node id="1218968276327" at="58,37,59,143" concept="1" />
       <node id="1218968276327" at="60,5,61,30" concept="6" />
       <node id="1218968276330" at="66,87,67,54" concept="6" />
-      <node id="1218968276334" at="69,78,70,458" concept="5" />
-      <node id="1218968276346" at="70,458,71,190" concept="1" />
+      <node id="1218968276334" at="69,78,70,476" concept="5" />
+      <node id="1218968276346" at="70,476,71,190" concept="1" />
       <node id="1218968276327" at="73,48,74,56" concept="6" />
       <node id="1218968276327" at="22,0,24,0" concept="0" trace="CreateReferenceOnClassifier_Intention#()V" />
       <node id="1218968276327" at="64,0,66,0" concept="0" trace="IntentionImplementation#()V" />
@@ -59,7 +59,7 @@
       <scope id="1218968276327" at="36,34,37,32" />
       <scope id="1218968276327" at="39,44,40,17" />
       <scope id="1218968276327" at="43,53,44,19" />
-      <scope id="1218968276354" at="48,91,49,452" />
+      <scope id="1218968276354" at="48,91,49,470" />
       <scope id="1218968276327" at="51,53,52,138" />
       <scope id="1218968276327" at="54,35,55,17" />
       <scope id="1218968276327" at="58,37,59,143" />

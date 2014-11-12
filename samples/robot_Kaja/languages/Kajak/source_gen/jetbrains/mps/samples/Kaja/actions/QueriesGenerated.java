@@ -28,7 +28,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.AbstractCommand"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"), "jetbrains.mps.samples.Kaja.structure.EmptyLine");
+        SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039740438l, "jetbrains.mps.samples.Kaja.structure.EmptyLine")));
         return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).first();
       }
       public String getMatchingText(String pattern) {
@@ -54,7 +54,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.While"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode whileNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.While");
+        SNode whileNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, "jetbrains.mps.samples.Kaja.structure.While")));
         SLinkOperations.setTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition")));
         SLinkOperations.setTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch")));
         return SLinkOperations.getTarget(whileNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition"));
@@ -82,7 +82,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.Not"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not");
+        SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, "jetbrains.mps.samples.Kaja.structure.Not")));
         return SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039654064l, 3308300503039654067l, "original"), _context.getSourceNode());
       }
       public String getMatchingText(String pattern) {
@@ -118,15 +118,15 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode expression;
               if ((item).equals("heading")) {
-                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039683649l, "jetbrains.mps.samples.Kaja.structure.Heading"));
+                expression = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039683649l, "jetbrains.mps.samples.Kaja.structure.Heading")));
               } else if ((item).equals("mark")) {
-                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436186598l, "jetbrains.mps.samples.Kaja.structure.IsMark"));
+                expression = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436186598l, "jetbrains.mps.samples.Kaja.structure.IsMark")));
               } else if ((item).equals("full")) {
-                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 859008965969439768l, "jetbrains.mps.samples.Kaja.structure.IsFull"));
+                expression = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 859008965969439768l, "jetbrains.mps.samples.Kaja.structure.IsFull")));
               } else if ((item).equals("wall")) {
-                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647788l, "jetbrains.mps.samples.Kaja.structure.IsWall"));
+                expression = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647788l, "jetbrains.mps.samples.Kaja.structure.IsWall")));
               } else if ((item).equals("looking")) {
-                expression = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 7060824959893078082l, "jetbrains.mps.samples.Kaja.structure.Looking"));
+                expression = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 7060824959893078082l, "jetbrains.mps.samples.Kaja.structure.Looking")));
               } else {
                 throw new IllegalArgumentException("Cannot find a match for " + (item));
               }
@@ -156,7 +156,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.IfStatement"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode ifNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.IfStatement");
+        SNode ifNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, "jetbrains.mps.samples.Kaja.structure.IfStatement")));
         SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667426l, "condition")));
         SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch"), SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body")));
         return SLinkOperations.getTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647680l, "condition"));

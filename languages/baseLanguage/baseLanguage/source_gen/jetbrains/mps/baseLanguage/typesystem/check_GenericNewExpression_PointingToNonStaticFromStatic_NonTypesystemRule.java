@@ -38,7 +38,7 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
     if (target.value == null) {
       return;
     }
-    SNode method = ListSequence.fromList(SNodeOperations.getNodeAncestors(genericNewExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), false)).findFirst(new IWhereFilter<SNode>() {
+    SNode method = ListSequence.fromList(SNodeOperations.getNodeAncestors(genericNewExpression, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode member) {
         return eq_r95zp5_a0a0a0a0a0a3a1(SNodeOperations.getParent(member), SNodeOperations.getParent(target.value));
       }

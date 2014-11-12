@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,20,0" name="jetbrains.mps.baseLanguageInternal.intentions.IntentionsDescriptor" />
+      <unit at="8,0,15,0" name="jetbrains.mps.baseLanguageInternal.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)/1229871155083">
@@ -31,7 +31,7 @@
       <node id="1229871155083" at="59,37,60,155" concept="2" />
       <node id="1229871155083" at="61,5,62,30" concept="7" />
       <node id="1229871173583" at="67,87,68,35" concept="7" />
-      <node id="1229871192693" at="70,78,71,231" concept="2" />
+      <node id="1229871192693" at="70,78,71,375" concept="2" />
       <node id="1229871155083" at="73,48,74,68" concept="7" />
       <node id="1229871155083" at="23,0,25,0" concept="1" trace="add_parameter_to_InternalClassifierType_Intention#()V" />
       <node id="1229871155083" at="65,0,67,0" concept="1" trace="IntentionImplementation#()V" />
@@ -65,7 +65,7 @@
       <scope id="1229871155083" at="55,35,56,17" />
       <scope id="1229871155083" at="59,37,60,155" />
       <scope id="1229871155085" at="67,87,68,35" />
-      <scope id="1229871155087" at="70,78,71,231" />
+      <scope id="1229871155087" at="70,78,71,375" />
       <scope id="1229871155083" at="73,48,74,68" />
       <scope id="1229871155083" at="23,0,25,0" />
       <scope id="1229871155083" at="65,0,67,0" />

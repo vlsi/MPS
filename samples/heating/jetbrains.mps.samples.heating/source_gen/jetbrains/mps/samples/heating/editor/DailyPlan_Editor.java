@@ -189,7 +189,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
+      SNode item = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot")), null);
       SPropertyOperations.set(item, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (-1));
       SPropertyOperations.set(SLinkOperations.getTarget(item, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"), "" + (20));
       return item;

@@ -44,7 +44,7 @@ public class StaticMethodCall_Behavior {
     return classConcept1 == classConcept2;
   }
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {
-    SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
+    SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")));
     SLinkOperations.setTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument")))) {
       ListSequence.fromList(SLinkOperations.getChildren(localStaticMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(actualArgument);

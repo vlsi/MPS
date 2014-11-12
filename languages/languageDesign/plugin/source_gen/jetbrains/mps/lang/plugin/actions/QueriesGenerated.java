@@ -35,13 +35,13 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ToolTab_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode disposeTabClosure = SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 6938053545825350222l, 6938053545825381651l, "disposeTabClosure"));
     if ((disposeTabClosure == null)) {
-      disposeTabClosure = SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 6938053545825350222l, 6938053545825381651l, "disposeTabClosure"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      disposeTabClosure = SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 6938053545825350222l, 6938053545825381651l, "disposeTabClosure"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")));
     }
-    SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration");
+    SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 485694842828664424l, "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration")));
     SPropertyOperations.set(pd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "component");
   }
   public static void nodeFactory_NodeSetup_ActionParameter_315309404903965694(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5538333046911348654l, "jetbrains.mps.lang.plugin.structure.RequiredCondition"));
+    SLinkOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5538333046911348654l, "jetbrains.mps.lang.plugin.structure.RequiredCondition")));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1217414463812(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -84,7 +84,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1205679047295l, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration")), null);
                 SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), (item));
                 return result;
               }
@@ -120,7 +120,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), null);
                 SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217252042208l, 1217252646389l, "key"), (item));
                 return result;
               }

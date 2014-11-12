@@ -72,13 +72,14 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private Set<String> childNames;
   private Set<String> unorderedNames;
   private List<SConceptId> parents;
+  private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> properties;
   private Map<SReferenceLinkId, ReferenceDescriptor> references;
   private Map<SContainmentLinkId, LinkDescriptor> links;
   private Map<String, PropertyDescriptor> propertiesByName;
   private Map<String, ReferenceDescriptor> referencesByName;
   private Map<String, LinkDescriptor> linksByName;
-  private boolean myInitialized = false;
+  private volatile boolean myInitialized = false;
 
   CompiledConceptDescriptor(SConceptId id,
       String conceptFqName,
@@ -156,10 +157,14 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     assert !myInitialized;
     parentNames = Arrays.asList(myParentNames);
     parents = Arrays.asList(myParents);
+    ancestorsIds = new LinkedHashSet<SConceptId>();
     ancestors = new LinkedHashSet<String>();
+    Collections.addAll(ancestorsIds, myParents);
     Collections.addAll(ancestors, myParentNames);
+    ancestorsIds.add(myId);
     ancestors.add(myConceptFqName);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
+      ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
       ancestors.addAll(parentDescriptor.getAncestorsNames());
     }
   }
@@ -357,6 +362,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public List<SConceptId> getParentsIds() {
     init();
     return parents;
+  }
+
+  @Override
+  public Set<SConceptId> getAncestorsIds() {
+    init();
+    return ancestorsIds;
   }
 
   @Override

@@ -37,12 +37,6 @@ public class QueriesGenerated {
     assert module instanceof Language;
     return IntentionsManager.getDescriptorClassName(module.getModuleReference());
   }
-  public static Object propertyMacro_GetPropertyValue_7040691005578861550(final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModule().getModuleReference().toString();
-  }
-  public static Object propertyMacro_GetPropertyValue_7040691005578881931(final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getReference().toString();
-  }
   public static Object propertyMacro_GetPropertyValue_647666612127743999(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedName_6263518417926802289", new Object[]{});
   }

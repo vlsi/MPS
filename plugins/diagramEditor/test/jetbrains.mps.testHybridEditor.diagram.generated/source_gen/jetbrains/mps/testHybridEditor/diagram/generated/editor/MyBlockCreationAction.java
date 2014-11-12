@@ -18,6 +18,7 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -49,7 +50,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
           }
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
+              SNode newBlockInstance = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance")));
               SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084777l, "metaBlock"), myMetaBlock);
               SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084745l, "x"), "" + (event.x()));
               SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084746l, "y"), "" + (event.y()));

@@ -49,6 +49,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -59,8 +60,7 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Scanner;
@@ -236,7 +236,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           EditorCell currentCell = myEditor.getSelectedCell();
           SNode referenceTarget = check_6q36mf_a0d0a0a5lb(pastingNodeReference);
           if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f73(check_6q36mf_a0a0e0a0a5lb(pastingNodeReference), myModel))) {
-            SNode refContainer = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5842059399443118718l, "jetbrains.mps.console.base.structure.PastedNodeReference"));
+            SNode refContainer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5842059399443118718l, "jetbrains.mps.console.base.structure.PastedNodeReference")));
             SLinkOperations.setTarget(refContainer, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"), referenceTarget);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
             if (paster.canPaste(currentCell)) {
@@ -297,11 +297,11 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     if (last != null) {
       return last;
     }
-    return SLinkOperations.addNewChild(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, 7195119950189425818l, "item"), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, "jetbrains.mps.console.base.structure.Response"));
+    return SLinkOperations.addNewChild(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, 7195119950189425818l, "item"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, "jetbrains.mps.console.base.structure.Response")));
   }
 
   protected void addNodeImports(SNode node) {
-    for (SNode subNode : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SConcept[]{}))) {
+    for (SNode subNode : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}))) {
       SModuleReference usedLanguage = subNode.getConcept().getLanguage().getSourceModule().getModuleReference();
       if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
         ((SModelInternal) myModel).addLanguage(usedLanguage);
@@ -327,13 +327,13 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
             ListSequence.fromList(SLinkOperations.getChildren(getLastReponse(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, 5637103006919120621l, "item"))).addElement(_quotation_createNode_6q36mf_a0a0a1a1a0a0a0a94(line));
           }
           if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
-            SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, 5637103006919120621l, "item"), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919122224l, "jetbrains.mps.console.base.structure.NewLineResponseItem"));
+            SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, 5637103006919120621l, "item"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919122224l, "jetbrains.mps.console.base.structure.NewLineResponseItem")));
           }
         }
       }
       public void addNode(SNode node) {
         addNodeImports(node);
-        SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, 5637103006919120621l, "item"), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919121940l, "jetbrains.mps.console.base.structure.NodeResponseItem")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919121940l, 5637103006919121941l, "node"), node);
+        SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006918228482l, 5637103006919120621l, "item"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919121940l, "jetbrains.mps.console.base.structure.NodeResponseItem"))), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 5637103006919121940l, 5637103006919121941l, "node"), node);
       }
     };
   }
@@ -390,7 +390,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   public void execute(@Nullable SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
-    final SNode typedCommand = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder"));
+    final SNode typedCommand = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
     if (command != null) {
       addNodeImports(command);
       SLinkOperations.setTarget(typedCommand, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"))));
@@ -436,8 +436,8 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            if ((SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"), false, false) != null)) {
-              SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"), false, false));
+            if ((SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"), false, false) != null)) {
+              SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 6852607286009167343l, "jetbrains.mps.console.base.structure.HistoryItem"), false, false));
               if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Unknown concept on loading console history: removing enclosing history item");
               }

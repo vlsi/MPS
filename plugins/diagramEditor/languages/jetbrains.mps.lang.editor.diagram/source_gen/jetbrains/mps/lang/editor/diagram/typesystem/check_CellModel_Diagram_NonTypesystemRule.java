@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -28,9 +28,9 @@ public class check_CellModel_Diagram_NonTypesystemRule extends AbstractNonTypesy
       topLevelCell = SNodeOperations.cast(SNodeOperations.getParent(topLevelCell), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
 
-    for (SNode nonSynchronizeableCellModel : ListSequence.fromList(SNodeOperations.getNodeDescendants(topLevelCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), true, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode nonSynchronizeableCellModel : ListSequence.fromList(SNodeOperations.getNodeDescendants(topLevelCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), true, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
+        return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
       }
     })) {
       {

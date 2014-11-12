@@ -59,7 +59,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", _context.getCurrentTargetNode());
+            SNode result = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), _context.getCurrentTargetNode());
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, 1237305576108l, "value"), NameUtil.stripQuotes(pattern, "\"", "\""));
             return result;
           }

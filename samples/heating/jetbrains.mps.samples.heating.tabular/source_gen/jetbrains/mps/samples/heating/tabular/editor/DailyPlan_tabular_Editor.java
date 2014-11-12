@@ -190,7 +190,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             if (row > 0 && column > 0) {
               SNode slot = DailyPlan_Behavior.call_slotByStartTime_3409470686615450426(node, row - 1);
               if (slot == null) {
-                SNode item = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"), "jetbrains.mps.samples.heating.structure.Slot");
+                SNode item = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot")));
                 SPropertyOperations.set(item, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (row - 1));
                 SPropertyOperations.set(SLinkOperations.getTarget(item, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"), "" + (20));
               }
@@ -206,7 +206,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            SNode slot = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
+            SNode slot = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot")), null);
             SPropertyOperations.set(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"), "" + (20));
             SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).last())));
             if (prevSlot != null) {

@@ -79,7 +79,7 @@ public class MarkLocalStaticMethodCallAsThreadSafe_Intention implements Intentio
       return "Mark as Thread Safe";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", null));
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 2975785153735111398l, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), null));
     }
     public IntentionDescriptor getDescriptor() {
       return MarkLocalStaticMethodCallAsThreadSafe_Intention.this;

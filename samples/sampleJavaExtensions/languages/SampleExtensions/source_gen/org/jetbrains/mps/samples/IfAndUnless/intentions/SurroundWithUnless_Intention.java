@@ -12,12 +12,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithUnless_Intention implements IntentionFactory {
@@ -64,7 +64,7 @@ public class SurroundWithUnless_Intention implements IntentionFactory {
       return "Unless";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode unlessStatement = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", null);
+      SNode unlessStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), unlessStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

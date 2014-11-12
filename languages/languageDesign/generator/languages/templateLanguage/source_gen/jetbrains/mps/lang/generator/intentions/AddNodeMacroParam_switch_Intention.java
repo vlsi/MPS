@@ -86,7 +86,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
-      SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", null);
+      SNode switchMacro = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510068000147l, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")), null);
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
       SLinkOperations.setTarget(switchMacro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), myParameter);
       // set caret 

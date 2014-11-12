@@ -81,7 +81,7 @@ public class HidingByNameScope extends Scope {
   }
   @Override
   public boolean contains(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {
       return false;
     }
     if (scope.contains(node)) {

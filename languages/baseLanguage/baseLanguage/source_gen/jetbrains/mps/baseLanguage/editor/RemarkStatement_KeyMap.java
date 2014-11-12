@@ -56,7 +56,7 @@ public class RemarkStatement_KeyMap extends KeyMapImpl {
       int caretPostion = label.getCaretPosition();
       String text = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"));
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"), text.substring(0, caretPostion));
-      SNode newRemark = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.RemarkStatement", null);
+      SNode newRemark = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement")), null);
       SPropertyOperations.set(newRemark, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"), text.substring(caretPostion));
       SNodeOperations.insertNextSiblingChild(node, newRemark);
     }

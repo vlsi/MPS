@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.scope.CompositeScope;
@@ -98,8 +98,8 @@ public class BuildProject_Behavior {
     // NOTE: references in project structure and layout should be unordered, thus 
     //       we do not need index/child parameters here 
     if ("layout".equals(role)) {
-      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647426l, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart"))) {
-        return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647426l, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart"))) {
+        return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind);
       }
       for (SNode plugin : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins")))) {
         Scope layoutScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
@@ -164,7 +164,7 @@ public class BuildProject_Behavior {
       return new EmptyScope();
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "macros"));
+    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros")));
     SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 
@@ -181,7 +181,7 @@ public class BuildProject_Behavior {
       } else {
         definedMacro.value = ListSequence.fromList(SLinkOperations.getChildren(containingProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(SNodeOperations.getNodeDescendants(it, null, false, new SConcept[]{})).contains(child);
+            return ListSequence.fromList(SNodeOperations.getNodeDescendants(it, null, false, new SAbstractConcept[]{})).contains(child);
           }
         });
       }

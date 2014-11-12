@@ -78,7 +78,7 @@ public class CreateListAntiquotation_Intention implements IntentionFactory {
       if ((AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation")) != null)) {
         AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), null);
       } else {
-        SNode listAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
+        SNode listAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785118l, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")));
         editorContext.selectWRTFocusPolicy(listAntiquotation);
       }
     }

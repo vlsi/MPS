@@ -69,10 +69,10 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             if (row > 0 && column > 0) {
               SNode event = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726947l, "events"))).getElement(column - 1);
               SNode state = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726949l, "states"))).getElement(row - 1);
-              SNode transition = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition", null);
-              SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger"), SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference", null));
+              SNode transition = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition")), null);
+              SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729158l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference")), null));
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger")), MetaAdapterFactory.getReferenceLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729158l, 763922957008729159l, "event"), event);
-              SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState"), SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference", null));
+              SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729156l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference")), null));
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState")), MetaAdapterFactory.getReferenceLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729156l, 763922957008729157l, "state"), state);
               ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726948l, "transitions"))).addElement(transition);
             }
@@ -82,14 +82,14 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726947l, "events"))).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", null));
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726947l, "events"))).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729147l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event")), null));
           }
           @Override
           public void insertRow(int rowNumber) {
             if (rowNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726949l, "states"))).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", null));
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726949l, "states"))).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729154l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State")), null));
           }
           @Override
           public void deleteColumn(int columnNumber) {
@@ -108,13 +108,13 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
           public SubstituteInfo getSubstituteInfo(final int row, final int column) {
             SNode linkDeclaration = null;
             if (row == 0 && column > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "events");
+              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726947l, "events"));
             }
             if (column == 0 && row > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "states");
+              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726949l, "states"));
             }
             if (row > 0 && column > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "transitions");
+              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726948l, "transitions"));
             }
             if (linkDeclaration == null) {
               return null;
@@ -146,9 +146,9 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
                       SNode event = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726947l, "events"))).getElement(column - 1);
                       SNode state = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008726945l, 763922957008726949l, "states"))).getElement(row - 1);
                       SNode transition = (SNode) newChildNode;
-                      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger"), SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference", null));
+                      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729158l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference")), null));
                       SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729151l, "trigger")), MetaAdapterFactory.getReferenceLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729158l, 763922957008729159l, "event"), event);
-                      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState"), SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference", null));
+                      SLinkOperations.setTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729156l, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference")), null));
                       SLinkOperations.setTarget(SLinkOperations.getTarget(transition, MetaAdapterFactory.getContainmentLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729149l, 763922957008729150l, "fromState")), MetaAdapterFactory.getReferenceLink(new UUID(5982244781479775262l, -5019580523904041561l), 763922957008729156l, 763922957008729157l, "state"), state);
                     }
                     return newChildNode;

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -102,7 +102,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
           ListSequence.fromList(modelDescriptors).visitAll(new IVisitor<SModel>() {
             public void visit(SModel it) {
               for (SNode n : it.getRootNodes()) {
-                for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SConcept[]{})) {
+                for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
                   SNode ccp = SNodeOperations.as(((SNode) ((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
                   if (ccp != null) {
                     total.value++;

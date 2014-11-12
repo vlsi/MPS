@@ -589,7 +589,7 @@
       <node id="6663698541542215777" at="25,120,26,33" concept="6" />
       <node id="6663698541542218836" at="27,240,28,240" concept="2" />
       <node id="4052492221165279614" at="29,5,30,0" concept="8" />
-      <node id="4052492221165306925" at="32,39,33,286" concept="7" />
+      <node id="4052492221165306925" at="32,39,33,295" concept="7" />
       <node id="4052492221165343667" at="36,7,37,60" concept="6" />
       <node id="4052492221165343667" at="37,60,38,339" concept="6" />
       <node id="7200199917722151577" at="42,46,43,75" concept="7" />
@@ -608,7 +608,7 @@
       <node id="7200199917722151577" at="25,0,42,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7200199917722151577" at="23,54,23,54" />
       <scope id="6663698541542215934" at="27,240,28,240" />
-      <scope id="4052492221165305728" at="32,39,33,286" />
+      <scope id="4052492221165305728" at="32,39,33,295" />
       <scope id="7200199917722151577" at="42,46,43,75" />
       <scope id="7200199917722151577" at="51,30,52,17" />
       <scope id="7200199917722151577" at="23,0,25,0" />
@@ -640,7 +640,7 @@
         <var name="status" id="7200199917722151577" />
         <var name="typeCheckingContext" id="7200199917722151577" />
       </scope>
-      <unit id="4052492221165305727" at="31,308,35,5" name="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule$1" />
+      <unit id="4052492221165305727" at="31,316,35,5" name="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule$1" />
       <unit id="7200199917722151577" at="22,0,55,0" name="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_Diagram_NonTypesystemRule" />
     </file>
   </root>

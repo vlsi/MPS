@@ -67,7 +67,7 @@ public class addHandler_Intention implements IntentionFactory {
       return "Add handler";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140365l, "handler"), SNodeFactoryOperations.createNewNode("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140365l, "handler"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140353l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler")), null));
     }
     public IntentionDescriptor getDescriptor() {
       return addHandler_Intention.this;

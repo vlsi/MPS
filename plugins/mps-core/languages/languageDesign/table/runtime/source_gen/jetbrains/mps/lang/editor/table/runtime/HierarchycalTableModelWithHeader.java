@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -58,7 +57,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   }
   @Override
   public void insertColumn(int columnNumber) {
-    Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), columnNumber);
+    Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), columnNumber);
     super.insertColumn(columnNumber);
   }
   private List<SNode> getHeaderColumns() {

@@ -32,7 +32,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 8517397753921951830l, "jetbrains.mps.console.base.structure.IActionHolder")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
+    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getInterfaceConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 8517397753921951830l, "jetbrains.mps.console.base.structure.IActionHolder")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -63,7 +63,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 8517397753921951830l, "jetbrains.mps.console.base.structure.IActionHolder"))), "virtual_execute_8517397753922085153", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
+      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 8517397753921951830l, "jetbrains.mps.console.base.structure.IActionHolder"))), "virtual_execute_8517397753922085153", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);

@@ -36,7 +36,7 @@ public class BaseEditorComponent_Behavior {
         }
       };
     }
-    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 5717188120689018936l, "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"))) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 5717188120689018936l, "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"))) {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {
@@ -44,7 +44,7 @@ public class BaseEditorComponent_Behavior {
         }
       };
     }
-    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 5717188120689019441l, "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind"))) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 5717188120689019441l, "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind"))) {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")))) {
         @Nullable
         public String getReferenceText(@NotNull SNode target) {

@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.HashSet;
 
 public class NullableAnalyzerRules {
@@ -41,7 +41,7 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new RuleWhileNotNull());
   }
   public void apply(SNode nodeToApply, Program program) {
-    for (SNode descendant : SNodeOperations.getNodeDescendants(((SNode) nodeToApply), null, false, new SConcept[]{})) {
+    for (SNode descendant : SNodeOperations.getNodeDescendants(((SNode) nodeToApply), null, false, new SAbstractConcept[]{})) {
       String key = descendant.getConcept().getQualifiedName();
       if (myApplicableMap.containsKey(key)) {
         for (DataFlowConstructor rule : myApplicableMap.get(key)) {

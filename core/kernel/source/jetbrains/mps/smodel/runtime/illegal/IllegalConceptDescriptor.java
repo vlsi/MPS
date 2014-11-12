@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +41,7 @@ import java.util.Set;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
   private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
+  private static final Set<SConceptId> ourReportedConcepts = new ConcurrentHashSet<SConceptId>();
 
   private String fqName;
   private SConceptId myConceptId;
@@ -61,8 +63,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
 
     String languageName = NameUtil.namespaceFromConceptFQName(fqName);
     SLanguageId languageId = conceptId == null ? null : conceptId.getLanguageId();
-    LOG.warn("IllegalConceptDescriptor created for concept " + (fqName == null ? "" : fqName) + (conceptId == null ? "" : " with id " + conceptId) +
-        ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) + " is built and compiled.");
+
+    String msg = "IllegalConceptDescriptor created for concept " + (fqName == null ? "" : fqName) + (conceptId == null ? "" : " with id " + conceptId) +
+        ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) +
+        " is built and compiled.";
+    if (conceptId == null) {
+      LOG.warn(msg);
+    } else if (!ourReportedConcepts.contains(conceptId)) {
+      ourReportedConcepts.add(conceptId);
+      LOG.warn(msg);
+    }
   }
 
   @Override
@@ -238,5 +248,15 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public List<SConceptId> getParentsIds() {
     return Collections.emptyList();
+  }
+
+  @Override
+  public boolean isAssignableTo(SConceptId conceptId) {
+    return false;
+  }
+
+  @Override
+  public Set<SConceptId> getAncestorsIds() {
+    return Collections.emptySet();
   }
 }

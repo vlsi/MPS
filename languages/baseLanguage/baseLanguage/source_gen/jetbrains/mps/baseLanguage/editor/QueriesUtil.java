@@ -33,36 +33,36 @@ public class QueriesUtil {
       }
     }).toListSequence();
     if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));
-      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224575136086l, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression")), null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression")), null));
     }
     return result;
   }
   public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject, SNode oldNode) {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")), null);
       return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, classifier, oldNode);
     }
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference")), null);
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), classifier);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")), null);
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), SNodeOperations.cast(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")));
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224575136086l, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression"))) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224575136086l, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression")), null);
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1224575136086l, 1224575174120l, "enumClass"), SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression"))) {
-      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression")), null);
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, 1224573974191l, "enumClass"), SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
       return newNode;
     }

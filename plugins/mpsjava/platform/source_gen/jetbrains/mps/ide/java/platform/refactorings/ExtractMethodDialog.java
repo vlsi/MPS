@@ -310,7 +310,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     final BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(myProject, myContext.getOperationContext(), model.value, "Choose class") {
       @Override
       protected boolean isAcceptable(SNode node) {
-        return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1222174328436l, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"));
+        return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1222174328436l, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"));
       }
     };
     dialog.show();
@@ -417,8 +417,8 @@ public class ExtractMethodDialog extends RefactoringDialog {
                 } else if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
                   myChooseContainerButton.setIcon(IconResourceBundle_ExtractMethodIcons.getInstance().getResource("INTERFACE"));
                 }
-                if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+                if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
                 }
 
               }

@@ -105,7 +105,7 @@ public class MpsTestsSuite extends Suite {
       public void run() {
         for (SModule module : Sequence.fromIterable(contextProject.getModules())) {
           for (SModel model : Sequence.fromIterable(module.getModels())) {
-            for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
+            for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
               result.add(new DelegatingRunner(builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
             }
           }

@@ -18,7 +18,7 @@ import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DynamicReference;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -71,7 +71,7 @@ public abstract class BaseLanguagesImportHelper {
   private void transformNodeToProperVariableReference(SNode node, SModel containerModel) {
     if (ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
       SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
-      if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
         SNode matchingVar = findVariable(reference);
         if (matchingVar != null) {
           SNodeOperations.replaceWithAnother(node, createVariableReference(matchingVar));
@@ -81,7 +81,7 @@ public abstract class BaseLanguagesImportHelper {
   }
   private void transformNode(SNode node, final SModel containerModel) {
     // try to resolve variables 
-    ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ListSequence.fromList(SNodeOperations.getChildren(it)).isEmpty();
       }
@@ -91,7 +91,7 @@ public abstract class BaseLanguagesImportHelper {
       }
     });
     // all links to subs -> to debugger stubs 
-    for (SNode d : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SConcept[]{}))) {
+    for (SNode d : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}))) {
       replaceStubReferences(d, containerModel);
     }
   }

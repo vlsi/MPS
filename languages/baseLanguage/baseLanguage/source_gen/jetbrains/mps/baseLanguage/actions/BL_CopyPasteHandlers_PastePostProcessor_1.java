@@ -25,7 +25,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
   }
   public void postProcesNode(SNode pastedNode) {
 
-    if (ListSequence.fromList(SNodeOperations.getNodeAncestors(pastedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)).where(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SNodeOperations.getNodeAncestors(pastedNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
       }

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.ArrayList;
 
 public class LambdaExpression_Behavior {
@@ -28,7 +28,7 @@ public class LambdaExpression_Behavior {
   public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
     SNode node = thisNode;
     node = SNodeOperations.getParent(node);
-    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")), "virtual_getVariables_8981808925914841576", new Object[]{})).contains(SNodeOperations.as(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
+    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")), "virtual_getVariables_8981808925914841576", new Object[]{})).contains(SNodeOperations.as(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
       node = SNodeOperations.getParent(node);
     }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) {
@@ -47,8 +47,8 @@ public class LambdaExpression_Behavior {
     return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode));
   }
   public static List<SNode> call_getOuterVariables_5249919352014727828(SNode thisNode) {
-    List<SNode> allVar = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SConcept[]{});
-    List<SNode> allRef = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"), false, new SConcept[]{});
+    List<SNode> allVar = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SAbstractConcept[]{});
+    List<SNode> allRef = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"), false, new SAbstractConcept[]{});
     List<SNode> result = new ArrayList<SNode>();
     for (SNode ref : allRef) {
       if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))))) {

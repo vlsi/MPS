@@ -80,7 +80,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.Composition"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", null);
+        SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 3195708693940803614l, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer")), null);
         SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         return result;
       }
@@ -104,7 +104,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.Composition"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", null);
+        SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 3195708693940803614l, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer")), null);
         SNodeOperations.insertPrevSiblingChild(_context.getSourceNode(), result);
         return result;
       }

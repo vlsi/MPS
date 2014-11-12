@@ -21,7 +21,7 @@
       <node id="3944198881074588720" at="29,24,30,38" concept="2" />
       <node id="5905179409467662078" at="30,38,31,99" concept="2" />
       <node id="3944198881077507970" at="33,50,34,79" concept="7" />
-      <node id="3944198881077846992" at="35,79,36,478" concept="7" />
+      <node id="3944198881077846992" at="35,79,36,486" concept="7" />
       <node id="3944198881077880974" at="39,43,40,131" concept="8" />
       <node id="3944198881077880985" at="42,21,43,67" concept="2" />
       <node id="3944198881077880990" at="43,67,44,16" concept="0" />
@@ -36,7 +36,7 @@
       <node id="3944198881080868096" at="56,0,59,0" concept="6" trace="getDependency#()Ljava/lang/Iterable;" />
       <node id="3944198881073119399" at="28,0,33,0" concept="1" trace="ModulePlugins#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
       <node id="3944198881077880967" at="37,66,45,9" concept="5" />
-      <node id="3944198881077867177" at="36,478,46,7" concept="4" />
+      <node id="3944198881077867177" at="36,486,46,7" concept="4" />
       <node id="3944198881077501110" at="34,79,47,5" concept="4" />
       <node id="3944198881073126700" at="33,0,56,0" concept="6" trace="collect#(Ljetbrains/mps/build/mps/util/MPSModulesClosure;)V" />
       <scope id="3944198881077880973" at="39,43,40,131" />
@@ -56,7 +56,7 @@
         <var name="initialProject" id="3944198881074588072" />
       </scope>
       <scope id="3944198881077867183" at="37,66,45,9" />
-      <scope id="3944198881077867177" at="36,478,46,7">
+      <scope id="3944198881077867177" at="36,486,46,7">
         <var name="plugin" id="3944198881077867179" />
       </scope>
       <scope id="3944198881077501116" at="35,79,46,7">

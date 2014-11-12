@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MarkStaticMethodCallAsThreadSafe_Intention implements IntentionFactory {
@@ -73,7 +75,7 @@ public class MarkStaticMethodCallAsThreadSafe_Intention implements IntentionFact
       return "Mark as Thread Safe";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", null));
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 2975785153735111398l, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), null));
     }
     public IntentionDescriptor getDescriptor() {
       return MarkStaticMethodCallAsThreadSafe_Intention.this;

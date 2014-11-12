@@ -23,7 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SetExportAnnotation_Intention implements IntentionFactory {
@@ -91,7 +90,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope")));
       if ((myParameter != null)) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null));
       }
     }
     public IntentionDescriptor getDescriptor() {

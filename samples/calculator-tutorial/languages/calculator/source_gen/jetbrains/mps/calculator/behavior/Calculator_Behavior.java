@@ -17,7 +17,7 @@ public class Calculator_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(2788808807702744790l, -8953487104835967071l), 1241362608529l, "jetbrains.mps.calculator.structure.InputField")) && ScopeUtils.comeFrom("outputField", thisNode, child)) {
-      return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.calculator.structure.Calculator", "inputField"));
+      return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(2788808807702744790l, -8953487104835967071l), 1241362555920l, 1241362671336l, "inputField")));
     }
     return ScopeUtils.lazyParentScope(thisNode, kind);
   }

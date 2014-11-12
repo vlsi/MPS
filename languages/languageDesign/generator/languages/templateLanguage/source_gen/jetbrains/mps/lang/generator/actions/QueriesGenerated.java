@@ -76,7 +76,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_8421689336187916452(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
   }
   public static void removeActionsByCondition_8421689336187917123(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();

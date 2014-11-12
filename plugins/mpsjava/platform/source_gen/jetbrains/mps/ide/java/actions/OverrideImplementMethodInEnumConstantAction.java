@@ -43,7 +43,7 @@ public class OverrideImplementMethodInEnumConstantAction {
     });
     final SNode contextMember = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true, false);
       }
     });
     final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {

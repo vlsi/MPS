@@ -48,7 +48,7 @@ public class ConceptEditorContextHints_hintKeymap extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, 5944657839000877563l, "hints"), "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, 5944657839000877563l, "hints"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839003601246l, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration")));
     }
     public String getKeyStroke() {
       return " letter or digit";

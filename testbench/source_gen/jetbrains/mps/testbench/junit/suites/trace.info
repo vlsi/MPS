@@ -62,7 +62,7 @@
       <node id="47041348242348564" at="104,14,105,178" concept="18" />
       <node id="47041348242348580" at="107,5,108,69" concept="12" />
       <node id="47041348242348581" at="110,128,111,133" concept="11" />
-      <node id="47041348242348611" at="116,259,117,243" concept="6" />
+      <node id="47041348242348611" at="116,268,117,243" concept="6" />
       <node id="47041348242348629" at="121,7,122,32" concept="12" />
       <node id="4152657027650595125" at="124,162,125,82" concept="11" />
       <node id="4152657027650595131" at="125,82,126,51" concept="11" />
@@ -139,7 +139,7 @@
       <scope id="8604242036479484655" at="98,11,99,130" />
       <scope id="47041348242348553" at="102,30,103,60" />
       <scope id="47041348242348563" at="104,14,105,178" />
-      <scope id="47041348242348610" at="116,259,117,243" />
+      <scope id="47041348242348610" at="116,268,117,243" />
       <scope id="4152657027650595139" at="128,62,129,152" />
       <scope id="4152657027650815254" at="140,65,141,36" />
       <scope id="4152657027650851277" at="150,67,151,60" />
@@ -409,7 +409,7 @@
         <var name="notFounded" id="4052780437579009241" />
         <var name="unExpected" id="4052780437579009239" />
       </scope>
-      <unit id="1594630302364453606" at="47,315,51,13" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
+      <unit id="1594630302364453606" at="47,323,51,13" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
       <unit id="1594630302364055148" at="40,52,57,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$1" />
       <unit id="3798371591902428451" at="112,45,133,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
       <unit id="4052780437579008133" at="31,0,136,0" name="jetbrains.mps.testbench.junit.suites.ScopesTest" />

@@ -68,9 +68,9 @@ public class IntroduceConstant_Intention implements IntentionFactory {
       return "Introduce Constant";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode constant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"));
+      SNode constant = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant")));
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"), false, false), constant);
-      SNode constantReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"));
+      SNode constantReference = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, "org.jetbrains.mps.samples.Constants.structure.ConstantReference")));
       SLinkOperations.setTarget(constantReference, MetaAdapterFactory.getReferenceLink(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, 3990190717072393830l, "original"), constant);
       SNodeOperations.replaceWithAnother(node, constantReference);
       SLinkOperations.setTarget(constant, MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, 2001769927721010657l, "initializer"), node);

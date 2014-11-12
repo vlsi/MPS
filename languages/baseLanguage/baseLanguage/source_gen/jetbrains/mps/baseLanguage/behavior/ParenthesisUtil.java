@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ParenthesisUtil {
   public ParenthesisUtil() {
@@ -117,9 +117,9 @@ public class ParenthesisUtil {
       IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(paren);
     } else {
       if (right) {
-        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2329139813954029793l, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")));
       } else {
-        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7251340091268481742l, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
       }
     }
   }
@@ -128,9 +128,9 @@ public class ParenthesisUtil {
     SNode nodesParens = (right ? AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) : AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
     if (nodesParens == null) {
       if (right) {
-        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2329139813954029793l, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen")));
       } else {
-        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7251340091268481742l, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
       }
     }
     while (!(IIncompleteParen_Behavior.call_isSingleParen_1071364028373849897(parens))) {
@@ -157,7 +157,7 @@ public class ParenthesisUtil {
     List<SNode> myParentPath = parentPath(myExpression, completingByRightParen);
     SNode topExp = ListSequence.fromList(myParentPath).findLast(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       }
     });
     if (topExp == null) {
@@ -177,7 +177,7 @@ public class ParenthesisUtil {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
       if (eq_a65dpo_a0b0q0p(candidateExpression, myExpression)) {
         // they are both the same node 
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
         SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), candidateExpression);
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen, parens);
         return parens;
@@ -192,12 +192,12 @@ public class ParenthesisUtil {
           }
         });
         assert firstCommonAncestor != null;
-        if (!(SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")))) {
+        if (!(SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")))) {
           continue;
         }
 
-        SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
-        SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+        SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+        SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
         List<SNode> candidateAncestors = SNodeOperations.getNodeAncestors(candidateExpression, null, true);
         List<SNode> myAncestors = SNodeOperations.getNodeAncestors(myExpression, null, true);
 
@@ -232,11 +232,11 @@ public class ParenthesisUtil {
     SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
 
     if (leftTurn != null || rightTurn != null) {
-      SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), rightTurn);
+      SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), rightTurn);
       clearIncompleteParens(candidateExpression, completingByRightParen, parens);
       return parens;
     } else {
-      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
       SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), firstCommonAncestor);
       clearIncompleteParens(candidateExpression, completingByRightParen, parens);
       return parens;
@@ -255,9 +255,9 @@ public class ParenthesisUtil {
 
     SNode current = expr;
     while (ListSequence.fromList(path).isNotEmpty()) {
-      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
+      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
         if (eq_a65dpo_a0a0a0e0r(ListSequence.fromList(path).last(), current)) {
-          SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+          SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
           if (left != null) {
             ListSequence.fromList(path).addElement(left);
             current = left;
@@ -266,7 +266,7 @@ public class ParenthesisUtil {
           }
         } else {
           ListSequence.fromList(result).addElement(current);
-          SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+          SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
           if (right != null) {
             ListSequence.fromList(path).addElement(right);
             current = right;
@@ -311,13 +311,13 @@ public class ParenthesisUtil {
     // These would be the nodes into which we come from the right child. 
     SNode rightAccumulator = buildAccumulator(firstCommonAncestor, rightTurn, false);
 
-    SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+    SNode parens = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), null);
     if (SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
       rebalanceTernaryOpAfterParenthing(SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, "jetbrains.mps.baseLanguage.structure.CastExpression")) || SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"))) {
-      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     }
 
     SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), firstCommonAncestor);
@@ -394,7 +394,7 @@ public class ParenthesisUtil {
       // Accumulate nodes on the path up from the left/right paren 
       accumulator = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}));
       SNodeOperations.detachNode(accumulator);
-      SNode current = SNodeOperations.cast(SNodeOperations.getParent(turn), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+      SNode current = SNodeOperations.cast(SNodeOperations.getParent(turn), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       SNode previous = turn;
       while (neq_a65dpo_a0f0b0bb(current, firstCommonAncestor)) {
         SNode sideExpression = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
@@ -409,7 +409,7 @@ public class ParenthesisUtil {
         } else {
           previous = current;
         }
-        current = SNodeOperations.cast(SNodeOperations.getParent(previous), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+        current = SNodeOperations.cast(SNodeOperations.getParent(previous), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       }
     } else {
       // Nothing to accumulate 
@@ -470,14 +470,14 @@ public class ParenthesisUtil {
   private static SNode findTurn(SNode leaf, SNode stopNode, boolean leftTurn) {
     SNode currentNode = SNodeOperations.getParent(leaf);
     SNode previous = leaf;
-    while (neq_a65dpo_a0a2a53(previous, stopNode) && SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
-      SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
-      SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+    while (neq_a65dpo_a0a2a53(previous, stopNode) && SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
+      SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+      SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
       if (leftTurn && eq_a65dpo_a0a2a2a53(rightSideExpression, previous)) {
-        return SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+        return SNodeOperations.cast(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       }
       if (!(leftTurn) && eq_a65dpo_a0a3a2a53(leftSideExpression, previous)) {
-        return SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+        return SNodeOperations.cast(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       }
 
       previous = currentNode;
@@ -496,7 +496,7 @@ public class ParenthesisUtil {
     ListSequence.fromList(path).addElement(leaf);
     List<SNode> leafAncestors = SNodeOperations.getNodeAncestors(leaf, null, true);
 
-    for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}); currentNode = SNodeOperations.getParent(currentNode)) {
+    for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(currentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")), "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}); currentNode = SNodeOperations.getParent(currentNode)) {
       ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
     }
     return path;
@@ -510,7 +510,7 @@ public class ParenthesisUtil {
     }
 
     List<SNode> candidates = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(candidates).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), true, new SConcept[]{})));
+    ListSequence.fromList(candidates).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), true, new SAbstractConcept[]{})));
     checkCandidateExpressionsPriorities(candidates);
   }
 

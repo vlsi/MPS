@@ -64,7 +64,7 @@ public class AddForStatementVar extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode variableDeclaration = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, false);
       SNode forStatement = SNodeOperations.cast(SNodeOperations.getParent(variableDeclaration), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement"));
-      ListSequence.fromList(SLinkOperations.getChildren(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1032195626824963089l, "additionalVar"))).insertElement(0, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null));
+      ListSequence.fromList(SLinkOperations.getChildren(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1032195626824963089l, "additionalVar"))).insertElement(0, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1830039279190439966l, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable")), null));
     }
     public String getKeyStroke() {
       return " ,";

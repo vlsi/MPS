@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -195,8 +194,8 @@ public class DefaultEditorBuilder {
     }
   }
   private void pushCollection() {
-    SNode collection = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-    SLinkOperations.setTarget(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null));
+    SNode collection = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, "jetbrains.mps.lang.editor.structure.CellModel_Collection")), null);
+    SLinkOperations.setTarget(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")), null));
     DequeSequence.fromDeque(collectionsStack).pushElement(collection);
   }
   private void popCollection() {
@@ -208,12 +207,12 @@ public class DefaultEditorBuilder {
     }
   }
   private void addLabel(String text) {
-    SNode nameCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
+    SNode nameCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389577006l, "jetbrains.mps.lang.editor.structure.CellModel_Constant")), null);
     SPropertyOperations.set(nameCell, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389577006l, 1073389577007l, "text"), text);
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDeque(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(nameCell);
   }
   private void setMatchingLabel(String matchingLabel) {
-    SNode style = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", null);
+    SNode style = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem")), null);
     SPropertyOperations.set(style, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1236262245656l, 1238091709220l, "labelName"), matchingLabel);
     setStyle(style);
   }
@@ -237,7 +236,7 @@ public class DefaultEditorBuilder {
   private void setBooleanStyle(SNode concept) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
     SNode cell = (ListSequence.fromList(SLinkOperations.getChildren(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).isEmpty() ? collection : ListSequence.fromList(SLinkOperations.getChildren(collection, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).last());
-    SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+    SNode classItem = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
     SPropertyOperations.set(classItem, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
     ListSequence.fromList(SLinkOperations.getChildren(cell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(classItem);
   }
@@ -247,33 +246,33 @@ public class DefaultEditorBuilder {
     ListSequence.fromList(SLinkOperations.getChildren(cell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(style);
   }
   private void addProperty(SNode property) {
-    SNode propertyCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+    SNode propertyCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389658414l, "jetbrains.mps.lang.editor.structure.CellModel_Property")), null);
     SLinkOperations.setTarget(propertyCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), property);
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDeque(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(propertyCell);
   }
   private void addRefNode(SNode link) {
-    SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
+    SNode linkCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, "jetbrains.mps.lang.editor.structure.CellModel_RefNode")), null);
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), link);
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDeque(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(linkCell);
   }
   private void addRefNodeList(SNode link, String separatorText) {
-    SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
+    SNode linkCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")), null);
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), link);
-    SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null));
+    SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237303669825l, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")), null));
     if (separatorText != null) {
       SPropertyOperations.set(linkCell, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524450557l, "separatorText"), separatorText);
     }
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDeque(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(linkCell);
   }
   private void addRefCell(SNode link) {
-    SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
+    SNode linkCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1088013125922l, "jetbrains.mps.lang.editor.structure.CellModel_RefCell")), null);
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), link);
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1088013125922l, 1088186146602l, "editorComponent"), createInlineEditorComponent(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDeque(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1073389446424l, "childCellModel"))).addElement(linkCell);
   }
   private SNode createInlineEditorComponent(SNode concept) {
-    SNode inline = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null);
-    SNode propertyCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+    SNode inline = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1088185857835l, "jetbrains.mps.lang.editor.structure.InlineEditorComponent")), null);
+    SNode propertyCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389658414l, "jetbrains.mps.lang.editor.structure.CellModel_Property")), null);
     SLinkOperations.setTarget(propertyCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), getNameProperty(concept));
     SLinkOperations.setTarget(inline, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"), propertyCell);
     return inline;

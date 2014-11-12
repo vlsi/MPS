@@ -1094,7 +1094,7 @@
       <node id="4307205004140167141" at="51,60,52,62" concept="6" />
       <node id="4307205004140167141" at="52,62,53,105" concept="2" />
       <node id="4307205004141752568" at="55,127,56,679" concept="7" />
-      <node id="4307205004140263012" at="58,121,59,436" concept="2" />
+      <node id="4307205004140263012" at="58,121,59,586" concept="2" />
       <node id="4307205004140167141" at="61,34,62,18" concept="7" />
       <node id="4307205004140167141" at="26,24,28,39" concept="0" />
       <node id="4307205004140167141" at="31,0,34,0" concept="1" trace="QueryExpression_KeyMap_Action0#()V" />
@@ -1114,7 +1114,7 @@
       <scope id="4307205004140167141" at="43,32,44,21" />
       <scope id="4307205004140167141" at="46,157,47,21" />
       <scope id="4307205004141751594" at="55,127,56,679" />
-      <scope id="4307205004140167196" at="58,121,59,436" />
+      <scope id="4307205004140167196" at="58,121,59,586" />
       <scope id="4307205004140167141" at="61,34,62,18" />
       <scope id="4307205004140167141" at="26,24,28,39" />
       <scope id="4307205004140167141" at="51,60,53,105">
@@ -1926,10 +1926,10 @@
       <node id="963101385307642090" at="22,0,23,0" concept="3" trace="myNode" />
       <node id="963101385307642090" at="23,52,24,25" concept="2" />
       <node id="963101385307642090" at="26,54,27,56" concept="2" />
-      <node id="963101385307663766" at="29,75,30,220" concept="6" />
-      <node id="963101385308010106" at="30,220,31,379" concept="2" />
-      <node id="963101385308074676" at="31,379,32,519" concept="2" />
-      <node id="963101385308310191" at="32,519,33,924" concept="2" />
+      <node id="963101385307663766" at="29,75,30,255" concept="6" />
+      <node id="963101385308010106" at="30,255,31,414" concept="2" />
+      <node id="963101385308074676" at="31,414,32,554" concept="2" />
+      <node id="963101385308310191" at="32,554,33,924" concept="2" />
       <node id="963101385307664028" at="33,924,34,58" concept="2" />
       <node id="963101385307642090" at="18,0,21,0" concept="9" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="963101385307642090" at="23,0,26,0" concept="1" trace="BLExpression_Actions_INSERT#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

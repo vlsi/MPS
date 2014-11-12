@@ -17,9 +17,9 @@ import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -46,7 +46,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode debuggerReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.DebuggerReference", null);
+                SNode debuggerReference = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")), null);
                 SPropertyOperations.set(debuggerReference, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779068753l, 1104094430779068757l, "debuggerName"), (item));
                 return debuggerReference;
               }
@@ -88,7 +88,7 @@ public class QueriesGenerated {
           for (final IBreakpointKind item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode createBreakpointOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", null);
+                SNode createBreakpointOperation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation")), null);
                 SPropertyOperations.set(createBreakpointOperation, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978475l, "kindName"), (item).getName());
                 SPropertyOperations.set(createBreakpointOperation, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978476l, "kindPresentation"), (item).getPresentation());
                 return createBreakpointOperation;
