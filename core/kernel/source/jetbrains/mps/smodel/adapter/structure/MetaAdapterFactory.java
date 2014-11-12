@@ -37,6 +37,9 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.UUID;
 
 public abstract class MetaAdapterFactory {
+  public static SLanguage getLanguage(SLanguageId id, String langName) {
+    return new SLanguageAdapterById(id, langName);
+  }
 
   public static SLanguage getLanguage(UUID lang, String langName) {
     return new SLanguageAdapterById(MetaIdFactory.langId(lang), langName);
