@@ -120,7 +120,8 @@ public class LibraryInitializer implements CoreComponent {
 
     if (toUnload.size() + toLoad.size() == 0) return;
 
-    LOG.info("Updating libraries");
+    if (toLoad.size() > 0) LOG.info("Loading " + toLoad.size() + " libraries");
+    if (toUnload.size() > 0) LOG.info("Unloading " + toUnload.size() + " libraries");
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
