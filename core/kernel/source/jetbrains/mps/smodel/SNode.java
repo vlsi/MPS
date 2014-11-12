@@ -1105,7 +1105,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    setRoleInParent(new SContainmentLinkAdapterByName(myConcept.getQualifiedName(), newRole));
+    setRoleInParent(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), newRole));
   }
 
   @Deprecated
@@ -1163,7 +1163,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChildBefore(new SContainmentLinkAdapterByName(myConcept.getQualifiedName(), role), child, anchor);
+    insertChildBefore(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role), child, anchor);
   }
 
   @Deprecated
@@ -1176,7 +1176,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    return getChildren(new SContainmentLinkAdapterByName(myConcept.getQualifiedName(), role));
+    return getChildren(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role));
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {
