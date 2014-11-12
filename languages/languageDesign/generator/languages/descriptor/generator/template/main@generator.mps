@@ -75,6 +75,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" />
@@ -2693,8 +2694,13 @@
                       <node concept="vg0i.1145552977093" id="7711149897139258033" role="vg0i.1164991038168.1164991057263" info="nn">
                         <node concept="vg0i.1212685548494" id="7711149897139261360" role="vg0i.1145552977093.1145553007750" info="nn">
                           <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~IllegalStateException%d&lt;init&gt;(java%dlang%dString,java%dlang%dThrowable)" resolveInfo="IllegalStateException" />
-                          <node concept="vg0i.1070475926800" id="7711149897139262165" role="vg0i.1204053956946.1068499141038" info="nn">
-                            <property role="vg0i.1070475926800.1070475926801" value="" />
+                          <node concept="vg0i.1068581242875" id="7031695475163532042" role="vg0i.1204053956946.1068499141038" info="nn">
+                            <node concept="vg0i.1068498886296" id="7031695475163537330" role="vg0i.1081773326031.1081773367579" info="nn">
+                              <reference role="vg0i.1068498886296.1068581517664" target="3829836699769392371" resolveInfo="modelName" />
+                            </node>
+                            <node concept="vg0i.1070475926800" id="7711149897139262165" role="vg0i.1081773326031.1081773367580" info="nn">
+                              <property role="vg0i.1070475926800.1070475926801" value="Class not found for model " />
+                            </node>
                           </node>
                           <node concept="vg0i.1068498886296" id="7711149897139264188" role="vg0i.1204053956946.1068499141038" info="nn">
                             <reference role="vg0i.1068498886296.1068581517664" target="7711149897139223991" resolveInfo="e" />
@@ -2712,10 +2718,20 @@
                 </node>
               </node>
             </node>
-            <node concept="vg0i.1073239437375" id="1224037546565490205" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1070534058343" id="1224037546565491121" role="vg0i.1081773326031.1081773367579" info="nn" />
-              <node concept="vg0i.1068498886296" id="1224037546565489261" role="vg0i.1081773326031.1081773367580" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="1224037546565401082" resolveInfo="module" />
+            <node concept="vg0i.1080120340718" id="7031695475163577873" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1197027756228" id="7031695475163579801" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1068498886296" id="7031695475163579730" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1224037546565401082" resolveInfo="module" />
+                </node>
+                <node concept="vg0i.1202948039474" id="7031695475163580716" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="42ru.~ReloadableModule%dwillLoad()%cboolean" resolveInfo="willLoad" />
+                </node>
+              </node>
+              <node concept="vg0i.1073239437375" id="1224037546565490205" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="vg0i.1068498886296" id="1224037546565489261" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1224037546565401082" resolveInfo="module" />
+                </node>
+                <node concept="vg0i.1070534058343" id="1224037546565491121" role="vg0i.1081773326031.1081773367579" info="nn" />
               </node>
             </node>
           </node>

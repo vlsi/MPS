@@ -28,6 +28,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.module.ReloadableModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -113,23 +114,24 @@ public class FindUtils {
       String modelName = NameUtil.namespaceFromLongName(className);
       List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
 
-      Class c = null;
+      Class aClass = null;
       for (SModel model : models) {
         SModule module = model.getModule();
-        if (ClassLoaderManager.getInstance().canLoad(module)) {
-          c = ClassLoaderManager.getInstance().getOwnClass(module, className);
-          if (c != null) break;
+        if (module instanceof ReloadableModule) {
+          ReloadableModule module1 = (ReloadableModule) module;
+          if (!module1.willLoad()) continue;
+          aClass = module1.getOwnClass(className);
+          if (aClass != null) break;
         }
       }
 
-      if (c == null) {
+      if (aClass == null) {
         LOG.error("Class " + className + " not found");
         return null;
       }
 
-      GeneratedFinder finder = (GeneratedFinder) c.newInstance();
-      return finder;
-    } catch (Throwable t) {
+      return (GeneratedFinder) aClass.newInstance();
+    } catch (Exception t) {
       LOG.error("Error instantiating finder \"" + className + "\". Returning empty results.  Message:" + t.getMessage(), t);
       return null;
     }

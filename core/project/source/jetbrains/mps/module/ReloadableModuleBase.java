@@ -25,11 +25,11 @@ import org.jetbrains.annotations.Nullable;
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
 
-  public ReloadableModuleBase(IFile file) {
+  protected ReloadableModuleBase(IFile file) {
     super(file);
   }
 
-  public ReloadableModuleBase() {
+  protected ReloadableModuleBase() {
   }
 
   @Nullable

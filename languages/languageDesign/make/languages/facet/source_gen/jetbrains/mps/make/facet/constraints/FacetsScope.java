@@ -5,12 +5,14 @@ package jetbrains.mps.make.facet.constraints;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Language;
@@ -29,12 +31,28 @@ public class FacetsScope extends SimpleScope {
   public FacetsScope(SNode contextNode) {
     super(getAvailableFacets(contextNode));
   }
+
+
+  /**
+   * TODO reorganize facets in the project: we must not look at SolutionKind here
+   * probably it makes sense to declare all facets only in languages
+   */
+  private static boolean hackCondition(SModule module) {
+    if (module instanceof ReloadableModule) {
+      if (!((module instanceof Solution))) {
+        return true;
+      }
+      return ((Solution) module).getKind() != SolutionKind.NONE;
+    }
+    return false;
+  }
+
   public static Iterable<SNode> getAvailableFacets(SNode contextNode) {
     SModule contextModule = contextNode.getModel().getModule();
 
     Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
     for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
-      if (module instanceof ReloadableModule) {
+      if (hackCondition(module)) {
         SetSequence.fromSet(contextModules).addElement(module);
       }
     }
@@ -72,6 +90,7 @@ public class FacetsScope extends SimpleScope {
 
     return facets;
   }
+
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {

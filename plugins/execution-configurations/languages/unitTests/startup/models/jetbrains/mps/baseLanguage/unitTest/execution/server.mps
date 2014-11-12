@@ -47,6 +47,7 @@
     <model ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runners.model(MPS.Workbench/org.junit.runners.model@java_stub)" name="org.junit.runners.model@java_stub" />
     <model ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.internal(MPS.Workbench/org.junit.internal@java_stub)" name="org.junit.internal@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" name="org.apache.log4j@java_stub" />
+    <model ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" name="jetbrains.mps.module@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
@@ -154,7 +155,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239709250944" name="jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639" name="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="df345b11-b8c7-4213-ac66-48d2a9b75d88/1585405235656310154" name="jetbrains.mps.baseLanguageInternal.structure.ConstantValue" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" />
@@ -324,6 +324,7 @@
     <import index="odqr" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.runners.model(MPS.Workbench/org.junit.runners.model@java_stub)" />
     <import index="d58o" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#org.junit.internal(MPS.Workbench/org.junit.internal@java_stub)" />
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" implicit="true" />
@@ -3730,25 +3731,57 @@
             <node concept="vg0i.1068580123136" id="1873256735685112294" role="vg0i.1068580123159.1068580123161" info="sn">
               <node concept="vg0i.1068581242864" id="6796535740154100354" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1068581242863" id="6796535740154100355" role="vg0i.1068581242864.1068581242865" info="nr">
-                  <property role="vg0i.1068431474542.1176718929932" value="true" />
+                  <property role="vg0i.1068431474542.1176718929932" value="false" />
                   <property role="asn4.1169194658468.1169194664001" value="aClass" />
                   <node concept="vg0i.1107535904670" id="6796535740154100356" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                     <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Class" resolveInfo="Class" />
                     <node concept="vg0i.1171903607971" id="6796535740154100357" role="vg0i.1107535904670.1109201940907" info="in" />
                   </node>
-                  <node concept="vg0i.1197027756228" id="6831525575620341985" role="vg0i.1068431474542.1068431790190" info="nn">
-                    <node concept="vg0i.1081236700937" id="6831525575620341351" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolveInfo="getInstance" />
-                      <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+                </node>
+              </node>
+              <node concept="vg0i.1164879751025" id="6617743623400461284" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="6617743623400461285" role="vg0i.1164879751025.1164879758292" info="sn">
+                  <node concept="vg0i.1068580123155" id="6617743623400462417" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068498886294" id="6617743623400462419" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1197027756228" id="6617743623400459124" role="vg0i.1215693861676.1068498886297" info="nn">
+                        <node concept="vg0i.1079359253375" id="6617743623400457637" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <node concept="vg0i.1070534934090" id="6617743623400457638" role="vg0i.1079359253375.1079359253376" info="nn">
+                            <node concept="vg0i.1068498886296" id="6617743623400457636" role="vg0i.1070534934090.1070534934092" info="nn">
+                              <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100339" resolveInfo="module" />
+                            </node>
+                            <node concept="vg0i.1107535904670" id="6617743623400458734" role="vg0i.1070534934090.1070534934091" info="in">
+                              <reference role="vg0i.1107535904670.1107535924139" target="42ru.~ReloadableModule" resolveInfo="ReloadableModule" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="vg0i.1202948039474" id="6617743623400460178" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="42ru.~ReloadableModule%dgetOwnClass(java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getOwnClass" />
+                          <node concept="vg0i.1068498886296" id="6617743623400460723" role="vg0i.1204053956946.1068499141038" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100337" resolveInfo="fqName" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="vg0i.1068498886296" id="6617743623400462423" role="vg0i.1215693861676.1068498886295" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100355" resolveInfo="aClass" />
+                      </node>
                     </node>
-                    <node concept="vg0i.1202948039474" id="6831525575620343354" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetOwnClass(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getOwnClass" />
-                      <node concept="vg0i.1068498886296" id="6831525575620349769" role="vg0i.1204053956946.1068499141038" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100339" resolveInfo="module" />
+                  </node>
+                </node>
+                <node concept="vg0i.1164903280175" id="6617743623400461280" role="vg0i.1164879751025.1164903496223" info="nn">
+                  <node concept="vg0i.1068580123136" id="6617743623400461281" role="vg0i.1164903280175.1164903359218" info="sn">
+                    <node concept="vg0i.1068580123155" id="6617743623400465347" role="vg0i.1068580123136.1068581517665" info="nn">
+                      <node concept="vg0i.1068498886294" id="6617743623400465711" role="vg0i.1068580123155.1068580123156" info="nn">
+                        <node concept="vg0i.1070534058343" id="6617743623400465755" role="vg0i.1215693861676.1068498886297" info="nn" />
+                        <node concept="vg0i.1068498886296" id="6617743623400465346" role="vg0i.1215693861676.1068498886295" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100355" resolveInfo="aClass" />
+                        </node>
                       </node>
-                      <node concept="vg0i.1068498886296" id="6831525575620343932" role="vg0i.1204053956946.1068499141038" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100337" resolveInfo="fqName" />
-                      </node>
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068581242863" id="6617743623400461282" role="vg0i.1164903280175.1164903359217" info="nr">
+                    <property role="asn4.1169194658468.1169194664001" value="ignored" />
+                    <node concept="vg0i.1107535904670" id="6617743623400461283" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~ClassNotFoundException" resolveInfo="ClassNotFoundException" />
                     </node>
                   </node>
                 </node>
@@ -3759,14 +3792,27 @@
                 </node>
               </node>
             </node>
-            <node concept="vg0i.1197027756228" id="1873256735685112899" role="vg0i.1068580123159.1068580123160" info="nn">
-              <node concept="vg0i.1081236700937" id="1873256735685112703" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolveInfo="getInstance" />
-                <reference role="vg0i.1081236700937.1144433194310" target="wqua.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+            <node concept="vg0i.1080120340718" id="7031695475162955515" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1197027756228" id="7031695475162957313" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1079359253375" id="7031695475162956589" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="vg0i.1070534934090" id="7031695475162956590" role="vg0i.1079359253375.1079359253376" info="nn">
+                    <node concept="vg0i.1068498886296" id="7031695475162956588" role="vg0i.1070534934090.1070534934092" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100339" resolveInfo="module" />
+                    </node>
+                    <node concept="vg0i.1107535904670" id="7031695475162956931" role="vg0i.1070534934090.1070534934091" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="42ru.~ReloadableModule" resolveInfo="ReloadableModule" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="vg0i.1202948039474" id="7031695475162958099" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="42ru.~ReloadableModule%dwillLoad()%cboolean" resolveInfo="willLoad" />
+                </node>
               </node>
-              <node concept="vg0i.1202948039474" id="1873256735685113369" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="wqua.~ClassLoaderManager%dcanLoad(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cboolean" resolveInfo="canLoad" />
-                <node concept="vg0i.1068498886296" id="1873256735685113492" role="vg0i.1204053956946.1068499141038" info="nn">
+              <node concept="vg0i.1081256982272" id="6617743623400451172" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="vg0i.1107535904670" id="6617743623400451542" role="vg0i.1081256982272.1081256993305" info="in">
+                  <reference role="vg0i.1107535904670.1107535924139" target="42ru.~ReloadableModule" resolveInfo="ReloadableModule" />
+                </node>
+                <node concept="vg0i.1068498886296" id="6617743623400449463" role="vg0i.1081256982272.1081256993304" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="6796535740154100339" resolveInfo="module" />
                 </node>
               </node>

@@ -26,6 +26,7 @@ import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
@@ -141,9 +142,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
         for (Pair<SModule, List<SModel>> moduleListPair : input) {
           SModule module = moduleListPair.o1;
-          if (ClassLoaderManager.getInstance().canLoad(module)) {
-            modulesToReload.add(module);
-          }
+          if (module instanceof ReloadableModule) modulesToReload.add(module);
           boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));
           monitor.advance(0);
           compiledSuccessfully = compiledSuccessfully && compilationResult;

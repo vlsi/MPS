@@ -13,7 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -92,7 +93,11 @@ public class QueriesGenerated {
     if (model == null) {
       return false;
     }
-    return ClassLoaderManager.getInstance().canLoad(model.getModule());
+    SModule module = model.getModule();
+    if (module instanceof ReloadableModule) {
+      return ((ReloadableModule) module).willLoad();
+    }
+    return false;
   }
   public static boolean ifMacro_Condition_980633948647704680(final IfMacroContext _context) {
     return false;
@@ -180,7 +185,8 @@ public class QueriesGenerated {
     if (model == null) {
       return false;
     }
-    return ClassLoaderManager.getInstance().canLoad(model.getModule());
+    SModule module = model.getModule();
+    return module instanceof ReloadableModule;
   }
   public static SNode sourceNodeQuery_2264311582634171618(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, 2264311582634140419l, "root")), MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140403l, "type"));
