@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter;
 
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -63,10 +62,13 @@ public class MetaAdapterByDeclaration {
     if (abstractConcept instanceof SConcept) {
       return (SConcept) abstractConcept;
     }
-    if (abstractConcept instanceof SInterfaceConcept) {
-      return new SInterfaceConceptDefaultAdapter((SInterfaceConcept) abstractConcept);
+    if (abstractConcept instanceof SInterfaceConceptAdapterById) {
+      return new SConceptAdapterById(((SInterfaceConceptAdapterById) abstractConcept).getId(), abstractConcept.getQualifiedName());
     }
-    return null;
+    if (abstractConcept instanceof SInterfaceConceptAdapterByName) {
+      return new SConceptAdapterByName(abstractConcept.getQualifiedName());
+    }
+    throw new IllegalArgumentException();
   }
 
   public static SContainmentLink getContainmentLink(SNode c) {

@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -29,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept {
+public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept, SAbstractConceptAdapterById {
   protected SConceptId myConceptId;
 
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {

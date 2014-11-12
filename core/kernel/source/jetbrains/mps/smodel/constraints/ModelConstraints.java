@@ -16,7 +16,13 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -138,7 +144,7 @@ public class ModelConstraints {
 
   @NotNull
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
-    SNode concept = SModelUtil.findConceptDeclaration(referenceNode.getConcept().getQualifiedName());
+    SNode concept = referenceNode.getConcept().getDeclarationNode();
     SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept, role);
     if (scopeReference == null) {
       return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getQualifiedName() + "'");
@@ -175,5 +181,11 @@ public class ModelConstraints {
   public static String getDefaultConcreteConceptFqName(String fqName) {
     return ConceptRegistry.getInstance().getConceptDescriptor(
         ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
+  }
+
+  public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {
+    ConceptDescriptor descriptor =
+        ConceptRegistry.getInstance().getConceptDescriptor(ConceptRegistryUtil.getConstraintsDescriptor(concept).getDefaultConcreteConceptId());
+    return MetaAdapterByDeclaration.asInstanceConcept(MetaAdapterFactory.getAbstractConcept(descriptor));
   }
 }

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
@@ -81,8 +81,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   private PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
     ConstraintsDescriptor constraintsDescriptor;
-    if (node.getConcept() instanceof SConceptAdapterById) {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    if (node.getConcept() instanceof SAbstractConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SAbstractConceptAdapterById) node.getConcept()).getId());
     } else {
       constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
     }
@@ -98,8 +98,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   private ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
     ConstraintsDescriptor constraintsDescriptor;
-    if (node.getConcept() instanceof SConceptAdapterById) {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    if (node.getConcept() instanceof SAbstractConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SAbstractConceptAdapterById) node.getConcept()).getId());
     } else {
       constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
     }

@@ -16,17 +16,14 @@
 package jetbrains.mps.smodel.adapter.structure;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -60,5 +57,13 @@ public abstract class MetaAdapterFactory {
 
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
     return new SContainmentLinkAdapterById(MetaIdFactory.linkId(lang, concept, link), linkName);
+  }
+
+  public static SAbstractConcept getAbstractConcept(ConceptDescriptor descriptor) {
+    if (descriptor.isInterfaceConcept()) {
+      return new SInterfaceConceptAdapterById(descriptor.getId(), descriptor.getConceptFqName());
+    } else {
+      return new SConceptAdapterById(descriptor.getId(), descriptor.getConceptFqName());
+    }
   }
 }
