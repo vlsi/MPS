@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -66,8 +65,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid,
-          d.getRefDescriptor(rid).getName()));
+      result.add(MetaAdapterFactory.getReferenceLink(rid, d.getRefDescriptor(rid).getName()));
     }
     return result;
   }
@@ -99,7 +97,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
       if (r == null) return null;
 
       SReferenceLinkId linkId = r.getId();
-      return new SReferenceLinkAdapterById(linkId, role);
+      return MetaAdapterFactory.getReferenceLink(linkId, role);
     }
   }
 

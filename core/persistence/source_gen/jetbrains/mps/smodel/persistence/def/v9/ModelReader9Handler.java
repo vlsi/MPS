@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.Pair;
@@ -708,7 +707,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String>) value;
       SNodePointer target = child._1();
-      SReferenceLink link = new SReferenceLinkAdapterById(child._0(), DebugRegistry.getInstance().getRefName(child._0()));
+      String name = DebugRegistry.getInstance().getRefName(child._0());
+      SReferenceLink link = MetaAdapterFactory.getReferenceLink(child._0(), name);
       StaticReference ref = new StaticReference(link, result._0(), target.getModelReference(), target.getNodeId(), child._3());
       result._0().setReference(link, ref);
     }
