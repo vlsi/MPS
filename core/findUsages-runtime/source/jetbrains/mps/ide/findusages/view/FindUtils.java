@@ -120,7 +120,11 @@ public class FindUtils {
         if (module instanceof ReloadableModule) {
           ReloadableModule module1 = (ReloadableModule) module;
           if (!module1.willLoad()) continue;
-          aClass = module1.getOwnClass(className);
+          try {
+            aClass = module1.getOwnClass(className);
+          } catch (ClassNotFoundException ignored) {
+            aClass = null;
+          }
           if (aClass != null) break;
         }
       }
