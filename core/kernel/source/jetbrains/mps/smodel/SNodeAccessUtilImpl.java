@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
@@ -55,7 +56,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return hasPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), name));
+    return hasPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
   }
 
   @Override
@@ -114,7 +115,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return getPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), name));
+    return getPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
   }
 
   @Override
@@ -147,7 +148,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
-    setPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), propertyName), propertyValue);
+    setPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), propertyName), propertyValue);
   }
 
 

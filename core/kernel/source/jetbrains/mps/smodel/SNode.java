@@ -1111,19 +1111,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public final boolean hasProperty(String propertyName) {
-    return hasProperty(new SPropertyAdapterByName(myConcept.getQualifiedName(), propertyName));
+    return hasProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    return getProperty(new SPropertyAdapterByName(myConcept.getQualifiedName(), propertyName));
+    return getProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
-    setProperty(new SPropertyAdapterByName(myConcept.getQualifiedName(), propertyName), propertyValue);
+    setProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName), propertyValue);
   }
 
   @Deprecated
