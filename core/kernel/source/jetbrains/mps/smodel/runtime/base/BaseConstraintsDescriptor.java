@@ -67,7 +67,9 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     Map<String, PropertyConstraintsDescriptor> notDefaultProperties = getNotDefaultProperties();
     Map<SPropertyId, PropertyConstraintsDescriptor> result = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
     for (Entry<String, PropertyConstraintsDescriptor> entry : notDefaultProperties.entrySet()) {
-      result.put(new SPropertyAdapterByName(ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getConceptFqName(), entry.getKey()).getId(), entry.getValue());
+      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConcept);
+      PropertyDescriptor pd = concept.getPropertyDescriptor(entry.getKey());
+      result.put(pd.getId(), entry.getValue());
     }
     return result;
   }
