@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -61,12 +62,24 @@ public abstract class MetaAdapterFactory {
     return new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
+  public static SProperty getProperty(SPropertyId id, String propName) {
+    return new SPropertyAdapterById(id, propName);
+  }
+
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
     return new SPropertyAdapterById(MetaIdFactory.propId(lang, concept, prop), propName);
   }
 
+  public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
+    return new SReferenceLinkAdapterById(id, refName);
+  }
+
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
     return new SReferenceLinkAdapterById(MetaIdFactory.refId(lang, concept, ref), refName);
+  }
+
+  public static SContainmentLink getContainmentLink(SContainmentLinkId linkId, String linkName) {
+    return new SContainmentLinkAdapterById(linkId, linkName);
   }
 
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
