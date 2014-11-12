@@ -79,7 +79,7 @@ public class MetaAdapterByDeclaration {
   }
 
   public static SProperty getProperty(SNode c) {
-    return new SPropertyAdapterById(MetaIdByDeclaration.getPropId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+    return MetaAdapterFactory.getProperty(MetaIdByDeclaration.getPropId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
   }
 
 }

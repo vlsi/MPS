@@ -122,7 +122,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
     SPropertyId pid = d.getId();
-    return new SPropertyAdapterById(pid, name);
+    return MetaAdapterFactory.getProperty(pid, name);
   }
 
   @Override
@@ -132,8 +132,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(pid,
-          d.getPropertyDescriptor(pid).getName()));
+      result.add(MetaAdapterFactory.getProperty(pid,d.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }

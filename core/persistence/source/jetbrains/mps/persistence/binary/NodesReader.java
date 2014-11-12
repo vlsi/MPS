@@ -177,7 +177,7 @@ public class NodesReader {
       SPropertyId prop = SPropertyId.deserialize(is.readString());
       String propName = is.readString();
       String value = is.readString();
-      node.setProperty(new SPropertyAdapterById(prop, propName), InternUtil.intern(value));
+      node.setProperty(MetaAdapterFactory.getProperty(prop, propName), InternUtil.intern(value));
     }
   }
 
