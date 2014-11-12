@@ -1309,6 +1309,28 @@
         <property role="asn4.1169194658468.1169194664001" value="getOpeningText" />
         <reference role="am4u.1225194472830.1225194472831" target="1220339714057" resolveInfo="getOpeningText" />
         <node concept="vg0i.1068580123136" id="1220340017253" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="3668177263706369873" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="3668177263706369874" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="3668177263706369875" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070475926800" id="3668177263706369876" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <property role="vg0i.1070475926800.1070475926801" value="(/" />
+                </node>
+              </node>
+            </node>
+            <node concept="vg0i.1197027756228" id="3668177263706369877" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1197027756228" id="3668177263706369878" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="am4u.1225194691553" id="3668177263706369879" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="4ia1.1138056143562" id="3668177263706369880" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056143562.1138056516764" target="tpc2.1140524464360" />
+                </node>
+              </node>
+              <node concept="4ia1.1139621453865" id="3668177263706369881" role="vg0i.1197027756228.1197027833540" info="nn">
+                <node concept="4ia1.1177026924588" id="3668177263706369882" role="4ia1.1139621453865.1177027386292" info="nn">
+                  <reference role="4ia1.1177026924588.1177026940964" target="tpc2.1106270571710" resolveInfo="CellLayout_Vertical" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123159" id="1237394379051" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068580123136" id="1237394379052" role="vg0i.1068580123159.1068580123161" info="sn">
               <node concept="vg0i.1068581242878" id="1237394393850" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -1344,6 +1366,28 @@
         <property role="asn4.1169194658468.1169194664001" value="getClosingText" />
         <reference role="am4u.1225194472830.1225194472831" target="1220339738643" resolveInfo="getClosingText" />
         <node concept="vg0i.1068580123136" id="1220340023200" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123159" id="3668177263706342579" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="3668177263706342582" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068581242878" id="3668177263706354173" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1070475926800" id="3668177263706354189" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <property role="vg0i.1070475926800.1070475926801" value="/)" />
+                </node>
+              </node>
+            </node>
+            <node concept="vg0i.1197027756228" id="3668177263706352587" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1197027756228" id="3668177263706347824" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="am4u.1225194691553" id="3668177263706342799" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="4ia1.1138056143562" id="3668177263706350887" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056143562.1138056516764" target="tpc2.1140524464360" />
+                </node>
+              </node>
+              <node concept="4ia1.1139621453865" id="3668177263706353631" role="vg0i.1197027756228.1197027833540" info="nn">
+                <node concept="4ia1.1177026924588" id="3668177263706353872" role="4ia1.1139621453865.1177027386292" info="nn">
+                  <reference role="4ia1.1177026924588.1177026940964" target="tpc2.1106270571710" resolveInfo="CellLayout_Vertical" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123159" id="1237394398604" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068580123136" id="1237394398605" role="vg0i.1068580123159.1068580123161" info="sn">
               <node concept="vg0i.1068581242878" id="1237394398606" role="vg0i.1068580123136.1068581517665" info="nn">
