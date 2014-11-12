@@ -2257,7 +2257,7 @@
                                     </node>
                                     <node concept="vg0i.1068580123155" id="4700561302084890311" role="vg0i.1068580123136.1068581517665" info="nn">
                                       <node concept="vg0i.7812454656619025412" id="4700561302084890310" role="vg0i.1068580123155.1068580123156" info="nn">
-                                        <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
+                                        <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
                                       </node>
                                     </node>
                                     <node concept="vg0i.1068580123155" id="4700561302084896136" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -5532,7 +5532,7 @@
               </node>
               <node concept="vg0i.1068580123155" id="1755573558918326170" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.7812454656619025412" id="1755573558918326171" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
                 </node>
               </node>
             </node>
@@ -6226,7 +6226,7 @@
                           </node>
                           <node concept="vg0i.1068580123155" id="8082246476505708410" role="vg0i.1068580123136.1068581517665" info="nn">
                             <node concept="vg0i.7812454656619025412" id="8082246476505708409" role="vg0i.1068580123155.1068580123156" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
+                              <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
                             </node>
                           </node>
                         </node>
@@ -7418,7 +7418,7 @@
               </node>
               <node concept="vg0i.1068580123155" id="5374841768510722062" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.7812454656619025412" id="5374841768510722061" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Basic%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="jsgz.~EditorCell_Collection%drequestRelayout()%cvoid" resolveInfo="requestRelayout" />
                 </node>
               </node>
             </node>
