@@ -43,7 +43,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     SConceptId superConcept = d.getSuperConceptId();
     if (superConcept == null) return null;
 
-    return new SConceptAdapterById(superConcept, d.getSuperConcept());
+    return MetaAdapterFactory.getConcept(superConcept, d.getSuperConcept());
   }
 
   @Override
@@ -54,7 +54,8 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapterById(id, ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName()));
+      String name = ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName();
+      res.add(MetaAdapterFactory.getInterfaceConcept(id, name));
     }
     return res;
   }
