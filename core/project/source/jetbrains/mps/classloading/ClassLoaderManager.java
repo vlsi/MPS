@@ -373,7 +373,8 @@ public class ClassLoaderManager implements CoreComponent {
       }
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
-      LOG.info("Reloading " + modulesToReload.size() + " modules");
+      if (modulesToReload.size() == 1) LOG.info("Reloading module " + modulesToReload.toArray()[0]);
+      else LOG.info("Reloading " + modulesToReload.size() + " module(s)");
 
       refresh();
       myModulesWatcher.onModulesReloaded(modulesToReload);
@@ -381,7 +382,7 @@ public class ClassLoaderManager implements CoreComponent {
       Collection<? extends ReloadableModule> unloadedModules = doUnloadModules(moduleRefs, monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
       Collection<ReloadableModule> loadedModules = new LinkedHashSet(preLoadModules(modulesToReload, monitor.subTask(1)));
-      LOG.info("Reloaded " + loadedModules.size() + " modules");
+      LOG.info("Reloaded " + loadedModules.size() + " module(s)");
 
       return loadedModules;
     } finally {
