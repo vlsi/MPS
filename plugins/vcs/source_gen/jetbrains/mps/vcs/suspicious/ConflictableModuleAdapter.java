@@ -23,6 +23,9 @@ public class ConflictableModuleAdapter extends Conflictable {
   public IFile getFile() {
     return myModule.getDescriptorFile();
   }
+  public SModule getModule() {
+    return myModule;
+  }
   @Override
   public void reloadFromDisk() {
     SModuleOperations.reloadFromDisk(myModule);

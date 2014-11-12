@@ -49,6 +49,7 @@
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.IdeaFileSystemProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

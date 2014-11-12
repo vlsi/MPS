@@ -204,7 +204,8 @@ public class SModuleOperations {
   }
 
   /**
-   * Reads module from file and reloads it
+   * Reads module from file
+   * Note: it does not concern class loading issues for this module
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
@@ -213,9 +214,6 @@ public class SModuleOperations {
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
       module.setModuleDescriptor(descriptor);
-      if (module instanceof ReloadableModule) {
-        ((ReloadableModule) module).reload();
-      }
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

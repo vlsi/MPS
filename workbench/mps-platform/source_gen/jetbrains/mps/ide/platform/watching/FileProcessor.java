@@ -14,6 +14,7 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -35,7 +36,7 @@ public class FileProcessor extends ReloadParticipant {
   }
   @Override
   public void update(ProgressMonitor monitor) {
-    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
+    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 2);
     long updateStartTime = System.currentTimeMillis();
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
@@ -61,11 +62,13 @@ public class FileProcessor extends ReloadParticipant {
         data.isNotified = true;
       }
       printStat("post-notify", postNotifyBeginTime);
+      ClassLoaderManager.getInstance().reloadAll(monitor.subTask(1));
     } finally {
       printStat("update", updateStartTime);
       monitor.done();
     }
   }
+
   private void notify(FileSystemListener listener, FileProcessor.ListenerData source) {
     FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
     if (data == null) {
@@ -79,6 +82,7 @@ public class FileProcessor extends ReloadParticipant {
     data.changed.addAll(source.changed);
     data.removed.addAll(source.removed);
   }
+
   private Iterable<FileSystemListener> sortedListeners() {
     Set<FileSystemListener> result = new LinkedHashSet<FileSystemListener>(MapSequence.fromMap(dataMap).count());
     for (FileSystemListener l : SetSequence.fromSet(MapSequence.fromMap(dataMap).keySet())) {
@@ -86,6 +90,7 @@ public class FileProcessor extends ReloadParticipant {
     }
     return result;
   }
+
   private void visit(FileSystemListener listener, Set<FileSystemListener> result) {
     if (result.contains(listener)) {
       return;
@@ -108,9 +113,11 @@ public class FileProcessor extends ReloadParticipant {
       result.add(listener);
     }
   }
+
   protected boolean accepts(VirtualFile file) {
     return true;
   }
+
   protected void processDelete(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -120,6 +127,7 @@ public class FileProcessor extends ReloadParticipant {
       }
     });
   }
+
   protected void processCreate(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -129,6 +137,7 @@ public class FileProcessor extends ReloadParticipant {
       }
     });
   }
+
   protected void processContentChanged(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -138,10 +147,12 @@ public class FileProcessor extends ReloadParticipant {
       }
     });
   }
+
   @Override
   public boolean isEmpty() {
     return MapSequence.fromMap(dataMap).isEmpty();
   }
+
   public Iterable<FileProcessor.ListenerData> get(String path) {
     return Sequence.fromIterable(listenersContainer.listeners(path)).select(new ISelector<FileSystemListener, FileProcessor.ListenerData>() {
       public FileProcessor.ListenerData select(FileSystemListener it) {
@@ -154,6 +165,7 @@ public class FileProcessor extends ReloadParticipant {
       }
     });
   }
+
   private void printStat(String name, long beginTime) {
     // todo: ideal for AOP in MPS! 
     if (InternalFlag.isInternalMode()) {
@@ -162,6 +174,7 @@ public class FileProcessor extends ReloadParticipant {
       }
     }
   }
+
   private class ListenerData implements FileSystemListener.FileSystemEvent {
     private Set<IFile> added = new HashSet<IFile>();
     private Set<IFile> removed = new HashSet<IFile>();
