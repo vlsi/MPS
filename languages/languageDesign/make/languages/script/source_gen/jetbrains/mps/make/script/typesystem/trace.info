@@ -745,8 +745,8 @@
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/6284324196595852592">
     <file name="IResource_subtypeOf_ResourceType_SubtypingRule.java">
-      <node id="4902420589034913369" at="24,489,25,108" concept="6" />
-      <node id="4902420589034967790" at="25,108,26,223" concept="2" />
+      <node id="4902420589034913369" at="24,489,25,211" concept="6" />
+      <node id="4902420589034967790" at="25,211,26,223" concept="2" />
       <node id="3308693286243531111" at="26,223,27,16" concept="7" />
       <node id="6284324196595852604" at="28,5,29,16" concept="7" />
       <node id="6284324196595852592" at="31,46,32,65" concept="7" />

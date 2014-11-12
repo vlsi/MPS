@@ -71,7 +71,7 @@ public class AddNewLine_Intention implements IntentionFactory {
       return "Add New Line";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
+      SNode newLine = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237308012275l, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), null);
       SPropertyOperations.set(newLine, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(newLine);
     }

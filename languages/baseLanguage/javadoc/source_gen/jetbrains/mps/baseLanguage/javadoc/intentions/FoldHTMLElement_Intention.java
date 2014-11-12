@@ -66,7 +66,7 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"))).isEmpty()) {
-        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
         editorContext.selectWRTFocusPolicy(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"))).first());
       } else {
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"))).clear();

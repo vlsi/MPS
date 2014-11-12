@@ -67,12 +67,12 @@ public class BuildSimpleName_text extends KeyMapImpl {
 
       String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"));
       if (index < currText.length() && index > 0) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildTextStringPart");
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart"));
         SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), currText.substring(index));
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), currText.substring(0, index));
         SNodeOperations.insertNextSiblingChild(node, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildVarRefStringPart");
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, "jetbrains.mps.build.structure.BuildVarRefStringPart"));
       if (index != 0) {
         SNodeOperations.insertNextSiblingChild(node, newRef);
       } else {

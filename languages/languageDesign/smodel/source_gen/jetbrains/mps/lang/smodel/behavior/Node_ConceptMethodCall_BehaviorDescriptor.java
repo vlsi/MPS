@@ -21,6 +21,9 @@ public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_Be
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_ConceptMethodCall_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return Node_ConceptMethodCall_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
+  }
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }

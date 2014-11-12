@@ -55,7 +55,7 @@ public class SequenceCreator_add_initializer extends KeyMapImpl {
       return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414466839l, "initializer")) == null);
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414466839l, "initializer"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414466839l, "initializer"), MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
     }
     public String getKeyStroke() {
       return " ENTER";

@@ -28,7 +28,7 @@ public class check_DuplicatedConceptName_NonTypesystemRule extends AbstractNonTy
     if ((name == null || name.length() == 0)) {
       return;
     }
-    if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptDeclaration), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).any(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(conceptDeclaration), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != conceptDeclaration && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
       }

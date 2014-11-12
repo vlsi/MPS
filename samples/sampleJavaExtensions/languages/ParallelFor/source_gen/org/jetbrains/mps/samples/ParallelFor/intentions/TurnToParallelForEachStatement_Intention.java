@@ -74,8 +74,8 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
       return "Turn to Parallel";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode parallelFor = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", null);
-      final SNode variable = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", null);
+      SNode parallelFor = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), null);
+      final SNode variable = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477803l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"), null);
       SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SLinkOperations.setTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type"))));
       SLinkOperations.setTarget(parallelFor, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369518786l, "loopVariable"), variable);
@@ -86,7 +86,7 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNode newReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+          SNode newReference = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), null);
           SLinkOperations.setTarget(newReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), variable);
           SNodeOperations.replaceWithAnother(it, newReference);
         }

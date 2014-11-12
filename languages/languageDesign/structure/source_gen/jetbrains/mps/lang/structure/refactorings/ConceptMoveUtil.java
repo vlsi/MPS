@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class ConceptMoveUtil {
   public ConceptMoveUtil() {
   }
   public static List<SNode> getConceptsAspects(final List<SNode> concepts, SModel aspectModel) {
-    return ListSequence.fromList(SModelOperations.getRoots(aspectModel, "jetbrains.mps.lang.structure.structure.IConceptAspect")).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(aspectModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         List<SNode> baseConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
         return ListSequence.fromList(baseConcepts).isNotEmpty() && ListSequence.fromList(concepts).containsSequence(ListSequence.fromList(baseConcepts));

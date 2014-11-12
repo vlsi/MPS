@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BwfFileSet_Constraints extends BaseConstraintsDescriptor {
@@ -31,7 +33,7 @@ public class BwfFileSet_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.xml.structure.XmlElement") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfPathReference");
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934207069215l, "jetbrains.mps.build.workflow.structure.BwfPathReference"));
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975791099");
 }

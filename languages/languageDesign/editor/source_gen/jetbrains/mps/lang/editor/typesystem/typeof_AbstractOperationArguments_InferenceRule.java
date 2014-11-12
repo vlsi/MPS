@@ -9,8 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +25,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
   public typeof_AbstractOperationArguments_InferenceRule() {
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(operation))), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
+    List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(operation)), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
     if (ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4531786690998636238l, 4531786690998636240l, "actualArgument"))).count() != ListSequence.fromList(argumentTypes).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

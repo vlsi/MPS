@@ -17,6 +17,6 @@ public class EmptyMember_Behavior {
     ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_create_8260330507834998478", new Object[]{}));
   }
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
-    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null);
+    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1465982738277781862l, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"));
   }
 }

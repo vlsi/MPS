@@ -26,7 +26,7 @@ public class DeleteFinalInField {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (false));
-      editorContext.selectWRTFocusPolicy(node);
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
   public static class DeleteFinalInField_BACKSPACE extends AbstractCellAction {
@@ -39,7 +39,7 @@ public class DeleteFinalInField {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (false));
-      editorContext.selectWRTFocusPolicy(node);
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }
 }

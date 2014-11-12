@@ -68,7 +68,7 @@ public class AddSinceBlockDocTag_Intention implements IntentionFactory {
       return "Add @since Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331490l, "since"), "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331490l, "since"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690324397l, "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag"));
       BlockDocTagHelper.setFocus(editorContext, addedNode);
 
     }

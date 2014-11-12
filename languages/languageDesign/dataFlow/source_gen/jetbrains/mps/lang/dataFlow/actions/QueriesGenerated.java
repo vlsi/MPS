@@ -25,7 +25,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitStatement"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null));
+        return SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206443583064l, 78261276407124230l, "position"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 8486807419021026918l, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), null));
       }
       public String getMatchingText(String pattern) {
         return "insert";

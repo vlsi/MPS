@@ -69,7 +69,7 @@ public class ColorQuery_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403713874l, "color"), null);
       if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query")) == null)) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1176809959526l, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"));
       } else {
         SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query")));
       }

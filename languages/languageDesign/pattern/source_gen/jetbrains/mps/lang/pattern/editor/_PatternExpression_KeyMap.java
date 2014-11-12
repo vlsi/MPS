@@ -11,12 +11,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class _PatternExpression_KeyMap extends KeyMapImpl {
   public _PatternExpression_KeyMap() {
@@ -68,7 +68,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), "jetbrains.mps.lang.pattern.structure.WildcardPattern");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037783l, "jetbrains.mps.lang.pattern.structure.WildcardPattern"));
     }
     public String getKeyStroke() {
       return " _";
@@ -103,7 +103,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037773l, "jetbrains.mps.lang.pattern.structure.AsPattern"));
     }
     public String getKeyStroke() {
       return " @";
@@ -175,7 +175,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", propertyName), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", propertyName), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"));
     }
     public String getKeyStroke() {
       return " $";
@@ -211,7 +211,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136727061274l, "jetbrains.mps.lang.pattern.structure.ListPattern"));
       for (SNode sibling : siblings) {
         SNodeOperations.deleteNode(sibling);
       }
@@ -256,7 +256,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation")) != null) {
         AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"), null);
       } else
-      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"), "jetbrains.mps.lang.quotation.structure.Antiquotation");
+      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785112l, "jetbrains.mps.lang.quotation.structure.Antiquotation"));
     }
     public String getKeyStroke() {
       return " %";
@@ -304,7 +304,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if ((AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation")) != null)) {
         AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), null);
       } else
-      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
+      SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785118l, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
     }
     public String getKeyStroke() {
       return " *";
@@ -357,7 +357,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role)) != null) {
         AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), null);
       } else {
-        SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
+        SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785117l, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
       }
     }
     public String getKeyStroke() {

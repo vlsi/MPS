@@ -21,6 +21,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -29,9 +30,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @deprecated Migrate all usages to {@link jetbrains.mps.ide.tools.BaseTabbedProjectTool}
+ * @deprecated Migrate all usages to {@link jetbrains.mps.ide.tools.BaseTabbedProjectTool}.
+ * The class is left in 3.2 not to break existing generated code, as it was referenced from templates in 3.1
  */
 @Deprecated
+@ToRemove(version = 3.2)
 public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
   private boolean myContentRemovedListenerAdded = false;

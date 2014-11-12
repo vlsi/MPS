@@ -57,17 +57,18 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.persistence.FilePerRootDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.FilePerRootModelPersistence;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaToMpsConverter {
   private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
@@ -615,7 +616,7 @@ public class JavaToMpsConverter {
   private SNode transformUnqualifedEnum(SNode varRef) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
-    if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(varRef), "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+    if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(varRef)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")))) {
       return null;
     }
     SReference ref = SNodeOperations.getReference(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
@@ -628,7 +629,7 @@ public class JavaToMpsConverter {
     }
 
     // now we can try to search 
-    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
+    SNode gateway = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8136348407761606757l, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"));
 
     String enumConstName = ((DynamicReference) ref).getResolveInfo();
 
@@ -696,7 +697,7 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(enumClass, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
@@ -737,7 +738,7 @@ public class JavaToMpsConverter {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(enumConstName);
       }
     });
-    SNode enumConstRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+    SNode enumConstRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
     SLinkOperations.setTarget(enumConstRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(claz, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
     SLinkOperations.setTarget(enumConstRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), enumConst);
 
@@ -763,7 +764,7 @@ public class JavaToMpsConverter {
     }
 
     // it's out of scope, let's make it StaticMethodCall 
-    SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+    SNode smc = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
     SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.getNodeAncestor(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
     SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
     for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(localCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument")))) {
@@ -800,7 +801,7 @@ public class JavaToMpsConverter {
     }
 
     // different class, let's make this reference non-local, but qualified 
-    SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+    SNode sfr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
     SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), thatClass);
     SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070462154015l, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
 
@@ -1028,18 +1029,20 @@ public class JavaToMpsConverter {
     try {
 
       if (myCreateInplace) {
-        ModelRoot modelRoot = getRootContainingDir(pkgDir);
+        Tuples._2<ModelRoot, String> place = getRootContainingDir(pkgDir);
+        ModelRoot modelRoot = place._0();
+        String sourceRoot = place._1();
         if (modelRoot == null) {
           LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
           return null;
         }
-        FilePerRootDataSource ds = new FilePerRootDataSource(pkgDir, modelRoot);
         Map<String, String> options = MapSequence.fromMap(new HashMap<String, String>());
-        MapSequence.fromMap(options).put(ModelFactory.OPTION_MODELNAME, pkgFqName);
-        MapSequence.fromMap(options).put(ModelFactory.OPTION_MODULEREF, myModule.getModuleReference().toString());
-        modelDescr = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID).create(ds, options);
-        ((SModelBase) modelDescr).setModelRoot(modelRoot);
-        ((SModelBase) modelDescr).setModule(myModule);
+        // I don't like it but currently clients of getRelativePath() do this, 
+        // and I don't want to change that right before 3.2 
+        String fullPath = pkgDir.getPath().replace('\\', '/');
+        String sr = sourceRoot.replace('\\', '/');
+        MapSequence.fromMap(options).put(ModelFactory.OPTION_RELPATH, FileUtil.getRelativePath(pkgDir.getPath(), sourceRoot, "/"));
+        modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, sourceRoot, options, PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID));
 
       } else {
         ModelRoot modelRoot = getFirstRootToCreateModel(pkgFqName);
@@ -1047,7 +1050,7 @@ public class JavaToMpsConverter {
           LOG.error("Failed to find model root to create model in");
           return null;
         }
-        modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, null, PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
+        modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, null, null, PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
       }
 
       if (modelDescr == null) {
@@ -1079,7 +1082,7 @@ public class JavaToMpsConverter {
     }
     return null;
   }
-  private ModelRoot getRootContainingDir(IFile dir) {
+  private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
     // returns modelRoot and sourceRoot within 
     for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
       // or maybe more general: file based model root? 
@@ -1088,11 +1091,11 @@ public class JavaToMpsConverter {
       }
       for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
-          return modelRoot;
+          return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
         }
       }
     }
-    return null;
+    return MultiTuple.<ModelRoot,String>from((ModelRoot) null, (String) null);
   }
 
 }

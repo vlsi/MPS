@@ -36,7 +36,7 @@ public class XMLSAXNodeCreator_Behavior {
       if (node == null) {
         return new EmptyScope();
       }
-      return SimpleRoleScope.forNamedElements(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+      return SimpleRoleScope.forNamedElements(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140404l, "attrs")));
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }

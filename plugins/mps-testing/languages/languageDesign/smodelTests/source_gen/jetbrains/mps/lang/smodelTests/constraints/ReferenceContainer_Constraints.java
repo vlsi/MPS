@@ -48,7 +48,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Root");
+            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-5752535300696554171l, -8216104078447456642l), 278471160714141637l, "jetbrains.mps.lang.smodelTests.structure.Root"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -76,7 +76,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
+            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-5752535300696554171l, -8216104078447456642l), 278471160714141631l, "jetbrains.mps.lang.smodelTests.structure.Child"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -104,7 +104,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
+            return SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-5752535300696554171l, -8216104078447456642l), 278471160714141631l, "jetbrains.mps.lang.smodelTests.structure.Child"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

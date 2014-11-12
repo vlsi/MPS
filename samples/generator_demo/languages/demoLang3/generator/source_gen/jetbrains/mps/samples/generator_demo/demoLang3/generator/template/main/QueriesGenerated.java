@@ -85,9 +85,9 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_5273477653284544939(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element"));
   }
   public static Iterable<SNode> sourceNodesQuery_5273477653284544347(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element"));
   }
 }

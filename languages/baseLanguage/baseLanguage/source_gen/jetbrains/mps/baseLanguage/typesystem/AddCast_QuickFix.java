@@ -38,7 +38,7 @@ public class AddCast_QuickFix extends QuickFix_Runtime {
     SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type"), SNodeOperations.copyNode(actualType));
     boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(cast);
     if (needsParensAroundCastExpression) {
-      SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+      SNode parens = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
       SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), ((SNode) AddCast_QuickFix.this.getField("expression")[0]));
       SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), parens);
     }

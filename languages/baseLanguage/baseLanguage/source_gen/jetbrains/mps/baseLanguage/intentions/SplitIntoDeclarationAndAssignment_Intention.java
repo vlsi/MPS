@@ -68,10 +68,10 @@ public class SplitIntoDeclarationAndAssignment_Intention implements IntentionFac
       return "Split into Declaration and Assignment";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+      SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), null);
+      SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
       SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
-      SNode local = SLinkOperations.setNewChild(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), "jetbrains.mps.baseLanguage.structure.VariableReference");
+      SNode local = SLinkOperations.setNewChild(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"));
       SLinkOperations.setTarget(local, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), node);
       SNodeOperations.insertNextSiblingChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), eStatement);
     }

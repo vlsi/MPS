@@ -21,6 +21,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
@@ -70,7 +72,7 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.baseLanguage.structure.NullLiteral");
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709738802l, "jetbrains.mps.lang.quotation.structure.NodeBuilderList")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534058343l, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709752216");
   private static SNodePointer breakingNode_nild3x_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "5455284157994012192");

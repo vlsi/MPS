@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,10 +25,10 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
     SNode builder = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), false, false);
     SNode substituteConcept = SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept"));
     SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1180134965967l, 1180135092669l, "concept"));
-    if (!(SConceptOperations.isSubConceptOf(conceptToAdd, NameUtil.nodeFQName(substituteConcept)))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(conceptToAdd), SNodeOperations.asSConcept(substituteConcept)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + BehaviorReflection.invokeVirtual(String.class, substituteConcept, "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1197896061431", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(substituteConcept), "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1197896061431", null, errorTarget);
       }
     }
   }

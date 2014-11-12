@@ -53,7 +53,7 @@ public class BaseMethodDeclaration_Behavior {
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     SNode expectedRetType = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(expectedRetType)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790189l, "jetbrains.mps.baseLanguage.structure.Type")) || SNodeOperations.isInstanceOf(expectedRetType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       // actually - no return type 
       expectedRetType = null;
     }
@@ -224,10 +224,10 @@ public class BaseMethodDeclaration_Behavior {
     return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"));
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 501006281268604400l, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind"))) {
       return new EmptyScope();
     }
-    if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")), ScopeUtils.lazyParentScope(thisNode, kind));
       } else {
@@ -289,9 +289,9 @@ public class BaseMethodDeclaration_Behavior {
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
     if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null)) {
-      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
     }
-    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
     AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
   public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {

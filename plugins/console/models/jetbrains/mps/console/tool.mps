@@ -7110,6 +7110,23 @@
           <node concept="vg0i.1068580123159" id="7538089231777683723" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068580123136" id="7538089231777683724" role="vg0i.1068580123159.1068580123161" info="sn">
               <node concept="vg0i.1164879751025" id="9056261439947806043" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1164903280175" id="1036187445124449077" role="vg0i.1164879751025.1164903496223" info="nn">
+                  <node concept="vg0i.1068580123136" id="1036187445124449078" role="vg0i.1164903280175.1164903359218" info="sn">
+                    <node concept="ae39.1167227138527" id="1036187445124522569" role="vg0i.1068580123136.1068581517665" info="nn">
+                      <property role="ae39.1167227138527.1167245565795" value="error" />
+                      <property role="ae39.1167227138527.1167228628751" value="true" />
+                      <node concept="vg0i.1070475926800" id="1036187445124522570" role="ae39.1167227138527.1167227463056" info="nn">
+                        <property role="vg0i.1070475926800.1070475926801" value="Console history was not loaded. Maybe you are opening project from previous MPS versions?" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068581242863" id="1036187445124449079" role="vg0i.1164903280175.1164903359217" info="nr">
+                    <property role="asn4.1169194658468.1169194664001" value="e" />
+                    <node concept="vg0i.1107535904670" id="1036187445124518349" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~IllegalArgumentException" resolveInfo="IllegalArgumentException" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="vg0i.1068580123136" id="9056261439947806045" role="vg0i.1164879751025.1164879758292" info="sn">
                   <node concept="vg0i.1068581242864" id="4176612323165699204" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1068581242863" id="4176612323165699207" role="vg0i.1068581242864.1068581242865" info="nr">
@@ -7276,14 +7293,11 @@
                       <property role="ae39.1167227138527.1167245565795" value="error" />
                       <property role="ae39.1167227138527.1167228628751" value="true" />
                       <node concept="vg0i.1070475926800" id="9056261439947958025" role="ae39.1167227138527.1167227463056" info="nn">
-                        <property role="vg0i.1070475926800.1070475926801" value="Error on loading console history" />
+                        <property role="vg0i.1070475926800.1070475926801" value="Error on loading console history." />
                       </node>
                       <node concept="vg0i.1068498886296" id="9056261439947958027" role="ae39.1167227138527.1167227561449" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="9056261439947806048" resolveInfo="e" />
                       </node>
-                    </node>
-                    <node concept="vg0i.1068581242878" id="4176612323165385708" role="vg0i.1068580123136.1068581517665" info="nn">
-                      <node concept="vg0i.1070534058343" id="4176612323165390413" role="vg0i.1068581242878.1068581517676" info="nn" />
                     </node>
                   </node>
                 </node>
@@ -7295,13 +7309,9 @@
               </node>
               <node concept="vg0i.1070534058343" id="7538089231777683735" role="vg0i.1081773326031.1081773367579" info="nn" />
             </node>
-            <node concept="vg0i.1082485599095" id="4176612323165395777" role="vg0i.1068580123159.1082485599094" info="nn">
-              <node concept="vg0i.1068580123136" id="4176612323165395778" role="vg0i.1082485599095.1082485599096" info="sn">
-                <node concept="vg0i.1068581242878" id="4176612323165401373" role="vg0i.1068580123136.1068581517665" info="nn">
-                  <node concept="vg0i.1070534058343" id="4176612323165406107" role="vg0i.1068581242878.1068581517676" info="nn" />
-                </node>
-              </node>
-            </node>
+          </node>
+          <node concept="vg0i.1068581242878" id="1036187445124812014" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1070534058343" id="1036187445124820283" role="vg0i.1068581242878.1068581517676" info="nn" />
           </node>
         </node>
         <node concept="vg0i.1146644641414" id="4176612323165349903" role="vg0i.1178549954367.1178549979242" info="nn" />

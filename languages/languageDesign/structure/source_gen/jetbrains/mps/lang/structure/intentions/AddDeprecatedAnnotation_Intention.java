@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -65,7 +67,7 @@ public class AddDeprecatedAnnotation_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")) == null)) {
-        SNode annotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
+        SNode annotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224240836180l, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null);
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), annotation);
       } else {
         SNodeOperations.detachNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")));

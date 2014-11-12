@@ -79,34 +79,34 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
         return;
       }
 
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null));
-      SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-      SNodeFactoryOperations.addNewChild(line, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), null));
+      SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+      SNodeFactoryOperations.addNewChild(line, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
 
       //  Method parameters 
       for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")))) {
-        SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
+        SNode paramTag = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"), null);
         SLinkOperations.setTarget(paramTag, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, 6832197706140518123l, "parameter"), _quotation_createNode_i2k1f8_a0b0j0a(parameterDeclaration));
         ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"))).addElement(paramTag);
       }
 
       //  Type variables 
       for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")))) {
-        SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
+        SNode paramTag = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag"), null);
         SLinkOperations.setTarget(paramTag, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690881930l, 6832197706140518123l, "parameter"), _quotation_createNode_i2k1f8_a0b0m0a(typeVariableDeclaration));
         ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"))).addElement(paramTag);
       }
 
       //  Thrown exceptions 
       for (SNode throwsItem : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem")))) {
-        SNode throwsTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", null);
+        SNode throwsTag = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"), null);
         SLinkOperations.setTarget(throwsTag, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, 6832197706140448505l, "exceptionType"), SNodeOperations.copyNode(throwsItem));
         ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516428l, "throwsTag"))).addElement(throwsTag);
       }
 
       //  Return value 
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")))) {
-        SLinkOperations.setTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516440l, "return"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null));
+        SLinkOperations.setTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516440l, "return"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537516430l, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag"), null));
       }
 
       editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"))).first());

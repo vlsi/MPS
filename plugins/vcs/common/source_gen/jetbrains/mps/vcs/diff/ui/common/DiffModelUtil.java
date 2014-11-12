@@ -58,7 +58,7 @@ public class DiffModelUtil {
     // modelRef - generated references, will be replaced with original one through the model 
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
     final SModelReference oldModelRef = getOriginalSModelRef(modelRef);
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
           return modelRef.equals(it.getTargetSModelReference());

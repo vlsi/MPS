@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -114,7 +113,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<String> queryResult = new Computable<Iterable<String>>() {
           public Iterable<String> compute() {
             return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
@@ -144,11 +143,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildString");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildStringPart");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildString", null);
+            SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString"));
             ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, 4903714810883783243l, "parts"))).addElement(nodeToWrap);
             return res;
           }
@@ -172,11 +171,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacroInitValue");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildString");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode init = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
+            SNode init = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString"));
             SLinkOperations.setTarget(init, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, 2755237150521975437l, "value"), nodeToWrap);
             return init;
           }
@@ -200,7 +199,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ? _context.getCurrentTargetNode() : _context.getParentNode()), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
@@ -222,7 +221,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode res = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildVarRefStringPart", null);
+                SNode res = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, "jetbrains.mps.build.structure.BuildVarRefStringPart"), null);
                 SLinkOperations.setTarget(res, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro"), (item));
                 return res;
               }
@@ -240,10 +239,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode buildText = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildTextStringPart", null);
+            SNode buildText = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart"), null);
             SPropertyOperations.set(buildText, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), pattern);
             return buildText;
           }
@@ -281,11 +280,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaFiles");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, "jetbrains.mps.build.structure.BuildSource_JavaFiles"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset"), nodeToWrap);
             return n;
           }
@@ -309,11 +308,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaJar");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, 3717132724152589377l, "jar"), nodeToWrap);
             return n;
           }
@@ -337,11 +336,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaCP");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
+            SNode n = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"));
             SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"), nodeToWrap);
             return n;
           }
@@ -365,7 +364,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaContentFolder");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<String> queryResult = new Computable<Iterable<String>>() {
           public Iterable<String> compute() {
             return Sequence.fromIterable(Sequence.fromArray(new String[]{"source", "test", "excluded"})).toListSequence();
@@ -375,7 +374,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.structure.BuildSource_JavaContentFolder", null);
+                SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder"), null);
                 SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), (item));
                 return node;
               }
@@ -391,11 +390,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_JarManifest_Section");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode section = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section", null);
-            SNodeFactoryOperations.setNewChild(section, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292904119675l, 6837653846148302680l, "name"), "jetbrains.mps.build.structure.BuildStringNotEmpty");
+            SNode section = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292904119675l, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"), null);
+            SNodeFactoryOperations.setNewChild(section, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292904119675l, 6837653846148302680l, "name"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 841011766566059607l, "jetbrains.mps.build.structure.BuildStringNotEmpty"));
             return section;
           }
           public String getDescriptionText(String pattern) {
@@ -420,10 +419,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode newInitializedNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute", null);
+            SNode newInitializedNode = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute"), null);
             String name;
             String value = null;
             if (pattern.contains(":")) {
@@ -509,7 +508,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), "jetbrains.mps.build.structure.BuildCompositePath");
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -535,7 +534,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), "jetbrains.mps.build.structure.BuildCompositePath");
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -561,10 +560,10 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode archiveRelativePath = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", null);
+        SNode archiveRelativePath = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), archiveRelativePath);
         SLinkOperations.setTarget(archiveRelativePath, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, 2539347366864648268l, "archivePath"), _context.getSourceNode());
-        SNodeFactoryOperations.setNewChild(archiveRelativePath, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), "jetbrains.mps.build.structure.BuildCompositePath");
+        SNodeFactoryOperations.setNewChild(archiveRelativePath, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"));
         return archiveRelativePath;
       }
       public String getMatchingText(String pattern) {
@@ -621,7 +620,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts"), "jetbrains.mps.build.structure.BuildSourcePath");
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073790l, "jetbrains.mps.build.structure.BuildSourcePath"));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {
@@ -810,7 +809,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CustomCopy"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.build.structure.BuildLayout_CustomCopy");
+        return SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, "jetbrains.mps.build.structure.BuildLayout_CustomCopy"));
       }
       public String getMatchingText(String pattern) {
         return "copy";

@@ -23,10 +23,10 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
@@ -111,12 +111,12 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_e8klwn_d0 extends DiagramCell {
     private DiagramCellImpl_e8klwn_d0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "thoughts"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887318l, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought"));
           SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "new thought");
         }
-      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "relationships"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887323l, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_e8klwn_a0a0a0a0d1a2a0a1a0i(from, to);
         }
@@ -131,7 +131,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "thoughts"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887318l, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought"));
           SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "new thought");
@@ -139,7 +139,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
       })};
     }
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "relationships"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887323l, "relationships")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_e8klwn_a0a0a0a0d0a0a0d8(from, to);
         }
@@ -225,7 +225,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     private class DiagramPaletteImpl_e8klwn_a3a extends DiagramPalette {
       private DiagramPaletteImpl_e8klwn_a3a(DiagramCell diagramCell) {
         super(diagramCell);
-        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "thoughts"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703866767l, 79242395703887318l, "thoughts")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
           public void invoke(SNode node, Integer x, Integer y) {
             SNode thought = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(3743218055569361472l, -7378228851369770984l), 79242395703884488l, "jetbrains.mps.samples.mindmaps.structure.Thought"));
             SPropertyOperations.set(thought, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "new thought");

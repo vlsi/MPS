@@ -157,7 +157,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_par";
   }
   public static Object propertyMacro_GetPropertyValue_1512255007354024183(final PropertyMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions")).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1512255007353869532l, "jetbrains.mps.lang.plugin.structure.NonDumbAwareActions"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1512255007353869532l, 1512255007353869533l, "actions"));
       }
@@ -1330,9 +1330,9 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1210179134063l, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration"), false, false), "map_CreatePages");
   }
   public static void mappingScript_CodeBlock_466361829302878438(final MappingScriptContext _context) {
-    for (SNode component : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component"))) {
-      SNode newNode = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-      SNode typecastNode = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.baseLanguage.structure.CastExpression");
+    for (SNode component : ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1210690798207l, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component")))) {
+      SNode newNode = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
+      SNode typecastNode = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, "jetbrains.mps.baseLanguage.structure.CastExpression"));
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), typecastNode);
       SLinkOperations.setTarget(typecastNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type"), SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(component)));
       SNodeOperations.replaceWithAnother(component, newNode);
@@ -1340,14 +1340,14 @@ public class QueriesGenerated {
     }
   }
   public static void mappingScript_CodeBlock_2713887941725402118(final MappingScriptContext _context) {
-    for (SNode method : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).translate(new ITranslator2<SNode, SNode>() {
+    for (SNode method : ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1205851242421l, "methodDeclaration"));
       }
     })) {
       ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(_quotation_createNode_x583g4_a0a0a0a833());
     }
-    for (SNode method : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")).where(new IWhereFilter<SNode>() {
+    for (SNode method : ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205769149993l, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"))), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
       }
@@ -1440,7 +1440,7 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.plugins.tool(MPS.Platform/jetbrains.mps.plugins.tool@java_stub)"), facade.createNodeId("~GeneratedTabbedTool")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)"), facade.createNodeId("~BaseTabbedProjectTool")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_x583g4_a0a0a0a0mm(Object parameter_1) {

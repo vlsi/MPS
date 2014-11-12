@@ -19,9 +19,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +44,7 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode container : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer")) {
+            for (SNode container : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036256317l, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"))) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036256317l, 5117350825036256318l, "watchable"))));
             }
             return result;

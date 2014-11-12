@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -66,7 +65,7 @@ public class ChildSubstituteActionsUtil {
       if (applicableConcept == null) {
         continue;
       }
-      if (SConceptOperations.isSubConceptOf(applicableConcept, NameUtil.nodeFQName(childConcept)) || SConceptOperations.isSubConceptOf(childConcept, NameUtil.nodeFQName(applicableConcept))) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(childConcept)) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(applicableConcept))) {
         if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, link, currentChild, wrapped, context)) {
           ListSequence.fromList(allBuilders).addElement(actionsBuilder);
         }
@@ -140,7 +139,7 @@ public class ChildSubstituteActionsUtil {
         continue;
       }
       SModel sModel = actionsModelDescr;
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, 1112058057696l, "actionsBuilder"));
         }

@@ -28,7 +28,7 @@ public class LocalVariableDeclaration_Behavior {
     return SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement"));
   }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode ref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"));
     SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), thisNode);
     return ref;
   }
@@ -71,7 +71,7 @@ public class LocalVariableDeclaration_Behavior {
     throw new UnsupportedOperationException();
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5432666129547687712l, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
       if (ScopeUtils.comeFrom("initializer", thisNode, child)) {
         return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
       } else {
@@ -81,7 +81,7 @@ public class LocalVariableDeclaration_Behavior {
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5432666129547687712l, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
       if (role.equals("initializer")) {
         return Scopes.forVariables(kind, thisNode, ScopeUtils.lazyParentScope(thisNode, kind));
       } else {

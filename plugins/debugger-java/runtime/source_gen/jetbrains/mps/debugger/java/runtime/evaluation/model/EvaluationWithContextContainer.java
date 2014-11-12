@@ -23,9 +23,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -112,7 +112,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Override
   protected SNode createEvaluatorNode() {
-    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", null);
+    SNode evaluatorConcept = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), null);
     SPropertyOperations.set(evaluatorConcept, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243739l, "isShowContext"), "" + (myIsInWatch));
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 1155520443816777472l, "evaluatedStatements")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
@@ -147,7 +147,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
         if (needUpdateVariables()) {
           // we should update variables if we are first time here or if we do not show context (i.e. in evaluation) 
           if (lowLevelVarNode == null) {
-            lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", null);
+            lowLevelVarNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182694l, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable"));
             ListSequence.fromList(SLinkOperations.getChildren(evaluatorConcept, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243735l, "variables"))).addElement(lowLevelVarNode);
             MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
           }
@@ -196,7 +196,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     if (unit == null) {
       return null;
     }
-    SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode classifierType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SNodeOperations.cast(unit, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
     return classifierType;
   }
@@ -206,7 +206,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     SModel stub = findStubForFqName(modelFqNameFromUnitName(unitName));
     if (stub != null) {
       SModel model = stub;
-      SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(model, "jetbrains.mps.lang.traceable.structure.UnitConcept")).findFirst(new IWhereFilter<SNode>() {
+      SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getConcept(new UUID(-7066981744759912873l, -4622583950651520061l), 5067982036267369892l, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
@@ -298,7 +298,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
     @Override
     public SNode createVariableReference(SNode variable) {
-      SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
+      SNode newVariableReference = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 9050639307831392587l, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"));
       SLinkOperations.setTarget(newVariableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 5497648299878491908l, 5497648299878491909l, "baseVariableDeclaration"), variable);
       return newVariableReference;
     }

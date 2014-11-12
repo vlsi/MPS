@@ -24,7 +24,7 @@ public class AnnotationUtil {
         return neq_3nvpiw_a0a0a0a0a0a0a(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), targetAnnotation);
       }
     })) {
-      SNode annotation = SNodeFactoryOperations.addNewChild(target, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+      SNode annotation = SNodeFactoryOperations.addNewChild(target, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
       SLinkOperations.setTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), targetAnnotation);
     }
   }

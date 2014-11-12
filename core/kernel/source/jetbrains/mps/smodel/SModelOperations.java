@@ -23,7 +23,9 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -128,10 +130,10 @@ public class SModelOperations {
 
   /**
    * All languages visible for the model, including imported and languages they extend
-   * @param model
-   * @return
    */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<Language> getLanguages(SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
@@ -144,6 +146,23 @@ public class SModelOperations {
       languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
     }
     return new ArrayList<Language>(languages);
+  }
+
+  /**
+   * All languages visible for the model, including imported and languages they extend
+   */
+  @NotNull
+  public static List<SLanguage> getSLanguages(SModel model) {
+    Set<SLanguage> languages = new LinkedHashSet<SLanguage>();
+
+    for (SLanguage lang : getAllImportedLanguageIds(model)) {
+      languages.add(lang);
+      for (Language l : LanguageDependenciesManager.getAllExtendedLanguages((Language) lang.getSourceModule())) {
+        languages.add(MetaAdapterByDeclaration.getLanguage(l));
+      }
+
+    }
+    return new ArrayList<SLanguage>(languages);
   }
 
   /**

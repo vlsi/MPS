@@ -239,7 +239,7 @@ public class ChangeSetBuilder {
     }
   }
   private void build(boolean withOpposite) {
-    Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.getRoots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.getRoots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
+    Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.roots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.roots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();
       }

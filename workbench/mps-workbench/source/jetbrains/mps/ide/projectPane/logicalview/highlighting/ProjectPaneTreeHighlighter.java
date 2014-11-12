@@ -39,9 +39,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ProjectPaneTreeHighlighter {
-  private final GenStatusUpdater myGenStatusVisitor = new GenStatusUpdater();
-  private final ErrorChecker myErrorVisitor = new ErrorChecker();
-  private final ModifiedMarker myModifiedMarker = new ModifiedMarker();
+  private final GenStatusUpdater myGenStatusVisitor;
+  private final ErrorChecker myErrorVisitor;
+  private final ModifiedMarker myModifiedMarker;
   private final TreeNodeUpdater myUpdater;
   private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RescheduleExecutionHandler());
 
@@ -54,6 +54,9 @@ public class ProjectPaneTreeHighlighter {
   public ProjectPaneTreeHighlighter(ProjectPaneTree tree, Project mpsProject) {
     myTree = tree;
     myUpdater = new TreeNodeUpdater(mpsProject);
+    myGenStatusVisitor = new GenStatusUpdater(mpsProject);
+    myErrorVisitor = new ErrorChecker(mpsProject);
+    myModifiedMarker = new ModifiedMarker(mpsProject);
   }
 
   public void init() {

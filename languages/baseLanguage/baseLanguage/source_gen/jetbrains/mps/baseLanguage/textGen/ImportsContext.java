@@ -11,9 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.textGen.TextGen;
 
@@ -35,7 +35,7 @@ public class ImportsContext {
 
     // init package simple names 
     packageSimpleNames = new HashSet<String>();
-    for (SNode classifier : SModelOperations.getRoots(SNodeOperations.getModel(rootNode), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    for (SNode classifier : SModelOperations.roots(SNodeOperations.getModel(rootNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       packageSimpleNames.add(SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     }
   }

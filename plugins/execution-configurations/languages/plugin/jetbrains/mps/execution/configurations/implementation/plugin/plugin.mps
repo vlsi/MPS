@@ -441,7 +441,6 @@
     <refRole id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066588/946964771156066589" name="persistentPropertyDeclaration" />
     <refRole id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066606/946964771156066609" name="editorOperationDeclaration" />
     <refRole id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156905617/946964771156905618" name="configuration" />
-    <refRole id="22e72e4c-0f69-46ce-8403-6750153aa615/2401501559171392633/1048802521465114237" name="runConfiguration" />
     <refRole id="22e72e4c-0f69-46ce-8403-6750153aa615/2401501559171345993/2401501559171353314" name="configurationKind" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" name="classifier" />
     <refRole id="22e72e4c-0f69-46ce-8403-6750153aa615/3642991921658122718/3642991921658122719" name="configuration" />
@@ -1743,19 +1742,6 @@
                 <node concept="vg0i.1197027756228" id="1353230511309486626" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="1sqg.1205752633985" id="1353230511309486359" role="vg0i.1197027756228.1197027771414" info="nn" />
                   <node concept="xlfr.5453800039284219178" id="1353230511309487457" role="vg0i.1197027756228.1197027833540" info="nn" />
-                </node>
-                <node concept="vg0i.1145552977093" id="1353230511309436001" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1212685548494" id="1353230511309436002" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~ProjectOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dProject)" resolveInfo="ProjectOperationContext" />
-                    <node concept="vg0i.1081236700937" id="1353230511309436003" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="pt5l.~ProjectHelper%dtoMPSProject(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%dproject%dProject" resolveInfo="toMPSProject" />
-                      <node concept="vg0i.1197027756228" id="1353230511309488073" role="vg0i.1204053956946.1068499141038" info="nn">
-                        <node concept="1sqg.1205752633985" id="1353230511309487821" role="vg0i.1197027756228.1197027771414" info="nn" />
-                        <node concept="xlfr.5453800039284219178" id="1353230511309488885" role="vg0i.1197027756228.1197027833540" info="nn" />
-                      </node>
-                    </node>
-                  </node>
                 </node>
                 <node concept="vg0i.1068498886296" id="1353230511309436005" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="1353230511309435984" resolveInfo="console" />
@@ -4467,7 +4453,6 @@
       <property role="xlfr.2401501559171392633.5925077313451868299" value="false" />
       <property role="asn4.1133920641626.1193676396447" value="remote" />
       <property role="xlfr.2401501559171392633.1931462339887551644" value="myRunConfiguration" />
-      <reference role="xlfr.2401501559171392633.1048802521465114237" target="6391517972808447557" resolveInfo="Remote" />
       <reference role="bqg6.946964771156905617.946964771156905618" target="6391517972808447557" resolveInfo="Remote" />
       <node concept="xlfr.6139196002333163564" id="6391517972808447594" role="xlfr.2401501559171392633.7945003362267213473" info="in">
         <node concept="vg0i.1068580123136" id="6391517972808447595" role="vg0i.1137021947720.1137022507850" info="sn">

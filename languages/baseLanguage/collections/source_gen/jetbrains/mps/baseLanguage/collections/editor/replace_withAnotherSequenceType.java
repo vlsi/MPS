@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 
 public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
   public replace_withAnotherSequenceType() {
@@ -41,7 +40,7 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
+      return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
     }
     public boolean isReferentPresentation() {
       return false;

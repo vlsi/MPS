@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -52,7 +51,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   public void createNewRow(int index) {
     int rowCount = getRowCount();
     assert index <= rowCount;
-    SNode newRowNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null);
+    SNode newRowNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
     if (index == rowCount) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), newRowNode);
     } else {

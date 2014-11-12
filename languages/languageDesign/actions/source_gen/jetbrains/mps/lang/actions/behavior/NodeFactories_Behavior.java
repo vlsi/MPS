@@ -22,7 +22,7 @@ public class NodeFactories_Behavior {
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode nodeFactory = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.NodeFactory", null);
+    SNode nodeFactory = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, "jetbrains.mps.lang.actions.structure.NodeFactory"));
     SLinkOperations.setTarget(nodeFactory, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158700943156l, "applicableConcept"), baseConcept);
     ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700664498l, 1158700779049l, "nodeFactory"))).addElement(nodeFactory);
   }

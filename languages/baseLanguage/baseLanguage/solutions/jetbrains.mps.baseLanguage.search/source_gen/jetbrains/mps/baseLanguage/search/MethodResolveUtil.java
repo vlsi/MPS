@@ -101,7 +101,7 @@ public class MethodResolveUtil {
   }
   public static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
     Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
+    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(methodCall)), "virtual_getFqName_1213877404258", new Object[]{});
     return availableMethodDeclarations;
   }
 
@@ -255,7 +255,7 @@ public class MethodResolveUtil {
       }
       List<SNode> methodTypeVariableDecls = SLinkOperations.getChildren(candidate, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"));
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
+        typeByTypeVar.put(tvd, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType")));
       }
       SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, "jetbrains.mps.baseLanguage.structure.VariableArityType")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, 1219921048460l, "componentType")) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
       if ((typeOfParam == null)) {

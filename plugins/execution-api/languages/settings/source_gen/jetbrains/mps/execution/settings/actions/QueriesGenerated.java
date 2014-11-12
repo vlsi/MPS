@@ -10,9 +10,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -20,11 +22,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_943668161921858893(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -32,10 +31,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066579l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }
@@ -46,7 +45,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null);
+                SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066557l, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), null);
                 SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (item));
                 return node;
               }
@@ -68,10 +67,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.execution.settings.structure.PersistentConfiguration")).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }
@@ -82,7 +81,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null);
+                SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), null);
                 SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (item));
                 return node;
               }

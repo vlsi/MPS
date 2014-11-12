@@ -24,8 +24,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class PropertyTreeNode extends TextTreeNode {
   private String myProperty;
 
-  public PropertyTreeNode(IOperationContext context, SNode mainNode, String p) {
-    super(p + " = " + SNodeAccessUtil.getProperty(mainNode, p), context);
+  public PropertyTreeNode(SNode mainNode, String p) {
+    super(p + " = " + SNodeAccessUtil.getProperty(mainNode, p));
     myProperty = p;
     setIcon(Icons.DEFAULT_ICON);
     setNodeIdentifier(myProperty);

@@ -29,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
@@ -121,7 +120,7 @@ public class JavaPaster {
           break;
         case STATEMENTS:
           for (SNode node : ListSequence.fromList(nodes)) {
-            pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"));
+            pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")));
           }
           break;
         default:
@@ -137,11 +136,11 @@ public class JavaPaster {
     }
   }
   private static boolean pasteAtAnchorInRole(SNode node, SNode anchor, SNode parentConcept, SNode role) {
-    SNode parent = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parentConcept), true, false);
+    SNode parent = SNodeOperations.getNodeAncestor(anchor, SNodeOperations.asSConcept(parentConcept), true, false);
     if ((parent == null)) {
       return false;
     }
-    anchor = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(role, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), true, false);
+    anchor = SNodeOperations.getNodeAncestor(anchor, SNodeOperations.asSConcept(SLinkOperations.getTarget(role, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), true, false);
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
       parent.addChild(SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), node);
     } else {
@@ -150,7 +149,7 @@ public class JavaPaster {
     return true;
   }
   private static boolean pasteMember(SNode member, SNode anchor, SNode parentConcept) {
-    SNode parent = SNodeOperations.getNodeAncestor(anchor, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parentConcept), true, false);
+    SNode parent = SNodeOperations.getNodeAncestor(anchor, SNodeOperations.asSConcept(parentConcept), true, false);
     if ((parent == null)) {
       return false;
     }

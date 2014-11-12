@@ -22,9 +22,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
@@ -81,7 +81,7 @@ public class RefactoringUtil {
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor;
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);
-      for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
+      for (SNode refactoring : SModelOperations.roots(refactoringsModel, MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           Class<IRefactoring> cls = ((Class<IRefactoring>) ClassLoaderManager.getInstance().getClass(language, fqName));

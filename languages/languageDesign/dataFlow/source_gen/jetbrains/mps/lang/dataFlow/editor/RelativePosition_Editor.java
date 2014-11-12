@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RelativePosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -75,7 +77,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
       return createReplacementNode_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.LabelPosition", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1207062697254l, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"));
     }
     public boolean isReferentPresentation() {
       return false;

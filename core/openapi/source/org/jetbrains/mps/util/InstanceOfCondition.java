@@ -16,6 +16,7 @@
 package org.jetbrains.mps.util;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
  * @author Artem Tikhomirov
  */
 public final class InstanceOfCondition implements Condition<SNode> {
-  private final SConcept[] myConcepts;
+  private final SAbstractConcept[] myConcepts;
   private boolean myTolerateNull = false;
 
   @Deprecated
@@ -36,8 +37,8 @@ public final class InstanceOfCondition implements Condition<SNode> {
     myConcepts[0] = SConceptRepository.getInstance().getInstanceConcept(conceptQualifiedName);
   }
 
-  public InstanceOfCondition(@NotNull SConcept concept) {
-    myConcepts = new SConcept[1];
+  public InstanceOfCondition(@NotNull SAbstractConcept concept) {
+    myConcepts = new SAbstractConcept[1];
     myConcepts[0] = concept;
   }
 
@@ -64,14 +65,14 @@ public final class InstanceOfCondition implements Condition<SNode> {
     myConcepts = a.toArray(new SConcept[a.size()]);
   }
 
-  public InstanceOfCondition(@NotNull SConcept[] concepts) {
-    ArrayList<SConcept> a = new ArrayList<SConcept>(concepts.length);
-    for (SConcept n : concepts) {
+  public InstanceOfCondition(@NotNull SAbstractConcept[] concepts) {
+    ArrayList<SAbstractConcept> a = new ArrayList<SAbstractConcept>(concepts.length);
+    for (SAbstractConcept n : concepts) {
       if (n != null) {
         a.add(n);
       }
     }
-    myConcepts = a.toArray(new SConcept[a.size()]);
+    myConcepts = a.toArray(new SAbstractConcept[a.size()]);
   }
 
   @Override
@@ -82,7 +83,7 @@ public final class InstanceOfCondition implements Condition<SNode> {
       }
       throw new NullPointerException();
     }
-    for (SConcept c : myConcepts) {
+    for (SAbstractConcept c : myConcepts) {
       if (node.getConcept().isSubConceptOf(c)) {
         return true;
       }

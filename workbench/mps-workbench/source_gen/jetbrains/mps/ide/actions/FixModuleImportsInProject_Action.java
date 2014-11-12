@@ -10,10 +10,9 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -53,7 +52,7 @@ public class FixModuleImportsInProject_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
+      for (SModule module : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
         if (module.isReadOnly()) {
           continue;
         }

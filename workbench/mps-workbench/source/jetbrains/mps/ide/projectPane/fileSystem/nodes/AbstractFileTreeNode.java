@@ -35,7 +35,6 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   public AbstractFileTreeNode(Project project, VirtualFile file, boolean showFullPath) {
-    super(new NullOperationContext());
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;

@@ -6,10 +6,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -29,13 +29,13 @@ public class HistoryConsoleTab extends BaseConsoleTab {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel loadedModel = loadHistoryModel(state);
-        myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.OutputConsoleRoot", null);
-        if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.OutputConsoleRoot")).isEmpty()) {
-          SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history"), SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.History", null));
+        myRoot = SModelOperations.createNewRootNode(myModel, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 1377757278865717087l, "jetbrains.mps.console.base.structure.OutputConsoleRoot"));
+        if (loadedModel == null || ListSequence.fromList(SModelOperations.roots(loadedModel, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 1377757278865717087l, "jetbrains.mps.console.base.structure.OutputConsoleRoot"))).isEmpty()) {
+          SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, "jetbrains.mps.console.base.structure.History")));
         } else {
-          SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history"), SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.OutputConsoleRoot")).first(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")));
+          SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history"), SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.roots(loadedModel, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 1377757278865717087l, "jetbrains.mps.console.base.structure.OutputConsoleRoot"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")));
         }
-        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder"), SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandHolder", null));
+        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
         TemporaryModels.getInstance().addMissingImports(myModel);
       }
     });

@@ -10,12 +10,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -26,7 +26,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
 public class QueriesGenerated {
@@ -35,10 +34,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            List<SNode> containers = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer");
+            List<SNode> containers = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701953l, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"));
             List<SNode> customConstructors = new ArrayList<SNode>();
             for (SNode container : ListSequence.fromList(containers)) {
               ListSequence.fromList(customConstructors).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701953l, 3041831561922340678l, "constructors"))));
@@ -50,7 +49,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", null);
+                SNode usage = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"), null);
                 SLinkOperations.setTarget(usage, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor"), (item));
                 return usage;
               }
@@ -75,12 +74,12 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", null);
-            SNode parameter = SNodeFactoryOperations.addNewChild(result, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter");
+            SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), null);
+            SNode parameter = SNodeFactoryOperations.addNewChild(result, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176186l, 5379647004618201121l, "parameter"), MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618201113l, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"));
             SLinkOperations.setTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618201113l, 5379647004618207272l, "type"), nodeToWrap);
             return result;
           }
@@ -110,10 +109,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", null);
+            return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(784887283248351340l, -6048570108212440173l), 5379647004618176185l, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), null);
           }
           public String getMatchingText(String pattern) {
             return "listof";

@@ -5,17 +5,19 @@ package org.jetbrains.mps.samples.Constants.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.FilteringScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Constants_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "org.jetbrains.mps.samples.Constants.structure.Constant")) {
-      SimpleRoleScope forNamedElements = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.Constants.structure.Constants", "constants"));
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, "org.jetbrains.mps.samples.Constants.structure.Constant"))) {
+      SimpleRoleScope forNamedElements = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912535l, 1494751830318912552l, "constants")));
       FilteringScope filteringScope = new FilteringScope(forNamedElements) {
         @Override
         public boolean isExcluded(SNode node) {

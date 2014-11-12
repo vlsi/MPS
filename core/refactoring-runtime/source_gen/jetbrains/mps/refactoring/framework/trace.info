@@ -375,7 +375,7 @@
       <node id="4792031542972805497" at="179,0,188,0" concept="15" trace="getLanguageModelsList#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
       <node id="4792031542972804930" at="52,0,64,0" concept="15" trace="getAllRefactoringNodes#()Ljava/util/List;" />
       <node id="4792031542972805371" at="137,5,149,5" concept="7" />
-      <node id="4792031542972805132" at="84,134,97,9" concept="19" />
+      <node id="4792031542972805132" at="84,239,97,9" concept="19" />
       <node id="5734694512880479884" at="152,0,165,0" concept="15" trace="isApplicable#(Ljetbrains/mps/refactoring/framework/IRefactoring;Ljava/lang/Object;)Z" />
       <node id="4792031542972805124" at="83,79,98,7" concept="7" />
       <node id="4792031542972805361" at="134,0,152,0" concept="15" trace="isApplicableToEntities#(Ljava/lang/String;Ljetbrains/mps/refactoring/framework/IRefactoringTarget;Ljava/util/Collection;)Z" />
@@ -503,7 +503,7 @@
       <scope id="4792031542972805371" at="137,5,149,5">
         <var name="entity" id="4792031542972805373" />
       </scope>
-      <scope id="4792031542972805131" at="84,134,97,9" />
+      <scope id="4792031542972805131" at="84,239,97,9" />
       <scope id="5734694512880479884" at="152,0,165,0">
         <var name="refactoring" id="5734694512880479888" />
         <var name="target" id="5734694512880479891" />
@@ -990,7 +990,7 @@
       <node id="4792031542972814459" at="282,35,283,15" concept="11" />
       <node id="1233603318757025261" at="284,7,285,0" concept="13" />
       <node id="4792031542972814478" at="286,53,287,174" concept="5" />
-      <node id="7064882795684217402" at="295,215,296,429" concept="5" />
+      <node id="7064882795684217402" at="295,315,296,429" concept="5" />
       <node id="7064882795684163083" at="298,5,299,0" concept="13" />
       <node id="7064882795684162484" at="299,0,300,55" concept="10" />
       <node id="7064882795684141690" at="300,55,301,33" concept="5" />
@@ -1318,7 +1318,7 @@
       <scope id="4792031542972814417" at="274,81,275,381" />
       <scope id="4792031542972814458" at="282,35,283,15" />
       <scope id="4792031542972814477" at="286,53,287,174" />
-      <scope id="7064882795684217393" at="295,215,296,429" />
+      <scope id="7064882795684217393" at="295,315,296,429" />
       <scope id="4792031542972814497" at="304,45,305,31" />
       <scope id="4792031542972814612" at="331,33,332,22" />
       <scope id="4792031542972814680" at="343,44,344,28" />

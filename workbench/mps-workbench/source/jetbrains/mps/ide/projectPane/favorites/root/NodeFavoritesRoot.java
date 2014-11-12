@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.UpdatableSNodeTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -26,20 +25,20 @@ import java.util.Collections;
 import java.util.List;
 
 class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
-  public NodeFavoritesRoot(SNodeReference value) {
-    super(value);
+  public NodeFavoritesRoot(Project project, SNodeReference value) {
+    super(project, value);
   }
 
   @Override
-  public MPSTreeNode getTreeNode(IOperationContext context) {
-    SNode node = getValue().resolve(MPSModuleRepository.getInstance());
+  public MPSTreeNode createTreeNode() {
+    SNode node = getValue().resolve(myProject.getRepository());
     if (node == null) return null;
-    UpdatableSNodeTreeNode nodeTreeNode = new UpdatableSNodeTreeNode(node, context);
-    return nodeTreeNode;
+    return new UpdatableSNodeTreeNode(myProject, node);
   }
 
   @Override
   public List<SNode> getAvailableNodes() {
-    return Collections.singletonList(getValue().resolve(MPSModuleRepository.getInstance()));
+    final SNode resolved = getValue().resolve(myProject.getRepository());
+    return resolved == null ? Collections.<SNode>emptyList() : Collections.singletonList(resolved);
   }
 }

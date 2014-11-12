@@ -4,18 +4,18 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReportErrorStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
-    SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation", null);
+    SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 7992060018732187438l, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), null);
     AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), newAnnotation);
   }
   public static String virtual_getName_1597542831856389237(SNode thisNode) {

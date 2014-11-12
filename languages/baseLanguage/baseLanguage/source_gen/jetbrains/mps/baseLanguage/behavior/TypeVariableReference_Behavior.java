@@ -46,12 +46,12 @@ public class TypeVariableReference_Behavior {
     SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"));
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
       SetSequence.fromSet(visitedTypeVariableReferences).addElement(thisNode);
-      SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
+      SNode upperBoundType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, "jetbrains.mps.baseLanguage.structure.UpperBoundType"));
       SLinkOperations.setTarget(upperBoundType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound"), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bound, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypeVariableReferences}));
       SetSequence.fromSet(visitedTypeVariableReferences).removeElement(thisNode);
       return upperBoundType;
     } else {
-      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
+      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1171903607971l, "jetbrains.mps.baseLanguage.structure.WildCardType"));
     }
 
   }

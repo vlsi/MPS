@@ -65,7 +65,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode baseMethodDeclaration = ChangeMethodSignatureDialog.this.myParameters.getDeclaration();
-        SLinkOperations.setTarget(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+        SLinkOperations.setTarget(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
 
         myTempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
         myTempModel.addRootNode(baseMethodDeclaration);

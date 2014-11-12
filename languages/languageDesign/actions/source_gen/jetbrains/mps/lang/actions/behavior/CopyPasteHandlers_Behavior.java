@@ -33,7 +33,7 @@ public class CopyPasteHandlers_Behavior {
     return result;
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
+    SNode pastePostProcessor = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, "jetbrains.mps.lang.actions.structure.PastePostProcessor"));
     SLinkOperations.setTarget(pastePostProcessor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, 6026743057587410043l, "concept"), baseConcept);
     ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790174l, "postProcessor"))).addElement(pastePostProcessor);
     String name = SModelUtil.getDeclaringLanguage(baseConcept).getModuleName();

@@ -12,9 +12,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -67,8 +67,8 @@ public class TurnToForEachStatement_Intention implements IntentionFactory {
       return "Turn to Sequential";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
-      final SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", null);
+      SNode forStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), null);
+      final SNode variable = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944193378l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"), null);
       SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369518786l, "loopVariable")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable"), variable);
       SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369550462l, "inputSequence")));
@@ -82,7 +82,7 @@ public class TurnToForEachStatement_Intention implements IntentionFactory {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNode newReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", null);
+          SNode newReference = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944233411l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"), null);
           SLinkOperations.setTarget(newReference, MetaAdapterFactory.getReferenceLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944233411l, 1153944258490l, "variable"), variable);
           SNodeOperations.replaceWithAnother(it, newReference);
         }

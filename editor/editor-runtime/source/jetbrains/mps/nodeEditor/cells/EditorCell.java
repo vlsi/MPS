@@ -146,8 +146,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean isLastCaretPosition();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isOnLeftBoundary();
 
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   boolean isOnRightBoundary();
 
   EditorCell getContainingBigCell();

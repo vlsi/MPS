@@ -24,7 +24,7 @@ public class ValueInlineDocTag_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6962838954693748795l, 2565027568480644422l, "variableReference"), "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6962838954693748795l, 2565027568480644422l, "variableReference"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5562345046718956738l, "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference"));
     }
   }
 }

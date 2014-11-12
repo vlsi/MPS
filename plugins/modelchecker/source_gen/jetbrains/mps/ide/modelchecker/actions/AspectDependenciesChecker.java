@@ -60,7 +60,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
       return results;
     }
 
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }

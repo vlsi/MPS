@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
+  private final Project myProject;
   private SNode myNode;
   private boolean myInitialized;
 
@@ -34,8 +36,8 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     return true;
   }
 
-  public ConceptTreeNode(IOperationContext operationContext, SNode node) {
-    super(operationContext);
+  public ConceptTreeNode(Project project, SNode node) {
+    myProject = project;
     myNode = node;
 
     SConcept concept = myNode.getConcept();
@@ -67,13 +69,14 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
 
   @Override
   public void doubleClick() {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    // XXX doubleClick shall be external, so that neither ConceptTreeNode nor ReferenceTreeNode shall know about project and writeInEDT
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode concept = getSNode();
-        if (concept == null || !SNodeUtil.isAccessible(concept, MPSModuleRepository.getInstance())) return;
+        if (concept == null || !SNodeUtil.isAccessible(concept, myProject.getRepository())) return;
         // TODO: use node pointers here
-        NavigationSupport.getInstance().openNode(getOperationContext(), concept, true, true);
+        NavigationSupport.getInstance().openNode(myProject, concept, true, true);
       }
     });
   }

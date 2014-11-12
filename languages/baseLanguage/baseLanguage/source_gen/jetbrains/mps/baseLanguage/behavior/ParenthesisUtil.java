@@ -20,8 +20,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 
 public class ParenthesisUtil {
   public ParenthesisUtil() {
@@ -119,9 +117,9 @@ public class ParenthesisUtil {
       IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(paren);
     } else {
       if (right) {
-        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2329139813954029793l, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"));
       } else {
-        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7251340091268481742l, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"));
       }
     }
   }
@@ -130,9 +128,9 @@ public class ParenthesisUtil {
     SNode nodesParens = (right ? AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) : AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
     if (nodesParens == null) {
       if (right) {
-        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2329139813954029793l, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"));
       } else {
-        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7251340091268481742l, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"));
       }
     }
     while (!(IIncompleteParen_Behavior.call_isSingleParen_1071364028373849897(parens))) {
@@ -179,7 +177,7 @@ public class ParenthesisUtil {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
       if (eq_a65dpo_a0b0q0p(candidateExpression, myExpression)) {
         // they are both the same node 
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
         SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), candidateExpression);
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen, parens);
         return parens;
@@ -238,7 +236,7 @@ public class ParenthesisUtil {
       clearIncompleteParens(candidateExpression, completingByRightParen, parens);
       return parens;
     } else {
-      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"));
       SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), firstCommonAncestor);
       clearIncompleteParens(candidateExpression, completingByRightParen, parens);
       return parens;
@@ -313,7 +311,7 @@ public class ParenthesisUtil {
     // These would be the nodes into which we come from the right child. 
     SNode rightAccumulator = buildAccumulator(firstCommonAncestor, rightTurn, false);
 
-    SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+    SNode parens = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), null);
     if (SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
@@ -627,7 +625,7 @@ public class ParenthesisUtil {
     }
   }
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
-    return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
+    return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child)), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(parent)), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child)), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(parent)), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
   private static boolean eq_a65dpo_a0a0a8a5a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

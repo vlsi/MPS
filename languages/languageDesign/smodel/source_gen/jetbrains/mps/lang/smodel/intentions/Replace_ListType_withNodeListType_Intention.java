@@ -68,7 +68,7 @@ public class Replace_ListType_withNodeListType_Intention implements IntentionFac
       return "Replace with 'nlist < >'";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.smodel.structure.SNodeListType");
+      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1145383075378l, "jetbrains.mps.lang.smodel.structure.SNodeListType"));
     }
     public IntentionDescriptor getDescriptor() {
       return Replace_ListType_withNodeListType_Intention.this;

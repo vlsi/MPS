@@ -10,12 +10,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -24,10 +24,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Quantity");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"));
             SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), "0.0");
             if (pattern.length() > 1) {
               if (pattern.endsWith(".")) {
@@ -36,7 +36,7 @@ public class QueriesGenerated {
                 SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern.substring(1));
               }
             }
-            SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
+            SNode quantity = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"));
             SPropertyOperations.set(quantity, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD");
             SLinkOperations.setTarget(quantity, MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793363741l, "amount"), fpConstant);
             return quantity;
@@ -62,16 +62,16 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Quantity");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"));
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern + 1);
             } else {
               SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern);
             }
-            SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
+            SNode quantity = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"));
             SPropertyOperations.set(quantity, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD_KWH");
             SLinkOperations.setTarget(quantity, MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793363741l, "amount"), fpConstant);
             return quantity;

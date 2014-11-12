@@ -10,18 +10,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -34,14 +33,14 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             String smallPattern = pattern.substring(1);
             if (smallPattern.endsWith("\"")) {
               smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
             }
-            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", null);
+            SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762696l, "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"), null);
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762696l, 4022026349914762697l, "value"), smallPattern);
             return result;
           }
@@ -64,10 +63,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", null);
+            SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"), null);
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, 4022026349914762710l, "value"), "" + (Integer.parseInt(pattern)));
             return result;
           }
@@ -90,10 +89,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", null);
+            SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 3978364766705449817l, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"), null);
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -112,10 +111,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", null);
+            SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), null);
             return node;
           }
           public String getMatchingText(String pattern) {
@@ -133,7 +132,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode application = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", null);
+        SNode application = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), application);
         SLinkOperations.setTarget(application, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"), _context.getSourceNode());
         return application;
@@ -184,7 +183,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode multiple = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", null);
+        SNode multiple = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), multiple);
         ListSequence.fromList(SLinkOperations.getChildren(multiple, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, 1564819815921013156l, "expressions"))).insertElement(0, _context.getSourceNode());
         return multiple;

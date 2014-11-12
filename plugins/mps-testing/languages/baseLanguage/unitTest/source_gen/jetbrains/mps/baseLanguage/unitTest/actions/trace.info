@@ -10,9 +10,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d0(jetbrains.mps.baseLanguage.unitTest.actions)/1198167751204">
     <file name="QueriesGenerated.java">
-      <node id="1198167785565" at="19,144,20,251" concept="0" />
+      <node id="1198167785565" at="19,144,20,353" concept="0" />
       <node id="1198167764447" at="19,0,22,0" concept="2" trace="nodeFactory_NodeSetup_TestMethod_1198167764447#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="1198167764448" at="19,144,20,251" />
+      <scope id="1198167764448" at="19,144,20,353" />
       <scope id="1198167764447" at="19,0,22,0">
         <var name="_context" id="1198167764447" />
         <var name="operationContext" id="1198167764447" />

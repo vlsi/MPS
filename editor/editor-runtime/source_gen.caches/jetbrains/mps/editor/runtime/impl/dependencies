@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.editor.runtime.impl.CellUtil" file="CellUtil.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -11,6 +9,8 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
   </dependency>
@@ -22,8 +22,9 @@
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" file="LanguagesKeymapManager.java">
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="java.lang.InstantiationException" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="java.util.Collections" />
@@ -33,8 +34,8 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupListener" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -43,8 +44,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.Override" />
@@ -56,6 +57,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryListenerBase" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />

@@ -32,9 +32,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -147,8 +147,8 @@ public class CollectTests_Action extends BaseAction {
                   ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
                     public void run() {
                       if (suite.value == null) {
-                        suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);
-                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef"), "jetbrains.mps.testbench.suite.structure.SolutionRef");
+                        suite.value = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"));
+                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef"), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef"));
                         SModuleReference mref = module.getModuleReference();
                         SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName"), mref.getModuleName());
                         SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506910l, "moduleID"), mref.getModuleId().toString());
@@ -194,7 +194,7 @@ public class CollectTests_Action extends BaseAction {
     }
   }
   private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, SModuleReference>() {
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode ms) {
         return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
       }

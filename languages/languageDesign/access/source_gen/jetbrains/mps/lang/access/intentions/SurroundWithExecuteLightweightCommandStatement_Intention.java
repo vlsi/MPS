@@ -12,12 +12,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithExecuteLightweightCommandStatement_Intention implements IntentionFactory {
@@ -64,7 +64,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention implements
       return "Read Action";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode readActionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", null);
+      SNode readActionStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348181l, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement"), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, readActionStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

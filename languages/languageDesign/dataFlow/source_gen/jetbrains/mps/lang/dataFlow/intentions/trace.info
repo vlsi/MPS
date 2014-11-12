@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="10,0,19,0" name="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
+      <unit at="8,0,14,0" name="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534526647">
@@ -120,8 +120,8 @@
       <node id="1206534589230" at="60,37,61,135" concept="1" />
       <node id="1206534589230" at="62,5,63,30" concept="6" />
       <node id="1206534596328" at="68,87,69,38" concept="6" />
-      <node id="1206534605708" at="71,78,72,126" concept="5" />
-      <node id="1206534614825" at="72,126,73,55" concept="1" />
+      <node id="1206534605708" at="71,78,72,228" concept="5" />
+      <node id="1206534614825" at="72,228,73,55" concept="1" />
       <node id="1206534623039" at="73,55,74,189" concept="1" />
       <node id="1206535017668" at="74,189,75,52" concept="1" />
       <node id="1206534589230" at="77,48,78,48" concept="6" />

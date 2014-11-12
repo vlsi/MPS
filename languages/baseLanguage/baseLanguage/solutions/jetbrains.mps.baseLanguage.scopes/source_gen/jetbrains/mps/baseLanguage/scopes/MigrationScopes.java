@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
 public class MigrationScopes {
   private MigrationScopes() {
@@ -37,7 +36,7 @@ public class MigrationScopes {
     }
     @Override
     public boolean isExcluded(SNode node) {
-      return !(SNodeOperations.isInstanceOf(node, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept)));
+      return !(SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept)));
     }
   }
 }

@@ -82,9 +82,9 @@ public class ExpandBoolean_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode statementNode = SNodeOperations.cast(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"));
       // 
-      SNode ifNode = SNodeFactoryOperations.insertNewPrevSiblingChild(statementNode, "jetbrains.mps.baseLanguage.structure.IfStatement");
-      SNode ifTrue = SNodeFactoryOperations.setNewChild(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNode ifFalse = SNodeFactoryOperations.setNewChild(SNodeFactoryOperations.setNewChild(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), "jetbrains.mps.baseLanguage.structure.StatementList");
+      SNode ifNode = SNodeFactoryOperations.insertNewPrevSiblingChild(statementNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+      SNode ifTrue = SNodeFactoryOperations.setNewChild(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
+      SNode ifFalse = SNodeFactoryOperations.setNewChild(SNodeFactoryOperations.setNewChild(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
       // 
       SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), SNodeOperations.copyNode(node));
       // 
@@ -100,7 +100,7 @@ public class ExpandBoolean_Intention implements IntentionFactory {
       });
       Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
           SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "" + (true));
         }
       });
@@ -111,7 +111,7 @@ public class ExpandBoolean_Intention implements IntentionFactory {
       });
       Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+          SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
           SPropertyOperations.set(booleanConstant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "" + (false));
         }
       });

@@ -625,8 +625,8 @@
       <node id="1215617285928" at="39,36,40,61" concept="7" />
       <node id="1213877521632" at="41,310,42,20" concept="8" />
       <node id="1213877521643" at="44,5,45,17" concept="8" />
-      <node id="3044950653914717726" at="47,125,48,261" concept="7" />
-      <node id="3044950653914717741" at="48,261,49,170" concept="2" />
+      <node id="3044950653914717726" at="47,125,48,289" concept="7" />
+      <node id="3044950653914717741" at="48,289,49,170" concept="2" />
       <node id="3044950653914717745" at="49,170,50,18" concept="8" />
       <node id="1213877521571" at="52,60,53,63" concept="7" />
       <node id="1213877521571" at="53,63,54,30" concept="7" />
@@ -757,8 +757,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1262430001741522674">
     <file name="QuickFixDescriptionBlock_Behavior.java">
       <node id="1262430001741522672" at="17,92,18,16" concept="8" />
-      <node id="3044950653914719774" at="20,125,21,261" concept="7" />
-      <node id="3044950653914719789" at="21,261,22,170" concept="2" />
+      <node id="3044950653914719774" at="20,125,21,289" concept="7" />
+      <node id="3044950653914719789" at="21,289,22,170" concept="2" />
       <node id="3044950653914719793" at="22,170,23,18" concept="8" />
       <node id="658365993681975233" at="25,83,26,47" concept="8" />
       <node id="658365993681973811" at="28,60,29,63" concept="7" />
@@ -812,8 +812,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1262430001741642267">
     <file name="QuickFixExecuteBlock_Behavior.java">
       <node id="1262430001741642265" at="17,92,18,16" concept="8" />
-      <node id="3044950653914724754" at="20,125,21,261" concept="7" />
-      <node id="3044950653914724769" at="21,261,22,170" concept="2" />
+      <node id="3044950653914724754" at="20,125,21,289" concept="7" />
+      <node id="3044950653914724769" at="21,289,22,170" concept="2" />
       <node id="3044950653914724773" at="22,170,23,18" concept="8" />
       <node id="658365993682017376" at="25,83,26,47" concept="8" />
       <node id="658365993682017372" at="28,60,29,63" concept="7" />
@@ -937,8 +937,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1262430001741718307">
     <file name="QuickFixSetSelectionBlock_Behavior.java">
       <node id="1262430001741718305" at="17,92,18,16" concept="8" />
-      <node id="3044950653914717436" at="20,125,21,261" concept="7" />
-      <node id="3044950653914717451" at="21,261,22,176" concept="2" />
+      <node id="3044950653914717436" at="20,125,21,289" concept="7" />
+      <node id="3044950653914717451" at="21,289,22,176" concept="2" />
       <node id="3044950653914717456" at="22,176,23,176" concept="2" />
       <node id="3044950653914717461" at="23,176,24,170" concept="2" />
       <node id="3044950653914717465" at="24,170,25,18" concept="8" />
@@ -1116,8 +1116,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/160921426017537691">
     <file name="DependentComputationItem_FindMasterBlock_Behavior.java">
       <node id="160921426017537700" at="21,83,22,466" concept="8" />
-      <node id="3044950653914723153" at="24,125,25,261" concept="7" />
-      <node id="3044950653914723168" at="25,261,26,176" concept="2" />
+      <node id="3044950653914723153" at="24,125,25,289" concept="7" />
+      <node id="3044950653914723168" at="25,289,26,176" concept="2" />
       <node id="3044950653914723172" at="26,176,27,18" concept="8" />
       <node id="160921426017537702" at="29,78,30,63" concept="7" />
       <node id="160921426017537702" at="30,63,31,30" concept="7" />
@@ -1157,8 +1157,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914718969">
     <file name="VariableConverterItem_ConvertBlock_Behavior.java">
-      <node id="3044950653914718933" at="17,125,18,261" concept="7" />
-      <node id="3044950653914718948" at="18,261,19,170" concept="2" />
+      <node id="3044950653914718933" at="17,125,18,289" concept="7" />
+      <node id="3044950653914718948" at="18,289,19,170" concept="2" />
       <node id="3044950653914718953" at="19,170,20,170" concept="2" />
       <node id="3044950653914718958" at="20,170,21,170" concept="2" />
       <node id="3044950653914718963" at="21,170,22,170" concept="2" />
@@ -1199,8 +1199,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914719202">
     <file name="OverloadedOpIsApplicableFunction_Behavior.java">
-      <node id="3044950653914719171" at="17,125,18,261" concept="7" />
-      <node id="3044950653914719186" at="18,261,19,170" concept="2" />
+      <node id="3044950653914719171" at="17,125,18,289" concept="7" />
+      <node id="3044950653914719186" at="18,289,19,170" concept="2" />
       <node id="3044950653914719191" at="19,170,20,170" concept="2" />
       <node id="3044950653914719196" at="20,170,21,170" concept="2" />
       <node id="3044950653914719200" at="21,170,22,18" concept="8" />
@@ -1240,8 +1240,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914720922">
     <file name="OverloadedOperatorTypeFunction_Behavior.java">
-      <node id="3044950653914720891" at="17,125,18,261" concept="7" />
-      <node id="3044950653914720906" at="18,261,19,170" concept="2" />
+      <node id="3044950653914720891" at="17,125,18,289" concept="7" />
+      <node id="3044950653914720906" at="18,289,19,170" concept="2" />
       <node id="3044950653914720911" at="19,170,20,170" concept="2" />
       <node id="3044950653914720916" at="20,170,21,170" concept="2" />
       <node id="3044950653914720920" at="21,170,22,18" concept="8" />
@@ -1281,8 +1281,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914723938">
     <file name="VariableConverterItem_ApplicableBlock_Behavior.java">
-      <node id="3044950653914723902" at="17,125,18,261" concept="7" />
-      <node id="3044950653914723917" at="18,261,19,170" concept="2" />
+      <node id="3044950653914723902" at="17,125,18,289" concept="7" />
+      <node id="3044950653914723917" at="18,289,19,170" concept="2" />
       <node id="3044950653914723922" at="19,170,20,170" concept="2" />
       <node id="3044950653914723927" at="20,170,21,170" concept="2" />
       <node id="3044950653914723932" at="21,170,22,170" concept="2" />
@@ -1323,8 +1323,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914725005">
     <file name="DependentComputationItem_BlockingBlock_Behavior.java">
-      <node id="3044950653914724984" at="17,125,18,261" concept="7" />
-      <node id="3044950653914724999" at="18,261,19,176" concept="2" />
+      <node id="3044950653914724984" at="17,125,18,289" concept="7" />
+      <node id="3044950653914724999" at="18,289,19,176" concept="2" />
       <node id="3044950653914725003" at="19,176,20,18" concept="8" />
       <node id="658365993682017669" at="22,83,23,47" concept="8" />
       <node id="658365993682017665" at="25,60,26,63" concept="7" />
@@ -1362,8 +1362,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914725690">
     <file name="DependentComputationItem_ApplicableBlock_Behavior.java">
-      <node id="3044950653914725669" at="17,125,18,261" concept="7" />
-      <node id="3044950653914725684" at="18,261,19,176" concept="2" />
+      <node id="3044950653914725669" at="17,125,18,289" concept="7" />
+      <node id="3044950653914725684" at="18,289,19,176" concept="2" />
       <node id="3044950653914725688" at="19,176,20,18" concept="8" />
       <node id="658365993682020063" at="22,83,23,47" concept="8" />
       <node id="658365993682020059" at="25,60,26,63" concept="7" />
@@ -1401,9 +1401,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3350570190399391695">
     <file name="WhenConcreteVariableDeclaration_Behavior.java">
-      <node id="3350570190399462396" at="11,43,12,242" concept="2" />
+      <node id="3350570190399462396" at="11,43,12,350" concept="2" />
       <node id="3350570190399391695" at="11,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3350570190399391697" at="11,43,12,242" />
+      <scope id="3350570190399391697" at="11,43,12,350" />
       <scope id="3350570190399391695" at="11,0,14,0">
         <var name="thisNode" id="3350570190399391695" />
       </scope>
@@ -1955,39 +1955,39 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/6640659353039802498">
     <file name="MultipleForeachLoop_Behavior.java">
-      <node id="3938050118718700863" at="24,43,25,197" concept="8" />
-      <node id="3938050118718700863" at="28,41,29,187" concept="8" />
-      <node id="7362994916699696730" at="33,5,34,16" concept="8" />
-      <node id="6640659353039802498" at="18,0,20,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3938050118718700863" at="24,0,27,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3938050118718700863" at="28,0,31,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3938050118718700818" at="22,57,31,28" concept="8" />
-      <node id="3938050118718700812" at="21,105,32,7" concept="5" />
-      <node id="7362994916699696713" at="20,101,33,5" concept="5" />
-      <node id="6640659353039802498" at="20,0,36,0" concept="10" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="6640659353039802500" at="18,43,18,43" />
-      <scope id="3938050118718700863" at="24,43,25,197" />
-      <scope id="3938050118718700863" at="28,41,29,187" />
-      <scope id="6640659353039802498" at="18,0,20,0">
+      <node id="3938050118718700863" at="25,43,26,197" concept="8" />
+      <node id="3938050118718700863" at="29,41,30,187" concept="8" />
+      <node id="7362994916699696730" at="34,5,35,16" concept="8" />
+      <node id="6640659353039802498" at="19,0,21,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3938050118718700863" at="25,0,28,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3938050118718700863" at="29,0,32,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3938050118718700818" at="23,57,32,28" concept="8" />
+      <node id="3938050118718700812" at="22,235,33,7" concept="5" />
+      <node id="7362994916699696713" at="21,101,34,5" concept="5" />
+      <node id="6640659353039802498" at="21,0,37,0" concept="10" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="6640659353039802500" at="19,43,19,43" />
+      <scope id="3938050118718700863" at="25,43,26,197" />
+      <scope id="3938050118718700863" at="29,41,30,187" />
+      <scope id="6640659353039802498" at="19,0,21,0">
         <var name="thisNode" id="6640659353039802498" />
       </scope>
-      <scope id="3938050118718700863" at="24,0,27,0">
+      <scope id="3938050118718700863" at="25,0,28,0">
         <var name="it" id="3938050118718700863" />
       </scope>
-      <scope id="3938050118718700863" at="28,0,31,0">
+      <scope id="3938050118718700863" at="29,0,32,0">
         <var name="it" id="3938050118718700863" />
       </scope>
-      <scope id="3938050118718700813" at="22,57,31,28" />
-      <scope id="7362994916699696714" at="21,105,32,7" />
-      <scope id="7362994916699696698" at="20,101,34,16" />
-      <scope id="6640659353039802498" at="20,0,36,0">
+      <scope id="3938050118718700813" at="23,57,32,28" />
+      <scope id="7362994916699696714" at="22,235,33,7" />
+      <scope id="7362994916699696698" at="21,101,35,16" />
+      <scope id="6640659353039802498" at="21,0,37,0">
         <var name="child" id="7362994916699696701" />
         <var name="kind" id="7362994916699696699" />
         <var name="thisNode" id="6640659353039802498" />
       </scope>
-      <unit id="3938050118718700863" at="23,258,27,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
-      <unit id="3938050118718700863" at="27,22,31,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
-      <unit id="6640659353039802498" at="17,0,37,0" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
+      <unit id="3938050118718700863" at="24,258,28,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$1" />
+      <unit id="3938050118718700863" at="28,22,32,9" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior$2" />
+      <unit id="6640659353039802498" at="18,0,38,0" name="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/7342618720440051596">
@@ -2008,8 +2008,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661877950">
     <file name="InfoStatement_Behavior.java">
-      <node id="1210674410577" at="17,93,18,136" concept="7" />
-      <node id="1210674361648" at="18,136,19,172" concept="2" />
+      <node id="1210674410577" at="17,93,18,244" concept="7" />
+      <node id="1210674361648" at="18,244,19,172" concept="2" />
       <node id="1597542831856656071" at="22,173,23,325" concept="8" />
       <node id="1597542831857034382" at="24,12,25,252" concept="7" />
       <node id="1597542831856656095" at="26,94,27,29" concept="8" />
@@ -2044,8 +2044,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661924626">
     <file name="ReportErrorStatement_Behavior.java">
-      <node id="8489045168661924678" at="17,93,18,143" concept="7" />
-      <node id="8489045168661924684" at="18,143,19,172" concept="2" />
+      <node id="8489045168661924678" at="17,93,18,251" concept="7" />
+      <node id="8489045168661924684" at="18,251,19,172" concept="2" />
       <node id="4531408400492770666" at="22,173,23,325" concept="8" />
       <node id="1597542831856631284" at="24,12,25,255" concept="7" />
       <node id="1597542831856644686" at="26,94,27,29" concept="8" />
@@ -2080,8 +2080,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/8489045168661926300">
     <file name="WarningStatement_Behavior.java">
-      <node id="8489045168661926352" at="17,93,18,139" concept="7" />
-      <node id="8489045168661926358" at="18,139,19,172" concept="2" />
+      <node id="8489045168661926352" at="17,93,18,247" concept="7" />
+      <node id="8489045168661926358" at="18,247,19,172" concept="2" />
       <node id="1597542831856651597" at="22,173,23,325" concept="8" />
       <node id="1597542831857030253" at="24,12,25,255" concept="7" />
       <node id="1597542831856651621" at="26,94,27,29" concept="8" />
@@ -2134,8 +2134,8 @@
     <file name="AbstractRule_Behavior.java">
       <node id="8952337903384866982" at="16,382,17,539" concept="8" />
       <node id="8952337903384866995" at="18,5,19,16" concept="8" />
-      <node id="6261424444345979642" at="21,100,22,128" concept="7" />
-      <node id="6261424444345979650" at="22,128,23,196" concept="2" />
+      <node id="6261424444345979642" at="21,100,22,224" concept="7" />
+      <node id="6261424444345979650" at="22,224,23,196" concept="2" />
       <node id="6261424444345979667" at="23,196,24,202" concept="2" />
       <node id="8952337903384830487" at="13,0,15,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8952337903384866980" at="15,82,18,5" concept="5" />

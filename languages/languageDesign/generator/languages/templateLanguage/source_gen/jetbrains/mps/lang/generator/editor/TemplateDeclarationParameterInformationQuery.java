@@ -35,7 +35,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
     }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) == templateCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument");
+        return SNodeOperations.getParent(it) == templateCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"));
       }
     });
   }

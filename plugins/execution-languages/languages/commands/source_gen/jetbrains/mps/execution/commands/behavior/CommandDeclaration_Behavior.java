@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CommandDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter"), SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", null));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 8478830098674460022l, "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration")));
   }
   public static boolean call_isDebuggable_856705193941282102(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 6586232406240908850l, "debuggerConfiguration")) != null);

@@ -7,8 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -41,7 +40,7 @@ public class StringLiteralRegexp_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"))), c))) {
+            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")), c))) {
               return null;
             }
             sb.append(c);

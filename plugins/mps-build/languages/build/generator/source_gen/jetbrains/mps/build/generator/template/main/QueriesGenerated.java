@@ -1305,7 +1305,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7918752904805774009(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(((Iterable<Map.Entry<String, String>>) BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) Object.class), _context.getNode(), "virtual_getTaskArguments_7918752904805535914", new Object[]{}).entrySet())).select(new ISelector<Map.Entry<String, String>, SNode>() {
       public SNode select(Map.Entry<String, String> it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_Mapping");
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, "jetbrains.mps.build.structure.GeneratorInternal_Mapping"));
         SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803448l, "key"), it.getKey());
         SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803450l, "value"), it.getValue());
         return loopnode;
@@ -1365,7 +1365,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5979287180587467230(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode module : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getModules()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642264l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule"));
       SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642264l, 4964617264469642265l, "targetModule"), module);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1374,7 +1374,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_8169228734285529277(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642724l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar"));
       SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642724l, 4964617264469642725l, "targetJar"), jar);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1383,7 +1383,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_6859736767834590289(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642570l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile"));
       SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642570l, 4964617264469642571l, "targetFile"), jar);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1392,7 +1392,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5680938682773841356(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<SNode, String> jarInFolder : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJarsInFolder()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder"));
       SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433152759l, "targetFolder"), jarInFolder._0());
       SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433252328l, "suffix"), jarInFolder._1());
       ListSequence.fromList(result).addElement(loopnode);
@@ -1402,7 +1402,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_144710003695560909(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode library : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getLibraries()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642863l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary"));
       SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642863l, 4964617264469642864l, "targetLibrary"), library);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1464,7 +1464,7 @@ public class QueriesGenerated {
     }));
     List<SNode> result = new ArrayList<SNode>();
     for (String fname : folders) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder");
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433444288l, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder"));
       SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433444288l, 5800711952433445190l, "folderName"), fname);
       ListSequence.fromList(result).addElement(loopnode);
     }
@@ -1568,11 +1568,11 @@ public class QueriesGenerated {
     for (SNode participant : ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6083230236994833215l, "jetbrains.mps.build.structure.IWorkflowParticipant"), false, new SConcept[]{})).reversedList()) {
       SNode targetTask = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), participant, "virtual_getTargetTask_6854204111265837872", new Object[]{});
       if (MapSequence.fromMap(participantForTask).get(targetTask) == null) {
-        MapSequence.fromMap(participantForTask).put(targetTask, SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", null));
+        MapSequence.fromMap(participantForTask).put(targetTask, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants")));
         SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764358l, "for"), targetTask);
         ListSequence.fromList(list).addElement(MapSequence.fromMap(participantForTask).get(targetTask));
       }
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
+      SNode ref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6667029362524340680l, "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference"));
       SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6667029362524340680l, 6667029362524340681l, "participant"), participant);
       ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(participantForTask).get(targetTask), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764359l, "participant"))).addElement(ref);
     }
@@ -1679,7 +1679,7 @@ public class QueriesGenerated {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), false, new SConcept[]{});
   }
   public static void mappingScript_CodeBlock_809559803149973643(final MappingScriptContext _context) {
-    for (SNode buildProject : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.structure.BuildProject"))) {
+    for (SNode buildProject : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")))) {
       String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaultContext(_context));
       if (scriptsPath != null && scriptsPath.endsWith("/")) {
         scriptsPath = scriptsPath.substring(0, scriptsPath.length() - 1);
@@ -1689,7 +1689,7 @@ public class QueriesGenerated {
     }
   }
   public static void mappingScript_CodeBlock_841011766566205060(final MappingScriptContext _context) {
-    for (SNode root : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.structure.BuildProject")) {
+    for (SNode root : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"))) {
       if (!(_context.isDirty(root))) {
         continue;
       }
@@ -1698,7 +1698,7 @@ public class QueriesGenerated {
     }
   }
   public static void mappingScript_CodeBlock_715289236985580032(final MappingScriptContext _context) {
-    ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath")).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2539347366864541544l, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode path) {
         DependenciesHelper helper = new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(path, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false));
         helper.contentLocations().put(DependenciesHelper.getOriginalNode(path, _context), BuildSourceArchiveRelativePath_Behavior.call_calculateUnpackPath_715289236985547394(path, Context.defaultContext(_context)));

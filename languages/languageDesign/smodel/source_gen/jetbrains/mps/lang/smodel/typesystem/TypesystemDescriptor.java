@@ -274,6 +274,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_Node_GetSConceptOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_Node_InsertNewNextSiblingOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -487,6 +491,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SConcept_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SConceptType_SConceptType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

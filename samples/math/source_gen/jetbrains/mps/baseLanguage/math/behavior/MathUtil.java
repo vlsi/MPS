@@ -176,7 +176,7 @@ public class MathUtil {
       case 4:
         return _quotation_createNode_30uc9x_a0a3c0e();
       default:
-        SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+        SNode c = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
         SPropertyOperations.set(c, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "" + (SPropertyOperations.getInteger(mc, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1904947163751448715l, 1904947163751462196l, "precision"))));
         return _quotation_createNode_30uc9x_a2a2a4(c, MathUtil.getRoundingMode(SPropertyOperations.getInteger_def(mc, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1904947163751448715l, 1904947163751462195l, "roundingMode"), "4")));
     }

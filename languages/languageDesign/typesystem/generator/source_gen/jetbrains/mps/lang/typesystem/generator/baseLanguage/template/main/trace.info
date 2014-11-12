@@ -48,7 +48,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)/1174411222995">
     <file name="QueriesGenerated.java">
       <node id="1236278932308" at="52,102,53,52" concept="8" />
-      <node id="1218218647111" at="53,52,54,151" concept="9" />
+      <node id="1218218647111" at="53,52,54,148" concept="9" />
       <node id="1188901663348" at="56,104,57,448" concept="9" />
       <node id="1223381421152" at="61,168,62,21" concept="9" />
       <node id="1223379424270" at="63,7,64,404" concept="8" />
@@ -163,7 +163,7 @@
       <scope id="4197825331980858389" at="195,110,196,217" />
       <scope id="1203646555000" at="1487,102,1488,196" />
       <scope id="4197825331980858401" at="2117,52,2118,44" />
-      <scope id="1175254554284" at="52,102,54,151">
+      <scope id="1175254554284" at="52,102,54,148">
         <var name="model" id="1236278932309" />
       </scope>
       <scope id="1177333576001" at="110,104,112,414">
@@ -774,17 +774,17 @@
       <scope id="5031556731835765743" at="1930,120,1935,13" />
       <scope id="8124453027370845520" at="1937,120,1942,13" />
       <scope id="7806648416361380832" at="1944,120,1949,13" />
-      <unit id="8514004119000872801" at="1875,152,1879,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$1" />
-      <unit id="8514004119000937708" at="1882,156,1886,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$2" />
-      <unit id="8514004119000937730" at="1889,152,1893,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$3" />
-      <unit id="8514004119000937752" at="1896,153,1900,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$4" />
-      <unit id="8514004119000937774" at="1903,164,1907,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$5" />
-      <unit id="8514004119000947253" at="1910,160,1914,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$6" />
+      <unit id="8514004119000872801" at="1875,251,1879,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$1" />
+      <unit id="8514004119000937708" at="1882,255,1886,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$2" />
+      <unit id="8514004119000937730" at="1889,251,1893,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$3" />
+      <unit id="8514004119000937752" at="1896,252,1900,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$4" />
+      <unit id="8514004119000937774" at="1903,263,1907,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$5" />
+      <unit id="8514004119000947253" at="1910,259,1914,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$6" />
       <unit id="8514004119000940653" at="1917,249,1921,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$7" />
-      <unit id="8514004119000947203" at="1924,165,1928,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$8" />
+      <unit id="8514004119000947203" at="1924,264,1928,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$8" />
       <unit id="8514004119000940574" at="1931,249,1935,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$9" />
-      <unit id="8514004119000947143" at="1938,176,1942,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$10" />
-      <unit id="8514004119000946928" at="1945,165,1949,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$11" />
+      <unit id="8514004119000947143" at="1938,281,1942,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$10" />
+      <unit id="8514004119000946928" at="1945,264,1949,5" name="jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main.QueriesGenerated$11" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)/1175518443988">
@@ -2099,14 +2099,14 @@
       <node id="6038246100610690491" at="2002,97,2003,13" concept="9" />
       <node id="9115269923227608619" at="2004,5,2005,241" concept="8" />
       <node id="9115269923227652485" at="2005,241,2006,240" concept="8" />
-      <node id="1223389318019" at="2007,129,2008,223" concept="8" />
+      <node id="1223389318019" at="2007,228,2008,223" concept="8" />
       <node id="1223389331389" at="2008,223,2009,32" concept="8" />
       <node id="1223389378084" at="2009,32,2010,231" concept="8" />
       <node id="1223644901101" at="2011,60,2012,211" concept="8" />
       <node id="1223389386751" at="2013,80,2014,27" concept="4" />
       <node id="1223389392337" at="2014,27,2015,16" concept="1" />
       <node id="1223389553376" at="2018,22,2019,277" concept="4" />
-      <node id="1223389517001" at="2022,150,2023,32" concept="8" />
+      <node id="1223389517001" at="2022,249,2023,32" concept="8" />
       <node id="1223389517005" at="2023,32,2024,231" concept="8" />
       <node id="1223644977314" at="2025,60,2026,211" concept="8" />
       <node id="1223389517015" at="2027,80,2028,27" concept="4" />
@@ -2210,12 +2210,12 @@
         <var name="quotedNode_2" id="1223389540575" />
       </scope>
       <scope id="1223389582373" at="2268,0,2279,0" />
-      <scope id="1223389465045" at="2022,150,2034,7">
+      <scope id="1223389465045" at="2022,249,2034,7">
         <var name="annotationInstances" id="1223389517006" />
         <var name="toProcess" id="1223389517002" />
       </scope>
       <scope id="1223389540575" at="2279,0,2291,0" />
-      <scope id="1223389211953" at="2007,129,2020,7">
+      <scope id="1223389211953" at="2007,228,2020,7">
         <var name="annotationInstances" id="1223389378085" />
         <var name="baseMethodDeclaration" id="1223389318020" />
         <var name="toProcess" id="1223389331390" />
@@ -2388,7 +2388,7 @@
     <file name="QueriesGenerated.java">
       <node id="9115269923227394360" at="2042,97,2043,79" concept="8" />
       <node id="9115269923227477243" at="2043,79,2044,245" concept="8" />
-      <node id="1224242818539" at="2045,153,2046,235" concept="8" />
+      <node id="1224242818539" at="2045,252,2046,235" concept="8" />
       <node id="1224242818547" at="2047,218,2048,17" concept="3" />
       <node id="1224242818529" at="2049,7,2050,266" concept="8" />
       <node id="7376433222636454307" at="2050,266,2051,33" concept="10" />
@@ -2492,7 +2492,7 @@
         <var name="dotExpression" id="1224242818556" />
       </scope>
       <scope id="9115269923227394362" at="2350,0,2365,0" />
-      <scope id="1224242632363" at="2045,153,2074,7">
+      <scope id="1224242632363" at="2045,252,2074,7">
         <var name="baseMethodDeclaration" id="1224242818530" />
         <var name="instanceMethodDeclaration" id="1224242818540" />
         <var name="oldBMD" id="1224249277266" />
@@ -2666,11 +2666,11 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)/2990591960991114477">
     <file name="QueriesGenerated.java">
       <node id="3742630585877537779" at="2077,103,2078,56" concept="8" />
-      <node id="3742630585877537787" at="2078,56,2079,194" concept="4" />
-      <node id="3742630585877600844" at="2079,194,2080,185" concept="4" />
-      <node id="627838806960542638" at="2080,185,2081,187" concept="4" />
-      <node id="627838806960557064" at="2081,187,2082,190" concept="4" />
-      <node id="5664393743536371230" at="2082,190,2083,185" concept="4" />
+      <node id="3742630585877537787" at="2078,56,2079,293" concept="4" />
+      <node id="3742630585877600844" at="2079,293,2080,284" concept="4" />
+      <node id="627838806960542638" at="2080,284,2081,286" concept="4" />
+      <node id="627838806960557064" at="2081,286,2082,289" concept="4" />
+      <node id="5664393743536371230" at="2082,289,2083,284" concept="4" />
       <node id="1688926966297930421" at="2084,39,2085,62" concept="8" />
       <node id="3742630585877622640" at="2085,62,2086,335" concept="8" />
       <node id="3742630585877622649" at="2086,335,2087,87" concept="8" />
@@ -2678,14 +2678,14 @@
       <node id="3742630585877622686" at="2088,229,2089,191" concept="4" />
       <node id="3742630585877622703" at="2089,191,2090,193" concept="4" />
       <node id="2990591960991179099" at="2091,5,2092,0" concept="11" />
-      <node id="3742630585877533563" at="2083,185,2091,5" concept="5" />
+      <node id="3742630585877533563" at="2083,284,2091,5" concept="5" />
       <scope id="3742630585877533569" at="2084,39,2090,193">
         <var name="annotation" id="3742630585877622676" />
         <var name="modelId" id="3742630585877622641" />
         <var name="nodeId" id="3742630585877622650" />
         <var name="originalModel" id="1688926966297930422" />
       </scope>
-      <scope id="3742630585877533563" at="2083,185,2091,5">
+      <scope id="3742630585877533563" at="2083,284,2091,5">
         <var name="node" id="3742630585877533567" />
       </scope>
       <scope id="2990591960991114479" at="2077,103,2092,0">

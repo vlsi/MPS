@@ -26,7 +26,7 @@ public class CellModel_RefNode_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification")));
     }
   }
   public static class CellModel_RefNode_AddHint_Actions_INSERT_BEFORE extends AbstractCellAction {
@@ -38,7 +38,7 @@ public class CellModel_RefNode_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification")));
     }
   }
 }

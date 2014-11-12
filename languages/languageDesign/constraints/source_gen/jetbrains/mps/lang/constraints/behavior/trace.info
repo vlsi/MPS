@@ -186,8 +186,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877330449">
     <file name="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java">
       <node id="1213877330452" at="15,103,16,16" concept="6" />
-      <node id="3044950653914719469" at="18,125,19,261" concept="5" />
-      <node id="3044950653914719484" at="19,261,20,177" concept="1" />
+      <node id="3044950653914719469" at="18,125,19,289" concept="5" />
+      <node id="3044950653914719484" at="19,289,20,177" concept="1" />
       <node id="3044950653914719489" at="20,177,21,171" concept="1" />
       <node id="3044950653914719494" at="21,171,22,177" concept="1" />
       <node id="3044950653914719499" at="22,177,23,177" concept="1" />
@@ -222,8 +222,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877345068">
     <file name="ConstraintFunction_CanBeAChild_Behavior.java">
       <node id="1213877345071" at="17,103,18,16" concept="6" />
-      <node id="3044950653914719210" at="20,125,21,261" concept="5" />
-      <node id="3044950653914719225" at="21,261,22,171" concept="1" />
+      <node id="3044950653914719210" at="20,125,21,289" concept="5" />
+      <node id="3044950653914719225" at="21,289,22,171" concept="1" />
       <node id="3044950653914719230" at="22,171,23,171" concept="1" />
       <node id="3044950653914719235" at="23,171,24,171" concept="1" />
       <node id="3044950653914719240" at="24,171,25,171" concept="1" />
@@ -298,8 +298,8 @@
       <node id="1213877530556" at="22,213,23,194" concept="5" />
       <node id="1213877530564" at="24,27,25,155" concept="6" />
       <node id="1213877530571" at="26,5,27,47" concept="6" />
-      <node id="3044950653914717559" at="29,125,30,261" concept="5" />
-      <node id="3044950653914717579" at="30,261,31,171" concept="1" />
+      <node id="3044950653914717559" at="29,125,30,289" concept="5" />
+      <node id="3044950653914717579" at="30,289,31,171" concept="1" />
       <node id="3044950653914717583" at="31,171,32,18" concept="6" />
       <node id="1213877530572" at="34,60,35,63" concept="5" />
       <node id="1213877530572" at="35,63,36,30" concept="5" />
@@ -343,8 +343,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877537278">
     <file name="ConstraintFunction_CanBeAParent_Behavior.java">
       <node id="1213877537281" at="17,103,18,16" concept="6" />
-      <node id="3044950653914718716" at="20,125,21,261" concept="5" />
-      <node id="3044950653914718731" at="21,261,22,171" concept="1" />
+      <node id="3044950653914718716" at="20,125,21,289" concept="5" />
+      <node id="3044950653914718731" at="21,289,22,171" concept="1" />
       <node id="3044950653914718741" at="22,171,23,171" concept="1" />
       <node id="3044950653914718746" at="23,171,24,177" concept="1" />
       <node id="3044950653914718751" at="24,177,25,174" concept="1" />
@@ -510,8 +510,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1227085021513">
     <file name="ConstraintFunction_CanBeARoot_Behavior.java">
       <node id="1227085030989" at="17,103,18,17" concept="6" />
-      <node id="3044950653914724172" at="20,125,21,261" concept="5" />
-      <node id="3044950653914724192" at="21,261,22,174" concept="1" />
+      <node id="3044950653914724172" at="20,125,21,289" concept="5" />
+      <node id="3044950653914724192" at="21,289,22,174" concept="1" />
       <node id="3044950653914724197" at="22,174,23,174" concept="1" />
       <node id="3044950653914724201" at="23,174,24,18" concept="6" />
       <node id="658365993681973142" at="26,83,27,47" concept="6" />
@@ -731,8 +731,8 @@
     <file name="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java">
       <node id="8401916545537440032" at="20,86,21,1308" concept="5" />
       <node id="2990203945683059027" at="21,1308,22,229" concept="6" />
-      <node id="3044950653914725375" at="24,125,25,301" concept="5" />
-      <node id="3044950653914725390" at="25,301,26,177" concept="1" />
+      <node id="3044950653914725375" at="24,125,25,329" concept="5" />
+      <node id="3044950653914725390" at="25,329,26,177" concept="1" />
       <node id="3044950653914725394" at="26,177,27,18" concept="6" />
       <node id="658365993682020150" at="29,83,30,47" concept="6" />
       <node id="658365993682020146" at="32,60,33,63" concept="5" />
@@ -777,8 +777,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914717718">
     <file name="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java">
-      <node id="3044950653914717682" at="17,125,18,261" concept="5" />
-      <node id="3044950653914717697" at="18,261,19,171" concept="1" />
+      <node id="3044950653914717682" at="17,125,18,289" concept="5" />
+      <node id="3044950653914717697" at="18,289,19,171" concept="1" />
       <node id="3044950653914717707" at="19,171,20,171" concept="1" />
       <node id="3044950653914717712" at="20,171,21,171" concept="1" />
       <node id="3044950653914717716" at="21,171,22,18" concept="6" />
@@ -818,8 +818,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718708">
     <file name="ConstraintFunction_PropertyValidator_Behavior.java">
-      <node id="3044950653914718677" at="17,125,18,261" concept="5" />
-      <node id="3044950653914718692" at="18,261,19,171" concept="1" />
+      <node id="3044950653914718677" at="17,125,18,289" concept="5" />
+      <node id="3044950653914718692" at="18,289,19,171" concept="1" />
       <node id="3044950653914718697" at="19,171,20,171" concept="1" />
       <node id="3044950653914718706" at="20,171,21,18" concept="6" />
       <node id="658365993682019682" at="23,83,24,47" concept="6" />
@@ -858,8 +858,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718829">
     <file name="ConstraintFunction_PropertySetter_Behavior.java">
-      <node id="3044950653914718798" at="17,125,18,261" concept="5" />
-      <node id="3044950653914718813" at="18,261,19,171" concept="1" />
+      <node id="3044950653914718798" at="17,125,18,289" concept="5" />
+      <node id="3044950653914718813" at="18,289,19,171" concept="1" />
       <node id="3044950653914718818" at="19,171,20,171" concept="1" />
       <node id="3044950653914718827" at="20,171,21,18" concept="6" />
       <node id="658365993681975269" at="23,83,24,47" concept="6" />
@@ -898,8 +898,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914720299">
     <file name="ConstraintFunction_GetAlternativeIcon_Behavior.java">
-      <node id="3044950653914720278" at="17,125,18,261" concept="5" />
-      <node id="3044950653914720293" at="18,261,19,171" concept="1" />
+      <node id="3044950653914720278" at="17,125,18,289" concept="5" />
+      <node id="3044950653914720293" at="18,289,19,171" concept="1" />
       <node id="3044950653914720297" at="19,171,20,18" concept="6" />
       <node id="658365993682017732" at="22,83,23,47" concept="6" />
       <node id="658365993682017728" at="25,60,26,63" concept="5" />
@@ -937,8 +937,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914722935">
     <file name="ConstraintFunction_ReferentSetHandler_Behavior.java">
-      <node id="3044950653914722899" at="15,125,16,261" concept="5" />
-      <node id="3044950653914722914" at="16,261,17,171" concept="1" />
+      <node id="3044950653914722899" at="15,125,16,289" concept="5" />
+      <node id="3044950653914722914" at="16,289,17,171" concept="1" />
       <node id="3044950653914722919" at="17,171,18,171" concept="1" />
       <node id="3044950653914722929" at="18,171,19,171" concept="1" />
       <node id="3044950653914722933" at="19,171,20,18" concept="6" />
@@ -959,8 +959,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914723982">
     <file name="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java">
-      <node id="3044950653914723946" at="17,125,18,301" concept="5" />
-      <node id="3044950653914723961" at="18,301,19,177" concept="1" />
+      <node id="3044950653914723946" at="17,125,18,329" concept="5" />
+      <node id="3044950653914723961" at="18,329,19,177" concept="1" />
       <node id="3044950653914723966" at="19,177,20,177" concept="1" />
       <node id="3044950653914723971" at="20,177,21,177" concept="1" />
       <node id="3044950653914723976" at="21,177,22,177" concept="1" />
@@ -1294,8 +1294,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/7494912800760359233">
     <file name="ConstraintFunction_CanBeAnAncestor_Behavior.java">
       <node id="7494912800760359238" at="17,103,18,16" concept="6" />
-      <node id="3044950653914721344" at="20,125,21,261" concept="5" />
-      <node id="3044950653914721359" at="21,261,22,171" concept="1" />
+      <node id="3044950653914721344" at="20,125,21,289" concept="5" />
+      <node id="3044950653914721359" at="21,289,22,171" concept="1" />
       <node id="3044950653914721364" at="22,171,23,171" concept="1" />
       <node id="3044950653914721369" at="23,171,24,177" concept="1" />
       <node id="3044950653914721379" at="24,177,25,174" concept="1" />

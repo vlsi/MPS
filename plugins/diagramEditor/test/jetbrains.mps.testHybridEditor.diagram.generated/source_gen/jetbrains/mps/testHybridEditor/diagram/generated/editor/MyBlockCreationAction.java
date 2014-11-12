@@ -49,7 +49,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
           }
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SNode newBlockInstance = SConceptOperations.createNewNode("jetbrains.mps.testHybridEditor.structure.BlockInstance", null);
+              SNode newBlockInstance = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, "jetbrains.mps.testHybridEditor.structure.BlockInstance"));
               SLinkOperations.setTarget(newBlockInstance, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084777l, "metaBlock"), myMetaBlock);
               SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084745l, "x"), "" + (event.x()));
               SPropertyOperations.set(newBlockInstance, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 2353136177974084746l, "y"), "" + (event.y()));

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -37,7 +36,7 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
       public ISequence<SNode> select(final SNode c) {
         return Sequence.fromIterable(parameters).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode p) {
-            return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(p), NameUtil.nodeFQName(c));
+            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(p)), SNodeOperations.asSConcept(c));
           }
         });
       }

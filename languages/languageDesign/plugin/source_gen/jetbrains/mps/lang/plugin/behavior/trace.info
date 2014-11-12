@@ -378,8 +378,8 @@
       <node id="1171743928471867314" at="27,381,28,227" concept="5" />
       <node id="1171743928471867319" at="29,384,30,227" concept="5" />
       <node id="1171743928471867334" at="31,5,32,362" concept="7" />
-      <node id="3044950653914723632" at="34,107,35,247" concept="4" />
-      <node id="3044950653914723647" at="35,247,36,166" concept="1" />
+      <node id="3044950653914723632" at="34,107,35,275" concept="4" />
+      <node id="3044950653914723647" at="35,275,36,166" concept="1" />
       <node id="3044950653914723651" at="36,166,37,18" concept="5" />
       <node id="1171743928471867307" at="39,63,40,63" concept="4" />
       <node id="1171743928471867307" at="40,63,41,30" concept="4" />
@@ -474,28 +474,28 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1213877266887">
     <file name="PersistentPropertyDeclaration_Behavior.java">
-      <node id="1213877266890" at="16,74,17,107" concept="5" />
-      <node id="3044950653914726289" at="19,107,20,247" concept="4" />
-      <node id="3044950653914726304" at="20,247,21,166" concept="1" />
-      <node id="3044950653914726308" at="21,166,22,18" concept="5" />
-      <node id="1213877266887" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877266887" at="16,0,19,0" concept="6" trace="virtual_getVisiblity_1213877352965#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877266887" at="19,0,24,0" concept="6" trace="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <scope id="1213877266896" at="14,43,14,43" />
-      <scope id="1213877266889" at="16,74,17,107" />
-      <scope id="1213877266887" at="14,0,16,0">
+      <node id="1213877266890" at="18,74,19,203" concept="5" />
+      <node id="3044950653914726289" at="21,107,22,275" concept="4" />
+      <node id="3044950653914726304" at="22,275,23,166" concept="1" />
+      <node id="3044950653914726308" at="23,166,24,18" concept="5" />
+      <node id="1213877266887" at="16,0,18,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877266887" at="18,0,21,0" concept="6" trace="virtual_getVisiblity_1213877352965#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877266887" at="21,0,26,0" concept="6" trace="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="1213877266896" at="16,43,16,43" />
+      <scope id="1213877266889" at="18,74,19,203" />
+      <scope id="1213877266887" at="16,0,18,0">
         <var name="thisNode" id="1213877266887" />
       </scope>
-      <scope id="1213877266887" at="16,0,19,0">
+      <scope id="1213877266887" at="18,0,21,0">
         <var name="thisNode" id="1213877266887" />
       </scope>
-      <scope id="3044950653914726288" at="19,107,22,18">
+      <scope id="3044950653914726288" at="21,107,24,18">
         <var name="result" id="3044950653914726290" />
       </scope>
-      <scope id="1213877266887" at="19,0,24,0">
+      <scope id="1213877266887" at="21,0,26,0">
         <var name="thisConcept" id="1213877266887" />
       </scope>
-      <unit id="1213877266887" at="13,0,25,0" name="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_Behavior" />
+      <unit id="1213877266887" at="15,0,27,0" name="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1213877276566">
@@ -594,8 +594,8 @@
     <file name="PreferencesComponentDeclaration_Behavior.java">
       <node id="1213877322098" at="19,72,20,205" concept="5" />
       <node id="4911466715314111452" at="22,89,23,221" concept="5" />
-      <node id="1213877322114" at="25,72,26,120" concept="4" />
-      <node id="1213877322120" at="26,120,27,194" concept="1" />
+      <node id="1213877322114" at="25,72,26,216" concept="4" />
+      <node id="1213877322120" at="26,216,27,194" concept="1" />
       <node id="1217674787105" at="27,194,28,16" concept="5" />
       <node id="1213877322131" at="30,78,31,49" concept="4" />
       <node id="1213877322137" at="31,49,32,267" concept="1" />
@@ -636,11 +636,11 @@
     <file name="ActionDeclaration_Behavior.java">
       <node id="1213877371945" at="26,76,27,219" concept="5" />
       <node id="1213877371955" at="29,83,30,211" concept="5" />
-      <node id="1213877371972" at="32,72,33,106" concept="4" />
-      <node id="1213877371978" at="33,106,34,180" concept="1" />
+      <node id="1213877371972" at="32,72,33,202" concept="4" />
+      <node id="1213877371978" at="33,202,34,180" concept="1" />
       <node id="1213877371985" at="34,180,35,16" concept="5" />
       <node id="5003188907305392394" at="37,98,38,54" concept="5" />
-      <node id="7201967929020688144" at="41,103,42,425" concept="4" />
+      <node id="7201967929020688144" at="41,289,42,425" concept="4" />
       <node id="7201967929020688082" at="44,41,45,268" concept="5" />
       <node id="7201967929020688170" at="47,9,48,124" concept="5" />
       <node id="7201967929020665782" at="49,5,50,183" concept="5" />
@@ -679,7 +679,7 @@
       <scope id="1213877371869" at="32,0,37,0">
         <var name="thisNode" id="1213877371869" />
       </scope>
-      <scope id="7201967929020665825" at="41,103,48,124">
+      <scope id="7201967929020665825" at="41,289,48,124">
         <var name="baseActionType" id="7201967929020688145" />
         <var name="methods" id="7201967929020688115" />
       </scope>
@@ -701,8 +701,8 @@
       <node id="1213877494272" at="23,5,24,18" concept="5" />
       <node id="1213877494277" at="26,76,27,302" concept="5" />
       <node id="1213877494291" at="29,83,30,185" concept="5" />
-      <node id="1213877494326" at="32,72,33,105" concept="4" />
-      <node id="1213877494332" at="33,105,34,185" concept="1" />
+      <node id="1213877494326" at="32,72,33,201" concept="4" />
+      <node id="1213877494332" at="33,201,34,185" concept="1" />
       <node id="1213877494339" at="34,185,35,16" concept="5" />
       <node id="5003188907305392409" at="37,98,38,54" concept="5" />
       <node id="1213877494239" at="16,0,18,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -772,8 +772,8 @@
     <file name="ActionDataParameterDeclaration_Behavior.java">
       <node id="1217257105437" at="23,75,24,729" concept="5" />
       <node id="1171743928471867436" at="26,87,27,178" concept="5" />
-      <node id="3044950653914721442" at="29,107,30,247" concept="4" />
-      <node id="3044950653914721457" at="30,247,31,166" concept="1" />
+      <node id="3044950653914721442" at="29,107,30,275" concept="4" />
+      <node id="3044950653914721457" at="30,275,31,166" concept="1" />
       <node id="3044950653914721461" at="31,166,32,18" concept="5" />
       <node id="47694270442130530" at="36,39,37,897" concept="5" />
       <node id="47694270442130548" at="40,29,41,16" concept="5" />
@@ -876,8 +876,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741498864">
     <file name="PreferencePageCommitBlock_Behavior.java">
       <node id="1262430001741498862" at="17,92,18,16" concept="5" />
-      <node id="3044950653914718032" at="20,125,21,261" concept="4" />
-      <node id="3044950653914718047" at="21,261,22,166" concept="1" />
+      <node id="3044950653914718032" at="20,125,21,289" concept="4" />
+      <node id="3044950653914718047" at="21,289,22,166" concept="1" />
       <node id="3044950653914718052" at="22,166,23,166" concept="1" />
       <node id="3044950653914718056" at="23,166,24,18" concept="5" />
       <node id="658365993682017681" at="26,83,27,47" concept="5" />
@@ -974,8 +974,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741638273">
     <file name="OnAfterReadBlock_Behavior.java">
       <node id="1262430001741638271" at="17,92,18,16" concept="5" />
-      <node id="3044950653914726445" at="20,125,21,261" concept="4" />
-      <node id="3044950653914726460" at="21,261,22,166" concept="1" />
+      <node id="3044950653914726445" at="20,125,21,289" concept="4" />
+      <node id="3044950653914726460" at="21,289,22,166" concept="1" />
       <node id="3044950653914726464" at="22,166,23,18" concept="5" />
       <node id="658365993682019580" at="25,83,26,47" concept="5" />
       <node id="658365993682019576" at="28,60,29,63" concept="4" />
@@ -1019,8 +1019,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741638312">
     <file name="GetNodesBlock_Behavior.java">
       <node id="1262430001741638310" at="17,92,18,16" concept="5" />
-      <node id="3044950653914726237" at="20,125,21,261" concept="4" />
-      <node id="3044950653914726252" at="21,261,22,166" concept="1" />
+      <node id="3044950653914726237" at="20,125,21,289" concept="4" />
+      <node id="3044950653914726252" at="21,289,22,166" concept="1" />
       <node id="3044950653914726256" at="22,166,23,18" concept="5" />
       <node id="658365993682017382" at="25,83,26,47" concept="5" />
       <node id="658365993682017378" at="28,60,29,63" concept="4" />
@@ -1064,8 +1064,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741642732">
     <file name="UpdateGroupFunction_Behavior.java">
       <node id="1262430001741642730" at="17,92,18,16" concept="5" />
-      <node id="3044950653914718301" at="20,125,21,261" concept="4" />
-      <node id="3044950653914718316" at="21,261,22,166" concept="1" />
+      <node id="3044950653914718301" at="20,125,21,289" concept="4" />
+      <node id="3044950653914718316" at="21,289,22,166" concept="1" />
       <node id="3044950653914718320" at="22,166,23,18" concept="5" />
       <node id="658365993682020036" at="25,83,26,47" concept="5" />
       <node id="658365993682020032" at="28,60,29,63" concept="4" />
@@ -1109,8 +1109,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741646639">
     <file name="ToStringConceptFunction_Behavior.java">
       <node id="1262430001741646637" at="17,92,18,16" concept="5" />
-      <node id="3044950653914724268" at="20,125,21,261" concept="4" />
-      <node id="3044950653914724283" at="21,261,22,166" concept="1" />
+      <node id="3044950653914724268" at="20,125,21,289" concept="4" />
+      <node id="3044950653914724283" at="21,289,22,166" concept="1" />
       <node id="3044950653914724287" at="22,166,23,18" concept="5" />
       <node id="658365993682019604" at="25,83,26,47" concept="5" />
       <node id="658365993682019600" at="28,60,29,63" concept="4" />
@@ -1197,8 +1197,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741647178">
     <file name="PreferencePageResetBlock_Behavior.java">
       <node id="1262430001741647176" at="17,92,18,16" concept="5" />
-      <node id="3044950653914720735" at="20,125,21,261" concept="4" />
-      <node id="3044950653914720750" at="21,261,22,166" concept="1" />
+      <node id="3044950653914720735" at="20,125,21,289" concept="4" />
+      <node id="3044950653914720750" at="21,289,22,166" concept="1" />
       <node id="3044950653914720755" at="22,166,23,166" concept="1" />
       <node id="3044950653914720759" at="23,166,24,18" concept="5" />
       <node id="658365993682017705" at="26,83,27,47" concept="5" />
@@ -1243,8 +1243,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741647298">
     <file name="GetConceptsBlock_Behavior.java">
       <node id="1262430001741647296" at="19,92,20,16" concept="5" />
-      <node id="3044950653914720479" at="22,125,23,261" concept="4" />
-      <node id="3044950653914720494" at="23,261,24,166" concept="1" />
+      <node id="3044950653914720479" at="22,125,23,289" concept="4" />
+      <node id="3044950653914720494" at="23,289,24,166" concept="1" />
       <node id="3044950653914720498" at="24,166,25,18" concept="5" />
       <node id="658365993681975245" at="27,83,28,47" concept="5" />
       <node id="658365993681975241" at="30,60,31,63" concept="4" />
@@ -1295,8 +1295,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741702922">
     <file name="InitBlock_Behavior.java">
       <node id="1262430001741702920" at="15,92,16,16" concept="5" />
-      <node id="3044950653914725724" at="18,125,19,261" concept="4" />
-      <node id="3044950653914725739" at="19,261,20,166" concept="1" />
+      <node id="3044950653914725724" at="18,125,19,289" concept="4" />
+      <node id="3044950653914725739" at="19,289,20,166" concept="1" />
       <node id="3044950653914725743" at="20,166,21,18" concept="5" />
       <node id="1262430001741702922" at="13,0,15,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741702922" at="15,0,18,0" concept="6" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -1337,8 +1337,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741703252">
     <file name="PreferencePageIsModifiedBlock_Behavior.java">
       <node id="1262430001741703250" at="17,92,18,16" concept="5" />
-      <node id="3044950653914718270" at="20,125,21,261" concept="4" />
-      <node id="3044950653914718285" at="21,261,22,166" concept="1" />
+      <node id="3044950653914718270" at="20,125,21,289" concept="4" />
+      <node id="3044950653914718285" at="21,289,22,166" concept="1" />
       <node id="3044950653914718290" at="22,166,23,166" concept="1" />
       <node id="3044950653914718294" at="23,166,24,18" concept="5" />
       <node id="658365993681963354" at="26,83,27,46" concept="5" />
@@ -1383,8 +1383,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741703377">
     <file name="DisposeBlock_Behavior.java">
       <node id="1262430001741703375" at="15,92,16,16" concept="5" />
-      <node id="3044950653914723658" at="18,125,19,261" concept="4" />
-      <node id="3044950653914723673" at="19,261,20,166" concept="1" />
+      <node id="3044950653914723658" at="18,125,19,289" concept="4" />
+      <node id="3044950653914723673" at="19,289,20,166" concept="1" />
       <node id="3044950653914723677" at="20,166,21,18" concept="5" />
       <node id="1262430001741703377" at="13,0,15,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1262430001741703377" at="15,0,18,0" concept="6" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -1409,8 +1409,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741703446">
     <file name="CreateNodeAspectBlock_Behavior.java">
       <node id="1262430001741703444" at="17,92,18,16" concept="5" />
-      <node id="3044950653914722003" at="20,125,21,261" concept="4" />
-      <node id="3044950653914722018" at="21,261,22,166" concept="1" />
+      <node id="3044950653914722003" at="20,125,21,289" concept="4" />
+      <node id="3044950653914722018" at="21,289,22,166" concept="1" />
       <node id="3044950653914722022" at="22,166,23,18" concept="5" />
       <node id="658365993682017364" at="25,83,26,47" concept="5" />
       <node id="658365993682017360" at="28,60,29,63" concept="4" />
@@ -1454,8 +1454,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741704827">
     <file name="NewCreateBlock_Behavior.java">
       <node id="1262430001741704825" at="17,92,18,16" concept="5" />
-      <node id="3044950653914719045" at="20,125,21,261" concept="4" />
-      <node id="3044950653914719060" at="21,261,22,172" concept="1" />
+      <node id="3044950653914719045" at="20,125,21,289" concept="4" />
+      <node id="3044950653914719060" at="21,289,22,172" concept="1" />
       <node id="3044950653914719065" at="22,172,23,166" concept="1" />
       <node id="3044950653914719069" at="23,166,24,18" concept="5" />
       <node id="658365993682017663" at="26,83,27,47" concept="5" />
@@ -1535,8 +1535,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741704883">
     <file name="IsApplicableTabBlock_Behavior.java">
       <node id="1262430001741704881" at="17,92,18,16" concept="5" />
-      <node id="3044950653914720865" at="20,125,21,261" concept="4" />
-      <node id="3044950653914720880" at="21,261,22,166" concept="1" />
+      <node id="3044950653914720865" at="20,125,21,289" concept="4" />
+      <node id="3044950653914720880" at="21,289,22,166" concept="1" />
       <node id="3044950653914720884" at="22,166,23,18" concept="5" />
       <node id="658365993681963366" at="25,83,26,47" concept="5" />
       <node id="658365993681963362" at="28,60,29,63" concept="4" />
@@ -1612,8 +1612,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741718354">
     <file name="BaseNodeBlock_Behavior.java">
       <node id="1262430001741718352" at="17,92,18,16" concept="5" />
-      <node id="3044950653914721468" at="20,125,21,261" concept="4" />
-      <node id="3044950653914721483" at="21,261,22,166" concept="1" />
+      <node id="3044950653914721468" at="20,125,21,289" concept="4" />
+      <node id="3044950653914721483" at="21,289,22,166" concept="1" />
       <node id="3044950653914721487" at="22,166,23,18" concept="5" />
       <node id="658365993681971241" at="25,83,26,47" concept="5" />
       <node id="658365993681971237" at="28,60,29,63" concept="4" />
@@ -1657,8 +1657,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741718374">
     <file name="OnBeforeWriteBlock_Behavior.java">
       <node id="1262430001741718372" at="17,92,18,16" concept="5" />
-      <node id="3044950653914724697" at="20,125,21,261" concept="4" />
-      <node id="3044950653914724712" at="21,261,22,166" concept="1" />
+      <node id="3044950653914724697" at="20,125,21,289" concept="4" />
+      <node id="3044950653914724712" at="21,289,22,166" concept="1" />
       <node id="3044950653914724716" at="22,166,23,18" concept="5" />
       <node id="658365993681975709" at="25,83,26,47" concept="5" />
       <node id="658365993681975705" at="28,60,29,63" concept="4" />
@@ -1718,8 +1718,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741718890">
     <file name="GetNodeBlock_Behavior.java">
       <node id="1262430001741718888" at="17,92,18,16" concept="5" />
-      <node id="3044950653914725323" at="20,125,21,261" concept="4" />
-      <node id="3044950653914725338" at="21,261,22,166" concept="1" />
+      <node id="3044950653914725323" at="20,125,21,289" concept="4" />
+      <node id="3044950653914725338" at="21,289,22,166" concept="1" />
       <node id="3044950653914725342" at="22,166,23,18" concept="5" />
       <node id="658365993682019688" at="25,83,26,47" concept="5" />
       <node id="658365993682019684" at="28,60,29,63" concept="4" />
@@ -1763,8 +1763,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/1262430001741720110">
     <file name="ExecuteBlock_Behavior.java">
       <node id="1262430001741720108" at="17,92,18,16" concept="5" />
-      <node id="3044950653914717410" at="20,125,21,261" concept="4" />
-      <node id="3044950653914717425" at="21,261,22,166" concept="1" />
+      <node id="3044950653914717410" at="20,125,21,289" concept="4" />
+      <node id="3044950653914717425" at="21,289,22,166" concept="1" />
       <node id="3044950653914717429" at="22,166,23,18" concept="5" />
       <node id="658365993682022016" at="25,83,26,47" concept="5" />
       <node id="658365993682022012" at="28,60,29,63" concept="4" />
@@ -1998,8 +1998,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/3044950653914723476">
     <file name="CustomCondition_Behavior.java">
-      <node id="3044950653914723455" at="17,125,18,261" concept="4" />
-      <node id="3044950653914723470" at="18,261,19,172" concept="1" />
+      <node id="3044950653914723455" at="17,125,18,289" concept="4" />
+      <node id="3044950653914723470" at="18,289,19,172" concept="1" />
       <node id="3044950653914723474" at="19,172,20,18" concept="5" />
       <node id="658365993682020081" at="22,83,23,47" concept="5" />
       <node id="658365993682020077" at="25,60,26,63" concept="4" />
@@ -2037,8 +2037,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)/3044950653914724037">
     <file name="UpdateBlock_Behavior.java">
-      <node id="3044950653914724016" at="17,125,18,261" concept="4" />
-      <node id="3044950653914724031" at="18,261,19,166" concept="1" />
+      <node id="3044950653914724016" at="17,125,18,289" concept="4" />
+      <node id="3044950653914724031" at="18,289,19,166" concept="1" />
       <node id="3044950653914724035" at="19,166,20,18" concept="5" />
       <node id="658365993682017693" at="22,83,23,47" concept="5" />
       <node id="658365993682017689" at="25,60,26,63" concept="4" />

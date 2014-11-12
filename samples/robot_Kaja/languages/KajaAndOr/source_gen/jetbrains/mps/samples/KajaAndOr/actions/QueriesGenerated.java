@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -41,7 +40,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SNode>() {
@@ -55,7 +54,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+                SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
                 SLinkOperations.setTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"), SLinkOperations.getTarget(_context.getCurrentTargetNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left")));
                 SLinkOperations.setTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"), SLinkOperations.getTarget(_context.getCurrentTargetNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right")));
                 return newInitializedInstance;
@@ -90,9 +89,9 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.And");
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
               } else if ((item).equals("or")) {
-                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.Or");
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
               } else {
                 throw new IllegalArgumentException("Cannot find a match for " + (item));
               }
@@ -132,11 +131,11 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
+                SNode andNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
                 conjuction = andNode;
               } else {
-                SNode orNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.Or", null);
+                SNode orNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
                 conjuction = orNode;
               }
@@ -178,7 +177,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
               SLinkOperations.setTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"), SNodeOperations.copyNode(_context.getSourceNode()));
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
               return SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"));
@@ -221,7 +220,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
               SLinkOperations.setTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"), SNodeOperations.copyNode(_context.getSourceNode()));
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
               return SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"));

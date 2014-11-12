@@ -98,7 +98,7 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
         n.setReferenceTarget("exc", it);
         return n;
       }

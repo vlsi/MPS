@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -37,7 +38,7 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
+            return SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

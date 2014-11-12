@@ -6,13 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ThisClassifierExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -21,7 +19,7 @@ public class ThisClassifierExpression_Behavior {
     if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, 1218736638915l, "classifier")) != null) {
       return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, 1218736638915l, "classifier"));
     }
-    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
+    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), thisNode);
   }
   public static List<SNode> call_getPossibleClassifiers_1219068414643(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();

@@ -10,8 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class LightExecutionFilter implements Filter {
@@ -28,7 +26,7 @@ public class LightExecutionFilter implements Filter {
         if (!(SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1215620452633l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable")))) {
           result[0] = new Filter.FilterException("The test concept must be an instance on ITestable concept. Test " + testNodeWrapper.getName() + " is ignored.");
         }
-        if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
+        if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo")), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
           result[0] = new Filter.FilterException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
         }
         if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {

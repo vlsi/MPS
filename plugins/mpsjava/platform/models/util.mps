@@ -2478,7 +2478,7 @@
                 <reference role="vg0i.1068498886296.1068581517664" target="4326588611400153914" resolveInfo="project" />
               </node>
               <node concept="vg0i.1202948039474" id="9164503229271486525" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="jrbx.~MPSProject%dgetModulesWithGenerators()%cjava%dutil%dList" resolveInfo="getModulesWithGenerators" />
+                <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~Project%dgetModulesWithGenerators()%cjava%dlang%dIterable" resolveInfo="getModulesWithGenerators" />
               </node>
             </node>
             <node concept="vg0i.1068580123136" id="9164503229271455507" role="vg0i.1154032098014.1154032183016" info="sn">

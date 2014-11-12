@@ -60,8 +60,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -149,8 +147,8 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   }
 
   private TypeSystemStateTreeNode createNode() {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Type system state", myOperationContext);
-    result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Type system state");
+    result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess()));
     TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode(
         "When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(),
         JBColor.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
@@ -163,29 +161,29 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   }
 
   private TypeSystemStateTreeNode createNode(String category, List<String> entries, Color color) {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category, myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category);
     if (color != null) {
       result.setColor(color);
     }
     for (String string : entries) {
-      result.add(new TypeSystemStateTreeNode(string, myOperationContext));
+      result.add(new TypeSystemStateTreeNode(string));
     }
     return result;
   }
 
   private TypeSystemStateTreeNode createNode(String category, Set<Block> entries, Color color) {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category + " (" + entries.size() + ")", myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category + " (" + entries.size() + ")");
     if (color == null)
       color = Color.LIGHT_GRAY;
     result.setColor(color);
     for (Block block : entries) {
-      result.add(new BlockTreeNode(block, myOperationContext, myState, myEditorComponent));
+      result.add(new BlockTreeNode(block, myState, myEditorComponent));
     }
     return result;
   }
 
   private TypeSystemStateTreeNode createInequalitiesNode() {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Inequalities by groups", myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Inequalities by groups");
     Set<String> nodePresentations = new HashSet<String>();
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(
         myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
@@ -194,11 +192,11 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       if (key.isEmpty() || entry.getValue().size() <= 1) {
         current = result;
       } else {
-        current = new TypeSystemStateTreeNode(key.toString(), myOperationContext);
+        current = new TypeSystemStateTreeNode(key.toString());
       }
       nodePresentations.clear();
       for (InequalityBlock block : entry.getValue()) {
-        BlockTreeNode node = new BlockTreeNode(block, myOperationContext, myState, myEditorComponent);
+        BlockTreeNode node = new BlockTreeNode(block, myState, myEditorComponent);
         String presentation = node.toString();
         if (!(nodePresentations.contains(presentation))) {
           current.add(node);
@@ -212,30 +210,10 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     return result;
   }
 
-  private TypeSystemStateTreeNode createTypesNode() {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Types", myOperationContext);
-    List<TypeTreeNode> list = new ArrayList<TypeTreeNode>();
-    NodeMaps nodeMaps = myState.getNodeMaps();
-    for (SNode node : nodeMaps.getTypeKeySet()) {
-      SNode type = nodeMaps.getInitialType(node);
-      list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type), myEditorComponent));
-    }
-    Collections.sort(list, new Comparator<TypeTreeNode>() {
-      @Override
-      public int compare(TypeTreeNode o1, TypeTreeNode o2) {
-        return o1.toString().compareTo(o2.toString());
-      }
-    });
-    for (TypeTreeNode node : list) {
-      result.add(node);
-    }
-    return result;
-  }
-
   private TypeSystemStateTreeNode createEquationsNode() {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Equations", myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Equations");
     for (Map.Entry<SNode, Set<SNode>> equationGroup : myState.getEquations().getEquationGroups()) {
-      result.add(new EquationTreeNode(myOperationContext, equationGroup.getKey(), equationGroup.getValue(), myState, myEditorComponent));
+      result.add(new EquationTreeNode(equationGroup.getKey(), equationGroup.getValue(), myState, myEditorComponent));
     }
     return result;
   }

@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -45,11 +44,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode diagramNodeCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", null);
+            SNode diagramNodeCell = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"));
             SLinkOperations.setTarget(diagramNodeCell, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure"), nodeToWrap);
             return diagramNodeCell;
           }
@@ -73,7 +72,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.LinkArgument");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             Scope linkDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"));
@@ -91,7 +90,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.LinkArgument", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637559l, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"), _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637559l, 285670992217679783l, "link"), (item));
                 return parameter;
               }
@@ -114,7 +113,7 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.PropertyArgument");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             Scope propertyDeclarationScope = Scope.getScope(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
@@ -132,7 +131,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992217672837l, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"), _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992217672837l, 285670992217689748l, "property"), (item));
                 return parameter;
               }
@@ -155,10 +154,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), _context.getCurrentTargetNode());
           }
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {

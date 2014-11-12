@@ -37,6 +37,7 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -57,6 +58,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -334,8 +336,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     TreePath[] selection = getTree().getSelectionPaths();
     if (selection == null) return null;
     if (selection.length > 0) {
-      MPSTreeNode lastPathComponent = (MPSTreeNode) selection[0].getLastPathComponent();
-      return lastPathComponent.getOperationContext();
+      return new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
     }
     return null;
   }
@@ -377,9 +378,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
-  public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
-    ModelAccess.assertLegalWrite();
-    NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getParent() == null));
+  public void editNode(final SNode node, jetbrains.mps.project.Project mpsProject, final boolean focus) {
+    mpsProject.getModelAccess().checkWriteAccess();
+    NavigationSupport.getInstance().openNode(mpsProject, node, focus, !(node.getModel() != null && node.getParent() == null));
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

@@ -17,7 +17,7 @@
       <node id="6896005762093486375" at="22,213,23,93" concept="4" />
       <node id="6896005762093486375" at="24,5,25,135" concept="4" />
       <node id="6896005762093486375" at="25,135,26,62" concept="4" />
-      <node id="6896005762093488382" at="29,94,30,138" concept="4" />
+      <node id="6896005762093488382" at="29,94,30,246" concept="4" />
       <node id="6896005762093488329" at="31,64,32,36" concept="4" />
       <node id="6896005762093488335" at="33,42,34,60" concept="1" />
       <node id="6896005762093488390" at="35,15,36,176" concept="1" />
@@ -31,11 +31,11 @@
       <node id="6896005762093488333" at="32,36,35,15" concept="2" />
       <node id="6666499814681541321" at="42,36,45,15" concept="2" />
       <node id="6896005762093486375" at="50,0,53,0" concept="3" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6896005762093488327" at="30,138,37,13" concept="2" />
+      <node id="6896005762093488327" at="30,246,37,13" concept="2" />
       <node id="6666499814681541283" at="40,57,47,13" concept="2" />
       <node id="6896005762093486375" at="40,0,50,0" concept="3" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="6896005762093486375" at="29,0,40,0" concept="3" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6896005762093486375" at="27,123,53,11" concept="1" />
+      <node id="6896005762093486375" at="27,158,53,11" concept="1" />
       <node id="6896005762093486375" at="26,62,54,7" concept="2" />
       <node id="6896005762093486375" at="23,93,55,5" concept="0" />
       <node id="6896005762093486375" at="23,93,55,5" concept="0" />
@@ -64,7 +64,7 @@
         <var name="parameterObject" id="6896005762093486375" />
         <var name="pattern" id="6896005762093486375" />
       </scope>
-      <scope id="6896005762093486375" at="27,123,53,11" />
+      <scope id="6896005762093486375" at="27,158,53,11" />
       <scope id="6896005762093486375" at="24,5,54,7">
         <var name="childConcept" id="6896005762093486375" />
         <var name="outputConcept" id="6896005762093486375" />

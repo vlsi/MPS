@@ -25,7 +25,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -55,7 +54,7 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               SNode coercedNode_dyvyal_c0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_c0a0);
               if (coercedNode_dyvyal_c0a0 != null) {
                 for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_dyvyal_c0a0, "virtual_getMembers_1213877402148", new Object[]{_context.getEnclosingNode()})) {
-                  if (SNodeOperations.isInstanceOf(member, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) _context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
+                  if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
                     ListSequence.fromList(applicableMembers).addElement(member);
                   }
                 }

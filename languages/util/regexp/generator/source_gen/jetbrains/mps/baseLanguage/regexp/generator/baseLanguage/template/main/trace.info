@@ -282,13 +282,13 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)/7048923897762709814">
     <file name="QueriesGenerated.java">
-      <node id="4276824325038550537" at="265,138,266,61" concept="4" />
+      <node id="4276824325038550537" at="265,244,266,61" concept="4" />
       <node id="4276824325038550562" at="267,30,268,66" concept="0" />
       <node id="8022472963610891757" at="268,66,269,41" concept="0" />
       <node id="4276824325038550553" at="266,61,270,7" concept="2" />
       <node id="7048923897762709820" at="264,103,271,5" concept="1" />
       <scope id="4276824325038550554" at="267,30,269,41" />
-      <scope id="7048923897762709824" at="265,138,270,7">
+      <scope id="7048923897762709824" at="265,244,270,7">
         <var name="container" id="4276824325038550538" />
       </scope>
       <scope id="7048923897762709816" at="264,103,271,5" />

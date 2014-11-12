@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 
 /*package*/ class EditorComponentDeclarationScope extends FilteringScope {
   private SNode myConceptDeclaration;
@@ -48,6 +47,6 @@ import jetbrains.mps.util.NameUtil;
   @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
-    return editorComponent == null || SLinkOperations.getTarget(editorComponent, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
+    return editorComponent == null || SLinkOperations.getTarget(editorComponent, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")) != null || !(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{})), SNodeOperations.asSConcept(myConceptDeclaration)));
   }
 }

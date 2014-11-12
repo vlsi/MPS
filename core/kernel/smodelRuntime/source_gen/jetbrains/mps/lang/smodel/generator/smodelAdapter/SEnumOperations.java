@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -18,7 +18,7 @@ public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(modelUID);
     SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
-    return (ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
+    return (ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(nodeName);
       }

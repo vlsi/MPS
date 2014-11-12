@@ -9,9 +9,9 @@ import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XMLSAXChildRule_Behavior {
@@ -27,11 +27,11 @@ public class XMLSAXChildRule_Behavior {
     {
       SNode concept_a0b;
       concept_a0b = kind;
-      if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_a0b), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-        return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_a0b), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
+        return SimpleRoleScope.forNamedElements(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, false), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140404l, "attrs")));
       }
     }
     return null;
@@ -47,8 +47,8 @@ public class XMLSAXChildRule_Behavior {
       {
         SNode concept_a0b0c;
         concept_a0b0c = kind;
-        if (SConceptOperations.isSubConceptOf(concept_a0b0c, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+        if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept_a0b0c), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
+          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140404l, "attrs")));
         }
       }
     }

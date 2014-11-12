@@ -58,7 +58,7 @@ public class MigrateIds_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
+      Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       final ModelFactory defaultModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
       // models: editable, persistence aware, in xml (default) persistence and of older version 
       Iterable<PersistenceVersionAware> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {

@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -37,7 +38,7 @@ public class ShortcutChange_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
+            return SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

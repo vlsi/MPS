@@ -303,7 +303,7 @@
         <var name="it" id="7496726876599778520" />
       </scope>
       <scope id="7496726876599722462" at="61,113,66,20" />
-      <unit id="7496726876599778520" at="62,163,66,5" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.QueriesGenerated$1" />
+      <unit id="7496726876599778520" at="62,263,66,5" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)/7496726876599872860">

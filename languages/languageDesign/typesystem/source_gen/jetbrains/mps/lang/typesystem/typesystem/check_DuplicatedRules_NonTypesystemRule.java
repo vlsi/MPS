@@ -25,7 +25,7 @@ public class check_DuplicatedRules_NonTypesystemRule extends AbstractNonTypesyst
   }
   public void applyRule(final SNode abstractRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(abstractRule, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-    if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(abstractRule), "jetbrains.mps.lang.typesystem.structure.AbstractRule")).any(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(abstractRule), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, "jetbrains.mps.lang.typesystem.structure.AbstractRule"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != abstractRule && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
       }

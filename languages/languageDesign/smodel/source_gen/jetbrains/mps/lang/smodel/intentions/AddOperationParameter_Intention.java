@@ -14,8 +14,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -53,7 +51,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).isEmpty()) {
-      return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
+      return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
     }
     return false;
   }
@@ -76,11 +74,11 @@ public class AddOperationParameter_Intention implements IntentionFactory {
       return "Add Parameter(s)";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
+      List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
       if (ListSequence.fromList(applicableParms).count() == 1) {
-        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(((SNode) ListSequence.fromList(applicableParms).first())), null));
       } else {
-        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"), "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
+        SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1144100743722l, "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter"));
       }
     }
     public IntentionDescriptor getDescriptor() {

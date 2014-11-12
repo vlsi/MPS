@@ -33,7 +33,7 @@ public class Closure_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     final Wrappers._T<SNode> _child = new Wrappers._T<SNode>(child);
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClosureParameter")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153179527848l, "jetbrains.mps.baseLanguage.structure.ClosureParameter"))) {
       while (SNodeOperations.getParent(_child.value) != thisNode) {
         _child.value = SNodeOperations.getParent(_child.value);
       }

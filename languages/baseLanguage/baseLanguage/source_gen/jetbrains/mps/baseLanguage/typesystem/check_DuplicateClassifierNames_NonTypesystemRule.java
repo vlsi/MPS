@@ -35,7 +35,7 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
     Iterable<SNode> siblingClassifiers;
     SNode parentClassifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     if ((parentClassifier == null)) {
-      siblingClassifiers = SModelOperations.getRoots(SNodeOperations.getModel(classifier), "jetbrains.mps.baseLanguage.structure.Classifier");
+      siblingClassifiers = SModelOperations.roots(SNodeOperations.getModel(classifier), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
     } else {
       if (eq_orvnxv_a0a0a4a1(SPropertyOperations.getString(parentClassifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
         {

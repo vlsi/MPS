@@ -22,34 +22,34 @@
       <node id="1264383190525626059" at="34,5,35,0" concept="10" />
       <node id="1855001631468001314" at="35,0,36,89" concept="9" />
       <node id="1855001631468001305" at="36,89,37,0" concept="10" />
-      <node id="1855001631467824231" at="38,96,39,114" concept="8" />
-      <node id="1855001631467987025" at="39,114,40,0" concept="10" />
-      <node id="1855001631467386594" at="41,109,42,227" concept="7" />
+      <node id="1855001631467824231" at="38,198,39,216" concept="8" />
+      <node id="1855001631467987025" at="39,216,40,0" concept="10" />
+      <node id="1855001631467386594" at="41,211,42,435" concept="7" />
       <node id="1855001631467862667" at="43,29,44,20" concept="8" />
       <node id="1855001631467859981" at="45,7,46,47" concept="7" />
-      <node id="1855001631467898086" at="46,47,47,271" concept="7" />
+      <node id="1855001631467898086" at="46,47,47,373" concept="7" />
       <node id="1855001631467969365" at="49,51,50,23" concept="8" />
       <node id="1855001631467987026" at="52,7,53,0" concept="10" />
-      <node id="1855001631467972401" at="54,114,55,101" concept="9" />
+      <node id="1855001631467972401" at="54,216,55,101" concept="9" />
       <node id="1855001631467972412" at="55,101,56,49" concept="9" />
       <node id="1855001631467382596" at="57,5,58,0" concept="10" />
       <node id="1855001631467833113" at="58,0,59,16" concept="8" />
       <node id="1264383190525724194" at="62,62,63,129" concept="7" />
       <node id="1264383190525740029" at="63,129,64,106" concept="8" />
       <node id="1264383190525624615" at="31,27,34,5" concept="5" />
-      <node id="1855001631467859996" at="42,227,45,7" concept="5" />
+      <node id="1855001631467859996" at="42,435,45,7" concept="5" />
       <node id="1855001631467898072" at="48,37,51,9" concept="5" />
       <node id="1264383190525598337" at="23,0,27,0" concept="6" trace="hasCorrespondingPsi#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="1855001631467386604" at="62,0,66,0" concept="6" trace="findPsiClass#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiClass;" />
-      <node id="1855001631467898047" at="47,271,52,7" concept="4" />
+      <node id="1855001631467898047" at="47,373,52,7" concept="4" />
       <node id="1855001631467274399" at="37,0,57,5" concept="5" />
       <node id="1264383190525598346" at="28,0,61,0" concept="6" trace="getPsiElement#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Lcom/intellij/psi/PsiElement;" />
       <scope id="1264383190525624618" at="32,65,33,18" />
       <scope id="1855001631467859999" at="43,29,44,20" />
       <scope id="1855001631467898073" at="49,51,50,23" />
       <scope id="1264383190525598343" at="23,52,25,57" />
-      <scope id="1855001631467274402" at="38,96,40,0" />
-      <scope id="1855001631467969400" at="54,114,56,49" />
+      <scope id="1855001631467274402" at="38,198,40,0" />
+      <scope id="1855001631467969400" at="54,216,56,49" />
       <scope id="1855001631467386607" at="62,62,64,106">
         <var name="classFqName" id="1264383190525724197" />
       </scope>
@@ -61,10 +61,10 @@
         <var name="claz" id="1855001631467386609" />
         <var name="project" id="1855001631467408535" />
       </scope>
-      <scope id="1855001631467898047" at="47,271,52,7">
+      <scope id="1855001631467898047" at="47,373,52,7">
         <var name="field" id="1855001631467898049" />
       </scope>
-      <scope id="1855001631467382608" at="41,109,53,0">
+      <scope id="1855001631467382608" at="41,211,53,0">
         <var name="expectedName" id="1855001631467898089" />
         <var name="fields" id="1855001631467859982" />
         <var name="psiClass" id="1855001631467386595" />

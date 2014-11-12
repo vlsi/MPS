@@ -39,7 +39,7 @@ public class ResolveUnknownUtil {
       // change to something real as default, e.g. static field access expression without the field 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          SNode fieldRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
           SLinkOperations.setTarget(fieldRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), SNodeOperations.cast(result, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
           return fieldRef;
         }
@@ -69,7 +69,7 @@ public class ResolveUnknownUtil {
     // success 
     return new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode result = (SPropertyOperations.getBoolean(x, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 9100188248702352244l, 9100188248702352610l, "isSuper")) ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null));
+        SNode result = (SPropertyOperations.getBoolean(x, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 9100188248702352244l, 9100188248702352610l, "isSuper")) ? SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475587102l, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) : SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178893518978l, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")));
         reattachMethodArguments(x, result);
         SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), foundCons);
         return result;
@@ -92,13 +92,13 @@ public class ResolveUnknownUtil {
 
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
       SNode decl = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
-      SNode scall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode scall = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       SLinkOperations.setTarget(scall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), decl);
       call.value = scall;
 
     } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       SNode decl = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+      SNode icall = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
       SLinkOperations.setTarget(icall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), decl);
       call.value = icall;
     }
@@ -126,7 +126,7 @@ public class ResolveUnknownUtil {
     return new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
 
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"));
         SNode creator;
 
         Tuples._2<SNode, Boolean> resolveResult = MethodResolveUtil.resolveMethod(x, "");
@@ -139,7 +139,7 @@ public class ResolveUnknownUtil {
             return null;
           }
 
-          SNode defaultConsCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", null);
+          SNode defaultConsCreator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"));
           SLinkOperations.setTarget(defaultConsCreator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544401957798l, "classifier"), typ);
           for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(x, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument")))) {
             SNodeOperations.detachNode(arg);
@@ -150,7 +150,7 @@ public class ResolveUnknownUtil {
 
         } else {
 
-          SNode classCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
+          SNode classCreator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, "jetbrains.mps.baseLanguage.structure.ClassCreator"));
 
           reattachMethodArguments(x, classCreator);
           for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(x, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument")))) {
@@ -185,7 +185,7 @@ public class ResolveUnknownUtil {
 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+          SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
           if ((target != null)) {
             SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
           } else {
@@ -204,10 +204,10 @@ public class ResolveUnknownUtil {
 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+          SNode dotExpr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
           SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeOperations.cast(operand, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
 
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
+          SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), call);
 
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 2621000434129553333l, 4872723285943177972l, "callee")));
@@ -272,13 +272,13 @@ public class ResolveUnknownUtil {
         }
 
         if (mbEnumConst != null) {
-          SNode enumRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+          SNode enumRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
           SLinkOperations.setTarget(enumRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"), SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")));
           SLinkOperations.setTarget(enumRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"), mbEnumConst);
           operand = enumRef;
 
         } else {
-          SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          SNode statFieldRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
           SLinkOperations.setTarget(statFieldRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), cls);
           SReference fieldRef;
           fieldRef = new DynamicReference("variableDeclaration", statFieldRef, null, memberName);
@@ -304,9 +304,9 @@ public class ResolveUnknownUtil {
     return operand;
   }
   public static SNode makeFieldDotExpression(SNode holder, String fieldName) {
-    SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+    SNode dotExpr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
     SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), holder);
-    SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+    SNode fieldRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"));
     SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), fieldRef);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
     fieldRef.setReference(sref.getRole(), sref);
@@ -325,7 +325,7 @@ public class ResolveUnknownUtil {
     if (Sequence.fromIterable(scope.getAvailableElements(name)).isNotEmpty()) {
       // it's a variable 
 
-      SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      SNode varRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"));
       SReference sref = new DynamicReference("variableDeclaration", varRef, null, name);
       varRef.setReference(sref.getRole(), sref);
 

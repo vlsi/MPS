@@ -114,7 +114,7 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
   }
   public static boolean mappingConfiguration_Condition_6450631649356367178(final TemplateQueryContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression").isEmpty());
+    return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")).isEmpty());
   }
   private static SNode _quotation_createNode_x583g4_a0a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

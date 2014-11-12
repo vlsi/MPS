@@ -10,10 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -33,11 +32,11 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IOperation");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode dot = SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-            SNode checkedDot = SNodeFactoryOperations.replaceWithNewChild(dot, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
+            SNode checkedDot = SNodeFactoryOperations.replaceWithNewChild(dot, MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"));
             SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
             SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")));
             return null;
@@ -60,9 +59,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode operationExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
+        SNode operationExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"));
         SLinkOperations.setTarget(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), _context.getSourceNode());
-        SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), "jetbrains.mps.baseLanguage.structure.AbstractOperation");
+        SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1208623485264l, "jetbrains.mps.baseLanguage.structure.AbstractOperation"));
         return operationExpression;
       }
       public String getMatchingText(String pattern) {
@@ -89,7 +88,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode dot = IOperation_Behavior.call_getDotExpression_1224687669172(_context.getSourceNode());
-        SNode checkedDot = SNodeFactoryOperations.replaceWithNewChild(dot, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
+        SNode checkedDot = SNodeFactoryOperations.replaceWithNewChild(dot, MetaAdapterFactory.getConcept(new UUID(8596237681504371169l, -5808530258711747445l), 4079382982702596667l, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"));
         SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
         SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")));
         return checkedDot;

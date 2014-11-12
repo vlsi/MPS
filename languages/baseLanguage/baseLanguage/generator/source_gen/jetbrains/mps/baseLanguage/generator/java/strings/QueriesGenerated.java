@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.generator.java.strings;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_2696770507970455345(final CreateRootRuleContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty()) || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.TrimOperation")).any(new IWhereFilter<SNode>() {
+    return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, "jetbrains.mps.baseLanguage.structure.SubstringExpression")).isEmpty()) || ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, "jetbrains.mps.baseLanguage.structure.TrimOperation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, 1225271546413l, "trimKind"), "both", "both"));
       }
@@ -89,24 +89,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484917l, "startIndex")) != null;
   }
   public static boolean ifMacro_Condition_4592826945243771479(final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.TrimOperation")).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, "jetbrains.mps.baseLanguage.structure.TrimOperation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, 1225271546413l, "trimKind"), "leading", "both");
       }
     });
   }
   public static boolean ifMacro_Condition_4592826945243771381(final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.TrimOperation")).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, "jetbrains.mps.baseLanguage.structure.TrimOperation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1225271546410l, 1225271546413l, "trimKind"), "trailing", "both");
       }
     });
   }
   public static boolean ifMacro_Condition_4592826945243769899(final IfMacroContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty());
+    return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, "jetbrains.mps.baseLanguage.structure.SubstringExpression")).isEmpty());
   }
   public static boolean ifMacro_Condition_4592826945243769923(final IfMacroContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty());
+    return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, "jetbrains.mps.baseLanguage.structure.SubstringExpression")).isEmpty());
   }
   public static boolean ifMacro_Condition_6269300764714516440(final IfMacroContext _context) {
     if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {

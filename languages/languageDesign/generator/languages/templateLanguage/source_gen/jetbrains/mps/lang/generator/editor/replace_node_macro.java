@@ -19,7 +19,6 @@ import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -41,7 +40,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode macro = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
+      SNode macro = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
       SNodeOperations.replaceWithAnother(node, macro);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, macro, SelectionManager.FIRST_CELL, 1);
       editorContext.openInspector();

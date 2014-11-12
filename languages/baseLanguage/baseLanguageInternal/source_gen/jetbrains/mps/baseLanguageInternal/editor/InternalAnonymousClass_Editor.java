@@ -561,7 +561,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
     }
     public String getMatchingText() {
       return "add field";
@@ -571,7 +571,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     }
     public String getMatchingText() {
       return "add method";
@@ -581,7 +581,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1206629658424l, "instanceInitializer"), "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1206629658424l, "instanceInitializer"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"));
     }
     public String getMatchingText() {
       return "add initializer";

@@ -158,6 +158,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "closure_adapterClass");
   }
   public static boolean mappingConfiguration_Condition_354504345955325245(final TemplateQueryContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.Closure").size() > 0;
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1152728232947l, "jetbrains.mps.baseLanguage.structure.Closure")).size() > 0;
   }
 }

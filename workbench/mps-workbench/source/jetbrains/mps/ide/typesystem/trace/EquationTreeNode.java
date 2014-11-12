@@ -27,8 +27,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 public class EquationTreeNode extends TypeSystemStateTreeNode {
   private List<SNode> myVariables = new LinkedList();
 
-  public EquationTreeNode(IOperationContext operationContext, SNode representative, Set<SNode> variables, State state, EditorComponent editorComponent) {
-    super(operationContext);
+  public EquationTreeNode(SNode representative, Set<SNode> variables, State state, EditorComponent editorComponent) {
     StringBuilder sb = new StringBuilder();
     for (SNode var : variables) {
       sb.append(var);

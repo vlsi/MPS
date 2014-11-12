@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
@@ -144,7 +143,7 @@ __switch__:
   private static boolean hasUserDefinedStyle(SNode cellModel, final SNode styleClassConcept) {
     if (ListSequence.fromList(SLinkOperations.getChildren(cellModel, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) styleClassConcept));
+        return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(styleClassConcept));
       }
     }) != null) {
       return true;
@@ -152,7 +151,7 @@ __switch__:
     for (SNode styleClass = SNodeOperations.as(SLinkOperations.getTarget(cellModel, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1381004262292414836l, 1381004262292426837l, "parentStyleClass")), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, "jetbrains.mps.lang.editor.structure.StyleSheetClass")); styleClass != null; styleClass = SLinkOperations.getTarget(SLinkOperations.getTarget(styleClass, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1198252130653l, 1198252276894l, "styleSheetClass"))) {
       if (ListSequence.fromList(SLinkOperations.getChildren(styleClass, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) styleClassConcept));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(styleClassConcept));
         }
       }) != null) {
         return true;

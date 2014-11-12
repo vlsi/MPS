@@ -9,9 +9,9 @@ import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.build.util.DescendantsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,7 +26,7 @@ public class BuildJavaPlugin_Behavior {
   }
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
-      return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
+      return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
         @Override
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, "jetbrains.mps.build.structure.BuildSource_JavaOptions")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName"));
@@ -39,21 +39,21 @@ public class BuildJavaPlugin_Behavior {
       });
     }
 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_JavaModule") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_JavaLibrary")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 6057319140845467763l, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"))) {
       Iterable<DescendantsScope> forAllVisible = Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), false)).select(new ISelector<SNode, DescendantsScope>() {
         public DescendantsScope select(SNode it) {
-          return DescendantsScope.forNamedElements(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
+          return DescendantsScope.forNamedElements(it, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind);
         }
       });
-      Iterable<DescendantsScope> forThis = Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind));
+      Iterable<DescendantsScope> forThis = Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind));
       return new CompositeScope(Sequence.fromIterable(forAllVisible).concat(Sequence.fromIterable(forThis)).toGenericArray(DescendantsScope.class));
     }
 
     return null;
   }
   public static Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_CompilablePart")) {
-      return DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828007l, "jetbrains.mps.build.structure.BuildSource_CompilablePart"))) {
+      return DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind);
     }
 
     return null;

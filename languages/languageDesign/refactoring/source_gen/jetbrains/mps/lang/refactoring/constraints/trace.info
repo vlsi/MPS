@@ -17,43 +17,43 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)/2210862369564128646">
     <file name="UpdateModelClause_Constraints.java">
-      <node id="2210862369564128646" at="16,42,17,106" concept="9" />
-      <node id="2210862369564128646" at="20,46,21,16" concept="5" />
-      <node id="2210862369564128646" at="24,169,25,84" concept="4" />
-      <node id="2210862369564128646" at="25,84,26,0" concept="6" />
-      <node id="2210862369564128646" at="27,51,28,71" concept="1" />
-      <node id="2210862369564128646" at="29,5,30,0" concept="6" />
-      <node id="2210862369564128646" at="30,0,31,18" concept="5" />
-      <node id="2210862369564128649" at="33,139,34,228" concept="5" />
-      <node id="2210862369564128646" at="36,0,37,0" concept="7" trace="canBeAncesctorBreakingPoint" />
-      <node id="2210862369564128646" at="16,0,19,0" concept="0" trace="UpdateModelClause_Constraints#()V" />
-      <node id="2210862369564128646" at="26,0,29,5" concept="2" />
-      <node id="2210862369564128646" at="33,0,36,0" concept="8" trace="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="2210862369564128646" at="19,0,23,0" concept="3" trace="hasOwnCanBeAncestorMethod#()Z" />
-      <node id="2210862369564128646" at="23,0,33,0" concept="3" trace="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="2210862369564128646" at="16,42,17,106" />
-      <scope id="2210862369564128646" at="20,46,21,16" />
-      <scope id="2210862369564128646" at="27,51,28,71" />
-      <scope id="2210862369564128648" at="33,139,34,228" />
-      <scope id="2210862369564128646" at="16,0,19,0" />
-      <scope id="2210862369564128646" at="33,0,36,0">
+      <node id="2210862369564128646" at="18,42,19,106" concept="9" />
+      <node id="2210862369564128646" at="22,46,23,16" concept="5" />
+      <node id="2210862369564128646" at="26,169,27,84" concept="4" />
+      <node id="2210862369564128646" at="27,84,28,0" concept="6" />
+      <node id="2210862369564128646" at="29,51,30,71" concept="1" />
+      <node id="2210862369564128646" at="31,5,32,0" concept="6" />
+      <node id="2210862369564128646" at="32,0,33,18" concept="5" />
+      <node id="2210862369564128649" at="35,139,36,488" concept="5" />
+      <node id="2210862369564128646" at="38,0,39,0" concept="7" trace="canBeAncesctorBreakingPoint" />
+      <node id="2210862369564128646" at="18,0,21,0" concept="0" trace="UpdateModelClause_Constraints#()V" />
+      <node id="2210862369564128646" at="28,0,31,5" concept="2" />
+      <node id="2210862369564128646" at="35,0,38,0" concept="8" trace="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="2210862369564128646" at="21,0,25,0" concept="3" trace="hasOwnCanBeAncestorMethod#()Z" />
+      <node id="2210862369564128646" at="25,0,35,0" concept="3" trace="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="2210862369564128646" at="18,42,19,106" />
+      <scope id="2210862369564128646" at="22,46,23,16" />
+      <scope id="2210862369564128646" at="29,51,30,71" />
+      <scope id="2210862369564128648" at="35,139,36,488" />
+      <scope id="2210862369564128646" at="18,0,21,0" />
+      <scope id="2210862369564128646" at="35,0,38,0">
         <var name="childConcept" id="2210862369564128646" />
         <var name="childNode" id="2210862369564128646" />
         <var name="node" id="2210862369564128646" />
         <var name="operationContext" id="2210862369564128646" />
       </scope>
-      <scope id="2210862369564128646" at="19,0,23,0" />
-      <scope id="2210862369564128646" at="24,169,31,18">
+      <scope id="2210862369564128646" at="21,0,25,0" />
+      <scope id="2210862369564128646" at="26,169,33,18">
         <var name="result" id="2210862369564128646" />
       </scope>
-      <scope id="2210862369564128646" at="23,0,33,0">
+      <scope id="2210862369564128646" at="25,0,35,0">
         <var name="checkingNodeContext" id="2210862369564128646" />
         <var name="childConcept" id="2210862369564128646" />
         <var name="childNode" id="2210862369564128646" />
         <var name="context" id="2210862369564128646" />
         <var name="node" id="2210862369564128646" />
       </scope>
-      <unit id="2210862369564128646" at="15,0,38,0" name="jetbrains.mps.lang.refactoring.constraints.UpdateModelClause_Constraints" />
+      <unit id="2210862369564128646" at="17,0,40,0" name="jetbrains.mps.lang.refactoring.constraints.UpdateModelClause_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)/3242588059496701744">

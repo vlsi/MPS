@@ -19,6 +19,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,31 +29,33 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 
 public abstract class FavoritesRoot<T> {
+  protected final Project myProject;
   private T myValue;
 
-  public static FavoritesRoot createForValue(Object value) {
-    if (value instanceof SNodeReference) return new NodeFavoritesRoot((SNodeReference) value);
-    if (value instanceof SModelReference) return new ModelFavoritesRoot((SModelReference) value);
-    if (value instanceof SModuleReference) return new ModuleFavoritesRoot((SModuleReference) value);
+  public static FavoritesRoot createForValue(Project project, Object value) {
+    if (value instanceof SNodeReference) return new NodeFavoritesRoot(project, (SNodeReference) value);
+    if (value instanceof SModelReference) return new ModelFavoritesRoot(project, (SModelReference) value);
+    if (value instanceof SModuleReference) return new ModuleFavoritesRoot(project, (SModuleReference) value);
     return null;
   }
 
-  public static FavoritesRoot createForTreeNode(MPSTreeNode treeNode) {
-    Object o = null;
+  /**
+   * Extract an input object suitable for favorites view,
+   * @return null if can't create favorites entry from a given tree element
+   */
+  public static Object extractValue(MPSTreeNode treeNode) {
     if (treeNode instanceof SNodeTreeNode) {
-      o = ((SNodeTreeNode) treeNode).getSNode().getReference();
+      return ((SNodeTreeNode) treeNode).getSNode().getReference();
     } else if (treeNode instanceof SModelTreeNode) {
-      o = ((SModelTreeNode) treeNode).getModel().getReference();
+      return ((SModelTreeNode) treeNode).getModel().getReference();
     } else if (treeNode instanceof ProjectModuleTreeNode) {
-      o = ((ProjectModuleTreeNode) treeNode).getModule().getModuleReference();
-    }
-    if (o != null) {
-      return createForValue(o);
+      return ((ProjectModuleTreeNode) treeNode).getModule().getModuleReference();
     }
     return null;
   }
 
-  public FavoritesRoot(T value) {
+  public FavoritesRoot(Project project, T value) {
+    myProject = project;
     myValue = value;
   }
 
@@ -60,7 +63,7 @@ public abstract class FavoritesRoot<T> {
     return myValue;
   }
 
-  public abstract MPSTreeNode getTreeNode(IOperationContext context);
+  public abstract MPSTreeNode createTreeNode();
 
   public abstract List<SNode> getAvailableNodes();
 }

@@ -11,8 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -26,7 +25,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     if ((SLinkOperations.getTarget(thisExpr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")) != null)) {
       classifier = SLinkOperations.getTarget(thisExpr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"));
     } else {
-      classifier = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisExpr);
+      classifier = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), thisExpr);
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;

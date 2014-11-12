@@ -86,7 +86,7 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
       for (SNode oldAnnotation : SNodeOperations.getNodeDescendants(ancessor, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SConcept[]{})) {
         SNodeOperations.deleteNode(oldAnnotation);
       }
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), null);
       EditorCell contextCell = editorContext.getContextCell();
       if (editorContext.getEditorComponent() instanceof InspectorEditorComponent) {
         SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1977980803835239937l, "isInInspector"), "" + (true));

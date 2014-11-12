@@ -15,6 +15,9 @@ public class Concept_GetDirectSuperConcepts_BehaviorDescriptor extends SNodeOper
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Concept_GetDirectSuperConcepts_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
+  public boolean virtual_applicableToSConcept_8828148184963745087(SConcept thisConcept) {
+    return Concept_GetDirectSuperConcepts_Behavior.virtual_applicableToSConcept_8828148184963745087(thisConcept);
+  }
   public List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
     return Concept_GetDirectSuperConcepts_Behavior.virtual_getApplicableParameter_3044950653914717056(thisConcept);
   }

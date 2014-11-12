@@ -34460,12 +34460,12 @@
           <node concept="vg0i.1068580320020" id="6615512484320071546" role="vg0i.1068431474542.1068431790190" info="nn">
             <property role="vg0i.1068580320020.1068580320021" value="10" />
           </node>
-          <node concept="5i2a.1229194968594" id="6615512484320071589" role="asn4.1133920641626.5169995583184591170" info="ng">
+          <node concept="5i2a.1229194968594" id="8573539357034607713" role="asn4.1133920641626.5169995583184591170" info="ng">
             <property role="5i2a.1229194968594.1229432188737" value="true" />
             <property role="5i2a.1229194968594.1932269937152561478" value="true" />
             <property role="5i2a.1229194968594.6268941039745498163" value="6" />
             <property role="5i2a.1229194968594.6268941039745498165" value="6" />
-            <property role="5i2a.1229194968594.1229194968595" value="Constant_t6d1qn_d0" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
           </node>
         </node>
         <node concept="vg0i.1146644602865" id="6615512484320070769" role="vg0i.1178549954367.1178549979242" info="nn" />
@@ -37803,6 +37803,858 @@
             <property role="5i2a.1101347953350122758.1101347953350127918" value="$Undo" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478053219702" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveStaticInStaticFieldBackspace1" />
+      <node concept="vg0i.1068580123136" id="2738496478053219703" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478053219704" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219705" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219706" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219707" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219708" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219709" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219710" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219711" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219712" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219713" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219714" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219715" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053219716" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053219717" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478053332682" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478053332683" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478053332684" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478053332685" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478053332686" role="vg0i.1178549954367.1178549979242" info="nn">
+            <node concept="5i2a.1229194968594" id="8573539357033021836" role="asn4.1133920641626.5169995583184591170" info="ng">
+              <property role="5i2a.1229194968594.1229432188737" value="true" />
+              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+              <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+              <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+              <property role="5i2a.1229194968594.1229194968595" value="ALIAS_EDITOR_COMPONENT" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478053332688" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478053332793" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478053332794" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1146644602865" id="2738496478053332795" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="2738496478053332796" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478053332797" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021822" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478053332799" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478053332960" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveStaticInStaticFieldDelete1" />
+      <node concept="vg0i.1068580123136" id="2738496478053332961" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478053332962" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332963" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332964" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332965" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332966" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332967" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332968" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332969" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332970" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332971" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332972" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332973" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478053332974" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478053332975" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282213320720" resolveInfo="Delete" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478053332978" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478053333067" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478053333070" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478053333071" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478053333072" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357033021612" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229194968596" value="0" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="0" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="0" />
+            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478053332984" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478053332985" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478053332986" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1146644602865" id="2738496478053332987" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="2738496478053332988" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478053332989" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021586" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478053332991" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478055586441" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveFinalInStaticFieldBackspace" />
+      <node concept="vg0i.1068580123136" id="2738496478055586442" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478055586443" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586444" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586445" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586446" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586447" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586448" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586449" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586450" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586451" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586452" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586453" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586454" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586457" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055586563" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1070462154015.6468716278899126575" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1070462154015.6468716278899125786" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055586565" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055586566" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478055586567" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357033021964" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586463" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586464" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055586465" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1146644602865" id="2738496478055586466" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="2738496478055586467" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055586468" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021938" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="5" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="5" />
+            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586470" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478055586646" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveVolatileInStaticFieldBackspace" />
+      <node concept="vg0i.1068580123136" id="2738496478055586647" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478055586648" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586649" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586650" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586651" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586652" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586653" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586654" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586655" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586656" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586657" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586658" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586659" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586828" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586829" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586844" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586845" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586862" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586863" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586660" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055586661" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1070462154015.6468716278899126575" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1070462154015.6468716278899125786" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055586662" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055586663" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478055586664" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357031908427" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="5" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="5" />
+            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586666" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586667" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055586668" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1070462154015.6468716278899126575" value="true" />
+          <node concept="vg0i.1146644602865" id="2738496478055586669" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="2738496478055586670" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055586671" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357031908401" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="8" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="8" />
+            <property role="5i2a.1229194968594.1229194968595" value="volatileModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586673" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478055586918" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveTransientInFieldDelete" />
+      <node concept="vg0i.1068580123136" id="2738496478055586919" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478055586920" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586921" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586922" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586923" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586924" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586925" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586926" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586927" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586928" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586929" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586930" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586931" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587261" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587262" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587279" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587280" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587299" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587300" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055586932" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055586933" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282213320720" resolveInfo="Delete" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586934" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478055587179" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="true" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055587180" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055587181" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478055587182" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357033021336" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229194968596" value="0" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="0" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="0" />
+            <property role="5i2a.1229194968594.1229194968595" value="volatileModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586940" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055586941" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478055586992" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="true" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="true" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055586996" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055586997" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478055586995" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357033021284" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="9" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="9" />
+            <property role="5i2a.1229194968594.1229194968595" value="transientModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055586947" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478055587353" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveStaticInStaticFieldDelete2" />
+      <node concept="vg0i.1068580123136" id="2738496478055587354" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478055587355" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587356" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587357" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587358" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587359" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587360" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587361" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587362" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587363" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587364" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587365" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587366" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587367" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587368" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282213320720" resolveInfo="Delete" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055587369" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478055587370" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055587371" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+            <node concept="5i2a.1229194968594" id="8573539357033021476" role="asn4.1133920641626.5169995583184591170" info="ng">
+              <property role="5i2a.1229194968594.1229194968596" value="0" />
+              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+              <property role="5i2a.1229194968594.6268941039745498163" value="0" />
+              <property role="5i2a.1229194968594.6268941039745498165" value="0" />
+              <property role="5i2a.1229194968594.1229194968595" value="ALIAS_EDITOR_COMPONENT" />
+            </node>
+          </node>
+          <node concept="vg0i.1068580320020" id="2738496478055587372" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="2738496478055587373" role="vg0i.1178549954367.1178549979242" info="nn" />
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055587375" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055587376" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055587377" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <node concept="vg0i.1146644602865" id="2738496478055587378" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="2738496478055587379" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055587380" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021444" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055587382" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="2738496478055587551" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="RemoveStaticInStaticFieldBackspace2" />
+      <node concept="vg0i.1068580123136" id="2738496478055587552" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.7011073693661765739" id="2738496478055587553" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587554" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587555" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587556" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587557" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587558" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587559" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587560" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587561" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587562" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587563" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587564" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+        <node concept="5i2a.7011073693661765739" id="2738496478055587565" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="5i2a.4239542196496927193" id="2738496478055587566" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
+            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282214002721" resolveInfo="Backspace" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055587567" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="2738496478055587714" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="2738496478055587717" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055587718" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021730" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="0" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="0" />
+            <property role="5i2a.1229194968594.1229194968595" value="empty_visibility" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055587573" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="2738496478055587574" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="2738496478055587575" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <node concept="vg0i.1070534370425" id="2738496478055587577" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="2738496478055587578" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="8573539357033021704" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="2738496478055587580" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="1774243543380527900" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="AddFinalInStaticField" />
+      <node concept="vg0i.1068580123136" id="1774243543380527901" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.1227182079811" id="1774243543380572773" role="vg0i.1068580123136.1068581517665" info="nn">
+          <property role="5i2a.1227182079811.1227184461946" value=" final" />
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380527914" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="1774243543380527915" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1070462154015.6468716278899126575" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1070462154015.6468716278899125786" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380527916" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380527917" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380527918" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="1774243543380542622" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="5" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="5" />
+            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380527920" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380527921" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="1774243543380527922" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <node concept="vg0i.1146644602865" id="1774243543380527923" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="vg0i.1070534370425" id="1774243543380527924" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380527925" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="5i2a.1229194968594" id="1774243543380542636" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380527927" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="1774243543380572775" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="AddVolatileInField" />
+      <node concept="vg0i.1068580123136" id="1774243543380572776" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.1227182079811" id="1774243543380572777" role="vg0i.1068580123136.1068581517665" info="nn">
+          <property role="5i2a.1227182079811.1227184461946" value=" volatile" />
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380572778" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="1774243543380572883" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="true" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="true" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380572886" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380572887" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380572888" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="8573539357030430728" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="8" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="8" />
+            <property role="5i2a.1229194968594.1229194968595" value="volatileModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380572784" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380572785" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="1774243543380572836" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="true" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380572840" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380572841" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380572839" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="1774243543380572952" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="9" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="9" />
+            <property role="5i2a.1229194968594.1229194968595" value="transientModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380572791" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="1774243543380573002" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="AddStaticInField" />
+      <node concept="vg0i.1068580123136" id="1774243543380573003" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.1227182079811" id="1774243543380573004" role="vg0i.1068580123136.1068581517665" info="nn">
+          <property role="5i2a.1227182079811.1227184461946" value=" static" />
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380573005" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1070462154015" id="1774243543380573006" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1070462154015.6468716278899126575" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1070462154015.6468716278899125786" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380573007" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380573008" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380573009" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="1774243543380573145" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+            <property role="5i2a.1229194968594.1229194968595" value="staticModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380573011" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380573012" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="1774243543380573063" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="false" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380573067" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380573068" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380573066" role="vg0i.1178549954367.1178549979242" info="nn">
+            <node concept="5i2a.1229194968594" id="1774243543380573119" role="asn4.1133920641626.5169995583184591170" info="ng">
+              <property role="5i2a.1229194968594.1229432188737" value="true" />
+              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+              <property role="5i2a.1229194968594.6268941039745498163" value="6" />
+              <property role="5i2a.1229194968594.6268941039745498165" value="6" />
+              <property role="5i2a.1229194968594.1229194968595" value="ALIAS_EDITOR_COMPONENT" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380573018" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+    <node concept="5i2a.1229187653856" id="1774243543380573160" info="lg">
+      <property role="asn4.1133920641626.1193676396447" value="fieldModifiers" />
+      <property role="asn4.1169194658468.1169194664001" value="AddTransientInField" />
+      <node concept="vg0i.1068580123136" id="1774243543380573161" role="5i2a.1229187653856.1229187755283" info="sn">
+        <node concept="5i2a.1227182079811" id="1774243543380573162" role="vg0i.1068580123136.1068581517665" info="nn">
+          <property role="5i2a.1227182079811.1227184461946" value=" transient" />
+        </node>
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380573163" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="1774243543380573164" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="true" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380573165" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380573166" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380573167" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="1774243543380573281" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="9" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="9" />
+            <property role="5i2a.1229194968594.1229194968595" value="transientModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380573169" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068390468198" id="1774243543380573170" role="5i2a.1229187653856.1229187676388" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <node concept="vg0i.1068390468200" id="1774243543380573171" role="vg0i.1107461130800.5375687026011219971" info="igu">
+          <property role="asn4.1169194658468.1169194664001" value="foo" />
+          <property role="vg0i.1068390468200.1240249534625" value="false" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
+          <property role="vg0i.1068390468200.8606350594693632173" value="false" />
+          <property role="vg0i.1224848483129.1224848525476" value="false" />
+          <node concept="vg0i.1070534370425" id="1774243543380573172" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+          <node concept="vg0i.1068580320020" id="1774243543380573173" role="vg0i.1068431474542.1068431790190" info="nn">
+            <property role="vg0i.1068580320020.1068580320021" value="10" />
+          </node>
+          <node concept="vg0i.1146644602865" id="1774243543380573174" role="vg0i.1178549954367.1178549979242" info="nn" />
+          <node concept="5i2a.1229194968594" id="1774243543380573267" role="asn4.1133920641626.5169995583184591170" info="ng">
+            <property role="5i2a.1229194968594.1229432188737" value="true" />
+            <property role="5i2a.1229194968594.1932269937152561478" value="true" />
+            <property role="5i2a.1229194968594.6268941039745498163" value="5" />
+            <property role="5i2a.1229194968594.6268941039745498165" value="5" />
+            <property role="5i2a.1229194968594.1229194968595" value="finalModifier" />
+          </node>
+        </node>
+        <node concept="vg0i.1146644602865" id="1774243543380573176" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
     </node>
   </contents>

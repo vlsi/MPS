@@ -19,9 +19,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +44,7 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode analyzer : SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer")) {
+            for (SNode analyzer : SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"))) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(analyzer, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 6618572076229093257l, 3325264799421088056l, "instruction"))));
             }
             return result;

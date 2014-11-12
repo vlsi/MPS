@@ -98,23 +98,23 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1228680239721(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603382l, "jetbrains.mps.sampleXML.structure.Document"));
   }
   public static Iterable<SNode> sourceNodesQuery_5273477653284500112(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
+    return SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, "jetbrains.mps.sampleXML.structure.Element"));
   }
   public static Iterable<SNode> sourceNodesQuery_1228681296814(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603387l, "content"));
   }
   public static void mappingScript_CodeBlock_3978102045101460213(final MappingScriptContext _context) {
     // find all text nodes 
-    List<SNode> texts = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.sampleXML.structure.Text");
+    List<SNode> texts = SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, "jetbrains.mps.sampleXML.structure.Text"));
     for (SNode text : ListSequence.fromList(texts)) {
       // replace with a 'label' element 
       SNode label = SNodeOperations.replaceWithNewChild(text, "jetbrains.mps.sampleXML.structure.Element");
       SPropertyOperations.set(label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "label");
       // Add a text attribute to the 'label' element 
-      SNode attribute = SLinkOperations.addNewChild(label, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603386l, "attribute"), "jetbrains.mps.sampleXML.structure.Attribute");
+      SNode attribute = SLinkOperations.addNewChild(label, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603386l, "attribute"), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, "jetbrains.mps.sampleXML.structure.Attribute"));
       SPropertyOperations.set(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "text");
       SPropertyOperations.set(attribute, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, 1225239603363l, "value"), SPropertyOperations.getString(text, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, 1225239603394l, "text")));
     }

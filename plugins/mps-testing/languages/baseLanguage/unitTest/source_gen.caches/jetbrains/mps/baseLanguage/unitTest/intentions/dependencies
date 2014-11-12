@@ -54,8 +54,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" file="convert_test_case_to_unittest_case_Intention.java">

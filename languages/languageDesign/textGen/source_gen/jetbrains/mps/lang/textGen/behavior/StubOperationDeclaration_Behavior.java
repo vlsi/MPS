@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class StubOperationDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")));
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), createStatementList_8pk1bs_a0a1a0());
   }
   private static SNode createStatementList_8pk1bs_a0a1a0() {

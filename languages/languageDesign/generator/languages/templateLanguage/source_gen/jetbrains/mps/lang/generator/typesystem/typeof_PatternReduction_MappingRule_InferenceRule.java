@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -27,7 +27,7 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = PatternReduction_MappingRule_Behavior.call_getConcept_1805153994417064763(rule);
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516026l, "labelDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1200911316486l, 1200911342686l, "sourceConcept")) != null && (applicableConcept != null)) {
-      if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516026l, "labelDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1200911316486l, 1200911342686l, "sourceConcept")), NameUtil.nodeFQName(applicableConcept)))) {
+      if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516026l, "labelDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1200911316486l, 1200911342686l, "sourceConcept"))), SNodeOperations.asSConcept(applicableConcept)))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rule, "Label has incorrect type", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1805153994417064793", null, errorTarget);

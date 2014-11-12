@@ -10,10 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
 import jetbrains.mps.lang.core.behavior.ExportScope_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -31,13 +29,13 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     if (ms == null || ms.isDisableCheckOpenAPI()) {
       return;
     }
-    String namespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
+    String namespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), node);
     // getModuleNamespace() doesn't work for transient models 
     if (namespace == null) {
       return;
     }
     // check concept of the node 
-    if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), true, SNodeOperations.getConceptDeclaration(node), namespace))) {
+    if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), true, SNodeOperations.getConceptDeclaration(node), namespace))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954469", null, errorTarget);
@@ -45,7 +43,7 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
     }
     // check references 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-      if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), false, SLinkOperations.getTargetNode(ref), namespace))) {
+      if (!(ExportScope_Behavior.call_checkExport_2565736246230031479(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), false, SLinkOperations.getTargetNode(ref), namespace))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));

@@ -58,7 +58,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
       if (monitor.isCanceled()) {
         break;
       }
-      for (final SNode rootNode : SModelOperations.getRoots(model, null)) {
+      for (final SNode rootNode : SModelOperations.roots(model, null)) {
         TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypechecking.Action() {
           @Override
           public void run(TypeCheckingContext p0) {

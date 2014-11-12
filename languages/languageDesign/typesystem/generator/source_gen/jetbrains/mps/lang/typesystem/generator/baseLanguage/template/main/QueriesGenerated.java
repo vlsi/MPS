@@ -51,7 +51,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_1175254554283(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
+    return (Language.getModelAspect(model) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
   }
   public static boolean baseMappingRule_Condition_1188901620278(final BaseMappingRuleContext _context) {
     return !((SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) || SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"))));
@@ -1872,42 +1872,42 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1236163200695l, 1236163216864l, "operation"));
   }
   public static Iterable<SNode> sourceNodesQuery_1175249249128(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InferenceRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174643105530l, "jetbrains.mps.lang.typesystem.structure.InferenceRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1195214710294(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1195214364922l, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1175440294397(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1175147670730l, "jetbrains.mps.lang.typesystem.structure.SubtypingRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1188816571779(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.ComparisonRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1188811367543l, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1201610301765(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1201607707634l, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1228490286261(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.VariableConverterItem")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1228481911130l, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
@@ -1921,7 +1921,7 @@ public class QueriesGenerated {
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_1236100937810(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
@@ -1935,14 +1935,14 @@ public class QueriesGenerated {
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_8124453027370845519(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 8124453027370766044l, "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
     }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_7806648416361380831(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule")).sort(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1236083041311l, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
@@ -2004,7 +2004,7 @@ public class QueriesGenerated {
     }
     final SNode csInferenceMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a6a274(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     final SNode csCheckingMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a7a274(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    for (SNode methodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+    for (SNode methodCall : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
       SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
       boolean toProcess = false;
       List<SNode> annotationInstances = SLinkOperations.getChildren(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"));
@@ -2019,7 +2019,7 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getChildren(methodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).insertElement(0, _quotation_createNode_x583g4_a0a0a4a8a274());
       }
     }
-    for (SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+    for (SNode baseMethodDeclaration : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
       boolean toProcess = false;
       List<SNode> annotationInstances = SLinkOperations.getChildren(baseMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"));
       for (SNode annotationInstance : annotationInstances) {
@@ -2042,7 +2042,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1224237349196(final MappingScriptContext _context) {
     final SNode getRTSupportExpression = _quotation_createNode_x583g4_a0a0gs();
     final SNode csTypeCheckingContext = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a1a474(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    for (SNode instanceMethodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+    for (SNode instanceMethodCall : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
       if (!("coerce_".equals(SPropertyOperations.getString(instanceMethodDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
         continue;
@@ -2076,11 +2076,11 @@ parametersLoop:
   }
   public static void mappingScript_CodeBlock_2990591960991114478(final MappingScriptContext _context) {
     List<SNode> nodesToProcess = new ArrayList<SNode>();
-    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")));
-    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.MessageStatement")));
-    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix")));
-    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement")));
-    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")));
+    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"))));
+    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"))));
+    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1216383170661l, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"))));
+    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"))));
+    ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"))));
     for (SNode node : nodesToProcess) {
       SModel originalModel = _context.getOriginalInputModel();
       String modelId = (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1216383170661l, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix")) ? jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) : originalModel.getReference().toString());

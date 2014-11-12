@@ -12,7 +12,7 @@ public class DependencyTreeNode extends MPSTreeNode {
   private DepLink myLink;
   private Project myProject;
   public DependencyTreeNode(Project project, DepLink link) {
-    super(link, null);
+    super(link);
     myLink = link;
     myProject = project;
     setIcon(IconManager.getIconFor(getModule()));

@@ -144,7 +144,7 @@ public class Utils {
     }
 
     for (SModel m : ListSequence.fromList(expected)) {
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+      for (SNode root : ListSequence.fromList(SModelOperations.roots(m, null))) {
         NodePatcher.removeStatements(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
@@ -164,7 +164,7 @@ public class Utils {
       assert ListSequence.fromList(parsedModels).count() == 1;
       SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(expected, null))) {
+      for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
 
@@ -197,7 +197,7 @@ public class Utils {
       SModel m = md;
       ListSequence.fromList(binModels).addElement(m);
 
-      for (SNode binRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+      for (SNode binRoot : ListSequence.fromList(SModelOperations.roots(m, null))) {
         NodePatcher.fixNonStatic(binRoot);
         NodePatcher.removeConstructorName(binRoot);
         NodePatcher.removeExtendsObject(binRoot);
@@ -224,7 +224,7 @@ public class Utils {
       SModel zzz = m;
       ListSequence.fromList(srcModelsX).addElement(zzz);
 
-      for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {
+      for (SNode srcRoot : ListSequence.fromList(SModelOperations.roots(zzz, null))) {
         NodePatcher.fixNonStatic(srcRoot);
         NodePatcher.removeSourceLevelAnnotations(srcRoot);
 
@@ -273,8 +273,8 @@ public class Utils {
   }
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     boolean wereErrors = false;
-    List<SNode> binRoots = SModelOperations.getRoots(left, null);
-    List<SNode> srcRoots = SModelOperations.getRoots(right, null);
+    List<SNode> binRoots = SModelOperations.roots(left, null);
+    List<SNode> srcRoots = SModelOperations.roots(right, null);
 
     binRoots = ListSequence.fromList(binRoots).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -297,11 +297,11 @@ public class Utils {
   }
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
-    for (SNode rightRoot : ListSequence.fromList(SModelOperations.getRoots(right, null))) {
+    for (SNode rightRoot : ListSequence.fromList(SModelOperations.roots(right, null))) {
       MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightRoot);
     }
 
-    for (SNode leftRoot : ListSequence.fromList(SModelOperations.getRoots(left, null))) {
+    for (SNode leftRoot : ListSequence.fromList(SModelOperations.roots(left, null))) {
       SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       if ((rightBrother != null)) {
         NodePatcher.copyImportAttrs(leftRoot, rightBrother);

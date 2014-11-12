@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -17,7 +18,7 @@ public class AppendTextOperation_Behavior {
     return "append";
   }
   public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(thisConcept), "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
     ListSequence.fromList(result).addElement(_quotation_createNode_jh7h4_a0a1a1());
     return result;
   }

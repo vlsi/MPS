@@ -19,8 +19,8 @@ import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.Setter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.Setter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -84,16 +84,16 @@ public class NewTemplateInRootMappingRule_Intention implements IntentionFactory 
       CreateFromUsageUtil.showCreateNewRootMenu(editorContext, new Condition<SNode>() {
         public boolean met(SNode n) {
           SNode c = (SNode) n;
-          if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+          if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
             return false;
           }
-          if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+          if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
             return false;
           }
-          if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
+          if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
             return false;
           }
-          if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.MappingScript")) {
+          if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, "jetbrains.mps.lang.generator.structure.MappingScript"))) {
             return false;
           }
           return true;

@@ -239,4 +239,14 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public List<SConceptId> getParentsIds() {
     return Collections.emptyList();
   }
+
+  @Override
+  public boolean isAssignableTo(SConceptId conceptId) {
+    return false;
+  }
+
+  @Override
+  public Set<SConceptId> getAncestorsIds() {
+    return Collections.emptySet();
+  }
 }

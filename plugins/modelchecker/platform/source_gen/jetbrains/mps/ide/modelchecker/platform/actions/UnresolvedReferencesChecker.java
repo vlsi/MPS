@@ -36,7 +36,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     }
     monitor.start("unresolved references", 1);
 
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
       if (monitor.isCanceled()) {
         break;
       }

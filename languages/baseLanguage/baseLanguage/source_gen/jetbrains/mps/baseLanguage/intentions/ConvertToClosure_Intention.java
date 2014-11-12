@@ -85,7 +85,7 @@ public class ConvertToClosure_Intention implements IntentionFactory {
       return "Replace Anonymous Class with Closure Literal";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode closureLiteral = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
+      SNode closureLiteral = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), null);
       if (Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty()) {
         SLinkOperations.setTarget(closureLiteral, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), SLinkOperations.getTarget(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).first(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
       }

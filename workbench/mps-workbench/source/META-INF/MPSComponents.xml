@@ -76,9 +76,6 @@
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.dialogs.DialogDimensionsSettings</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
     <component>
@@ -163,7 +160,7 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
+      <implementation-class>jetbrains.mps.project.ProjectLibraryManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>

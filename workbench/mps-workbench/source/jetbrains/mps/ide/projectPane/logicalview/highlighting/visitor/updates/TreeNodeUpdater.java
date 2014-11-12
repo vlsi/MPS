@@ -64,10 +64,13 @@ public final class TreeNodeUpdater {
           @Override
           public void run() {
             final HashSet<MPSTreeNode> toRefresh = new HashSet<MPSTreeNode>();
-            for (Pair<MPSTreeNode, NodeUpdate> update : updates) {
-              MPSTreeNode node = update.o1;
-              if (!checkDisposed(node)) return;
-              update.o2.update(node);
+            for (Pair<MPSTreeNode, NodeUpdate> next : updates) {
+              MPSTreeNode node = next.o1;
+              if (node.getTree() == null) {
+                // no reason to update element which is not in the tree
+                continue;
+              }
+              next.o2.update(node);
               toRefresh.add(node);
             }
             for (MPSTreeNode node : toRefresh) {
@@ -89,7 +92,6 @@ public final class TreeNodeUpdater {
   }
 
   public static boolean checkDisposed(MPSTreeNode node) {
-    IOperationContext context = node.getOperationContext();
-    return !context.getProject().isDisposed() && context.isValid();
+    return node.getTree() != null;
   }
 }

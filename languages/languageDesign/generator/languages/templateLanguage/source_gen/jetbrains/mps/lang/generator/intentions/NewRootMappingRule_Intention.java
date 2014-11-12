@@ -64,7 +64,7 @@ public class NewRootMappingRule_Intention implements IntentionFactory {
     if (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")) == null) {
       return false;
     }
-    List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+    List<SNode> configs = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
     if (ListSequence.fromList(configs).isEmpty()) {
       return false;
     }
@@ -101,7 +101,7 @@ public class NewRootMappingRule_Intention implements IntentionFactory {
       return "Create Root Mapping Rule";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+      List<SNode> configs = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       if (ListSequence.fromList(configs).count() > 1) {
         Iterable<SNode> sameVPackConfigs = ListSequence.fromList(configs).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -116,7 +116,7 @@ public class NewRootMappingRule_Intention implements IntentionFactory {
         // TODO: let user to choose mapping config? 
       }
       //  add new rule 
-      SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167514678247l, "rootMappingRule"), "jetbrains.mps.lang.generator.structure.Root_MappingRule");
+      SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167514678247l, "rootMappingRule"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, "jetbrains.mps.lang.generator.structure.Root_MappingRule"));
       SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"), SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")));
       SLinkOperations.setTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"), node);
       //  open in editor 

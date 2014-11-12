@@ -95,7 +95,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     public MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 7651593722933768974l, 7651593722933768976l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 7651593722933768974l, 7651593722933768976l, "query"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1221057094638l, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"));
     }
     public String getMatchingText() {
       return "query";

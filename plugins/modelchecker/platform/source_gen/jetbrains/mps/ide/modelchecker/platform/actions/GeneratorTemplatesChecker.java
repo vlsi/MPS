@@ -39,7 +39,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
     new TemplateModelScanner(model) {
       @Override
       public void scan() {
-        for (SNode root : SModelOperations.getRoots(model, null)) {
+        for (SNode root : SModelOperations.roots(model, null)) {
           if (progressMonitor.isCanceled()) {
             return;
           }

@@ -98,7 +98,7 @@ public class CycleHelper {
       });
       SNode first = cycle.get(0).getModule();
       SModel model = SNodeOperations.getModel(first);
-      SNode cycleX = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
+      SNode cycleX = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, "jetbrains.mps.build.workflow.structure.BwfJavaModule"));
       cyclesToName.add(cycleX);
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
       SPropertyOperations.set(cycleX, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 927724900262398958l, "noWarnings"), "" + (true));
@@ -149,7 +149,7 @@ public class CycleHelper {
           }
         }
 
-        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
+        SNode mref = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"));
         SLinkOperations.setTarget(mref, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target"), cycleX);
         ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).addElement(mref);
 
@@ -162,29 +162,29 @@ public class CycleHelper {
         }
       }
       SPropertyOperations.set(cycleX, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 927724900262398947l, "heapSize"), "" + (heapSize));
-      SLinkOperations.setNewChild(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 7926701909975416101l, "sources"), "jetbrains.mps.build.workflow.structure.BwfFileSet");
+      SLinkOperations.setNewChild(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 7926701909975416101l, "sources"), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 7926701909975416091l, "jetbrains.mps.build.workflow.structure.BwfFileSet"));
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 7926701909975416101l, "sources")), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 7926701909975416091l, 7926701909975416092l, "elements"))).addSequence(Sequence.fromIterable(((Iterable<SNode>) sources)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return CopyUtil.copy(it);
         }
       }));
       for (SNode dep : deps) {
-        SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
+        SNode cp = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"));
         SLinkOperations.setTarget(cp, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l, 7926701909975791137l, "classpath"), CopyUtil.copy(dep));
         ListSequence.fromList(SLinkOperations.getChildren(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).addElement(cp);
       }
       for (SNode jl : seenLibraries) {
-        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference");
+        SNode mref = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"));
         SLinkOperations.setTarget(mref, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 144710003695507915l, 144710003695507916l, "target"), jl);
         ListSequence.fromList(SLinkOperations.getChildren(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).addElement(mref);
       }
       for (SNode jm : seenModules) {
-        SNode mref = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
+        SNode mref = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"));
         SLinkOperations.setTarget(mref, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389316l, 4755209551904389317l, "target"), jm);
         ListSequence.fromList(SLinkOperations.getChildren(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 4755209551904389320l, "dependencies"))).addElement(mref);
       }
       for (SNode task : taskDependency) {
-        SNode dependency = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency");
+        SNode dependency = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"));
         SLinkOperations.setTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284574294l, 2769948622284574295l, "target"), task);
         ListSequence.fromList(SLinkOperations.getChildren(cycleX, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 4755209551904389307l, 6520682027041170530l, "taskDeps"))).addElement(dependency);
       }

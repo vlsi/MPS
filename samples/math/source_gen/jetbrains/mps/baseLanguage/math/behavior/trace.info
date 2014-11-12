@@ -312,8 +312,8 @@
       <node id="1300076822026746774" at="172,13,173,54" concept="4" />
       <node id="1300076822026746780" at="174,13,175,54" concept="4" />
       <node id="1300076822026746786" at="176,13,177,54" concept="4" />
-      <node id="1300076822026746793" at="178,14,179,113" concept="3" />
-      <node id="1300076822026746799" at="179,113,180,350" concept="1" />
+      <node id="1300076822026746793" at="178,14,179,209" concept="3" />
+      <node id="1300076822026746799" at="179,209,180,350" concept="1" />
       <node id="1300076822026746807" at="180,350,181,272" concept="4" />
       <node id="1300076822026748004" at="186,13,187,54" concept="4" />
       <node id="1300076822026748010" at="188,13,189,54" concept="4" />
@@ -1703,8 +1703,8 @@
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/3044950653914719985">
     <file name="MatrixExponentialOperation_Behavior.java">
-      <node id="3044950653914719964" at="15,110,16,256" concept="3" />
-      <node id="3044950653914719979" at="16,256,17,178" concept="1" />
+      <node id="3044950653914719964" at="15,110,16,284" concept="3" />
+      <node id="3044950653914719979" at="16,284,17,178" concept="1" />
       <node id="3044950653914719983" at="17,178,18,18" concept="4" />
       <node id="3044950653914719985" at="13,0,15,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3044950653914719985" at="15,0,20,0" concept="6" trace="virtual_getAllowedSubstituends_3044950653914716992#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />

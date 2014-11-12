@@ -10,11 +10,11 @@
   <root nodeRef="r:c6505a4e-e114-47ba-aea6-f577e907f241(jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main@generator)/1228678752534">
     <file name="QueriesGenerated.java">
       <node id="1228680316628" at="79,102,80,198" concept="1" />
-      <node id="1228680279582" at="96,114,97,109" concept="1" />
-      <node id="5273477653284537095" at="99,120,100,108" concept="1" />
+      <node id="1228680279582" at="96,114,97,208" concept="1" />
+      <node id="5273477653284537095" at="99,120,100,207" concept="1" />
       <scope id="1228680307377" at="79,102,80,198" />
-      <scope id="1228680239722" at="96,114,97,109" />
-      <scope id="5273477653284500113" at="99,120,100,108" />
+      <scope id="1228680239722" at="96,114,97,208" />
+      <scope id="5273477653284500113" at="99,120,100,207" />
     </file>
   </root>
   <root nodeRef="r:c6505a4e-e114-47ba-aea6-f577e907f241(jetbrains.mps.samples.generator_demo.demoLang4.generator.template.main@generator)/1228678752590">

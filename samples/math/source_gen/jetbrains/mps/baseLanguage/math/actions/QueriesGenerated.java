@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -30,7 +29,6 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -45,10 +43,10 @@ public class QueriesGenerated {
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode n = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", null);
+            SNode n = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697232005l, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"), null);
             SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697232005l, 3498370411873418560l, "column"), "" + (true));
             return n;
           }
@@ -70,7 +68,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode lso = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", null);
+        SNode lso = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), null);
         {
           SNode matchedNode_fo7if3_b0a0a0 = SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
           {
@@ -127,7 +125,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", null);
+        SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, 6389121991274611516l, "expression"), _context.getSourceNode());
         return SLinkOperations.getTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l, 6389121991274611517l, "rowIndex"));
@@ -201,10 +199,10 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _context.getSourceNode()));
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), _context.getSourceNode()));
             }
             public String getMatchingText(String pattern) {
-              return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+              return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept((item)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
             }
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);

@@ -38,6 +38,6 @@ public class LanguageDescriptor_Behavior {
       genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-815987583431389189l, -7637943166127244904l), 9020561928507175845l, 1698302279987270971l, "language")), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return true;
     }
-    return ListSequence.fromList(SModelOperations.getRoots(m, null)).isEmpty();
+    return ListSequence.fromList(SModelOperations.roots(m, null)).isEmpty();
   }
 }

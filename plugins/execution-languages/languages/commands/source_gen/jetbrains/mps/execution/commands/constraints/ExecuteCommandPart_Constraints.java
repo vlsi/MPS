@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -25,7 +26,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
@@ -41,7 +41,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     return new BaseReferenceScopeProvider() {
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart")).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDeprecated_1224609060727", new Object[]{}));
           }

@@ -15,17 +15,22 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -40,8 +45,28 @@ public class MetaAdapterByDeclaration {
     return new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
   }
 
-  public static SConcept getConcept(SNode c) {
-    return new SConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+  public static SAbstractConcept getConcept(SNode c) {
+    if (c.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
+      return new SConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+    }
+    if (c.getConcept().equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+      return new SInterfaceConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+    }
+    return null;
+  }
+
+  public static SConcept getInstanceConcept(SNode c) {
+    return asInstanceConcept(getConcept(c));
+  }
+
+  public static SConcept asInstanceConcept(SAbstractConcept abstractConcept) {
+    if (abstractConcept instanceof SConcept) {
+      return (SConcept) abstractConcept;
+    }
+    if (abstractConcept instanceof SInterfaceConcept) {
+      return new SInterfaceConceptDefaultAdapter((SInterfaceConcept) abstractConcept);
+    }
+    return null;
   }
 
   public static SContainmentLink getContainmentLink(SNode c) {

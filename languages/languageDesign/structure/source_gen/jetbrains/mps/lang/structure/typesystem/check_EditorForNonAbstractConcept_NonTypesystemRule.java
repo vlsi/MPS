@@ -17,9 +17,9 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -39,7 +39,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
     while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
       List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(acd, LanguageAspect.EDITOR);
-      if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
+      if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(acd), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"))) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
         }

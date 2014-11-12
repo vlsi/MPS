@@ -95,7 +95,7 @@ public class CopyThisDown_Action extends BaseAction {
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
           String role = nodeToCopy.getRoleInParent();
-          SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
+          SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(parent)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
           if (link == null) {
             return;
           }
@@ -114,7 +114,7 @@ public class CopyThisDown_Action extends BaseAction {
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
         String role = firstNode.getRoleInParent();
         SNode parent = SNodeOperations.getParent(firstNode);
-        SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
+        SNode link = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(parent)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{role});
         if (link == null) {
           return;
         }

@@ -34,8 +34,8 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
   private static final Map<RelationKind, Color> COLOR_MAP = initColors();
   private Block myBlock;
 
-  public BlockTreeNode(Block block, IOperationContext operationContext, State state, EditorComponent editorComponent) {
-    super(block.getExpandedPresentation(state), operationContext);
+  public BlockTreeNode(Block block, State state, EditorComponent editorComponent) {
+    super(block.getExpandedPresentation(state));
     myBlock = block;
     myRuleId = block.getNodeId();
     myRuleModel = block.getNodeModel();

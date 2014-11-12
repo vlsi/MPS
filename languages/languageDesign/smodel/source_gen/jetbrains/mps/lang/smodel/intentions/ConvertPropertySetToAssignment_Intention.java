@@ -68,7 +68,7 @@ public class ConvertPropertySetToAssignment_Intention implements IntentionFactor
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138661924179l, 1138662048170l, "value")));
       SNode dotExpr = IOperation_Behavior.call_getDotExpression_1224687669172(node);
       SNodeOperations.detachNode(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
-      SNode assignment = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+      SNode assignment = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), null);
       SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), lValue);
       SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), rValue);
       SNodeOperations.replaceWithAnother(dotExpr, assignment);

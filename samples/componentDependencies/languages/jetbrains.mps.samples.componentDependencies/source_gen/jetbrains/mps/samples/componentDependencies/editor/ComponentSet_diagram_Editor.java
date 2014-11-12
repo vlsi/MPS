@@ -18,10 +18,10 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -78,7 +78,7 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_amytw9_a0a extends DiagramCell {
     private DiagramCellImpl_amytw9_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "New component");
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610789197l, "x"), "" + (x));
@@ -89,7 +89,7 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "New component");
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610789197l, "x"), "" + (x));

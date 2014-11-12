@@ -9,8 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,7 +24,7 @@ public class check_ExtractStaticMethodCall_NonTypesystemRule extends AbstractNon
   public check_ExtractStaticMethodCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode callStatic, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> available = ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), callStatic);
+    List<SNode> available = ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression")), callStatic);
     if (!(ListSequence.fromList(available).contains(SLinkOperations.getTarget(callStatic, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

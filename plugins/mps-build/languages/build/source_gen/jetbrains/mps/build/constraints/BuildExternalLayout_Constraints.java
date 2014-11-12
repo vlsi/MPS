@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
@@ -48,10 +50,10 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
     return false;
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
-    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-      return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildLayout_PureNode");
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683218683l, "jetbrains.mps.build.structure.BuildLayout_PureNode"));
     }
-    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildInputResourceSet")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287739114l, "jetbrains.mps.build.structure.BuildInputResourceSet"))) {
       return false;
     }
     return true;

@@ -231,15 +231,15 @@ public class ClassConcept_Behavior {
   @Deprecated
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     SNode superClass = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSuperclass_1240936569950", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getMembers_2201875424515824604", new Object[]{kind});
     }
 
     // todo: remove this code from getMembers to getScope? 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2406048883599831972l, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind"))) {
       return new NamedElementsScope(ClassConcept_Behavior.call_constructors_5292274854859503373(thisNode));
     }
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2406048883599609633l, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6617045035157661092l, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
       if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
         return new EmptyScope();
       }
@@ -251,10 +251,10 @@ public class ClassConcept_Behavior {
         return new EmptyScope();
       }
 
-      if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2406048883599609633l, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind"))) {
         return MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"), thisNode);
       }
-      if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6617045035157661092l, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
         return MemberScopes.nonAbstractMethods(MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), thisNode));
       }
     }
@@ -262,7 +262,7 @@ public class ClassConcept_Behavior {
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getMembers_2201875424515824604", new Object[]{kind});
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2406048883599831972l, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2406048883599609633l, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6617045035157661092l, "jetbrains.mps.baseLanguage.structure.SuperMethodKind"))) {
       return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
@@ -378,9 +378,9 @@ public class ClassConcept_Behavior {
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
     if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null)) {
-      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 2068944020170241612l, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"));
     }
-    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331499l, "deprecated"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
     AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
   public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {

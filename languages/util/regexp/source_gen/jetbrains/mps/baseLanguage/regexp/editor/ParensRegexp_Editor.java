@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -75,7 +74,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
+      return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
     }
     public boolean isReferentPresentation() {
       return false;

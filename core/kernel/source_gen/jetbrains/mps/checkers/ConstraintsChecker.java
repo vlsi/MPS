@@ -56,7 +56,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.util.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
       final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null) {
-        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "virtual_getFqName_1213877404258", new Object[]{}), null);
+        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))), "virtual_getFqName_1213877404258", new Object[]{}), null);
         return;
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {

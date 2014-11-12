@@ -36,7 +36,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
   @Override
   protected void modifyPartToExtract() {
-    SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+    SNode returnStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
     SLinkOperations.setTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), this.createReference(this.myOutputVariable));
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
@@ -53,7 +53,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         if ((ExtractMethodWithOutputVariable.this.myDeclarationStatement != null)) {
           SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), methodCall);
         } else {
-          SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+          SNode newStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
           SLinkOperations.setTarget(newStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), _quotation_createNode_n3576q_a0b0a2a0a0a0f(methodCall, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{})));
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }

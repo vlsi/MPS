@@ -69,7 +69,7 @@ public class add_copy_from_Intention implements IntentionFactory {
       return "Specify Sequence to Copy From";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom"), "jetbrains.mps.baseLanguage.structure.Expression");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
     }
     public IntentionDescriptor getDescriptor() {
       return add_copy_from_Intention.this;

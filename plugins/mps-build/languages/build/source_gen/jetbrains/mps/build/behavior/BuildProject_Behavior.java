@@ -82,11 +82,11 @@ public class BuildProject_Behavior {
     }
   }
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildExternalLayout")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683216329l, "jetbrains.mps.build.structure.BuildExternalLayout"))) {
       return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind));
     }
 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProject")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"))) {
       final SNode _this = thisNode;
       return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
@@ -98,8 +98,8 @@ public class BuildProject_Behavior {
     // NOTE: references in project structure and layout should be unordered, thus 
     //       we do not need index/child parameters here 
     if ("layout".equals(role)) {
-      if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart")) {
-        return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647426l, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart"))) {
+        return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind);
       }
       for (SNode plugin : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins")))) {
         Scope layoutScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
@@ -118,7 +118,7 @@ public class BuildProject_Behavior {
     return new EmptyScope();
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildMacro")) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745375l, "jetbrains.mps.build.structure.BuildMacro"))) {
       return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child, SetSequence.fromSet(new HashSet<SNode>()));
     }
 
@@ -164,7 +164,7 @@ public class BuildProject_Behavior {
       return new EmptyScope();
     }
     SetSequence.fromSet(visited).addElement(thisNode);
-    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "macros"));
+    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros")));
     SNode containingProject = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 

@@ -17,7 +17,7 @@ public class ElsifClause_Behavior {
   }
   public static void call_convertToElseClause_1217846674032(SNode thisNode) {
     SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(thisNode);
-    SNode elseStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SNode elseStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
     SLinkOperations.setTarget(elseStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList"))));
     SNodeOperations.deleteNode(thisNode);
     SLinkOperations.setTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"), elseStatement);

@@ -21,9 +21,9 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -68,7 +68,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              final Iterable<SNode> libraries = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.samples.Kaja.structure.Library")).where(new IWhereFilter<SNode>() {
+              final Iterable<SNode> libraries = ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 4394627182934741782l, "jetbrains.mps.samples.Kaja.structure.Library"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(final SNode library) {
                   return ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"), true, false), MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 4394627182934757449l, "jetbrains.mps.samples.Kaja.structure.Require"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {

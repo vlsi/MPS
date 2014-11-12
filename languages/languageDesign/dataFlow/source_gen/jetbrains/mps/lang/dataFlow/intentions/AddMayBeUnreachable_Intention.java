@@ -69,7 +69,7 @@ public class AddMayBeUnreachable_Intention implements IntentionFactory {
       return "Add May Be Unreachable";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", null);
+      SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1206534235764l, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"), null);
       SNodeOperations.replaceWithAnother(node, result);
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206534235764l, 1206534244140l, "emitStatement"), node);
       SelectionUtil.selectNode(editorContext, node);

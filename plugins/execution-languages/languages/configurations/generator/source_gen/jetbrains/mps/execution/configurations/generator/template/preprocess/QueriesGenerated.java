@@ -7,12 +7,12 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
@@ -27,7 +27,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static void mappingScript_CodeBlock_5916922432461069146(final MappingScriptContext _context) {
-    for (SNode executor : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
+    for (SNode executor : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(it) && RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(it);
       }
@@ -42,9 +42,9 @@ public class QueriesGenerated {
         }
       })) {
         if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 6129022259108621329l, "commandPart"))))) {
-          SNode debuggerSettignsParameter = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", null);
+          SNode debuggerSettignsParameter = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4816403309550879744l, "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
           SNode debuggerSettings = _quotation_createNode_x583g4_a0b0a0a0a0b(debuggerSettignsParameter);
-          SLinkOperations.setNewChild(debuggerSettings, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter");
+          SLinkOperations.setNewChild(debuggerSettings, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 4816403309550879744l, "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
           SNode debuggerAssignment = _quotation_createNode_x583g4_a0d0a0a0a0b(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 6129022259108621329l, "commandPart"))), MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter")));
           ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 856705193941281781l, "argument"))).addElement(debuggerAssignment);
           SLinkOperations.setTarget(debuggerAssignment, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281764l, 856705193941281766l, "value"), debuggerSettings);

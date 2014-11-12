@@ -16,8 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -40,7 +39,7 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode()));
+            return ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression")), ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode()));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

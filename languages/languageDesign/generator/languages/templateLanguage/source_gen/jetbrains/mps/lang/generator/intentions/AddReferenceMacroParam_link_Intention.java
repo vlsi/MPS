@@ -16,6 +16,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -84,7 +85,7 @@ public class AddReferenceMacroParam_link_Intention implements IntentionFactory {
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
+    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.asNode(sourceNode))) {
       if (SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1")) {
         ListSequence.fromList(result).addElement(child);
       }
@@ -101,13 +102,13 @@ public class AddReferenceMacroParam_link_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode referenceMacro = EditingUtil.addReferenceMacro(node, editorContext.getSelectedCell());
-      SNode referentValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", null);
-      SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-      SNode linkAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
+      SNode referentValue = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167770111131l, "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent"), null);
+      SNode dotExpression = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression"), null);
+      SNode linkAccess = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), null);
       SLinkOperations.setTarget(linkAccess, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056143562l, 1138056516764l, "link"), myParameter);
       SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), linkAccess);
-      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null));
-      SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169188348l, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"), null));
+      SNode expressionStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), null);
       SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), dotExpression);
       ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(referentValue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(expressionStatement);
       SLinkOperations.setTarget(referenceMacro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, 1167770376702l, "referentFunction"), referentValue);

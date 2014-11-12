@@ -6,10 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,8 +31,9 @@ public class AddModuleToProject_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    HashSet<SModule> projectModules = new HashSet<SModule>(IterableUtil.asCollection(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules()));
     for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
-      if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {
+      if (projectModules.contains(module)) {
         return false;
       }
     }

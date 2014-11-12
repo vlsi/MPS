@@ -20,13 +20,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target"), "jetbrains.mps.console.ideCommands.structure.NodeReference");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target"), MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7820875636625654703l, "jetbrains.mps.console.ideCommands.structure.NodeReference"));
   }
   public static void nodeFactory_NodeSetup_AbsractMake_5308946314782063425(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 2840424593984889498l, "jetbrains.mps.console.ideCommands.structure.AbsractMake"))) {
@@ -54,7 +53,7 @@ public class QueriesGenerated {
           return true;
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }
