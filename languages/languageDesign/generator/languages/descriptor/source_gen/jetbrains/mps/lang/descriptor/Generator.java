@@ -7,10 +7,11 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
