@@ -47,7 +47,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SPropertyId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById" />

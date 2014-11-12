@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
@@ -624,7 +624,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         interfaceNode = (parsed._0() == ConceptKind.INTERFACE || attrs.getValue("role") == null);
       }
       SConceptId conceptId = fieldhelper.readConceptId(attrs.getValue("concept"));
-      SConcept concept = new SConceptAdapterById(conceptId, DebugRegistry.getInstance().getConceptName(conceptId));
+      String name = DebugRegistry.getInstance().getConceptName(conceptId);
+      SConcept concept = MetaAdapterFactory.getConcept(conceptId, name);
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
       // can be root 
