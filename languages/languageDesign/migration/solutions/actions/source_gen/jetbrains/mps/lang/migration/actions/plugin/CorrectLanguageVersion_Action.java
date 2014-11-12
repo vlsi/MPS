@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -68,7 +68,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     }, false).first(), MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
 
     SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
-    SLanguageAdapterById slang = new SLanguageAdapterById(langId, lang.getModuleName());
+    SLanguage slang = MetaAdapterFactory.getLanguage(langId, lang.getModuleName());
     if (lang.getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
       if (lang.getModuleDescriptor().getLanguageVersions().get(slang) != lang.getLanguageVersion()) {
         return true;

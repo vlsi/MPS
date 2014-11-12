@@ -10,8 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -72,7 +72,9 @@ public class ModuleDescriptorPersistence {
 
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
       public void visit(Element it) {
-        descriptor.getLanguageVersions().put(new SLanguageAdapterById(SLanguageId.deserialize(it.getAttributeValue("id")), it.getAttributeValue("fqName")), Integer.parseInt(it.getAttributeValue("version")));
+        SLanguageId id = SLanguageId.deserialize(it.getAttributeValue("id"));
+        String name = it.getAttributeValue("fqName");
+        descriptor.getLanguageVersions().put(MetaAdapterFactory.getLanguage(id, name), Integer.parseInt(it.getAttributeValue("version")));
       }
     });
 

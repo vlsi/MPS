@@ -43,7 +43,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
  */
 public class MetaAdapterByDeclaration {
   public static SLanguage getLanguage(Language l) {
-    return new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
+    return MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
   }
 
   public static SAbstractConcept getConcept(SNode c) {

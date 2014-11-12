@@ -2856,6 +2856,26 @@
           <node concept="vg0i.1225271177708" id="4072482659874767804" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
         </node>
         <node concept="vg0i.1068580123136" id="4072482659874767805" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242864" id="3099829352124729870" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="3099829352124729871" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="name" />
+              <node concept="vg0i.1107535904670" id="3099829352124729867" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+              </node>
+              <node concept="vg0i.1197027756228" id="3099829352124729872" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1081236700937" id="3099829352124729873" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dDebugRegistry" resolveInfo="getInstance" />
+                  <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~DebugRegistry" resolveInfo="DebugRegistry" />
+                </node>
+                <node concept="vg0i.1202948039474" id="3099829352124729874" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetLanguageName(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId)%cjava%dlang%dString" resolveInfo="getLanguageName" />
+                  <node concept="vg0i.1068498886296" id="3099829352124729875" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="4072482659874767833" resolveInfo="ref" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="4072482659874807180" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="4072482659874807703" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1068498886296" id="4072482659874807179" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -2863,24 +2883,14 @@
               </node>
               <node concept="vg0i.1202948039474" id="4072482659874808963" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModel%daddLanguage(org%djetbrains%dmps%dopenapi%dlanguage%dSLanguage,int)%cvoid" resolveInfo="addLanguage" />
-                <node concept="vg0i.1145552977093" id="3152831360339635820" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1212685548494" id="3152831360339648090" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="tilo.~SLanguageAdapterById%d&lt;init&gt;(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId,java%dlang%dString)" resolveInfo="SLanguageAdapterById" />
-                    <node concept="vg0i.1068498886296" id="3152831360339651763" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="4072482659874767833" resolveInfo="ref" />
-                    </node>
-                    <node concept="vg0i.1197027756228" id="3152831360339652408" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="vg0i.1081236700937" id="3152831360339652182" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dDebugRegistry" resolveInfo="getInstance" />
-                        <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~DebugRegistry" resolveInfo="DebugRegistry" />
-                      </node>
-                      <node concept="vg0i.1202948039474" id="3152831360339653159" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetLanguageName(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId)%cjava%dlang%dString" resolveInfo="getLanguageName" />
-                        <node concept="vg0i.1068498886296" id="3152831360339653345" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="4072482659874767833" resolveInfo="ref" />
-                        </node>
-                      </node>
-                    </node>
+                <node concept="vg0i.1081236700937" id="3099829352124732598" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="hy6y.~MetaAdapterFactory" resolveInfo="MetaAdapterFactory" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="hy6y.~MetaAdapterFactory%dgetLanguage(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSLanguage" resolveInfo="getLanguage" />
+                  <node concept="vg0i.1068498886296" id="3099829352124732683" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="4072482659874767833" resolveInfo="ref" />
+                  </node>
+                  <node concept="vg0i.1068498886296" id="3099829352124732803" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="3099829352124729871" resolveInfo="name" />
                   </node>
                 </node>
                 <node concept="vg0i.1068498886296" id="627352081761276580" role="vg0i.1204053956946.1068499141038" info="nn">
@@ -2927,6 +2937,26 @@
           <node concept="vg0i.1225271177708" id="8157762154336640049" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
         </node>
         <node concept="vg0i.1068580123136" id="8157762154336640050" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068581242864" id="3099829352124732978" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="3099829352124732979" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="name" />
+              <node concept="vg0i.1107535904670" id="3099829352124732976" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+              </node>
+              <node concept="vg0i.1197027756228" id="3099829352124732980" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1081236700937" id="3099829352124732981" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~DebugRegistry" resolveInfo="DebugRegistry" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dDebugRegistry" resolveInfo="getInstance" />
+                </node>
+                <node concept="vg0i.1202948039474" id="3099829352124732982" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetLanguageName(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId)%cjava%dlang%dString" resolveInfo="getLanguageName" />
+                  <node concept="vg0i.1068498886296" id="3099829352124732983" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="8157762154336640063" resolveInfo="ref" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="3881561325450356147" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="3881561325450461452" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1068498886296" id="3881561325450356145" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -2934,24 +2964,14 @@
               </node>
               <node concept="vg0i.1202948039474" id="3881561325450462867" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModel%daddImplicitlyUsedLanguage(org%djetbrains%dmps%dopenapi%dlanguage%dSLanguage,int)%cvoid" resolveInfo="addImplicitlyUsedLanguage" />
-                <node concept="vg0i.1145552977093" id="3152831360339653568" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <node concept="vg0i.1212685548494" id="3152831360339653569" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="tilo.~SLanguageAdapterById%d&lt;init&gt;(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId,java%dlang%dString)" resolveInfo="SLanguageAdapterById" />
-                    <node concept="vg0i.1068498886296" id="3152831360339653570" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="8157762154336640063" resolveInfo="ref" />
-                    </node>
-                    <node concept="vg0i.1197027756228" id="3152831360339653571" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="vg0i.1081236700937" id="3152831360339653572" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~DebugRegistry" resolveInfo="DebugRegistry" />
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetInstance()%cjetbrains%dmps%dsmodel%dDebugRegistry" resolveInfo="getInstance" />
-                      </node>
-                      <node concept="vg0i.1202948039474" id="3152831360339653573" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~DebugRegistry%dgetLanguageName(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId)%cjava%dlang%dString" resolveInfo="getLanguageName" />
-                        <node concept="vg0i.1068498886296" id="3152831360339653574" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="8157762154336640063" resolveInfo="ref" />
-                        </node>
-                      </node>
-                    </node>
+                <node concept="vg0i.1081236700937" id="3099829352124734271" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="hy6y.~MetaAdapterFactory%dgetLanguage(jetbrains%dmps%dsmodel%dadapter%dids%dSLanguageId,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSLanguage" resolveInfo="getLanguage" />
+                  <reference role="vg0i.1081236700937.1144433194310" target="hy6y.~MetaAdapterFactory" resolveInfo="MetaAdapterFactory" />
+                  <node concept="vg0i.1068498886296" id="3099829352124734272" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="8157762154336640063" resolveInfo="ref" />
+                  </node>
+                  <node concept="vg0i.1068498886296" id="3099829352124734273" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="3099829352124732979" resolveInfo="name" />
                   </node>
                 </node>
                 <node concept="vg0i.1068498886296" id="3881561325450463191" role="vg0i.1204053956946.1068499141038" info="nn">

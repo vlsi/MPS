@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
@@ -55,11 +55,13 @@ public class ReadHelper9 {
   }
 
   public void addUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
+    String name = DebugRegistry.getInstance().getLanguageName(ref);
+    model.addLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addImplicitlyUsedLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
+    String name = DebugRegistry.getInstance().getLanguageName(ref);
+    model.addImplicitlyUsedLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void registerLanguage(String index, SLanguageId ref) {

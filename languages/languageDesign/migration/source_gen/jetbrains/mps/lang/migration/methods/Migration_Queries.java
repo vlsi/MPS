@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,7 +28,7 @@ public class Migration_Queries {
       int currentVersion = ((Language) module).getLanguageVersion();
       SPropertyOperations.set(c, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"), "" + (currentVersion));
       ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
-      SLanguageAdapterById slang = new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(((Language) module)), module.getModuleName());
+      SLanguage slang = MetaIdByDeclaration.ref2Id(module.getModuleReference());
       if (((Language) module).getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
         ((Language) module).getModuleDescriptor().getLanguageVersions().put(slang, currentVersion + 1);
       }

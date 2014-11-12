@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -357,7 +358,7 @@ public class BinaryPersistence {
     List<Pair<Pair<SLanguage, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguage, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
       SLanguageId id = SLanguageId.deserialize(is.readString());
-      SLanguage l = new SLanguageAdapterById(id, DebugRegistry.getInstance().getLanguageName(id));
+      SLanguage l = MetaAdapterFactory.getLanguage(id, DebugRegistry.getInstance().getLanguageName(id));
       int version = is.readInt();
       boolean implicit = is.readBoolean();
       result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(l, version), implicit));

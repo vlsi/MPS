@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -50,7 +51,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
 
-    return new SLanguageAdapterById(cd.getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
+    return MetaAdapterFactory.getLanguage(cd.getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
   }
 
   @Override
