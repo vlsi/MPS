@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
@@ -47,10 +48,10 @@ public class MetaAdapterByDeclaration {
 
   public static SAbstractConcept getConcept(SNode c) {
     if (c.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
-      return new SConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+      return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
     }
     if (c.getConcept().equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      return new SInterfaceConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
+      return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
     }
     return null;
   }
