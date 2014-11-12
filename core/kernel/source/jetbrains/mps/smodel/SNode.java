@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
@@ -83,7 +84,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //-------------old methods working by name---------------
   @Deprecated//since 3.1, remove after next release
   public SNode(@NotNull String conceptFqName) {
-    myConcept = new SConceptAdapterByName(conceptFqName);
+    myConcept = MetaAdapterFactoryByName.getConcept(conceptFqName);
     myId = SModel.generateUniqueId();
   }
 
@@ -607,7 +608,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //remove method after 3.2
   public void setConceptFqName(String conceptFQName) {
     if (myConcept.getQualifiedName().equals(conceptFQName)) return;
-    setConcept(new SConceptAdapterByName(conceptFQName));
+    setConcept(MetaAdapterFactoryByName.getConcept(conceptFQName));
 
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());

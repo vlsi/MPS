@@ -89,7 +89,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SPropertyId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptKind" />
