@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -178,6 +179,8 @@ public class ModelConstraints {
   }
 
   // other things
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static String getDefaultConcreteConceptFqName(String fqName) {
     return ConceptRegistry.getInstance().getConceptDescriptor(
         ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();

@@ -151,7 +151,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     if (concept instanceof SAbstractConceptAdapterById) {
       ConceptDescriptor conceptDescriptor = ((SAbstractConceptAdapterById) concept).getConceptDescriptor();
-      if ((conceptDescriptor == null || conceptDescriptor.isInterfaceConcept())) {
+      if ((conceptDescriptor == null || conceptDescriptor.isInterfaceConcept() && concept instanceof SConceptAdapterById)) {
         return false;
       }
       return d.isAssignableTo(((SAbstractConceptAdapterById) concept).getId());
