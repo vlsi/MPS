@@ -51,8 +51,8 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
-  public TraceInfoCache(SRepository repository, CleanupManager cleanupManager) {
-    super(repository, cleanupManager);
+  public TraceInfoCache(SRepository repository, CleanupManager manager) {
+    super(repository, manager);
   }
 
   @Override

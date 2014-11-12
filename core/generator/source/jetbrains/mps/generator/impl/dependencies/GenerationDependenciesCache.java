@@ -58,8 +58,8 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SRepository repository, CleanupManager cleanupManager, ModelGenerationStatusManager genStatusManager) {
-    super(repository, cleanupManager);
+  public GenerationDependenciesCache(SRepository repository, CleanupManager manager, ModelGenerationStatusManager genStatusManager) {
+    super(repository, manager);
     myGenStatusManager = genStatusManager;
   }
 

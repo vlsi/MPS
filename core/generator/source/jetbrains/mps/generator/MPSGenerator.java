@@ -38,10 +38,10 @@ public final class MPSGenerator extends ComponentPlugin {
     super.init();
     // XXX revisit once we got honest per-project repositories. It's not clear which project to take here
     SRepository repository = MPSModuleRepository.getInstance();
-    CleanupManager cleanupManager = CleanupManager.getInstance();
-    init(new TraceInfoCache(repository, cleanupManager));
+    CleanupManager clManager = CleanupManager.getInstance();
+    init(new TraceInfoCache(repository, clManager));
     final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager());
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, cleanupManager, mgsm));
+    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, clManager, mgsm));
     mgsm.setModelHashSource(depsCache);
     init(new GeneratorPathsComponent());
     init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));

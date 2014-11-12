@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -30,8 +30,8 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
   private Map<SNode, AbstractManager.Descriptor<PastePostProcessor>> myPostProcessors = null;
   private Map<SNode, AbstractManager.Descriptor<CopyPreProcessor>> myPreProcessors = null;
   private boolean myLoaded = false;
-  public CopyPasteManager(CleanupManager cleanupManager) {
-    super(cleanupManager);
+  public CopyPasteManager(ClassLoaderManager classLoaderManager) {
+    super(classLoaderManager);
   }
 
   @Override

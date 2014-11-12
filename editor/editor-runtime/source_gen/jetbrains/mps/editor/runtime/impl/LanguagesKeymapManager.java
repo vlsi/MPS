@@ -4,6 +4,10 @@ package jetbrains.mps.editor.runtime.impl;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import java.util.Map;
+
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
@@ -11,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -23,6 +25,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+
+import java.util.Set;
 import java.util.UUID;
 import org.apache.log4j.Level;
 import java.util.Collections;
@@ -40,10 +44,9 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private final LanguagesKeymapManager.MyModuleRepositoryListener myListener = new LanguagesKeymapManager.MyModuleRepositoryListener();
   private final SRepository myRepository;
   private final ClassLoaderManager myClassLoaderManager;
-  private final CleanupManager myCleanupManager;
-  private final CleanupListener myCleanupListener = new CleanupListener() {
+  private final MPSClassesListener myCLListener = new MPSClassesListenerAdapter() {
     @Override
-    public void performCleanup() {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
       LanguagesKeymapManager.this.clearCaches();
     }
   };
@@ -51,7 +54,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   public LanguagesKeymapManager(MPSCoreComponents coreComponents) {
     myRepository = coreComponents.getModuleRepository();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
-    myCleanupManager = CleanupManager.getInstance();
   }
 
   public List<KeyMap> getKeyMapsForLanguage(@NotNull Language l) {
@@ -63,7 +65,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    myCleanupManager.addCleanupListener(myCleanupListener);
+    myClassLoaderManager.addClassesHandler(myCLListener);
     myRepository.addRepositoryListener(myListener);
   }
 
@@ -77,7 +79,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   @Override
   public void disposeComponent() {
     myRepository.removeRepositoryListener(myListener);
-    myCleanupManager.removeCleanupListener(myCleanupListener);
+    myClassLoaderManager.removeClassesHandler(myCLListener);
   }
 
   private void clearCaches() {

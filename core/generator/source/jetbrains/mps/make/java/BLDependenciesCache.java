@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.make.java;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
@@ -46,8 +47,8 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
     return INSTANCE;
   }
 
-  public BLDependenciesCache(SRepository repository, CleanupManager cleanupManager) {
-    super(repository, cleanupManager);
+  public BLDependenciesCache(SRepository repository, CleanupManager manager) {
+    super(repository, manager);
   }
 
   @Override
