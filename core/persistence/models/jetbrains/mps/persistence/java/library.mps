@@ -2034,13 +2034,18 @@
                                       <reference role="vg0i.1068498886296.1068581517664" target="5586757089729025826" resolveInfo="it" />
                                     </node>
                                     <node concept="vg0i.1202948039474" id="5586757089729032722" role="vg0i.1197027756228.1197027833540" info="nn">
-                                      <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetReference()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolveInfo="getReference" />
+                                      <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolveInfo="getModelId" />
                                     </node>
                                   </node>
                                   <node concept="vg0i.1202948039474" id="5586757089729034836" role="vg0i.1197027756228.1197027833540" info="nn">
                                     <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                                    <node concept="vg0i.1068498886296" id="5586757089729035806" role="vg0i.1204053956946.1068499141038" info="nn">
-                                      <reference role="vg0i.1068498886296.1068581517664" target="6619269785060746577" resolveInfo="modelReference" />
+                                    <node concept="vg0i.1197027756228" id="720211434693394913" role="vg0i.1204053956946.1068499141038" info="nn">
+                                      <node concept="vg0i.1068498886296" id="720211434693394674" role="vg0i.1197027756228.1197027771414" info="nn">
+                                        <reference role="vg0i.1068498886296.1068581517664" target="6619269785060746577" resolveInfo="modelReference" />
+                                      </node>
+                                      <node concept="vg0i.1202948039474" id="720211434693395990" role="vg0i.1197027756228.1197027833540" info="nn">
+                                        <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModelReference%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolveInfo="getModelId" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -2073,13 +2078,18 @@
                                             <reference role="vg0i.1068498886296.1068581517664" target="5586757089729065943" resolveInfo="it" />
                                           </node>
                                           <node concept="vg0i.1202948039474" id="5586757089729065940" role="vg0i.1197027756228.1197027833540" info="nn">
-                                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetReference()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolveInfo="getReference" />
+                                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolveInfo="getModelId" />
                                           </node>
                                         </node>
                                         <node concept="vg0i.1202948039474" id="5586757089729065941" role="vg0i.1197027756228.1197027833540" info="nn">
                                           <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                                          <node concept="vg0i.1068498886296" id="5586757089729065942" role="vg0i.1204053956946.1068499141038" info="nn">
-                                            <reference role="vg0i.1068498886296.1068581517664" target="6619269785060746577" resolveInfo="modelReference" />
+                                          <node concept="vg0i.1197027756228" id="720211434693392498" role="vg0i.1204053956946.1068499141038" info="nn">
+                                            <node concept="vg0i.1068498886296" id="5586757089729065942" role="vg0i.1197027756228.1197027771414" info="nn">
+                                              <reference role="vg0i.1068498886296.1068581517664" target="6619269785060746577" resolveInfo="modelReference" />
+                                            </node>
+                                            <node concept="vg0i.1202948039474" id="720211434693393577" role="vg0i.1197027756228.1197027833540" info="nn">
+                                              <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModelReference%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolveInfo="getModelId" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>

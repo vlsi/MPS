@@ -14,7 +14,6 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -36,7 +35,10 @@ public class FileProcessor extends ReloadParticipant {
   }
   @Override
   public void update(ProgressMonitor monitor) {
-    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 2);
+    if (MapSequence.fromMap(dataMap).isEmpty()) {
+      return;
+    }
+    monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
     long updateStartTime = System.currentTimeMillis();
     try {
       for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
@@ -62,7 +64,6 @@ public class FileProcessor extends ReloadParticipant {
         data.isNotified = true;
       }
       printStat("post-notify", postNotifyBeginTime);
-      ClassLoaderManager.getInstance().reloadAll(monitor.subTask(1));
     } finally {
       printStat("update", updateStartTime);
       monitor.done();

@@ -55,11 +55,11 @@ public class Generator extends TemplateModuleBase {
   private TemplateModel getTemplateModel(String modelName) {
     ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
     Class<TemplateModel> clazz = null;
-    if (module != null) {
+    if (module != null && module.willLoad()) {
       try {
         clazz = (Class<TemplateModel>) module.getClass(modelName);
       } catch (ClassNotFoundException e) {
-        throw new IllegalStateException("", e);
+        throw new IllegalStateException("Class not found for model " + modelName, e);
       }
     }
     if (clazz == null) {
