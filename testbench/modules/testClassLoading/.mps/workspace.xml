@@ -370,7 +370,7 @@
       <list>
         <TabState>
           <option name="title" value="Console" />
-          <option name="history" value="kaurqQAAAwAHKN33Yo+pTUftkm7i4SmMIv4AABlUZW1wTW9kZWxfNjAyNjY4Njg1MDY5ODQ4F0gVa86V3BRJpopLfu96MKtOAAAuVGVtcE1vZHVsZTE1NmJjZTk1LWRjMTQtNDlhNi04YTRiLTdlZWY3YTMwYWI0Zf////8AAACrqwAAWloAAAAFAAAkZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1AAAaamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2UAACRmMjY2OTFkMi0wZGVmLTRjMDYtYWVjNi0yY2I5MGM0YWYwYTQAAB1qZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0cwAAJDFhODU1NGM0LWViODQtNDNiYS04YzM0LTZmMGQ5MGM2ZTc1YQAAH2pldGJyYWlucy5tcHMuY29uc29sZS5ibENvbW1hbmQAACRhNWU0ZGU1My00NmEzLTQ0ZGEtYWFiMy02OGZkZjFjMzRlZDAAACFqZXRicmFpbnMubXBzLmNvbnNvbGUuaWRlQ29tbWFuZHMAACQ5OTVhNzM5NC03Zjc2LTRiOGItYTkyOS1jNTM0NDg3MDgxMDYAACZqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcwAAAAUHKDWbHSt3xEbfm/KyXL6jIlQAACRqZXRicmFpbnMubXBzLmNvbnNvbGUuYmFzZS5zdHJ1Y3R1cmVwAQAAAAwHKOcS81NcPEKIrc6HyValL/sAACdqZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0cy5zdHJ1Y3R1cmVwAQAAAA0HKJNboO5ykUyqqAfXbo/Gk5EAAClqZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5kLnN0cnVjdHVyZXABAAAADgcoE1pgbwN2TFyauEAw8FGgYgAAK2pldGJyYWlucy5tcHMuY29uc29sZS5pZGVDb21tYW5kcy5zdHJ1Y3R1cmVwAQAAAA8HKJBEUgapc0wdt2Aw5cd7dJcAADBqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcy5zdHJ1Y3R1cmVwAQAAABAAAAAEAAA3ZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1Lzc1NzU1Mzc5MDk4MDg1MDM2NgAALGpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZS5IaXN0b3J5AAAyY2VhYjUxOTUtMjVlYS00ZjIyLTliOTItMTAzYjk1Y2E4YzBjLzExNjkxOTQ2NTg0NjgAAC9qZXRicmFpbnMubXBzLmxhbmcuY29yZS5zdHJ1Y3R1cmUuSU5hbWVkQ29uY2VwdAAAOGRlMWFkODZkLTZlNTAtNGEwMi1iMzA2LWQ0ZDE3ZjY0YzM3NS8xNTgzOTE2ODkwNTU3OTMwMDI4AAAwamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2Uuc3RydWN0dXJlLkNvbnNvbGVSb290AAA3ZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1LzM1MTk2ODM4MDkxNjYxNTI0MwAAMmpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZS5Db21tYW5kSG9sZGVyAAAAAQAAQGNlYWI1MTk1LTI1ZWEtNGYyMi05YjkyLTEwM2I5NWNhOGMwYy8xMTY5MTk0NjU4NDY4LzExNjkxOTQ2NjQwMDEAAARuYW1lAAAAAAAAAAIAAExkZTFhZDg2ZC02ZTUwLTRhMDItYjMwNi1kNGQxN2Y2NGMzNzUvMTU4MzkxNjg5MDU1NzkzMDAyOC8xNTgzOTE2ODkwNTU3OTMwNDE3AAANY29tbWFuZEhvbGRlcgAATGRlMWFkODZkLTZlNTAtNGEwMi1iMzA2LWQ0ZDE3ZjY0YzM3NS8xNTgzOTE2ODkwNTU3OTMwMDI4LzE1ODM5MTY4OTA1NTc5MzA0MTUAAAdoaXN0b3J5AAAABQEAAAAC/////wABAAAABP////8AAQAAAAb/////AAEAAAAI/////wABAAAACv////8AAAAAAAAAAAEXSPvCXdJdpEg6ixlwko4bYtcAACRqZXRicmFpbnMubXBzLmRldmtpdC5nZW5lcmFsLXB1cnBvc2UAAAAFCQAAAAH/////CQAAAAL/////CQAAAAP/////CQAAAAT/////CQAAAAX/////AAAAAAAAuroAAAABcAEAAAAWGCW1mzdczyfYcHAAewAAAAAAAAAAAAAAAnABAAAAEhgltZs3XM8n2QEAAAAdAQAAAB4AewAAAAAAAAAAAAAAAAAAAAB9cAEAAAAYGCW1mzdczyfaAQAAABsBAAAAHAB7AAAAAQEAAAAZAQAAABoAAA1Db21tYW5kSG9sZGVyAAAAAAAAAAAAAAAAfQAAAAB9" />
+          <option name="history" value="kaurqQAAAwAHKDMmZefSGE5Du6o/LQPXvaAAABlUZW1wTW9kZWxfNjM5NjIzNjUyOTAxNTMyF0h8xEf2AjFIG5EzIrl/HeASAAAuVGVtcE1vZHVsZTdjYzQ0N2Y2LTAyMzEtNDgxYi05MTMzLTIyYjk3ZjFkZTAxMv////8AAACrqwAAWloAAAAFAAAkZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1AAAaamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2UAACRmMjY2OTFkMi0wZGVmLTRjMDYtYWVjNi0yY2I5MGM0YWYwYTQAAB1qZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0cwAAJDFhODU1NGM0LWViODQtNDNiYS04YzM0LTZmMGQ5MGM2ZTc1YQAAH2pldGJyYWlucy5tcHMuY29uc29sZS5ibENvbW1hbmQAACRhNWU0ZGU1My00NmEzLTQ0ZGEtYWFiMy02OGZkZjFjMzRlZDAAACFqZXRicmFpbnMubXBzLmNvbnNvbGUuaWRlQ29tbWFuZHMAACQ5OTVhNzM5NC03Zjc2LTRiOGItYTkyOS1jNTM0NDg3MDgxMDYAACZqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcwAAAAUHKDWbHSt3xEbfm/KyXL6jIlQAACRqZXRicmFpbnMubXBzLmNvbnNvbGUuYmFzZS5zdHJ1Y3R1cmVwAQAAAAwHKOcS81NcPEKIrc6HyValL/sAACdqZXRicmFpbnMubXBzLmNvbnNvbGUuc2NyaXB0cy5zdHJ1Y3R1cmVwAQAAAA0HKJNboO5ykUyqqAfXbo/Gk5EAAClqZXRicmFpbnMubXBzLmNvbnNvbGUuYmxDb21tYW5kLnN0cnVjdHVyZXABAAAADgcoE1pgbwN2TFyauEAw8FGgYgAAK2pldGJyYWlucy5tcHMuY29uc29sZS5pZGVDb21tYW5kcy5zdHJ1Y3R1cmVwAQAAAA8HKJBEUgapc0wdt2Aw5cd7dJcAADBqZXRicmFpbnMubXBzLmNvbnNvbGUuaW50ZXJuYWxDb21tYW5kcy5zdHJ1Y3R1cmVwAQAAABAAAAAEAAA3ZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1Lzc1NzU1Mzc5MDk4MDg1MDM2NgAALGpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZS5IaXN0b3J5AAAyY2VhYjUxOTUtMjVlYS00ZjIyLTliOTItMTAzYjk1Y2E4YzBjLzExNjkxOTQ2NTg0NjgAAC9qZXRicmFpbnMubXBzLmxhbmcuY29yZS5zdHJ1Y3R1cmUuSU5hbWVkQ29uY2VwdAAAOGRlMWFkODZkLTZlNTAtNGEwMi1iMzA2LWQ0ZDE3ZjY0YzM3NS8xNTgzOTE2ODkwNTU3OTMwMDI4AAAwamV0YnJhaW5zLm1wcy5jb25zb2xlLmJhc2Uuc3RydWN0dXJlLkNvbnNvbGVSb290AAA3ZGUxYWQ4NmQtNmU1MC00YTAyLWIzMDYtZDRkMTdmNjRjMzc1LzM1MTk2ODM4MDkxNjYxNTI0MwAAMmpldGJyYWlucy5tcHMuY29uc29sZS5iYXNlLnN0cnVjdHVyZS5Db21tYW5kSG9sZGVyAAAAAQAAQGNlYWI1MTk1LTI1ZWEtNGYyMi05YjkyLTEwM2I5NWNhOGMwYy8xMTY5MTk0NjU4NDY4LzExNjkxOTQ2NjQwMDEAAARuYW1lAAAAAAAAAAIAAExkZTFhZDg2ZC02ZTUwLTRhMDItYjMwNi1kNGQxN2Y2NGMzNzUvMTU4MzkxNjg5MDU1NzkzMDAyOC8xNTgzOTE2ODkwNTU3OTMwNDE3AAANY29tbWFuZEhvbGRlcgAATGRlMWFkODZkLTZlNTAtNGEwMi1iMzA2LWQ0ZDE3ZjY0YzM3NS8xNTgzOTE2ODkwNTU3OTMwMDI4LzE1ODM5MTY4OTA1NTc5MzA0MTUAAAdoaXN0b3J5AAAABQEAAAAC/////wABAAAABP////8AAQAAAAb/////AAEAAAAI/////wABAAAACv////8AAAAAAAAAAAEXSPvCXdJdpEg6ixlwko4bYtcAACRqZXRicmFpbnMubXBzLmRldmtpdC5nZW5lcmFsLXB1cnBvc2UAAAAFCQAAAAH/////CQAAAAL/////CQAAAAP/////CQAAAAT/////CQAAAAX/////AAAAAAAAuroAAAABcAEAAAAWGB8P4XmCYAHXcHAAewAAAAAAAAAAAAAAAnABAAAAEhgfD+F5gmAB2AEAAAAdAQAAAB4AewAAAAAAAAAAAAAAAAAAAAB9cAEAAAAYGB8P4XmCYAHZAQAAABsBAAAAHAB7AAAAAQEAAAAZAQAAABoAAA1Db21tYW5kSG9sZGVyAAAAAAAAAAAAAAAAfQAAAAB9" />
         </TabState>
       </list>
     </option>
@@ -387,6 +387,39 @@
         <scope_type scope_type="GLOBAL" module="&lt;default&gt;" model="&lt;default&gt;" />
       </option>
     </search_options>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="C1" pinned="false" current-in-tab="true">
+        <entry file="mps://node://L1/L1.structure/C1">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+              <memento viewPositionX="0" viewPositionY="0">
+                <selectionStack>
+                  <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                    <property name="hasNonTrivialSelection" value="false" />
+                    <property name="caretXRelative" value="0" />
+                    <property name="caretX" value="15" />
+                    <property name="sideSelectDirection" value="NONE" />
+                    <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                      <node node_reference="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+                    </cellInfo>
+                  </stackElement>
+                </selectionStack>
+                <errorLabels />
+                <folded />
+              </memento>
+              <inspectorMemento currentlyEditedNode="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" viewPositionX="0" viewPositionY="0">
+                <selectionStack />
+                <errorLabels />
+                <folded />
+              </inspectorMemento>
+              <node node_ref="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="MPSBookmarkManager">
     <option name="myBookmarkInfos">
@@ -507,6 +540,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="vcs.Subversion" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -556,45 +592,45 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>$USER_HOME$/.subversion</configuration>
+  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="-14" width="1940" height="1224" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Supertypes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.5002636" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Supertypes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.5002636" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970026" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Bookmarks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bookmarks" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Typesystem Trace" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Typesystem Trace" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependencies Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.49973643" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970026" sideWeight="0.49973643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Module Dependencies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Class Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Dependencies" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Class Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -621,5 +657,88 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="mps://node://L1/L1.structure/C1">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://L1/L1.structure/C1">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://node://L1/L1.structure/C1">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.editorTabs.TabbedEditor$TabbedEditorState">
+          <memento viewPositionX="0" viewPositionY="0">
+            <selectionStack>
+              <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
+                <property name="hasNonTrivialSelection" value="false" />
+                <property name="caretXRelative" value="0" />
+                <property name="caretX" value="15" />
+                <property name="sideSelectDirection" value="NONE" />
+                <cellInfo cellId="Constant_ueqr71_c0a" cellNumber="0" isInList="false">
+                  <node node_reference="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+                </cellInfo>
+              </stackElement>
+            </selectionStack>
+            <errorLabels />
+            <folded />
+          </memento>
+          <inspectorMemento currentlyEditedNode="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" viewPositionX="0" viewPositionY="0">
+            <selectionStack />
+            <errorLabels />
+            <folded />
+          </inspectorMemento>
+          <node node_ref="r:b80eefbf-b232-45f9-9c5a-78761b26244b(L1.structure)/3842746946078441444" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
