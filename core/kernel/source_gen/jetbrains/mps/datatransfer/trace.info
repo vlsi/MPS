@@ -17,7 +17,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/1058093769518980128">
+  <root nodeRef="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)/1058093769518980128">
     <file name="AbstractManager.java">
       <node id="3689217605462529309" at="14,0,15,0" concept="5" trace="myManager" />
       <node id="3689217605462440649" at="17,84,18,41" concept="4" />
@@ -93,7 +93,7 @@
       <unit id="1058093769518980128" at="13,0,72,0" name="jetbrains.mps.datatransfer.AbstractManager" />
     </file>
   </root>
-  <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/1315898236614019768">
+  <root nodeRef="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)/1315898236614019768">
     <file name="PastePostProcessor.java">
       <node id="1315898236614019770" at="8,0,9,0" concept="8" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1315898236614151867" at="9,0,10,0" concept="8" trace="postProcesNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -104,7 +104,7 @@
       <unit id="1315898236614019768" at="7,0,11,0" name="jetbrains.mps.datatransfer.PastePostProcessor" />
     </file>
   </root>
-  <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/1622834379618551046">
+  <root nodeRef="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)/1622834379618551046">
     <file name="CopyPasteManager.java">
       <node id="1622834379618763483" at="28,0,29,0" concept="12" trace="LOG" />
       <node id="2481791643076228521" at="29,0,30,0" concept="12" trace="INSTANCE" />
@@ -256,7 +256,7 @@
       <unit id="1622834379618551046" at="27,0,132,0" name="jetbrains.mps.datatransfer.CopyPasteManager" />
     </file>
   </root>
-  <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/5948027493682472176">
+  <root nodeRef="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)/5948027493682472176">
     <file name="CopyPreProcessor.java">
       <node id="5948027493682472178" at="8,0,9,0" concept="8" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5948027493682472182" at="9,0,10,0" concept="8" trace="preProcesNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />

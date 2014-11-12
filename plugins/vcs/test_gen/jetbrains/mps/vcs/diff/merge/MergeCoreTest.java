@@ -14,8 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.junit.BeforeClass;
 import jetbrains.mps.RuntimeFlags;
-import java.util.Properties;
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
