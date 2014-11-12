@@ -231,7 +231,7 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
   }
 
   private SNode getImports(PsiImportStatementBase[] imports) {
-    SNode javaImports = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, "jetbrains.mps.baseLanguage.structure.JavaImports"));
+    SNode javaImports = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, "jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     for (PsiImportStatementBase imp : imports) {
       PsiJavaCodeReferenceElement ref = imp.getImportReference();
@@ -239,7 +239,7 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
         continue;
       }
 
-      SNode javaImport = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, "jetbrains.mps.baseLanguage.structure.JavaImport"));
+      SNode javaImport = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, "jetbrains.mps.baseLanguage.structure.JavaImport")));
       SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"), "" + (imp.isOnDemand()));
       SPropertyOperations.set(javaImport, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 5574384225470059890l, "static"), "" + (imp instanceof PsiImportStaticStatement));
       String qName = ref.getQualifiedName();

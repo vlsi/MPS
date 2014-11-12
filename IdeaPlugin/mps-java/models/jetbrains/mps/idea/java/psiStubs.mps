@@ -8673,6 +8673,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5056426112722759347" nodeInfo="nn">
             <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9087207491354046203" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9614.~Util%dmakeModelReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodule%dSModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolveInfo="makeModelReference" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9614.~Util" resolveInfo="Util" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9087207491354046204" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1626170360264272148" resolveInfo="packageName" />
               </node>
@@ -9640,6 +9641,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5056426112720966580" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9087207491354040067" nodeInfo="nn">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9614.~Util%dmakeModelReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodule%dSModule)%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolveInfo="makeModelReference" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9614.~Util" resolveInfo="Util" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9087207491354040068" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8036260399911419385" resolveInfo="packageName" />
             </node>
