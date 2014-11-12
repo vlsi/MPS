@@ -76,8 +76,7 @@ public interface SNode {
   SNodeReference getReference();
 
   /**
-   * The concept that this node represents. Concepts can be compared using the "==" operator.
-   * Does not produce node read event as the result value can't be changed.
+   * The concept that this node represents. Concepts can be checked for equality with equals().
    */
   @NotNull
   SConcept getConcept();

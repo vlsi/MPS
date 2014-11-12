@@ -105,7 +105,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
       if (eq_n0gj60_a0b0d7(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1220974635399l, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), null));
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1220974635399l, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle")), null));
       }
     }
     public boolean isReferentPresentation() {

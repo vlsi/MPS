@@ -60,7 +60,7 @@ public class AddThrowBlockDocTag_Intention implements IntentionFactory {
       return "Add @throw Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516428l, "throwsTag"), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag"));
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516428l, "throwsTag"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag")));
       BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
 
 

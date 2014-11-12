@@ -495,8 +495,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/6579840439426125742">
     <file name="check_ConceptDeclaration_NonTypesystemRule.java">
       <node id="6579840439426219546" at="24,131,25,147" concept="11" />
-      <node id="6579840439426222206" at="27,39,28,228" concept="12" />
-      <node id="6579840439426237838" at="31,39,32,466" concept="12" />
+      <node id="6579840439426222206" at="27,39,28,237" concept="12" />
+      <node id="6579840439426237838" at="31,39,32,484" concept="12" />
       <node id="6579840439426263826" at="35,7,36,60" concept="11" />
       <node id="6579840439426263826" at="36,60,37,339" concept="11" />
       <node id="6579840439426125742" at="41,46,42,71" concept="12" />
@@ -520,8 +520,8 @@
       <node id="6579840439426250228" at="25,147,39,5" concept="9" />
       <node id="6579840439426125742" at="24,0,41,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="6579840439426125742" at="22,55,22,55" />
-      <scope id="6579840439426221847" at="27,39,28,228" />
-      <scope id="6579840439426237161" at="31,39,32,466" />
+      <scope id="6579840439426221847" at="27,39,28,237" />
+      <scope id="6579840439426237161" at="31,39,32,484" />
       <scope id="6579840439426125742" at="41,46,42,71" />
       <scope id="6579840439426125742" at="50,30,51,17" />
       <scope id="6579840439426246856" at="53,72,54,46" />
@@ -698,7 +698,7 @@
     <file name="FixAttributeInfo_QuickFix.java">
       <node id="7588428831943087664" at="18,44,19,387" concept="12" />
       <node id="7588428831943505763" at="21,35,22,222" concept="11" />
-      <node id="7588428831943130012" at="23,245,24,526" concept="6" />
+      <node id="7588428831943130012" at="23,245,24,561" concept="6" />
       <node id="7588428831943614971" at="26,248,27,355" concept="6" />
       <node id="7588428831943086210" at="16,0,18,0" concept="3" trace="FixAttributeInfo_QuickFix#()V" />
       <node id="7588428831943086210" at="18,0,21,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -707,7 +707,7 @@
       <node id="7588428831943086210" at="21,0,30,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="7588428831943086210" at="16,38,16,38" />
       <scope id="7588428831943086825" at="18,44,19,387" />
-      <scope id="7588428831943501958" at="23,245,24,526" />
+      <scope id="7588428831943501958" at="23,245,24,561" />
       <scope id="7588428831943614970" at="26,248,27,355" />
       <scope id="7588428831943086210" at="16,0,18,0" />
       <scope id="7588428831943086210" at="18,0,21,0">

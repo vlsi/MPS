@@ -74,7 +74,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
               @Override
               public SNode createNodeToInsert(EditorContext p0) {
-                return SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"), null);
+                return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")), null);
               }
               @Override
               public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

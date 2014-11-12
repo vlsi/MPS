@@ -75,7 +75,7 @@ public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
       return "Replace Property by Non Empty Property";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode nonEmpty = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1184319644772l, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), node);
+      SNode nonEmpty = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1184319644772l, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty")), node);
       SLinkOperations.setTarget(nonEmpty, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), null);
       for (SNode child : ListSequence.fromList(jetbrains.mps.util.SNodeOperations.getChildren(node))) {

@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -46,10 +46,10 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
             if (SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216989428737l, "jetbrains.mps.lang.test.structure.TestNode"), false, false) != null) {
               return new ArrayList<SNode>();
             }
-            SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getEnclosingNode(), new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
+            SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getEnclosingNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
             List<SNode> result = new ArrayList<SNode>();
             if (test != null) {
-              for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1210673684636l, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SConcept[]{}))) {
+              for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1210673684636l, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SAbstractConcept[]{}))) {
                 ListSequence.fromList(result).addElement(node);
               }
             }

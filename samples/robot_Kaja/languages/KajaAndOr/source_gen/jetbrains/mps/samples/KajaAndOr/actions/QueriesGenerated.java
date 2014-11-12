@@ -89,9 +89,9 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And")));
               } else if ((item).equals("or")) {
-                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or")));
               } else {
                 throw new IllegalArgumentException("Cannot find a match for " + (item));
               }
@@ -131,11 +131,11 @@ public class QueriesGenerated {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode conjuction;
               if ((item).equals("and")) {
-                SNode andNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And"));
+                SNode andNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253578l, "jetbrains.mps.samples.KajaAndOr.structure.And")));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
                 conjuction = andNode;
               } else {
-                SNode orNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
+                SNode orNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253755l, "jetbrains.mps.samples.KajaAndOr.structure.Or")));
                 SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
                 conjuction = orNode;
               }

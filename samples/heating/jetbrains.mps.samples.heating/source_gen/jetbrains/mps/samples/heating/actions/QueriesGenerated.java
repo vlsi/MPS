@@ -26,7 +26,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.heating.structure.DailyPlan"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode ref = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, "jetbrains.mps.samples.heating.structure.DailyPlanReference"), null);
+        SNode ref = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, "jetbrains.mps.samples.heating.structure.DailyPlanReference")), null);
         SLinkOperations.setTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes"), ref);
         return ref;
       }

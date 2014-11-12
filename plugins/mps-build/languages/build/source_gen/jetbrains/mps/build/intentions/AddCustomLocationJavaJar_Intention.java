@@ -14,6 +14,7 @@ import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddCustomLocationJavaJar_Intention implements IntentionFactory {
@@ -66,7 +67,7 @@ public class AddCustomLocationJavaJar_Intention implements IntentionFactory {
       return "Override jar location";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 8706695667516275782l, "customLocation"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"));
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 8706695667516275782l, "customLocation"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef")));
     }
     public IntentionDescriptor getDescriptor() {
       return AddCustomLocationJavaJar_Intention.this;

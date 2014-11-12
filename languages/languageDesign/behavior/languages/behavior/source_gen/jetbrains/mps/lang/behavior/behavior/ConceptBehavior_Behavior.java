@@ -40,7 +40,7 @@ public class ConceptBehavior_Behavior {
       @Override
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"))) {
-          SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 6496299201655527393l, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall"));
+          SNode call = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 6496299201655527393l, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall")));
           SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(declaration, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
           ListSequence.fromList(SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addSequence(ListSequence.fromList(arguments));
           return call;
@@ -51,7 +51,7 @@ public class ConceptBehavior_Behavior {
       public SNode createNewMethod() {
         // <node> 
         // <node> 
-        SNode method = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
+        SNode method = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")));
         SPropertyOperations.set(method, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 5864038008284099149l, "isStatic"), "" + (isStatic));
         return method;
       }

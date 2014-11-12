@@ -39,7 +39,7 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SConcept)) return false;
+    if (!(obj instanceof SConceptAdapter)) return false;
     return (obj instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) obj).myConceptId) : myFqName.equals(((SConceptAdapter) obj).myFqName);
   }
 

@@ -53,10 +53,10 @@ public class IApplicableToNothing_Behavior {
     return result;
   }
   public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
-    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
+    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 5994574781936691958l, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
   }
   public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    SNode jt = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType"));
+    SNode jt = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, "jetbrains.mps.lang.typesystem.structure.JoinType")));
     for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)))) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);

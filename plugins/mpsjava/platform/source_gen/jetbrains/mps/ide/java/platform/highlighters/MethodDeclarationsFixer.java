@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -85,7 +85,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
     if (!(wasCheckedOnce) || myCachesCleared) {
       myCachesCleared = false;
-      for (SNode methodCall : SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"), false, new SConcept[]{})) {
+      for (SNode methodCall : SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"), false, new SAbstractConcept[]{})) {
         testAndFixMethodCall(methodCall, reResolvedTargets);
       }
     } else {
@@ -103,8 +103,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         public void visitReferenceEvent(SModelReferenceEvent event) {
           SReference reference = event.getReference();
           SNode sourceNode = reference.getSourceNode();
-          if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && "baseMethodDeclaration".equals(reference.getRole())) {
-            methodCallDeclarationChanged(SNodeOperations.cast(sourceNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), reResolvedTargets);
+          if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && "baseMethodDeclaration".equals(reference.getRole())) {
+            methodCallDeclarationChanged(SNodeOperations.cast(sourceNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), reResolvedTargets);
           }
         }
         @Override
@@ -218,7 +218,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     }).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+        return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -240,13 +240,13 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     testAndFixMethodCall(methodCall, resolveTargets);
   }
   private void nodeAdded(SNode child, Map<SNode, SNode> resolveTargets) {
-    for (SNode methodCall : SNodeOperations.getNodeDescendants(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"), true, new SConcept[]{})) {
+    for (SNode methodCall : SNodeOperations.getNodeDescendants(child, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"), true, new SAbstractConcept[]{})) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
     SNode parent = SNodeOperations.getParent(child);
     SNodeReference parentPointer = new SNodePointer(parent);
     if (myCheckedMethodCalls.contains(parentPointer)) {
-      SNode p = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+      SNode p = SNodeOperations.cast(parent, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
       testAndFixMethodCall(p, resolveTargets);
     }
     SNode formalParam = SNodeOperations.getNodeAncestor(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), true, false);
@@ -256,7 +256,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
   private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
     if (myCheckedMethodCalls.contains(new SNodePointer(m.getReference(), formerParent.getNodeId()))) {
-      testAndFixMethodCall(SNodeOperations.cast(formerParent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), resolveTargets);
+      testAndFixMethodCall(SNodeOperations.cast(formerParent, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886292l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       methodDeclarationSignatureChanged(formerParent, resolveTargets);

@@ -60,7 +60,7 @@ public class convertToNamed_Intention implements IntentionFactory {
       return "Convert parentheses to named capturing group";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode n = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
+      SNode n = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
       editorContext.flushEvents();
       editorContext.selectWRTFocusPolicy(n);
     }

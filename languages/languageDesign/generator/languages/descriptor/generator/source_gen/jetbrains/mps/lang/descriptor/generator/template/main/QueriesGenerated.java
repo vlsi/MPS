@@ -320,7 +320,7 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        SNode n = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969069898l, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression"));
+        SNode n = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969069898l, "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression")));
         SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId"), MPSModuleRepository.getInstance().getModuleByFqName(it).getModuleId().toString());
         return n;
       }

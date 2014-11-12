@@ -41,7 +41,7 @@ import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
@@ -298,11 +298,11 @@ public class Utils {
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightRoot : ListSequence.fromList(SModelOperations.roots(right, null))) {
-      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightRoot);
+      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightRoot);
     }
 
     for (SNode leftRoot : ListSequence.fromList(SModelOperations.roots(left, null))) {
-      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1212170275853l, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       if ((rightBrother != null)) {
         NodePatcher.copyImportAttrs(leftRoot, rightBrother);
       }
@@ -313,11 +313,11 @@ public class Utils {
   public static void buildClassifierNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     // handling this class and nested classes 
     Map<String, SNode> rightNestedIndex = MapSequence.fromMap(new HashMap<String, SNode>());
-    for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(right, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SConcept[]{}))) {
+    for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(right, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SAbstractConcept[]{}))) {
       MapSequence.fromMap(rightNestedIndex).put(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), cl);
     }
 
-    for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SConcept[]{}))) {
+    for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SAbstractConcept[]{}))) {
       SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
       // <node> 
@@ -367,11 +367,11 @@ public class Utils {
     // local vars and params 
     List<SNode> leftVars = new ArrayList<SNode>();
     ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SLinkOperations.getChildren(left, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))));
-    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")})));
+    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")})));
 
     List<SNode> rightVars = new ArrayList<SNode>();
     ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SLinkOperations.getChildren(right, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))));
-    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(right, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")})));
+    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(right, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")})));
 
     buildJustNodeMap(leftVars, rightVars, nodeMap);
 

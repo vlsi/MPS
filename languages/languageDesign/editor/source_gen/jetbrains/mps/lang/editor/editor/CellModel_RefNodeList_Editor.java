@@ -721,7 +721,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     public CellModel_RefNodeList_generic_cellMenu_2v2794_b0a1e3a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 4601216887035799527l, "usesFoldingCondition"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1142886221719l, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 4601216887035799527l, "usesFoldingCondition"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1142886221719l, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition")));
     }
     public String getMatchingText() {
       return "query";
@@ -811,7 +811,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 709996738298806197l, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 709996738298806197l, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText")), null));
       return result;
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {

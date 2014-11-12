@@ -64,7 +64,7 @@ public class SurroundWithBrackets_Intention implements IntentionFactory {
       return "{ }";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode blockStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement"), null);
+      SNode blockStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, "jetbrains.mps.baseLanguage.structure.BlockStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, blockStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

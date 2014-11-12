@@ -47,7 +47,7 @@ public class IClassifierType_Behavior {
         IClassifierType_Behavior.call_populateMembers_7405920559687241253(thisNode, scope, thisNode);
         return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
+            return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7405920559687209278l, "jetbrains.mps.baseLanguage.structure.IClassifierMember"));
           }
         });
       }

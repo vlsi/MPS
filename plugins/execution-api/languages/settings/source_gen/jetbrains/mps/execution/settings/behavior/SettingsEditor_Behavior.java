@@ -7,12 +7,12 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SettingsEditor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<SNode> call_getDeclaredOperations_946964771156067031(SNode thisNode) {
-    return SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066605l, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), false, new SConcept[]{});
+    return SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066605l, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), false, new SAbstractConcept[]{});
   }
 }

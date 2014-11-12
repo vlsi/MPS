@@ -15,8 +15,8 @@ public class XmlWhitespace_TextGen extends SNodeTextGen {
     boolean needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (!(needNewLine)) {
       SNode left = SNodeOperations.getPrevSibling(node);
-      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
-        needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
+      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
+        needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
     }
     if (needNewLine) {

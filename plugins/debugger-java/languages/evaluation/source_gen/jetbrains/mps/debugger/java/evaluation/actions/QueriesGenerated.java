@@ -28,7 +28,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode downcast = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 7915630211773477333l, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"));
+        SNode downcast = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 7915630211773477333l, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel")));
         SLinkOperations.setTarget(downcast, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 7915630211773477333l, 7915630211773477790l, "expression"), _context.getSourceNode());
         return downcast;
       }

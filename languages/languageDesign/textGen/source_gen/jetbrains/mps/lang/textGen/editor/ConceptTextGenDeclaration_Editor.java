@@ -333,7 +333,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c2h0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1224137887853744019l, "jetbrains.mps.lang.textGen.structure.EncodingDeclaration"));
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1224137887853744019l, "jetbrains.mps.lang.textGen.structure.EncodingDeclaration")));
     }
     public String getMatchingText() {
       return "<query>";
@@ -349,7 +349,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, "jetbrains.mps.lang.textGen.structure.EncodingLiteral"));
+      SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, "jetbrains.mps.lang.textGen.structure.EncodingLiteral")));
       SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233670071145l, 1224137887853744062l, "encoding")), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, "jetbrains.mps.lang.textGen.structure.EncodingLiteral")), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 7166719696753421196l, 7166719696753421197l, "encoding"), parameterObject);
     }
     public boolean isReferentPresentation() {

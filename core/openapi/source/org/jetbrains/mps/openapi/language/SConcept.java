@@ -22,8 +22,14 @@ import org.jetbrains.annotations.Nullable;
  * Represents a concept
  */
 public interface SConcept extends SAbstractConcept {
+  /**
+   * Returns the superconcept of this concept
+   */
   @Nullable
   SConcept getSuperConcept();
 
+  /**
+   * Returns immediately implemented interfaces
+   */
   Iterable<SInterfaceConcept> getSuperInterfaces();
 }

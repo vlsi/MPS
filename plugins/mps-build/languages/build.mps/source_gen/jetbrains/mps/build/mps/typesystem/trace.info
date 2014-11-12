@@ -334,7 +334,7 @@
         <var name="status" id="2531699772406302326" />
         <var name="typeCheckingContext" id="2531699772406302326" />
       </scope>
-      <unit id="1500819558096418876" at="54,304,58,5" name="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule$2" />
+      <unit id="1500819558096418876" at="54,312,58,5" name="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule$2" />
       <unit id="7444640161799100464" at="60,44,68,7" name="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule$1" />
       <unit id="2531699772406302326" at="31,0,96,0" name="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule" />
     </file>

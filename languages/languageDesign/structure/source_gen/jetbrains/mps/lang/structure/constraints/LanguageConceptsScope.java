@@ -66,14 +66,14 @@ public class LanguageConceptsScope extends SimpleScope {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"));
+        return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"));
       }
     });
   }
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), "virtual_getFqName_1213877404258", new Object[]{});
   }
   private static <T> T as_gt0k3c_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

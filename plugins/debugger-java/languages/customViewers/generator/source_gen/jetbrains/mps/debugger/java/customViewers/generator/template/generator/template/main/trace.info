@@ -25,7 +25,7 @@
         <var name="it" id="8256349518541671196" />
       </scope>
       <scope id="8256349518541671181" at="167,109,173,7" />
-      <unit id="8256349518541671196" at="169,132,173,5" name="jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main.QueriesGenerated$1" />
+      <unit id="8256349518541671196" at="169,140,173,5" name="jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)/1842653058274999289">
@@ -141,7 +141,7 @@
       <scope id="5245087627731451906" at="178,102,192,5">
         <var name="classConcept" id="5245087627731451907" />
       </scope>
-      <unit id="721063219978405072" at="181,303,185,9" name="jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main.QueriesGenerated$2" />
+      <unit id="721063219978405072" at="181,311,185,9" name="jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main.QueriesGenerated$2" />
     </file>
   </root>
   <root nodeRef="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)/264293128390891752">
@@ -177,10 +177,10 @@
   <root nodeRef="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debugger.java.customViewers.generator.template.generator.template.main@generator)/4599835250971319476">
     <file name="QueriesGenerated.java">
       <node id="4599835250971319529" at="195,277,196,165" concept="6" />
-      <node id="4599835250971319536" at="197,328,198,246" concept="2" />
+      <node id="4599835250971319536" at="197,336,198,246" concept="2" />
       <node id="4599835250971319505" at="196,165,199,7" concept="3" />
       <node id="4599835250971319483" at="194,103,200,5" concept="3" />
-      <scope id="4599835250971319508" at="197,328,198,246" />
+      <scope id="4599835250971319508" at="197,336,198,246" />
       <scope id="4599835250971319505" at="196,165,199,7">
         <var name="valueParameter" id="4599835250971319506" />
       </scope>

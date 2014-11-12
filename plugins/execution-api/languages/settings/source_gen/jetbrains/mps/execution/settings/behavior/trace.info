@@ -256,7 +256,7 @@
       <node id="2508378883219590429" at="59,41,60,562" concept="6" />
       <node id="2508378883219590408" at="63,5,64,23" concept="6" />
       <node id="946964771156066395" at="66,127,67,255" concept="5" />
-      <node id="946964771156066407" at="68,32,69,261" concept="5" />
+      <node id="946964771156066407" at="68,32,69,270" concept="5" />
       <node id="946964771156066417" at="70,29,71,211" concept="2" />
       <node id="946964771156066429" at="73,5,74,60" concept="6" />
       <node id="946964771156066440" at="76,126,77,272" concept="5" />
@@ -285,7 +285,7 @@
       <node id="946964771156066541" at="47,0,50,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="946964771156066386" at="52,0,55,0" concept="7" trace="call_getEditorSuffix_946964771156066551#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2508378883219590419" at="59,0,62,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="946964771156066415" at="69,261,72,7" concept="3" />
+      <node id="946964771156066415" at="69,270,72,7" concept="3" />
       <node id="946964771156066445" at="77,272,80,5" concept="3" />
       <node id="946964771156066386" at="83,0,86,0" concept="7" trace="call_getCheckMethodName_946964771156066466#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="946964771156066386" at="25,0,29,0" concept="7" trace="virtual_getSuffix_946964771156905483#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -716,11 +716,11 @@
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156067030">
     <file name="SettingsEditor_Behavior.java">
-      <node id="946964771156067035" at="15,91,16,261" concept="6" />
+      <node id="946964771156067035" at="15,91,16,269" concept="6" />
       <node id="946964771156067030" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="946964771156067030" at="15,0,18,0" concept="7" trace="call_getDeclaredOperations_946964771156067031#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="946964771156067042" at="13,43,13,43" />
-      <scope id="946964771156067034" at="15,91,16,261" />
+      <scope id="946964771156067034" at="15,91,16,269" />
       <scope id="946964771156067030" at="13,0,15,0">
         <var name="thisNode" id="946964771156067030" />
       </scope>

@@ -23,7 +23,7 @@ public class PreferencesComponentDeclaration_Behavior {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1210184105060l, "jetbrains.mps.lang.plugin.structure.PreferencesComponentType"));
+    SNode type = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1210184105060l, "jetbrains.mps.lang.plugin.structure.PreferencesComponentType")));
     SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1210184105060l, 1210184138184l, "componentDeclaration"), thisNode);
     return type;
   }

@@ -155,9 +155,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)/478744034994715795">
     <file name="QueriesGenerated.java">
       <node id="5934994956486892158" at="32,110,33,194" concept="5" />
-      <node id="5934994956486892167" at="35,110,36,403" concept="5" />
+      <node id="5934994956486892167" at="35,110,36,412" concept="5" />
       <scope id="5934994956486892157" at="32,110,33,194" />
-      <scope id="5934994956486892166" at="35,110,36,403" />
+      <scope id="5934994956486892166" at="35,110,36,412" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)/5697951647051922394">

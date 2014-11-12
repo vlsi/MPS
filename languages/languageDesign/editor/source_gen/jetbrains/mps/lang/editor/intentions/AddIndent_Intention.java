@@ -71,7 +71,7 @@ public class AddIndent_Intention implements IntentionFactory {
       return "Add Indent";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newLine = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237307900041l, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), null);
+      SNode newLine = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1237307900041l, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem")), null);
       SPropertyOperations.set(newLine, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (true));
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))).addElement(newLine);
     }

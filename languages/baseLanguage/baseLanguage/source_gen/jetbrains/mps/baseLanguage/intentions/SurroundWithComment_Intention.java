@@ -64,7 +64,7 @@ public class SurroundWithComment_Intention implements IntentionFactory {
       return "/* */";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode commentedBlock = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), null);
+      SNode commentedBlock = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, commentedBlock);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

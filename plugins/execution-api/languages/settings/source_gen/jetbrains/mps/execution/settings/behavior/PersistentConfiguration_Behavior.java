@@ -66,7 +66,7 @@ public class PersistentConfiguration_Behavior {
   public static SNode call_getContextPersistentConfigurationType_946964771156066389(SAbstractConcept thisConcept, SNode node) {
     SNode configuration = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), false, false);
     if (configuration == null) {
-      SNode executor = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"), false, false);
+      SNode executor = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"), false, false);
       if (executor != null) {
         configuration = SLinkOperations.getTarget(executor, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration"));
       }

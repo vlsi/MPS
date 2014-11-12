@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,9 +25,9 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1146644623116l, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(field, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
-      final SNode member = SNodeOperations.cast(field, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
-      List<SNode> memberOperations = SNodeOperations.getNodeDescendants(SNodeOperations.getParent(field), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"), false, new SConcept[]{});
+    if (SNodeOperations.isInstanceOf(field, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
+      final SNode member = SNodeOperations.cast(field, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752032448l, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
+      List<SNode> memberOperations = SNodeOperations.getNodeDescendants(SNodeOperations.getParent(field), MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"), false, new SAbstractConcept[]{});
       Iterable<SNode> references = ListSequence.fromList(memberOperations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")) == member;
@@ -36,7 +36,7 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
       VariableReferenceUtil.checkField(typeCheckingContext, field, references);
     } else {
       SNode root = SNodeOperations.getContainingRoot(field);
-      List<SNode> localFieldRefs = ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+      List<SNode> localFieldRefs = ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
@@ -45,7 +45,7 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
           return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false, false) == null);
         }
       }).toListSequence();
-      List<SNode> fieldRefOperations = SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SConcept[]{});
+      List<SNode> fieldRefOperations = SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SAbstractConcept[]{});
       Iterable<SNode> localFieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == field;

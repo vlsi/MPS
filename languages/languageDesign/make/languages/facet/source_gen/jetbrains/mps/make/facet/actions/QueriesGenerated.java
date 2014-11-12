@@ -49,7 +49,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "Parameters");
   }
   public static void nodeFactory_NodeSetup_ParametersDeclaration_127305800529615845(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"), MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"));
+    SNodeFactoryOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration")));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TargetDependency_8351679702044371560(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -117,7 +117,7 @@ __switch__:
           for (final Tuples._2<SNode, SNode> item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode dep = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029600l, "jetbrains.mps.make.facet.structure.TargetDependency"), null);
+                SNode dep = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029600l, "jetbrains.mps.make.facet.structure.TargetDependency")), null);
                 SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029600l, 8351679702044326377l, "qualifier"), SEnumOperations.getEnumMemberValue((item)._0()));
                 SLinkOperations.setTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029600l, 6418371274763029603l, "dependsOn"), (item)._1());
                 return dep;
@@ -150,8 +150,8 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode lve = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 7320828025189375154l, "jetbrains.mps.make.facet.structure.LocalParametersExpression"), null);
-                SNode lvce = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 7320828025189375155l, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression"), null);
+                SNode lve = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 7320828025189375154l, "jetbrains.mps.make.facet.structure.LocalParametersExpression")), null);
+                SNode lvce = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 7320828025189375155l, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression")), null);
                 SLinkOperations.setTarget(lvce, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), lve);
                 SLinkOperations.setTarget(lvce, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), _quotation_createNode_59frgq_a0d0a0a0((item)));
                 return lvce;
@@ -266,7 +266,7 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SLinkOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 2191561637326275576l, 8170824575195151990l, "resource"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
+        SLinkOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 2191561637326275576l, 8170824575195151990l, "resource"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {

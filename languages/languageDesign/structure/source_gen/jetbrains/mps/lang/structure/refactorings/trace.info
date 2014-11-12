@@ -859,7 +859,7 @@
         <var name="language" id="3883347270486229640" />
         <var name="nodes" id="3883347270486229617" />
       </scope>
-      <unit id="3883347270486219844" at="24,246,29,5" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil$1" />
+      <unit id="3883347270486219844" at="24,255,29,5" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil$1" />
       <unit id="3883347270486219802" at="20,0,46,0" name="jetbrains.mps.lang.structure.refactorings.ConceptMoveUtil" />
     </file>
   </root>

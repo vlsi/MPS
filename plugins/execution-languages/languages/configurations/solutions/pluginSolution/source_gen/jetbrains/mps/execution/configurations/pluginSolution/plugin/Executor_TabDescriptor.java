@@ -60,7 +60,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"));
   }
   public SNode createNode(final SNode node, final SNode concept) {
-    SNode executor = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"));
+    SNode executor = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")));
     SLinkOperations.setTarget(executor, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration"), node);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;

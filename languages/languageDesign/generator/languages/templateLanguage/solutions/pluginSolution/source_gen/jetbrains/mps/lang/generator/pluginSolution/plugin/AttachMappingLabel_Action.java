@@ -59,7 +59,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not inside macro 
-    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
       return false;
     }
     //  in root template - ok 

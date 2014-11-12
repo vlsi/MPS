@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -39,7 +39,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
       checkReturns = false;
     } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       checkReturns = false;
-    } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8412076637103718467l, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SConcept[]{})).isNotEmpty()) {
+    } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8412076637103718467l, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SAbstractConcept[]{})).isNotEmpty()) {
       checkReturns = false;
     }
 

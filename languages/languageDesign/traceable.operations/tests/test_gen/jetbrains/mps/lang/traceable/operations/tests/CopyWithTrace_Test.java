@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 @MPSLaunch
@@ -45,7 +45,7 @@ public class CopyWithTrace_Test extends BaseTransformationTest {
       SNode callingCopy = ListSequence.fromList(copy).getElement(1);
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026848"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), TracingUtil.getInput(utilityCopy).resolve(MPSModuleRepository.getInstance()));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026875"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), TracingUtil.getInput(callingCopy).resolve(MPSModuleRepository.getInstance()));
-      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(callingCopy, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+      Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(callingCopy, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
         }

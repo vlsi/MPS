@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SimpleBuilder_Behavior {
@@ -45,7 +45,7 @@ public class SimpleBuilder_Behavior {
       throw new RuntimeException();
     }
 
-    for (SNode ref : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5425713840853785828l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"), false, new SConcept[]{})) {
+    for (SNode ref : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5425713840853785828l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"), false, new SAbstractConcept[]{})) {
       int index = ListSequence.fromList(params).indexOf(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 5425713840853785828l, 5425713840853785829l, "parameter")));
       SNodeOperations.replaceWithAnother(ref, SNodeOperations.copyNode(ListSequence.fromList(args).getElement(index)));
     }
@@ -59,10 +59,10 @@ public class SimpleBuilder_Behavior {
       for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, 7288041816793071803l, "declaration")), SNodeOperations.getModel(thisNode))) {
         if (SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(simpleBuilder, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816793071802l, 7288041816793071803l, "declaration")), SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577338l, 7288041816792577339l, "child")))) {
           SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(child, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577338l, 7288041816792607835l, "attachStatement")));
-          for (SNode parent : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577340l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"), false, new SConcept[]{})) {
+          for (SNode parent : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577340l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"), false, new SAbstractConcept[]{})) {
             SNodeOperations.replaceWithAnother(parent, SNodeOperations.copyNode(parentRef));
           }
-          for (SNode parent : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577342l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression"), false, new SConcept[]{})) {
+          for (SNode parent : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792577342l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression"), false, new SAbstractConcept[]{})) {
             SNodeOperations.replaceWithAnother(parent, SNodeOperations.copyNode(childRef));
           }
           return result;

@@ -1285,7 +1285,7 @@
       <unit id="7897384339327946960" at="600,260,604,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$27" />
       <unit id="2034046503361589212" at="623,260,627,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$29" />
       <unit id="2034046503361587388" at="670,260,674,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$33" />
-      <unit id="701359002710703486" at="689,324,693,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$35" />
+      <unit id="701359002710703486" at="689,332,693,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$35" />
       <unit id="6335143297570263164" at="693,38,697,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$35" />
       <unit id="6335143297570263197" at="697,24,701,9" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$35" />
       <unit id="599300103647481282" at="729,28,733,7" name="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$36" />

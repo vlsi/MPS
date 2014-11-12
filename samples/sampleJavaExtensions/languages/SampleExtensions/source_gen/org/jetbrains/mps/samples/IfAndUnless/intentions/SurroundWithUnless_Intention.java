@@ -64,7 +64,7 @@ public class SurroundWithUnless_Intention implements IntentionFactory {
       return "Unless";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode unlessStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"), null);
+      SNode unlessStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7473768651124655254l, -5190526781021914014l), 393299394024627213l, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), unlessStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

@@ -64,7 +64,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention implements
       return "Read Action";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode readActionStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348181l, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement"), null);
+      SNode readActionStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348181l, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, readActionStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

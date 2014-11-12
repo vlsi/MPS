@@ -539,7 +539,7 @@
       <node id="3682791316838031765" at="47,82,48,82" concept="0" />
       <node id="3682791316838031765" at="47,82,48,82" concept="2" />
       <node id="3682791316838031765" at="48,82,49,22" concept="7" />
-      <node id="3855110916776664061" at="51,97,52,430" concept="7" />
+      <node id="3855110916776664061" at="51,97,52,439" concept="7" />
       <node id="3855110916776662686" at="54,89,55,87" concept="6" />
       <node id="3855110916776662686" at="55,87,56,48" concept="2" />
       <node id="3855110916776662686" at="56,48,57,34" concept="6" />
@@ -585,7 +585,7 @@
       <scope id="3682791316838031765" at="45,40,46,82" />
       <scope id="3682791316838031765" at="46,82,47,82" />
       <scope id="3682791316838031765" at="47,82,48,82" />
-      <scope id="3855110916776663390" at="51,97,52,430" />
+      <scope id="3855110916776663390" at="51,97,52,439" />
       <scope id="3855110916776662685" at="36,89,38,22">
         <var name="editorCell" id="3855110916776662685" />
       </scope>
@@ -2357,7 +2357,7 @@
       <scope id="9097849371503960853" at="20,0,33,0">
         <var name="mi" id="9097849371503960866" />
       </scope>
-      <unit id="3855110916778129526" at="21,824,25,5" name="jetbrains.mps.lang.classLike.editor.EditorUtil$1" />
+      <unit id="3855110916778129526" at="21,833,25,5" name="jetbrains.mps.lang.classLike.editor.EditorUtil$1" />
       <unit id="8260330507834984778" at="16,0,34,0" name="jetbrains.mps.lang.classLike.editor.EditorUtil" />
     </file>
   </root>

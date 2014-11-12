@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -32,9 +33,9 @@ public class SNodeUtil {
   public static final SPropertyId propertyId_INamedConcept_name = ((SPropertyAdapterById) MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).getId();
 
   public static final String conceptName_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
-  public static final SConcept concept_IResolveInfo = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo");
+  public static final SInterfaceConcept concept_IResolveInfo = (SInterfaceConcept) MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo");
   public static final String conceptName_INamedConcept = "jetbrains.mps.lang.core.structure.INamedConcept";
-  public static final SConcept concept_INamedConcept = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept");
+  public static final SInterfaceConcept concept_INamedConcept = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept");
   public static final String conceptName_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static final SConcept concept_BaseConcept = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept");
   public static final String conceptName_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
@@ -46,11 +47,11 @@ public class SNodeUtil {
   public static final String conceptName_LinkDeclaration = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   public static final SConcept concept_LinkDeclaration = MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   public static final String conceptName_InterfacePart = "jetbrains.mps.lang.core.structure.InterfacePart";
-  public static final SConcept concept_InterfacePart = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart");
+  public static final SInterfaceConcept concept_InterfacePart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart");
   public static final String conceptName_ImplementationPart = "jetbrains.mps.lang.core.structure.ImplementationPart";
-  public static final SConcept concept_ImplementationPart = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart");
+  public static final SInterfaceConcept concept_ImplementationPart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart");
   public static final String conceptName_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
-  public static final SConcept concept_ImplementationWithStubPart = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
+  public static final SInterfaceConcept concept_ImplementationWithStubPart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
   public static final SConcept concept_RuntimeTypeVariable = MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
 
   public static final String linkName_ConceptDeclaration_extends = "extends";

@@ -26,9 +26,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
-import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -260,17 +257,14 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     throw new UnsupportedOperationException();
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String propertyName) {
     PropertyDescriptor propertyDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName);
-    if (propertyDescriptor == null) {
-      return new IllegalPropertyConstraintsDescriptor(null, propertyName, this);
-    }
+    if (propertyDescriptor == null) return null;
+
     return getProperty(propertyDescriptor.getId());
   }
 
-  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(SPropertyId property) {
     if (propertiesConstraints.containsKey(property)) {
@@ -278,7 +272,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     }
 
     if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getPropertyDescriptor(property) == null) {
-      return new IllegalPropertyConstraintsDescriptor(property, null, this);
+      return null;
     }
 
     propertiesConstraints.put(property, new BasePropertyConstraintsDescriptor(property, this));
@@ -286,7 +280,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return propertiesConstraints.get(property);
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
     if (referencesConstraints.containsKey(referenceLink)) {
@@ -295,7 +288,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
 
     if (ConceptRegistry.getInstance().getConceptDescriptor(getConceptId()).getRefDescriptor(referenceLink) == null) {
-      return new IllegalReferenceConstraintsDescriptor(referenceLink, null, this);
+      return null;
     }
 
     referencesConstraints.put(referenceLink, new BaseReferenceConstraintsDescriptor(referenceLink, this));
@@ -303,12 +296,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return referencesConstraints.get(referenceLink);
   }
 
-  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String role) {
     ReferenceDescriptor refDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(myConcept).getRefDescriptor(role);
     if (refDescriptor == null) {
-      return new IllegalReferenceConstraintsDescriptor(null, role, this);
+      return null;
     }
     return getReference(refDescriptor.getId());
   }

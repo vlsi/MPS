@@ -79,14 +79,14 @@ public class Java_Producer {
       super(configurationType, factoryName);
     }
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(new UUID(5525638636287967733l, -8459132261929236328l), 4666195181811081429l, "jetbrains.mps.execution.util.structure.IMainClass"));
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getInterfaceConcept(new UUID(5525638636287967733l, -8459132261929236328l), 4666195181811081429l, "jetbrains.mps.execution.util.structure.IMainClass"));
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}))) {
         return null;
       }
-      String name = (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{}));
+      String name = (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{}));
       Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;

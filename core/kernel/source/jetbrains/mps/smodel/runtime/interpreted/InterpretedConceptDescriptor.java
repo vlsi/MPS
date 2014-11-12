@@ -131,7 +131,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             superConcept = SNodeUtil.conceptName_BaseConcept;
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
-            superConcept = NameUtil.nodeFQName(superConceptNode);
+            superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
             superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
           }
         }
@@ -145,12 +145,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           parentsIdsSet.add(superConceptId);
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-            parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
           for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-            parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         }
@@ -217,16 +217,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   private void init() {
-    if (myIsInitialized) {
-      return;
-    }
+    if (myIsInitialized) return;
+
     synchronized (this) {
-      if (myIsInitialized) {
-        return;
-      }
+      if (myIsInitialized) return;
 
-
-    if (isLegal) {
+      assert isLegal : "check isLegal and return a default value before calling init()";
       // get parent descriptors
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.size());
       for (String parent : parents) {
@@ -317,8 +313,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       myLinks = Collections.unmodifiableMap(linksByIds);
       myLinksByName = Collections.unmodifiableMap(linksByName);
-    }
-      myIsInitialized = true;
+
       directProperties = null;
       directReferences = null;
 
@@ -329,6 +324,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       directPropertiesByName = null;
       directReferencesByName = null;
       directLinksByName = null;
+
+      myIsInitialized = true;
     }
   }
 
@@ -349,24 +346,32 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<String> getPropertyNames() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return propertyNames;
   }
 
   @Override
   public Set<String> getReferenceNames() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return referenceNames;
   }
 
   @Override
   public Set<String> getChildrenNames() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return childrenNames;
   }
 
   @Override
   public Set<String> getUnorderedChildrenNames() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return unorderedChildren;
   }
@@ -378,17 +383,23 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<String> getParentsNames() {
+    if (!isLegal) return Collections.emptyList();
+
     return parents;
   }
 
   @Override
   public Set<String> getAncestorsNames() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return ancestors;
   }
 
   @Override
   public boolean isMultipleChild(String name) {
+    if (!isLegal) return true;
+
     init();
     return childrenMap.get(name);
   }
@@ -431,6 +442,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<SConceptId> getParentsIds() {
+    if (!isLegal) return Collections.emptyList();
+
     init();
     return parentsIds;
   }
@@ -443,54 +456,72 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<SPropertyId> getPropertyIds() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return myProperties.keySet();
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
+    if (!isLegal) return null;
+
     init();
     return myProperties.get(id);
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(String name) {
+    if (!isLegal) return null;
+
     init();
     return myPropertiesByName.get(name);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+    if (!isLegal) return null;
+
     init();
     return myReferences.get(id);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(String name) {
+    if (!isLegal) return null;
+
     init();
     return myReferencesByName.get(name);
   }
 
   @Override
   public Set<SContainmentLinkId> getLinkIds() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return myLinks.keySet();
   }
 
   @Override
   public Set<SReferenceLinkId> getReferenceIds() {
+    if (!isLegal) return Collections.emptySet();
+
     init();
     return myReferences.keySet();
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
+    if (!isLegal) return null;
+
     init();
     return myLinks.get(id);
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(String name) {
+    if (!isLegal) return null;
+
     init();
     return myLinksByName.get(name);
   }

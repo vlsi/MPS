@@ -24,7 +24,7 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -166,7 +166,7 @@ public class QueriesGenerated {
   }
   public static void mapSrcMacro_post_mapper_8256349518541671180(final MapSrcMacroPostProcContext _context) {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
-    ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getOutputNode(), null, false, new SConcept[]{})).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getOutputNode(), null, false, new SAbstractConcept[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
       }
@@ -178,7 +178,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_264293128390891135(final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")))) {
       if (eq_x583g4_a0a0a0a54(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a0tb(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))) && SPropertyOperations.getString(classConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).endsWith("_WrapperFactory")) {
-        for (SNode method : ListSequence.fromList(SNodeOperations.getNodeDescendants(classConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+        for (SNode method : ListSequence.fromList(SNodeOperations.getNodeDescendants(classConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")) != null);
           }
@@ -194,7 +194,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_4599835250971319477(final MappingScriptContext _context) {
     for (SNode viewer : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 680105146889009728l, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer")))) {
       SNode valueProxyType = TransformatorBuilder.getInstance().getProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(viewer));
-      for (SNode valueParameter : ListSequence.fromList(SNodeOperations.getNodeDescendants(viewer, MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128272301l, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter"), false, new SConcept[]{}))) {
+      for (SNode valueParameter : ListSequence.fromList(SNodeOperations.getNodeDescendants(viewer, MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128272301l, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter"), false, new SAbstractConcept[]{}))) {
         SLinkOperations.setTarget(valueParameter, MetaAdapterFactory.getContainmentLink(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128272301l, 4599835250971319482l, "valueProxyType"), SNodeOperations.copyNode(valueProxyType));
       }
     }

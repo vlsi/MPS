@@ -26,7 +26,7 @@ public class IntervalSymbolClassPart_removeLeft {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")));
       SPropertyOperations.set(cn, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558317822l, "end")));
     }
   }
@@ -39,7 +39,7 @@ public class IntervalSymbolClassPart_removeLeft {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"));
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")));
       SPropertyOperations.set(cn, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558317822l, "end")));
     }
   }

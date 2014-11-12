@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -96,15 +96,15 @@ public class ExtractMethodRefactoringAnalyzer {
   }
   private boolean findIfCanBeStatic() {
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
-      }).toListSequence().isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224609861009l, "jetbrains.mps.baseLanguage.structure.IThisExpression"), false, new SConcept[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+      }).toListSequence().isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224609861009l, "jetbrains.mps.baseLanguage.structure.IThisExpression"), false, new SAbstractConcept[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         }
-      }).toListSequence().isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073063089578l, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), false, new SConcept[]{})).isNotEmpty()) {
+      }).toListSequence().isNotEmpty() || ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1073063089578l, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), false, new SAbstractConcept[]{})).isNotEmpty()) {
         return false;
       }
     }
@@ -113,7 +113,7 @@ public class ExtractMethodRefactoringAnalyzer {
   private List<SNode> calculateInternalExitPoints() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      List<SNode> returns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), true, new SConcept[]{});
+      List<SNode> returns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), true, new SAbstractConcept[]{});
       for (SNode ret : ListSequence.fromList(returns)) {
         SNode a1 = SNodeOperations.getNodeAncestor(ret, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
         SNode a2 = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
@@ -122,8 +122,8 @@ public class ExtractMethodRefactoringAnalyzer {
         }
       }
       List<SNode> statements = new ArrayList<SNode>();
-      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement"), false, new SConcept[]{})));
-      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), false, new SConcept[]{})));
+      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, "jetbrains.mps.baseLanguage.structure.BreakStatement"), false, new SAbstractConcept[]{})));
+      ListSequence.fromList(statements).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), false, new SAbstractConcept[]{})));
       for (SNode st : ListSequence.fromList(statements)) {
         SNode a1 = SNodeOperations.getNodeAncestor(st, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false, false);
         SNode a2 = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false, false);
@@ -234,7 +234,7 @@ public class ExtractMethodRefactoringAnalyzer {
     // added to fix problems with closures 
     addExternalParameters(result);
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
-      for (SNode parameter : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225280593310l, "jetbrains.mps.baseLanguage.structure.IParameter"), true, new SConcept[]{}))) {
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225280593310l, "jetbrains.mps.baseLanguage.structure.IParameter"), true, new SAbstractConcept[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
         MapSequence.fromMap(result).put(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parameter, "virtual_getDeclaration_1225282371351", new Object[]{}), new MethodParameter(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parameter, "virtual_getDeclaration_1225282371351", new Object[]{}), expressionType, BehaviorReflection.invokeVirtual(String.class, parameter, "virtual_getParameterName_1225280611056", new Object[]{}), parameter));
       }
@@ -253,8 +253,8 @@ public class ExtractMethodRefactoringAnalyzer {
     SNode classConcept = SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     if (classConcept != null) {
       this.myProcessor = new ClassExtractMethodRefactoringProcessor(classConcept, this.myPartToExtract);
-    } else if (SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1221393582612l, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), false, false) != null) {
-      SNode extractable = SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1221393582612l, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), false, false);
+    } else if (SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1221393582612l, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), false, false) != null) {
+      SNode extractable = SNodeOperations.getNodeAncestor(first, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1221393582612l, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable"), false, false);
       this.myProcessor = BehaviorReflection.invokeVirtual(IExtractMethodRefactoringProcessor.class, extractable, "virtual_getExtractMethodRefactoringProcessor_1221393367929", new Object[]{this.myPartToExtract});
     } else {
       this.myProcessor = new AbstractExtractMethodRefactoringProcessor(null, this.myPartToExtract);

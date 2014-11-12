@@ -23,8 +23,8 @@ public class ParameterScope extends AbstractSearchScope {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
     SNode current = contextNode;
     while ((current != null)) {
-      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
-        ListSequence.fromList(methods).addElement(SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")));
+      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+        ListSequence.fromList(methods).addElement(SNodeOperations.cast(current, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")));
       }
       current = Scope.parent(current);
     }

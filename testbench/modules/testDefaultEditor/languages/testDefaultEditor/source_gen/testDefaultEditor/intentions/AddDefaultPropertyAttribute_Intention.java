@@ -71,7 +71,7 @@ public class AddDefaultPropertyAttribute_Intention implements IntentionFactory {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")));
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203428l, "testDefaultEditor.structure.DefaultPropertyAttribute")));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203428l, "testDefaultEditor.structure.DefaultPropertyAttribute"))));
         SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")), "const");
       }
 

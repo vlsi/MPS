@@ -48,5 +48,14 @@ public interface SLanguage {
   @Nullable
   SModule getSourceModule();
 
+  /**
+   * Returns the version of this language.
+   * Version is an integer indicating the state which language is currently in.
+   * Version of a language changes when the structure of this language changes.
+   * Typically this means that if some module uses an older version of a language, it should be updated before the user
+   * will be able to work with it. E.g. generator can fail on generation of such a model.
+   *
+   * In MPS 3.2, version is changed only by adding language migrations.
+   */
   int getLanguageVersion();
 }

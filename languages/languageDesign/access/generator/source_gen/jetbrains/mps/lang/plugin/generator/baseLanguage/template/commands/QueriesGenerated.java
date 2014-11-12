@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -20,7 +21,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348170l, 8974276187400348171l, "commandClosureLiteral"));
   }
   public static SNode sourceNodeQuery_8319207097755373177(final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348174l, 8974276187400348175l, "project")) != null) ? SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348174l, 8974276187400348175l, "project")) : SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534058343l, "jetbrains.mps.baseLanguage.structure.NullLiteral")));
+    return ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348174l, 8974276187400348175l, "project")) != null) ? SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348174l, 8974276187400348175l, "project")) : SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070534058343l, "jetbrains.mps.baseLanguage.structure.NullLiteral"))));
   }
   public static SNode sourceNodeQuery_1225441503928(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348170l, 8974276187400348171l, "commandClosureLiteral"));

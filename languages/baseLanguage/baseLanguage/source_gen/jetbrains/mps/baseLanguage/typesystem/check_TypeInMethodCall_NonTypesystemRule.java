@@ -20,7 +20,7 @@ public class check_TypeInMethodCall_NonTypesystemRule extends AbstractNonTypesys
   public check_TypeInMethodCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && SNodeOperations.hasRole(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && SNodeOperations.hasRole(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isValueType_4836112446988592019", new Object[]{}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

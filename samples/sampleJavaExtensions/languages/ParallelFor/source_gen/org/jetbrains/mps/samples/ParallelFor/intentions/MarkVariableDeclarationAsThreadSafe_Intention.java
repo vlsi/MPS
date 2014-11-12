@@ -68,7 +68,7 @@ public class MarkVariableDeclarationAsThreadSafe_Intention implements IntentionF
       return "Mark as Thread Safe";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 2975785153735111398l, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"));
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 2975785153735111398l, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")));
     }
     public IntentionDescriptor getDescriptor() {
       return MarkVariableDeclarationAsThreadSafe_Intention.this;

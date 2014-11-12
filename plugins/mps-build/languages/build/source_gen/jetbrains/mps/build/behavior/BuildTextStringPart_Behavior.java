@@ -18,8 +18,8 @@ public class BuildTextStringPart_Behavior {
   }
   @Nullable
   public static SNode call_getContainer_6083230236994622122(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"))) {
-      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"))) {
+      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"));
     }
     return null;
   }

@@ -25,7 +25,7 @@ public class QueriesGenerated {
           List<SNode> parameters = ListSequence.fromList(new ArrayList<SNode>());
           boolean inParInt = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 1240395258925l, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), false, false) != null;
           boolean notInApplicable = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 1192795771125l, "jetbrains.mps.lang.intentions.structure.IsApplicableBlock"), false, false) == null;
-          boolean notInChildFilterBlock = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 3618415754251190680l, "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"), false, false) == null;
+          boolean notInChildFilterBlock = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2906742361791184688l, -8921219390863794400l), 3618415754251190680l, "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"), false, false) == null;
           if (inParInt && notInApplicable && notInChildFilterBlock) {
             ListSequence.fromList(parameters).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
           }

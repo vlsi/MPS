@@ -69,7 +69,7 @@ public class ReplaceConceptIsWithConceptEquals_Intention implements IntentionFac
       return "Replace 'concept=' with Concept List";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode conceptList = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1154546920561l, "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"), null);
+      SNode conceptList = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1154546920561l, "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")), null);
       SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getChildren(conceptList, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1154546920561l, 1154546920563l, "concept"))).first(), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1154546950173l, 1154546997487l, "concept"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1144101972840l, 1207343664468l, "conceptArgument")), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, 1177026940964l, "conceptDeclaration")));
       SNodeOperations.replaceWithAnother(node, conceptList);
     }

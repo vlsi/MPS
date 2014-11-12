@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ILocalDeclaration_Behavior {
@@ -17,7 +17,7 @@ public class ILocalDeclaration_Behavior {
   public static boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode) {
     SNode container = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     {
-      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"), false, new SConcept[]{})).iterator();
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(container, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"), false, new SAbstractConcept[]{})).iterator();
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
@@ -27,7 +27,7 @@ public class ILocalDeclaration_Behavior {
             if (referenceContainer == container) {
               return false;
             }
-            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false), "virtual_isClosure_3262277503800835439", new Object[]{})) {
+            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1199653749349l, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false), "virtual_isClosure_3262277503800835439", new Object[]{})) {
               return true;
             }
             referenceContainer = SNodeOperations.getNodeAncestor(referenceContainer, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
@@ -40,12 +40,12 @@ public class ILocalDeclaration_Behavior {
   public static boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
     SNode container = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     {
-      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"), false, new SConcept[]{})).iterator();
+      Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(container, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3262277503800813725l, "jetbrains.mps.baseLanguage.structure.ILocalReference"), false, new SAbstractConcept[]{})).iterator();
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
         if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
-          SNode interrupter = SNodeOperations.getNodeAncestor(ref_var, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false);
+          SNode interrupter = SNodeOperations.getNodeAncestor(ref_var, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8972672481958095232l, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter"), false, false);
           if (interrupter == container || ListSequence.fromList(SNodeOperations.getNodeAncestors(interrupter, null, false)).contains(container)) {
             return true;
           }

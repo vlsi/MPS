@@ -114,7 +114,7 @@ public class QueriesGenerated {
       SNode label = SNodeOperations.replaceWithNewChild(text, "jetbrains.mps.sampleXML.structure.Element");
       SPropertyOperations.set(label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "label");
       // Add a text attribute to the 'label' element 
-      SNode attribute = SLinkOperations.addNewChild(label, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603386l, "attribute"), MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, "jetbrains.mps.sampleXML.structure.Attribute"));
+      SNode attribute = SLinkOperations.addNewChild(label, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603386l, "attribute"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, "jetbrains.mps.sampleXML.structure.Attribute")));
       SPropertyOperations.set(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "text");
       SPropertyOperations.set(attribute, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, 1225239603363l, "value"), SPropertyOperations.getString(text, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, 1225239603394l, "text")));
     }

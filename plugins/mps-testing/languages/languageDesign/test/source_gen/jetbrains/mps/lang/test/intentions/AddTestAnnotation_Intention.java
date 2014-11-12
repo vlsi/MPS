@@ -72,7 +72,7 @@ public class AddTestAnnotation_Intention implements IntentionFactory {
       return "Add Test Label Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1210673684636l, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), null);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1210673684636l, "jetbrains.mps.lang.test.structure.TestNodeAnnotation")), null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.INodeAnnotation"), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }

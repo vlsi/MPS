@@ -16,6 +16,6 @@ public class ConvertString_QuickFix extends QuickFix_Runtime {
     return "Convert java.lang.String to string type";
   }
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(((SNode) ConvertString_QuickFix.this.getField("stringToConvert")[0]), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271177708l, "jetbrains.mps.baseLanguage.structure.StringType")));
+    SNodeOperations.replaceWithAnother(((SNode) ConvertString_QuickFix.this.getField("stringToConvert")[0]), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271177708l, "jetbrains.mps.baseLanguage.structure.StringType"))));
   }
 }

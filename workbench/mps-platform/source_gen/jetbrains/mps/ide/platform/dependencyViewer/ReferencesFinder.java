@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /*package*/ class ReferencesFinder {
   private Map<SModel, List<SReference>> myModelsRefsCache = new HashMap<SModel, List<SReference>>();
@@ -138,7 +138,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }).concat(CollectionSequence.fromCollection(scope.getRoots())).toListSequence();
       monitor.start("searching references in " + scope.getPresentation(), ListSequence.fromList(roots).count());
       for (SNode root : ListSequence.fromList(roots)) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) root), null, true, new SConcept[]{})));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) root), null, true, new SAbstractConcept[]{})));
         if (monitor.isCanceled()) {
           return result;
         }

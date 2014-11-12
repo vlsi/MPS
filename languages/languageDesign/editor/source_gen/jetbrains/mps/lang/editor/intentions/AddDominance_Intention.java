@@ -67,7 +67,7 @@ public class AddDominance_Intention implements IntentionFactory {
       return "Add Dominance";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, "jetbrains.mps.lang.editor.structure.DominatesRecord"), null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3383245079137382180l, 3383245079137422296l, "dominates"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 2491174914159318432l, "jetbrains.mps.lang.editor.structure.DominatesRecord")), null));
     }
     public IntentionDescriptor getDescriptor() {
       return AddDominance_Intention.this;

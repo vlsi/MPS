@@ -53,7 +53,7 @@ public class BuildLayout_Jar_Behavior {
   public static boolean call_scanInJarNodes_5970181360961342226(final SNode thisNode, SNode container, final Object object) {
     if (ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), "virtual_reexportsFromJar_5970181360961342219", new Object[]{object});
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5970181360961342215l, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), "virtual_reexportsFromJar_5970181360961342219", new Object[]{object});
       }
     })) {
       return true;

@@ -14,7 +14,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -26,12 +26,12 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
-    for (SNode remark : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), false, new SConcept[]{})) {
+    for (SNode remark : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), false, new SAbstractConcept[]{})) {
       if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, remark, "jetbrains.mps.baseLanguage.structure.RemarkStatement", "call_isTodo_1213877427548", new Object[]{})) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value")), this));
       }
     }
-    for (SNode textCommentPart : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, new SConcept[]{})) {
+    for (SNode textCommentPart : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, new SAbstractConcept[]{})) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, textCommentPart, "virtual_isToDo_7236590470026152831", new Object[]{})) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text")), this));
       }

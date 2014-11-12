@@ -228,10 +228,10 @@
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.actions)/3855110916776743291">
     <file name="QueriesGenerated.java">
-      <node id="3855110916776744644" at="38,451,39,810" concept="1" />
+      <node id="3855110916776744644" at="38,460,39,819" concept="1" />
       <node id="3855110916776758950" at="37,156,40,5" concept="3" />
       <node id="3855110916776743543" at="37,0,42,0" concept="8" trace="nodeFactory_NodeSetup_GenerateModifier_3855110916776743543#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="3855110916776758953" at="38,451,39,810" />
+      <scope id="3855110916776758953" at="38,460,39,819" />
       <scope id="3855110916776743544" at="37,156,40,5" />
       <scope id="3855110916776743543" at="37,0,42,0">
         <var name="_context" id="3855110916776743543" />
@@ -241,9 +241,9 @@
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.actions)/9097849371504700257">
     <file name="QueriesGenerated.java">
-      <node id="9097849371504801076" at="32,164,33,402" concept="1" />
-      <node id="9097849371504700481" at="33,402,34,444" concept="1" />
-      <node id="9097849371504822995" at="34,444,35,553" concept="1" />
+      <node id="9097849371504801076" at="32,164,33,437" concept="1" />
+      <node id="9097849371504700481" at="33,437,34,444" concept="1" />
+      <node id="9097849371504822995" at="34,444,35,588" concept="1" />
       <node id="9097849371504760812" at="120,63,121,63" concept="5" />
       <node id="9097849371504760812" at="121,63,122,30" concept="5" />
       <node id="9097849371504760812" at="122,30,123,30" concept="5" />
@@ -259,7 +259,7 @@
       <node id="9097849371504700476" at="32,0,37,0" concept="8" trace="nodeFactory_NodeSetup_DependentTypeDeclaration_9097849371504700476#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="9097849371504760812" at="120,0,130,0" concept="8" trace="_quotation_createNode_6hmkle_a0a1a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="9097849371504760812" at="125,183,127,186" />
-      <scope id="9097849371504700477" at="32,164,35,553" />
+      <scope id="9097849371504700477" at="32,164,35,588" />
       <scope id="9097849371504760812" at="123,30,127,186" />
       <scope id="9097849371504700476" at="32,0,37,0">
         <var name="_context" id="9097849371504700476" />

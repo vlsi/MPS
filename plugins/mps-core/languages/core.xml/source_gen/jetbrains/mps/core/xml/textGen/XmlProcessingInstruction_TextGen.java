@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class XmlProcessingInstruction_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     SNode left = SNodeOperations.getPrevSibling(node);
-    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437631294l, "jetbrains.mps.core.xml.structure.XmlPart")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
       this.appendNewLine();
       this.indentBuffer();
     }

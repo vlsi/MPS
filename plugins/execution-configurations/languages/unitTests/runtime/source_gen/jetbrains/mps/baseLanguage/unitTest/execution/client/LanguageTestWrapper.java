@@ -50,7 +50,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public ITestNodeWrapper getTestCase() {
     if (check_9og6tg_a0a4(getNode(), this)) {
-      return TestNodeWrapperFactory.tryToWrap(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), "virtual_getTestCase_1216134500045", new Object[]{}));
+      return TestNodeWrapperFactory.tryToWrap(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), "virtual_getTestCase_1216134500045", new Object[]{}));
     }
     if (isTestCase()) {
       return null;
@@ -67,7 +67,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (node == null) {
       return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     }
-    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "virtual_getTestMethods_2148145109766218395", new Object[]{})).select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), "virtual_getTestMethods_2148145109766218395", new Object[]{})).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }
@@ -147,7 +147,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public String getFqName() {
     if (isTestCase()) {
-      return check_9og6tg_a0a0a9(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
+      return check_9og6tg_a0a0a9(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
     }
     return super.getFqName();
   }
@@ -155,25 +155,25 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public String getName() {
     if (isTestMethod()) {
-      return check_9og6tg_a0a0a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), this);
+      return check_9og6tg_a0a0a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), this);
     }
-    return check_9og6tg_a1a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
+    return check_9og6tg_a1a01(SNodeOperations.cast(getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), this);
   }
   private static boolean check_9og6tg_a0a2(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
+      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
     }
     return false;
   }
   private static boolean check_9og6tg_a0a3(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
+      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
     }
     return false;
   }
   private static boolean check_9og6tg_a0a4(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
+      return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216134482493l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
     }
     return false;
   }

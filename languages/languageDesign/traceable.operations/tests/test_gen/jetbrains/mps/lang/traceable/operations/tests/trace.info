@@ -41,7 +41,7 @@
         <var name="utilityCopy" id="7327404875649027020" />
       </scope>
       <scope id="7327404875649026944" at="41,0,54,0" />
-      <unit id="901167123042832897" at="48,322,52,7" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
+      <unit id="901167123042832897" at="48,330,52,7" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
       <unit id="7327404875649026840" at="35,0,55,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
       <unit id="7327404875649026840" at="23,0,56,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
     </file>

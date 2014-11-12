@@ -141,7 +141,7 @@
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561931892662">
     <file name="FigureAttribute_Behavior.java">
       <node id="5422656561931904843" at="18,79,19,224" concept="3" />
-      <node id="4115105161236911448" at="23,50,24,260" concept="3" />
+      <node id="4115105161236911448" at="23,50,24,268" concept="3" />
       <node id="5422656561932604772" at="28,78,29,245" concept="3" />
       <node id="5422656561931892662" at="16,0,18,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5422656561931892662" at="18,0,21,0" concept="4" trace="call_getFigureClass_5422656561931904592#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -151,7 +151,7 @@
       <node id="5422656561931892662" at="21,0,28,0" concept="4" trace="call_getPrameterAttributes_5422656561931892777#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <scope id="5422656561931892664" at="16,43,16,43" />
       <scope id="5422656561931904595" at="18,79,19,224" />
-      <scope id="4115105161236909651" at="23,50,24,260" />
+      <scope id="4115105161236909651" at="23,50,24,268" />
       <scope id="5422656561932604597" at="28,78,29,245" />
       <scope id="5422656561931892662" at="16,0,18,0">
         <var name="thisNode" id="5422656561931892662" />

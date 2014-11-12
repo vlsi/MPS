@@ -19,8 +19,8 @@
       <node id="2248628811136262598" at="32,5,33,121" concept="4" />
       <node id="2248628811136262598" at="33,121,34,62" concept="4" />
       <node id="2248628811136263735" at="37,94,38,227" concept="4" />
-      <node id="2248628811136263731" at="38,227,39,260" concept="4" />
-      <node id="2248628811136263774" at="39,260,40,356" concept="1" />
+      <node id="2248628811136263731" at="38,227,39,302" concept="4" />
+      <node id="2248628811136263774" at="39,302,40,356" concept="1" />
       <node id="2248628811136263791" at="40,356,41,360" concept="1" />
       <node id="752102214576873140" at="41,360,42,24" concept="5" />
       <node id="2248628811136262598" at="44,60,45,33" concept="5" />
@@ -75,10 +75,10 @@
   </root>
   <root nodeRef="r:3c4a7381-bf37-4a8f-8776-247668cff8c1(jetbrains.mps.baseLanguage.checkedDots.actions)/4079382982702692311">
     <file name="QueriesGenerated.java">
-      <node id="4079382982702714350" at="61,94,62,286" concept="4" />
-      <node id="4079382982702714356" at="62,286,63,218" concept="1" />
-      <node id="4079382982702714363" at="63,218,64,363" concept="1" />
-      <node id="4079382982702714369" at="64,363,65,35" concept="5" />
+      <node id="4079382982702714350" at="61,94,62,328" concept="4" />
+      <node id="4079382982702714356" at="62,328,63,218" concept="1" />
+      <node id="4079382982702714363" at="63,218,64,405" concept="1" />
+      <node id="4079382982702714369" at="64,405,65,35" concept="5" />
       <node id="4079382982702692930" at="83,202,84,83" concept="5" />
       <node id="4079382982702692314" at="83,0,86,0" concept="6" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_4079382982702692314#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <scope id="4079382982702692315" at="83,202,84,83" />
@@ -95,8 +95,8 @@
     <file name="QueriesGenerated.java">
       <node id="7404423900570111860" at="86,193,87,93" concept="4" />
       <node id="7404423900570136778" at="89,94,90,102" concept="4" />
-      <node id="7404423900570136786" at="90,102,91,256" concept="4" />
-      <node id="7404423900570136799" at="91,256,92,352" concept="1" />
+      <node id="7404423900570136786" at="90,102,91,298" concept="4" />
+      <node id="7404423900570136799" at="91,298,92,352" concept="1" />
       <node id="7404423900570136816" at="92,352,93,356" concept="1" />
       <node id="5227621747121952432" at="93,356,94,26" concept="5" />
       <node id="7404423900570111860" at="96,53,97,19" concept="5" />

@@ -55,14 +55,14 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877255427">
     <file name="IClassifierPart_Behavior.java">
       <node id="1213877255434" at="16,75,17,48" concept="4" />
-      <node id="1213877255451" at="19,210,20,240" concept="0" />
+      <node id="1213877255451" at="19,219,20,249" concept="0" />
       <node id="1213877255459" at="22,5,23,18" concept="5" />
       <node id="1213877255427" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877255445" at="18,63,21,7" concept="2" />
       <node id="1213877255440" at="17,48,22,5" concept="1" />
       <node id="1213877255427" at="16,0,25,0" concept="6" trace="call_getMembers_1213877255431#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="1213877255462" at="14,43,14,43" />
-      <scope id="1213877255450" at="19,210,20,240" />
+      <scope id="1213877255450" at="19,219,20,249" />
       <scope id="1213877255427" at="14,0,16,0">
         <var name="thisNode" id="1213877255427" />
       </scope>
@@ -98,7 +98,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877352964">
     <file name="IMember_Behavior.java">
-      <node id="1213877352968" at="20,74,21,203" concept="5" />
+      <node id="1213877352968" at="20,74,21,238" concept="5" />
       <node id="1213877352975" at="23,81,24,304" concept="4" />
       <node id="1213877352986" at="25,41,26,131" concept="7" />
       <node id="1213877352998" at="27,5,28,34" concept="5" />
@@ -119,7 +119,7 @@
       <node id="1213877352964" at="30,0,35,0" concept="6" trace="virtual_createOperation_1213877353000#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877352964" at="23,0,30,0" concept="6" trace="virtual_getOperationConcept_1213877352972#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877353027" at="18,43,18,43" />
-      <scope id="1213877352967" at="20,74,21,203" />
+      <scope id="1213877352967" at="20,74,21,238" />
       <scope id="1213877352985" at="25,41,26,131" />
       <scope id="1213877353022" at="35,71,36,217" />
       <scope id="8179323502814657529" at="38,106,39,16" />
@@ -223,7 +223,7 @@
       <node id="1218740027719" at="19,192,20,187" concept="5" />
       <node id="1213877512822" at="21,5,22,217" concept="5" />
       <node id="1219068414646" at="24,87,25,48" concept="4" />
-      <node id="1219068549216" at="26,266,27,56" concept="0" />
+      <node id="1219068549216" at="26,275,27,56" concept="0" />
       <node id="1219068414681" at="28,5,29,18" concept="5" />
       <node id="1213877512818" at="16,0,18,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1218739994704" at="18,72,21,5" concept="2" />
@@ -232,7 +232,7 @@
       <node id="1213877512818" at="24,0,31,0" concept="6" trace="call_getPossibleClassifiers_1219068414643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="1213877512826" at="16,43,16,43" />
       <scope id="1218739994705" at="19,192,20,187" />
-      <scope id="1219068414659" at="26,266,27,56" />
+      <scope id="1219068414659" at="26,275,27,56" />
       <scope id="1213877512818" at="16,0,18,0">
         <var name="thisNode" id="1213877512818" />
       </scope>
@@ -254,8 +254,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877527939">
     <file name="IClassifier_Behavior.java">
-      <node id="1213877527973" at="24,72,25,228" concept="4" />
-      <node id="1213877527979" at="25,228,26,186" concept="0" />
+      <node id="1213877527973" at="24,72,25,263" concept="4" />
+      <node id="1213877527979" at="25,263,26,186" concept="0" />
       <node id="1213877527986" at="26,186,27,18" concept="5" />
       <node id="1217433727145" at="29,77,30,16" concept="5" />
       <node id="1213877527991" at="32,76,33,48" concept="4" />
@@ -269,30 +269,30 @@
       <node id="1213877528093" at="55,380,56,59" concept="0" />
       <node id="1213877528120" at="59,5,60,18" concept="5" />
       <node id="1213877528127" at="62,78,63,48" concept="4" />
-      <node id="1213877528137" at="65,210,66,240" concept="0" />
+      <node id="1213877528137" at="65,219,66,249" concept="0" />
       <node id="1213877528154" at="69,162,70,133" concept="0" />
       <node id="1213877528166" at="71,5,72,18" concept="5" />
-      <node id="1221661952304" at="77,38,78,237" concept="5" />
-      <node id="1221662025359" at="81,87,82,245" concept="4" />
-      <node id="1221662040655" at="82,245,83,404" concept="0" />
+      <node id="1221661952304" at="77,38,78,272" concept="5" />
+      <node id="1221662025359" at="81,87,82,280" concept="4" />
+      <node id="1221662040655" at="82,280,83,404" concept="0" />
       <node id="1221662098903" at="83,404,84,257" concept="0" />
-      <node id="1221662124151" at="84,257,85,212" concept="4" />
-      <node id="1221662137322" at="85,212,86,392" concept="0" />
-      <node id="1221662178350" at="86,392,87,187" concept="0" />
+      <node id="1221662124151" at="84,257,85,247" concept="4" />
+      <node id="1221662137322" at="85,247,86,427" concept="0" />
+      <node id="1221662178350" at="86,427,87,187" concept="0" />
       <node id="1221661897769" at="87,187,88,22" concept="5" />
-      <node id="1213877527943" at="92,112,93,247" concept="4" />
+      <node id="1213877527943" at="92,112,93,256" concept="4" />
       <node id="1213877527954" at="94,29,95,24" concept="5" />
-      <node id="1213877527959" at="96,5,97,371" concept="5" />
+      <node id="1213877527959" at="96,5,97,380" concept="5" />
       <node id="1213877527939" at="22,0,24,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877527939" at="29,0,32,0" concept="6" trace="virtual_createSuperType_1217433657148#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877527999" at="34,253,37,7" concept="2" />
+      <node id="1213877527999" at="34,262,37,7" concept="2" />
       <node id="1213877528031" at="43,166,46,7" concept="2" />
       <node id="1213877528051" at="46,7,49,7" concept="2" />
       <node id="1213877528064" at="49,7,52,7" concept="2" />
       <node id="1213877528091" at="54,243,57,9" concept="2" />
       <node id="1213877528135" at="64,63,67,7" concept="2" />
       <node id="1213877528152" at="68,5,71,5" concept="1" />
-      <node id="1213877527952" at="93,247,96,5" concept="2" />
+      <node id="1213877527952" at="93,256,96,5" concept="2" />
       <node id="1221661952194" at="76,0,80,0" concept="3" trace="createNewMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877527939" at="24,0,29,0" concept="6" trace="virtual_createType_1213877527970#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877527997" at="33,48,38,5" concept="1" />
@@ -313,9 +313,9 @@
       <scope id="1213877528052" at="47,335,48,57" />
       <scope id="1213877528065" at="50,608,51,57" />
       <scope id="1213877528092" at="55,380,56,59" />
-      <scope id="1213877528136" at="65,210,66,240" />
+      <scope id="1213877528136" at="65,219,66,249" />
       <scope id="1213877528153" at="69,162,70,133" />
-      <scope id="1221661952202" at="77,38,78,237" />
+      <scope id="1221661952202" at="77,38,78,272" />
       <scope id="1213877527953" at="94,29,95,24" />
       <scope id="1213877527939" at="22,0,24,0">
         <var name="thisNode" id="1213877527939" />
@@ -326,7 +326,7 @@
       <scope id="1213877527939" at="29,0,32,0">
         <var name="thisNode" id="1213877527939" />
       </scope>
-      <scope id="1213877527998" at="34,253,37,7" />
+      <scope id="1213877527998" at="34,262,37,7" />
       <scope id="1213877528134" at="64,63,67,7" />
       <scope id="1213877528152" at="68,5,71,5">
         <var name="part" id="1213877528164" />
@@ -344,7 +344,7 @@
       <scope id="1213877528133" at="63,48,68,5">
         <var name="child" id="1213877528150" />
       </scope>
-      <scope id="1213877527942" at="92,112,97,371">
+      <scope id="1213877527942" at="92,112,97,380">
         <var name="classifier" id="1213877527944" />
       </scope>
       <scope id="1213877527990" at="32,76,39,18">

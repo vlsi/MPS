@@ -36,11 +36,6 @@ public abstract class SPropertyAdapter implements SProperty {
 
   protected abstract SNode findInConcept(SNode cnode);
 
-  @Override
-  public SAbstractConcept getConcept() {
-    return getContainingConcept();
-  }
-
   public abstract SPropertyId getId();
 
   @Override

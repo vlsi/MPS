@@ -25,7 +25,7 @@ public class MatchParensRegexp_removeName {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
     }
   }
   public static class MatchParensRegexp_removeName_BACKSPACE extends AbstractCellAction {
@@ -37,7 +37,7 @@ public class MatchParensRegexp_removeName {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
     }
   }
 }

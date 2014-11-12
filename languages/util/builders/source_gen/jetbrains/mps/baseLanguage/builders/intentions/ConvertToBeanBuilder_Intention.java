@@ -63,8 +63,8 @@ public class ConvertToBeanBuilder_Intention implements IntentionFactory {
       return "Convert To Bean Builder";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode creator = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7057666463730155278l, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"), null);
-      SNode builder = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6666322667909540799l, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), null);
+      SNode creator = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7057666463730155278l, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator")), null);
+      SNode builder = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 6666322667909540799l, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder")), null);
       SLinkOperations.setTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
       for (SNode arg : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))) {
         ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(arg);

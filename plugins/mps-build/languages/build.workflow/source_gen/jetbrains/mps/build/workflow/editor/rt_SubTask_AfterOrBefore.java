@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class rt_SubTask_AfterOrBefore {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,9 +27,9 @@ public class rt_SubTask_AfterOrBefore {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 3961775458390293275l, "before"))).isEmpty()) {
-        SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 3961775458390293275l, "before"), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
+        SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 3961775458390293275l, "before"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency")));
       } else if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284605953l, "after"))).isEmpty()) {
-        SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284605953l, "after"), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
+        SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284605953l, "after"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency")));
       }
     }
   }

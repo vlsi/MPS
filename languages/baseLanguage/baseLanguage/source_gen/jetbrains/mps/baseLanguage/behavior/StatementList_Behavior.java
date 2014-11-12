@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -26,7 +26,7 @@ public class StatementList_Behavior {
   public static Set<SNode> call_getExternalVariablesDeclarations_1214501165480(SNode thisNode) {
     Set<SNode> declarations = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> reference = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference"), false, new SConcept[]{})));
+    SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1023687332192347378l, "jetbrains.mps.baseLanguage.structure.IVariableReference"), false, new SAbstractConcept[]{})));
     for (SNode ref : reference) {
       boolean statementsContainsVar = false;
       for (SNode parent : SNodeOperations.getNodeAncestors(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref, "virtual_getVariable_1023687332192481693", new Object[]{}), null, false)) {
@@ -41,10 +41,10 @@ public class StatementList_Behavior {
     return declarations;
   }
   public static boolean call_isCompact_1237546596168(SNode thisNode) {
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")))) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")))) {
       return false;
     }
-    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"));
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"));
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, parent, "virtual_isStatementListCompactable_1237546012856", new Object[]{}))) {
       return false;
     }
@@ -56,10 +56,10 @@ public class StatementList_Behavior {
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1) {
       SNode statement = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
-      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))) {
+      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))) {
         return false;
       }
-      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), false, new SConcept[]{})).isNotEmpty()) {
+      if (ListSequence.fromList(SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), false, new SAbstractConcept[]{})).isNotEmpty()) {
         return false;
       }
     }

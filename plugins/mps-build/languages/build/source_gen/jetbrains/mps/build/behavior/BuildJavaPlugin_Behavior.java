@@ -52,7 +52,7 @@ public class BuildJavaPlugin_Behavior {
     return null;
   }
   public static Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828007l, "jetbrains.mps.build.structure.BuildSource_CompilablePart"))) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828007l, "jetbrains.mps.build.structure.BuildSource_CompilablePart"))) {
       return DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts")), kind);
     }
 

@@ -30,9 +30,9 @@ public abstract class BaseClassConceptTextGen {
     boolean isWrappedElementBefore = true;
     SNode lastMember = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).last();
     for (SNode member : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
-      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
-        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
+      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
+        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), textGen);
         textGen.appendNode(member);
         BaseLanguageTextGen.newLine(needsLineAfter && !((lastMember == member)), textGen);
