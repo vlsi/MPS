@@ -286,8 +286,10 @@ public class ModulesWatcher {
     assert module != null;
     Collection<? extends SModuleReference> deps = getModuleDescriptorDeps(module);
     for (SModuleReference dep : deps) {
-      LOG.trace("Module " + mRef + " depends on a disposed module " + dep + " and therefore was marked invalid for class loading");
-      if (isModuleDisposed(dep)) return true;
+      if (isModuleDisposed(dep)) {
+        LOG.trace("Module " + mRef + " depends on a disposed module " + dep + " and therefore was marked invalid for class loading");
+        return true;
+      }
     }
     return false;
   }
