@@ -42,6 +42,10 @@ public abstract class MetaAdapterFactory {
     return new SLanguageAdapterById(MetaIdFactory.langId(lang), langName);
   }
 
+  public static SConcept getConcept(SConceptId id, String conceptName) {
+    return new SConceptAdapterById(id, conceptName);
+  }
+
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
     return new SConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
