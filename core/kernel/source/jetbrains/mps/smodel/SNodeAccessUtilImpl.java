@@ -187,7 +187,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTargetImpl(node, new SReferenceLinkAdapterByName(node.getConcept().getQualifiedName(), role), target);
+    setReferenceTargetImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), target);
   }
 
   @Override
@@ -198,7 +198,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReferenceImpl(node, new SReferenceLinkAdapterByName(node.getConcept().getQualifiedName(), role), reference);
+    setReferenceImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), reference);
   }
 
   private class InProgressThreadLocal<T> extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>>> {

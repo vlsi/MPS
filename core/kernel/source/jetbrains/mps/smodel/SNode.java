@@ -1139,25 +1139,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTarget(new SReferenceLinkAdapterByName(myConcept.getQualifiedName(), role), target);
+    setReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role), target);
   }
 
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    return getReferenceTarget(new SReferenceLinkAdapterByName(myConcept.getQualifiedName(), role));
+    return getReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    return getReference(new SReferenceLinkAdapterByName(myConcept.getQualifiedName(), role));
+    return getReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReference(new SReferenceLinkAdapterByName(myConcept.getQualifiedName(), role), reference);
+    setReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role), reference);
   }
 
   @Deprecated
@@ -1260,6 +1260,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SReferenceLink createSReferenceLinkAdapterByName(String conceptName, String role) {
-    return new SReferenceLinkAdapterByName(conceptName, role);
+    return MetaAdapterFactoryByName.getReferenceLink(conceptName, role);
   }
 }
