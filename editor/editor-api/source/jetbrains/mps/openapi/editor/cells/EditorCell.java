@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -100,6 +99,8 @@ public interface EditorCell {
   void setErrorState(boolean isError);
 
   void relayout();
+
+  void requestRelayout();
 
   void setCaretX(int x);
 

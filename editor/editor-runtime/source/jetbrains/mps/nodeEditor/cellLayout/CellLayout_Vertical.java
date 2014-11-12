@@ -47,7 +47,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     if (usesBraces) {
       closingBrace.relayout();
       openingBrace.relayout();
-      openingBrace.moveTo(editorCells.getX(), editorCells.getY());      
+      openingBrace.moveTo(editorCells.getX(), editorCells.getY());
     }
 
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
@@ -70,7 +70,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int delta = braceIndent - indent;
       width = Math.max(width, lastCellWidth + delta);
     }
-    
+
     for (EditorCell editorCell : cells) {
       int cellX = editorCell.getX();
       int cellY = editorCell.getY();
@@ -115,7 +115,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
                 maxWidth = Math.max(maxWidth, cell.getWidth());
                 maxHeights[j] = Math.max(maxHeights[j], cell.getHeight());
               }
-            } else {              
+            } else {
               maxHeights[j] = Math.max(maxHeights[j], editorCell.getHeight());
             }
           } else {
@@ -170,7 +170,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       } else {
         EditorCell lastCell = editorCells.lastContentCell();
         while ((lastCell instanceof EditorCell_Collection) && !((EditorCell_Collection) lastCell).isFolded()) {
-          lastCell = ((EditorCell_Collection)lastCell).lastCell();
+          lastCell = ((EditorCell_Collection) lastCell).lastCell();
         }
         if (lastCell == null) {
           lastCell = editorCells.lastContentCell() != null ? editorCells.lastContentCell() : openingBrace;
@@ -185,7 +185,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   private int getBracesIndent(EditorCell cell) {
-    return cell instanceof  EditorCell_Collection ? ((EditorCell_Collection) cell).getBracesIndent() : 0;
+    return cell instanceof EditorCell_Collection ? ((EditorCell_Collection) cell).getBracesIndent() : 0;
   }
 
   @Override
@@ -220,15 +220,15 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       if (result > 0) {
         break;
       }
-    }    
+    }
 
     switch (bL) {
       case FIRST: // default behavior
         return result;
       case CENTER:
-        return Math.max(result,editorCells.getHeight() / 2);
+        return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount()-1);
+        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
         if (lastCell != null) {
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
@@ -239,5 +239,21 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public String toString() {
     return "Vertical";
+  }
+
+  @Override
+  public void requestRelayout(EditorCell_Collection editorCells) {
+    super.requestRelayout(editorCells);
+    if (myGridLayout) {
+      for (EditorCell childCell : editorCells) {
+        if (childCell instanceof EditorCell_Collection) {
+          for (EditorCell innerCell : (EditorCell_Collection) childCell) {
+            innerCell.requestRelayout();
+          }
+        } else {
+          childCell.requestRelayout();
+        }
+      }
+    }
   }
 }

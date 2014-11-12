@@ -64,4 +64,8 @@ public abstract class AbstractCellLayout implements CellLayout {
   public boolean canBeFolded() {
     return false;
   }
+
+  @Override
+  public void requestRelayout(EditorCell_Collection editorCells) {
+  }
 }
