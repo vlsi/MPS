@@ -108,7 +108,7 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    SContainmentLinkAdapterById linkAdapter = nodeRole == null ? null : new SContainmentLinkAdapterById(nodeRole, linkName);
+    SContainmentLink linkAdapter = nodeRole == null ? null : MetaAdapterFactory.getContainmentLink(nodeRole, linkName);
     return new Pair<SContainmentLink, jetbrains.mps.smodel.SNode>(linkAdapter, node);
   }
 

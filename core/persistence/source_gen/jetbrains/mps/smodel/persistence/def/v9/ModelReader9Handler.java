@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.Pair;
 
 public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
@@ -716,13 +716,15 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._2<SNode, SContainmentLinkId> child = (Tuples._2<SNode, SContainmentLinkId>) value;
       if (child != null) {
-        result._0().addChild(new SContainmentLinkAdapterById(child._1(), DebugRegistry.getInstance().getLinkName(child._1())), child._0());
+        String name = DebugRegistry.getInstance().getLinkName(child._1());
+        result._0().addChild(MetaAdapterFactory.getContainmentLink(child._1(), name), child._0());
       }
     }
     private void handleChild_7167172773708890694(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._3<SContainmentLinkId, SConceptId, String> child = (Tuples._3<SContainmentLinkId, SConceptId, String>) value;
-      SContainmentLinkAdapterById link = new SContainmentLinkAdapterById(child._0(), DebugRegistry.getInstance().getLinkName(child._0()));
+      String name = DebugRegistry.getInstance().getLinkName(child._0());
+      SContainmentLink link = MetaAdapterFactory.getContainmentLink(child._0(), name);
       if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._2())) {
         SConcept stubConcept = fieldhelper.getStubConcept(child._1());
         if (stubConcept != null) {

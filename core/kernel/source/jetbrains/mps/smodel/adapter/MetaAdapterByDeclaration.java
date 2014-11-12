@@ -71,11 +71,11 @@ public class MetaAdapterByDeclaration {
   }
 
   public static SContainmentLink getContainmentLink(SNode c) {
-    return new SContainmentLinkAdapterById(MetaIdByDeclaration.getLinkId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
+    return MetaAdapterFactory.getContainmentLink(MetaIdByDeclaration.getLinkId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
   }
 
   public static SReferenceLink getReferenceLink(SNode c) {
-    return new SReferenceLinkAdapterById(MetaIdByDeclaration.getRefRoleId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
+    return MetaAdapterFactory.getReferenceLink(MetaIdByDeclaration.getRefRoleId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
   }
 
   public static SProperty getProperty(SNode c) {
