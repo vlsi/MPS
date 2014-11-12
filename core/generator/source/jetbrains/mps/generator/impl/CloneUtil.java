@@ -159,9 +159,7 @@ public class CloneUtil {
 
     @Override
     public SNode create(SNode prototype) {
-      // new jetbrains.mps.smodel.SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
-      // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
-      final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(prototype.getConcept().getQualifiedName());
+      final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(prototype.getConcept());
 
       outputNode.setId(prototype.getNodeId());
       return outputNode;
