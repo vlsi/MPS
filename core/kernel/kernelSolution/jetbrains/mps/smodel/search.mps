@@ -4334,7 +4334,7 @@
               </node>
               <node concept="vg0i.1081236700937" id="8484262519286299240" role="vg0i.1068431474542.1068431790190" info="nn">
                 <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
+                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.6963130675032169262" resolveInfo="findConceptDeclaration" />
                 <node concept="vg0i.1068498886296" id="4265636116363097588" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8484262519286299229" resolveInfo="conceptFQName" />
                 </node>
