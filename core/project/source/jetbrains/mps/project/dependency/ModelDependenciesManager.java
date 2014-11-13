@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -158,7 +159,7 @@ public class ModelDependenciesManager {
    */
   protected void handle(DevKit devkit, Collection<SLanguage> retval) {
     for (Language dkLang : devkit.getAllExportedLanguages()) {
-      handle(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(dkLang), dkLang.getModuleName()), retval);
+      handle(MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(dkLang), dkLang.getModuleName()), retval);
     }
   }
 

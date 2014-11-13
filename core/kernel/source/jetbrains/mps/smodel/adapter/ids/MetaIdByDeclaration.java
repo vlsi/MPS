@@ -4,6 +4,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -49,7 +50,7 @@ public class MetaIdByDeclaration {
   }
 
   public static SLanguage ref2Id(SModuleReference ref) {
-    return new SLanguageAdapterById(ref2LangId(ref), ref.getModuleName());
+    return MetaAdapterFactory.getLanguage(ref2LangId(ref), ref.getModuleName());
   }
 
   public static SLanguageId ref2LangId(SModuleReference ref) {

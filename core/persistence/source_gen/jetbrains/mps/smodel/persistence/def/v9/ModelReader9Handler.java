@@ -27,15 +27,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.InterfaceSNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.Pair;
 
 public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
@@ -624,7 +622,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         interfaceNode = (parsed._0() == ConceptKind.INTERFACE || attrs.getValue("role") == null);
       }
       SConceptId conceptId = fieldhelper.readConceptId(attrs.getValue("concept"));
-      SConcept concept = new SConceptAdapterById(conceptId, DebugRegistry.getInstance().getConceptName(conceptId));
+      String name = DebugRegistry.getInstance().getConceptName(conceptId);
+      SConcept concept = MetaAdapterFactory.getConcept(conceptId, name);
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
       // can be root 
@@ -701,13 +700,15 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_7167172773708890516(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._2<SPropertyId, String> child = (Tuples._2<SPropertyId, String>) value;
-      result._0().setProperty(new SPropertyAdapterById(child._0(), DebugRegistry.getInstance().getPropertyName(child._0())), child._1());
+      String name = DebugRegistry.getInstance().getPropertyName(child._0());
+      result._0().setProperty(MetaAdapterFactory.getProperty(child._0(), name), child._1());
     }
     private void handleChild_7167172773708890553(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String>) value;
       SNodePointer target = child._1();
-      SReferenceLink link = new SReferenceLinkAdapterById(child._0(), DebugRegistry.getInstance().getRefName(child._0()));
+      String name = DebugRegistry.getInstance().getRefName(child._0());
+      SReferenceLink link = MetaAdapterFactory.getReferenceLink(child._0(), name);
       StaticReference ref = new StaticReference(link, result._0(), target.getModelReference(), target.getNodeId(), child._3());
       result._0().setReference(link, ref);
     }
@@ -715,13 +716,15 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._2<SNode, SContainmentLinkId> child = (Tuples._2<SNode, SContainmentLinkId>) value;
       if (child != null) {
-        result._0().addChild(new SContainmentLinkAdapterById(child._1(), DebugRegistry.getInstance().getLinkName(child._1())), child._0());
+        String name = DebugRegistry.getInstance().getLinkName(child._1());
+        result._0().addChild(MetaAdapterFactory.getContainmentLink(child._1(), name), child._0());
       }
     }
     private void handleChild_7167172773708890694(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._3<SContainmentLinkId, SConceptId, String> child = (Tuples._3<SContainmentLinkId, SConceptId, String>) value;
-      SContainmentLinkAdapterById link = new SContainmentLinkAdapterById(child._0(), DebugRegistry.getInstance().getLinkName(child._0()));
+      String name = DebugRegistry.getInstance().getLinkName(child._0());
+      SContainmentLink link = MetaAdapterFactory.getContainmentLink(child._0(), name);
       if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._2())) {
         SConcept stubConcept = fieldhelper.getStubConcept(child._1());
         if (stubConcept != null) {

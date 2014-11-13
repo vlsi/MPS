@@ -25,6 +25,7 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -741,7 +742,7 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(Language language) {
-    addLanguage(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
+    addLanguage(MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
   }
 
   //devkit

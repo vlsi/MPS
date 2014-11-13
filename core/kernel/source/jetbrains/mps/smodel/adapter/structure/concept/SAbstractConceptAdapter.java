@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -65,8 +65,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid,
-          d.getRefDescriptor(rid).getName()));
+      result.add(MetaAdapterFactory.getReferenceLink(rid, d.getRefDescriptor(rid).getName()));
     }
     return result;
   }
@@ -78,8 +77,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(new SContainmentLinkAdapterById(rid,
-          d.getLinkDescriptor(rid).getName()));
+      result.add(MetaAdapterFactory.getContainmentLink(rid, d.getLinkDescriptor(rid).getName()));
     }
     return result;
   }
@@ -93,13 +91,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     LinkDescriptor d = nodeConcept.getLinkDescriptor(role);
     if (d != null) {
       SContainmentLinkId linkId = d.getId();
-      return new SContainmentLinkAdapterById(linkId, role);
+      return MetaAdapterFactory.getContainmentLink(linkId, role);
     } else {
       ReferenceDescriptor r = nodeConcept.getRefDescriptor(role);
-      if (r == null)  return null;
+      if (r == null) return null;
 
       SReferenceLinkId linkId = r.getId();
-      return new SReferenceLinkAdapterById(linkId, role);
+      return MetaAdapterFactory.getReferenceLink(linkId, role);
     }
   }
 
@@ -111,7 +109,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     for (SContainmentLinkId lid : cd.getLinkIds()) {
       LinkDescriptor ld = cd.getLinkDescriptor(lid);
-      result.add(new SContainmentLinkAdapterById(lid, ld.getName()));
+      result.add(MetaAdapterFactory.getContainmentLink(lid, ld.getName()));
     }
     return result;
   }
@@ -124,7 +122,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
     SPropertyId pid = d.getId();
-    return new SPropertyAdapterById(pid, name);
+    return MetaAdapterFactory.getProperty(pid, name);
   }
 
   @Override
@@ -134,8 +132,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(pid,
-          d.getPropertyDescriptor(pid).getName()));
+      result.add(MetaAdapterFactory.getProperty(pid,d.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }

@@ -16,6 +16,11 @@
 package jetbrains.mps.smodel.adapter.structure;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
@@ -23,6 +28,7 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -32,38 +38,91 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public abstract class MetaAdapterFactory {
+  private static final ConcurrentMap<Pair<SLanguageId, String>, SLanguage> ourLanguageIds = new ConcurrentHashMap<Pair<SLanguageId, String>, SLanguage>();
+  private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
+  private static final ConcurrentMap<Pair<SConceptId, String>, SInterfaceConcept> ourIntfcConceptIds =
+      new ConcurrentHashMap<Pair<SConceptId, String>, SInterfaceConcept>();
+  private static final ConcurrentMap<Pair<SPropertyId, String>, SProperty> ourPropertyIds = new ConcurrentHashMap<Pair<SPropertyId, String>, SProperty>();
+  private static final ConcurrentMap<Pair<SReferenceLinkId, String>, SReferenceLink> ourRefIds =
+      new ConcurrentHashMap<Pair<SReferenceLinkId, String>, SReferenceLink>();
+  private static final ConcurrentMap<Pair<SContainmentLinkId, String>, SContainmentLink> ourLinkIds =
+      new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
+
+  public static SLanguage getLanguage(SLanguageId id, String langName) {
+    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
+    Pair<SLanguageId, String> p = new Pair<SLanguageId, String>(id, langName);
+    ourLanguageIds.putIfAbsent(p, l);
+    return ourLanguageIds.get(p);
+  }
 
   public static SLanguage getLanguage(UUID lang, String langName) {
-    return new SLanguageAdapterById(MetaIdFactory.langId(lang), langName);
+    return getLanguage(MetaIdFactory.langId(lang), langName);
+  }
+
+  public static SConcept getConcept(SConceptId id, String conceptName) {
+    SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
+    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
+    ourConceptIds.putIfAbsent(p, c);
+    return ourConceptIds.get(p);
   }
 
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
-    return new SConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
+  }
+
+  public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
+    SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
+    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
+    ourIntfcConceptIds.putIfAbsent(p, c);
+    return ourIntfcConceptIds.get(p);
   }
 
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
-    return new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
+  }
+
+  public static SProperty getProperty(SPropertyId id, String propName) {
+    SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
+    Pair<SPropertyId, String> p = new Pair<SPropertyId, String>(id, propName);
+    ourPropertyIds.putIfAbsent(p, c);
+    return ourPropertyIds.get(p);
   }
 
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
-    return new SPropertyAdapterById(MetaIdFactory.propId(lang, concept, prop), propName);
+    return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
+  }
+
+  public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
+    SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
+    Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
+    ourRefIds.putIfAbsent(p, c);
+    return ourRefIds.get(p);
   }
 
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
-    return new SReferenceLinkAdapterById(MetaIdFactory.refId(lang, concept, ref), refName);
+    return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
+  }
+
+  public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
+    SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
+    Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
+    ourLinkIds.putIfAbsent(p, c);
+    return ourLinkIds.get(p);
   }
 
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
-    return new SContainmentLinkAdapterById(MetaIdFactory.linkId(lang, concept, link), linkName);
+    return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
   }
 
   public static SAbstractConcept getAbstractConcept(ConceptDescriptor descriptor) {
     if (descriptor.isInterfaceConcept()) {
-      return new SInterfaceConceptAdapterById(descriptor.getId(), descriptor.getConceptFqName());
+      return getInterfaceConcept(descriptor.getId(), descriptor.getConceptFqName());
     } else {
-      return new SConceptAdapterById(descriptor.getId(), descriptor.getConceptFqName());
+      return getConcept(descriptor.getId(), descriptor.getConceptFqName());
     }
   }
 }
