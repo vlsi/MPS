@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -39,18 +40,21 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public abstract class MetaAdapterFactory {
-  private static final ConcurrentMap<SLanguage, SLanguage> ourLanguageIds = new ConcurrentHashMap<SLanguage, SLanguage>();
-  private static final ConcurrentMap<SConcept, SConcept> ourConceptIds = new ConcurrentHashMap<SConcept, SConcept>();
-  private static final ConcurrentMap<SInterfaceConcept, SInterfaceConcept> ourInterfaceConceptIds =
-      new ConcurrentHashMap<SInterfaceConcept, SInterfaceConcept>();
-  private static final ConcurrentMap<SProperty, SProperty> ourPropertyIds = new ConcurrentHashMap<SProperty, SProperty>();
-  private static final ConcurrentMap<SReferenceLink, SReferenceLink> ourRefIds = new ConcurrentHashMap<SReferenceLink, SReferenceLink>();
-  private static final ConcurrentMap<SContainmentLink, SContainmentLink> ourLinkIds = new ConcurrentHashMap<SContainmentLink, SContainmentLink>();
+  private static final ConcurrentMap<Pair<SLanguageId, String>, SLanguage> ourLanguageIds = new ConcurrentHashMap<Pair<SLanguageId, String>, SLanguage>();
+  private static final ConcurrentMap<Pair<SConceptId, String>, SConcept> ourConceptIds = new ConcurrentHashMap<Pair<SConceptId, String>, SConcept>();
+  private static final ConcurrentMap<Pair<SConceptId, String>, SInterfaceConcept> ourIntfcConceptIds =
+      new ConcurrentHashMap<Pair<SConceptId, String>, SInterfaceConcept>();
+  private static final ConcurrentMap<Pair<SPropertyId, String>, SProperty> ourPropertyIds = new ConcurrentHashMap<Pair<SPropertyId, String>, SProperty>();
+  private static final ConcurrentMap<Pair<SReferenceLinkId, String>, SReferenceLink> ourRefIds =
+      new ConcurrentHashMap<Pair<SReferenceLinkId, String>, SReferenceLink>();
+  private static final ConcurrentMap<Pair<SContainmentLinkId, String>, SContainmentLink> ourLinkIds =
+      new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
 
   public static SLanguage getLanguage(SLanguageId id, String langName) {
     SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
-    ourLanguageIds.putIfAbsent(l, l);
-    return ourLanguageIds.get(l);
+    Pair<SLanguageId, String> p = new Pair<SLanguageId, String>(id, langName);
+    ourLanguageIds.putIfAbsent(p, l);
+    return ourLanguageIds.get(p);
   }
 
   public static SLanguage getLanguage(UUID lang, String langName) {
@@ -59,8 +63,9 @@ public abstract class MetaAdapterFactory {
 
   public static SConcept getConcept(SConceptId id, String conceptName) {
     SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
-    ourConceptIds.putIfAbsent(c, c);
-    return ourConceptIds.get(c);
+    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
+    ourConceptIds.putIfAbsent(p, c);
+    return ourConceptIds.get(p);
   }
 
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
@@ -69,8 +74,9 @@ public abstract class MetaAdapterFactory {
 
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
     SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
-    ourInterfaceConceptIds.putIfAbsent(c, c);
-    return ourInterfaceConceptIds.get(c);
+    Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
+    ourIntfcConceptIds.putIfAbsent(p, c);
+    return ourIntfcConceptIds.get(p);
   }
 
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
@@ -79,8 +85,9 @@ public abstract class MetaAdapterFactory {
 
   public static SProperty getProperty(SPropertyId id, String propName) {
     SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
-    ourPropertyIds.putIfAbsent(c, c);
-    return ourPropertyIds.get(c);
+    Pair<SPropertyId, String> p = new Pair<SPropertyId, String>(id, propName);
+    ourPropertyIds.putIfAbsent(p, c);
+    return ourPropertyIds.get(p);
   }
 
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
@@ -89,8 +96,9 @@ public abstract class MetaAdapterFactory {
 
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
     SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
-    ourRefIds.putIfAbsent(c, c);
-    return ourRefIds.get(c);
+    Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
+    ourRefIds.putIfAbsent(p, c);
+    return ourRefIds.get(p);
   }
 
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
@@ -99,8 +107,9 @@ public abstract class MetaAdapterFactory {
 
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
     SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
-    ourLinkIds.putIfAbsent(c, c);
-    return ourLinkIds.get(c);
+    Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
+    ourLinkIds.putIfAbsent(p, c);
+    return ourLinkIds.get(p);
   }
 
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
