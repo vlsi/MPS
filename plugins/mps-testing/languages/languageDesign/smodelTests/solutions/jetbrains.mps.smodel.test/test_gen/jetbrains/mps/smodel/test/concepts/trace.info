@@ -3,8 +3,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)/359299525883788095">
     <file name="SConceptHierarchy_Test.java">
       <node id="359299525883788095" at="22,56,23,124" concept="0" />
@@ -14,28 +12,27 @@
       <node id="6638738203687280475" at="30,354,31,403" concept="0" />
       <node id="6638738203687284413" at="31,403,32,441" concept="0" />
       <node id="359299525882683688" at="32,441,33,216" concept="0" />
-      <node id="359299525883522055" at="33,216,34,470" concept="2" />
-      <node id="359299525883527475" at="34,470,35,271" concept="0" />
-      <node id="359299525883524125" at="35,271,36,260" concept="0" />
-      <node id="359299525883533395" at="36,260,37,216" concept="0" />
-      <node id="359299525883539319" at="37,216,38,224" concept="0" />
-      <node id="8509966777933270643" at="40,72,41,49" concept="3" />
-      <node id="8509966777933270643" at="40,0,43,0" concept="4" trace="as_pzab08_a0a0a0f0a1#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="359299525883522055" at="33,216,34,100" concept="2" />
+      <node id="7344669911420836450" at="36,27,37,297" concept="0" />
+      <node id="359299525883527475" at="39,9,40,277" concept="0" />
+      <node id="359299525883524125" at="40,277,41,266" concept="0" />
+      <node id="359299525883533395" at="41,266,42,222" concept="0" />
+      <node id="359299525883539319" at="42,222,43,230" concept="0" />
+      <node id="7344669911420835898" at="36,0,39,0" concept="1" trace="run#()V" />
       <node id="359299525883788095" at="21,0,26,0" concept="1" trace="test_conceptHierarchy#()V" />
-      <node id="359299525883788102" at="28,0,40,0" concept="1" trace="test_conceptHierarchy#()V" />
-      <scope id="8509966777933270643" at="40,72,41,49" />
+      <node id="7344669911420835896" at="34,100,39,9" concept="0" />
+      <node id="359299525883788102" at="28,0,45,0" concept="1" trace="test_conceptHierarchy#()V" />
+      <scope id="7344669911420835900" at="36,27,37,297" />
       <scope id="359299525883788095" at="22,56,24,118" />
-      <scope id="8509966777933270643" at="40,0,43,0">
-        <var name="o" id="8509966777933270643" />
-        <var name="type" id="8509966777933270643" />
-      </scope>
+      <scope id="7344669911420835898" at="36,0,39,0" />
       <scope id="359299525883788095" at="21,0,26,0" />
-      <scope id="359299525883788102" at="28,58,38,224">
+      <scope id="359299525883788102" at="28,58,43,230">
         <var name="defaultIfaceConcept" id="359299525883522056" />
       </scope>
-      <scope id="359299525883788102" at="28,0,40,0" />
-      <unit id="359299525883788095" at="26,0,44,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody" />
-      <unit id="359299525883788095" at="19,0,45,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test" />
+      <scope id="359299525883788102" at="28,0,45,0" />
+      <unit id="7344669911420835898" at="35,47,39,7" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$1" />
+      <unit id="359299525883788095" at="26,0,46,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody" />
+      <unit id="359299525883788095" at="19,0,47,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test" />
     </file>
   </root>
 </debug-info>

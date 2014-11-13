@@ -22,6 +22,7 @@
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>
+      <languageVersions />
       <mapping-priorities />
     </generator>
   </generators>
