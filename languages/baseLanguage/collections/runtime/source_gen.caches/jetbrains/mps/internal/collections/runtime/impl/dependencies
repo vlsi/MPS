@@ -148,11 +148,13 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode extendsClassName="java.util.Map" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullQueueSequence" file="NullQueueSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
