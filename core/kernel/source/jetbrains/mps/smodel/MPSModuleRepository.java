@@ -253,7 +253,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
           SearchScope moduleScope = ((AbstractModule) m).getScope();
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
         }
-        SModelUtil.clearCaches();
       }
     });
   }
