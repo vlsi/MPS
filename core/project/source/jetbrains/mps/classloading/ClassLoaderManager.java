@@ -22,6 +22,7 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.tempmodel.TempModule;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -364,17 +365,23 @@ public class ClassLoaderManager implements CoreComponent {
     }
     try {
       monitor.start("Reloading modules' class loaders...", 2);
+      boolean silentMode = true;
+      for (SModule module : modules) {
+        if (!(module instanceof TempModule)) {
+          silentMode = false;
+          break;
+        }
+      }
       Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
       for (SModule module : modules) {
-        if (module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
+        if (!(module instanceof TempModule) && module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
         if (canLoad(module)) {
           modulesToReload.add((ReloadableModule) module);
         }
       }
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
-      if (modulesToReload.size() == 1) LOG.info("Reloading module " + modulesToReload.toArray()[0]);
-      else LOG.info("Reloading " + modulesToReload.size() + " module(s)");
+      if (!silentMode) LOG.info("Reloading " + modulesToReload.size() + " module(s)");
 
       refresh();
       myModulesWatcher.onModulesReloaded(modulesToReload);
@@ -382,7 +389,7 @@ public class ClassLoaderManager implements CoreComponent {
       Collection<? extends ReloadableModule> unloadedModules = doUnloadModules(moduleRefs, monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
       Collection<ReloadableModule> loadedModules = new LinkedHashSet(preLoadModules(modulesToReload, monitor.subTask(1)));
-      LOG.info("Reloaded " + loadedModules.size() + " module(s)");
+      if (!silentMode) LOG.info("Reloaded " + loadedModules.size() + " module(s)");
 
       return loadedModules;
     } finally {

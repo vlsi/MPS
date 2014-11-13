@@ -20,9 +20,12 @@ import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
+  private final static Logger LOG = LogManager.getLogger(ReloadableModuleBase.class);
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
 
   protected ReloadableModuleBase(IFile file) {
@@ -66,6 +69,7 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Override
   public void reload() {
     if (!willLoad()) return;
+    LOG.info("Reloading module " + this);
     myManager.reloadModule(this);
   }
 
