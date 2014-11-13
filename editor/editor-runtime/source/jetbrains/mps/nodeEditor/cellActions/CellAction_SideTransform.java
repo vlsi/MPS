@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -111,16 +112,11 @@ public class CellAction_SideTransform extends AbstractCellAction {
     }
     context.flushEvents();
 
-    jetbrains.mps.openapi.editor.EditorComponent editorComponent = context.getEditorComponent();
-    EditorCell updatedAnchorCell = editorComponent.findCellWithId(node, anchorCellId);
-    assert
-        updatedAnchorCell != null :
-        "Can't find updated anchor cell. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId;
-    EditorCell sideTransformHintCell = STHintUtil.getSTHintCell(updatedAnchorCell);
+    EditorCell_STHint sideTransformHintCell = EditorCell_STHint.getSTHintCell(node, context.getEditorComponent());
     assert
         sideTransformHintCell != null :
         "STHint cell was not created. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId +
             ", tag: " + anchorTag;
-    editorComponent.changeSelection(sideTransformHintCell);
+    context.getEditorComponent().changeSelection(sideTransformHintCell);
   }
 }

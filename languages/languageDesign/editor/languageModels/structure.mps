@@ -28,6 +28,9 @@
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
@@ -45,6 +48,8 @@
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044/6054523464626875854" name="value" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509/7588428831955550663" name="role" />
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599698500" name="specializedLink" />
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
@@ -52,12 +57,15 @@
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083171729157" name="memberDataType" />
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083241965437" name="defaultMember" />
     <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745/6054523464627965081" name="concept" />
     <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
     <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
     <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582" name="member" />
     <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551/1169127546356" name="extends" />
     <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
     <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509/7588428831947959310" name="attributed" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509/7588428831955550186" name="multiple" />
   </debugInfo>
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
@@ -3961,6 +3969,44 @@
       <property role="asn4.1133920641626.1193676396447" value="CellModel" />
       <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Block" />
       <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="779128492853369165" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="SideTransformInfo" />
+      <property role="asn4.1133920641626.1193676396447" value="SideTransform" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+      <node concept="4jta.1071489288299" id="779128492853699361" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="side" />
+        <reference role="4jta.1071489288299.1082985295845" target="779128492853700076" resolveInfo="SideTransformSide" />
+      </node>
+      <node concept="4jta.1071489288299" id="779128492853934523" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="cellId" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="779128492853935960" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="anchorTag" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.2992811758677295509" id="779128492853459546" role="asn4.1133920641626.5169995583184591170" info="ng">
+        <property role="4jta.2992811758677295509.7588428831955550663" value="sideTransformInfo" />
+        <node concept="4jta.6054523464627964745" id="779128492853461210" role="4jta.2992811758677295509.7588428831947959310" info="ng">
+          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+        </node>
+        <node concept="4jta.6054523464626862044" id="779128492853462822" role="4jta.2992811758677295509.7588428831955550186" info="ng">
+          <property role="4jta.6054523464626862044.6054523464626875854" value="false" />
+        </node>
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="779128492853700076" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="SideTransform" />
+      <property role="asn4.1169194658468.1169194664001" value="SideTransformSide" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="779128492853700077" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="right" />
+      </node>
+      <node concept="4jta.1083171877298" id="779128492853702223" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="left" />
+        <property role="4jta.1083171877298.1083923523172" value="left" />
+      </node>
     </node>
   </contents>
 </model>

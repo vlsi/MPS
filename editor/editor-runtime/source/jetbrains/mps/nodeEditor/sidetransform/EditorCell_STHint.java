@@ -21,13 +21,13 @@ import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -60,6 +60,11 @@ public class EditorCell_STHint extends EditorCell_Constant {
   @NotNull
   private final CellSide mySide;
   private boolean myInstalled;
+
+  public static EditorCell_STHint getSTHintCell(SNode node, @NotNull EditorComponent editorComponent) {
+    EditorCell stHintCell = editorComponent.findCellWithId(node, CELL_ID);
+    return stHintCell instanceof EditorCell_STHint ? (EditorCell_STHint) stHintCell : null;
+  }
 
   public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, String sideTransformTag,
       CellInfo restoreSelectionCellInto) {
@@ -160,7 +165,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
       return;
     }
 
-    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
+    jetbrains.mps.nodeEditor.EditorComponent editorComponent = (jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent();
     EditorCell newlySelectedCell = myRestoreSelectionCellInfo.findCell(editorComponent);
     if (newlySelectedCell == null) return;
     editorComponent.changeSelection(newlySelectedCell);
@@ -231,18 +236,18 @@ public class EditorCell_STHint extends EditorCell_Constant {
     }
 
     @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
+    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(jetbrains.mps.nodeEditor.EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
-      return anchorCell != null ? STHintUtil.getSTHintCell(anchorCell) : super.findCell(editorComponent);
+      return anchorCell != null ? getSTHintCell(anchorCell.getSNode(), editorComponent) : super.findCell(editorComponent);
     }
 
     @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(EditorComponent editorComponent) {
+    public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(jetbrains.mps.nodeEditor.EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) {
         return super.findCell(editorComponent);
       }
-      EditorCell_Label rtHint = STHintUtil.getSTHintCell(anchorCell);
+      EditorCell_Label rtHint = getSTHintCell(anchorCell.getSNode(), editorComponent);
       return rtHint != null ? rtHint : (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
     }
   }

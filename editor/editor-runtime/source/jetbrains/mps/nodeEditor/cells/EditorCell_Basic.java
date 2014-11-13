@@ -30,13 +30,11 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -777,41 +775,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (node == null) {
       return null;
     }
-
-    EditorCell bigCell = getEditor().findNodeCell(node);
-    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
-    if (anchorId == null) {
-      // TODO: should never be null!..
-      if (bigCell != null && bigCell.getParent() != null) {
-        for (jetbrains.mps.openapi.editor.cells.EditorCell sibling : bigCell.getParent()) {
-          if (sibling instanceof EditorCell_STHint) {
-            return (EditorCell_STHint) sibling;
-          }
-        }
-      }
-    } else {
-      EditorCell anchorCell = getEditor().findCellWithId(node, anchorId);
-
-      if (anchorCell == null) {
-        return null;
-      }
-
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
-
-      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
-      if (nextSibling instanceof EditorCell_STHint) {
-        return (EditorCell_STHint) nextSibling;
-      }
-
-      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
-      if (prevSibling instanceof EditorCell_STHint) {
-        return (EditorCell_STHint) prevSibling;
-      }
-
-      return null;
-    }
-
-    return null;
+    return EditorCell_STHint.getSTHintCell(node, getEditorComponent());
   }
 
   @Override

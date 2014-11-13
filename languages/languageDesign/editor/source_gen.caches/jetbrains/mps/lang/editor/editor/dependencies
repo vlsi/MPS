@@ -1816,6 +1816,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectInEditorOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectPositionParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.SideTransformInfo_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubEditorCellModel_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeReferenceExpression_Editor" />
@@ -2673,6 +2674,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.SideTransformInfo_Editor" file="SideTransformInfo_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.attribute.AttributeKind" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

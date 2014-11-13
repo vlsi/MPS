@@ -128,6 +128,7 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
@@ -12511,6 +12512,11 @@
       <node concept="9wj7.1078939183254" id="730538219796139765" role="9wj7.1080736578640.1080736633877" info="sg">
         <reference role="9wj7.1078939183254.1078939183255" target="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
       </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="779128492854398965" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SideTransform" />
+      <reference role="9wj7.1166049232041.1166049300910" target="tpc2.779128492853369165" resolveInfo="SideTransformInfo" />
+      <node concept="9wj7.1149850725784" id="779128492854422646" role="9wj7.1080736578640.1080736633877" info="sg" />
     </node>
   </contents>
 </model>

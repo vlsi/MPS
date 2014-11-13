@@ -129,6 +129,9 @@
     <file name="CellKeyMap_ExecuteFunction_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMap_ExecuteFunction_BehaviorDescriptor" />
     </file>
+    <file name="SideTransformInfo_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.SideTransformInfo_BehaviorDescriptor" />
+    </file>
     <file name="CellKeyMapKeystroke_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_BehaviorDescriptor" />
     </file>
@@ -184,7 +187,7 @@
       <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.LastPositionAllowedStyleClassItem_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,476,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,478,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CellMenuPart_CellMenuComponent_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellMenuPart_CellMenuComponent_BehaviorDescriptor" />

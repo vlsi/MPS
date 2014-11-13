@@ -11,100 +11,95 @@ import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.nodeEditor.CellSide;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.editor.runtime.commands.EditorComputable;
-import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
 public class EditorCell_Empty extends EditorCell_Basic {
   private boolean myCaretVisible = false;
-  protected TextLine myTextLine = new TextLine("", this.getStyle(), false);
+  protected TextLine myTextLine = new TextLine("", getStyle(), false);
+
   public EditorCell_Empty(EditorContext c, SNode node) {
     super(c, node);
-    this.myTextLine.setCaretEnabled(true);
+    myTextLine.setCaretEnabled(true);
   }
+
   @Override
   protected void paintContent(Graphics g, ParentSettings parentSettings) {
-    this.myTextLine.setShowCaret(this.myCaretVisible && this.isWithinSelection() && this.getEditor().hasFocus());
-    this.myTextLine.paint(g, this.myX + this.myGapLeft, this.myY);
+    myTextLine.setShowCaret(myCaretVisible && isWithinSelection() && getEditor().hasFocus());
+    myTextLine.paint(g, myX + myGapLeft, myY);
   }
+
   @Override
   public void switchCaretVisible() {
-    this.myCaretVisible = !(this.myCaretVisible);
+    myCaretVisible = !(myCaretVisible);
   }
+
   @Override
   protected boolean isSelectionPainted() {
     return false;
   }
+
   @Override
   public int getAscent() {
-    return this.myTextLine.getAscent();
+    return myTextLine.getAscent();
   }
+
   @Override
   public int getDescent() {
-    return this.myTextLine.getDescent();
+    return myTextLine.getDescent();
   }
+
   @Override
   protected void relayoutImpl() {
-    if (this.isPunctuationLayout()) {
-      this.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
-      this.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
+    if (isPunctuationLayout()) {
+      getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+      getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
     }
-    this.myTextLine.relayout();
-    this.myHeight = this.myTextLine.getHeight();
-    this.myWidth = this.myTextLine.getWidth();
+    myTextLine.relayout();
+    myHeight = myTextLine.getHeight();
+    myWidth = myTextLine.getWidth();
   }
+
   @Override
-  protected boolean doProcessKeyTyped(KeyEvent p0, boolean p1) {
-    final EditorContext editorContext = this.getContext();
-    CellSide side = null;
-    if (!(UIUtil.isReallyTypedEvent(p0))) {
+  protected boolean doProcessKeyTyped(final KeyEvent event, boolean allowErrors) {
+    final EditorContext editorContext = getContext();
+    if (!(UIUtil.isReallyTypedEvent(event))) {
       return false;
     }
-    this.myCaretVisible = true;
-    final String symbol = "" + p0.getKeyChar();
-    if (this.isFirstCaretPosition()) {
-      side = CellSide.LEFT;
-    } else if (this.isLastCaretPosition()) {
-      side = CellSide.RIGHT;
+
+    myCaretVisible = true;
+    final CellActionType actionType;
+    if (isFirstCaretPosition()) {
+      actionType = CellActionType.LEFT_TRANSFORM;
+    } else if (isLastCaretPosition()) {
+      actionType = CellActionType.RIGHT_TRANSFORM;
+    } else {
+      return true;
     }
-    final CellSide fside = side;
-    EditorComputable<Boolean> transformCommand = new EditorComputable<Boolean>(editorContext) {
-      protected Boolean doCompute() {
-        if (fside == CellSide.LEFT) {
-          return EditorCell_Empty.this.applyLeftTransform(editorContext, EditorCell_Empty.this, symbol);
-        } else if (fside == CellSide.RIGHT) {
-          return EditorCell_Empty.this.applyRightTransform(editorContext, EditorCell_Empty.this, symbol);
-        } else {
-          return true;
+
+    editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
+      protected void doExecute() {
+        CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(EditorCell_Empty.this, actionType);
+        ltAction.execute(editorContext);
+        EditorCell_STHint stHintCell = EditorCell_STHint.getSTHintCell(getSNode(), getEditorComponent());
+        if (stHintCell != null) {
+          stHintCell.changeText("" + event.getKeyChar());
+          stHintCell.end();
         }
       }
-    };
+    });
+    return true;
+  }
 
-    editorContext.getRepository().getModelAccess().executeCommand(transformCommand);
-    return transformCommand.getResult();
-  }
-  private boolean applyLeftTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
-    CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);
-    ltAction.execute(editorContext);
-    STHintUtil.getSTHintCell(cellForNewNode).changeText(text);
-    STHintUtil.getSTHintCell(cellForNewNode).end();
-    return true;
-  }
-  private boolean applyRightTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
-    CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.RIGHT_TRANSFORM);
-    ltAction.execute(editorContext);
-    STHintUtil.getSTHintCell(cellForNewNode).changeText(text);
-    STHintUtil.getSTHintCell(cellForNewNode).end();
-    return true;
-  }
   @Override
   public boolean isLastCaretPosition() {
     return StyleAttributesUtil.isLastPositionAllowed(getStyle()) && !(StyleAttributesUtil.isFirstPositionAllowed(getStyle()));
   }
+
   @Override
   public boolean isFirstCaretPosition() {
     return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && !(StyleAttributesUtil.isLastPositionAllowed(getStyle()));
