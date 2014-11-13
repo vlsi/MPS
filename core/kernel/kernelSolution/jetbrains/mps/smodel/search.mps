@@ -2606,7 +2606,7 @@
               </node>
               <node concept="vg0i.1197027756228" id="4785871466714472368" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1202948039474" id="4785871466714472369" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetInstanceConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getInstanceConcept" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
                   <node concept="vg0i.1068498886296" id="3021153905120212486" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="4642948870877889276" resolveInfo="myConceptFqName" />
                   </node>
