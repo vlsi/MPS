@@ -94,9 +94,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    nodeRead();
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
+//    assertCanRead(); FIXME uncomment once we get rid of legacy code that keeps SNode (not pointers thereto) and accesses concept (e.g. fqn) without explicit model access
     return myConcept;
   }
 
