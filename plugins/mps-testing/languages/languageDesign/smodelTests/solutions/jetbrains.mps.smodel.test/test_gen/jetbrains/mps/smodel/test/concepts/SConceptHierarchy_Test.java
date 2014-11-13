@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.util.IterableUtil;
 
 @MPSLaunch
 public class SConceptHierarchy_Test extends BaseTransformationTest {
@@ -41,6 +43,11 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
       Assert.assertTrue(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(defaultIfaceConcept.value), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")));
       Assert.assertFalse(defaultIfaceConcept.value.equals(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")));
       Assert.assertFalse(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept").isSubConceptOf(defaultIfaceConcept.value));
+
+      Assert.assertTrue(defaultIfaceConcept.value instanceof SConcept);
+      Assert.assertTrue(((SConcept) defaultIfaceConcept.value).getSuperConcept().equals(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")));
+      Assert.assertTrue(IterableUtil.asCollection(((SConcept) defaultIfaceConcept.value).getSuperInterfaces()).size() == 1);
+      Assert.assertTrue(((SConcept) defaultIfaceConcept.value).getSuperInterfaces().iterator().next().equals(MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")));
     }
   }
 }
