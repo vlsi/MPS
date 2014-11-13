@@ -87,6 +87,7 @@
     <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

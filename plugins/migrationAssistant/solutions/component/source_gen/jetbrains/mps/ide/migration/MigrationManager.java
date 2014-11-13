@@ -5,7 +5,11 @@ package jetbrains.mps.ide.migration;
 
 public interface MigrationManager {
   public boolean isMigrationRequired();
+
+  public MigrationManager.MigrationState nextProjectStep();
+
   public MigrationManager.MigrationState nextStep();
+
   public static interface MigrationState {
   }
   public static interface Step extends MigrationManager.MigrationState {

@@ -22,5 +22,5 @@ public interface ProjectMigration {
 
   boolean shouldBeExecuted(Project p);
 
-  void perform(Project p);
+  void execute(Project p);
 }

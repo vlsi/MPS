@@ -19,14 +19,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ProjectsMigrationsRegistry {
-  private static ProjectsMigrationsRegistry ourInstance = new ProjectsMigrationsRegistry();
+public class ProjectMigrationsRegistry {
+  private static ProjectMigrationsRegistry ourInstance = new ProjectMigrationsRegistry();
 
-  public static ProjectsMigrationsRegistry getInstance() {
+  public static ProjectMigrationsRegistry getInstance() {
     return ourInstance;
   }
 
-  private ProjectsMigrationsRegistry() {
+  private ProjectMigrationsRegistry() {
   }
 
   private final List<ProjectMigration> myMigrations = new ArrayList<ProjectMigration>();
