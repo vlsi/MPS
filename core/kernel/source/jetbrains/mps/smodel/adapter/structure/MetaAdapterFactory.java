@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -36,53 +35,75 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public abstract class MetaAdapterFactory {
+  private static final ConcurrentMap<SLanguage, SLanguage> ourLanguageIds = new ConcurrentHashMap<SLanguage, SLanguage>();
+  private static final ConcurrentMap<SConcept, SConcept> ourConceptIds = new ConcurrentHashMap<SConcept, SConcept>();
+  private static final ConcurrentMap<SInterfaceConcept, SInterfaceConcept> ourInterfaceConceptIds =
+      new ConcurrentHashMap<SInterfaceConcept, SInterfaceConcept>();
+  private static final ConcurrentMap<SProperty, SProperty> ourPropertyIds = new ConcurrentHashMap<SProperty, SProperty>();
+  private static final ConcurrentMap<SReferenceLink, SReferenceLink> ourRefIds = new ConcurrentHashMap<SReferenceLink, SReferenceLink>();
+  private static final ConcurrentMap<SContainmentLink, SContainmentLink> ourLinkIds = new ConcurrentHashMap<SContainmentLink, SContainmentLink>();
+
   public static SLanguage getLanguage(SLanguageId id, String langName) {
-    return new SLanguageAdapterById(id, langName);
+    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
+    ourLanguageIds.putIfAbsent(l, l);
+    return ourLanguageIds.get(l);
   }
 
   public static SLanguage getLanguage(UUID lang, String langName) {
-    return new SLanguageAdapterById(MetaIdFactory.langId(lang), langName);
+    return getLanguage(MetaIdFactory.langId(lang), langName);
   }
 
   public static SConcept getConcept(SConceptId id, String conceptName) {
-    return new SConceptAdapterById(id, conceptName);
+    SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
+    ourConceptIds.putIfAbsent(c, c);
+    return ourConceptIds.get(c);
   }
 
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
-    return new SConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
-    return new SInterfaceConceptAdapterById(id, conceptName);
+    SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
+    ourInterfaceConceptIds.putIfAbsent(c, c);
+    return ourInterfaceConceptIds.get(c);
   }
 
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
-    return new SInterfaceConceptAdapterById(MetaIdFactory.conceptId(lang, concept), conceptName);
+    return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
   public static SProperty getProperty(SPropertyId id, String propName) {
-    return new SPropertyAdapterById(id, propName);
+    SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
+    ourPropertyIds.putIfAbsent(c, c);
+    return ourPropertyIds.get(c);
   }
 
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
-    return new SPropertyAdapterById(MetaIdFactory.propId(lang, concept, prop), propName);
+    return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
   }
 
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
-    return new SReferenceLinkAdapterById(id, refName);
+    SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
+    ourRefIds.putIfAbsent(c, c);
+    return ourRefIds.get(c);
   }
 
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
-    return new SReferenceLinkAdapterById(MetaIdFactory.refId(lang, concept, ref), refName);
+    return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
   }
 
-  public static SContainmentLink getContainmentLink(SContainmentLinkId linkId, String linkName) {
-    return new SContainmentLinkAdapterById(linkId, linkName);
+  public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
+    SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
+    ourLinkIds.putIfAbsent(c, c);
+    return ourLinkIds.get(c);
   }
 
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
-    return new SContainmentLinkAdapterById(MetaIdFactory.linkId(lang, concept, link), linkName);
+    return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
   }
 }
