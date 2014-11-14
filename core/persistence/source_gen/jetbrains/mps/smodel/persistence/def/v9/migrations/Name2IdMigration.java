@@ -5,8 +5,19 @@ package jetbrains.mps.smodel.persistence.def.v9.migrations;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceVersionAware;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-/*package*/ class Name2IdMigration implements ProjectMigration {
+public class Name2IdMigration implements ProjectMigration {
   public static final String EXECUTED_PROPERTY = "jetbrains.mps.name2id";
   @Override
   public String getDescription() {
@@ -19,5 +30,38 @@ import jetbrains.mps.migration.global.MigrationPropertiesManager;
   }
   @Override
   public void execute(Project p) {
+    Iterable<? extends SModule> modules = p.getModulesWithGenerators();
+    final ModelFactory defaultModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
+    // models: editable, persistence aware, in xml (default) persistence and of older version 
+    Iterable<PersistenceVersionAware> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).ofType(EditableSModel.class).ofType(PersistenceVersionAware.class).where(new IWhereFilter<PersistenceVersionAware>() {
+      public boolean accept(PersistenceVersionAware it) {
+        return it.getModelFactory() == defaultModelFactory && it.getPersistenceVersion() < 9;
+      }
+    });
+    Sequence.fromIterable(models).visitAll(new IVisitor<PersistenceVersionAware>() {
+      public void visit(PersistenceVersionAware it) {
+        it.load();
+      }
+    });
+
+    // do not migrate test refactoring models 
+    models = Sequence.fromIterable(models).subtract(Sequence.fromIterable(models).where(new IWhereFilter<PersistenceVersionAware>() {
+      public boolean accept(PersistenceVersionAware it) {
+        SModuleReference mr = it.getModule().getModuleReference();
+        return mr.equals(PersistenceFacade.getInstance().createModuleReference("343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("7bb4f305-7fb7-495b-be9c-5777cd6ab9d6(testRefactoringTargetLang)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("24106442-1955-413a-8c2b-cc6969a4b149(testRefactoring.sandbox)"));
+      }
+    }));
+
+    Sequence.fromIterable(models).visitAll(new IVisitor<PersistenceVersionAware>() {
+      public void visit(PersistenceVersionAware model) {
+        model.setPersistenceVersion(9);
+        ((EditableSModel) model).setChanged(true);
+        ((EditableSModel) model).save();
+      }
+    });
   }
 }

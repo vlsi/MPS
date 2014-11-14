@@ -4,17 +4,79 @@ package jetbrains.mps.smodel.persistence.def.v9.migrations;
 
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.migration.global.MigrationPropertiesManager;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /*package*/ class ModelRefMigration implements ProjectMigration {
+  public static final String EXECUTED_PROPERTY = "jetbrains.mps.modelRef";
   @Override
   public String getDescription() {
-    return null;
+    return "Add module to every model reference";
   }
   @Override
   public boolean shouldBeExecuted(Project p) {
-    return false;
+    String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(EXECUTED_PROPERTY);
+    return !("executed".equals(value));
   }
-  @Override
-  public void execute(Project p) {
+  public void execute(Project project) {
+    saveAll(project);
+    SModelReference.replaceModuleReferences = true;
+    saveAll(project);
+    SModelReference.replaceModuleReferences = false;
   }
+  private void saveAll(Project p) {
+    Iterable<? extends SModule> modules = p.getModulesWithGenerators();
+    List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
+      public boolean accept(EditableSModel it) {
+        return SModelStereotype.isUserModel(it);
+      }
+    }).toListSequence();
+
+    for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
+      for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
+        generator.updateModuleReferences();
+      }
+      language.updateSModelReferences();
+      language.save();
+    }
+
+    for (EditableSModel model : ListSequence.fromList(allModels)) {
+      if (model.isReadOnly()) {
+        continue;
+      }
+      try {
+        // ensure model is loaded 
+        model.load();
+        //  and force to save model 
+        model.setChanged(true);
+        if (model.isChanged()) {
+          model.save();
+        }
+      } catch (Exception ex) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Error re-saving model " + model.getModelName(), ex);
+        }
+      }
+    }
+  }
+  protected static Logger LOG = LogManager.getLogger(ModelRefMigration.class);
 }

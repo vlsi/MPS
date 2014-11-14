@@ -8,12 +8,14 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 
 public class PersistenceMigrations implements CoreComponent {
   private final ProjectMigration[] myMigrations = new ProjectMigration[]{new Name2IdMigration(), new ModelRefMigration()};
+
   @Override
   public void init() {
     for (ProjectMigration pm : myMigrations) {
       ProjectMigrationsRegistry.getInstance().addProjectMigration(pm);
     }
   }
+
   @Override
   public void dispose() {
     for (ProjectMigration pm : myMigrations) {
