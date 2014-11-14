@@ -27,8 +27,6 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import javax.swing.SwingUtilities;
-
 class AutoValidator {
   private final SRepository myRepository;
   private boolean mySuppressSelectionChanges = false;
@@ -78,19 +76,14 @@ class AutoValidator {
 
       final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = APICellAdapter.getCellInfo(editorCell);
-      SwingUtilities.invokeLater(new Runnable() {
+      myRepository.getModelAccess().executeCommand(new Runnable() {
         @Override
         public void run() {
-          myRepository.getModelAccess().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              if (wasInErrorState) {
-                validateErrorCell(cellInfo, editorComponent);
-              } else {
-                SideTransformInfoUtil.removeTransformInfo(node);
-              }
-            }
-          });
+          if (wasInErrorState) {
+            validateErrorCell(cellInfo, editorComponent);
+          } else {
+            SideTransformInfoUtil.removeTransformInfo(node);
+          }
         }
       });
     }
