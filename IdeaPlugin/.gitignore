@@ -1,2 +1,13 @@
-build.properties
 .idea/shelf
+.idea/workspace.xml
+availables.xml
+build
+build.properties
+mps-core/lib
+mps-core/languages
+mps-testing
+mps-vcs/lib
+mps-java/lib
+tests/blProject/.idea/workspace.xml
+tests/psiProject/.idea/workspace.xml
+tests/multiModulesProject/.idea/workspace.xml
