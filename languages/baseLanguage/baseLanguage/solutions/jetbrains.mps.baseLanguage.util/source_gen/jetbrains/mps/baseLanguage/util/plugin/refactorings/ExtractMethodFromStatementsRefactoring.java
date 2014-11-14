@@ -7,12 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefactoring {
   protected List<SNode> myStatements = new ArrayList<SNode>();
@@ -22,7 +22,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   }
   @Override
   protected SNode createMethodBody() {
-    SNode body = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList"));
+    SNode body = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")));
     this.modifyPartToExtract();
     ListSequence.fromList(SLinkOperations.getChildren(body, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addSequence(ListSequence.fromList((List<SNode>) CopyUtil.copy(this.myStatements)));
     return body;
@@ -32,7 +32,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode methodCall = ExtractMethodFromStatementsRefactoring.this.createMethodCall(match, methodDeclaration);
-        SNode callStatement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        SNode callStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
         SLinkOperations.setTarget(callStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), methodCall);
         List<SNode> statements = match.getNodes();
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
@@ -46,6 +46,6 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   }
   @Override
   public SNode getMethodType() {
-    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType")));
   }
 }

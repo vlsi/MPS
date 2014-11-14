@@ -48,25 +48,19 @@ public class ConceptDeclarationLookup {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        SModel structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-        if (structureModelDescriptor == null) return null;
-        SModel structureModel = structureModelDescriptor;
+        SModel strucModel = myLanguage.getStructureModelDescriptor();
+        if (strucModel == null) return null;
 
         //if not all the model is loaded, we try to look up the given concept only between root nodes first
         if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-          for (SNode root : structureModel.getRootNodes()) {
-            String name = getConceptName(root);
+          for (SNode root : strucModel.getRootNodes()) {
+            if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(root))) continue;
+
+            String name = root.getProperty(SNodeUtil.propertyName_INamedConcept_name);
             if (name == null) continue;
             myNameToConceptCache.putIfAbsent(name, root);
           }
           if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
-        }
-
-        //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(structureModel)) {
-          String name = getConceptName(node);
-          if (name == null) continue;
-          myNameToConceptCache.putIfAbsent(name, node);
         }
 
         SNode result = myNameToConceptCache.get(conceptName);
@@ -77,10 +71,5 @@ public class ConceptDeclarationLookup {
         return result;
       }
     });
-  }
-
-  private String getConceptName(SNode node) {
-    if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
-    return node.getProperty(SNodeUtil.propertyName_INamedConcept_name);
   }
 }

@@ -23,9 +23,7 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
@@ -49,12 +47,8 @@ public class IdHelper {
   }
 
   public static SConceptId getConceptId(SAbstractConcept c) {
-    if (c instanceof SConceptAdapterById) {
-      return ((SConceptAdapterById) c).getId();
-    } else if (c instanceof SInterfaceConceptAdapterById) {
-      return ((SInterfaceConceptAdapterById) c).getId();
-    } else if (c instanceof SInterfaceConceptDefaultAdapter) {
-      return getConceptId(((SInterfaceConceptDefaultAdapter) c).getInterfaceConcept());
+    if (c instanceof SAbstractConceptAdapterById) {
+      return ((SAbstractConceptAdapterById) c).getId();
     } else {
       org.jetbrains.mps.openapi.model.SNode dn = c.getDeclarationNode();
       if (dn == null) return null;

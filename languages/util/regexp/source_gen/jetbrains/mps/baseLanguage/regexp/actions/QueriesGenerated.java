@@ -82,7 +82,7 @@ public class QueriesGenerated {
     }
   }
   public static void nodeFactory_NodeSetup_RegexpUsingConstruction_7048923897762413189(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, 1174653387388l, "regexp"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), null));
+    SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, 1174653387388l, "regexp"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")), null));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SymbolClassPart_3551998361337009320(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -92,7 +92,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode literal = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), null);
+            SNode literal = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")), null);
             SPropertyOperations.set(literal, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character"), (pattern.startsWith("\\") ? pattern.substring(1) : pattern));
             return literal;
           }
@@ -121,7 +121,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode literal = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), null);
+            SNode literal = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement")), null);
             SPropertyOperations.set(literal, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, 3796137614137565243l, "text"), pattern);
             return literal;
           }
@@ -153,7 +153,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode literal = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1203415418648l, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"), null);
+            SNode literal = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1203415418648l, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp")), null);
             SPropertyOperations.set(literal, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1203415418648l, 1203415499835l, "code"), pattern.substring(2));
             return literal;
           }
@@ -178,7 +178,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), _context.getCurrentTargetNode());
+            SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")), _context.getCurrentTargetNode());
             SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (pattern.endsWith(":") ? pattern.substring(1, pattern.length() - 1) : ((pattern == null || pattern.length() == 0) ? "" : pattern.substring(1))));
             return node;
           }
@@ -204,7 +204,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode literal = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), null);
+            SNode literal = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")), null);
             SPropertyOperations.set(literal, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, 1174482761807l, "text"), pattern);
             return literal;
           }
@@ -232,7 +232,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode literal = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), null);
+            SNode literal = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp")), null);
             SPropertyOperations.set(literal, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482753837l, 1174482761807l, "text"), pattern.substring(1));
             return literal;
           }
@@ -260,7 +260,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode findMatchExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"));
+        SNode findMatchExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression")));
         SLinkOperations.setTarget(findMatchExpression, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, 6129327962763255289l, "inputExpression"), _context.getSourceNode());
         return findMatchExpression;
       }
@@ -280,7 +280,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode matchRegexpExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1179357154354l, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"));
+        SNode matchRegexpExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1179357154354l, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression")));
         SLinkOperations.setTarget(matchRegexpExpression, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1179357154354l, 1179357286898l, "inputExpression"), _context.getSourceNode());
         return matchRegexpExpression;
       }
@@ -300,7 +300,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174655989549l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"));
+        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174655989549l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression")));
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174655989549l, 1174656103019l, "expr"), _context.getSourceNode());
         return node;
       }
@@ -320,7 +320,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1175164405556l, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"));
+        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1175164405556l, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression")));
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1175164405556l, 1175164443297l, "expr"), _context.getSourceNode());
         return node;
       }
@@ -347,7 +347,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904166999l, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), null);
+        SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904166999l, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp")), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp"), _context.getSourceNode());
         {
@@ -382,7 +382,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904442594l, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), null);
+        SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904442594l, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp")), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp"), _context.getSourceNode());
         {
@@ -417,7 +417,7 @@ public class QueriesGenerated {
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode node = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904605806l, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), null);
+        SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904605806l, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp")), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp"), _context.getSourceNode());
         {
@@ -532,7 +532,7 @@ public class QueriesGenerated {
     }
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode pr = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
+        SNode pr = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
         SLinkOperations.setTarget(pr, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174491169200l, 1174491174779l, "expr"), _context.getSourceNode());
         return pr;
       }
@@ -576,7 +576,7 @@ public class QueriesGenerated {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newRegexp = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
-              SNode result = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
+              SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp")), null);
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
               SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left"), _context.getSourceNode());
               SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right"), newRegexp);
@@ -608,8 +608,8 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
-              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), null);
+              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp")), null);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")), null);
               SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, 1174909113141l, "match"), (item));
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
               SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left"), _context.getSourceNode());
@@ -646,10 +646,10 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode res = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
+              SNode res = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp")), null);
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), res);
               SLinkOperations.setTarget(res, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left"), _context.getSourceNode());
-              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174555732504l, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), null);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174555732504l, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp")), null);
               SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174555732504l, 1174555843709l, "symbolClass"), (item));
               SLinkOperations.setTarget(res, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right"), ref);
               return ref;
@@ -684,10 +684,10 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), null);
+              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174484562151l, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp")), null);
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
               SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485176897l, "left"), _context.getSourceNode());
-              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), null);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp")), null);
               SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, 1174662628918l, "regexp"), (item));
               SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right"), ref);
               return SLinkOperations.getTarget(seq, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485167097l, 1174485181039l, "right"));
@@ -723,7 +723,7 @@ public class QueriesGenerated {
           return substitute(newChild, lastPattern[0], editorContext);
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1220021842985l, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"));
+          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1220021842985l, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart")));
           SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1220021842985l, 1220356033934l, "left"), _context.getSourceNode());
           return node;
         }
@@ -749,7 +749,7 @@ public class QueriesGenerated {
           return substitute(newChild, lastPattern[0], editorContext);
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"));
+          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart")));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558315290l, "start"), SPropertyOperations.getString(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character")));
           return node;
         }
@@ -775,7 +775,7 @@ public class QueriesGenerated {
           return substitute(newChild, lastPattern[0], editorContext);
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"));
+          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart")));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174558301835l, 1174558317822l, "end"), SPropertyOperations.getString(_context.getSourceNode(), MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character")));
           return node;
         }

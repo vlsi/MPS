@@ -120,7 +120,7 @@ public class MoveLinkUp_Action extends BaseAction {
             return;
           }
           Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
-          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224240836180l, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")));
+          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1224240836180l, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))));
           ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
         }
       });

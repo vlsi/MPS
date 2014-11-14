@@ -32,7 +32,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
@@ -152,7 +152,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         getWriteLock().lock();
         try {
           clearRepositoryStateCaches();
-          r.run();
+          myWriteActionDispatcher.run(r);
         } finally {
           getWriteLock().unlock();
         }
@@ -230,12 +230,17 @@ public class WorkbenchModelAccess extends ModelAccess {
             ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
               @Override
               public void run() {
-                ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                final ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
                 progressIndicator.pushState();
                 getWriteLock().lock();
                 try {
                   clearRepositoryStateCaches();
-                  process.run(new ProgressMonitorAdapter(progressIndicator));
+                  myWriteActionDispatcher.run(new Runnable() {
+                    @Override
+                    public void run() {
+                      process.run(new ProgressMonitorAdapter(progressIndicator));
+                    }
+                  });
                 } finally {
                   getWriteLock().unlock();
                   progressIndicator.popState();
@@ -389,7 +394,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               clearRepositoryStateCaches();
-              return c.compute();
+              return myWriteActionDispatcher.compute(c);
             } finally {
               getWriteLock().unlock();
             }
@@ -456,7 +461,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               clearRepositoryStateCaches();
-              new CommandRunnable(r, project).run();
+              myWriteActionDispatcher.run(new CommandRunnable(r, project));
             } finally {
               getWriteLock().unlock();
             }
@@ -596,7 +601,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   //--------command events listening
 
-  private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
+  private List<CommandListener> myListeners = new ArrayList<CommandListener>();
   private final Object myListenersLock = new Object();
 
   private int myCommandLevel = 0;
@@ -621,14 +626,14 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void addCommandListener(ModelAccessListener l) {
+  public void addCommandListener(CommandListener l) {
     synchronized (myListenersLock) {
       myListeners.add(l);
     }
   }
 
   @Override
-  public void removeCommandListener(ModelAccessListener l) {
+  public void removeCommandListener(CommandListener l) {
     synchronized (myListenersLock) {
       myListeners.remove(l);
     }
@@ -637,12 +642,12 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   protected void onCommandStarted() {
     super.onCommandStarted();
-    ArrayList<ModelAccessListener> listeners;
+    ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
+      listeners = new ArrayList<CommandListener>(myListeners);
     }
 
-    for (ModelAccessListener l : listeners) {
+    for (CommandListener l : listeners) {
       try {
         l.commandStarted();
       } catch (Throwable t) {
@@ -653,11 +658,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   protected void onCommandFinished() {
-    ArrayList<ModelAccessListener> listeners;
+    ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
+      listeners = new ArrayList<CommandListener>(myListeners);
     }
-    for (ModelAccessListener l : listeners) {
+    for (CommandListener l : listeners) {
       try {
         l.commandFinished();
       } catch (Throwable t) {
@@ -692,7 +697,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     @Override
     public void run() {
-      runWriteAction(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
           incCommandLevel();
@@ -816,4 +821,5 @@ public class WorkbenchModelAccess extends ModelAccess {
       return (int) (this.alarmTimeMillis - ((DelayedInterrupt) that).alarmTimeMillis);
     }
   }
+
 }

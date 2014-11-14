@@ -352,8 +352,8 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean baseMappingRule_Condition_1237814500395(final BaseMappingRuleContext _context) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-      SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+      SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
       SNode formalType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
       if (formalType != null) {
         boolean b = MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), formalType) != 0;
@@ -456,7 +456,7 @@ public class QueriesGenerated {
     return MathTypeUtil.binaryOperationRequiresWidening(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1237814500380(final PropertyMacroContext _context) {
-    return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()}));
+    return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(_context.getNode()), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()}));
   }
   public static Object propertyMacro_GetPropertyValue_1237814500476(final PropertyMacroContext _context) {
     return MathTypeUtil.pickExplicitWidening(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"))), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"))));

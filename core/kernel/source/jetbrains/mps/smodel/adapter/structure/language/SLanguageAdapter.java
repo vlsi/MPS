@@ -4,12 +4,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -53,11 +49,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     // TODO rewrite using LanguageRuntime
     ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
     for (SNode root : LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes()) {
-      if (root.getConcept().getQualifiedName().equals(SNodeUtil.conceptName_ConceptDeclaration)) {
-        result.add(new SConceptAdapterById(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) root)), NameUtil.nodeFQName(root)));
-      } else if (root.getConcept().getQualifiedName().equals(SNodeUtil.conceptName_InterfaceConceptDeclaration)) {
-        result.add(new SInterfaceConceptAdapterById(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) root)), NameUtil.nodeFQName(root)));
-      }
+      result.add(MetaAdapterByDeclaration.getConcept(((jetbrains.mps.smodel.SNode) root)));
     }
     return result;
   }

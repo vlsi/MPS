@@ -106,7 +106,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     public BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1223387125302l, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), null));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1223387335081l, "query"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1223387125302l, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean")), null));
     }
     public String getMatchingText() {
       return "query";

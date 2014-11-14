@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class RequiredPlugins {
   private final List<SNode> myPlugins = ListSequence.fromList(new ArrayList<SNode>());
   public RequiredPlugins(SNode project, TemplateQueryContext genContext) {
     myContext = genContext;
-    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), false, new SConcept[]{})));
+    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), false, new SAbstractConcept[]{})));
     myRoot = project;
     myDependency = GenerationUtil.<SNode>getSessionSet(project, genContext, KEY);
   }

@@ -90,11 +90,11 @@ public class EditorParenthesisUtil {
     selectNode(context, expr, false);
   }
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
-    if (!(SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")))) {
+    if (!(SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike")))) {
       return root;
     }
 
-    SNode parRoot = SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
+    SNode parRoot = SNodeOperations.cast(root, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1742226163722651198l, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
     if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) != null) {
       return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}), rightmost);
     }

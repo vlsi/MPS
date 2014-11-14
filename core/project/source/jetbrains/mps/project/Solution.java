@@ -16,10 +16,10 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -31,6 +31,9 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
@@ -42,7 +45,8 @@ import java.util.Set;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends AbstractModule {
+public class Solution extends ReloadableModuleBase {
+  private static final Logger LOG = LogManager.getLogger(Solution.class);
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -86,11 +90,11 @@ public class Solution extends AbstractModule {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
   }
 
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     assertCanChange();
 
     mySolutionDescriptor = newDescriptor;
@@ -109,9 +113,6 @@ public class Solution extends AbstractModule {
     reloadAfterDescriptorChange();
     fireChanged();
 
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
     dependenciesChanged();
   }
 
@@ -150,8 +151,7 @@ public class Solution extends AbstractModule {
     for (String path : CommonPaths.getMPSPaths(classType)) {
       final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
       final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(path, modelRootDescriptors);
-      if(javaStubsModelRoot != null)
-        modelRootDescriptors.add(javaStubsModelRoot);
+      if (javaStubsModelRoot != null) modelRootDescriptors.add(javaStubsModelRoot);
       descriptor.getAdditionalJavaStubPaths().add(path);
     }
   }
@@ -185,5 +185,21 @@ public class Solution extends AbstractModule {
   @Deprecated
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
+  }
+
+  @Nullable
+  @Override
+  public ClassLoader getClassLoader() {
+    if (!willLoad()) {
+      LOG.warn("The solution " + this + " is asked for classloader. [Try changing solution kind in the properties dialog]");
+      return null;
+    }
+    return super.getClassLoader();
+  }
+
+  @Override
+  public boolean willLoad() {
+    // TODO mps facet from this [like IDEA plugin facet]
+    return getKind() != SolutionKind.NONE || getFacet(CustomClassLoadingFacet.class) != null;
   }
 }

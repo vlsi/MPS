@@ -6957,16 +6957,16 @@
       <node id="1408182855039793449" at="25,60,26,25" concept="2" />
       <node id="1408182855039793449" at="28,40,29,37" concept="7" />
       <node id="1408182855039793449" at="31,54,32,56" concept="2" />
-      <node id="1408182855039807370" at="34,75,35,220" concept="6" />
-      <node id="1408182855039807376" at="35,220,36,51" concept="2" />
+      <node id="1408182855039807370" at="34,75,35,262" concept="6" />
+      <node id="1408182855039807376" at="35,262,36,51" concept="2" />
       <node id="1408182855039807381" at="36,51,37,178" concept="2" />
       <node id="1408182855040663492" at="37,178,38,241" concept="2" />
       <node id="1408182855039793449" at="42,0,43,0" concept="3" trace="myNode" />
       <node id="1408182855039793449" at="43,53,44,25" concept="2" />
       <node id="1408182855039793449" at="46,40,47,36" concept="7" />
       <node id="1408182855039793449" at="49,54,50,56" concept="2" />
-      <node id="1408182855039814954" at="52,75,53,220" concept="6" />
-      <node id="1408182855039814960" at="53,220,54,51" concept="2" />
+      <node id="1408182855039814954" at="52,75,53,262" concept="6" />
+      <node id="1408182855039814960" at="53,262,54,51" concept="2" />
       <node id="1408182855039814965" at="54,51,55,177" concept="2" />
       <node id="1408182855040718965" at="55,177,56,242" concept="2" />
       <node id="1408182855039793449" at="25,0,28,0" concept="1" trace="RegexpSequenceByEnter_INSERT_BEFORE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -8397,11 +8397,11 @@
       <node id="3840684028956596921" at="20,0,21,0" concept="3" trace="myNode" />
       <node id="3840684028956596921" at="21,60,22,25" concept="2" />
       <node id="3840684028956596921" at="24,54,25,56" concept="2" />
-      <node id="3840684028956596925" at="27,75,28,218" concept="2" />
+      <node id="3840684028956596925" at="27,75,28,260" concept="2" />
       <node id="3840684028956596921" at="32,0,33,0" concept="3" trace="myNode" />
       <node id="3840684028956596921" at="33,63,34,25" concept="2" />
       <node id="3840684028956596921" at="36,54,37,56" concept="2" />
-      <node id="3840684028956596925" at="39,75,40,218" concept="2" />
+      <node id="3840684028956596925" at="39,75,40,260" concept="2" />
       <node id="3840684028956596921" at="21,0,24,0" concept="1" trace="MatchParensRegexp_removeName_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3840684028956596921" at="24,0,27,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3840684028956596921" at="27,0,30,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -8411,10 +8411,10 @@
       <node id="3840684028956596921" at="15,0,19,0" concept="9" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="3840684028956596921" at="21,60,22,25" />
       <scope id="3840684028956596921" at="24,54,25,56" />
-      <scope id="3840684028956596924" at="27,75,28,218" />
+      <scope id="3840684028956596924" at="27,75,28,260" />
       <scope id="3840684028956596921" at="33,63,34,25" />
       <scope id="3840684028956596921" at="36,54,37,56" />
-      <scope id="3840684028956596924" at="39,75,40,218" />
+      <scope id="3840684028956596924" at="39,75,40,260" />
       <scope id="3840684028956596921" at="15,95,17,130" />
       <scope id="3840684028956596921" at="21,0,24,0">
         <var name="node" id="3840684028956596921" />
@@ -8454,12 +8454,12 @@
       <node id="4759120547780522710" at="21,68,22,25" concept="2" />
       <node id="4759120547780522710" at="24,40,25,41" concept="7" />
       <node id="4759120547780522710" at="27,54,28,56" concept="2" />
-      <node id="4759120547781018328" at="30,75,31,231" concept="2" />
+      <node id="4759120547781018328" at="30,75,31,273" concept="2" />
       <node id="4759120547780522710" at="35,0,36,0" concept="3" trace="myNode" />
       <node id="4759120547780522710" at="36,71,37,25" concept="2" />
       <node id="4759120547780522710" at="39,40,40,41" concept="7" />
       <node id="4759120547780522710" at="42,54,43,56" concept="2" />
-      <node id="4759120547781018328" at="45,75,46,231" concept="2" />
+      <node id="4759120547781018328" at="45,75,46,273" concept="2" />
       <node id="4759120547780522710" at="21,0,24,0" concept="1" trace="NegativeSymbolClassRegexp_toPositive_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4759120547780522710" at="24,0,27,0" concept="5" trace="getDescriptionText#()Ljava/lang/String;" />
       <node id="4759120547780522710" at="27,0,30,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -8472,11 +8472,11 @@
       <scope id="4759120547780522710" at="21,68,22,25" />
       <scope id="4759120547780522710" at="24,40,25,41" />
       <scope id="4759120547780522710" at="27,54,28,56" />
-      <scope id="4759120547780522713" at="30,75,31,231" />
+      <scope id="4759120547780522713" at="30,75,31,273" />
       <scope id="4759120547780522710" at="36,71,37,25" />
       <scope id="4759120547780522710" at="39,40,40,41" />
       <scope id="4759120547780522710" at="42,54,43,56" />
-      <scope id="4759120547780522713" at="45,75,46,231" />
+      <scope id="4759120547780522713" at="45,75,46,273" />
       <scope id="4759120547780522710" at="15,95,17,146" />
       <scope id="4759120547780522710" at="21,0,24,0">
         <var name="node" id="4759120547780522710" />
@@ -8671,13 +8671,13 @@
       <node id="6129327962764883162" at="21,0,22,0" concept="3" trace="myNode" />
       <node id="6129327962764883162" at="22,67,23,25" concept="2" />
       <node id="6129327962764883162" at="25,54,26,56" concept="2" />
-      <node id="6129327962764883179" at="28,75,29,241" concept="6" />
-      <node id="6129327962764883190" at="29,241,30,333" concept="2" />
+      <node id="6129327962764883179" at="28,75,29,283" concept="6" />
+      <node id="6129327962764883190" at="29,283,30,333" concept="2" />
       <node id="6129327962764883162" at="34,0,35,0" concept="3" trace="myNode" />
       <node id="6129327962764883162" at="35,70,36,25" concept="2" />
       <node id="6129327962764883162" at="38,54,39,56" concept="2" />
-      <node id="6129327962764883179" at="41,75,42,241" concept="6" />
-      <node id="6129327962764883190" at="42,241,43,333" concept="2" />
+      <node id="6129327962764883179" at="41,75,42,283" concept="6" />
+      <node id="6129327962764883190" at="42,283,43,333" concept="2" />
       <node id="6129327962764883162" at="22,0,25,0" concept="1" trace="IntervalSymbolClassPart_removeRight_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6129327962764883162" at="25,0,28,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="6129327962764883162" at="35,0,38,0" concept="1" trace="IntervalSymbolClassPart_removeRight_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -8733,13 +8733,13 @@
       <node id="6129327962765122924" at="21,0,22,0" concept="3" trace="myNode" />
       <node id="6129327962765122924" at="22,66,23,25" concept="2" />
       <node id="6129327962765122924" at="25,54,26,56" concept="2" />
-      <node id="6129327962765122929" at="28,75,29,241" concept="6" />
-      <node id="6129327962765122935" at="29,241,30,331" concept="2" />
+      <node id="6129327962765122929" at="28,75,29,283" concept="6" />
+      <node id="6129327962765122935" at="29,283,30,331" concept="2" />
       <node id="6129327962765122924" at="34,0,35,0" concept="3" trace="myNode" />
       <node id="6129327962765122924" at="35,69,36,25" concept="2" />
       <node id="6129327962765122924" at="38,54,39,56" concept="2" />
-      <node id="6129327962765122929" at="41,75,42,241" concept="6" />
-      <node id="6129327962765122935" at="42,241,43,331" concept="2" />
+      <node id="6129327962765122929" at="41,75,42,283" concept="6" />
+      <node id="6129327962765122935" at="42,283,43,331" concept="2" />
       <node id="6129327962765122924" at="22,0,25,0" concept="1" trace="IntervalSymbolClassPart_removeLeft_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6129327962765122924" at="25,0,28,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="6129327962765122924" at="35,0,38,0" concept="1" trace="IntervalSymbolClassPart_removeLeft_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

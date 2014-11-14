@@ -62,7 +62,7 @@ public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
       return "Add @author Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode authorTag = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345530174l, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"), null);
+      SNode authorTag = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345530174l, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag")), null);
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 5349172909345532722l, "author"))).addElement(authorTag);
       BlockDocTagHelper.setFocus(editorContext, authorTag);
     }

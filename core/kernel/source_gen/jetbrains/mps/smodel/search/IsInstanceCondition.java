@@ -21,6 +21,6 @@ public class IsInstanceCondition implements Condition<SNode> {
   }
   @Override
   public boolean met(SNode node) {
-    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getInstanceConcept(myConceptFqName));
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myConceptFqName));
   }
 }

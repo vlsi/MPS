@@ -37,7 +37,7 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
     return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       sb.append("/");
     }
     sb.append(BuildMpsLayout_PluginDescriptor_Behavior.call_pluginXml_978600701690250198(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))));

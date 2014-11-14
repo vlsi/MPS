@@ -68,7 +68,7 @@ public class SwitchToDefaultPropertyImplementation_Intention implements Intentio
       return "Use Default Getter and Setter";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.replaceWithNewChild(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201372606839l, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"));
+      SNodeFactoryOperations.replaceWithNewChild(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201372606839l, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation")));
     }
     public IntentionDescriptor getDescriptor() {
       return SwitchToDefaultPropertyImplementation_Intention.this;

@@ -54,7 +54,7 @@ public class MpsTestsSuite extends Suite {
     // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
-      config = config.addLib(lib.key(), lib.value());
+      config = config.addLib(lib.value());
     }
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
       config = config.addMacro(macro.key(), macro.value());
@@ -105,7 +105,7 @@ public class MpsTestsSuite extends Suite {
       public void run() {
         for (SModule module : Sequence.fromIterable(contextProject.getModules())) {
           for (SModel model : Sequence.fromIterable(module.getModels())) {
-            for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
+            for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
               result.add(new DelegatingRunner(builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
             }
           }

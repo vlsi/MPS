@@ -49,7 +49,7 @@ public class NonMigratableUsagesFinder {
   public static boolean isExcluded(SNode nodeUsage) {
     SNode root = SNodeOperations.getContainingRoot(nodeUsage);
 
-    if ("FindNotMigratableLinks".equals(SPropertyOperations.getString(SNodeOperations.as(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+    if ("FindNotMigratableLinks".equals(SPropertyOperations.getString(SNodeOperations.as(root, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
       return true;
     }
     if (SNodeOperations.getNodeAncestor(nodeUsage, MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false) == ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "1213877306256"), MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))).findFirst(new IWhereFilter<SNode>() {
@@ -71,7 +71,7 @@ public class NonMigratableUsagesFinder {
       SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
 
       // sequence operations 
-      if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1151701983961l, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation")) && !(SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 2141797557972817928l, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation")))) {
+      if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1151701983961l, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation")) && !(SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getInterfaceConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 2141797557972817928l, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation")))) {
         return true;
       }
 
@@ -173,11 +173,11 @@ public class NonMigratableUsagesFinder {
       }
     }
 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
       // find expected type 
-      int index = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).indexOf(dotExpression);
+      int index = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).indexOf(dotExpression);
       if (index != -1) {
-        return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(index), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
+        return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(index), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
       }
     }
 
@@ -195,14 +195,14 @@ public class NonMigratableUsagesFinder {
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
-      SNode method = SNodeOperations.getNodeAncestor(dotExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
+      SNode method = SNodeOperations.getNodeAncestor(dotExpression, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
       if ((method != null)) {
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
       }
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
-      SNode method = SNodeOperations.getNodeAncestor(dotExpression, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
+      SNode method = SNodeOperations.getNodeAncestor(dotExpression, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1239354281271l, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false);
       if ((method != null)) {
         if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.getParent(dotExpression)) {
           return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});

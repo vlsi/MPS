@@ -103,7 +103,7 @@ public class GenTestWorker extends GeneratorWorker {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
     for (String jar : myWhatToDo.getLibraryJars()) {
-      config = config.addLib(jar, new File(jar));
+      config = config.addLib(new File(jar));
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
@@ -240,7 +240,7 @@ public class GenTestWorker extends GeneratorWorker {
     // load classes 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+        ClassLoaderManager.getInstance().reloadModules(go.getModules());
 
         // the following updates stub models that could change due to the compilation happened (webr, 3.0 migration case) 
         for (SModule m : MPSModuleRepository.getInstance().getModules()) {

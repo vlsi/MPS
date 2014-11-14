@@ -18,6 +18,7 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.project.Solution;
@@ -98,7 +99,7 @@ public class PluginUtil {
 
   @Nullable
   public static PluginContributor createPluginContributor(SModule module) {
-    if (ClassLoaderManager.getInstance().canLoad(module)) {
+    if (module instanceof ReloadableModule && ((ReloadableModule) module).willLoad()) {
       return new ModulePluginContributor(module);
     } else {
       return null;

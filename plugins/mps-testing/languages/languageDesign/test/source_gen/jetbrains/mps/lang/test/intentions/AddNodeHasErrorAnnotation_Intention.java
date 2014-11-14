@@ -75,9 +75,9 @@ public class AddNodeHasErrorAnnotation_Intention implements IntentionFactory {
       return "Add Node Has Error Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer"), null);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")), null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
-      SNode errorCheck = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"));
+      SNode errorCheck = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")));
       ListSequence.fromList(SLinkOperations.getChildren(newAnnotation, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).addElement(errorCheck);
       SelectionUtil.selectCell(editorContext, errorCheck, SelectionManager.LAST_EDITABLE_CELL);
     }

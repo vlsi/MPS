@@ -16,13 +16,13 @@ public class CellUtil {
   public CellUtil() {
   }
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
-    SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable"));
+    SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1224608834445l, "jetbrains.mps.lang.core.structure.IDeprecatable"));
     if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(deprecatable)), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }
   public static SNode getNodeToDelete(SNode node) {
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1221647093812l, "jetbrains.mps.lang.core.structure.IWrapper"))) {
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1221647093812l, "jetbrains.mps.lang.core.structure.IWrapper"))) {
       node = SNodeOperations.getParent(node);
     }
     return node;

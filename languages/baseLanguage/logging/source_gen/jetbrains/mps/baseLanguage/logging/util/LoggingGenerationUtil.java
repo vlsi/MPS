@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -34,7 +34,7 @@ public class LoggingGenerationUtil {
     return result;
   }
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
-    for (SNode logStatement : ListSequence.fromList(SNodeOperations.getNodeDescendants(contextNode, MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), false, new SConcept[]{}))) {
+    for (SNode logStatement : ListSequence.fromList(SNodeOperations.getNodeDescendants(contextNode, MetaAdapterFactory.getConcept(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), false, new SAbstractConcept[]{}))) {
       Scope scope = ScopeUtils.parentScope(logStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
 
       if (Sequence.fromIterable(scope.getAvailableElements(baseName)).where(new IWhereFilter<SNode>() {

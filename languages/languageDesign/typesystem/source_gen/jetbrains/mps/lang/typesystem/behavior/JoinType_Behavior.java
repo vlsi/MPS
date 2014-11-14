@@ -29,8 +29,8 @@ public class JoinType_Behavior {
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     SNode copy = SNodeOperations.copyNode(thisNode);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(copy, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).toListSequence()) {
-      if (SNodeOperations.isInstanceOf(arg, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
-        SNodeOperations.replaceWithAnother(arg, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(arg, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_eraseGenerics_5089784887112634594", new Object[]{}));
+      if (SNodeOperations.isInstanceOf(arg, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+        SNodeOperations.replaceWithAnother(arg, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(arg, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_eraseGenerics_5089784887112634594", new Object[]{}));
       }
     }
     return copy;

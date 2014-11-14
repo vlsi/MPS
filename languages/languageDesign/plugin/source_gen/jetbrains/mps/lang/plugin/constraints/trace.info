@@ -200,7 +200,7 @@
       </scope>
       <scope id="1213104860268" at="35,0,96,0" />
       <unit id="1239972259491" at="51,414,55,15" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$3" />
-      <unit id="1239971610519" at="79,179,83,13" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$4" />
+      <unit id="1239971610519" at="79,187,83,13" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$4" />
       <unit id="1213104860268" at="46,19,63,9" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$2" />
       <unit id="1213104860268" at="74,19,91,9" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$3" />
       <unit id="1213104860268" at="38,131,65,5" name="jetbrains.mps.lang.plugin.constraints.ModificationStatement_Constraints$1" />
@@ -217,7 +217,7 @@
       <node id="1213107435692" at="29,51,30,67" concept="2" />
       <node id="1213107435692" at="31,5,32,0" concept="9" />
       <node id="1213107435692" at="32,0,33,18" concept="7" />
-      <node id="1213107435695" at="35,148,36,428" concept="7" />
+      <node id="1213107435695" at="35,148,36,436" concept="7" />
       <node id="1213107435692" at="38,0,39,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="1213107435692" at="18,0,21,0" concept="1" trace="AddElementStatement_Constraints#()V" />
       <node id="1213107435692" at="28,0,31,5" concept="4" />
@@ -227,7 +227,7 @@
       <scope id="1213107435692" at="18,44,19,106" />
       <scope id="1213107435692" at="22,43,23,16" />
       <scope id="1213107435692" at="29,51,30,67" />
-      <scope id="1213107435694" at="35,148,36,428" />
+      <scope id="1213107435694" at="35,148,36,436" />
       <scope id="1213107435692" at="18,0,21,0" />
       <scope id="1213107435692" at="35,0,38,0">
         <var name="childConcept" id="1213107435692" />
@@ -645,7 +645,7 @@
       <node id="1227013116652" at="43,51,44,68" concept="2" />
       <node id="1227013116652" at="45,5,46,0" concept="9" />
       <node id="1227013116652" at="46,0,47,18" concept="7" />
-      <node id="1227013118718" at="49,148,50,428" concept="7" />
+      <node id="1227013118718" at="49,148,50,436" concept="7" />
       <node id="1227014510223" at="52,148,53,407" concept="7" />
       <node id="1227013116652" at="55,0,56,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="1227013116652" at="56,0,57,0" concept="10" trace="canBeParentBreakingPoint" />
@@ -663,7 +663,7 @@
       <scope id="1227013116652" at="29,51,30,67" />
       <scope id="1227013116652" at="36,44,37,16" />
       <scope id="1227013116652" at="43,51,44,68" />
-      <scope id="1227013118717" at="49,148,50,428" />
+      <scope id="1227013118717" at="49,148,50,436" />
       <scope id="1227014460148" at="52,148,53,407" />
       <scope id="1227013116652" at="18,0,21,0" />
       <scope id="1227013116652" at="49,0,52,0">

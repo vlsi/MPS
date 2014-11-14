@@ -31,7 +31,7 @@ public class RootTemplateAnnotator implements CoreComponent {
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
           if ((Language) check_epzavk_a0a0a0b0a0a0a0a0b(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorLanguage() && (Language) check_epzavk_a0a0a0b0a0a0a0a0b_0(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorParametersLanguage()) {
             if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null)) {
-              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
+              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))));
             }
           }
         }

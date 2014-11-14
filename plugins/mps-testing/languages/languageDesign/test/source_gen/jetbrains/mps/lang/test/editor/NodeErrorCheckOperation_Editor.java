@@ -101,7 +101,7 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4531408400484511853l, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference")));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 4531408400484511853l, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference"))));
       SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), parameterObject);
     }
     public boolean isReferentPresentation() {

@@ -11,6 +11,6 @@ public class ActionsUtil {
   public ActionsUtil() {
   }
   public static boolean isInstanceOfIType(SNode node) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1234971358450l, "jetbrains.mps.lang.core.structure.IType"));
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1234971358450l, "jetbrains.mps.lang.core.structure.IType"));
   }
 }

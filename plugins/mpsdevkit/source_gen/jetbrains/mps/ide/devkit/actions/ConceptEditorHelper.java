@@ -29,9 +29,9 @@ public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(SModel structureModel, SNode node) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode root : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(root), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")) && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"))) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(root), MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")) && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"))) {
         SNode candidate = (SNode) root;
-        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(candidate)), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(candidate)), MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }

@@ -16,7 +16,7 @@ import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -101,7 +101,7 @@ public class StubRefUtil {
     return isReferenceTo(SNodeOperations.getReference(creator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), PersistenceFacade.getInstance().createModelReference(creatorModel), PersistenceFacade.getInstance().createNodeId(creatorId));
   }
   public static void addRequiredImports(SModel model, SNode newNode) {
-    for (SReference ref : ListSequence.fromList(SNodeOperations.getNodeDescendants(newNode, null, true, new SConcept[]{})).translate(new ITranslator2<SNode, SReference>() {
+    for (SReference ref : ListSequence.fromList(SNodeOperations.getNodeDescendants(newNode, null, true, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode n) {
         return SNodeOperations.getReferences(n);
       }

@@ -27,11 +27,6 @@ public class TestLanguage extends Language {
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Language language = new TestLanguage(descriptor, null);
 
-    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-    if (registered == language) {
-      language.setLanguageDescriptor(descriptor, false);
-    }
-
-    return registered;
+    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
   }
 }

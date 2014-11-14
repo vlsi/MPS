@@ -18,6 +18,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.test.behavior.ScopesTest_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -73,7 +74,7 @@ public class AddScopeExpectedNodes_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(node));
       for (SNode avaliable : scope.getAvailableElements(null)) {
-        SNode expectedNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, "jetbrains.mps.lang.test.structure.ScopesExpectedNode"));
+        SNode expectedNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, "jetbrains.mps.lang.test.structure.ScopesExpectedNode")));
         SLinkOperations.setTarget(expectedNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, 4052780437578824735l, "ref"), avaliable);
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))).addElement(expectedNode);
       }

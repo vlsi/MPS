@@ -71,7 +71,7 @@ public class CreateActionAsPattern_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
-      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4413230749907733332l, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"));
+      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4413230749907733332l, "jetbrains.mps.lang.pattern.structure.ActionAsPattern")));
       SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern")), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, 1136720037780l, "varName"), "action_var_" + currentNode.getNodeId().toString());
     }
     public IntentionDescriptor getDescriptor() {

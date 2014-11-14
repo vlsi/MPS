@@ -14,8 +14,8 @@ public class XmlWhitespace_Behavior {
   }
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
-      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
+      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
       return SNodeOperations.isInstanceOf(leftContent, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace")) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;

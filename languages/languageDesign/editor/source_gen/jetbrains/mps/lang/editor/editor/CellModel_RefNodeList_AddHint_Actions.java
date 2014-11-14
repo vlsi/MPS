@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_RefNodeList_AddHint_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,7 +27,7 @@ public class CellModel_RefNodeList_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 7279578193766667846l, "addHints"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification")));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 7279578193766667846l, "addHints"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"))));
     }
   }
   public static class CellModel_RefNodeList_AddHint_Actions_INSERT_BEFORE extends AbstractCellAction {
@@ -38,7 +39,7 @@ public class CellModel_RefNodeList_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 7279578193766667846l, "addHints"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification")));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073390211982l, 7279578193766667846l, "addHints"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 4242538589859161874l, "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification"))));
     }
   }
 }

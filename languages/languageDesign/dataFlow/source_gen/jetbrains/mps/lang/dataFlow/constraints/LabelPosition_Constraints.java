@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -45,7 +45,7 @@ public class LabelPosition_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> labels = new ArrayList<SNode>();
             SNode builder = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), true, false);
-            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1207062474157l, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SConcept[]{})));
+            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1207062474157l, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SAbstractConcept[]{})));
             return labels;
           }
           @Override

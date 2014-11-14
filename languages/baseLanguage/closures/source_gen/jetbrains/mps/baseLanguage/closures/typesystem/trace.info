@@ -374,8 +374,8 @@
       <node id="2240912231949269595" at="79,77,80,216" concept="8" />
       <node id="2240912231949269595" at="80,216,81,66" concept="4" />
       <node id="2240912231949269595" at="81,66,82,145" concept="4" />
-      <node id="1214834359718" at="85,5,86,211" concept="8" />
-      <node id="7026901688661339079" at="86,211,87,256" concept="4" />
+      <node id="1214834359718" at="85,5,86,246" concept="8" />
+      <node id="7026901688661339079" at="86,246,87,256" concept="4" />
       <node id="1214834466805" at="88,225,89,250" concept="4" />
       <node id="2240912231949269602" at="92,7,93,75" concept="8" />
       <node id="2240912231949269602" at="93,75,94,214" concept="8" />
@@ -399,8 +399,8 @@
       <node id="6089229461614981793" at="126,54,127,56" concept="4" />
       <node id="2240912231949269595" at="127,56,128,166" concept="0" />
       <node id="2240912231949269595" at="127,56,128,166" concept="4" />
-      <node id="1214834359718" at="130,7,131,213" concept="8" />
-      <node id="7026901688661339079" at="131,213,132,260" concept="4" />
+      <node id="1214834359718" at="130,7,131,248" concept="8" />
+      <node id="7026901688661339079" at="131,248,132,260" concept="4" />
       <node id="1214834466805" at="133,227,134,252" concept="4" />
       <node id="2240912231949269602" at="136,232,137,150" concept="0" />
       <node id="2240912231949269602" at="136,232,137,150" concept="4" />
@@ -681,11 +681,11 @@
       <node id="3409985583786043394" at="48,82,49,136" concept="4" />
       <node id="3409985583786046051" at="49,136,50,0" concept="11" />
       <node id="3409985583786050007" at="51,197,52,196" concept="8" />
-      <node id="3409985583786051512" at="53,210,54,342" concept="4" />
+      <node id="3409985583786051512" at="53,219,54,351" concept="4" />
       <node id="1202741511689" at="55,11,56,59" concept="4" />
       <node id="3409985583786120664" at="57,9,58,0" concept="11" />
       <node id="3409985583786120863" at="58,0,59,190" concept="8" />
-      <node id="3409985583786122569" at="60,208,61,340" concept="4" />
+      <node id="3409985583786122569" at="60,217,61,349" concept="4" />
       <node id="1240235274483" at="62,9,63,133" concept="4" />
       <node id="1202742759568" at="65,5,66,22" concept="9" />
       <node id="1202212837508" at="68,46,69,65" concept="9" />
@@ -726,8 +726,8 @@
       <node id="1202212837508" at="33,0,68,0" concept="7" trace="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
       <scope id="1202212837508" at="31,54,31,54" />
       <scope id="4616312228468046976" at="39,40,40,368" />
-      <scope id="3409985583786050051" at="53,210,54,342" />
-      <scope id="3409985583786121038" at="60,208,61,340" />
+      <scope id="3409985583786050051" at="53,219,54,351" />
+      <scope id="3409985583786121038" at="60,217,61,349" />
       <scope id="1202212837508" at="68,46,69,65" />
       <scope id="1202212837508" at="77,27,78,16" />
       <scope id="1240235300016" at="88,33,89,203" />
@@ -1155,7 +1155,7 @@
       <node id="1221579075533" at="57,202,58,53" concept="4" />
       <node id="1221579075540" at="59,217,60,53" concept="4" />
       <node id="1228999908466" at="61,220,62,56" concept="4" />
-      <node id="1221579075551" at="63,425,64,54" concept="4" />
+      <node id="1221579075551" at="63,434,64,54" concept="4" />
       <node id="1221579075580" at="67,58,68,70" concept="8" />
       <node id="1221579075588" at="69,205,70,56" concept="4" />
       <node id="1228999965373" at="71,220,72,56" concept="4" />
@@ -1177,8 +1177,8 @@
       <node id="1237288028844" at="119,9,120,81" concept="8" />
       <node id="1237288342395" at="120,81,121,113" concept="4" />
       <node id="1237288605389" at="122,65,123,74" concept="8" />
-      <node id="1221579075661" at="126,434,127,66" concept="4" />
-      <node id="1237371422002" at="130,224,131,114" concept="4" />
+      <node id="1221579075661" at="126,443,127,66" concept="4" />
+      <node id="1237371422002" at="130,233,131,114" concept="4" />
       <node id="1221579075807" at="135,5,136,75" concept="8" />
       <node id="1221579075820" at="141,1725,142,36" concept="3" />
       <node id="1221579075842" at="144,54,145,36" concept="3" />
@@ -1461,7 +1461,7 @@
       <scope id="1221579075532" at="57,202,58,53" />
       <scope id="1228999475018" at="59,217,60,53" />
       <scope id="1228999896031" at="61,220,62,56" />
-      <scope id="1221579075550" at="63,425,64,54" />
+      <scope id="1221579075550" at="63,434,64,54" />
       <scope id="1221579075587" at="69,205,70,56" />
       <scope id="1228999942581" at="71,220,72,56" />
       <scope id="1228999966532" at="73,223,74,59" />
@@ -1474,8 +1474,8 @@
       <scope id="4741200083572704968" at="108,15,109,65" />
       <scope id="5492079551975491356" at="113,56,114,344" />
       <scope id="5492079551975491343" at="116,15,117,87" />
-      <scope id="1221579075660" at="126,434,127,66" />
-      <scope id="1237371422001" at="130,224,131,114" />
+      <scope id="1221579075660" at="126,443,127,66" />
+      <scope id="1237371422001" at="130,233,131,114" />
       <scope id="1221579075819" at="141,1725,142,36" />
       <scope id="1221579075841" at="144,54,145,36" />
       <scope id="2403854473132738529" at="149,1734,150,36" />
@@ -1802,7 +1802,7 @@
       <unit id="2403854473132723296" at="92,24,96,11" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$3" />
       <unit id="4741200083572704983" at="100,420,104,11" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$4" />
       <unit id="4741200083572704997" at="104,24,108,11" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$5" />
-      <unit id="5492079551975491355" at="112,448,116,11" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$1" />
+      <unit id="5492079551975491355" at="112,474,116,11" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$1" />
       <unit id="1221579075452" at="32,0,419,0" name="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule" />
     </file>
   </root>

@@ -6,11 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import java.util.List;
@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public final class CrossModelUtil {
   public SNode newEntry(ExportLabelContext labelContext, SNode exportLabel, SModel exports, SModel outputModel) {
-    SNode rv = SModelOperations.createNewNode(exports, null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, "jetbrains.mps.lang.generator.structure.ExportEntry"));
+    SNode rv = SModelOperations.createNewNode(exports, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, "jetbrains.mps.lang.generator.structure.ExportEntry")));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546942803148l, "outputModel"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ModelIdentity")), "call_create_9032177546942789358", new Object[]{exports, outputModel}));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575207l, "inputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getInput()}));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575209l, "outputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getOutput()}));

@@ -15,7 +15,7 @@ public class InfoStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
-    SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 7992060018732187441l, "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation"), null);
+    SNode newAnnotation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 7992060018732187441l, "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation")), null);
     AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), newAnnotation);
   }
   public static String virtual_getName_1597542831856389237(SNode thisNode) {

@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 
@@ -11,6 +12,6 @@ public class ConsoleType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 1594211126127774346l, "jetbrains.mps.execution.configurations.structure.ConsoleCreator"));
+    return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2515029821120661198l, -8934183642121722347l), 1594211126127774346l, "jetbrains.mps.execution.configurations.structure.ConsoleCreator")));
   }
 }

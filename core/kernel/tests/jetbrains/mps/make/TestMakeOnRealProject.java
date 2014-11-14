@@ -88,7 +88,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   }
 
   /**
-   * Compiles all solutinos in project and check that it is ok.
+   * Compiles all solutions in project and check that it is ok.
    */
   private void doSolutionsCompilation() {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();

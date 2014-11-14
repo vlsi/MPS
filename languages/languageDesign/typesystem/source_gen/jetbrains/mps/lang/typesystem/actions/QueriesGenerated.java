@@ -76,7 +76,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
-            SNode normalTypeClause = SNodeFactoryOperations.createNewNode(model, MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause"), null);
+            SNode normalTypeClause = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause")), null);
             SLinkOperations.setTarget(normalTypeClause, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, 1185788644032l, "normalType"), nodeToWrap);
             return normalTypeClause;
           }
@@ -119,7 +119,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode rule = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"), null);
+                SNode rule = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174663118805l, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")), null);
                 if ((item).equals("check typeof")) {
                   SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"), "" + (true));
                 }
@@ -166,7 +166,7 @@ public class QueriesGenerated {
                 return null;
               }
               SNodeOperations.replaceWithAnother(statement, result);
-              SNode left = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause"), null);
+              SNode left = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause")), null);
               SLinkOperations.setTarget(left, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, 1185788644032l, "normalType"), _context.getSourceNode());
               SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression"), left);
               return result;

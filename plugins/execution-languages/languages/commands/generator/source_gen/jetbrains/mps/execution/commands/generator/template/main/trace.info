@@ -17,11 +17,11 @@
   </root>
   <root nodeRef="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)/3445893456317717321">
     <file name="QueriesGenerated.java">
-      <node id="3445893456317757771" at="399,307,400,306" concept="5" />
+      <node id="3445893456317757771" at="399,315,400,306" concept="5" />
       <node id="3445893456317767989" at="401,102,402,255" concept="5" />
       <node id="3445893456317768083" at="404,49,405,275" concept="6" />
-      <node id="3445893456317912816" at="407,27,408,246" concept="5" />
-      <node id="3445893456317912825" at="408,246,409,398" concept="1" />
+      <node id="3445893456317912816" at="407,27,408,281" concept="5" />
+      <node id="3445893456317912825" at="408,281,409,398" concept="1" />
       <node id="3445893456317768092" at="409,398,410,328" concept="1" />
       <node id="3445893456317768105" at="533,113,534,63" concept="5" />
       <node id="3445893456317768105" at="534,63,535,30" concept="5" />
@@ -73,7 +73,7 @@
         <var name="parameter_1" id="3445893456317768105" />
         <var name="parameter_2" id="3445893456317768105" />
       </scope>
-      <scope id="3445893456317757741" at="399,307,412,13">
+      <scope id="3445893456317757741" at="399,315,412,13">
         <var name="calledDeclaration" id="3445893456317757772" />
       </scope>
       <scope id="3445893456317757727" at="398,244,413,11" />
@@ -474,7 +474,7 @@
       <unit id="865001690840233324" at="291,16,295,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$4" />
       <unit id="865001690840233336" at="295,24,299,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$5" />
       <unit id="865001690840233368" at="312,255,316,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$6" />
-      <unit id="701359002710702708" at="337,312,341,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$7" />
+      <unit id="701359002710702708" at="337,320,341,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$7" />
       <unit id="865001690840233548" at="341,34,345,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$8" />
     </file>
   </root>
@@ -725,7 +725,7 @@
         <var name="parameter_1" id="8980950851470008641" />
         <var name="parameter_2" id="8980950851470008641" />
       </scope>
-      <unit id="701359002710702687" at="358,312,362,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$9" />
+      <unit id="701359002710702687" at="358,320,362,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$9" />
       <unit id="8980950851470008758" at="362,34,366,5" name="jetbrains.mps.execution.commands.generator.template.main.QueriesGenerated$10" />
     </file>
   </root>

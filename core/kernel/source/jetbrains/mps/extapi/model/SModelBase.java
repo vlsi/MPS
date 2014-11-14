@@ -71,7 +71,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   @Override
   public SNode createNode(SConcept concept) {
-    return new jetbrains.mps.smodel.SNode(concept.getQualifiedName());
+    return new jetbrains.mps.smodel.SNode(concept);
   }
 
   public void attach(SRepository repo) {

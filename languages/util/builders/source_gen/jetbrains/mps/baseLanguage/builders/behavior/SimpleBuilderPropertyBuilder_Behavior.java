@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SimpleBuilderPropertyBuilder_Behavior {
   public static void init(SNode thisNode) {
@@ -25,10 +25,10 @@ public class SimpleBuilderPropertyBuilder_Behavior {
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
 
     SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217404511l, 5389689214217404513l, "declaration")), MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214216990954l, 5389689214217175694l, "set")));
-    for (SNode p : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217248368l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"), false, new SConcept[]{})) {
+    for (SNode p : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217248368l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"), false, new SAbstractConcept[]{})) {
       SNodeOperations.replaceWithAnother(p, SNodeOperations.copyNode(parentRef));
     }
-    for (SNode v : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217248394l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"), false, new SConcept[]{})) {
+    for (SNode v : SNodeOperations.getNodeDescendants(result, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217248394l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"), false, new SAbstractConcept[]{})) {
       SNodeOperations.replaceWithAnother(v, SNodeOperations.copyNode(childRef));
     }
     return result;

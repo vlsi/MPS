@@ -160,7 +160,7 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
+      <implementation-class>jetbrains.mps.project.ProjectLibraryManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
@@ -200,7 +200,7 @@
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
-    <projectConfigurable instance="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" id="project.options.prefs.page" nonDefaultProject="true"/>
+    <projectConfigurable displayName="Project Settings" instance="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" id="project.options.prefs.page" nonDefaultProject="true"/>
     <applicationConfigurable groupId="build" groupWeight="150" instance="jetbrains.mps.smodel.ModelValidationConfigurable" id="preferences.modelValidationSettings"/>
     <applicationConfigurable groupId="build" groupWeight="140" instance="jetbrains.mps.ide.generator.GenerationSettingsPreferencesPage" id="preferences.generationSettings"/>
   </extensions>

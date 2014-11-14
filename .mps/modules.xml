@@ -167,7 +167,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingInterpreted.data/jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" folder="platform.traceInfo" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/tests/jetbrains.mps.traceInfo.test.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.sandbox/jetbrains.mps.traceInfo.tracemacro.sandbox.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.testlang/jetbrains.mps.traceInfo.tracemacro.testlang.mpl" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" folder="core.aspects.typesystem" />
@@ -372,6 +371,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/traceinfo/jetbrains.mps.traceInfo.test.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-debugger/jetbrains.mps.debugger.core.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-platform/jetbrains.mps.ide.platform.msd" folder="workbench.platform" />

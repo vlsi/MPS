@@ -19,12 +19,14 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
@@ -47,14 +49,14 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
+  private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       unloadExtensionDescriptors(unloadedModules);
     }
 
     @Override
-    public void afterClassesLoaded(Set<SModule> loadedModules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       loadExtensionDescriptors(loadedModules);
     }
   };
@@ -77,7 +79,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myRepo.addRepositoryListener(myListener);
     }
     if (myClm != null) {
-      myClm.addClassesHandler(myHandler);
+      myClm.addClassesHandler(myClassesListener);
     }
     INSTANCE = this;
   }
@@ -86,14 +88,14 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   public void dispose() {
     INSTANCE = null;
     if (myClm != null) {
-      myClm.removeClassesHandler(myHandler);
+      myClm.removeClassesHandler(myClassesListener);
     }
     if (myRepo != null) {
       myRepo.removeRepositoryListener(myListener);
     }
   }
 
-  private void unloadExtensionDescriptors(Collection<SModule> unloadedModules) {
+  private void unloadExtensionDescriptors(Collection<? extends SModule> unloadedModules) {
     for (SModule module : unloadedModules) {
       final ExtensionDescriptor desc = myExtensionDescriptors.remove(module.getModuleName());
       if (desc != null) {
@@ -102,7 +104,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     }
   }
 
-  private void loadExtensionDescriptors(Collection<SModule> loadedModules) {
+  private void loadExtensionDescriptors(Collection<? extends SModule> loadedModules) {
     for (SModule module : loadedModules) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) {
@@ -192,12 +194,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private class MyModuleRepositoryAdapter extends SRepositoryListenerBase {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

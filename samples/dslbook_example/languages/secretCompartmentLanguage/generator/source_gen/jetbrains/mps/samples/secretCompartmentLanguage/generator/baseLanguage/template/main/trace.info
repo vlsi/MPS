@@ -22,7 +22,7 @@
       <node id="1197225150183" at="72,114,73,194" concept="1" />
       <node id="1197225505469" at="75,114,76,194" concept="1" />
       <node id="1197241785842" at="78,114,79,187" concept="0" />
-      <node id="1197241852666" at="79,187,80,265" concept="1" />
+      <node id="1197241852666" at="79,187,80,273" concept="1" />
       <scope id="1197167547635" at="24,106,25,225" />
       <scope id="1197225159987" at="27,106,28,193" />
       <scope id="1197225159996" at="30,106,31,193" />
@@ -35,7 +35,7 @@
       <scope id="1197239764839" at="69,102,70,195" />
       <scope id="1197225142619" at="72,114,73,194" />
       <scope id="1197225498375" at="75,114,76,194" />
-      <scope id="1197241595256" at="78,114,80,265" />
+      <scope id="1197241595256" at="78,114,80,273" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197239799208">

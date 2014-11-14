@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,7 +29,7 @@ public final class ReflectionUtil {
   }
 
   public static Class forName(SModule module, SNode classNode) {
-    if (!ClassLoaderManager.getInstance().canLoad(module)) {
+    if (!(module instanceof ReloadableModule && ((ReloadableModule) module).willLoad())) {
       throw new IllegalStateException("Module: " + module + "; class node: " + classNode);
     }
     String dottedName = classNode.getName();
@@ -39,16 +39,15 @@ public final class ReflectionUtil {
     }
     String className = JavaNameUtil.fqClassName(classNode, dollarName);
 
-    Class result = ClassLoaderManager.getInstance().getClass(module, className);
-    if (result != null) {
-      return result;
-    } else {
-      throw new RuntimeException(className);
+    try {
+      return ((ReloadableModule) module).getClass(className);
+    } catch (ClassNotFoundException e) {
+      throw new RuntimeException(e);
     }
   }
 
   public static Method getMethod(SModule module, SNode classNode, String methodName, Class[] parameterTypes) {
-    Class aClass = forName(module, classNode);
+    Class<?> aClass = forName(module, classNode);
     try {
       return aClass.getMethod(methodName, parameterTypes);
     } catch (NoSuchMethodException e) {

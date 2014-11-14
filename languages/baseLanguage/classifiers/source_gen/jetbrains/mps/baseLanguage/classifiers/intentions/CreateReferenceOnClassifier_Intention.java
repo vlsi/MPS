@@ -46,7 +46,7 @@ public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false) != null);
+    return (SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false), MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false) != null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590372(jetbrains.mps.baseLanguage.classifiers.intentions)", "1218968276327");
@@ -67,7 +67,7 @@ public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
       return "Create a Reference on Outer Classifier";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode outerConcept = SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false), MetaAdapterFactory.getConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false);
+      SNode outerConcept = SNodeOperations.getNodeAncestor(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false), MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), false, false);
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, 1218736638915l, "classifier"), outerConcept);
     }
     public IntentionDescriptor getDescriptor() {

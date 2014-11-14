@@ -75,7 +75,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
       EditorCell cell = editorContext.getSelectedCell();
       String linkRole = EditingUtil.getEditedLinkRole(cell);
       SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 7658393498702771296l, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"));
+      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 7658393498702771296l, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
     }
     public IntentionDescriptor getDescriptor() {
       return AddTestReferenceAnnotation_Intention.this;

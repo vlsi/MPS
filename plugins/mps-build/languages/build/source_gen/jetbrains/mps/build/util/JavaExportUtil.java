@@ -172,7 +172,7 @@ public class JavaExportUtil {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jar), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013425874l, "jetbrains.mps.build.structure.BuildSource_SingleFile"));
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jar), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013425874l, "jetbrains.mps.build.structure.BuildSource_SingleFile"));
     if (target == null) {
       return null;
     }
@@ -197,7 +197,7 @@ public class JavaExportUtil {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jarFolder), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531543l, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(jarFolder), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531543l, "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
     if (target == null) {
       return null;
     }

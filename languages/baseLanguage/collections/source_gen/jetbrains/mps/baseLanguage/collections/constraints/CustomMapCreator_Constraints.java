@@ -65,7 +65,7 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode expr = SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
-            return ((expr != null) ? CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201183863028l, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), "virtual_deriveType_1213877435747", new Object[]{expr})) : Sequence.fromIterable(Collections.<SNode>emptyList()));
+            return ((expr != null) ? CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201183863028l, "jetbrains.mps.baseLanguage.structure.TypeDerivable")), "virtual_deriveType_1213877435747", new Object[]{expr})) : Sequence.fromIterable(Collections.<SNode>emptyList()));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

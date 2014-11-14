@@ -19,27 +19,31 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LibraryInitializer implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
+
   private static LibraryInitializer INSTANCE;
 
   public static LibraryInitializer getInstance() {
     return INSTANCE;
   }
 
-  private Set<SLibrary> myLibraries = new HashSet<SLibrary>();
-  private Map<String, ClassLoader> myParentLoaders = new HashMap<String, ClassLoader>();
+  private Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
+  private Map<String, ClassLoader> myParentLoaders = new ConcurrentHashMap<String, ClassLoader>();
 
   @Override
   public void init() {
@@ -92,11 +96,11 @@ public class LibraryInitializer implements CoreComponent {
     return LibraryInitializer.class.getClassLoader();
   }
 
-  public void update(boolean refreshFiles) {
+  public void update(final boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
-    Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
-    Set<SLibrary> toLoad = new HashSet<SLibrary>();
+    final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
+    final Set<SLibrary> toLoad = new HashSet<SLibrary>();
     myParentLoaders.clear();
     for (LibraryContributor lc : myContributors) {
       for (LibDescriptor s : lc.getLibraries()) {
@@ -114,20 +118,29 @@ public class LibraryInitializer implements CoreComponent {
     }
     myLibraries.removeAll(toUnload);
 
-    // unload
-    for (SLibrary unloadLib : toUnload) {
-      unloadLib.dispose();
-    }
+    if (toUnload.size() + toLoad.size() == 0) return;
 
-    //load new
-    for (SLibrary loadLib : toLoad) {
-      loadLib.attach(refreshFiles);
-    }
+    if (toLoad.size() > 0) LOG.info("Loading " + toLoad.size() + " libraries");
+    if (toUnload.size() > 0) LOG.info("Unloading " + toUnload.size() + " libraries");
 
-    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ArrayList<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
+        ArrayList<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
+        Collections.sort(toUnloadList);
+        Collections.sort(toLoadList);
+        for (SLibrary unloadLib : toUnloadList) {
+          unloadLib.dispose();
+        }
+
+        for (SLibrary loadLib : toLoadList) {
+          loadLib.attach(refreshFiles);
+        }
+      }
+    });
 
     CleanupManager.getInstance().cleanup();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   //----------bootstrap modules
@@ -175,10 +188,12 @@ public class LibraryInitializer implements CoreComponent {
   private List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
 
   public void addContributor(LibraryContributor c) {
+    LOG.info("Adding libraries from " + c);
     myContributors.add(c);
   }
 
   public void removeContributor(LibraryContributor c) {
+    LOG.info("Removing libraries from " + c);
     myContributors.remove(c);
   }
 }

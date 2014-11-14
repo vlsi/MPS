@@ -4781,7 +4781,7 @@
               </node>
               <node concept="vg0i.1081236700937" id="9116864641331521654" role="vg0i.1068431474542.1068431790190" info="nn">
                 <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
+                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.6963130675032169262" resolveInfo="findConceptDeclaration" />
                 <node concept="vg0i.1197027756228" id="9116864641331521655" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="vg0i.1202948039474" id="9116864641331521656" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetQualifiedName()%cjava%dlang%dString" resolveInfo="getQualifiedName" />
@@ -5935,8 +5935,8 @@
                               <node concept="vg0i.1073239437375" id="3171885344607471118" role="vg0i.1081773326031.1081773367579" info="nn">
                                 <node concept="vg0i.1070534058343" id="3171885344607471119" role="vg0i.1081773326031.1081773367579" info="nn" />
                                 <node concept="vg0i.1081236700937" id="3171885344607471120" role="vg0i.1081773326031.1081773367580" info="nn">
-                                  <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
                                   <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
+                                  <reference role="vg0i.1204053956946.1068499141037" target="iwwu.6963130675032169262" resolveInfo="findConceptDeclaration" />
                                   <node concept="vg0i.1068498886296" id="3171885344607471121" role="vg0i.1204053956946.1068499141038" info="nn">
                                     <reference role="vg0i.1068498886296.1068581517664" target="3171885344607471054" resolveInfo="qualifiedName" />
                                   </node>

@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -123,13 +124,13 @@ public final class CopyUtil {
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;
 
-    jetbrains.mps.smodel.SNode result = new jetbrains.mps.smodel.SNode(node.getConcept().getQualifiedName());
+    jetbrains.mps.smodel.SNode result = new jetbrains.mps.smodel.SNode(node.getConcept());
     mapping.put(node, result);
     jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);
     for (SNode child : node.getChildren()) {
       if (!copyAttributes && AttributeOperations.isAttribute(child)) continue;
-      String role = child.getRoleInParent();
+      SContainmentLink role = child.getContainmentLink();
       assert role != null;
       result.addChild(role, clone(child, mapping, copyAttributes));
     }
@@ -159,22 +160,22 @@ public final class CopyUtil {
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
             SReference reference = new StaticReference(
-                statRef.getRole(),
+                statRef.getLink(),
                 outputNode,
                 statRef.getTargetSModelReference(),
                 statRef.getTargetNodeId(),
                 statRef.getResolveInfo());
-            outputNode.setReference(reference.getRole(), reference);
+            outputNode.setReference(reference.getLink(), reference);
           } else if (ref instanceof DynamicReference && cloneRefs) {
             DynamicReference dynRef = (DynamicReference) ref;
-            DynamicReference output = new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo());
+            DynamicReference output = new DynamicReference(dynRef.getLink(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo());
             output.setOrigin(dynRef.getOrigin());
-            outputNode.setReference(output.getRole(), output);
+            outputNode.setReference(output.getLink(), output);
           }
         } else if (mapping.containsKey(inputTargetNode)) {
-          outputNode.setReference(ref.getRole(), jetbrains.mps.smodel.SReference.create(ref.getRole(), outputNode, mapping.get(inputTargetNode)));
+          outputNode.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), outputNode, mapping.get(inputTargetNode)));
         } else {
-          outputNode.setReference(ref.getRole(), jetbrains.mps.smodel.SReference.create(ref.getRole(), outputNode, inputTargetNode));
+          outputNode.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), outputNode, inputTargetNode));
         }
       }
     }

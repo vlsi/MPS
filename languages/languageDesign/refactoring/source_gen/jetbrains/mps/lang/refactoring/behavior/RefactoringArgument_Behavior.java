@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class RefactoringArgument_Behavior {
@@ -20,7 +20,7 @@ public class RefactoringArgument_Behavior {
       return true;
     }
 
-    List<SNode> references = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(refactoring, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 1347577327951503400l, "updateModelBlock")), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 478744034994716100l, "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"), false, new SConcept[]{});
+    List<SNode> references = SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(refactoring, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 1347577327951503400l, "updateModelBlock")), MetaAdapterFactory.getInterfaceConcept(new UUID(4525410110408967646l, -8616490689189267646l), 478744034994716100l, "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"), false, new SAbstractConcept[]{});
     for (SNode reference : references) {
       for (SReference sreference : reference.getReferences()) {
         if (sreference.getTargetNode() == thisNode) {

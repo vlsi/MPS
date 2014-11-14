@@ -64,7 +64,7 @@ public class SurroundWithSynchronized_Intention implements IntentionFactory {
       return "Synchronized";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode synchronizedStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170075670744l, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), null);
+      SNode synchronizedStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170075670744l, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, synchronizedStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

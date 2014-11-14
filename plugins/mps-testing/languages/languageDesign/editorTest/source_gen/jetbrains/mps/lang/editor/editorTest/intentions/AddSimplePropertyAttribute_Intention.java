@@ -14,6 +14,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -62,7 +63,7 @@ public class AddSimplePropertyAttribute_Intention implements IntentionFactory {
       return "add simple property attribute";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "property"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 3195708693940868525l, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute")));
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "property"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-9083571638034871021l, -6862973283068073801l), 3195708693940868525l, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"))));
     }
     public IntentionDescriptor getDescriptor() {
       return AddSimplePropertyAttribute_Intention.this;

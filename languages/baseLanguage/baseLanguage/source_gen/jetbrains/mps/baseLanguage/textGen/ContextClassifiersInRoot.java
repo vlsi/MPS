@@ -38,7 +38,7 @@ public class ContextClassifiersInRoot {
   public Map<String, String> getContextClassifiers(SNode contextNode) {
     // only AnonymousClass has Classifier as reference 
     // todo: make it clearer 
-    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3425520165286454670l, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
+    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3425520165286454670l, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
       contextNode = SNodeOperations.getParent(contextNode);
     }
     if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {

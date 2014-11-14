@@ -24,7 +24,7 @@ public class DefaultPropertyImplementation2Custom {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")));
     }
   }
 }

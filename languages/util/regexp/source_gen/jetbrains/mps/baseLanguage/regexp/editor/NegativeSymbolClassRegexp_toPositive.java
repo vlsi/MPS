@@ -28,7 +28,7 @@ public class NegativeSymbolClassRegexp_toPositive {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554211468l, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"));
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554211468l, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp")));
     }
   }
   public static class NegativeSymbolClassRegexp_toPositive_BACKSPACE extends AbstractCellAction {
@@ -43,7 +43,7 @@ public class NegativeSymbolClassRegexp_toPositive {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554211468l, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"));
+      SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554211468l, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp")));
     }
   }
 }

@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class HierarchycalTable_Behavior {
   public static void init(SNode thisNode) {
     for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); i++) {
-      SNode dataCell = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell"));
+      SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
       SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, 2882388703616155301l, "value"), "h-" + i);
       ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 8506335436194701777l, 8506335436194701780l, "headers"))).addElement(dataCell);
     }

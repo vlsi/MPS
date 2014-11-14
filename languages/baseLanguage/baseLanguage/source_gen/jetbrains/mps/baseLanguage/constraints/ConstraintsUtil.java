@@ -17,7 +17,7 @@ public class ConstraintsUtil {
     if (!(isInsideOfClassifier(node))) {
       return false;
     }
-    return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
       }

@@ -505,7 +505,7 @@
       <node id="5253134957342020816" at="13,45,14,39" concept="16" />
       <node id="4642948870877889306" at="16,45,17,29" concept="3" />
       <node id="4642948870877889314" at="19,36,20,27" concept="10" />
-      <node id="4642948870877889322" at="23,34,24,110" concept="10" />
+      <node id="4642948870877889322" at="23,34,24,102" concept="10" />
       <node id="4642948870877889279" at="13,0,16,0" concept="1" trace="IsInstanceCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4642948870877889300" at="16,0,19,0" concept="1" trace="IsInstanceCondition#(Ljava/lang/String;)V" />
       <node id="4642948870877889310" at="19,0,22,0" concept="8" trace="getConceptFqName#()Ljava/lang/String;" />
@@ -513,7 +513,7 @@
       <scope id="4642948870877889284" at="13,45,14,39" />
       <scope id="4642948870877889305" at="16,45,17,29" />
       <scope id="4642948870877889313" at="19,36,20,27" />
-      <scope id="4642948870877889321" at="23,34,24,110" />
+      <scope id="4642948870877889321" at="23,34,24,102" />
       <scope id="4642948870877889279" at="13,0,16,0">
         <var name="concept" id="4642948870877889282" />
       </scope>

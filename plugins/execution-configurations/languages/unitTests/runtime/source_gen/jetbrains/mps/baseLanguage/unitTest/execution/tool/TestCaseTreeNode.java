@@ -23,7 +23,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     setUserObject(testCase);
     setToggleClickCount(-1);
     setNodeIdentifier(((SNodePointer) myTestCase.getNodePointer()).toString());
-    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     setAdditionalText(SModelStereotype.withoutStereotype(myTestCase.getNodePointer().getModelReference().getModelName()));
   }
   public String getClassName() {

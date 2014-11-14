@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,7 +22,7 @@ public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonType
   public check_TemplateDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode td, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(td, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")) != null) && ListSequence.fromList(SNodeOperations.getNodeDescendants(td, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SConcept[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getNodeDescendants(td, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 155087542027447621l, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept"), false, new SConcept[]{})).isEmpty()) {
+    if ((SLinkOperations.getTarget(td, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")) != null) && ListSequence.fromList(SNodeOperations.getNodeDescendants(td, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SAbstractConcept[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getNodeDescendants(td, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 155087542027447621l, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept"), false, new SAbstractConcept[]{})).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(td, "No template fragments found", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "7952422520064723850", null, errorTarget);

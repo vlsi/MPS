@@ -42,9 +42,9 @@ public class SingleLineCommentActions {
         return;
       }
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).last() == selectedPart) {
-        SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), null));
+        SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement")), null));
       } else {
-        SNodeOperations.insertNextSiblingChild(selectedPart, SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"), null));
+        SNodeOperations.insertNextSiblingChild(selectedPart, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart")), null));
       }
     }
   }

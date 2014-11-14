@@ -31,7 +31,7 @@ public class BuildLayout_Folder_Behavior {
     helper.locations().put(thisNode, folderLocation);
     helper.contentLocations().put(thisNode, folderLocation);
     for (SNode ic : Sequence.fromIterable(BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(thisNode))) {
-      SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
+      SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
       if ((node != null)) {
         // note: if node is imported directly - do not override its original location 
         if (!(helper.locations().containsKey(node))) {

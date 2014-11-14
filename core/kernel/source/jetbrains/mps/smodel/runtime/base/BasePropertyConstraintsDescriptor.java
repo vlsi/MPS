@@ -20,11 +20,14 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -163,11 +166,19 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     //this line is just to get old compiled code not to get into infinite recursion.
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
-    if (getterDescriptor == this) return node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
-        getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
+    if (getterDescriptor == this) {
+      PropertyDescriptor pd = getConceptDescriptor().getPropertyDescriptor(myProperty);
+      return node.getProperty(MetaAdapterFactory.getProperty(myProperty, pd.getName()));
+    }
 
-    return getterDescriptor != null ? getterDescriptor.getValue(node) : node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
-        getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
+    if (getterDescriptor!=null) return getterDescriptor.getValue(node);
+
+    PropertyDescriptor pd = getConceptDescriptor().getPropertyDescriptor(myProperty);
+    return node.getProperty(MetaAdapterFactory.getProperty(myProperty, pd.getName()));
+  }
+
+  private ConceptDescriptor getConceptDescriptor() {
+    return ConceptRegistry.getInstance().getConceptDescriptor(getContainer().getConceptId());
   }
 
   @Override
@@ -176,16 +187,16 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
     if (setterDescriptor == this) {
-      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
-          getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
+      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
+      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
       return;
     }
 
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value);
     } else {
-      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
-          getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
+      String name = getConceptDescriptor().getPropertyDescriptor(getProperty()).getName();
+      node.setProperty(MetaAdapterFactory.getProperty(getProperty(), name), value);
     }
   }
 

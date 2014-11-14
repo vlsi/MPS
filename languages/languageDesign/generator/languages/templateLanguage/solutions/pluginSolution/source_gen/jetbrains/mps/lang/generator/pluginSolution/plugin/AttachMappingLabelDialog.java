@@ -107,7 +107,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
           return;
         }
         // create new MAP_SRC macro 
-        SNode newMacro = SNodeFactoryOperations.addNewAttribute(AttachMappingLabelDialog.this.myTemplateNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"));
+        SNode newMacro = SNodeFactoryOperations.addNewAttribute(AttachMappingLabelDialog.this.myTemplateNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")));
         SLinkOperations.setTarget(newMacro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel"), mappingLabel);
       }
     });

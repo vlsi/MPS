@@ -5,6 +5,7 @@ package jetbrains.mps.persistence.xml;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Document;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -24,7 +25,6 @@ import org.jdom.CDATA;
 import org.jdom.Text;
 import org.jdom.EntityRef;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -32,16 +32,16 @@ public class XmlConverter {
 
   public static SNode convertDocument(String name, Document document) {
     // TODO replace dom-based implementation with a good XML parser 
-    SNode file = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, "jetbrains.mps.core.xml.structure.XmlFile"));
+    SNode file = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, "jetbrains.mps.core.xml.structure.XmlFile")));
     SPropertyOperations.set(file, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
-    SLinkOperations.setNewChild(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document"), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, "jetbrains.mps.core.xml.structure.XmlDocument"));
+    SLinkOperations.setNewChild(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, "jetbrains.mps.core.xml.structure.XmlDocument")));
     SLinkOperations.setTarget(SLinkOperations.getTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document")), MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, 6666499814681299055l, "rootElement"), convertElement(document.getRootElement()));
     ((jetbrains.mps.smodel.SNode) file).setId(SNodeId.fromString("~" + name));
     return file;
   }
 
   private static SNode convertElement(Element elem) {
-    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement"));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement")));
     String namespacePrefix = elem.getNamespacePrefix();
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415862l, "tagName"), ((namespacePrefix == null || namespacePrefix.length() == 0) ? elem.getName() : namespacePrefix + ":" + elem.getName()));
     for (Attribute a : ListSequence.fromList((List<Attribute>) elem.getAttributes())) {
@@ -69,7 +69,7 @@ public class XmlConverter {
       return Sequence.<SNode>singleton(convertElement((Element) c));
     } else if (c instanceof Comment) {
       String commentText = ((Comment) c).getText();
-      SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment"));
+      SNode res = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment")));
       ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"))).addSequence(Sequence.fromIterable(Sequence.fromArray(commentText.split("\r?\n"))).select(new ISelector<String, SNode>() {
         public SNode select(String it) {
           return createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4(it);
@@ -216,14 +216,14 @@ public class XmlConverter {
   }
 
   private static SNode convertAttribute(Attribute elem) {
-    SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute"));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, "jetbrains.mps.core.xml.structure.XmlAttribute")));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), elem.getName());
     ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).addSequence(Sequence.fromIterable(convertAttributeText(elem.getValue())));
     return result;
   }
 
   public static SNode newDocument(String name) {
-    SNode file = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, "jetbrains.mps.core.xml.structure.XmlFile"));
+    SNode file = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, "jetbrains.mps.core.xml.structure.XmlFile")));
     SPropertyOperations.set(file, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
     SLinkOperations.setTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document"), createXmlDocument_h7fa2c_a0a2a11(name));
     return file;

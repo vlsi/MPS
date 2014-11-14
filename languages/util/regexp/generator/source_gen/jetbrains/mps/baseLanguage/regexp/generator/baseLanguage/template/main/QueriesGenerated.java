@@ -23,7 +23,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -32,7 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_2588298302277788537(final BaseMappingRuleContext _context) {
-    SNode ruc = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false, false);
+    SNode ruc = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false, false);
     return SNodeOperations.isInstanceOf(ruc, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174655989549l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression")) || SNodeOperations.isInstanceOf(ruc, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1222260556146l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation"));
   }
   public static boolean baseMappingRule_Condition_1222259398301(final BaseMappingRuleContext _context) {
@@ -74,11 +74,11 @@ public class QueriesGenerated {
     return result;
   }
   public static Object propertyMacro_GetPropertyValue_1174655313358(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_pattern_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1174655168104(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_matcher_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1174658262046(final PropertyMacroContext _context) {
@@ -92,19 +92,19 @@ public class QueriesGenerated {
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
   public static Object propertyMacro_GetPropertyValue_1175155526348(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_pattern_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1175155558088(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_matcher_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1175169642723(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_pattern_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1175169648262(final PropertyMacroContext _context) {
-    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
+    List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false);
     return "_matcher_" + ListSequence.fromList(nodes).count();
   }
   public static Object propertyMacro_GetPropertyValue_1175170026397(final PropertyMacroContext _context) {
@@ -249,7 +249,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
   }
   public static Iterable<SNode> sourceNodesQuery_7048923897763033580(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Flags.REGEXP_NEED_VAR.isFlagged(it);
       }

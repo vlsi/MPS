@@ -29,56 +29,43 @@ import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Alex Pyshkin on 2/20/14.
- */
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
   private static final String TEST_PROJECT = null;
-  private static final File SOURCE_ZIP = new File("testbench/modules/testClassloading.zip");
-  private static final File TEMP_DIR = new File(PathManager.getHomePath(), "TEST_CLASS_LOADING_DESCRIPTOR_CHANGED");
+  private static final File PROJECT_PATH = new File("testbench/modules/testClassLoading");
 
   /**
-   *  We have languages L1 and L2. They have generators G1 and G2, correspondingly. G1 has a dependency on L2 and G2.
-   *  The test asserts, that after reloading file descriptor of the language L2 we are still able to get the QueriesGenerated
-   *  class from the generators G1 and G2.
+   * We have languages L1 and L2. They have generators G1 and G2, correspondingly. G1 has a dependency on L2 and G2.
+   * The test asserts, that after reloading file descriptor of the language L2 we are still able to get the QueriesGenerated
+   * class from the generators G1 and G2.
    */
   @Test
   public void testClassLoadingDescriptorChanged() {
-    boolean result = ProjectTestsSupport.testOnProjectCopy(SOURCE_ZIP, TEMP_DIR, TEST_PROJECT, new ProjectRunnable() {
+    final Project project = openProject(PROJECT_PATH);
+    final Language language1 = ProjectTestsSupport.getLanguage("L1");
+    assert language1 != null;
+    final Language language2 = ProjectTestsSupport.getLanguage("L2");
+    assert language2 != null;
+    Generator generator1 = language1.getGenerators().iterator().next();
+    performCheck(generator1);
+    reloadAfterDescriptorChange(language2);
+    generator1 = language1.getGenerators().iterator().next();
+    performCheck(generator1);
+    disposeProject(project);
+  }
+
+  private void reloadAfterDescriptorChange(final Language language2) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
-      public boolean execute(final Project project) {
-        final Language language1 = ProjectTestsSupport.getLanguage("L1");
-        assert language1 != null;
-        final Language language2 = ProjectTestsSupport.getLanguage("L2");
-        assert language2 != null;
-
-        reloadAfterDescriptorChange(language2);
-
-        Generator generator1 = language1.getGenerators().iterator().next();
-        assert generator1 != null;
-        Generator generator2 = language2.getGenerators().iterator().next();
-        assert generator2 != null;
-// Temporary HACK for MPS 3.1: LibraryInitializer.getInstance().update() moved to MPSProject.disposeComponent()
-//        performCheck(generator1);
-        return true;
-      }
-
-      private void reloadAfterDescriptorChange(final Language language2) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            language2.reloadAfterDescriptorChange();
-          }
-        });
-      }
-
-      private void performCheck(Generator generator1) {
-        Class aClass = ClassLoaderManager.getInstance().getClass(generator1, "L1.generator.template.main.QueriesGenerated");
-        Class aClass2 = ClassLoaderManager.getInstance().getClass(generator1, "L2.generator.template.main.QueriesGenerated");
-        assertTrue(aClass != null);
-        assertTrue(aClass2 != null);
+      public void run() {
+        language2.reloadAfterDescriptorChange();
       }
     });
-    assertTrue(result);
+  }
+
+  private void performCheck(Generator generator1) {
+    Class aClass = ClassLoaderManager.getInstance().getClass(generator1, "L1.generator.template.main.QueriesGenerated");
+    Class aClass2 = ClassLoaderManager.getInstance().getClass(generator1, "L2.generator.template.main.QueriesGenerated");
+    assertTrue(aClass != null);
+    assertTrue(aClass2 != null);
   }
 }

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,7 +31,7 @@ public class RoutineUniqueness_NonTypesystemRule extends AbstractNonTypesystemRu
     Iterable<SNode> defs;
     SNode parentScript = SNodeOperations.getNodeAncestor(routineDefinition, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559110l, "jetbrains.mps.samples.Kaja.structure.Script"), false, false);
     if (parentScript != null) {
-      defs = ListSequence.fromList(SNodeOperations.getNodeDescendants(parentScript, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700857l, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), false, new SConcept[]{})).where(new IWhereFilter<SNode>() {
+      defs = ListSequence.fromList(SNodeOperations.getNodeDescendants(parentScript, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700857l, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(routineDefinition, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }

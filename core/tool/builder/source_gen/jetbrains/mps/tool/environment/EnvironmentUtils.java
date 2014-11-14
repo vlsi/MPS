@@ -13,9 +13,10 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.common.util.CanonicalPath;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
+import java.util.List;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class EnvironmentUtils {
   private EnvironmentUtils() {
@@ -36,7 +37,7 @@ public class EnvironmentUtils {
       setPluginPath();
       // Value of this property is comma-separated list of plugin IDs intended to load by platform 
       if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
+        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.getPlugins(), ","));
       }
     }
   }
@@ -75,18 +76,14 @@ public class EnvironmentUtils {
     return new MapPathMacrosProvider(realMacros);
   }
 
-  public static SetLibraryContributor createLibContributor(boolean loadBootstrapLibs, Map<String, File> libs) {
-    Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
-    if (loadBootstrapLibs) {
-      for (String bpath : PathManager.getBootstrapPaths()) {
-        libraryPaths.add(new LibraryContributor.LibDescriptor(bpath, null));
-      }
-      libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));
+  public static SetLibraryContributor createLibContributor(List<File> libs) {
+    Set<LibraryContributor.LibDescriptor> libraryPaths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
+    for (File libFile : libs) {
+      libraryPaths.add(new LibraryContributor.LibDescriptor(libFile.getAbsolutePath(), null));
     }
+
+    // TODO remove that (all plugins load -- no need) 
     libraryPaths.addAll(PathManager.getExtensionsPaths());
-    for (String libName : libs.keySet()) {
-      libraryPaths.add(new LibraryContributor.LibDescriptor(libs.get(libName).getAbsolutePath(), null));
-    }
     return new SetLibraryContributor(libraryPaths);
   }
   private static boolean isEmptyString(String str) {

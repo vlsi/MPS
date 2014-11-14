@@ -36,7 +36,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060213", 0, null);
                   typeCheckingContext.createLessThanInequality((SNode) SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode) typeCheckingContext.getRepresentative(T_typevar_5359814223490060193), false, true, _info_12389875345);
                 }
-                if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(matrixType), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
+                if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(matrixType), MetaAdapterFactory.getInterfaceConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
                   {
                     SNode _nodeToCheck_1029348928467 = op;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060186", 0, null);
@@ -48,7 +48,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                     IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1418611629042457277l, 1418611629042470806l, "matrix")), "Left side of the equation must have matrix type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060240", null, errorTarget);
                   }
                 }
-                if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(vectorType), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
+                if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(vectorType), MetaAdapterFactory.getInterfaceConcept(new UUID(3676340747305173022l, -6911132873973321185l), 5853558151363197539l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"))) {
                   {
                     SNode _nodeToCheck_1029348928467 = op;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060227", 0, null);

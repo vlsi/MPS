@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -76,7 +77,7 @@ public class NewClassLike_Action extends BaseAction {
     try {
       final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr)), null));
       ((SModel) MapSequence.fromMap(_params).get("model")).addRootNode(newClass);
-      AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")));
+      AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"))));
       SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"), NewClassLike_Action.this.descr);
       ListSequence.fromList(SLinkOperations.getChildren(NewClassLike_Action.this.descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member"))).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {

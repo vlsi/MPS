@@ -43,7 +43,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
+            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));

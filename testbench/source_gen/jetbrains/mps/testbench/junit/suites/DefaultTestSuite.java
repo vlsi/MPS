@@ -113,7 +113,7 @@ public class DefaultTestSuite {
       @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
-          for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
+          for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
             ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), ((SModule) model.getModule())));
           }
         }

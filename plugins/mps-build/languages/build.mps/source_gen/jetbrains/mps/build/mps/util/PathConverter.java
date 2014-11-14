@@ -60,9 +60,9 @@ public class PathConverter {
   private SNode buildRelative(String currPath, SNode macro, SModel model) {
     SNode relPath;
     if (macro == null) {
-      relPath = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5481553824944787378l, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"));
+      relPath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5481553824944787378l, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath")));
     } else {
-      relPath = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"));
+      relPath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")));
       SLinkOperations.setTarget(SNodeOperations.cast(relPath, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro"), macro);
     }
     buildCompositePath(relPath, currPath, model);
@@ -103,7 +103,7 @@ public class PathConverter {
     SNode last = null;
     for (String fname : path.split("/")) {
       if ((fname != null && fname.length() > 0)) {
-        SNode npath = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath"));
+        SNode npath = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, "jetbrains.mps.build.structure.BuildCompositePath")));
         SPropertyOperations.set(npath, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601779l, "head"), fname);
         if (last == null) {
           SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7321017245476976379l, 7321017245477039051l, "compositePart"), npath);

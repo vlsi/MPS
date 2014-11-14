@@ -71,7 +71,7 @@ public class AddDefaultReferenceAttribute_Intention implements IntentionFactory 
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")));
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203511l, "testDefaultEditor.structure.DefaultReferenceAttribute")));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203511l, "testDefaultEditor.structure.DefaultReferenceAttribute"))));
         SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")), "const");
       }
 

@@ -2606,7 +2606,7 @@
               </node>
               <node concept="vg0i.1197027756228" id="4785871466714472368" role="vg0i.1204053956946.1068499141038" info="nn">
                 <node concept="vg0i.1202948039474" id="4785871466714472369" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetInstanceConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getInstanceConcept" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SConceptRepository%dgetConcept(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
                   <node concept="vg0i.1068498886296" id="3021153905120212486" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="4642948870877889276" resolveInfo="myConceptFqName" />
                   </node>
@@ -4334,7 +4334,7 @@
               </node>
               <node concept="vg0i.1081236700937" id="8484262519286299240" role="vg0i.1068431474542.1068431790190" info="nn">
                 <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
-                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
+                <reference role="vg0i.1204053956946.1068499141037" target="iwwu.6963130675032169262" resolveInfo="findConceptDeclaration" />
                 <node concept="vg0i.1068498886296" id="4265636116363097588" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="8484262519286299229" resolveInfo="conceptFQName" />
                 </node>

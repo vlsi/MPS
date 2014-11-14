@@ -50,7 +50,7 @@ public class check_ArrayClone_NonTypesystemRule extends AbstractNonTypesystemRul
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instanceMethodCallOperation, "should be clone operation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8824315269745705247", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-          intentionProvider.putArgument("newNode", SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5205855332950442198l, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation")));
+          intentionProvider.putArgument("newNode", SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 5205855332950442198l, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"))));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

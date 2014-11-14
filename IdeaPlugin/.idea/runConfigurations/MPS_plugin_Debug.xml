@@ -2,7 +2,7 @@
   <configuration default="false" name="MPS-plugin Debug" type="Application" factoryName="Application">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="com.intellij.idea.Main" />
-    <option name="VM_PARAMETERS" value="-client -ea -Xmx768m -Xss4024k -XX:PermSize=290m -Dmps.internal=true -Didea.smooth.progress=false -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;IDEA+MPS&quot; -XX:+HeapDumpOnOutOfMemoryError -Didea.platform.prefix=Idea -Didea.config.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/config -Didea.system.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/system -Didea.plugins.path=$PROJECT_DIR$ -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5011" />
+    <option name="VM_PARAMETERS" value="-client -ea -Xmx768m -Xss4024k -XX:PermSize=290m -Dmps.internal=true -Didea.smooth.progress=false -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;IDEA+MPS&quot; -XX:+HeapDumpOnOutOfMemoryError -Didea.platform.prefix=Idea -Didea.config.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/config -Didea.system.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/system -Didea.plugins.path=$PROJECT_DIR$ -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5011" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />

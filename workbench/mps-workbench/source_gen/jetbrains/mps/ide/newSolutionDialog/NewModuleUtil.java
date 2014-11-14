@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -178,7 +179,7 @@ public class NewModuleUtil {
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"));
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
     descriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(descriptor, false);
+    language.setLanguageDescriptor(descriptor);
     language.save();
 
     final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
@@ -192,7 +193,7 @@ public class NewModuleUtil {
     }
     if (!(alreadyOwnsTemplateModel)) {
       EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(language.getModuleName() + ".generator.template" + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
-      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
       SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "main");
       SModelOperations.addRootNode(templateModel, mappingConfiguration);
       templateModel.save();

@@ -6,11 +6,7 @@ import jetbrains.mps.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.cleanup.CleanupManager;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -19,6 +15,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
@@ -43,7 +40,9 @@ public class FileMPSProject extends Project {
   }
   @Override
   public String getName() {
-    return getProjectFile().getName();
+    File projectFile = getProjectFile();
+    assert projectFile != null;
+    return projectFile.getName();
   }
   @Override
   public void projectOpened() {
@@ -61,14 +60,10 @@ public class FileMPSProject extends Project {
   @Override
   public void dispose() {
     super.dispose();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
-        CleanupManager.getInstance().cleanup();
-        // todo: why we need it? 
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
       }
     });
   }
@@ -121,10 +116,6 @@ public class FileMPSProject extends Project {
         for (SModule m : getModules()) {
           ((AbstractModule) m).onModuleLoad();
         }
-        /*
-          // FIXME This is a hack to workaround issue MPS-20526, missing JavaModuleFacet on module registration 
-        */
-        ClassLoaderManager.getInstance().reloadClasses(getModules(), new EmptyProgressMonitor());
       }
     });
   }

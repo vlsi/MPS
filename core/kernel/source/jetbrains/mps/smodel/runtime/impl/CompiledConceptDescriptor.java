@@ -79,7 +79,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, PropertyDescriptor> propertiesByName;
   private Map<String, ReferenceDescriptor> referencesByName;
   private Map<String, LinkDescriptor> linksByName;
-  private boolean myInitialized = false;
+  private volatile boolean myInitialized = false;
 
   CompiledConceptDescriptor(SConceptId id,
       String conceptFqName,

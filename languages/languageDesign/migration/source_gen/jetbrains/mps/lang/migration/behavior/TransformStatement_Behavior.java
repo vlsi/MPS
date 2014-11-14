@@ -10,7 +10,7 @@ import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class TransformStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -26,7 +26,7 @@ public class TransformStatement_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1137418540378l, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136727061274l, "jetbrains.mps.lang.pattern.structure.ListPattern"))) {
-      return new NamedElementsScope(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173934l, "pattern")), SNodeOperations.asSConcept(((SNode) kind)), false, new SConcept[]{}));
+      return new NamedElementsScope(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173934l, "pattern")), SNodeOperations.asSConcept(((SNode) kind)), false, new SAbstractConcept[]{}));
     }
 
     return null;

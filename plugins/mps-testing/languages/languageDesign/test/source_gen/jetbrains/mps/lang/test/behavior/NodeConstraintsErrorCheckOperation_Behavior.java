@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeConstraintsErrorCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -17,7 +18,7 @@ public class NodeConstraintsErrorCheckOperation_Behavior {
   }
   public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
     assert BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachReference_2893471348147804024", new Object[]{reference});
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 8333855927540283103l, 8333855927548182241l, "errorRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083831655l, "jetbrains.mps.lang.test.structure.UnknownRuleReference")));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 8333855927540283103l, 8333855927548182241l, "errorRef"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083831655l, "jetbrains.mps.lang.test.structure.UnknownRuleReference"))));
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 8333855927540283103l, 8333855927548182241l, "errorRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), reference);
   }
   public static SNode virtual_getReference_8333855927540237654(SNode thisNode) {

@@ -69,7 +69,7 @@ public class AddMockAnnotation_Intention implements IntentionFactory {
       return "Add Mock Annotation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1230224281548l, "jetbrains.mps.lang.test.structure.MockAnnotation"), null);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1230224281548l, "jetbrains.mps.lang.test.structure.MockAnnotation")), null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.MockAnnotation"), newAnnotation);
     }
     public IntentionDescriptor getDescriptor() {

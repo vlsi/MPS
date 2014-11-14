@@ -424,6 +424,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" implicit="true" />
+    <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
   </imports>
   <contents>
     <node concept="5i2a.1216913645126" id="1217271585456" info="lg">
@@ -1496,12 +1497,17 @@
               </node>
               <node concept="vg0i.1068580123155" id="2034046503361614074" role="vg0i.1068580123136.1068581517665" info="nn">
                 <node concept="vg0i.1197027756228" id="2034046503361614075" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <node concept="vg0i.1081236700937" id="2034046503361614076" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
-                    <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
+                  <node concept="vg0i.1197027756228" id="8936443515756534605" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <node concept="vg0i.1081236700937" id="8936443515756534169" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
+                      <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                    </node>
+                    <node concept="vg0i.1202948039474" id="8936443515756535301" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetModelAccess()%corg%djetbrains%dmps%dopenapi%dmodule%dModelAccess" resolveInfo="getModelAccess" />
+                    </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="2034046503361614077" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelCommandExecutor%drunReadAction(java%dlang%dRunnable)%cvoid" resolveInfo="runReadAction" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="88zw.~ModelAccess%drunReadAction(java%dlang%dRunnable)%cvoid" resolveInfo="runReadAction" />
                     <node concept="cakq.1199569711397" id="2034046503361614078" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1068580123136" id="2034046503361614079" role="cakq.1199569711397.1199569916463" info="sn">
                         <node concept="vg0i.1068580123155" id="2034046503361614080" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -2689,9 +2695,6 @@
                           <node concept="vg0i.1068580123155" id="1227876805902" role="vg0i.1068580123136.1068581517665" info="nn">
                             <node concept="vg0i.1197027756228" id="1227876805903" role="vg0i.1068580123155.1068580123156" info="nn">
                               <node concept="vg0i.1197027756228" id="2886182022232125083" role="vg0i.1197027756228.1197027771414" info="nn">
-                                <node concept="4ia1.1138056022639" id="2886182022232125084" role="vg0i.1197027756228.1197027833540" info="nn">
-                                  <reference role="4ia1.1138056022639.1138056395725" target="tpce.5092175715804935370" resolveInfo="conceptAlias" />
-                                </node>
                                 <node concept="vg0i.1197027756228" id="9116031298983346427" role="vg0i.1197027756228.1197027771414" info="nn">
                                   <node concept="vg0i.1197027756228" id="2886182022232125085" role="vg0i.1197027756228.1197027771414" info="nn">
                                     <node concept="4ia1.7453996997717780434" id="9116031298983352314" role="vg0i.1197027756228.1197027833540" info="nn" />
@@ -2700,6 +2703,9 @@
                                     </node>
                                   </node>
                                   <node concept="4ia1.8866923313515890008" id="9116031298983354855" role="vg0i.1197027756228.1197027833540" info="nn" />
+                                </node>
+                                <node concept="4ia1.1138056022639" id="2886182022232125084" role="vg0i.1197027756228.1197027833540" info="nn">
+                                  <reference role="4ia1.1138056022639.1138056395725" target="tpce.5092175715804935370" resolveInfo="conceptAlias" />
                                 </node>
                               </node>
                               <node concept="vg0i.1202948039474" id="1227876805907" role="vg0i.1197027756228.1197027833540" info="nn">
@@ -2798,12 +2804,17 @@
             </node>
             <node concept="vg0i.1068580123155" id="2034046503361594315" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="2034046503361594316" role="vg0i.1068580123155.1068580123156" info="nn">
-                <node concept="vg0i.1081236700937" id="2034046503361594317" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
-                  <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
+                <node concept="vg0i.1197027756228" id="8936443515755828768" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="vg0i.1081236700937" id="8936443515755826597" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dMPSModuleRepository" resolveInfo="getInstance" />
+                    <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="8936443515755830019" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~MPSModuleRepository%dgetModelAccess()%corg%djetbrains%dmps%dopenapi%dmodule%dModelAccess" resolveInfo="getModelAccess" />
+                  </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="2034046503361594318" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelCommandExecutor%drunReadAction(java%dlang%dRunnable)%cvoid" resolveInfo="runReadAction" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="88zw.~ModelAccess%drunReadAction(java%dlang%dRunnable)%cvoid" resolveInfo="runReadAction" />
                   <node concept="cakq.1199569711397" id="2034046503361594319" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1068580123136" id="2034046503361594320" role="cakq.1199569711397.1199569916463" info="sn">
                       <node concept="vg0i.1068580123159" id="2034046503361594321" role="vg0i.1068580123136.1068581517665" info="nn">

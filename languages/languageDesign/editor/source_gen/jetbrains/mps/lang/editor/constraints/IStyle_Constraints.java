@@ -61,7 +61,7 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797320402872l, "jetbrains.mps.lang.editor.structure.IStyle"));
+            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797320402872l, "jetbrains.mps.lang.editor.structure.IStyle"));
           }
         });
 

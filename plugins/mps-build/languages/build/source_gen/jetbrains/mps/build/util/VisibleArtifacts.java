@@ -165,8 +165,8 @@ public class VisibleArtifacts {
     }
     if (id instanceof SNode) {
       SNode node = (SNode) id;
-      if (parentMap.containsKey(node) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"))) {
-        return SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
+      if (parentMap.containsKey(node) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"))) {
+        return SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
       }
       node = toOriginalNode(node);
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {

@@ -709,8 +709,8 @@
     <file name="Refactoring_Behavior.java">
       <node id="4205271146524200429" at="16,390,17,18" concept="5" />
       <node id="4205271146524200396" at="18,5,19,554" concept="5" />
-      <node id="6261424444345979554" at="21,100,22,219" concept="4" />
-      <node id="6261424444345979579" at="22,219,23,202" concept="1" />
+      <node id="6261424444345979554" at="21,100,22,254" concept="4" />
+      <node id="6261424444345979579" at="22,254,23,202" concept="1" />
       <node id="6261424444345979562" at="23,202,24,200" concept="1" />
       <node id="1347577327951509207" at="26,77,27,215" concept="5" />
       <node id="4205271146524200389" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -746,14 +746,14 @@
       <node id="478744034994716007" at="17,77,18,244" concept="4" />
       <node id="478744034994716074" at="19,83,20,18" concept="5" />
       <node id="478744034994716079" at="21,5,22,0" concept="6" />
-      <node id="478744034994716022" at="22,0,23,467" concept="4" />
+      <node id="478744034994716022" at="22,0,23,484" concept="4" />
       <node id="478744034994717584" at="26,53,27,23" concept="5" />
       <node id="478744034994716046" at="30,5,31,16" concept="5" />
       <node id="478744034994716001" at="15,0,17,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="478744034994716056" at="18,244,21,5" concept="3" />
       <node id="478744034994717570" at="25,63,28,9" concept="3" />
       <node id="478744034994717551" at="24,40,29,7" concept="2" />
-      <node id="478744034994716032" at="23,467,30,5" concept="2" />
+      <node id="478744034994716032" at="23,484,30,5" concept="2" />
       <node id="478744034994716001" at="17,0,33,0" concept="7" trace="call_isTransient_478744034994716004#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="478744034994716003" at="15,43,15,43" />
       <scope id="478744034994716057" at="19,83,20,18" />
@@ -766,7 +766,7 @@
       <scope id="478744034994717551" at="24,40,29,7">
         <var name="sreference" id="478744034994717555" />
       </scope>
-      <scope id="478744034994716032" at="23,467,30,5">
+      <scope id="478744034994716032" at="23,484,30,5">
         <var name="reference" id="478744034994716044" />
       </scope>
       <scope id="478744034994716006" at="17,77,31,16">

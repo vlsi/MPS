@@ -30,7 +30,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     SNode targetConcept = SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     SNode expectedNodeType = _quotation_createNode_mxwyp3_a0g0a(targetConcept);
     // reference may be resolved dynamically? 
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo"))) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo"))) {
       return _quotation_createNode_mxwyp3_a0a8a0(targetConcept);
     }
     return expectedNodeType;

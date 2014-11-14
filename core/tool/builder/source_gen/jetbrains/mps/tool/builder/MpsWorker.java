@@ -15,7 +15,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -30,7 +32,6 @@ import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
@@ -79,7 +80,7 @@ public abstract class MpsWorker {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }
     for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
-      config = config.addLib(lib.key(), lib.value());
+      config = config.addLib(lib.value());
     }
     if (whatToDo.isLoadBootstrapLibraries()) {
       config = config.withBootstrapLibraries();
@@ -111,22 +112,22 @@ public abstract class MpsWorker {
     make();
   }
   protected void make() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
+    MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+      public MPSCompilationResult compute() {
         ModuleMaker maker = new ModuleMaker();
-        maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
-    reload();
+    reload(mpsCompilationResult);
   }
-  protected void reload() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
+  protected void reload(final MPSCompilationResult mpsCompilationResult) {
+    if (mpsCompilationResult.isReloadingNeeded()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
+        }
+      });
+    }
   }
   protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
   protected abstract void showStatistic();

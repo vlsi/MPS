@@ -69,7 +69,7 @@ public class SwitchToCustomConstructorPropertyImplementation_Intention implement
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode toBeReplaced = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation"));
-      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"));
+      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(toBeReplaced, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation")));
       if (SNodeOperations.isInstanceOf(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"))) {
         SLinkOperations.setTarget(replacingNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), SLinkOperations.getTarget(SNodeOperations.cast(toBeReplaced, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")));
       }

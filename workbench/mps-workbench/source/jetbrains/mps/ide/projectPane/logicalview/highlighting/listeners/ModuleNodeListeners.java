@@ -19,8 +19,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -87,7 +87,7 @@ public final class ModuleNodeListeners {
 
   private class MyReloadAdapter extends MPSClassesListenerAdapter {
     @Override
-    public void afterClassesLoaded(Set<SModule> loadedModules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       refreshTreeNodes();
     }
   }

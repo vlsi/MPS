@@ -72,7 +72,7 @@ public class IterateOverSequence_Intention implements IntentionFactory {
       return "Iterate over Sequence";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode forStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), null);
+      SNode forStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")), null);
       SNode outerStatement = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
       boolean deleteStatement = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
       SNodeOperations.insertNextSiblingChild(outerStatement, forStatement);

@@ -77,7 +77,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 4222318806802425298l, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 4222318806802425298l, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), null));
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null);
       }

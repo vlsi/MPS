@@ -52,7 +52,7 @@ public class QueriesGenerated {
           for (final SModuleReference item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode solutionRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef"));
+                SNode solutionRef = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
                 SPropertyOperations.set(solutionRef, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName"), (item).getModuleName());
                 SPropertyOperations.set(solutionRef, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506910l, "moduleID"), (item).getModuleId().toString());
                 return solutionRef;
@@ -85,7 +85,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"));
+                SNode tref = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef")));
                 SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, 1280144168199457727l, "klass"), (item));
                 ((AbstractModule) model.getModule()).addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
@@ -119,7 +119,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"));
+                SNode tref = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef")));
                 SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, 4504141816188599489l, "klass"), (item));
                 ((AbstractModule) model.getModule()).addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
@@ -149,7 +149,7 @@ public class QueriesGenerated {
             SNode msuite = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return SModelOperations.nodes(((SModel) smd), MetaAdapterFactory.getConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
+                return SModelOperations.nodes(((SModel) smd), MetaAdapterFactory.getInterfaceConcept(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
               }
             }).toListSequence();
           }
@@ -158,7 +158,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, "jetbrains.mps.testbench.suite.structure.TestCaseRef"));
+                SNode tref = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, "jetbrains.mps.testbench.suite.structure.TestCaseRef")));
                 SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase"), (item));
                 ((AbstractModule) model.getModule()).addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);

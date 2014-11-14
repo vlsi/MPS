@@ -64,7 +64,7 @@ public class SurroundWithTryFinally_Intention implements IntentionFactory {
       return "Try / Finally";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode tryStatement = SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, "jetbrains.mps.baseLanguage.structure.TryStatement"), null);
+      SNode tryStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, "jetbrains.mps.baseLanguage.structure.TryStatement")), null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, tryStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

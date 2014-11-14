@@ -23,7 +23,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -130,7 +130,7 @@ public class Type_Behavior {
   }
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(thisNode);
-    for (SNode varRef : SNodeOperations.getNodeDescendants(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SConcept[]{})) {
+    for (SNode varRef : SNodeOperations.getNodeDescendants(looseType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})) {
       SNodeOperations.replaceWithAnother(varRef, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varRef, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return looseType;

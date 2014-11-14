@@ -74,7 +74,7 @@ public class AddRemoveFigureAttribute_Intention implements IntentionFactory {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute")) != null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), null);
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(-2922223385321452486l, -5907006357078305369l), 5422656561926747556l, "jetbrains.mps.lang.editor.figures.structure.FigureAttribute")));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2922223385321452486l, -5907006357078305369l), 5422656561926747556l, "jetbrains.mps.lang.editor.figures.structure.FigureAttribute"))));
       }
     }
     public IntentionDescriptor getDescriptor() {

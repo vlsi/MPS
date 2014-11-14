@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -105,7 +106,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor {
         if (!isConceptDeclaration(concept)) continue;
 
         SConceptId conceptId = MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) root));
-        String conceptName = NameUtil.nodeFQName(root);
+        String conceptName = conceptFQName(root);
         ConceptDescriptor cd = new InterpretedConceptDescriptor(conceptId, conceptName);
 
         descriptors.put(conceptId, cd);
@@ -114,6 +115,19 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor {
       myDescriptorByName = descriptorsByName;
       myDescriptors = descriptors;
     }
+  }
+
+  //this allows to get concept fq name w/o trying constraints
+  //uses the fact that concept's name can't be overridden in constraints
+  public static String conceptFQName(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    String name = node.getProperty(SNodeUtil.property_INamedConcept_name);
+    SModel model = node.getModel();
+    if (model == null) return name;
+
+    return NameUtil.getModelLongName(model) + "." + name;
   }
 
   private void invalidateDescriptors() {

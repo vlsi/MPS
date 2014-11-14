@@ -16,7 +16,10 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -34,12 +37,14 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
+    if (d == null) {
+      return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
+    }
 
     SConceptId superConcept = d.getSuperConceptId();
-    if (superConcept == null) return null;
+    if (superConcept == null) return d.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
 
-    return new SConceptAdapterById(superConcept, d.getSuperConcept());
+    return MetaAdapterFactory.getConcept(superConcept, d.getSuperConcept());
   }
 
   @Override
@@ -47,10 +52,15 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
+    if (d.isInterfaceConcept()) {
+      return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(getConceptDescriptor().getId(), getConceptDescriptor().getConceptFqName()));
+    }
+
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapterById(id, ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName()));
+      String name = ConceptRegistry.getInstance().getConceptDescriptor(id).getConceptFqName();
+      res.add(MetaAdapterFactory.getInterfaceConcept(id, name));
     }
     return res;
   }

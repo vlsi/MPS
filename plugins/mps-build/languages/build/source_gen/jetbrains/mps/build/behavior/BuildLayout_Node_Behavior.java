@@ -43,7 +43,7 @@ public class BuildLayout_Node_Behavior {
     return false;
   }
   public static void call_appendName_internal_1368030936106708110(SAbstractConcept thisConcept, SNode node, StringBuilder sb) {
-    SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
+    SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7128123785277710723l, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
     if (parent != null) {
       BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node")), parent, sb);
     }

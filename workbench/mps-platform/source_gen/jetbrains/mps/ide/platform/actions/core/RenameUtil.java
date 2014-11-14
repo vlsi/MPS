@@ -9,13 +9,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RenameUtil {
   public static boolean canBeRenamed(SNode node) {
     // we won't rename nodes, for which there are registered name constrints 
     // if there are constrints, but they are not compiled, we can rename it 
     String nameProperty = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getChildren(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"))).first(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-    return !(ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(nameProperty).isReadOnly());
+    ConstraintsDescriptor cd = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    PropertyConstraintsDescriptor property = cd.getProperty(nameProperty);
+    if (property == null) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("RenameUtil.canBeRenamed() called for property " + nameProperty + " with no constrints descriptor. Node:" + node.getPresentation());
+      }
+      return false;
+    }
+    return !((property.isReadOnly()));
   }
+  protected static Logger LOG = LogManager.getLogger(RenameUtil.class);
 }

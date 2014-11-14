@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -159,7 +160,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389577006l, "jetbrains.mps.lang.editor.structure.CellModel_Constant"));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389577006l, "jetbrains.mps.lang.editor.structure.CellModel_Constant")));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
@@ -592,7 +593,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 8709572687796959088l, "usesFoldingCondition"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1142886221719l, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"));
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 8709572687796959088l, "usesFoldingCondition"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1142886221719l, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition")));
     }
     public String getMatchingText() {
       return "query";

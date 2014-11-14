@@ -16,15 +16,15 @@
     <file name="QueriesGenerated.java">
       <node id="7973341469126608118" at="29,246,30,615" concept="1" />
       <node id="1225118885948" at="31,12,32,205" concept="3" />
-      <node id="1225118893832" at="33,26,34,376" concept="1" />
-      <node id="1225118980127" at="35,7,36,572" concept="3" />
-      <node id="1225118982824" at="36,572,37,170" concept="1" />
+      <node id="1225118893832" at="33,26,34,418" concept="1" />
+      <node id="1225118980127" at="35,7,36,614" concept="3" />
+      <node id="1225118982824" at="36,614,37,170" concept="1" />
       <node id="1225118888423" at="32,205,35,7" concept="2" />
       <node id="7973341469126608114" at="31,10,38,5" concept="0" />
       <node id="7973341469126606996" at="28,151,38,5" concept="2" />
       <node id="1225118817882" at="28,0,40,0" concept="5" trace="nodeFactory_NodeSetup_RefactorOperation_1225118817882#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <scope id="7973341469126606997" at="29,246,30,615" />
-      <scope id="1225118888424" at="33,26,34,376" />
+      <scope id="1225118888424" at="33,26,34,418" />
       <scope id="7973341469126608115" at="31,12,37,170">
         <var name="pd" id="1225118980128" />
         <var name="sel" id="1225118885949" />

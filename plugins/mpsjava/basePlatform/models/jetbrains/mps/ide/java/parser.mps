@@ -28477,7 +28477,7 @@
                             </node>
                           </node>
                           <node concept="vg0i.1202948039474" id="8667201949509390720" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                             <node concept="4ia1.4357968816427488499" id="8667201949509455323" role="vg0i.1204053956946.1068499141038" info="nn">
                               <property role="4ia1.4357968816427488499.4357968816427488500" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
                             </node>
@@ -28819,7 +28819,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="vg0i.1068580123157" id="8751504818642218358" role="vg0i.1068580123136.1068581517665" info="nn" />
                 </node>
               </node>
             </node>
@@ -35524,10 +35523,10 @@
                       </node>
                     </node>
                     <node concept="vg0i.1068580123152" id="3815171369211667444" role="vg0i.1068580123159.1068580123160" info="nn">
-                      <node concept="vg0i.1070534058343" id="3815171369211667593" role="vg0i.1081773326031.1081773367579" info="nn" />
                       <node concept="vg0i.1068498886296" id="3709859543805633939" role="vg0i.1081773326031.1081773367580" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="3709859543805578231" resolveInfo="modelRoot" />
                       </node>
+                      <node concept="vg0i.1070534058343" id="3815171369211667593" role="vg0i.1081773326031.1081773367579" info="nn" />
                     </node>
                   </node>
                   <node concept="vg0i.1068581242864" id="7228038427728495448" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -35973,6 +35972,12 @@
         <property role="asn4.1169194658468.1169194664001" value="getRootContainingDir" />
         <property role="vg0i.1068580123132.4276006055363816570" value="false" />
         <property role="vg0i.1068580123132.1181808852946" value="false" />
+        <node concept="x09z.1238852151516" id="3709859543804894352" role="vg0i.1068580123132.1068580123133" info="in">
+          <node concept="vg0i.1107535904670" id="3709859543805010363" role="x09z.1238852151516.1238852204892" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="qx6n.~ModelRoot" resolveInfo="ModelRoot" />
+          </node>
+          <node concept="vg0i.1225271177708" id="3709859543805049456" role="x09z.1238852151516.1238852204892" info="in" />
+        </node>
         <node concept="vg0i.1068580123136" id="7238794918746461184" role="vg0i.1068580123132.1068580123135" info="sn">
           <node concept="vg0i.6329021646629104954" id="7238794918750768530" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.6329021646629104957" id="7238794918750768604" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
@@ -36090,12 +36095,6 @@
           <node concept="vg0i.1107535904670" id="7238794918746528797" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="59et.~IFile" resolveInfo="IFile" />
           </node>
-        </node>
-        <node concept="x09z.1238852151516" id="3709859543804894352" role="vg0i.1068580123132.1068580123133" info="in">
-          <node concept="vg0i.1107535904670" id="3709859543805010363" role="x09z.1238852151516.1238852204892" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="qx6n.~ModelRoot" resolveInfo="ModelRoot" />
-          </node>
-          <node concept="vg0i.1225271177708" id="3709859543805049456" role="x09z.1238852151516.1238852204892" info="in" />
         </node>
       </node>
       <node concept="vg0i.1465982738277781862" id="3356342729942923534" role="vg0i.1107461130800.5375687026011219971" info="ngu" />
