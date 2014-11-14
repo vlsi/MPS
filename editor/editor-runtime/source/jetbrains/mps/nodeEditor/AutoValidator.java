@@ -76,7 +76,7 @@ class AutoValidator {
 
       final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = APICellAdapter.getCellInfo(editorCell);
-      myRepository.getModelAccess().executeCommand(new Runnable() {
+      myRepository.getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
           if (wasInErrorState) {
