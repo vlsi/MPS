@@ -1626,6 +1626,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242863l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")), null);
+
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
             return result;
           }

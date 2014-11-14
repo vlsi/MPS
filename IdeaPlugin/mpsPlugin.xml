@@ -118,10 +118,10 @@
       <fileset file="${mps_home}/IdeaPlugin/mps-vcs/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
-          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
+          <replaceregex pattern="../../../plugins/vcs/common/source/META-INF/" replace="" flags="gi" />
         </tokenfilter>
         <tokenfilter>
-          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+          <replaceregex pattern="../../../plugins/vcs/common/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
       </filterchain>
     </copy>
@@ -182,10 +182,7 @@
       <fileset file="${mps_home}/IdeaPlugin/mps-java/META-INF/plugin.xml" />
       <filterchain>
         <tokenfilter>
-          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi" />
-        </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+          <replaceregex pattern="../../../plugins/mpsjava/platform/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
       </filterchain>
     </copy>
