@@ -21,20 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * A storage for properties, which define the persistent state of project migrations
- * An inheritor should set the INSTANCE field and define how to persist the properties
- * Default value is null. Null value is not distinguishable from default value
- */
-public abstract class ProjectMigrationProperties {
-  protected static ProjectMigrationProperties INSTANCE;
-
-  public static ProjectMigrationProperties getInstance() {
-    return INSTANCE;
-  }
-
-  //-------------
-
+public class MigrationProperties {
   protected Map<String, String> myProperties = new HashMap<String, String>();
 
   public void setProperty(@NotNull String key, String value) {
