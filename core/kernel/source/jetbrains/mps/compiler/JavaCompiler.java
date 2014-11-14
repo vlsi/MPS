@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.compiler;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -43,10 +43,12 @@ import java.util.Map;
 public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
+  private static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
+
 
   public JavaCompiler() {
-
   }
+
 
   public void addSourceFile(String path, String filename, Object contents) {
     if (!(contents instanceof String)) {
@@ -67,11 +69,18 @@ public class JavaCompiler {
     myCompilationUnits.put(classFqName, compilationUnit);
   }
 
+
   public void compile(IClassPathItem classPath) {
+    compile(classPath, DEFAULT_JAVA_VERSION);
+  }
+  public void compile(IClassPathItem classPath, String targetJavaVersion) {
     Map compilerOptions = new HashMap();
-    compilerOptions.put(CompilerOptions.OPTION_Compliance, CompilerOptions.VERSION_1_6);
     compilerOptions.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
-    compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, CompilerOptions.VERSION_1_6);
+
+    String actualJavaTargetVersion = targetJavaVersion != null ? targetJavaVersion : DEFAULT_JAVA_VERSION;
+    compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
+    compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, actualJavaTargetVersion);
+
 
     compilerOptions.put(CompilerOptions.OPTION_LocalVariableAttribute, CompilerOptions.GENERATE);
     compilerOptions.put(CompilerOptions.OPTION_LineNumberAttribute, CompilerOptions.GENERATE);
@@ -79,7 +88,7 @@ public class JavaCompiler {
 
     CompilerOptions options = new CompilerOptions(compilerOptions);
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options,
-        new MyCompilerRequestor(), new DefaultProblemFactory(), null);
+        new MyCompilerRequestor(), new DefaultProblemFactory());
     //c.options.verbose = true;
 
     try {
@@ -87,6 +96,18 @@ public class JavaCompiler {
     } catch (RuntimeException ex) {
       onFatalError(ex.getMessage());
     }
+  }
+
+  private static String getDefaultJavaVersion() {
+    String property = System.getProperty("java.version");
+    if (property.startsWith("1.6")) {
+      return CompilerOptions.VERSION_1_6;
+    } else if (property.startsWith("1.7")) {
+      return CompilerOptions.VERSION_1_7;
+    } else if (property.startsWith("1.8")) {
+      return CompilerOptions.VERSION_1_8;
+    }
+    return CompilerOptions.VERSION_1_6;
   }
 
   public ClassLoader getClassLoader(ClassLoader parent) {

@@ -17,6 +17,8 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessage;
@@ -25,6 +27,8 @@ import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -32,6 +36,8 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -45,6 +51,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.SwingUtilities;
@@ -204,7 +211,22 @@ public class ModuleMaker {
     boolean hasAnythingToCompile = false;
     List<IMessage> messages = new ArrayList<IMessage>();
 
+    Project project = null;
     for (SModule m : modules) {
+      if (project == null) {
+        SRepository repository = m.getRepository();
+        if (repository instanceof ProjectRepository) {
+          project = ((ProjectRepository) repository).getProject();
+        } else if (repository instanceof MPSModuleRepository) {
+          Set<MPSModuleOwner> owners = ((MPSModuleRepository) repository).getOwners(m);
+          for (MPSModuleOwner owner : owners) {
+            if (owner instanceof Project) {
+              project = ((Project) owner);
+            }
+          }
+        }
+      }
+
       if (isExcluded(m)) continue;
 
       hasAnythingToCompile = true;
@@ -265,7 +287,9 @@ public class ModuleMaker {
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
       myTracer.push("eclipse compiler", true);
-      compiler.compile(classPathItems);
+      JavaCompilerOptions javaCompilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
+      String targetJavaVersion = javaCompilerOptions == null ? null : javaCompilerOptions.getTargetJavaVersion();
+      compiler.compile(classPathItems, targetJavaVersion);
       myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);
