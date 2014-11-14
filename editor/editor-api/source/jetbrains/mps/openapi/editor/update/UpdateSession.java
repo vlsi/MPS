@@ -80,14 +80,6 @@ public interface UpdateSession {
   void registerAsBigCell(EditorCell cell);
 
   /**
-   * Initiates incremental update of the EditorCells tree represented inside the
-   * associated EditorComponent.
-   *
-   * @return updated EditorCell representing root cell within the editor
-   */
-  EditorCell performUpdate();
-
-  /**
    * Should be called as a part of incremental update of EditorCells tree represented
    * inside associated EditorComponent only.
    * <p/>
