@@ -427,8 +427,8 @@ public class EditorManager {
    * attribute is attached to the main node then the "main" cell will be wrapped into a property/reference attribute node editor cell(s)
    * and returned from EditorCellFactory.createEditorCell() method execution.
    * <p/>
-   * To property handle such situations we should "unwrap" returned cell to get direct access to the big cell representing original main node.
-   * This method was created ti handle such situations.
+   * To properly handle such situations we should "unwrap" returned cell to get direct access to the big cell representing original main node.
+   * This method was created to handle such situations.
    *
    * @param cell EditorCell created by EditorCellFactory.createEditorCell() method
    * @param node main node used as a parameter while creating this cell
@@ -526,6 +526,11 @@ public class EditorManager {
       return nodeCell;
     }
 
+    EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
+    if (unwrappedNodeBigCell == null) {
+      return nodeCell;
+    }
+
     String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
   /*
    * AnchorCellId is saved in UserObjects now. UserObjects are not updated on undo/redo in model, so sometimes
@@ -536,7 +541,7 @@ public class EditorManager {
    * in this case we will be able to remove "anchorId == null ?" check below and un-comment ssertion.
    */
 //    assert anchorId != null : "CellId was not specified";
-    EditorCell anchorCell = anchorId == null ? getUnwrappedNodeBigCell(nodeCell, node) : CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
+    EditorCell anchorCell = anchorId == null ? unwrappedNodeBigCell : CellFinderUtil.findChildById(unwrappedNodeBigCell, node, anchorId, true);
     if (anchorCell == null) {
       // anchor cell was not found. Possible reason: different node presentations in editor and inside inspector, so
       // side-transforms in the main editor should not affect inspector.
@@ -550,7 +555,7 @@ public class EditorManager {
     String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
 
     EditorCell_STHint sideTransformHintCell =
-        new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(nodeCell.getContext()));
+        new EditorCell_STHint(unwrappedNodeBigCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(unwrappedNodeBigCell.getContext()));
     return sideTransformHintCell.install();
   }
 
