@@ -2473,7 +2473,7 @@
                 <reference role="vg0i.1068498886296.1068581517664" target="3285276019551683189" resolveInfo="myEventsCollector" />
               </node>
               <node concept="vg0i.1202948039474" id="7224301866897835418" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~EventsCollector%ddispose()%cvoid" resolveInfo="dispose" />
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelsEventsCollector%ddispose()%cvoid" resolveInfo="dispose" />
               </node>
             </node>
           </node>
@@ -3406,6 +3406,9 @@
       <node concept="vg0i.1068390468198" id="7224301866898415376" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="vg0i.1107461130800.521412098689998745" value="false" />
         <property role="asn4.1169194658468.1169194664001" value="MyEventsCollector" />
+        <node concept="vg0i.1107535904670" id="2340731987670469081" role="vg0i.1068390468198.1165602531693" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~ModelsEventsCollector" resolveInfo="ModelsEventsCollector" />
+        </node>
         <node concept="vg0i.1068390468200" id="7224301866898520402" role="vg0i.1107461130800.5375687026011219971" info="igu">
           <property role="asn4.1169194658468.1169194664001" value="myListeners" />
           <property role="vg0i.1068431474542.1176718929932" value="true" />
@@ -3445,7 +3448,7 @@
                 </node>
                 <node concept="vg0i.1068580123155" id="7224301866898998491" role="vg0i.1068580123136.1068581517665" info="nn">
                   <node concept="vg0i.7812454656619025412" id="7224301866898998490" role="vg0i.1068580123155.1068580123156" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~EventsCollector%dadd(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cvoid" resolveInfo="add" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelsEventsCollector%dstartListeningToModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cvoid" resolveInfo="startListeningToModel" />
                     <node concept="vg0i.1068498886296" id="7224301866898998588" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="7224301866898436439" resolveInfo="model" />
                     </node>
@@ -3541,7 +3544,7 @@
                 </node>
                 <node concept="vg0i.1068580123155" id="7224301866899004784" role="vg0i.1068580123136.1068581517665" info="nn">
                   <node concept="vg0i.7812454656619025412" id="7224301866899004783" role="vg0i.1068580123155.1068580123156" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~EventsCollector%dremove(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cvoid" resolveInfo="remove" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelsEventsCollector%dstopListeningToModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cvoid" resolveInfo="stopListeningToModel" />
                     <node concept="vg0i.1068498886296" id="7224301866899004881" role="vg0i.1204053956946.1068499141038" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="7224301866898472803" resolveInfo="model" />
                     </node>
@@ -3786,9 +3789,6 @@
           </node>
         </node>
         <node concept="vg0i.1146644623116" id="7224301866898421972" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1107535904670" id="7224301866898422446" role="vg0i.1068390468198.1165602531693" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~EventsCollector" resolveInfo="EventsCollector" />
-        </node>
       </node>
     </node>
     <node concept="vg0i.1068390468198" id="3161776655522572366" info="ig">

@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.JOptionPane;
 import java.awt.Component;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Set;
 
 /**
@@ -80,21 +81,12 @@ public class ModelImporter {
     final SModuleReference moduleRefToImport = analysisResult.myModuleRef;
     final boolean needToAddDep = analysisResult.myNeedToAddDep;
 
-    Set<SModule> unloadedModules = unloadModuleClassLoaders();
     if (moduleRefToImport != null) {
       importModelWithModule(modelToImport, moduleRefToImport, needToAddDep);
     } else {
       importOnlyModel(modelToImport);
     }
-    loadModuleClassLoaders(unloadedModules);
-  }
-
-  private void loadModuleClassLoaders(Set<SModule> unloadedModules) {
-    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
-  }
-
-  private Set<SModule> unloadModuleClassLoaders() {
-    return ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myModule), new EmptyProgressMonitor());
+    ClassLoaderManager.getInstance().reloadModule(myModule);
   }
 
   private void importOnlyModel(final SModelReference modelToImport) {

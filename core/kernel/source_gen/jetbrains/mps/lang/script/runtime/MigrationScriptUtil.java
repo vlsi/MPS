@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -67,11 +67,15 @@ public class MigrationScriptUtil {
       LOG.error("Module not found: " + languageNamespace);
       return null;
     }
-    if (!(ClassLoaderManager.getInstance().canLoad(mod))) {
+    if (!((mod instanceof ReloadableModule)) && ((ReloadableModule) mod).willLoad()) {
       LOG.error("Module can't load classes: " + languageNamespace);
       return null;
     }
-    aClass = ClassLoaderManager.getInstance().getOwnClass(mod, fqClassName);
+    try {
+      aClass = ((Class<BaseMigrationScript>) ((ReloadableModule) mod).getOwnClass(fqClassName));
+    } catch (ClassNotFoundException e) {
+      return null;
+    }
     if (aClass == null) {
       return null;
     }

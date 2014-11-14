@@ -14,8 +14,11 @@ import jetbrains.mps.ide.java.util.StubResolver;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -57,7 +60,11 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
+      for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+        SetSequence.fromSet(modulesToReload).addElement(model.getModule());
+      }
+      ClassLoaderManager.getInstance().reloadModules(modulesToReload);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);

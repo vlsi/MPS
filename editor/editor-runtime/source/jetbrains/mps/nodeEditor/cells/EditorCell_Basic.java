@@ -44,13 +44,13 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -460,11 +460,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
-    if (node.getConcept().getQualifiedName().equals(concreteConceptFqName)) {
+    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
+    if (node.getConcept().equals(concreteConcept)) {
       return null;
     }
-    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(concreteConcept);
     SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;

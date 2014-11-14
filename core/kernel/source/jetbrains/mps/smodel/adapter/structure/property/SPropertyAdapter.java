@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -42,8 +43,9 @@ public abstract class SPropertyAdapter implements SProperty {
   public SAbstractConcept getContainingConcept() {
     SConceptId id = getId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
   }
 
   @Nullable

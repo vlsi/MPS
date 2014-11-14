@@ -22,11 +22,11 @@ import java.util.Properties;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
-import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.common.util.UrlClassLoader;
+import java.util.Collections;
 import java.net.MalformedURLException;
 import jetbrains.mps.library.LibraryInitializer;
 
@@ -122,12 +122,15 @@ public class PathManager {
     }
     return ourHomePath;
   }
+
   private static boolean isIdeaHome(final File root) {
     return new File(root, FileUtil.toSystemDependentName("bin/idea.properties")).exists() || new File(root, FileUtil.toSystemDependentName("community/bin/idea.properties")).exists();
   }
+
   private static boolean isMpsDir(File file) {
     return new File(file, "build.number").exists();
   }
+
   public static String getLibPath() {
     return PathManager.getHomePath() + File.separator + LIB_FOLDER;
   }
@@ -343,23 +346,15 @@ public class PathManager {
     }
     return new File(PathManager.getHomePath() + File.separator + "community" + File.separator + "lib" + File.separator + relativePath);
   }
+
   public static Collection<String> getBootstrapPaths() {
-    List<String> paths;
-    File lib = new File(getHomePath() + File.separator + "lib");
-    if (lib.exists() && lib.isDirectory()) {
-      paths = new ArrayList<String>();
-      for (File jar : lib.listFiles(MPS_JARS)) {
-        paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
-      }
-      if (paths.size() > 0) {
-        return Collections.unmodifiableCollection(paths);
-      }
-    }
-    return Collections.singleton(getHomePath() + File.separator + "core");
+    return jetbrains.mps.util.PathManager.getBootstrapPaths();
   }
+
   public static String getLanguagesPath() {
-    return getHomePath() + File.separator + "languages";
+    return jetbrains.mps.util.PathManager.getLanguagesPath();
   }
+
   public static Collection<LibraryContributor.LibDescriptor> getExtensionsPaths() {
     String pluginsPath = System.getProperty("plugin.path");
     List<LibraryContributor.LibDescriptor> paths = new ArrayList<LibraryContributor.LibDescriptor>();

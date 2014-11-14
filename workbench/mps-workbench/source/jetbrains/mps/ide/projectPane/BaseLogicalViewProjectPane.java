@@ -32,6 +32,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
@@ -52,18 +54,17 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -74,6 +75,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -88,19 +90,20 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private final ProjectView myProjectView;
-  private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
+  private MyCommandListener myModelAccessListener = new MyCommandListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
   private boolean myNeedRebuild = false;
   private SRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
   protected boolean myDisposed;
 
-  private ReloadListener myReloadListener = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void onAfterReload() {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
       rebuild();
     }
   };
@@ -227,7 +230,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void removeListeners() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().removeCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
@@ -245,7 +248,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (IMakeService.INSTANCE.hasMakeService()) {
       IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     }
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
   public SNode getSelectedSNode() {
@@ -510,17 +513,17 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private class MyModuleRepositoryListener extends SRepositoryListenerBase {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       myNeedRebuild = true;
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       myNeedRebuild = true;
     }
   }
 
-  private class MyModelAccessListener extends ModelAccessAdapter {
+  private class MyCommandListener extends CommandListenerAdapter {
     @Override
     public void commandStarted() {
       myNeedRebuild = false;

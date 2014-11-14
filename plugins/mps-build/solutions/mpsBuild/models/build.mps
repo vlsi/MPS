@@ -3649,7 +3649,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="2488570609612482897" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="2488570609612482896" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705590" resolveInfo="MPS.Core" />
             </node>
           </node>
@@ -3678,6 +3678,12 @@
             <node concept="bxtc.5253498789149585690" id="4060384399243471198" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
               <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536566" resolveInfo="jetbrains.mps.kernel" />
+            </node>
+          </node>
+          <node concept="bxtc.7259033139236285166" id="8137938962273302954" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="8137938962273302955" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="1966103100308041248" resolveInfo="MPS.OpenAPI" />
             </node>
           </node>
         </node>
@@ -4650,7 +4656,7 @@
           </node>
           <node concept="bxtc.7259033139236285166" id="7764087766386383206" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
             <node concept="bxtc.5253498789149585690" id="7764087766386383207" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="true" />
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="1480008320050917282" resolveInfo="MPS.IDEA" />
             </node>
           </node>

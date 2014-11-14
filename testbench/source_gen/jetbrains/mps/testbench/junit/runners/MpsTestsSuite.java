@@ -54,7 +54,7 @@ public class MpsTestsSuite extends Suite {
     // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
-      config = config.addLib(lib.key(), lib.value());
+      config = config.addLib(lib.value());
     }
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
       config = config.addMacro(macro.key(), macro.value());

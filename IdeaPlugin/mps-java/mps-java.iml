@@ -42,13 +42,6 @@
       <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../workbench/mps-debugger">
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-debugger/source_gen" isTestSource="false" />
-    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
@@ -60,7 +53,6 @@
     <orderEntry type="library" name="mps.MPS.Platform" level="project" />
     <orderEntry type="library" name="mps.MPS.Editor" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
-    <orderEntry type="library" name="junit-4.11" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.lang.core_auto" level="project" />
     <orderEntry type="library" name="mps.collections.runtime_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.kernel_auto" level="project" />

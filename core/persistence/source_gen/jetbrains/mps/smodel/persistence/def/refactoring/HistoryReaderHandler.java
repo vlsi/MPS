@@ -19,20 +19,19 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog> {
-  private static String[] EMPTY_ARRAY = new String[0];
-  private HistoryReaderHandler.HistoryElementHandler historyhandler = new HistoryReaderHandler.HistoryElementHandler();
-  private HistoryReaderHandler.ElementElementHandler elementhandler = new HistoryReaderHandler.ElementElementHandler();
-  private HistoryReaderHandler.DependenciesElementHandler dependencieshandler = new HistoryReaderHandler.DependenciesElementHandler();
-  private HistoryReaderHandler.ModelElementHandler modelhandler = new HistoryReaderHandler.ModelElementHandler();
-  private HistoryReaderHandler.MoveNodeElementHandler MoveNodehandler = new HistoryReaderHandler.MoveNodeElementHandler();
-  private HistoryReaderHandler.RenameNodeElementHandler RenameNodehandler = new HistoryReaderHandler.RenameNodeElementHandler();
-  private HistoryReaderHandler.RenameModelElementHandler RenameModelhandler = new HistoryReaderHandler.RenameModelElementHandler();
+  private HistoryReaderHandler.HistoryElementHandler historyHandler = new HistoryReaderHandler.HistoryElementHandler();
+  private HistoryReaderHandler.ElementElementHandler elementHandler = new HistoryReaderHandler.ElementElementHandler();
+  private HistoryReaderHandler.DependenciesElementHandler dependenciesHandler = new HistoryReaderHandler.DependenciesElementHandler();
+  private HistoryReaderHandler.ModelElementHandler modelHandler = new HistoryReaderHandler.ModelElementHandler();
+  private HistoryReaderHandler.MoveNodeElementHandler MoveNodeHandler = new HistoryReaderHandler.MoveNodeElementHandler();
+  private HistoryReaderHandler.RenameNodeElementHandler RenameNodeHandler = new HistoryReaderHandler.RenameNodeElementHandler();
+  private HistoryReaderHandler.RenameModelElementHandler RenameModelHandler = new HistoryReaderHandler.RenameModelElementHandler();
   private Stack<HistoryReaderHandler.ElementHandler> myHandlersStack = new Stack<HistoryReaderHandler.ElementHandler>();
   private Stack<HistoryReaderHandler.ChildHandler> myChildHandlersStack = new Stack<HistoryReaderHandler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private StructureModificationLog myResult;
-  private ReadHelper fieldhelper;
+  private ReadHelper my_helperField;
   public HistoryReaderHandler() {
   }
   public StructureModificationLog getResult() {
@@ -68,7 +67,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     HistoryReaderHandler.ElementHandler current = (myHandlersStack.empty() ? (HistoryReaderHandler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
-      current = historyhandler;
+      current = historyHandler;
     } else {
       current = current.createChild(myValues.peek(), qName, attributes);
     }
@@ -98,6 +97,8 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     public void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {
+    private String[] requiredAttributes = new String[0];
+
     private ElementHandler() {
     }
     protected Object createObject(Attributes attrs) throws SAXException {
@@ -115,13 +116,15 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
     protected String[] requiredAttributes() {
-      return HistoryReaderHandler.EMPTY_ARRAY;
+      return requiredAttributes;
+    }
+    protected void setRequiredAttributes(String... required) {
+      requiredAttributes = required;
     }
     protected void validate(Object resultObject) throws SAXException {
     }
   }
   public class HistoryElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
     public HistoryElementHandler() {
     }
     @Override
@@ -137,7 +140,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881723(resultObject, value);
           }
         });
-        return elementhandler;
+        return elementHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -148,12 +151,11 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
   public class ElementElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
     public ElementElementHandler() {
     }
     @Override
     protected StructureModification createObject(Attributes attrs) throws SAXException {
-      fieldhelper = new ReadHelper(null);
+      my_helperField = new ReadHelper(null);
       return new StructureModification();
     }
     @Override
@@ -165,7 +167,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881734(resultObject, value);
           }
         });
-        return dependencieshandler;
+        return dependenciesHandler;
       }
       if ("move".equals(tagName)) {
         myChildHandlersStack.push(new HistoryReaderHandler.ChildHandler() {
@@ -174,7 +176,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881742(resultObject, value);
           }
         });
-        return MoveNodehandler;
+        return MoveNodeHandler;
       }
       if ("rename".equals(tagName)) {
         myChildHandlersStack.push(new HistoryReaderHandler.ChildHandler() {
@@ -183,7 +185,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881752(resultObject, value);
           }
         });
-        return RenameNodehandler;
+        return RenameNodeHandler;
       }
       if ("RenameModel".equals(tagName)) {
         myChildHandlersStack.push(new HistoryReaderHandler.ChildHandler() {
@@ -192,7 +194,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881762(resultObject, value);
           }
         });
-        return RenameModelhandler;
+        return RenameModelHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -218,7 +220,6 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     }
   }
   public class DependenciesElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
     public DependenciesElementHandler() {
     }
     @Override
@@ -234,7 +235,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
             handleChild_4224832660979881785(resultObject, value);
           }
         });
-        return modelhandler;
+        return modelHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -243,113 +244,52 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       String[] child = (String[]) value;
       SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(child[1]);
       MapSequence.fromMap(result).put(modelRef, Integer.parseInt(child[2]));
-      fieldhelper.addModelRef(child[0], modelRef);
+      my_helperField.addModelRef(child[0], modelRef);
     }
   }
   public class ModelElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"index", "modelUID", "version"};
     public ModelElementHandler() {
+      setRequiredAttributes("index", "modelUID", "version");
     }
     @Override
     protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("index"), attrs.getValue("modelUID"), attrs.getValue("version")};
     }
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
-    }
-    @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      String[] result = (String[]) resultObject;
-      if ("index".equals(name)) {
-        return;
-      }
-      if ("modelUID".equals(name)) {
-        return;
-      }
-      if ("version".equals(name)) {
-        return;
-      }
-      super.handleAttribute(resultObject, name, value);
-    }
   }
   public class MoveNodeElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id", "to"};
     public MoveNodeElementHandler() {
+      setRequiredAttributes("id", "to");
     }
     @Override
     protected StructureModification.MoveNode createObject(Attributes attrs) throws SAXException {
-      return new StructureModification.MoveNode(fieldhelper.readLinkId(attrs.getValue("id")), fieldhelper.readLinkId(attrs.getValue("to")));
-    }
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
-    }
-    @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      StructureModification.MoveNode result = (StructureModification.MoveNode) resultObject;
-      if ("id".equals(name)) {
-        return;
-      }
-      if ("to".equals(name)) {
-        return;
-      }
-      super.handleAttribute(resultObject, name, value);
+      return new StructureModification.MoveNode(my_helperField.readLinkId(attrs.getValue("id")), my_helperField.readLinkId(attrs.getValue("to")));
     }
   }
   public class RenameNodeElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id", "type", "to"};
     public RenameNodeElementHandler() {
+      setRequiredAttributes("id", "type", "to");
     }
     @Override
     protected StructureModification.RenameNode createObject(Attributes attrs) throws SAXException {
-      return new StructureModification.RenameNode(fieldhelper.readLinkId(attrs.getValue("id")), StructureModification.RenameNode.RenameType.valueOf(attrs.getValue("type")), attrs.getValue("to"), null);
-    }
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
+      return new StructureModification.RenameNode(my_helperField.readLinkId(attrs.getValue("id")), StructureModification.RenameNode.RenameType.valueOf(attrs.getValue("type")), attrs.getValue("to"), null);
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       StructureModification.RenameNode result = (StructureModification.RenameNode) resultObject;
-      if ("id".equals(name)) {
-        return;
-      }
-      if ("type".equals(name)) {
-        return;
-      }
       if ("from".equals(name)) {
         result.oldValue = value;
-        return;
-      }
-      if ("to".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
     }
   }
   public class RenameModelElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"oldModel", "newModel"};
     public RenameModelElementHandler() {
+      setRequiredAttributes("oldModel", "newModel");
     }
     @Override
     protected StructureModification.RenameModel createObject(Attributes attrs) throws SAXException {
       return new StructureModification.RenameModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("oldModel")), PersistenceFacade.getInstance().createModelReference(attrs.getValue("newModel")));
-    }
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
-    }
-    @Override
-    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      StructureModification.RenameModel result = (StructureModification.RenameModel) resultObject;
-      if ("oldModel".equals(name)) {
-        return;
-      }
-      if ("newModel".equals(name)) {
-        return;
-      }
-      super.handleAttribute(resultObject, name, value);
     }
   }
 }

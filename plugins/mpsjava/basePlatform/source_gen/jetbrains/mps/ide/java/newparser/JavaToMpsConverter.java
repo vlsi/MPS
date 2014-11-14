@@ -191,7 +191,6 @@ public class JavaToMpsConverter {
         ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
-
       }
     });
 

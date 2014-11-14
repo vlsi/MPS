@@ -15,24 +15,26 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -41,8 +43,11 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,7 +65,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Language extends AbstractModule implements MPSModuleOwner {
+public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
+
+  private static final Logger LOG = LogManager.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
 
@@ -70,8 +77,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private LanguageDescriptor myLanguageDescriptor;
 
-  //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
-  private ClassLoader myStubsLoader = new MyClassLoader();
+  private ClassLoader myStubsLoader = new StubsClassLoader();
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     super(file);
@@ -190,8 +196,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Override
   public void dispose() {
-    super.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    super.dispose();
   }
 
   @Override
@@ -200,11 +206,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
@@ -216,11 +222,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
-
-    // move outside set_ block and just call ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
 
     MPSModuleRepository.getInstance().invalidateCaches();
 
@@ -256,7 +257,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void rename(String newNamespace) {
     LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
-    setLanguageDescriptor(languageDescriptor, false);
+    setLanguageDescriptor(languageDescriptor);
   }
 
   public List<SNode> getConceptDeclarations() {
@@ -283,10 +284,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public SModel getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
-  }
-
-  public ClassLoader getStubsLoader() {
-    return myStubsLoader;
   }
 
   /**
@@ -331,7 +328,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         i.remove();
       }
     }
-    setLanguageDescriptor(myLanguageDescriptor, true);
+    setLanguageDescriptor(myLanguageDescriptor);
+    this.reload();
   }
 
   public String toString() {
@@ -392,14 +390,33 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return false;
   }
 
-  private class MyClassLoader extends ClassLoader {
-    public MyClassLoader() {
+  @Nullable
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
+    // first check if class comes from stubs
+    if (classFqName.startsWith(getModuleName() + ".stubs.")) {
+      try {
+        return myStubsLoader.loadClass(classFqName);
+      } catch (ClassNotFoundException e) {
+        LOG.error("Exception during stubs' class loading", e);
+        return null;
+      }
+    }
+
+    // if not then call standard #getClass
+    return super.getClass(classFqName, ownClassOnly);
+  }
+
+  private class StubsClassLoader extends ClassLoader {
+    public StubsClassLoader() {
       super(Language.class.getClassLoader());
     }
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-      byte[] bytes = ModuleClassLoaderSupport.create(Language.this).findClassBytes(name);
+      JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
+      assert facet != null;
+      IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+      byte[] bytes = classPathItem.getClass(name);
       if (bytes == null) return null;
       definePackageIfNecessary(name);
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());

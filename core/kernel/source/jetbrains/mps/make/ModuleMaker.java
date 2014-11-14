@@ -47,7 +47,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -121,7 +120,7 @@ public class ModuleMaker {
     }
   }
 
-  // TODO: get rid of push and pop tracer calls -- they need only for performance checks
+  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Compiling", 12);
     myTracer.push("making " + modules.size() + " modules", false);
@@ -146,7 +145,6 @@ public class ModuleMaker {
 
       int errorCount = 0;
       int warnCount = 0;
-      boolean compiled = false;
       List<IMessage> messages = new ArrayList<IMessage>();
       Set<SModule> changedModules = new HashSet<SModule>();
 
@@ -169,7 +167,6 @@ public class ModuleMaker {
           myTracer.pop();
           errorCount += result.getErrors();
           warnCount += result.getWarnings();
-          compiled = compiled || result.isCompiledAnything();
           changedModules.addAll(result.getChangedModules());
           messages.addAll(result.getMessages());
           for (IMessage msg : result.getMessages()) {
@@ -326,7 +323,7 @@ public class ModuleMaker {
     }
   }
 
-  private String getName(char[][] compoundName) {
+  public static String convertCompoundToFqName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
     for (int i = 0; i < compoundName.length; i++) {
       char[] part = compoundName[i];
@@ -488,7 +485,7 @@ public class ModuleMaker {
 
       myTracer.push("storing files", false);
       for (ClassFile cf : cr.getClassFiles()) {
-        String fqName = getName(cf.getCompoundName());
+        String fqName = convertCompoundToFqName(cf.getCompoundName());
         String containerClassName = fqName;
         if (containerClassName.contains("$")) {
           int index = containerClassName.indexOf('$');

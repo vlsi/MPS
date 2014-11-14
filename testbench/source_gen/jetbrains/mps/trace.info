@@ -15,57 +15,57 @@
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393184888">
     <file name="CoreMpsTest.java">
       <node id="694564436393188666" at="11,0,12,0" concept="5" trace="CREATED_ENV" />
-      <node id="694564436393188704" at="13,30,14,30" concept="4" />
       <node id="694564436393188672" at="14,30,15,49" concept="1" />
       <node id="694564436393188684" at="16,30,17,52" concept="1" />
-      <node id="694564436393188698" at="22,30,23,28" concept="1" />
+      <node id="1315622556648115146" at="23,30,24,75" concept="4" />
+      <node id="1315622556648110038" at="24,75,25,16" concept="4" />
       <node id="694564436393188678" at="15,49,18,5" concept="2" />
-      <node id="694564436393188692" at="21,32,24,5" concept="2" />
-      <node id="694564436393188689" at="20,0,26,0" concept="6" trace="cleanup#()V" />
-      <node id="694564436393188669" at="12,0,20,0" concept="6" trace="setup#()V" />
+      <node id="694564436393188692" at="22,32,26,5" concept="2" />
+      <node id="694564436393188669" at="13,0,20,0" concept="6" trace="setup#()V" />
+      <node id="694564436393188689" at="21,0,28,0" concept="6" trace="cleanup#()V" />
       <scope id="694564436393188683" at="16,30,17,52" />
-      <scope id="694564436393188697" at="22,30,23,28" />
-      <scope id="694564436393188691" at="21,32,24,5" />
-      <scope id="694564436393188671" at="13,30,18,5" />
-      <scope id="694564436393188689" at="20,0,26,0" />
-      <scope id="694564436393188669" at="12,0,20,0" />
-      <unit id="694564436393184888" at="10,0,27,0" name="jetbrains.mps.CoreMpsTest" />
+      <scope id="694564436393188697" at="23,30,25,16" />
+      <scope id="694564436393188671" at="14,30,18,5" />
+      <scope id="694564436393188691" at="22,32,26,5" />
+      <scope id="694564436393188669" at="13,0,20,0" />
+      <scope id="694564436393188689" at="21,0,28,0" />
+      <unit id="694564436393184888" at="10,0,29,0" name="jetbrains.mps.CoreMpsTest" />
     </file>
   </root>
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393193873">
     <file name="WorkbenchMpsTest.java">
-      <node id="694564436393193879" at="14,0,15,0" concept="5" trace="CREATED_ENV" />
-      <node id="694564436393193885" at="17,41,18,48" concept="1" />
-      <node id="694564436393193897" at="19,30,20,52" concept="1" />
-      <node id="7276643694149347923" at="25,32,26,114" concept="4" />
-      <node id="7276643694149347720" at="26,114,27,14" concept="4" />
-      <node id="4831291550463517861" at="30,48,31,51" concept="0" />
-      <node id="4831291550463557879" at="34,55,35,29" concept="1" />
-      <node id="4831291550463516211" at="35,29,36,68" concept="3" />
-      <node id="4831291550463558135" at="39,54,40,29" concept="1" />
-      <node id="694564436393193932" at="40,29,41,77" concept="1" />
-      <node id="694564436393193891" at="18,48,21,5" concept="2" />
-      <node id="4831291550463557725" at="30,0,33,0" concept="6" trace="checkEnvironmentExists#()V" />
-      <node id="694564436393193916" at="34,0,38,0" concept="6" trace="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
-      <node id="694564436393193928" at="39,0,43,0" concept="6" trace="disposeProject#(Ljetbrains/mps/project/Project;)V" />
-      <node id="694564436393193902" at="24,0,29,0" concept="6" trace="cleanup#()V" />
-      <node id="694564436393193882" at="16,0,23,0" concept="6" trace="setUpEnvironment#()V" />
-      <scope id="694564436393193896" at="19,30,20,52" />
-      <scope id="4831291550463517388" at="30,48,31,51" />
-      <scope id="694564436393193904" at="25,32,27,14" />
-      <scope id="694564436393193919" at="34,55,36,68" />
-      <scope id="694564436393193931" at="39,54,41,77" />
-      <scope id="4831291550463557725" at="30,0,33,0" />
-      <scope id="694564436393193884" at="17,41,21,5" />
-      <scope id="694564436393193916" at="34,0,38,0">
+      <node id="694564436393193885" at="21,41,22,48" concept="1" />
+      <node id="694564436393193897" at="23,30,24,52" concept="1" />
+      <node id="7276643694149347923" at="29,32,30,114" concept="4" />
+      <node id="7276643694149347720" at="30,114,31,14" concept="4" />
+      <node id="4831291550463517861" at="34,48,35,51" concept="0" />
+      <node id="4831291550463557879" at="38,55,39,29" concept="1" />
+      <node id="4831291550463516211" at="39,29,40,68" concept="3" />
+      <node id="4831291550463558135" at="43,54,44,29" concept="1" />
+      <node id="694564436393193932" at="44,29,45,77" concept="1" />
+      <node id="694564436393193891" at="22,48,25,5" concept="2" />
+      <node id="4831291550463557725" at="34,0,37,0" concept="6" trace="checkEnvironmentExists#()V" />
+      <node id="694564436393193879" at="15,0,19,0" concept="5" trace="CREATED_ENV" />
+      <node id="694564436393193916" at="38,0,42,0" concept="6" trace="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
+      <node id="694564436393193928" at="43,0,47,0" concept="6" trace="disposeProject#(Ljetbrains/mps/project/Project;)V" />
+      <node id="694564436393193902" at="28,0,33,0" concept="6" trace="cleanup#()V" />
+      <node id="694564436393193882" at="20,0,27,0" concept="6" trace="setUpEnvironment#()V" />
+      <scope id="694564436393193896" at="23,30,24,52" />
+      <scope id="4831291550463517388" at="34,48,35,51" />
+      <scope id="694564436393193904" at="29,32,31,14" />
+      <scope id="694564436393193919" at="38,55,40,68" />
+      <scope id="694564436393193931" at="43,54,45,77" />
+      <scope id="4831291550463557725" at="34,0,37,0" />
+      <scope id="694564436393193884" at="21,41,25,5" />
+      <scope id="694564436393193916" at="38,0,42,0">
         <var name="projectFile" id="694564436393193917" />
       </scope>
-      <scope id="694564436393193928" at="39,0,43,0">
+      <scope id="694564436393193928" at="43,0,47,0">
         <var name="project" id="694564436393193929" />
       </scope>
-      <scope id="694564436393193902" at="24,0,29,0" />
-      <scope id="694564436393193882" at="16,0,23,0" />
-      <unit id="694564436393193873" at="13,0,44,0" name="jetbrains.mps.WorkbenchMpsTest" />
+      <scope id="694564436393193902" at="28,0,33,0" />
+      <scope id="694564436393193882" at="20,0,27,0" />
+      <unit id="694564436393193873" at="13,0,48,0" name="jetbrains.mps.WorkbenchMpsTest" />
     </file>
   </root>
 </debug-info>

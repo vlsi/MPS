@@ -125,7 +125,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
+        mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor());
       }
     });
   }

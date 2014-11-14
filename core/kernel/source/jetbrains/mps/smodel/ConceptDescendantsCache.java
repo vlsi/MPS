@@ -54,7 +54,9 @@ public class ConceptDescendantsCache implements CoreComponent {
     public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
-        for (ConceptDescriptor concept : myLoadedLanguageToConceptsMap.get(language)) {
+        Set<ConceptDescriptor> concepts = myLoadedLanguageToConceptsMap.get(language);
+        if (concepts == null) throw new IllegalArgumentException("No concepts registered for the language " + language);
+        for (ConceptDescriptor concept : concepts) {
           unloadConcept(concept);
         }
         myLoadedLanguageToConceptsMap.remove(language);
@@ -146,12 +148,14 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(LanguageRuntime languageRuntime, StructureAspectDescriptor structureDescriptor) {
     Language language = (Language) myModuleRepository.getModuleByFqName(languageRuntime.getNamespace());
+    assert language != null : "Language " + languageRuntime.getNamespace() + " is not registered";
     org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptySet();
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.conceptName_AbstractConceptDeclaration);
     if (abstractConceptDeclaration == null) {
-      LOG.error("Structure language is not loaded yet, cannot get all concepts from language " + languageRuntime, new Throwable());
+      LOG.error("The structure language is not loaded yet, cannot get all concepts from the language " +
+          "'" + language.getModuleName() + "'", new Throwable());
       return result;
     }
     for (SNode root : structureModel.getRootNodes()) {

@@ -117,11 +117,15 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   }
 
   public static class MyState {
+    public static final String VERSION = "3.2";
+    public String version = VERSION;
     public ArrayList<ConsoleTool.TabState> tabs = new ArrayList<ConsoleTool.TabState>();
   }
 
   public void loadState(ConsoleTool.MyState state) {
-    loadedState = state;
+    if (eq_xg3v07_a0a0eb(state.version, ConsoleTool.MyState.VERSION)) {
+      loadedState = state;
+    }
   }
 
   public void executeCommand(final SNode command) {
@@ -189,6 +193,9 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       checkedDotOperand.setCloseable(false);
     }
 
+  }
+  private static boolean eq_xg3v07_a0a0eb(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_xg3v07_a0a0a0ib(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

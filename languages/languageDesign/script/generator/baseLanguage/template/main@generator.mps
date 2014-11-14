@@ -926,7 +926,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="392628194912665739" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736670" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736671" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -1207,7 +1207,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="6720970695606049482" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736985" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736986" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -1606,7 +1606,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="6720970695615504635" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736629" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736630" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -2203,7 +2203,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="392628194913886713" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736869" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736870" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -2739,7 +2739,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="5264392666049943065" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736484" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736485" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -3548,7 +3548,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="2312049224521823005" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736443" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736444" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -3815,7 +3815,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="2037769997942400218" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736918" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736919" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />
@@ -5474,7 +5474,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="5718428430098993521" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="6955116391918736291" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1081236700937" id="6955116391918736292" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolveInfo="getInstance" />

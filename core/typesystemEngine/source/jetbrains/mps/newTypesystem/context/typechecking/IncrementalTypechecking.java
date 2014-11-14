@@ -27,6 +27,7 @@ import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.newTypesystem.context.component.ITypeErrorComponent;
 import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComponent;
 import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
@@ -44,7 +45,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.lang.ref.ReferenceQueue;
@@ -61,7 +61,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter(){
     @Override
-    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       myNonTypeSystemComponent.clear();
     }
   };

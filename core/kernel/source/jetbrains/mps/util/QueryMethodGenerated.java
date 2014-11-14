@@ -19,6 +19,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IllegalModelChangeError;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -50,9 +52,9 @@ public class QueryMethodGenerated implements CoreComponent {
   private ConcurrentMap<Class<?>, Boolean> myNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
 
   private final ClassLoaderManager myClassLoaderManager;
-  private final MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
+  private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       clearCaches();
     }
   };
@@ -64,12 +66,12 @@ public class QueryMethodGenerated implements CoreComponent {
   @Override
   public void init() {
     ourInstance = this;
-    myClassLoaderManager.addClassesHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeClassesHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     ourInstance.clearCaches();
     ourInstance = null;
   }
@@ -109,12 +111,12 @@ public class QueryMethodGenerated implements CoreComponent {
       reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s': no module for model '%s", className,sm));
       return null;
     }
-    if (!myClassLoaderManager.canLoad(module)) {
+    if (!(module instanceof ReloadableModule && ((ReloadableModule) module).willLoad())) {
       reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s': module %s couldn't be loaded", className, module.getModuleName()));
       return null;
     }
 
-    Class queriesClass = myClassLoaderManager.getClass(module, className);
+    Class queriesClass = ((ReloadableModule) module).getClass(className);
     if (queriesClass == null) {
       reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s' for model '%s' : TRY TO GENERATE", className, sm));
     }

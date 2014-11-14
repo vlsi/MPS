@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptDefaultAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
@@ -80,18 +79,6 @@ public class SAdapterEqualityTest {
 
     assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
     assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
-
-    assertFalse(new SInterfaceConceptAdapterByName("name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name"))));
-    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name")).equals(new SInterfaceConceptAdapterByName("name")));
-
-    assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name"))));
-    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")).equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
-
-    assertFalse(new SConceptAdapterByName("name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name"))));
-    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterByName("name")).equals(new SConceptAdapterByName("name")));
-
-    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name"))));
-    assertFalse(new SInterfaceConceptDefaultAdapter(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")).equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
   }
 
   @Test

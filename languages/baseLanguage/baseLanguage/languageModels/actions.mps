@@ -29436,17 +29436,17 @@
                     <node concept="vg0i.1197027756228" id="558454895477903511" role="vg0i.1068580123155.1068580123156" info="nn">
                       <node concept="vg0i.1079359253375" id="668461590415138931" role="vg0i.1197027756228.1197027771414" info="nn">
                         <node concept="vg0i.1070534934090" id="668461590415138932" role="vg0i.1079359253375.1079359253376" info="nn">
+                          <node concept="vg0i.1068498886296" id="5585074993491243176" role="vg0i.1070534934090.1070534934092" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="558454895479006190" resolveInfo="currentModule" />
+                          </node>
                           <node concept="vg0i.1107535904670" id="668461590415138933" role="vg0i.1070534934090.1070534934091" info="in">
                             <reference role="vg0i.1107535904670.1107535924139" target="vsqj.~AbstractModule" resolveInfo="AbstractModule" />
-                          </node>
-                          <node concept="vg0i.1068498886296" id="668461590415138934" role="vg0i.1070534934090.1070534934092" info="nn">
-                            <reference role="vg0i.1068498886296.1068581517664" target="558454895479006190" resolveInfo="currentModule" />
                           </node>
                         </node>
                       </node>
                       <node concept="vg0i.1202948039474" id="558454895477910026" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
-                        <node concept="vg0i.1068498886296" id="668461590426318309" role="vg0i.1204053956946.1068499141038" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
+                        <node concept="vg0i.1068498886296" id="5585074993491266333" role="vg0i.1204053956946.1068499141038" info="nn">
                           <reference role="vg0i.1068498886296.1068581517664" target="668461590426318307" resolveInfo="reference" />
                         </node>
                         <node concept="vg0i.1068580123137" id="558454895478028225" role="vg0i.1204053956946.1068499141038" info="nn">
@@ -29457,10 +29457,10 @@
                   </node>
                 </node>
                 <node concept="vg0i.1073239437375" id="668461590426318779" role="vg0i.1068580123159.1068580123160" info="nn">
-                  <node concept="vg0i.1070534058343" id="668461590426318812" role="vg0i.1081773326031.1081773367579" info="nn" />
-                  <node concept="vg0i.1068498886296" id="668461590426318713" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <node concept="vg0i.1068498886296" id="5585074993491243221" role="vg0i.1081773326031.1081773367580" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="668461590426318307" resolveInfo="reference" />
                   </node>
+                  <node concept="vg0i.1070534058343" id="668461590426318812" role="vg0i.1081773326031.1081773367579" info="nn" />
                 </node>
               </node>
             </node>

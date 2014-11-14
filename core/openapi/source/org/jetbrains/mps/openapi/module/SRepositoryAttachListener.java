@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.module;
 
 /**
  * Variation of a repository listener that receives notifications when listener is attached to/detached from a repository.
- * Useful for listeners that need to perform certain initialization of own state the moment they get registered with a repostitory.
+ * Useful for listeners that need to perform certain initialization of own state the moment they get registered with a repository.
  * Also this variation comes handy for global listeners that track all repositories through <code>SRepositoryRegistry.addGlobalListener()</code>,
  * @author Artem Tikhomirov
  */

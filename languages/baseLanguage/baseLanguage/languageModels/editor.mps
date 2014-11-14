@@ -647,11 +647,11 @@
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpfj" ref="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" implicit="true" />
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" implicit="true" />
     <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" implicit="true" />
     <import index="qe67" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="1073416106125" info="ig">
@@ -2297,6 +2297,9 @@
           <property role="9wj7.1073389577006.1073389577007" value="final" />
           <reference role="9wj7.1073389214265.1139959269582" target="1809470990908786946" resolveInfo="DeleteFinalInField" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="5448802299462981691" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="finalModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883460936022" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -2315,14 +2318,14 @@
               </node>
             </node>
           </node>
-          <node concept="9wj7.4323500428121233431" id="5448802299462981691" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="finalModifier" />
-          </node>
         </node>
         <node concept="9wj7.1073389577006" id="8606350594693654666" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="transient" />
           <reference role="9wj7.1073389214265.1139959269582" target="1809470990914537546" resolveInfo="DeleteTransient" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="5448802299462982359" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="transientModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883461060843" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -2341,14 +2344,14 @@
               </node>
             </node>
           </node>
-          <node concept="9wj7.4323500428121233431" id="5448802299462982359" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="transientModifier" />
-          </node>
         </node>
         <node concept="9wj7.1073389577006" id="1240250480369" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="volatile" />
           <reference role="9wj7.1073389214265.1139959269582" target="1809470990914461071" resolveInfo="DeleteVolatile" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="5448802299462982719" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="volatileModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="3207672282878545883" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -2366,9 +2369,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="9wj7.4323500428121233431" id="5448802299462982719" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="volatileModifier" />
           </node>
         </node>
         <node concept="9wj7.1073389882823" id="1188210576815" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -4775,20 +4775,23 @@
           <property role="9wj7.1073389577006.1073389577007" value="static" />
           <reference role="9wj7.1073389214265.1139959269582" target="1809470990891153689" resolveInfo="DeleteStaticInField" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="1774243543375899715" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="staticModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883461065403" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
           <node concept="9wj7.1164824717996" id="2509912883461065405" role="9wj7.1073389214265.1164826688380" info="ng">
             <node concept="9wj7.8233876857994246075" id="7272388447761557908" role="9wj7.1164824717996.1164824815888" info="ng" />
           </node>
-          <node concept="9wj7.4323500428121233431" id="1774243543375899715" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="staticModifier" />
-          </node>
         </node>
         <node concept="9wj7.1073389577006" id="1188210606983" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="final" />
           <reference role="9wj7.1073389214265.1139959269582" target="7743745654901224334" resolveInfo="DeleteFinalInStaticField" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="1774243543375910496" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="finalModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883461065465" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -4807,14 +4810,14 @@
               </node>
             </node>
           </node>
-          <node concept="9wj7.4323500428121233431" id="1774243543375910496" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="finalModifier" />
-          </node>
         </node>
         <node concept="9wj7.1073389577006" id="6468716278899212583" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="transient" />
           <reference role="9wj7.1073389214265.1139959269582" target="6468716278899247206" resolveInfo="DeleteStaticTransient" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="1774243543375911143" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="transientModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883461067495" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -4833,14 +4836,14 @@
               </node>
             </node>
           </node>
-          <node concept="9wj7.4323500428121233431" id="1774243543375911143" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="transientModifier" />
-          </node>
         </node>
         <node concept="9wj7.1073389577006" id="6468716278899144043" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="volatile" />
           <reference role="9wj7.1073389214265.1139959269582" target="6468716278899275975" resolveInfo="DeleteStaticVolatile" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpc5.3229274890674099465" resolveInfo="KeyWord" />
+          <node concept="9wj7.4323500428121233431" id="1774243543375911790" role="9wj7.1073389214265.4323500428121274054" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="volatileModifier" />
+          </node>
           <node concept="9wj7.1186414860679" id="2509912883461069529" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
@@ -4858,9 +4861,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="9wj7.4323500428121233431" id="1774243543375911790" role="9wj7.1073389214265.4323500428121274054" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="volatileModifier" />
           </node>
         </node>
         <node concept="9wj7.1073389882823" id="1188210606990" role="9wj7.1073389446423.1073389446424" info="sg">

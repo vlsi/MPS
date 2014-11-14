@@ -47,6 +47,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -76,7 +77,7 @@ public class SolutionIdea extends Solution {
     super(descriptor, null);
     myModule = module;
     // TODO: simply set solution descriptor local variable?
-    setSolutionDescriptor(descriptor, false);
+    setSolutionDescriptor(descriptor);
     myConnection = myModule.getProject().getMessageBus().connect();
     myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new MyModuleRootListener());
     myConnection.subscribe(FacetManager.FACETS_TOPIC, new MyFacetManagerAdapter());
@@ -95,11 +96,11 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
 
     newDescriptor.setNamespace(myModule.getName());
 //    addLibs(newDescriptor);
-    super.setSolutionDescriptor(newDescriptor, reloadClasses);
+    super.setSolutionDescriptor(newDescriptor);
 
     try {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
@@ -250,7 +251,7 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
+  public Dependency addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
 
@@ -264,6 +265,7 @@ public class SolutionIdea extends Solution {
       ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
     }
     modifiableModel.commit();
+    return null;
   }
 
   @Override
@@ -304,7 +306,7 @@ public class SolutionIdea extends Solution {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        setModuleDescriptor(getModuleDescriptor(), false);
+        setModuleDescriptor(getModuleDescriptor());
       }
     });
   }
@@ -393,7 +395,7 @@ public class SolutionIdea extends Solution {
         // this is to prevent a delayed write to be executed after the module has already been disposed
         // TODO: find a better solution
         if (myModule.isDisposed()) return;
-        setModuleDescriptor(getModuleDescriptor(), false);
+        setModuleDescriptor(getModuleDescriptor());
       }
     });
   }

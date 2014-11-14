@@ -134,8 +134,12 @@ public class RefactoringTest extends WorkbenchMpsTest {
           return tester.testRefactoring(project, sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
         }
       });
-    } catch (Throwable t) {
-      throw new RuntimeException(t);
+    } catch (ClassNotFoundException e) {
+      throw new RuntimeException(e);
+    } catch (InstantiationException e) {
+      throw new RuntimeException(e);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
     }
   }
 
@@ -146,7 +150,7 @@ public class RefactoringTest extends WorkbenchMpsTest {
   public static void updateLanguageClasspath(Language l, String classpath) {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
     languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
-    l.setLanguageDescriptor(languageDescriptor, false);
+    l.setLanguageDescriptor(languageDescriptor);
   }
 
   @BeforeClass

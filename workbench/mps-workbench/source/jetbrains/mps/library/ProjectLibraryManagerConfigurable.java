@@ -16,6 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
+import jetbrains.mps.project.ProjectLibraryManager;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 

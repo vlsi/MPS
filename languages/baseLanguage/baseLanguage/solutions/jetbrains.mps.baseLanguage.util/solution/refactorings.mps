@@ -235,7 +235,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240824834947" name="jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240825616499" name="jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639" name="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="64d34fcd-ad02-4e73-aff8-a581124c2e30/2005690715325995353" name="jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults" />
@@ -19842,7 +19841,7 @@
                     </node>
                   </node>
                   <node concept="vg0i.1202948039474" id="4027590910268192607" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cvoid" resolveInfo="addDependency" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddDependency(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,boolean)%cjetbrains%dmps%dproject%dstructure%dmodules%dDependency" resolveInfo="addDependency" />
                     <node concept="vg0i.1197027756228" id="4027590910268204257" role="vg0i.1204053956946.1068499141038" info="nn">
                       <node concept="vg0i.1197027756228" id="4027590910268194361" role="vg0i.1197027756228.1197027771414" info="nn">
                         <node concept="vg0i.1068498886296" id="4027590910268194121" role="vg0i.1197027756228.1197027771414" info="nn">

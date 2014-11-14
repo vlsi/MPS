@@ -18,316 +18,316 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)/757342313568246027">
     <file name="BLDependenciesHandler.java">
-      <node id="757342313568246027" at="14,0,15,0" concept="13" trace="EMPTY_ARRAY" />
-      <node id="757342313568246027" at="15,0,16,0" concept="4" trace="dependenciesRoothandler" />
-      <node id="757342313568246027" at="16,0,17,0" concept="4" trace="dependencyhandler" />
-      <node id="757342313568246027" at="17,0,18,0" concept="4" trace="classNodehandler" />
-      <node id="757342313568246027" at="18,0,19,0" concept="4" trace="myHandlersStack" />
-      <node id="757342313568246027" at="19,0,20,0" concept="4" trace="myChildHandlersStack" />
-      <node id="757342313568246027" at="20,0,21,0" concept="4" trace="myValues" />
-      <node id="757342313568246027" at="21,0,22,0" concept="4" trace="myLocator" />
-      <node id="757342313568246027" at="22,0,23,0" concept="4" trace="myResult" />
-      <node id="757342313568246027" at="25,40,26,20" concept="10" />
-      <node id="757342313568246027" at="29,51,30,24" concept="3" />
-      <node id="757342313568246027" at="33,80,34,148" concept="9" />
-      <node id="757342313568246027" at="35,26,36,73" concept="3" />
-      <node id="757342313568246027" at="40,90,41,73" concept="9" />
-      <node id="757342313568246027" at="41,73,42,39" concept="9" />
-      <node id="757342313568246027" at="42,39,43,33" concept="3" />
-      <node id="757342313568246027" at="44,39,45,48" concept="3" />
-      <node id="757342313568246027" at="46,12,47,73" concept="9" />
-      <node id="757342313568246027" at="48,23,49,46" concept="3" />
-      <node id="757342313568246027" at="54,115,55,148" concept="9" />
-      <node id="757342313568246027" at="56,26,57,14" concept="11" />
-      <node id="757342313568246027" at="57,14,58,40" concept="3" />
-      <node id="757342313568246027" at="59,12,60,72" concept="3" />
-      <node id="757342313568246027" at="61,5,62,0" concept="12" />
-      <node id="757342313568246027" at="62,0,63,22" concept="11" />
-      <node id="757342313568246027" at="65,46,66,78" concept="15" />
-      <node id="757342313568246027" at="68,5,69,0" concept="12" />
-      <node id="757342313568246027" at="69,0,70,53" concept="9" />
-      <node id="757342313568246027" at="71,34,72,44" concept="3" />
-      <node id="757342313568246027" at="73,5,74,0" concept="12" />
-      <node id="757342313568246027" at="74,0,75,25" concept="11" />
-      <node id="757342313568246027" at="76,54,77,43" concept="9" />
-      <node id="757342313568246027" at="77,43,78,44" concept="9" />
-      <node id="757342313568246027" at="78,44,79,51" concept="3" />
-      <node id="757342313568246027" at="80,5,81,34" concept="3" />
-      <node id="757342313568246027" at="81,34,82,26" concept="3" />
-      <node id="757342313568246027" at="85,0,86,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-      <node id="757342313568246027" at="90,73,91,18" concept="10" />
-      <node id="757342313568246027" at="95,139,96,67" concept="15" />
-      <node id="757342313568246027" at="99,39,100,15" concept="10" />
-      <node id="757342313568246027" at="101,7,102,81" concept="15" />
-      <node id="757342313568246027" at="104,45,105,47" concept="10" />
-      <node id="757342313568246027" at="111,0,112,0" concept="4" trace="requiredAttributes" />
-      <node id="757342313568246040" at="115,84,116,37" concept="10" />
-      <node id="757342313568246027" at="123,84,124,64" concept="3" />
-      <node id="757342313568246027" at="126,11,127,33" concept="10" />
-      <node id="757342313568246027" at="128,7,129,61" concept="10" />
-      <node id="757342313568246027" at="131,104,132,66" concept="9" />
-      <node id="757342313568246027" at="132,66,133,56" concept="9" />
-      <node id="757342313568246032" at="133,56,134,36" concept="3" />
-      <node id="757342313568246027" at="138,0,139,0" concept="4" trace="requiredAttributes" />
-      <node id="757342313568246099" at="142,83,143,36" concept="10" />
-      <node id="757342313568246027" at="146,45,147,32" concept="10" />
-      <node id="757342313568246027" at="150,104,151,64" concept="9" />
-      <node id="757342313568246083" at="152,37,153,35" concept="3" />
-      <node id="757342313568246027" at="153,35,154,15" concept="10" />
-      <node id="757342313568246091" at="156,32,157,34" concept="3" />
-      <node id="757342313568246027" at="157,34,158,15" concept="10" />
-      <node id="757342313568246027" at="159,7,160,55" concept="3" />
-      <node id="757342313568246027" at="167,84,168,64" concept="3" />
-      <node id="757342313568246027" at="170,11,171,32" concept="10" />
-      <node id="757342313568246027" at="172,7,173,61" concept="10" />
-      <node id="757342313568246027" at="175,104,176,64" concept="9" />
-      <node id="757342313568246027" at="176,64,177,40" concept="9" />
-      <node id="757342313568246047" at="177,40,178,35" concept="9" />
-      <node id="757342313568246057" at="179,43,180,15" concept="10" />
-      <node id="757342313568246063" at="182,31,183,33" concept="3" />
-      <node id="757342313568246075" at="184,14,185,32" concept="3" />
-      <node id="757342313568246027" at="190,0,191,0" concept="4" trace="requiredAttributes" />
-      <node id="757342313568246139" at="194,75,195,27" concept="10" />
-      <node id="757342313568246027" at="198,104,199,48" concept="9" />
-      <node id="757342313568246106" at="200,43,201,45" concept="3" />
-      <node id="757342313568246113" at="201,45,202,34" concept="3" />
-      <node id="757342313568246027" at="202,34,203,15" concept="10" />
-      <node id="757342313568246122" at="205,44,206,45" concept="3" />
-      <node id="757342313568246129" at="206,45,207,33" concept="3" />
-      <node id="757342313568246027" at="207,33,208,15" concept="10" />
-      <node id="757342313568246027" at="209,7,210,55" concept="3" />
-      <node id="757342313568246027" at="23,0,25,0" concept="1" trace="BLDependenciesHandler#()V" />
-      <node id="757342313568246027" at="59,10,61,5" concept="0" />
-      <node id="757342313568246027" at="88,0,90,0" concept="1" trace="ElementHandler#()V" />
-      <node id="757342313568246027" at="93,0,95,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="757342313568246027" at="107,0,109,0" concept="8" trace="validate#(Ljava/lang/Object;)V" />
-      <node id="757342313568246027" at="112,0,114,0" concept="1" trace="DependenciesRootElementHandler#()V" />
-      <node id="757342313568246027" at="139,0,141,0" concept="1" trace="DependencyElementHandler#()V" />
-      <node id="757342313568246073" at="184,12,186,7" concept="0" />
-      <node id="757342313568246027" at="191,0,193,0" concept="1" trace="ClassNodeElementHandler#()V" />
-      <node id="757342313568246027" at="25,0,28,0" concept="8" trace="getResult#()Ljetbrains/mps/make/java/ModelDependencies;" />
-      <node id="757342313568246027" at="34,148,37,5" concept="7" />
-      <node id="757342313568246027" at="47,73,50,7" concept="7" />
-      <node id="757342313568246027" at="64,54,67,7" concept="7" />
-      <node id="757342313568246027" at="70,53,73,5" concept="7" />
-      <node id="757342313568246027" at="90,0,93,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
-      <node id="757342313568246027" at="95,0,98,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-      <node id="757342313568246027" at="98,86,101,7" concept="7" />
-      <node id="757342313568246027" at="104,0,107,0" concept="8" trace="requiredAttributes#()[Ljava/lang/String;" />
-      <node id="757342313568246055" at="178,35,181,7" concept="7" />
-      <node id="757342313568246027" at="28,0,32,0" concept="8" trace="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
-      <node id="757342313568246027" at="114,0,118,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/ModelDependencies;" />
-      <node id="757342313568246027" at="122,0,126,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-      <node id="757342313568246027" at="141,0,145,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/RootDependencies;" />
-      <node id="757342313568246027" at="145,0,149,0" concept="8" trace="requiredAttributes#()[Ljava/lang/String;" />
-      <node id="757342313568246027" at="151,64,155,7" concept="7" />
-      <node id="757342313568246027" at="155,7,159,7" concept="7" />
-      <node id="757342313568246027" at="166,0,170,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-      <node id="757342313568246027" at="193,0,197,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/Object;" />
-      <node id="757342313568246027" at="46,10,51,5" concept="0" />
-      <node id="757342313568246027" at="63,22,68,5" concept="6" />
-      <node id="757342313568246027" at="75,25,80,5" concept="5" />
-      <node id="757342313568246027" at="131,0,136,0" concept="8" trace="handleChild_757342313568246030#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-      <node id="757342313568246061" at="181,7,186,7" concept="7" />
-      <node id="757342313568246027" at="199,48,204,7" concept="7" />
-      <node id="757342313568246027" at="204,7,209,7" concept="7" />
-      <node id="757342313568246027" at="55,148,61,5" concept="7" />
-      <node id="757342313568246027" at="98,0,104,0" concept="8" trace="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
-      <node id="757342313568246027" at="120,41,126,11" concept="3" />
-      <node id="757342313568246027" at="164,40,170,11" concept="3" />
-      <node id="757342313568246027" at="32,0,39,0" concept="8" trace="characters#([CII)V" />
-      <node id="757342313568246027" at="43,33,51,5" concept="7" />
-      <node id="757342313568246027" at="119,139,128,7" concept="7" />
-      <node id="757342313568246027" at="163,139,172,7" concept="7" />
-      <node id="757342313568246027" at="118,0,131,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-      <node id="757342313568246027" at="149,0,162,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="757342313568246027" at="162,0,175,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
-      <node id="757342313568246027" at="175,0,188,0" concept="8" trace="handleChild_757342313568246045#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-      <node id="757342313568246027" at="39,0,53,0" concept="8" trace="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="757342313568246027" at="197,0,212,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="757342313568246027" at="53,0,84,0" concept="8" trace="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
-      <scope id="757342313568246027" at="23,34,23,34" />
-      <scope id="757342313568246027" at="88,30,88,30" />
-      <scope id="757342313568246027" at="93,104,93,104" />
-      <scope id="757342313568246027" at="107,70,107,70" />
-      <scope id="757342313568246027" at="112,45,112,45" />
-      <scope id="757342313568246027" at="139,39,139,39" />
-      <scope id="757342313568246027" at="191,38,191,38" />
-      <scope id="757342313568246027" at="25,40,26,20" />
-      <scope id="757342313568246027" at="29,51,30,24" />
-      <scope id="757342313568246027" at="35,26,36,73" />
-      <scope id="757342313568246027" at="44,39,45,48" />
-      <scope id="757342313568246027" at="48,23,49,46" />
-      <scope id="757342313568246027" at="59,12,60,72" />
-      <scope id="757342313568246027" at="65,46,66,78" />
-      <scope id="757342313568246027" at="71,34,72,44" />
-      <scope id="757342313568246027" at="85,0,86,0">
+      <node id="757342313568246027" at="14,0,15,0" concept="4" trace="dependenciesRootHandler" />
+      <node id="757342313568246027" at="15,0,16,0" concept="4" trace="dependencyHandler" />
+      <node id="757342313568246027" at="16,0,17,0" concept="4" trace="classNodeHandler" />
+      <node id="757342313568246027" at="17,0,18,0" concept="4" trace="myHandlersStack" />
+      <node id="757342313568246027" at="18,0,19,0" concept="4" trace="myChildHandlersStack" />
+      <node id="757342313568246027" at="19,0,20,0" concept="4" trace="myValues" />
+      <node id="757342313568246027" at="20,0,21,0" concept="4" trace="myLocator" />
+      <node id="757342313568246027" at="21,0,22,0" concept="4" trace="myResult" />
+      <node id="757342313568246027" at="24,40,25,20" concept="10" />
+      <node id="757342313568246027" at="28,51,29,24" concept="3" />
+      <node id="757342313568246027" at="32,80,33,148" concept="9" />
+      <node id="757342313568246027" at="34,26,35,73" concept="3" />
+      <node id="757342313568246027" at="39,90,40,73" concept="9" />
+      <node id="757342313568246027" at="40,73,41,39" concept="9" />
+      <node id="757342313568246027" at="41,39,42,33" concept="3" />
+      <node id="757342313568246027" at="43,39,44,48" concept="3" />
+      <node id="757342313568246027" at="45,12,46,73" concept="9" />
+      <node id="757342313568246027" at="47,23,48,46" concept="3" />
+      <node id="757342313568246027" at="53,115,54,148" concept="9" />
+      <node id="757342313568246027" at="55,26,56,14" concept="11" />
+      <node id="757342313568246027" at="56,14,57,40" concept="3" />
+      <node id="757342313568246027" at="58,12,59,72" concept="3" />
+      <node id="757342313568246027" at="60,5,61,0" concept="12" />
+      <node id="757342313568246027" at="61,0,62,22" concept="11" />
+      <node id="757342313568246027" at="64,46,65,78" concept="15" />
+      <node id="757342313568246027" at="67,5,68,0" concept="12" />
+      <node id="757342313568246027" at="68,0,69,53" concept="9" />
+      <node id="757342313568246027" at="70,34,71,44" concept="3" />
+      <node id="757342313568246027" at="72,5,73,0" concept="12" />
+      <node id="757342313568246027" at="73,0,74,25" concept="11" />
+      <node id="757342313568246027" at="75,54,76,43" concept="9" />
+      <node id="757342313568246027" at="76,43,77,44" concept="9" />
+      <node id="757342313568246027" at="77,44,78,51" concept="3" />
+      <node id="757342313568246027" at="79,5,80,34" concept="3" />
+      <node id="757342313568246027" at="80,34,81,26" concept="3" />
+      <node id="757342313568246027" at="84,0,85,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="757342313568246027" at="87,0,88,0" concept="4" trace="requiredAttributes" />
+      <node id="757342313568246027" at="91,73,92,18" concept="10" />
+      <node id="757342313568246027" at="96,139,97,67" concept="15" />
+      <node id="757342313568246027" at="100,39,101,15" concept="10" />
+      <node id="757342313568246027" at="102,7,103,81" concept="15" />
+      <node id="757342313568246027" at="105,45,106,32" concept="10" />
+      <node id="757342313568246027" at="108,62,109,36" concept="3" />
+      <node id="757342313568246040" at="118,84,119,37" concept="10" />
+      <node id="757342313568246027" at="126,84,127,64" concept="3" />
+      <node id="757342313568246027" at="129,11,130,33" concept="10" />
+      <node id="757342313568246027" at="131,7,132,61" concept="10" />
+      <node id="757342313568246027" at="134,104,135,66" concept="9" />
+      <node id="757342313568246027" at="135,66,136,56" concept="9" />
+      <node id="757342313568246032" at="136,56,137,36" concept="3" />
+      <node id="757342313568246027" at="141,39,142,41" concept="3" />
+      <node id="757342313568246099" at="145,83,146,36" concept="10" />
+      <node id="757342313568246027" at="149,104,150,64" concept="9" />
+      <node id="757342313568246083" at="151,37,152,35" concept="3" />
+      <node id="757342313568246027" at="152,35,153,15" concept="10" />
+      <node id="757342313568246091" at="155,32,156,34" concept="3" />
+      <node id="757342313568246027" at="156,34,157,15" concept="10" />
+      <node id="757342313568246027" at="158,7,159,55" concept="3" />
+      <node id="757342313568246027" at="166,84,167,64" concept="3" />
+      <node id="757342313568246027" at="169,11,170,32" concept="10" />
+      <node id="757342313568246027" at="171,7,172,61" concept="10" />
+      <node id="757342313568246027" at="174,104,175,64" concept="9" />
+      <node id="757342313568246027" at="175,64,176,40" concept="9" />
+      <node id="757342313568246047" at="176,40,177,35" concept="9" />
+      <node id="757342313568246057" at="178,43,179,15" concept="10" />
+      <node id="757342313568246063" at="181,31,182,33" concept="3" />
+      <node id="757342313568246075" at="183,14,184,32" concept="3" />
+      <node id="757342313568246139" at="192,75,193,27" concept="10" />
+      <node id="757342313568246027" at="196,104,197,48" concept="9" />
+      <node id="757342313568246106" at="198,43,199,45" concept="3" />
+      <node id="757342313568246113" at="199,45,200,34" concept="3" />
+      <node id="757342313568246027" at="200,34,201,15" concept="10" />
+      <node id="757342313568246122" at="203,44,204,45" concept="3" />
+      <node id="757342313568246129" at="204,45,205,33" concept="3" />
+      <node id="757342313568246027" at="205,33,206,15" concept="10" />
+      <node id="757342313568246027" at="207,7,208,55" concept="3" />
+      <node id="757342313568246027" at="22,0,24,0" concept="1" trace="BLDependenciesHandler#()V" />
+      <node id="757342313568246027" at="58,10,60,5" concept="0" />
+      <node id="757342313568246027" at="89,0,91,0" concept="1" trace="ElementHandler#()V" />
+      <node id="757342313568246027" at="94,0,96,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="757342313568246027" at="111,0,113,0" concept="8" trace="validate#(Ljava/lang/Object;)V" />
+      <node id="757342313568246027" at="115,0,117,0" concept="1" trace="DependenciesRootElementHandler#()V" />
+      <node id="757342313568246073" at="183,12,185,7" concept="0" />
+      <node id="757342313568246027" at="189,0,191,0" concept="1" trace="ClassNodeElementHandler#()V" />
+      <node id="757342313568246027" at="24,0,27,0" concept="8" trace="getResult#()Ljetbrains/mps/make/java/ModelDependencies;" />
+      <node id="757342313568246027" at="33,148,36,5" concept="7" />
+      <node id="757342313568246027" at="46,73,49,7" concept="7" />
+      <node id="757342313568246027" at="63,54,66,7" concept="7" />
+      <node id="757342313568246027" at="69,53,72,5" concept="7" />
+      <node id="757342313568246027" at="91,0,94,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
+      <node id="757342313568246027" at="96,0,99,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+      <node id="757342313568246027" at="99,86,102,7" concept="7" />
+      <node id="757342313568246027" at="105,0,108,0" concept="8" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="757342313568246027" at="108,0,111,0" concept="8" trace="setRequiredAttributes#(null)V" />
+      <node id="757342313568246027" at="141,0,144,0" concept="1" trace="DependencyElementHandler#()V" />
+      <node id="757342313568246055" at="177,35,180,7" concept="7" />
+      <node id="757342313568246027" at="27,0,31,0" concept="8" trace="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
+      <node id="757342313568246027" at="117,0,121,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/ModelDependencies;" />
+      <node id="757342313568246027" at="125,0,129,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="757342313568246027" at="144,0,148,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/RootDependencies;" />
+      <node id="757342313568246027" at="150,64,154,7" concept="7" />
+      <node id="757342313568246027" at="154,7,158,7" concept="7" />
+      <node id="757342313568246027" at="165,0,169,0" concept="8" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="757342313568246027" at="191,0,195,0" concept="8" trace="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/Object;" />
+      <node id="757342313568246027" at="45,10,50,5" concept="0" />
+      <node id="757342313568246027" at="62,22,67,5" concept="6" />
+      <node id="757342313568246027" at="74,25,79,5" concept="5" />
+      <node id="757342313568246027" at="134,0,139,0" concept="8" trace="handleChild_757342313568246030#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="757342313568246061" at="180,7,185,7" concept="7" />
+      <node id="757342313568246027" at="197,48,202,7" concept="7" />
+      <node id="757342313568246027" at="202,7,207,7" concept="7" />
+      <node id="757342313568246027" at="54,148,60,5" concept="7" />
+      <node id="757342313568246027" at="99,0,105,0" concept="8" trace="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
+      <node id="757342313568246027" at="123,41,129,11" concept="3" />
+      <node id="757342313568246027" at="163,40,169,11" concept="3" />
+      <node id="757342313568246027" at="31,0,38,0" concept="8" trace="characters#([CII)V" />
+      <node id="757342313568246027" at="42,33,50,5" concept="7" />
+      <node id="757342313568246027" at="122,139,131,7" concept="7" />
+      <node id="757342313568246027" at="162,139,171,7" concept="7" />
+      <node id="757342313568246027" at="121,0,134,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+      <node id="757342313568246027" at="148,0,161,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="757342313568246027" at="161,0,174,0" concept="8" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/make/java/BLDependenciesHandler/ElementHandler;" />
+      <node id="757342313568246027" at="174,0,187,0" concept="8" trace="handleChild_757342313568246045#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="757342313568246027" at="38,0,52,0" concept="8" trace="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="757342313568246027" at="195,0,210,0" concept="8" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="757342313568246027" at="52,0,83,0" concept="8" trace="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
+      <scope id="757342313568246027" at="22,34,22,34" />
+      <scope id="757342313568246027" at="89,30,89,30" />
+      <scope id="757342313568246027" at="94,104,94,104" />
+      <scope id="757342313568246027" at="111,70,111,70" />
+      <scope id="757342313568246027" at="115,45,115,45" />
+      <scope id="757342313568246027" at="189,38,189,38" />
+      <scope id="757342313568246027" at="24,40,25,20" />
+      <scope id="757342313568246027" at="28,51,29,24" />
+      <scope id="757342313568246027" at="34,26,35,73" />
+      <scope id="757342313568246027" at="43,39,44,48" />
+      <scope id="757342313568246027" at="47,23,48,46" />
+      <scope id="757342313568246027" at="58,12,59,72" />
+      <scope id="757342313568246027" at="64,46,65,78" />
+      <scope id="757342313568246027" at="70,34,71,44" />
+      <scope id="757342313568246027" at="84,0,85,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="90,73,91,18" />
-      <scope id="757342313568246027" at="95,139,96,67" />
-      <scope id="757342313568246027" at="99,39,100,15" />
-      <scope id="757342313568246027" at="104,45,105,47" />
-      <scope id="757342313568246027" at="115,84,116,37" />
-      <scope id="757342313568246027" at="123,84,124,64" />
-      <scope id="757342313568246027" at="142,83,143,36" />
-      <scope id="757342313568246027" at="146,45,147,32" />
-      <scope id="757342313568246027" at="167,84,168,64" />
-      <scope id="757342313568246056" at="179,43,180,15" />
-      <scope id="757342313568246062" at="182,31,183,33" />
-      <scope id="757342313568246074" at="184,14,185,32" />
-      <scope id="757342313568246027" at="194,75,195,27" />
-      <scope id="757342313568246027" at="23,0,25,0" />
-      <scope id="757342313568246027" at="56,26,58,40" />
-      <scope id="757342313568246027" at="88,0,90,0" />
-      <scope id="757342313568246027" at="93,0,95,0">
+      <scope id="757342313568246027" at="91,73,92,18" />
+      <scope id="757342313568246027" at="96,139,97,67" />
+      <scope id="757342313568246027" at="100,39,101,15" />
+      <scope id="757342313568246027" at="105,45,106,32" />
+      <scope id="757342313568246027" at="108,62,109,36" />
+      <scope id="757342313568246027" at="118,84,119,37" />
+      <scope id="757342313568246027" at="126,84,127,64" />
+      <scope id="757342313568246027" at="141,39,142,41" />
+      <scope id="757342313568246027" at="145,83,146,36" />
+      <scope id="757342313568246027" at="166,84,167,64" />
+      <scope id="757342313568246056" at="178,43,179,15" />
+      <scope id="757342313568246062" at="181,31,182,33" />
+      <scope id="757342313568246074" at="183,14,184,32" />
+      <scope id="757342313568246027" at="192,75,193,27" />
+      <scope id="757342313568246027" at="22,0,24,0" />
+      <scope id="757342313568246027" at="55,26,57,40" />
+      <scope id="757342313568246027" at="89,0,91,0" />
+      <scope id="757342313568246027" at="94,0,96,0">
         <var name="name" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="107,0,109,0">
+      <scope id="757342313568246027" at="111,0,113,0">
         <var name="resultObject" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="112,0,114,0" />
-      <scope id="757342313568246027" at="139,0,141,0" />
-      <scope id="757342313568246027" at="152,37,154,15" />
-      <scope id="757342313568246027" at="156,32,158,15" />
-      <scope id="757342313568246027" at="191,0,193,0" />
-      <scope id="757342313568246027" at="25,0,28,0" />
-      <scope id="757342313568246027" at="64,54,67,7" />
-      <scope id="757342313568246027" at="76,54,79,51">
+      <scope id="757342313568246027" at="115,0,117,0" />
+      <scope id="757342313568246027" at="151,37,153,15" />
+      <scope id="757342313568246027" at="155,32,157,15" />
+      <scope id="757342313568246027" at="189,0,191,0" />
+      <scope id="757342313568246027" at="24,0,27,0" />
+      <scope id="757342313568246027" at="63,54,66,7" />
+      <scope id="757342313568246027" at="75,54,78,51">
         <var name="name" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="90,0,93,0">
+      <scope id="757342313568246027" at="91,0,94,0">
         <var name="attrs" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="95,0,98,0">
+      <scope id="757342313568246027" at="96,0,99,0">
         <var name="attrs" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="tagName" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="104,0,107,0" />
-      <scope id="757342313568246027" at="131,104,134,36">
+      <scope id="757342313568246027" at="105,0,108,0" />
+      <scope id="757342313568246027" at="108,0,111,0">
+        <var name="required" id="757342313568246027" />
+      </scope>
+      <scope id="757342313568246027" at="134,104,137,36">
         <var name="child" id="757342313568246027" />
         <var name="result" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="200,43,203,15" />
-      <scope id="757342313568246027" at="205,44,208,15" />
-      <scope id="757342313568246027" at="28,0,32,0">
+      <scope id="757342313568246027" at="141,0,144,0" />
+      <scope id="757342313568246027" at="198,43,201,15" />
+      <scope id="757342313568246027" at="203,44,206,15" />
+      <scope id="757342313568246027" at="27,0,31,0">
         <var name="locator" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="33,80,37,5">
+      <scope id="757342313568246027" at="32,80,36,5">
         <var name="current" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="46,12,50,7">
+      <scope id="757342313568246027" at="45,12,49,7">
         <var name="ch" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="98,86,102,81" />
-      <scope id="757342313568246027" at="114,0,118,0">
+      <scope id="757342313568246027" at="99,86,103,81" />
+      <scope id="757342313568246027" at="117,0,121,0">
         <var name="attrs" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="122,0,126,0">
+      <scope id="757342313568246027" at="125,0,129,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="141,0,145,0">
+      <scope id="757342313568246027" at="144,0,148,0">
         <var name="attrs" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="145,0,149,0" />
-      <scope id="757342313568246027" at="166,0,170,0">
+      <scope id="757342313568246027" at="165,0,169,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="193,0,197,0">
+      <scope id="757342313568246027" at="191,0,195,0">
         <var name="attrs" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="63,22,68,5">
+      <scope id="757342313568246027" at="62,22,67,5">
         <var name="attr" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="75,25,80,5">
+      <scope id="757342313568246027" at="74,25,79,5">
         <var name="i" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="131,0,136,0">
+      <scope id="757342313568246027" at="134,0,139,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="98,0,104,0">
+      <scope id="757342313568246027" at="99,0,105,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="32,0,39,0">
+      <scope id="757342313568246027" at="31,0,38,0">
         <var name="array" id="757342313568246027" />
         <var name="len" id="757342313568246027" />
         <var name="start" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="120,41,127,33" />
-      <scope id="757342313568246027" at="164,40,171,32" />
-      <scope id="757342313568246027" at="119,139,129,61" />
-      <scope id="757342313568246027" at="150,104,160,55">
+      <scope id="757342313568246027" at="123,41,130,33" />
+      <scope id="757342313568246027" at="163,40,170,32" />
+      <scope id="757342313568246027" at="122,139,132,61" />
+      <scope id="757342313568246027" at="149,104,159,55">
         <var name="result" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="163,139,173,61" />
-      <scope id="757342313568246027" at="40,90,51,5">
+      <scope id="757342313568246027" at="162,139,172,61" />
+      <scope id="757342313568246027" at="39,90,50,5">
         <var name="childValue" id="757342313568246027" />
         <var name="current" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="175,104,186,7">
+      <scope id="757342313568246027" at="174,104,185,7">
         <var name="child" id="757342313568246027" />
         <var name="result" id="757342313568246027" />
         <var name="s" id="757342313568246048" />
       </scope>
-      <scope id="757342313568246027" at="198,104,210,55">
+      <scope id="757342313568246027" at="196,104,208,55">
         <var name="result" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="118,0,131,0">
+      <scope id="757342313568246027" at="121,0,134,0">
         <var name="attrs" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="tagName" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="149,0,162,0">
+      <scope id="757342313568246027" at="148,0,161,0">
         <var name="name" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="162,0,175,0">
+      <scope id="757342313568246027" at="161,0,174,0">
         <var name="attrs" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="tagName" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="175,0,188,0">
+      <scope id="757342313568246027" at="174,0,187,0">
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="39,0,53,0">
+      <scope id="757342313568246027" at="38,0,52,0">
         <var name="localName" id="757342313568246027" />
         <var name="qName" id="757342313568246027" />
         <var name="uri" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="197,0,212,0">
+      <scope id="757342313568246027" at="195,0,210,0">
         <var name="name" id="757342313568246027" />
         <var name="resultObject" id="757342313568246027" />
         <var name="value" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="54,115,82,26">
+      <scope id="757342313568246027" at="53,115,81,26">
         <var name="current" id="757342313568246027" />
         <var name="result" id="757342313568246027" />
       </scope>
-      <scope id="757342313568246027" at="53,0,84,0">
+      <scope id="757342313568246027" at="52,0,83,0">
         <var name="attributes" id="757342313568246027" />
         <var name="localName" id="757342313568246027" />
         <var name="qName" id="757342313568246027" />
         <var name="uri" id="757342313568246027" />
       </scope>
-      <unit id="757342313568246027" at="84,0,87,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ChildHandler" />
-      <unit id="757342313568246027" at="121,38,126,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
-      <unit id="757342313568246027" at="165,38,170,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
-      <unit id="757342313568246027" at="87,0,110,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
-      <unit id="757342313568246027" at="189,0,213,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
-      <unit id="757342313568246027" at="110,0,137,0" name="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
-      <unit id="757342313568246027" at="137,0,189,0" name="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
-      <unit id="757342313568246027" at="13,0,214,0" name="jetbrains.mps.make.java.BLDependenciesHandler" />
+      <unit id="757342313568246027" at="83,0,86,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ChildHandler" />
+      <unit id="757342313568246027" at="124,38,129,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
+      <unit id="757342313568246027" at="164,38,169,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
+      <unit id="757342313568246027" at="188,0,211,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
+      <unit id="757342313568246027" at="114,0,140,0" name="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
+      <unit id="757342313568246027" at="86,0,114,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />
+      <unit id="757342313568246027" at="140,0,188,0" name="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
+      <unit id="757342313568246027" at="13,0,212,0" name="jetbrains.mps.make.java.BLDependenciesHandler" />
     </file>
   </root>
   <root nodeRef="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)/757342313568265361">

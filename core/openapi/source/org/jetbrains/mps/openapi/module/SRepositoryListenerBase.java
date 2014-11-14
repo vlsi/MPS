@@ -15,21 +15,23 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A convenient empty implementation of the SRepositoryListener interface.
  */
 public abstract class SRepositoryListenerBase implements SRepositoryListener {
 
   @Override
-  public void moduleAdded(SModule module) {
+  public void moduleAdded(@NotNull SModule module) {
   }
 
   @Override
-  public void beforeModuleRemoved(SModule module) {
+  public void beforeModuleRemoved(@NotNull SModule module) {
   }
 
   @Override
-  public void moduleRemoved(SModuleReference module) {
+  public void moduleRemoved(@NotNull SModuleReference module) {
   }
 
   @Override
