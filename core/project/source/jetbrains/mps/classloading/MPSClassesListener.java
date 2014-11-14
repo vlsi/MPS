@@ -21,6 +21,13 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import java.util.Set;
 
+/**
+ * Subscribe via {@link jetbrains.mps.classloading.ClassLoaderManager#addClassesHandler} if you want
+ * to receive class loading notifications.
+ *
+ * API: A client must not throw exceptions in {@link #beforeClassesUnloaded} and {@link #afterClassesLoaded} methods
+ * Otherwise the application may behave unexpectedly
+ */
 public interface MPSClassesListener {
   void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules);
 

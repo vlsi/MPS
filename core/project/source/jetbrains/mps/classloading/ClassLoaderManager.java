@@ -381,8 +381,6 @@ public class ClassLoaderManager implements CoreComponent {
       }
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
-      if (!silentMode) LOG.info("Reloading " + modulesToReload.size() + " module(s)");
-
       refresh();
       myModulesWatcher.onModulesReloaded(modulesToReload);
       Collection<? extends SModuleReference> moduleRefs = myModulesWatcher.getModuleRefs(modulesToReload);
