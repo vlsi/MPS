@@ -4002,6 +4002,7 @@
       <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
       <node concept="4jta.1083171877298" id="779128492853700077" role="4jta.1082978164219.1083172003582" info="ig">
         <property role="4jta.1083171877298.1083923523172" value="right" />
+        <property role="4jta.1083171877298.1083923523171" value="right" />
       </node>
       <node concept="4jta.1083171877298" id="779128492853702223" role="4jta.1082978164219.1083172003582" info="ig">
         <property role="4jta.1083171877298.1083923523171" value="left" />

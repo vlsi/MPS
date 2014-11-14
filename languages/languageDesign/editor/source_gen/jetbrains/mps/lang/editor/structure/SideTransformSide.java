@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum SideTransformSide {
-  right("right", null),
+  right("right", "right"),
   left("left", "left");
 
   private String myName;

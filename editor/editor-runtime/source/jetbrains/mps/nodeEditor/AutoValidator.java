@@ -24,7 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.SwingUtilities;
@@ -76,7 +76,7 @@ class AutoValidator {
         return;
       }
 
-      final SNodeReference nodeReference = editorCell.getSNode().getReference();
+      final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = APICellAdapter.getCellInfo(editorCell);
       SwingUtilities.invokeLater(new Runnable() {
         @Override
@@ -87,7 +87,7 @@ class AutoValidator {
               if (wasInErrorState) {
                 validateErrorCell(cellInfo, editorComponent);
               } else {
-                SideTransformInfoUtil.removeTransformInfo(nodeReference.resolve(myRepository));
+                SideTransformInfoUtil.removeTransformInfo(node);
               }
             }
           });
