@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
@@ -41,7 +42,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     }
 
     SConceptId superConcept = d.getSuperConceptId();
-    if (superConcept == null) return null;
+    if (superConcept == null) return d.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
 
     return MetaAdapterFactory.getConcept(superConcept, d.getSuperConcept());
   }
@@ -50,6 +51,10 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
+
+    if (d.isInterfaceConcept()) {
+      return Collections.singleton(MetaAdapterFactory.getInterfaceConcept(getConceptDescriptor().getId(), getConceptDescriptor().getConceptFqName()));
+    }
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {

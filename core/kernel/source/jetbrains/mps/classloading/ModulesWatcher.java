@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.classloading.ModulesWatcher.Graph.VertexVisitor;
+import jetbrains.mps.classloading.GraphHolder.Graph;
+import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
@@ -38,13 +35,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static jetbrains.mps.classloading.ClassLoaderManager.filterModules;
 import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.INVALID;
 import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID;
 
@@ -63,23 +57,21 @@ public class ModulesWatcher {
 
   private static final Object LOCK = new Object();
   private final SRepository myRepository;
-  private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
   private final Condition<ReloadableModule> myWatchableCondition;
+  private final Map<SModuleReference, ClassLoadingStatus> myStatusMap = new HashMap<SModuleReference, ClassLoadingStatus>();
 
   // change the boolean property to the list of "dirty" modules
   private volatile boolean myChanged = false;
   private final ReferenceStorage<ReloadableModuleBase> myRefStorage = new ReferenceStorage<ReloadableModuleBase>();
-  private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<ReloadableModule>();
-  private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<SModuleReference>();
 
-  private final Graph<SModuleReference> myDepGraph; // A -> B iff A depends on B
-  private final Graph<SModuleReference> myBackDepGraph; // myDepGraph transposed
+  private final ModuleUpdater myModuleUpdater;
+  private final GraphHolder<SModuleReference> myDepGraphHolder = new GraphHolder<SModuleReference>(); // deps graph
+
 
   public ModulesWatcher(SRepository repository, final Condition<ReloadableModule> watchableCondition) {
     myRepository = repository;
     myWatchableCondition = watchableCondition;
-    myDepGraph = new Graph<SModuleReference>();
-    myBackDepGraph = new Graph<SModuleReference>();
+    myModuleUpdater = new ModuleUpdater(repository, watchableCondition, myDepGraphHolder, myRefStorage);
   }
 
   @NotNull
@@ -93,15 +85,7 @@ public class ModulesWatcher {
   public void onModulesReloaded(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     synchronized (LOCK) {
-      for (ReloadableModule module : modules) {
-        SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
-        if (myWatchableCondition.met(module)) {
-          hackGeneratorAdded(module);
-          myModulesToAdd.add(module);
-          myModulesToRemove.add(mRef);
-        }
-        myRefStorage.moduleAdded((ReloadableModuleBase) module);
-      }
+      myModuleUpdater.onModulesReloaded(modules);
       myChanged = true;
     }
   }
@@ -109,42 +93,15 @@ public class ModulesWatcher {
   public void onModulesAdded(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     synchronized (LOCK) {
-      for (ReloadableModule module : modules) {
-        if (myWatchableCondition.met(module)) {
-          hackGeneratorAdded(module);
-          myModulesToAdd.add(module);
-          myModulesToRemove.add(((ReloadableModuleBase) module).getModuleReference());
-        }
-        myRefStorage.moduleAdded((ReloadableModuleBase) module);
-      }
+      myModuleUpdater.onModulesAdded(modules);
       myChanged = true;
-    }
-  }
-
-  private void hackGeneratorAdded(ReloadableModule module) {
-//  FIXME: special hack for generator, reason for that : at first we create generators, and language after that
-    if (module instanceof Generator) {
-      Generator generator = (Generator) module;
-      Language sourceLanguage = generator.getSourceLanguage();
-      myModulesToRemove.add(sourceLanguage.getModuleReference());
-      myModulesToAdd.add(sourceLanguage);
-      myRefStorage.moduleAdded(sourceLanguage);
     }
   }
 
   public void onModuleRemoved(@NotNull Collection<? extends SModuleReference> mRefs) {
     if (mRefs.isEmpty()) return;
     synchronized (LOCK) {
-      for (SModuleReference mRef : mRefs) {
-        // need to clean up modulesToLoad
-        for (Iterator<ReloadableModule> iterator = myModulesToAdd.iterator(); iterator.hasNext();) {
-          ReloadableModule module = iterator.next();
-          SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
-          if (mRef.equals(ref)) iterator.remove();
-        }
-        myModulesToRemove.add(mRef);
-        myRefStorage.moduleRemoved(mRef);
-      }
+      myModuleUpdater.onModuleRemoved(mRefs);
       myChanged = true;
     }
   }
@@ -160,96 +117,23 @@ public class ModulesWatcher {
       public void run() {
         synchronized (LOCK) {
           if (!isChanged()) return;
-          LOG.debug("Recount status map for modules");
           myChanged = false;
-          final Collection<? extends SModuleReference>[] invalidModules = new Collection[1];
-          updateGraph();
-          invalidModules[0] = findInvalidModules();
-          LOG.debug(invalidModules[0].size() + " modules marked invalid for class loading out of " + getAllModules().size() + " modules totally");
-
-          myStatusMap.clear();
-          for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
-          for (SModuleReference mRef : getBackDependencies(invalidModules[0])) myStatusMap.put(mRef, INVALID);
-
-          checkStatusMapCorrectness();
+          LOG.debug("Recount status map for modules");
+          myModuleUpdater.updateGraph();
+          Collection<? extends SModuleReference> invalidModules = findInvalidModules();
+          refillStatusMap(invalidModules);
         }
       }
     });
   }
 
-  private void updateGraph() {
-    myRepository.getModelAccess().checkReadAccess();
-    checkGraphsCorrectness();
-    int wasEdges = myDepGraph.getEdgesCount();
-    int wasVertices = myDepGraph.getVerticesCount();
+  private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
+    myStatusMap.clear();
+    for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
+    for (SModuleReference mRef : getBackDependencies(invalidModules)) myStatusMap.put(mRef, INVALID);
+    LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getAllModules().size() + " modules totally");
 
-    updateRemoved(myModulesToRemove);
-    updateAdded(myModulesToAdd);
-    myModulesToRemove.clear();
-    myModulesToAdd.clear();
-
-    LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
-    LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
-  }
-
-  private void updateRemoved(Set<? extends SModuleReference> modulesToRemove) {
-    for (SModuleReference mRef : modulesToRemove) {
-      if (!getAllModules().contains(mRef)) continue;
-      LOG.debug("Removing module " + mRef);
-      removeVertex(mRef);
-    }
-  }
-
-  private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd) {
-    final Set<? extends ReloadableModule> modules = filterModules(modulesToAdd, myWatchableCondition);
-    for (ReloadableModule module : modules) {
-      LOG.debug("Adding module " + module);
-      ReloadableModuleBase reloadableModuleBase = (ReloadableModuleBase) module;
-      assert reloadableModuleBase.getRepository() != null;
-      addVertex(reloadableModuleBase.getModuleReference());
-    }
-    updateModulesAdded(modules);
-  }
-
-  private void updateModulesAdded(Set<? extends ReloadableModule> modulesToAdd) {
-    myRepository.getModelAccess().checkReadAccess();
-    Collection<? extends SModuleReference> allRefs = getAllModules();
-    for (ReloadableModule moduleToAdd : modulesToAdd) {
-      ReloadableModuleBase reloadableModule = (ReloadableModuleBase) moduleToAdd;
-      SModuleReference refToAdd = reloadableModule.getModuleReference();
-      Collection<? extends SModule> deps = getModuleDeps(reloadableModule);
-      for (SModule dep : deps) {
-        SModuleReference depRef = dep.getModuleReference();
-        if (allRefs.contains(depRef)) {
-          addEdge(refToAdd, depRef);
-        } else {
-          // valid if somebody calls reloadModule in moduleAdded() listener before us
-//          throw new IllegalStateException("The dependent module " + dep + " of " + moduleToAdd + " is not registered");
-        }
-      }
-    }
-    for (SModuleReference backRef : allRefs) {
-      ReloadableModuleBase reloadableModule = resolveRef(backRef);
-      assert reloadableModule != null;
-      Collection<? extends ReloadableModuleBase> deps = getModuleDeps(reloadableModule);
-      for (ReloadableModuleBase dep : deps) {
-        if (modulesToAdd.contains(dep)) addEdge(backRef, dep.getModuleReference());
-      }
-    }
-  }
-
-  private Collection<? extends ReloadableModuleBase> getModuleDeps(@NotNull ReloadableModuleBase module) {
-    myRepository.getModelAccess().checkReadAccess();
-    if (module.getRepository() == null) return Collections.emptySet();
-    Set<ReloadableModuleBase> deps = new LinkedHashSet<ReloadableModuleBase>();
-    Collection<? extends SModule> directlyUsedModules = GlobalModuleDependenciesManager.directlyUsedModules(module, true, true);
-    for (SModule dep : directlyUsedModules) {
-      if (dep instanceof ReloadableModuleBase) {
-        ReloadableModuleBase reloadableModuleBase = (ReloadableModuleBase) dep;
-        if (myWatchableCondition.met(reloadableModuleBase)) deps.add(reloadableModuleBase);
-      }
-    }
-    return deps;
+    checkStatusMapCorrectness();
   }
 
   /**
@@ -306,13 +190,6 @@ public class ModulesWatcher {
   }
 
 
-  private void checkGraphsCorrectness() {
-    assert (myDepGraph.getEdgesCount() == myBackDepGraph.getEdgesCount()) :
-        "Inconsistent state : dep. graph and transposed dep. graph have different number of edges";
-    assert (myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount()) :
-        "Inconsistent state : dep. graph and transposed dep. graph have different number of vertices";
-  }
-
   private void checkStatusMapCorrectness() {
     assert myStatusMap.size() == getAllModules().size() : "Modules number inconsistency";
     for (SModuleReference mRef : getAllModules()) {
@@ -331,8 +208,7 @@ public class ModulesWatcher {
       if (isChanged()) {
         recountStatus();
       }
-      assert myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount();
-      return myDepGraph.getVertices();
+      return myDepGraphHolder.getVertices();
     }
   }
 
@@ -374,7 +250,8 @@ public class ModulesWatcher {
     synchronized (LOCK) {
       if (isChanged()) recountStatus();
       final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
-      myDepGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
+      Graph<SModuleReference> depGraph = myDepGraphHolder.getGraph();
+      depGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
         @Override
         public void visit(SModuleReference mRef) {
           result.add(mRef);
@@ -391,7 +268,8 @@ public class ModulesWatcher {
     synchronized (LOCK) {
       if (isChanged()) recountStatus();
       final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
-      myBackDepGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
+      Graph<SModuleReference> backDepGraph = myDepGraphHolder.getConjugateGraph();
+      backDepGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
         @Override
         public void visit(SModuleReference mRef) {
           result.add(mRef);
@@ -407,30 +285,6 @@ public class ModulesWatcher {
     return resolveRefs(getBackDependencies(refs));
   }
 
-  private void addVertex(SModuleReference module) {
-    myDepGraph.addVertex(module);
-    myBackDepGraph.addVertex(module);
-  }
-
-
-  /**
-   * removes vertex with all its outs and ins
-   * also updates its disposedDeps cache
-   */
-  private void removeVertex(SModuleReference module) {
-    Collection<? extends SModuleReference> outs = myDepGraph.getOuts(module);
-    Collection<? extends SModuleReference> backOuts = myBackDepGraph.getOuts(module);
-    myDepGraph.removeVertex(module);
-    myBackDepGraph.removeVertex(module);
-    for (SModuleReference m : outs) myBackDepGraph.removeEdge(m, module);
-    for (SModuleReference m : backOuts) myDepGraph.removeEdge(m, module);
-  }
-
-  private void addEdge(SModuleReference m1, SModuleReference m2) {
-    myDepGraph.addEdge(m1, m2);
-    myBackDepGraph.addEdge(m2, m1);
-  }
-
   private boolean isChanged() {
     return myChanged;
   }
@@ -439,107 +293,6 @@ public class ModulesWatcher {
     return getAllModules().contains(module.getModuleReference());
   }
 
-  // TODO : merge with jetbrains.mps.util.Graph (mps.util.Graph needs to be modified for a bit)
-  static class Graph<V> {
-    private final Map<V, Set<V>> myOuts = new LinkedHashMap<V, Set<V>>();
-    private int myEdgesCount;
-
-    public int getEdgesCount() {
-      return myEdgesCount;
-    }
-
-    public int getVerticesCount() {
-      return myOuts.keySet().size();
-    }
-
-    private boolean containsVertex(V v) {
-      return myOuts.containsKey(v);
-    }
-
-    public boolean addVertex(V v) {
-      if (containsVertex(v)) return false;
-      myOuts.put(v, new LinkedHashSet<V>());
-      return true;
-    }
-
-    public boolean removeVertex(V v) {
-      Set<V> removed = myOuts.remove(v);
-      if (removed != null) {
-        myEdgesCount -= removed.size();
-      }
-      return removed != null;
-    }
-
-    public boolean addEdge(V v1, V v2) {
-      if (!containsVertex(v1) || !containsVertex(v2)) {
-        throw new IllegalArgumentException("Trying to add an edge between nonexistent vertices");
-      }
-      Collection<V> vs = myOuts.get(v1);
-      assert vs != null;
-      if (vs.add(v2)) {
-        ++myEdgesCount;
-        return true;
-      }
-      return false;
-    }
-
-    public boolean removeEdge(V v1, V v2) {
-      Collection<V> vs = myOuts.get(v1);
-      if (vs == null) return false;
-      if (vs.remove(v2)) {
-        --myEdgesCount;
-        return true;
-      }
-      return false;
-    }
-
-    @NotNull
-    public Collection<? extends V> getOuts(V v) {
-      return myOuts.get(v);
-    }
-
-    public void dfs(Iterable<? extends V> starts, VertexVisitor<V> visitor) {
-      new DfsTraversal<V>(this, starts, visitor).dfs();
-    }
-
-    public Collection<V> getVertices() {
-      return myOuts.keySet();
-    }
-
-    private static class DfsTraversal<V> {
-      private final Graph<V> myGraph;
-      private final Set<V> myVisited = new HashSet<V>();
-      private final Iterable<? extends V> myStartVs;
-      private final VertexVisitor<V> myVisitor;
-
-      public DfsTraversal(Graph<V> graph, Iterable<? extends V> startVs, VertexVisitor<V> visitor) {
-        myGraph = graph;
-        myStartVs = startVs;
-        myVisitor = visitor;
-      }
-
-      public void dfs() {
-        for (V v : myStartVs) {
-          if (myVisited.contains(v)) continue;
-          dfs0(v);
-        }
-      }
-
-      private void dfs0(V v) {
-        assert myGraph.containsVertex(v) : "Graph does not contain vertex " + v;
-        myVisited.add(v);
-        myVisitor.visit(v);
-        for (V vOut : myGraph.getOuts(v)) {
-          if (myVisited.contains(vOut)) continue;
-          dfs0(vOut);
-        }
-      }
-    }
-
-    public interface VertexVisitor<V> {
-      void visit(V v);
-    }
-  }
 
   static enum ClassLoadingStatus {
     /**

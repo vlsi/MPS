@@ -27,13 +27,13 @@ import java.util.Map;
 public class ReferenceStorage<M extends SModule> {
   private final Map<SModuleReference, M> myRefToModuleMap = new LinkedHashMap<SModuleReference, M>();
 
-  public void moduleAdded(@NotNull M module) {
+  public M moduleAdded(@NotNull M module) {
     SModuleReference mRef = module.getModuleReference();
-    myRefToModuleMap.put(mRef, module);
+    return myRefToModuleMap.put(mRef, module);
   }
 
-  public void moduleRemoved(@NotNull SModuleReference moduleReference) {
-    myRefToModuleMap.remove(moduleReference);
+  public M moduleRemoved(@NotNull SModuleReference moduleReference) {
+    return myRefToModuleMap.remove(moduleReference);
   }
 
   @Nullable

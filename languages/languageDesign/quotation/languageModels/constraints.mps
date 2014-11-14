@@ -412,8 +412,8 @@
                         <property role="asn4.1169194658468.1169194664001" value="cc" />
                         <node concept="4ia1.1172420572800" id="8182547171709544316" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
                         <node concept="vg0i.1081236700937" id="8182547171709544317" role="vg0i.1068431474542.1068431790190" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="iwwu.1237995590716" resolveInfo="findConceptDeclaration" />
                           <reference role="vg0i.1081236700937.1144433194310" target="iwwu.1237995590703" resolveInfo="SModelUtil" />
+                          <reference role="vg0i.1204053956946.1068499141037" target="iwwu.6963130675032169262" resolveInfo="findConceptDeclaration" />
                           <node concept="j0ph.1153944233411" id="8182547171709544318" role="vg0i.1204053956946.1068499141038" info="nn">
                             <reference role="j0ph.1153944233411.1153944258490" target="8182547171709544139" resolveInfo="cname" />
                           </node>

@@ -17,6 +17,8 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -28,6 +30,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoadingBroadCaster {
+  private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
   private final LinkedHashSet<ReloadableModule> myLoadedModules = new LinkedHashSet<ReloadableModule>();
 
   // reload handlers
@@ -60,7 +63,13 @@ public class ClassLoadingBroadCaster {
     myModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (MPSClassesListener listener : myClassesHandlers) listener.beforeClassesUnloaded(modulesToUnload);
+        for (MPSClassesListener listener : myClassesHandlers) {
+          try {
+            listener.beforeClassesUnloaded(modulesToUnload);
+          } catch (LinkageError linkageError) {
+            processLinkageErrorInListener(listener, linkageError);
+          }
+        }
       }
     });
     return modulesToUnload;
@@ -75,8 +84,20 @@ public class ClassLoadingBroadCaster {
     myModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (MPSClassesListener listener : myClassesHandlers) listener.afterClassesLoaded(modulesToLoad);
+        for (MPSClassesListener listener : myClassesHandlers) {
+          try {
+            listener.afterClassesLoaded(modulesToLoad);
+          } catch (LinkageError linkageError) {
+            processLinkageErrorInListener(listener, linkageError);
+          }
+        }
       }
     });
+  }
+
+  private void processLinkageErrorInListener(MPSClassesListener listener, LinkageError linkageError) {
+    LOG.error("Caught a linkage error from the `" + listener + "` listener. Probably 'classes_gen' folders are outdated, try cleaning them.");
+    linkageError.printStackTrace();
+    LOG.error("MPS will try to continue running in a inconsistent state.");
   }
 }

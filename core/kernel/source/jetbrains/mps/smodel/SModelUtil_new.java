@@ -42,40 +42,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 import java.util.Set;
 
-public class SModelUtil_new implements CoreComponent {
+public class SModelUtil_new {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
-  private final ClassLoaderManager myClManager;
-  private final SRepositoryRegistry myRepositoryRegistry;
-  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
-    @Override
-    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
-      SModelUtil.clearCaches();
-    }
-  };
-
-  private final StructureAspectChangeTracker myStructureChangeTracker = new StructureAspectChangeTracker(null, new StructureAspectChangeTracker.ModuleListener() {
-    @Override
-    public void structureAspectChanged(Set<SModuleReference> changedModules) {
-      SModelUtil.clearCaches();
-    }
-  });
-
-  public SModelUtil_new(ClassLoaderManager clManager, SRepositoryRegistry repositoryRegistry) {
-    myClManager = clManager;
-    myRepositoryRegistry = repositoryRegistry;
-  }
-
-  @Override
-  public void init() {
-    myRepositoryRegistry.addGlobalListener(myStructureChangeTracker);
-    myClManager.addClassesHandler(myClassesListener);
-  }
-
-  @Override
-  public void dispose() {
-    myClManager.removeClassesHandler(myClassesListener);
-    myRepositoryRegistry.removeGlobalListener(myStructureChangeTracker);
-  }
 
   /**
    * use SModelUtil
