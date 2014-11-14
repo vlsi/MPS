@@ -26070,6 +26070,13 @@
     <node concept="5i2a.1229187653856" id="6136581231959486578" info="lg">
       <property role="asn4.1169194658468.1169194664001" value="AddAbstractAfterFinal" />
       <property role="asn4.1133920641626.1193676396447" value="classModifiers" />
+      <node concept="vg0i.1068390468198" id="6136581231959486584" role="5i2a.1229187653856.1229187707859" info="ig">
+        <property role="vg0i.1107461130800.521412098689998745" value="true" />
+        <property role="asn4.1169194658468.1169194664001" value="Foo" />
+        <property role="vg0i.1068390468198.1221565133444" value="true" />
+        <property role="vg0i.1068390468198.1075300953594" value="true" />
+        <node concept="vg0i.1146644602865" id="6136581231959486585" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
       <node concept="vg0i.1068390468198" id="6136581231959486579" role="5i2a.1229187653856.1229187676388" info="ig">
         <property role="vg0i.1107461130800.521412098689998745" value="true" />
         <property role="asn4.1169194658468.1169194664001" value="Foo" />
@@ -26088,13 +26095,6 @@
         <node concept="5i2a.1227182079811" id="6136581231959486583" role="vg0i.1068580123136.1068581517665" info="nn">
           <property role="5i2a.1227182079811.1227184461946" value="abstract" />
         </node>
-      </node>
-      <node concept="vg0i.1068390468198" id="6136581231959486584" role="5i2a.1229187653856.1229187707859" info="ig">
-        <property role="vg0i.1107461130800.521412098689998745" value="true" />
-        <property role="asn4.1169194658468.1169194664001" value="Foo" />
-        <property role="vg0i.1068390468198.1221565133444" value="true" />
-        <property role="vg0i.1068390468198.1075300953594" value="true" />
-        <node concept="vg0i.1146644602865" id="6136581231959486585" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
     </node>
     <node concept="5i2a.1229187653856" id="6136581231959486641" info="lg">
