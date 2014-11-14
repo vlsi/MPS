@@ -229,7 +229,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
       public boolean execute() {
         try {
-          cc.execute(mpsProject);
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              cc.execute(mpsProject);
+            }
+          });
         } catch (Throwable e) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Could not execute script", e);
