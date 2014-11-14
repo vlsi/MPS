@@ -29,6 +29,7 @@
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole_20120920.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Beta3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/picocontainer.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
