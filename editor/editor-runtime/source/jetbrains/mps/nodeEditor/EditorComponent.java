@@ -275,7 +275,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
-          if (isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
+          if (myDisposed || isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
           rebuildEditorContent();
           myNodeSubstituteChooser.clearContent();
         }
