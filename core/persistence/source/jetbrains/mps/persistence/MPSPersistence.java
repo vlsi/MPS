@@ -17,7 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
-import jetbrains.mps.persistence.migration.PersistenceMigrations;
+import jetbrains.mps.smodel.persistence.def.v9.migrations.PersistenceMigrations;
 
 /**
  * evgeny, 11/9/12

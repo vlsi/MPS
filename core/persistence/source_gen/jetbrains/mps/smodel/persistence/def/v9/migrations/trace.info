@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103294603">
+    <file name="PersistenceMigrations.java">
+      <node id="2400678414103294607" at="10,0,11,0" concept="1" trace="myMigrations" />
+      <node id="2400678414103294623" at="13,46,14,70" concept="0" />
+      <node id="2400678414103294640" at="19,46,20,73" concept="0" />
+      <node id="2400678414103294620" at="12,22,15,5" concept="2" />
+      <node id="2400678414103294637" at="18,25,21,5" concept="2" />
+      <node id="2400678414103294617" at="11,0,17,0" concept="3" trace="init#()V" />
+      <node id="2400678414103294634" at="17,0,23,0" concept="3" trace="dispose#()V" />
+      <scope id="2400678414103294622" at="13,46,14,70" />
+      <scope id="2400678414103294639" at="19,46,20,73" />
+      <scope id="2400678414103294619" at="12,22,15,5" />
+      <scope id="2400678414103294620" at="12,22,15,5">
+        <var name="pm" id="2400678414103294628" />
+      </scope>
+      <scope id="2400678414103294636" at="18,25,21,5" />
+      <scope id="2400678414103294637" at="18,25,21,5">
+        <var name="pm" id="2400678414103294645" />
+      </scope>
+      <scope id="2400678414103294617" at="11,0,17,0" />
+      <scope id="2400678414103294634" at="17,0,23,0" />
+      <unit id="2400678414103294603" at="9,0,24,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.PersistenceMigrations" />
+    </file>
+  </root>
+  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103309023">
+    <file name="Name2IdMigration.java">
+      <node id="2400678414103309026" at="10,0,11,0" concept="6" trace="EXECUTED_PROPERTY" />
+      <node id="2400678414103309033" at="12,34,13,34" concept="5" />
+      <node id="2400678414103309043" at="16,46,17,125" concept="4" />
+      <node id="2400678414103309052" at="17,125,18,39" concept="5" />
+      <node id="2400678414103309060" at="20,0,23,0" concept="3" trace="execute#(Ljetbrains/mps/project/Project;)V" />
+      <node id="2400678414103309030" at="11,0,15,0" concept="3" trace="getDescription#()Ljava/lang/String;" />
+      <node id="2400678414103309037" at="15,0,20,0" concept="3" trace="shouldBeExecuted#(Ljetbrains/mps/project/Project;)Z" />
+      <scope id="2400678414103309064" at="21,34,21,34" />
+      <scope id="2400678414103309032" at="12,34,13,34" />
+      <scope id="2400678414103309041" at="16,46,18,39">
+        <var name="value" id="2400678414103309042" />
+      </scope>
+      <scope id="2400678414103309060" at="20,0,23,0">
+        <var name="p" id="2400678414103309062" />
+      </scope>
+      <scope id="2400678414103309030" at="11,0,15,0" />
+      <scope id="2400678414103309037" at="15,0,20,0">
+        <var name="p" id="2400678414103309039" />
+      </scope>
+      <unit id="2400678414103309023" at="9,0,24,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration" />
+    </file>
+  </root>
+  <root nodeRef="r:462ba593-f0e8-4fab-adc9-7283556449d1(jetbrains.mps.smodel.persistence.def.v9.migrations)/2400678414103310969">
+    <file name="ModelRefMigration.java">
+      <node id="2400678414103310975" at="10,34,11,16" concept="5" />
+      <node id="2400678414103310984" at="14,46,15,17" concept="5" />
+      <node id="2400678414103310988" at="17,0,20,0" concept="3" trace="execute#(Ljetbrains/mps/project/Project;)V" />
+      <node id="2400678414103310972" at="9,0,13,0" concept="3" trace="getDescription#()Ljava/lang/String;" />
+      <node id="2400678414103310979" at="13,0,17,0" concept="3" trace="shouldBeExecuted#(Ljetbrains/mps/project/Project;)Z" />
+      <scope id="2400678414103310992" at="18,34,18,34" />
+      <scope id="2400678414103310974" at="10,34,11,16" />
+      <scope id="2400678414103310983" at="14,46,15,17" />
+      <scope id="2400678414103310988" at="17,0,20,0">
+        <var name="p" id="2400678414103310990" />
+      </scope>
+      <scope id="2400678414103310972" at="9,0,13,0" />
+      <scope id="2400678414103310979" at="13,0,17,0">
+        <var name="p" id="2400678414103310981" />
+      </scope>
+      <unit id="2400678414103310969" at="8,0,21,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration" />
+    </file>
+  </root>
+</debug-info>
+
