@@ -254,7 +254,8 @@ with_targets:
                   return r.output();
                 }
               });
-              Iterable<IResource> rawInput = Sequence.fromIterable(((Sequence.fromIterable(impre).isEmpty() ? scriptInput : preInput))).distinct().ofType(IResource.class).toListSequence();
+              Iterable<? extends IResource> allinput = (Sequence.fromIterable(impre).isEmpty() ? scriptInput : preInput);
+              Iterable<IResource> rawInput = Sequence.fromIterable(allinput).distinct().ofType(IResource.class).toListSequence();
               LOG.debug("Raw input: " + rawInput);
               Iterable<IResource> input = (Iterable<IResource>) Sequence.fromIterable(rawInput).where(new IWhereFilter<IResource>() {
                 public boolean accept(final IResource res) {
