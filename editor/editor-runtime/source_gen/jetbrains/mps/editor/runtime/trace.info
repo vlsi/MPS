@@ -105,9 +105,9 @@
   </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/779128492854173535">
     <file name="SideTransformInfoUtil.java">
-      <node id="779128492854392536" at="16,107,17,52" concept="2" />
-      <node id="779128492854393768" at="20,106,21,53" concept="2" />
-      <node id="779128492854241779" at="24,120,25,249" concept="6" />
+      <node id="779128492854392536" at="16,116,17,52" concept="2" />
+      <node id="779128492854393768" at="20,115,21,53" concept="2" />
+      <node id="779128492854241779" at="24,129,25,249" concept="6" />
       <node id="779128492854242694" at="25,249,26,181" concept="2" />
       <node id="779128492854245150" at="26,181,27,187" concept="2" />
       <node id="779128492854387480" at="27,187,28,196" concept="2" />
@@ -125,8 +125,8 @@
       <node id="779128492854819483" at="44,0,47,0" concept="9" trace="getCellIdFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="779128492854820709" at="48,0,51,0" concept="9" trace="getAnchorTagFromTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="779128492854813020" at="24,0,31,0" concept="9" trace="addTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <scope id="779128492854382946" at="16,107,17,52" />
-      <scope id="779128492854383898" at="20,106,21,53" />
+      <scope id="779128492854382946" at="16,116,17,52" />
+      <scope id="779128492854383898" at="20,115,21,53" />
       <scope id="779128492854752792" at="32,59,33,326" />
       <scope id="779128492854756227" at="36,58,37,328" />
       <scope id="779128492854778748" at="40,54,41,146" />
@@ -157,7 +157,7 @@
       <scope id="779128492854820709" at="48,0,51,0">
         <var name="node" id="779128492854797386" />
       </scope>
-      <scope id="779128492854222089" at="24,120,29,146">
+      <scope id="779128492854222089" at="24,129,29,146">
         <var name="info" id="779128492854241780" />
       </scope>
       <scope id="779128492854813020" at="24,0,31,0">

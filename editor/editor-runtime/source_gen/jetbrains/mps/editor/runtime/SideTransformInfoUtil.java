@@ -13,15 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class SideTransformInfoUtil {
-  public static void addRightTransformInfo(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
+  public static void addRightTransformInfo(@NotNull SNode node, @NotNull String cellId, @NotNull String anchorTag) {
     addTransformInfo(node, cellId, anchorTag, true);
   }
 
-  public static void addLeftTransformInfo(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
+  public static void addLeftTransformInfo(@NotNull SNode node, @NotNull String cellId, @NotNull String anchorTag) {
     addTransformInfo(node, cellId, anchorTag, false);
   }
 
-  private static void addTransformInfo(@NotNull SNode node, @NotNull String cellId, String anchorTag, boolean isRight) {
+  private static void addTransformInfo(@NotNull SNode node, @NotNull String cellId, @NotNull String anchorTag, boolean isRight) {
     SNode info = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, "jetbrains.mps.lang.editor.structure.SideTransformInfo")));
     SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853934523l, "cellId"), cellId);
     SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853935960l, "anchorTag"), anchorTag);

@@ -766,7 +766,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.STHintUtil} instead
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
    */
   @Deprecated
   @Override

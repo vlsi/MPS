@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -28,7 +29,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -518,9 +518,9 @@ public class EditorManager {
 
   private EditorCell addSideTransformHintCell(EditorCell nodeCell, SNode node) {
     CellSide side;
-    if (STHintUtil.hasRightTransformHint(node)) {
+    if (SideTransformInfoUtil.hasRightTransformInfo(node)) {
       side = CellSide.RIGHT;
-    } else if (STHintUtil.hasLeftTransformHint(node)) {
+    } else if (SideTransformInfoUtil.hasLeftTransformInfo(node)) {
       side = CellSide.LEFT;
     } else {
       return nodeCell;
@@ -531,17 +531,9 @@ public class EditorManager {
       return nodeCell;
     }
 
-    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
-  /*
-   * AnchorCellId is saved in UserObjects now. UserObjects are not updated on undo/redo in model, so sometimes
-   * it's possible that SNode got side-transform hint (as a result of undo action), but AnchorCellId & HintAnchorTag are not restored.
-   * To handle this situation we are checking anchorId for null below and process null value somehow.
-   *
-   * proper solution would be to save anchorId together with side=transform hint in model and undo/redo corresponding value properly.
-   * in this case we will be able to remove "anchorId == null ?" check below and un-comment ssertion.
-   */
-//    assert anchorId != null : "CellId was not specified";
-    EditorCell anchorCell = anchorId == null ? unwrappedNodeBigCell : CellFinderUtil.findChildById(unwrappedNodeBigCell, node, anchorId, true);
+    String anchorId = SideTransformInfoUtil.getCellIdFromTransformInfo(node);
+    assert anchorId != null;
+    EditorCell anchorCell = CellFinderUtil.findChildById(unwrappedNodeBigCell, node, anchorId, true);
     if (anchorCell == null) {
       // anchor cell was not found. Possible reason: different node presentations in editor and inside inspector, so
       // side-transforms in the main editor should not affect inspector.
@@ -552,8 +544,8 @@ public class EditorManager {
         "Anchor cell should be associated with the same node as main cell. Anchor cell node: " + anchorCell.getSNode().getNodeId() + "; main node: " +
             node.getNodeId();
 
-    String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
-
+    String sideTransformTag = SideTransformInfoUtil.getAnchorTagFromTransformInfo(node);
+    assert sideTransformTag != null;
     EditorCell_STHint sideTransformHintCell =
         new EditorCell_STHint(unwrappedNodeBigCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(unwrappedNodeBigCell.getContext()));
     return sideTransformHintCell.install();

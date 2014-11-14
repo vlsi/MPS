@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
@@ -25,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -140,7 +140,7 @@ public class IntelligentInputUtil {
         info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
         nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
-      STHintUtil.removeTransformHints(cell.getSNode());
+      SideTransformInfoUtil.removeTransformInfo(cell.getSNode());
 
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);

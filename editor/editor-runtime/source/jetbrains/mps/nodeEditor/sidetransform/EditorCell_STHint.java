@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.sidetransform;
 
 import com.intellij.ui.LightColors;
+import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
@@ -34,7 +35,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.NotNull;
@@ -51,7 +51,9 @@ import java.util.List;
 public class EditorCell_STHint extends EditorCell_Constant {
   private static final String CELL_ID = "STHint";
 
+  @Nullable
   private final CellInfo myRestoreSelectionCellInfo;
+  @NotNull
   private final String mySideTransformTag;
   @NotNull
   private final EditorCell myBigCell;
@@ -66,8 +68,8 @@ public class EditorCell_STHint extends EditorCell_Constant {
     return stHintCell instanceof EditorCell_STHint ? (EditorCell_STHint) stHintCell : null;
   }
 
-  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, String sideTransformTag,
-      CellInfo restoreSelectionCellInto) {
+  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, @NotNull String sideTransformTag,
+      @Nullable CellInfo restoreSelectionCellInto) {
     super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
     mySide = side;
@@ -113,10 +115,10 @@ public class EditorCell_STHint extends EditorCell_Constant {
           wrapperList.add(new NodeSubstituteActionWrapper(action) {
             @Override
             public SNode substitute(@Nullable EditorContext context, String pattern) {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
                 @Override
                 public void run() {
-                  STHintUtil.removeTransformHints(getSNode());
+                  SideTransformInfoUtil.removeTransformInfo(getSNode());
                 }
               });
               return super.substitute(context, pattern);
@@ -141,7 +143,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
   public void changeText(String text) {
     super.changeText(text);
     if ("".equals(getText())) {
-      STHintUtil.removeTransformHints(getSNode());
+      SideTransformInfoUtil.removeTransformInfo(getSNode());
     }
   }
 
@@ -157,8 +159,8 @@ public class EditorCell_STHint extends EditorCell_Constant {
   public void synchronizeViewWithModel() {
   }
 
-  private void removeSTHintAndChangeSelection(final EditorContext context, SNode node) {
-    STHintUtil.removeTransformHints(getSNode());
+  private void removeSTHintAndChangeSelection(final EditorContext context) {
+    SideTransformInfoUtil.removeTransformInfo(getSNode());
     context.flushEvents();
 
     if (myRestoreSelectionCellInfo == null) {
@@ -216,14 +218,14 @@ public class EditorCell_STHint extends EditorCell_Constant {
   private class RemoveSTHintAction extends AbstractCellAction {
     @Override
     public void execute(EditorContext context) {
-      removeSTHintAndChangeSelection(context, getSNode());
+      removeSTHintAndChangeSelection(context);
     }
   }
 
   private class RemoveSTHintKeyMapAction extends KeyMapActionImpl {
     @Override
     public void execute(EditorContext context) {
-      removeSTHintAndChangeSelection(context, getSNode());
+      removeSTHintAndChangeSelection(context);
     }
   }
 
