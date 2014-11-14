@@ -19,6 +19,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class Name2IdMigration implements ProjectMigration {
   public static final String EXECUTED_PROPERTY = "jetbrains.mps.name2id";
+  private static final String EXECUTED_VALUE = "executed";
+
   @Override
   public String getDescription() {
     return "Migrate names to ids";
@@ -26,7 +28,7 @@ public class Name2IdMigration implements ProjectMigration {
   @Override
   public boolean shouldBeExecuted(Project p) {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(Name2IdMigration.EXECUTED_PROPERTY);
-    return !("executed".equals(value));
+    return !(EXECUTED_VALUE.equals(value));
   }
   @Override
   public void execute(Project p) {
@@ -63,5 +65,7 @@ public class Name2IdMigration implements ProjectMigration {
         ((EditableSModel) model).save();
       }
     });
+
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(EXECUTED_PROPERTY, EXECUTED_VALUE);
   }
 }

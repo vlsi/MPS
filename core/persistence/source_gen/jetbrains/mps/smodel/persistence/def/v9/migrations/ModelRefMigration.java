@@ -23,7 +23,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 /*package*/ class ModelRefMigration implements ProjectMigration {
-  public static final String EXECUTED_PROPERTY = "jetbrains.mps.modelRef";
+  private static final String EXECUTED_PROPERTY = "jetbrains.mps.modelRef";
+  private static final String EXECUTED_VALUE = "executed";
+
   @Override
   public String getDescription() {
     return "Add module to every model reference";
@@ -31,7 +33,7 @@ import org.apache.log4j.LogManager;
   @Override
   public boolean shouldBeExecuted(Project p) {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(EXECUTED_PROPERTY);
-    return !("executed".equals(value));
+    return !(EXECUTED_VALUE.equals(value));
   }
   public void execute(Project project) {
     saveAll(project);
@@ -77,6 +79,7 @@ import org.apache.log4j.LogManager;
         }
       }
     }
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(EXECUTED_PROPERTY, EXECUTED_VALUE);
   }
   protected static Logger LOG = LogManager.getLogger(ModelRefMigration.class);
 }
