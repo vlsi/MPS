@@ -27,8 +27,8 @@
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
 
-  <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../../../plugins/vcs/common/source_gen/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../../../plugins/vcs/common/source/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
