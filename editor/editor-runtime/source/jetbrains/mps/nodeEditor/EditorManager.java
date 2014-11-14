@@ -359,6 +359,24 @@ public class EditorManager {
         result = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         result.setBig(true);
       } finally {
+        /**
+         * Always adding cell's node to the set of dependencies of the corresponding cell.
+         * It was done because read-access to the cell's node can be not recorded during
+         * editor update process for some specific editors - if cell's node was not required
+         * for the cell creation process.
+         *
+         * E.G.
+         * - node is represented by only constant cells
+         * - node is represented as a list of child nodes and at the moment we create editor
+         * there were no children in model
+         *
+         * "constant-only" cells should be still re-created if node attribute was added.
+         * "pure-child" cell should be re-created if first child was added to a node.
+         *
+         * To handle such situations & trigger editor update process for the corresponding
+         * cell, we are explicitly adding "self" node to the set of cell dependencies here.
+         */
+        nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         addNodeDependenciesToEditor(result, nodeAccessListener, context);
         if (!isAttributedCell(result)) {
@@ -397,6 +415,24 @@ public class EditorManager {
         nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
       } finally {
+        /**
+         * Always adding cell's node to the set of dependencies of the corresponding cell.
+         * It was done because read-access to the cell's node can be not recorded during
+         * editor update process for some specific editors - if cell's node was not required
+         * for the cell creation process.
+         *
+         * E.G.
+         * - node is represented by only constant cells
+         * - node is represented as a list of child nodes and at the moment we create editor
+         * there were no children in model
+         *
+         * "constant-only" cells should be still re-created if node attribute was added.
+         * "pure-child" cell should be re-created if first child was added to a node.
+         *
+         * To handle such situations & trigger editor update process for the corresponding
+         * cell, we are explicitly adding "self" node to the set of cell dependencies here.
+         */
+        nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         assert nodeCell != null;
         if (!isAttributedCell(nodeCell)) {
