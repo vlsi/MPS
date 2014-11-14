@@ -44,7 +44,6 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static jetbrains.mps.classloading.ClassLoaderManager.filterModules;
 import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.INVALID;
 import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID;
 
@@ -70,6 +69,7 @@ public class ModulesWatcher {
   private volatile boolean myChanged = false;
   private final ReferenceStorage<ReloadableModuleBase> myRefStorage = new ReferenceStorage<ReloadableModuleBase>();
   private final Set<ReloadableModule> myModulesToAdd = new LinkedHashSet<ReloadableModule>();
+  private final Set<ReloadableModule> myModulesToReload = new LinkedHashSet<ReloadableModule>();
   private final Set<SModuleReference> myModulesToRemove = new LinkedHashSet<SModuleReference>();
 
   private final Graph<SModuleReference> myDepGraph; // A -> B iff A depends on B
@@ -94,12 +94,13 @@ public class ModulesWatcher {
     if (modules.isEmpty()) return;
     synchronized (LOCK) {
       for (ReloadableModule module : modules) {
-        SModuleReference mRef = ((ReloadableModuleBase) module).getModuleReference();
         if (myWatchableCondition.met(module)) {
           hackGeneratorAdded(module);
-          myModulesToAdd.add(module);
-          myModulesToRemove.add(mRef);
+          myModulesToReload.add(module);
+        } else {
+          myModulesToRemove.add(((ReloadableModuleBase) module).getModuleReference());
         }
+        // need this call because we might get #onModulesAdded notification later than this one
         myRefStorage.moduleAdded((ReloadableModuleBase) module);
       }
       myChanged = true;
@@ -136,16 +137,21 @@ public class ModulesWatcher {
     if (mRefs.isEmpty()) return;
     synchronized (LOCK) {
       for (SModuleReference mRef : mRefs) {
-        // need to clean up modulesToLoad
-        for (Iterator<ReloadableModule> iterator = myModulesToAdd.iterator(); iterator.hasNext();) {
-          ReloadableModule module = iterator.next();
-          SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
-          if (mRef.equals(ref)) iterator.remove();
-        }
+        // need to clean up myModulesToLoad and myModulesToReload
+        removeMRefFromModules(mRef, myModulesToAdd);
+        removeMRefFromModules(mRef, myModulesToReload);
         myModulesToRemove.add(mRef);
         myRefStorage.moduleRemoved(mRef);
       }
       myChanged = true;
+    }
+  }
+
+  private void removeMRefFromModules(SModuleReference mRef, Collection<ReloadableModule> modules) {
+    for (Iterator<ReloadableModule> iterator = modules.iterator(); iterator.hasNext();) {
+      ReloadableModule module = iterator.next();
+      SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
+      if (mRef.equals(ref)) iterator.remove();
     }
   }
 
@@ -160,21 +166,23 @@ public class ModulesWatcher {
       public void run() {
         synchronized (LOCK) {
           if (!isChanged()) return;
-          LOG.debug("Recount status map for modules");
           myChanged = false;
-          final Collection<? extends SModuleReference>[] invalidModules = new Collection[1];
+          LOG.debug("Recount status map for modules");
           updateGraph();
-          invalidModules[0] = findInvalidModules();
-          LOG.debug(invalidModules[0].size() + " modules marked invalid for class loading out of " + getAllModules().size() + " modules totally");
-
-          myStatusMap.clear();
-          for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
-          for (SModuleReference mRef : getBackDependencies(invalidModules[0])) myStatusMap.put(mRef, INVALID);
-
-          checkStatusMapCorrectness();
+          Collection<? extends SModuleReference> invalidModules = findInvalidModules();
+          refillStatusMap(invalidModules);
         }
       }
     });
+  }
+
+  private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
+    myStatusMap.clear();
+    for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
+    for (SModuleReference mRef : getBackDependencies(invalidModules)) myStatusMap.put(mRef, INVALID);
+    LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getAllModules().size() + " modules totally");
+
+    checkStatusMapCorrectness();
   }
 
   private void updateGraph() {
@@ -185,7 +193,9 @@ public class ModulesWatcher {
 
     updateRemoved(myModulesToRemove);
     updateAdded(myModulesToAdd);
+    updateReloaded(myModulesToReload);
     myModulesToRemove.clear();
+    myModulesToReload.clear();
     myModulesToAdd.clear();
 
     LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
@@ -201,39 +211,83 @@ public class ModulesWatcher {
   }
 
   private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd) {
-    final Set<? extends ReloadableModule> modules = filterModules(modulesToAdd, myWatchableCondition);
-    for (ReloadableModule module : modules) {
+    if (modulesToAdd.isEmpty()) return;
+    updateAddedVertices(modulesToAdd);
+    updateAddedEdges(modulesToAdd);
+  }
+
+  private void updateReloaded(final Set<? extends ReloadableModule> modulesToReload) {
+    if (modulesToReload.isEmpty()) return;
+    updateReloadedVertices(modulesToReload);
+    updateReloadedEdges(modulesToReload);
+  }
+
+  private void updateAddedVertices(Set<? extends ReloadableModule> modulesToAdd) {
+    for (ReloadableModule module : modulesToAdd) {
       LOG.debug("Adding module " + module);
+      assert myWatchableCondition.met(module);
       ReloadableModuleBase reloadableModuleBase = (ReloadableModuleBase) module;
       assert reloadableModuleBase.getRepository() != null;
       addVertex(reloadableModuleBase.getModuleReference());
     }
-    updateModulesAdded(modules);
   }
 
-  private void updateModulesAdded(Set<? extends ReloadableModule> modulesToAdd) {
+  private void updateAddedEdges(Set<? extends ReloadableModule> modulesToAdd) {
     myRepository.getModelAccess().checkReadAccess();
-    Collection<? extends SModuleReference> allRefs = getAllModules();
     for (ReloadableModule moduleToAdd : modulesToAdd) {
-      ReloadableModuleBase reloadableModule = (ReloadableModuleBase) moduleToAdd;
-      SModuleReference refToAdd = reloadableModule.getModuleReference();
-      Collection<? extends SModule> deps = getModuleDeps(reloadableModule);
-      for (SModule dep : deps) {
-        SModuleReference depRef = dep.getModuleReference();
-        if (allRefs.contains(depRef)) {
-          addEdge(refToAdd, depRef);
-        } else {
-          // valid if somebody calls reloadModule in moduleAdded() listener before us
-//          throw new IllegalStateException("The dependent module " + dep + " of " + moduleToAdd + " is not registered");
-        }
+      putModuleDeps((ReloadableModuleBase) moduleToAdd);
+    }
+    updateBackDeps(modulesToAdd);
+  }
+
+  private void updateReloadedVertices(Set<? extends ReloadableModule> modulesToReload) {
+    for (ReloadableModule module : modulesToReload) {
+      LOG.debug("Reloading module " + module);
+      assert myWatchableCondition.met(module);
+      ReloadableModuleBase reloadableModule = (ReloadableModuleBase) module;
+      assert reloadableModule.getRepository() != null;
+      SModuleReference mRef = reloadableModule.getModuleReference();
+      if (!getAllModules().contains(mRef)) addVertex(mRef);
+    }
+  }
+
+  private void updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload) {
+    myRepository.getModelAccess().checkReadAccess();
+    for (ReloadableModule module : modulesToReload) {
+      ReloadableModuleBase reloadableModule = (ReloadableModuleBase) module;
+      removeModuleDeps(reloadableModule);
+      putModuleDeps(reloadableModule);
+    }
+  }
+
+  private void removeModuleDeps(@NotNull ReloadableModuleBase module) {
+    SModuleReference mRef = module.getModuleReference();
+    Collection<? extends SModuleReference> currentDeps = getDependencies(Collections.singleton(mRef));
+    for (SModuleReference dep : currentDeps) removeEdge(mRef, dep);
+  }
+
+  private void putModuleDeps(@NotNull ReloadableModuleBase module) {
+    Collection<? extends SModuleReference> allRefs = getAllModules();
+    SModuleReference refToAdd = module.getModuleReference();
+    Collection<? extends SModule> deps = getModuleDeps(module);
+    for (SModule dep : deps) {
+      SModuleReference depRef = dep.getModuleReference();
+      if (allRefs.contains(depRef)) {
+        addEdge(refToAdd, depRef);
+      } else {
+//        valid if somebody calls reloadModule in moduleAdded() listener before us
+//        throw new IllegalStateException("The dependent module " + dep + " of " + moduleToAdd + " is not registered");
       }
     }
-    for (SModuleReference backRef : allRefs) {
+  }
+
+  private void updateBackDeps(Set<? extends ReloadableModule> modules) {
+    for (SModuleReference backRef : getAllModules()) {
       ReloadableModuleBase reloadableModule = resolveRef(backRef);
       assert reloadableModule != null;
       Collection<? extends ReloadableModuleBase> deps = getModuleDeps(reloadableModule);
       for (ReloadableModuleBase dep : deps) {
-        if (modulesToAdd.contains(dep)) addEdge(backRef, dep.getModuleReference());
+        if (modules.contains(dep)) addEdge(backRef, dep.getModuleReference());
       }
     }
   }
@@ -408,6 +462,10 @@ public class ModulesWatcher {
   }
 
   private void addVertex(SModuleReference module) {
+    if (getAllModules().contains(module)) {
+      LOG.debug("Already watching module " + module);
+      return;
+    }
     myDepGraph.addVertex(module);
     myBackDepGraph.addVertex(module);
   }
@@ -429,6 +487,11 @@ public class ModulesWatcher {
   private void addEdge(SModuleReference m1, SModuleReference m2) {
     myDepGraph.addEdge(m1, m2);
     myBackDepGraph.addEdge(m2, m1);
+  }
+
+  private void removeEdge(SModuleReference m1, SModuleReference m2) {
+    myDepGraph.removeEdge(m1, m2);
+    myBackDepGraph.removeEdge(m2, m1);
   }
 
   private boolean isChanged() {
