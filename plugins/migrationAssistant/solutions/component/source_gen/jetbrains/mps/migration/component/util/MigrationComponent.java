@@ -221,6 +221,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       return new MigrationManager.Finished() {};
     }
 
+    lastProjectMigration = current;
     final ProjectMigration cc = current;
     return new MigrationManager.Step() {
       public String getDescription() {
