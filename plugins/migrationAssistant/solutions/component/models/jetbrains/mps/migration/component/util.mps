@@ -76,6 +76,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" />
@@ -2091,12 +2092,12 @@
                     <node concept="vg0i.1068498886296" id="4809633442592721487" role="vg0i.1215693861676.1068498886295" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="4809633442592688692" resolveInfo="result" />
                     </node>
-                    <node concept="vg0i.1080120340718" id="2400678414100382349" role="vg0i.1215693861676.1068498886297" info="nn">
-                      <node concept="vg0i.1068498886296" id="2400678414100383930" role="vg0i.1081773326031.1081773367579" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="2400678414100369323" resolveInfo="languageMig" />
-                      </node>
+                    <node concept="vg0i.1080223426719" id="6490533892342263034" role="vg0i.1215693861676.1068498886297" info="nn">
                       <node concept="vg0i.1068498886296" id="2400678414100380528" role="vg0i.1081773326031.1081773367580" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="2400678414100362358" resolveInfo="projectMig" />
+                      </node>
+                      <node concept="vg0i.1068498886296" id="2400678414100383930" role="vg0i.1081773326031.1081773367579" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="2400678414100369323" resolveInfo="languageMig" />
                       </node>
                     </node>
                   </node>

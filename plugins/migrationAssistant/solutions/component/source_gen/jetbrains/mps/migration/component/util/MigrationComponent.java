@@ -184,7 +184,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             return Sequence.fromIterable(MigrationsUtil.getDependenciesToMigrate((AbstractModule) ((SModule) it))).isNotEmpty();
           }
         });
-        result.value = projectMig && languageMig;
+        result.value = projectMig || languageMig;
       }
     });
     return result.value;
