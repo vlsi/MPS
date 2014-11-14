@@ -5,19 +5,21 @@ package jetbrains.mps.generator.test.crossmodel.property.generator.template.main
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Generated
 public class ExportLabelFunctions {
   public static void marshal_5925726056274334829(ExportLabelContext ctx) {
-    SPropertyOperations.set(ctx.getKeeper(), "string1", SPropertyOperations.getString(ctx.getOutput(), "name"));
+    SPropertyOperations.set(ctx.getKeeper(), MetaAdapterFactory.getProperty(new UUID(5554193485664045165l, -5131594094874008568l), 8915420221429834077l, 8915420221429834078l, "string1"), SPropertyOperations.getString(ctx.getOutput(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static void marshal_5925726056274457432(ExportLabelContext ctx) {
-    SPropertyOperations.set(ctx.getKeeper(), "string1", SPropertyOperations.getString(ctx.getOutput(), "name"));
+    SPropertyOperations.set(ctx.getKeeper(), MetaAdapterFactory.getProperty(new UUID(5554193485664045165l, -5131594094874008568l), 8915420221429834077l, 8915420221429834078l, "string1"), SPropertyOperations.getString(ctx.getOutput(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static void unmarshal_5925726056274334831(ExportLabelContext ctx) {
-    SPropertyOperations.set(ctx.getOutput(), "name", SPropertyOperations.getString(ctx.getKeeper(), "string1"));
+    SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(ctx.getKeeper(), MetaAdapterFactory.getProperty(new UUID(5554193485664045165l, -5131594094874008568l), 8915420221429834077l, 8915420221429834078l, "string1")));
   }
   public static void unmarshal_5925726056274457434(ExportLabelContext ctx) {
-    SPropertyOperations.set(ctx.getOutput(), "name", SPropertyOperations.getString(ctx.getKeeper(), "string1"));
+    SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(ctx.getKeeper(), MetaAdapterFactory.getProperty(new UUID(5554193485664045165l, -5131594094874008568l), 8915420221429834077l, 8915420221429834078l, "string1")));
   }
 }

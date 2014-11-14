@@ -5,66 +5,66 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ExportLabelFunctions.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.template.main.ExportLabelFunctions" />
+      <unit at="11,0,26,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.template.main.ExportLabelFunctions" />
     </file>
     <file name="QueriesGenerated.java">
-      <unit at="13,0,44,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.template.main.QueriesGenerated" />
+      <unit at="15,0,46,0" name="jetbrains.mps.generator.test.crossmodel.property.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/4220080364835905493">
     <file name="QueriesGenerated.java">
-      <node id="4220080364835923446" at="16,112,17,78" concept="1" />
-      <node id="5176577547833330724" at="37,120,38,80" concept="1" />
-      <node id="4220080364835967621" at="40,120,41,78" concept="1" />
-      <scope id="4220080364835917955" at="16,112,17,78" />
-      <scope id="5176577547833330036" at="37,120,38,80" />
-      <scope id="4220080364835967615" at="40,120,41,78" />
+      <node id="4220080364835923446" at="18,112,19,198" concept="1" />
+      <node id="5176577547833330724" at="39,120,40,214" concept="1" />
+      <node id="4220080364835967621" at="42,120,43,212" concept="1" />
+      <scope id="4220080364835917955" at="18,112,19,198" />
+      <scope id="5176577547833330036" at="39,120,40,214" />
+      <scope id="4220080364835967615" at="42,120,43,212" />
     </file>
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/4220080364835968486">
     <file name="QueriesGenerated.java">
-      <node id="5176577547833405520" at="19,112,20,77" concept="1" />
-      <node id="5176577547833393759" at="22,112,23,78" concept="1" />
-      <node id="5176577547833410864" at="25,112,26,79" concept="1" />
-      <scope id="5176577547833404375" at="19,112,20,77" />
-      <scope id="5176577547833393069" at="22,112,23,78" />
-      <scope id="5176577547833410174" at="25,112,26,79" />
+      <node id="5176577547833405520" at="21,112,22,197" concept="1" />
+      <node id="5176577547833393759" at="24,112,25,198" concept="1" />
+      <node id="5176577547833410864" at="27,112,28,199" concept="1" />
+      <scope id="5176577547833404375" at="21,112,22,197" />
+      <scope id="5176577547833393069" at="24,112,25,198" />
+      <scope id="5176577547833410174" at="27,112,28,199" />
     </file>
   </root>
   <root nodeRef="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)/5925726056274321385">
     <file name="ExportLabelFunctions.java">
-      <node id="5925726056274417874" at="11,74,12,112" concept="0" />
-      <node id="5925726056274460298" at="14,74,15,112" concept="0" />
-      <node id="5925726056274450226" at="17,76,18,112" concept="0" />
-      <node id="5925726056274465869" at="20,76,21,112" concept="0" />
-      <node id="5925726056274334829" at="11,0,14,0" concept="2" trace="marshal_5925726056274334829#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
-      <node id="5925726056274457432" at="14,0,17,0" concept="2" trace="marshal_5925726056274457432#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
-      <node id="5925726056274334831" at="17,0,20,0" concept="2" trace="unmarshal_5925726056274334831#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
-      <node id="5925726056274457434" at="20,0,23,0" concept="2" trace="unmarshal_5925726056274457434#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
-      <scope id="5925726056274334830" at="11,74,12,112" />
-      <scope id="5925726056274457433" at="14,74,15,112" />
-      <scope id="5925726056274334832" at="17,76,18,112" />
-      <scope id="5925726056274457435" at="20,76,21,112" />
-      <scope id="5925726056274334829" at="11,0,14,0">
+      <node id="5925726056274417874" at="13,74,14,363" concept="0" />
+      <node id="5925726056274460298" at="16,74,17,363" concept="0" />
+      <node id="5925726056274450226" at="19,76,20,363" concept="0" />
+      <node id="5925726056274465869" at="22,76,23,363" concept="0" />
+      <node id="5925726056274334829" at="13,0,16,0" concept="2" trace="marshal_5925726056274334829#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
+      <node id="5925726056274457432" at="16,0,19,0" concept="2" trace="marshal_5925726056274457432#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
+      <node id="5925726056274334831" at="19,0,22,0" concept="2" trace="unmarshal_5925726056274334831#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
+      <node id="5925726056274457434" at="22,0,25,0" concept="2" trace="unmarshal_5925726056274457434#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;)V" />
+      <scope id="5925726056274334830" at="13,74,14,363" />
+      <scope id="5925726056274457433" at="16,74,17,363" />
+      <scope id="5925726056274334832" at="19,76,20,363" />
+      <scope id="5925726056274457435" at="22,76,23,363" />
+      <scope id="5925726056274334829" at="13,0,16,0">
         <var name="ctx" id="5925726056274334829" />
       </scope>
-      <scope id="5925726056274457432" at="14,0,17,0">
+      <scope id="5925726056274457432" at="16,0,19,0">
         <var name="ctx" id="5925726056274457432" />
       </scope>
-      <scope id="5925726056274334831" at="17,0,20,0">
+      <scope id="5925726056274334831" at="19,0,22,0">
         <var name="ctx" id="5925726056274334831" />
       </scope>
-      <scope id="5925726056274457434" at="20,0,23,0">
+      <scope id="5925726056274457434" at="22,0,25,0">
         <var name="ctx" id="5925726056274457434" />
       </scope>
     </file>
     <file name="QueriesGenerated.java">
-      <node id="5925726056274272834" at="28,112,29,71" concept="1" />
-      <node id="5925726056274482367" at="31,109,32,116" concept="1" />
-      <node id="5925726056274492600" at="34,109,35,125" concept="1" />
-      <scope id="5925726056274261652" at="28,112,29,71" />
-      <scope id="5925726056274318833" at="31,109,32,116" />
-      <scope id="5925726056274316711" at="34,109,35,125" />
+      <node id="5925726056274272834" at="30,112,31,203" concept="1" />
+      <node id="5925726056274482367" at="33,109,34,246" concept="1" />
+      <node id="5925726056274492600" at="36,109,37,255" concept="1" />
+      <scope id="5925726056274261652" at="30,112,31,203" />
+      <scope id="5925726056274318833" at="33,109,34,246" />
+      <scope id="5925726056274316711" at="36,109,37,255" />
     </file>
   </root>
 </debug-info>
