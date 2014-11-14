@@ -100,6 +100,12 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-testing">
       <fileset dir="${ideaPlugins}/mps-testing"/>
     </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/lib">
+      <fileset dir="${ideaPlugins}/mps-java/lib"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
+      <fileset dir="${ideaPlugins}/mps-vcs/lib"/>
+    </copy>
   </target>
 
   <target name="clean">
