@@ -35,6 +35,10 @@ public class ProjectMigrationsRegistry {
     myMigrations.add(migration);
   }
 
+  public void removeProjectMigration(ProjectMigration migration){
+    myMigrations.remove(migration);
+  }
+
   public List<ProjectMigration> getMigrations() {
     return Collections.unmodifiableList(myMigrations);
   }
