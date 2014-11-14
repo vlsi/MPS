@@ -403,6 +403,9 @@
             <node concept="vg0i.1070475926800" id="1202495231125195142" role="j0ph.1237721394592.1237721435808" info="nn">
               <property role="vg0i.1070475926800.1070475926801" value="dependencies" />
             </node>
+            <node concept="vg0i.1070475926800" id="8864671064637052689" role="j0ph.1237721394592.1237721435808" info="nn">
+              <property role="vg0i.1070475926800.1070475926801" value="exports" />
+            </node>
           </node>
         </node>
       </node>
