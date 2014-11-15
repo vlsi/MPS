@@ -6,11 +6,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="LanguageDescriptor_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,22,0" name="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="LanguageDescriptor_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:37f1d471-dcaa-4655-ad67-56eeecf8ca2c(jetbrains.mps.lang.descriptor.behavior)/3064888218669919289">

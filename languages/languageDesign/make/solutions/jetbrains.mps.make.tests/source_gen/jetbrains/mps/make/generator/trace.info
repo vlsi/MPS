@@ -26,6 +26,52 @@
     </file>
   </root>
   <root nodeRef="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)/2551169102353069011">
+    <file name="Askfoo_Query.java">
+      <node id="2551169102353069017" at="9,0,10,0" concept="3" trace="name" />
+      <node id="2551169102353069017" at="10,0,11,0" concept="3" trace="defaultOption" />
+      <node id="2551169102353069017" at="13,32,14,16" concept="8" />
+      <node id="2551169102353069017" at="16,28,17,15" concept="8" />
+      <node id="2551169102353069017" at="19,27,20,18" concept="8" />
+      <node id="2551169102353069017" at="22,41,23,97" concept="8" />
+      <node id="2551169102353069017" at="25,34,26,97" concept="8" />
+      <node id="2551169102353069017" at="28,37,29,92" concept="8" />
+      <node id="2551169102353069017" at="11,0,13,0" concept="1" trace="Askfoo_Query#()V" />
+      <node id="2551169102353069017" at="13,0,16,0" concept="6" trace="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
+      <node id="2551169102353069017" at="16,0,19,0" concept="6" trace="getTitle#()Ljava/lang/String;" />
+      <node id="2551169102353069017" at="19,0,22,0" concept="6" trace="getText#()Ljava/lang/String;" />
+      <node id="2551169102353069017" at="22,0,25,0" concept="6" trace="options#()Ljava/lang/Iterable;" />
+      <node id="2551169102353069017" at="25,0,28,0" concept="6" trace="voidOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
+      <node id="2551169102353069017" at="28,0,31,0" concept="6" trace="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
+      <scope id="2551169102353069017" at="11,25,11,25" />
+      <scope id="2551169102353069017" at="13,32,14,16" />
+      <scope id="2551169102353069017" at="16,28,17,15" />
+      <scope id="2551169102353069017" at="19,27,20,18" />
+      <scope id="2551169102353069017" at="22,41,23,97" />
+      <scope id="2551169102353069017" at="25,34,26,97" />
+      <scope id="2551169102353069017" at="28,37,29,92" />
+      <scope id="2551169102353069017" at="11,0,13,0" />
+      <scope id="2551169102353069017" at="13,0,16,0" />
+      <scope id="2551169102353069017" at="16,0,19,0" />
+      <scope id="2551169102353069017" at="19,0,22,0" />
+      <scope id="2551169102353069017" at="22,0,25,0" />
+      <scope id="2551169102353069017" at="25,0,28,0" />
+      <scope id="2551169102353069017" at="28,0,31,0" />
+      <unit id="2551169102353069017" at="8,0,32,0" name="jetbrains.mps.make.generator.Askfoo_Query" />
+    </file>
+    <file name="Bar_Option.java">
+      <node id="2551169102353069018" at="12,0,13,0" concept="3" trace="text" />
+      <node id="2551169102353069018" at="13,27,14,21" concept="2" />
+      <node id="2551169102353069018" at="16,27,17,16" concept="8" />
+      <node id="2551169102353069018" at="13,0,16,0" concept="1" trace="Bar_Option#(Ljava/lang/String;)V" />
+      <node id="2551169102353069018" at="16,0,19,0" concept="6" trace="getText#()Ljava/lang/String;" />
+      <scope id="2551169102353069018" at="13,27,14,21" />
+      <scope id="2551169102353069018" at="16,27,17,16" />
+      <scope id="2551169102353069018" at="13,0,16,0">
+        <var name="text" id="2551169102353069018" />
+      </scope>
+      <scope id="2551169102353069018" at="16,0,19,0" />
+      <unit id="2551169102353069018" at="7,0,20,0" name="jetbrains.mps.make.generator.Bar_Option" />
+    </file>
     <file name="TextGen__Facet.java">
       <node id="2551169102353069011" at="26,0,27,0" concept="3" trace="targets" />
       <node id="2551169102353069011" at="27,0,28,0" concept="3" trace="name" />
@@ -187,52 +233,6 @@
       <unit id="1977954644795408617" at="68,17,84,7" name="jetbrains.mps.make.generator.TextGen__Facet$2" />
       <unit id="2551169102353069015" at="49,0,125,0" name="jetbrains.mps.make.generator.TextGen__Facet$Target_ConditionallyGenerate" />
       <unit id="2551169102353069011" at="25,0,137,0" name="jetbrains.mps.make.generator.TextGen__Facet" />
-    </file>
-    <file name="Askfoo_Query.java">
-      <node id="2551169102353069017" at="9,0,10,0" concept="3" trace="name" />
-      <node id="2551169102353069017" at="10,0,11,0" concept="3" trace="defaultOption" />
-      <node id="2551169102353069017" at="13,32,14,16" concept="8" />
-      <node id="2551169102353069017" at="16,28,17,15" concept="8" />
-      <node id="2551169102353069017" at="19,27,20,18" concept="8" />
-      <node id="2551169102353069017" at="22,41,23,97" concept="8" />
-      <node id="2551169102353069017" at="25,34,26,97" concept="8" />
-      <node id="2551169102353069017" at="28,37,29,92" concept="8" />
-      <node id="2551169102353069017" at="11,0,13,0" concept="1" trace="Askfoo_Query#()V" />
-      <node id="2551169102353069017" at="13,0,16,0" concept="6" trace="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
-      <node id="2551169102353069017" at="16,0,19,0" concept="6" trace="getTitle#()Ljava/lang/String;" />
-      <node id="2551169102353069017" at="19,0,22,0" concept="6" trace="getText#()Ljava/lang/String;" />
-      <node id="2551169102353069017" at="22,0,25,0" concept="6" trace="options#()Ljava/lang/Iterable;" />
-      <node id="2551169102353069017" at="25,0,28,0" concept="6" trace="voidOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
-      <node id="2551169102353069017" at="28,0,31,0" concept="6" trace="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
-      <scope id="2551169102353069017" at="11,25,11,25" />
-      <scope id="2551169102353069017" at="13,32,14,16" />
-      <scope id="2551169102353069017" at="16,28,17,15" />
-      <scope id="2551169102353069017" at="19,27,20,18" />
-      <scope id="2551169102353069017" at="22,41,23,97" />
-      <scope id="2551169102353069017" at="25,34,26,97" />
-      <scope id="2551169102353069017" at="28,37,29,92" />
-      <scope id="2551169102353069017" at="11,0,13,0" />
-      <scope id="2551169102353069017" at="13,0,16,0" />
-      <scope id="2551169102353069017" at="16,0,19,0" />
-      <scope id="2551169102353069017" at="19,0,22,0" />
-      <scope id="2551169102353069017" at="22,0,25,0" />
-      <scope id="2551169102353069017" at="25,0,28,0" />
-      <scope id="2551169102353069017" at="28,0,31,0" />
-      <unit id="2551169102353069017" at="8,0,32,0" name="jetbrains.mps.make.generator.Askfoo_Query" />
-    </file>
-    <file name="Bar_Option.java">
-      <node id="2551169102353069018" at="12,0,13,0" concept="3" trace="text" />
-      <node id="2551169102353069018" at="13,27,14,21" concept="2" />
-      <node id="2551169102353069018" at="16,27,17,16" concept="8" />
-      <node id="2551169102353069018" at="13,0,16,0" concept="1" trace="Bar_Option#(Ljava/lang/String;)V" />
-      <node id="2551169102353069018" at="16,0,19,0" concept="6" trace="getText#()Ljava/lang/String;" />
-      <scope id="2551169102353069018" at="13,27,14,21" />
-      <scope id="2551169102353069018" at="16,27,17,16" />
-      <scope id="2551169102353069018" at="13,0,16,0">
-        <var name="text" id="2551169102353069018" />
-      </scope>
-      <scope id="2551169102353069018" at="16,0,19,0" />
-      <unit id="2551169102353069018" at="7,0,20,0" name="jetbrains.mps.make.generator.Bar_Option" />
     </file>
   </root>
   <root nodeRef="r:5dff607f-6ca4-4c05-bbd2-b8285801fc60(jetbrains.mps.make.generator)/671853460608595937">

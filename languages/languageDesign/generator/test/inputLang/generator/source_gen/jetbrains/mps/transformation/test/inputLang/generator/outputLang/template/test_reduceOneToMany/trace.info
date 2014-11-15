@@ -17,11 +17,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
-    <file name="TemplateModelImpl.java">
-      <unit at="19,0,85,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
-    </file>
     <file name="QueriesGenerated.java">
       <unit at="18,0,40,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
+    </file>
+    <file name="TemplateModelImpl.java">
+      <unit at="19,0,85,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480251689">
@@ -355,6 +355,10 @@
     </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414086886">
+    <file name="QueriesGenerated.java">
+      <node id="3893401255414100160" at="30,120,31,59" concept="9" />
+      <scope id="3893401255414086895" at="30,120,31,59" />
+    </file>
     <file name="TemplateOutputRoot.java">
       <node id="3893401255414086886" at="25,43,26,32" concept="9" />
       <node id="3893401255414086886" at="28,158,29,123" concept="8" />
@@ -398,12 +402,12 @@
       </scope>
       <unit id="3893401255414086886" at="21,0,50,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
     </file>
-    <file name="QueriesGenerated.java">
-      <node id="3893401255414100160" at="30,120,31,59" concept="9" />
-      <scope id="3893401255414086895" at="30,120,31,59" />
-    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414100167">
+    <file name="QueriesGenerated.java">
+      <node id="3893401255414163870" at="33,120,34,105" concept="9" />
+      <scope id="3893401255414161784" at="33,120,34,105" />
+    </file>
     <file name="Templatereduce__InputNode__A.java">
       <node id="3893401255414100167" at="27,43,28,199" concept="9" />
       <node id="3893401255414100167" at="30,166,31,54" concept="8" />
@@ -565,10 +569,6 @@
         <var name="outputContextNode" id="3893401255414100167" />
       </scope>
       <unit id="3893401255414100167" at="23,0,123,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <node id="3893401255414163870" at="33,120,34,105" concept="9" />
-      <scope id="3893401255414161784" at="33,120,34,105" />
     </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/8371596541809066874">

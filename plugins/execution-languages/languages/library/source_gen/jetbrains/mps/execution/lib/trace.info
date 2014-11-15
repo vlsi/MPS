@@ -423,57 +423,6 @@
     </file>
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8278380780105899265">
-    <file name="NodeBySeveralConcepts_Configuration_Editor.java">
-      <node id="8278380780105899434" at="17,0,18,0" concept="3" trace="myChooser" />
-      <node id="8278380780105899438" at="21,53,22,59" concept="2" />
-      <node id="8278380780105899444" at="22,59,23,21" concept="8" />
-      <node id="2034046503361624748" at="27,25,28,51" concept="2" />
-      <node id="2034046503361610583" at="34,25,35,51" concept="2" />
-      <node id="8278380780105899265" at="39,0,40,0" concept="3" trace="myTargets" />
-      <node id="8278380780105899265" at="42,59,43,64" concept="8" />
-      <node id="8278380780105899265" at="45,7,46,24" concept="2" />
-      <node id="8278380780105899265" at="18,0,20,0" concept="6" trace="disposeEditor#()V" />
-      <node id="2034046503361624746" at="27,0,30,0" concept="6" trace="run#()V" />
-      <node id="2034046503361610581" at="34,0,37,0" concept="6" trace="run#()V" />
-      <node id="8278380780105899265" at="42,0,45,0" concept="6" trace="create#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;" />
-      <node id="8278380780105899265" at="20,0,25,0" concept="6" trace="createEditor#()Ljetbrains/mps/execution/lib/ui/NodeBySeveralConceptChooser;" />
-      <node id="2034046503361624742" at="25,116,30,7" concept="2" />
-      <node id="8278380780105899265" at="25,116,30,7" concept="0" />
-      <node id="2034046503361610577" at="32,88,37,7" concept="2" />
-      <node id="8278380780105899265" at="32,88,37,7" concept="0" />
-      <node id="8278380780105899265" at="40,156,45,7" concept="11" />
-      <node id="8278380780105899265" at="25,0,32,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
-      <node id="8278380780105899265" at="32,0,39,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
-      <node id="8278380780105899265" at="40,0,48,0" concept="1" trace="NodeBySeveralConcepts_Configuration_Editor#(Ljava/util/List;)V" />
-      <scope id="8278380780105899265" at="18,31,18,31" />
-      <scope id="2034046503361624747" at="27,25,28,51" />
-      <scope id="2034046503361610582" at="34,25,35,51" />
-      <scope id="8278380780105899265" at="42,59,43,64" />
-      <scope id="8278380780105899265" at="18,0,20,0" />
-      <scope id="8278380780105899437" at="21,53,23,21" />
-      <scope id="2034046503361624746" at="27,0,30,0" />
-      <scope id="2034046503361610581" at="34,0,37,0" />
-      <scope id="8278380780105899265" at="42,0,45,0" />
-      <scope id="8278380780105899265" at="20,0,25,0" />
-      <scope id="8278380780105899265" at="25,116,30,7" />
-      <scope id="8278380780105899456" at="25,116,30,7" />
-      <scope id="8278380780105899265" at="32,88,37,7" />
-      <scope id="8278380780105899447" at="32,88,37,7" />
-      <scope id="8278380780105899265" at="40,156,46,24" />
-      <scope id="8278380780105899265" at="25,0,32,0">
-        <var name="configuration" id="8278380780105899265" />
-      </scope>
-      <scope id="8278380780105899265" at="32,0,39,0">
-        <var name="configuration" id="8278380780105899265" />
-      </scope>
-      <scope id="8278380780105899265" at="40,0,48,0">
-        <var name="targets" id="8278380780105899265" />
-      </scope>
-      <unit id="2034046503361624746" at="26,45,30,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$1" />
-      <unit id="2034046503361610581" at="33,45,37,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$2" />
-      <unit id="8278380780105899265" at="41,14,45,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$3" />
-      <unit id="8278380780105899265" at="16,0,49,0" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" />
-    </file>
     <file name="NodeBySeveralConcepts_Configuration.java">
       <node id="6072045827976707228" at="36,5,37,74" concept="7" />
       <node id="2034046503361585549" at="39,27,40,33" concept="7" />
@@ -657,6 +606,57 @@
       <unit id="8278380780105899389" at="101,58,114,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration$2" />
       <unit id="8278380780105899265" at="130,0,143,0" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration$MyState" />
       <unit id="8278380780105899265" at="32,0,165,0" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration" />
+    </file>
+    <file name="NodeBySeveralConcepts_Configuration_Editor.java">
+      <node id="8278380780105899434" at="17,0,18,0" concept="3" trace="myChooser" />
+      <node id="8278380780105899438" at="21,53,22,59" concept="2" />
+      <node id="8278380780105899444" at="22,59,23,21" concept="8" />
+      <node id="2034046503361624748" at="27,25,28,51" concept="2" />
+      <node id="2034046503361610583" at="34,25,35,51" concept="2" />
+      <node id="8278380780105899265" at="39,0,40,0" concept="3" trace="myTargets" />
+      <node id="8278380780105899265" at="42,59,43,64" concept="8" />
+      <node id="8278380780105899265" at="45,7,46,24" concept="2" />
+      <node id="8278380780105899265" at="18,0,20,0" concept="6" trace="disposeEditor#()V" />
+      <node id="2034046503361624746" at="27,0,30,0" concept="6" trace="run#()V" />
+      <node id="2034046503361610581" at="34,0,37,0" concept="6" trace="run#()V" />
+      <node id="8278380780105899265" at="42,0,45,0" concept="6" trace="create#()Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;" />
+      <node id="8278380780105899265" at="20,0,25,0" concept="6" trace="createEditor#()Ljetbrains/mps/execution/lib/ui/NodeBySeveralConceptChooser;" />
+      <node id="2034046503361624742" at="25,116,30,7" concept="2" />
+      <node id="8278380780105899265" at="25,116,30,7" concept="0" />
+      <node id="2034046503361610577" at="32,88,37,7" concept="2" />
+      <node id="8278380780105899265" at="32,88,37,7" concept="0" />
+      <node id="8278380780105899265" at="40,156,45,7" concept="11" />
+      <node id="8278380780105899265" at="25,0,32,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
+      <node id="8278380780105899265" at="32,0,39,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/execution/lib/NodeBySeveralConcepts_Configuration;)V" />
+      <node id="8278380780105899265" at="40,0,48,0" concept="1" trace="NodeBySeveralConcepts_Configuration_Editor#(Ljava/util/List;)V" />
+      <scope id="8278380780105899265" at="18,31,18,31" />
+      <scope id="2034046503361624747" at="27,25,28,51" />
+      <scope id="2034046503361610582" at="34,25,35,51" />
+      <scope id="8278380780105899265" at="42,59,43,64" />
+      <scope id="8278380780105899265" at="18,0,20,0" />
+      <scope id="8278380780105899437" at="21,53,23,21" />
+      <scope id="2034046503361624746" at="27,0,30,0" />
+      <scope id="2034046503361610581" at="34,0,37,0" />
+      <scope id="8278380780105899265" at="42,0,45,0" />
+      <scope id="8278380780105899265" at="20,0,25,0" />
+      <scope id="8278380780105899265" at="25,116,30,7" />
+      <scope id="8278380780105899456" at="25,116,30,7" />
+      <scope id="8278380780105899265" at="32,88,37,7" />
+      <scope id="8278380780105899447" at="32,88,37,7" />
+      <scope id="8278380780105899265" at="40,156,46,24" />
+      <scope id="8278380780105899265" at="25,0,32,0">
+        <var name="configuration" id="8278380780105899265" />
+      </scope>
+      <scope id="8278380780105899265" at="32,0,39,0">
+        <var name="configuration" id="8278380780105899265" />
+      </scope>
+      <scope id="8278380780105899265" at="40,0,48,0">
+        <var name="targets" id="8278380780105899265" />
+      </scope>
+      <unit id="2034046503361624746" at="26,45,30,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$1" />
+      <unit id="2034046503361610581" at="33,45,37,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$2" />
+      <unit id="8278380780105899265" at="41,14,45,5" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor$3" />
+      <unit id="8278380780105899265" at="16,0,49,0" name="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" />
     </file>
   </root>
 </debug-info>

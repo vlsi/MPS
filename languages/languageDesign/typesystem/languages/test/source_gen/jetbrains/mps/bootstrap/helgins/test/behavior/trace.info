@@ -2,11 +2,11 @@
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="BConcept_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.bootstrap.helgins.test.behavior.BConcept_BehaviorDescriptor" />
-    </file>
     <file name="AConcept_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.bootstrap.helgins.test.behavior.AConcept_BehaviorDescriptor" />
+    </file>
+    <file name="BConcept_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.bootstrap.helgins.test.behavior.BConcept_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,24,0" name="jetbrains.mps.bootstrap.helgins.test.behavior.BehaviorAspectDescriptor" />

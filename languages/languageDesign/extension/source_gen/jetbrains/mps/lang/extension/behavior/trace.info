@@ -7,8 +7,20 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="ExtensionPointType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,38,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ExtensionDeclaration_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFieldDeclaration_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFieldReference_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
+    </file>
+    <file name="ExtensionFunction_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
     </file>
     <file name="ExtensionObjectGetter_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
@@ -16,26 +28,14 @@
     <file name="ExtensionPointDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="ExtensionFunction_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
-    </file>
-    <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
-    </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,38,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ExtensionFieldReference_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
-    </file>
     <file name="ExtensionPointExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
     </file>
-    <file name="ExtensionDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+    <file name="ExtensionPointType_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
     </file>
-    <file name="ExtensionFieldDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
+    <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/1262430001741719871">

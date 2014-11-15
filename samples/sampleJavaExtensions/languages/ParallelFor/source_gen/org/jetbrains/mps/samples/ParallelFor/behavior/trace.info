@@ -9,20 +9,20 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="ParallelFor_BehaviorDescriptor.java">
-      <unit at="15,0,56,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
-    </file>
-    <file name="ThreadPool_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,30,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="NonThreadSafeClass_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_BehaviorDescriptor" />
     </file>
+    <file name="ParallelFor_BehaviorDescriptor.java">
+      <unit at="15,0,56,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
+    </file>
     <file name="ParallelLoopVariable_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
+    </file>
+    <file name="ThreadPool_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
     </file>
     <file name="ThreadSafe_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />

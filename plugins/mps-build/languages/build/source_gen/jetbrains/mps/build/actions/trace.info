@@ -12,6 +12,13 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
+    <file name="PasteWrappers.java">
+      <unit at="20,49,32,5" name="jetbrains.mps.build.actions.PasteWrappers$1" />
+      <unit at="33,49,45,5" name="jetbrains.mps.build.actions.PasteWrappers$2" />
+      <unit at="46,49,58,5" name="jetbrains.mps.build.actions.PasteWrappers$3" />
+      <unit at="59,49,71,5" name="jetbrains.mps.build.actions.PasteWrappers$4" />
+      <unit at="17,0,75,0" name="jetbrains.mps.build.actions.PasteWrappers" />
+    </file>
     <file name="QueriesGenerated.java">
       <unit at="798,126,802,5" name="jetbrains.mps.build.actions.QueriesGenerated$30" />
       <unit at="465,126,473,5" name="jetbrains.mps.build.actions.QueriesGenerated$15" />
@@ -28,13 +35,6 @@
       <unit at="621,49,642,5" name="jetbrains.mps.build.actions.QueriesGenerated$22" />
       <unit at="423,53,455,9" name="jetbrains.mps.build.actions.QueriesGenerated$14" />
       <unit at="55,0,872,0" name="jetbrains.mps.build.actions.QueriesGenerated" />
-    </file>
-    <file name="PasteWrappers.java">
-      <unit at="20,49,32,5" name="jetbrains.mps.build.actions.PasteWrappers$1" />
-      <unit at="33,49,45,5" name="jetbrains.mps.build.actions.PasteWrappers$2" />
-      <unit at="46,49,58,5" name="jetbrains.mps.build.actions.PasteWrappers$3" />
-      <unit at="59,49,71,5" name="jetbrains.mps.build.actions.PasteWrappers$4" />
-      <unit at="17,0,75,0" name="jetbrains.mps.build.actions.PasteWrappers" />
     </file>
   </root>
   <root nodeRef="r:d9276ffc-8964-4ead-b55c-1f2409698238(jetbrains.mps.build.actions)/1258644073389099675">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <root>
-    <file name="ReaderConfiguration_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Field_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Field_BehaviorDescriptor" />
@@ -10,8 +10,8 @@
     <file name="Mapping_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Mapping_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.BehaviorAspectDescriptor" />
+    <file name="ReaderConfiguration_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

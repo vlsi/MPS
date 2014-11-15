@@ -6,11 +6,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="StringUtils.java">
-      <unit at="6,0,38,0" name="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.StringUtils" />
-    </file>
     <file name="QueriesGenerated.java">
       <unit at="22,0,163,0" name="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated" />
+    </file>
+    <file name="StringUtils.java">
+      <unit at="6,0,38,0" name="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.StringUtils" />
     </file>
   </root>
   <root nodeRef="r:ebb8ae5f-56d5-4098-b394-5abea5520e3a(jetbrains.mps.baseLanguage.collections.trove.generator.template.main@generator)/5499565529811338419">

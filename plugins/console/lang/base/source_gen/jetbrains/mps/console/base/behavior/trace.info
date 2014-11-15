@@ -14,44 +14,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
-    <file name="HelpCommand_BehaviorDescriptor.java">
-      <unit at="10,0,33,0" name="jetbrains.mps.console.base.behavior.HelpCommand_BehaviorDescriptor" />
-    </file>
-    <file name="ConsoleRoot_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.ConsoleRoot_BehaviorDescriptor" />
-    </file>
-    <file name="NodeResponseItem_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" />
-    </file>
-    <file name="HistoryItem_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.HistoryItem_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratedCommand_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor" />
-    </file>
-    <file name="ModifiedCommandHistoryItem_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.console.base.behavior.ModifiedCommandHistoryItem_BehaviorDescriptor" />
-    </file>
-    <file name="IClickable_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
-    </file>
-    <file name="NodeReferencePresentation_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.console.base.behavior.NodeReferencePresentation_BehaviorDescriptor" />
-    </file>
-    <file name="TextResponseItem_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWithClosure_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
-    </file>
-    <file name="Response_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,50,0" name="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CommandHolder_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
-    </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,50,0" name="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Command_BehaviorDescriptor.java">
       <unit at="11,0,35,0" name="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
@@ -59,35 +26,68 @@
     <file name="ConsoleHelpProvider_BehaviorDescriptor.java">
       <unit at="7,0,14,0" name="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
     </file>
-    <file name="InterpretedCommand_BehaviorDescriptor.java">
-      <unit at="9,0,21,0" name="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    <file name="ConsoleRoot_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.ConsoleRoot_BehaviorDescriptor" />
     </file>
-    <file name="History_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.History_BehaviorDescriptor" />
+    <file name="GeneratedCommand_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor" />
     </file>
-    <file name="OutputConsoleRoot_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.base.behavior.OutputConsoleRoot_BehaviorDescriptor" />
-    </file>
-    <file name="INodeWithReference_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
-    </file>
-    <file name="NewLineResponseItem_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.NewLineResponseItem_BehaviorDescriptor" />
+    <file name="HelpCommand_BehaviorDescriptor.java">
+      <unit at="10,0,33,0" name="jetbrains.mps.console.base.behavior.HelpCommand_BehaviorDescriptor" />
     </file>
     <file name="HelpConceptReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.HelpConceptReference_BehaviorDescriptor" />
     </file>
-    <file name="PastedNodeReference_BehaviorDescriptor.java">
-      <unit at="10,0,30,0" name="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
+    <file name="HistoryItem_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.HistoryItem_BehaviorDescriptor" />
+    </file>
+    <file name="History_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.History_BehaviorDescriptor" />
+    </file>
+    <file name="IActionHolder_BehaviorDescriptor.java">
+      <unit at="8,0,12,0" name="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
+    </file>
+    <file name="IClickable_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
+    </file>
+    <file name="INodeWithReference_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
+    </file>
+    <file name="InterpretedCommand_BehaviorDescriptor.java">
+      <unit at="9,0,21,0" name="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    </file>
+    <file name="ModifiedCommandHistoryItem_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.console.base.behavior.ModifiedCommandHistoryItem_BehaviorDescriptor" />
+    </file>
+    <file name="NewLineResponseItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.NewLineResponseItem_BehaviorDescriptor" />
+    </file>
+    <file name="NodeReferencePresentation_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.console.base.behavior.NodeReferencePresentation_BehaviorDescriptor" />
     </file>
     <file name="NodeReferenceString_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.console.base.behavior.NodeReferenceString_BehaviorDescriptor" />
     </file>
+    <file name="NodeResponseItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" />
+    </file>
+    <file name="NodeWithClosure_BehaviorDescriptor.java">
+      <unit at="9,0,23,0" name="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
+    </file>
+    <file name="OutputConsoleRoot_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.base.behavior.OutputConsoleRoot_BehaviorDescriptor" />
+    </file>
+    <file name="PastedNodeReference_BehaviorDescriptor.java">
+      <unit at="10,0,30,0" name="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
+    </file>
     <file name="ResponseItem_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
     </file>
-    <file name="IActionHolder_BehaviorDescriptor.java">
-      <unit at="8,0,12,0" name="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
+    <file name="Response_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />
+    </file>
+    <file name="TextResponseItem_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/1769790395579662700">

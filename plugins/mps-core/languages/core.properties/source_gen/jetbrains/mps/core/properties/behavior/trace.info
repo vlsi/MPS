@@ -3,20 +3,20 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="PropertiesDeclaration_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.core.properties.behavior.PropertiesDeclaration_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,28,0" name="jetbrains.mps.core.properties.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="PropertiesLine_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.core.properties.behavior.PropertiesLine_BehaviorDescriptor" />
+    <file name="PropertiesComment_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.core.properties.behavior.PropertiesComment_BehaviorDescriptor" />
+    </file>
+    <file name="PropertiesDeclaration_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.core.properties.behavior.PropertiesDeclaration_BehaviorDescriptor" />
     </file>
     <file name="PropertiesFile_BehaviorDescriptor.java">
       <unit at="11,0,25,0" name="jetbrains.mps.core.properties.behavior.PropertiesFile_BehaviorDescriptor" />
     </file>
-    <file name="PropertiesComment_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.core.properties.behavior.PropertiesComment_BehaviorDescriptor" />
+    <file name="PropertiesLine_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.core.properties.behavior.PropertiesLine_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0364da67-5b81-45ab-a520-f89192cc0c88(jetbrains.mps.core.properties.behavior)/8783955359823292450">

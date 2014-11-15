@@ -6,20 +6,14 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="FigureParameter_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,32,0" name="jetbrains.mps.lang.editor.figures.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ExternalViewFigureParameter_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_BehaviorDescriptor" />
     </file>
     <file name="ExternalViewFigure_BehaviorDescriptor.java">
       <unit at="13,0,30,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_BehaviorDescriptor" />
-    </file>
-    <file name="Figure_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.figures.behavior.Figure_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttributeViewProperty_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_BehaviorDescriptor" />
-    </file>
-    <file name="FigureParameterAttributeMethod_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_BehaviorDescriptor" />
     </file>
     <file name="FigureAttribute_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_BehaviorDescriptor" />
@@ -27,14 +21,20 @@
     <file name="FigureParameterAttributeField_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.lang.editor.figures.behavior.BehaviorAspectDescriptor" />
+    <file name="FigureParameterAttributeMethod_BehaviorDescriptor.java">
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_BehaviorDescriptor" />
     </file>
-    <file name="ExternalViewFigureParameter_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_BehaviorDescriptor" />
+    <file name="FigureParameterAttributeViewProperty_BehaviorDescriptor.java">
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_BehaviorDescriptor" />
     </file>
     <file name="FigureParameterAttribute_BehaviorDescriptor.java">
       <unit at="8,0,17,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="FigureParameter_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor" />
+    </file>
+    <file name="Figure_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.figures.behavior.Figure_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/2084788800270490179">

@@ -10,38 +10,23 @@
     <file name="AbstractStateMachineElement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
     </file>
-    <file name="StateMachine_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
-    </file>
-    <file name="HierarchycalTable_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
-    </file>
-    <file name="State_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
-    </file>
-    <file name="XElement_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
-    </file>
-    <file name="DataCell_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
-    </file>
-    <file name="YElement_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
-    </file>
-    <file name="UltimateContainer_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
-    </file>
-    <file name="EventReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,52,0" name="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ContentElement_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
     </file>
+    <file name="DataCell_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
+    </file>
+    <file name="EventReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
+    </file>
     <file name="Event_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
     </file>
-    <file name="StateReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
+    <file name="HierarchycalTable_BehaviorDescriptor.java">
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
     </file>
     <file name="LightWeightDecisionTable_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" />
@@ -49,17 +34,32 @@
     <file name="Matrix_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,52,0" name="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
-    </file>
     <file name="Row_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
+    </file>
+    <file name="StateMachine_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
+    </file>
+    <file name="StateReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
+    </file>
+    <file name="State_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
+    </file>
+    <file name="Table_BehaviorDescriptor.java">
+      <unit at="11,0,28,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
     </file>
     <file name="Transition_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Transition_BehaviorDescriptor" />
     </file>
-    <file name="Table_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
+    <file name="UltimateContainer_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
+    </file>
+    <file name="XElement_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
+    </file>
+    <file name="YElement_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/2882388703616228638">

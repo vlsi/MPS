@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -142,12 +142,14 @@ final class SerializeSupport {
     for (UnitPositionInfo pi : debugRoot.getUnitPositions()) {
       p3.putValue(pi.getFileName(), pi);
     }
-    LinkedHashSet<String> allFiles = new LinkedHashSet<String>();
+    HashSet<String> allFiles = new HashSet<String>();
     allFiles.addAll(p1.keySet());
     allFiles.addAll(p2.keySet());
     allFiles.addAll(p3.keySet());
-    ArrayList<Element> rv = new ArrayList<Element>(allFiles.size());
-    for (String filename : allFiles) {
+    final String[] allFilesSorted = allFiles.toArray(new String[allFiles.size()]);
+    Arrays.sort(allFilesSorted);
+    ArrayList<Element> rv = new ArrayList<Element>(allFilesSorted.length);
+    for (String filename : allFilesSorted) {
       Element fileElement = new Element(ELEMENT_FILE);
       fileElement.setAttribute(ATTR_NAME, filename);
       rv.add(fileElement);

@@ -12,11 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
-    <file name="TemplateModelImpl.java">
-      <unit at="19,0,71,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
-    </file>
     <file name="QueriesGenerated.java">
       <unit at="17,0,36,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
+    </file>
+    <file name="TemplateModelImpl.java">
+      <unit at="19,0,71,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738629621">
@@ -229,6 +229,10 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738992784">
+    <file name="QueriesGenerated.java">
+      <node id="1218740174302" at="26,106,27,220" concept="7" />
+      <scope id="1218740165113" at="26,106,27,220" />
+    </file>
     <file name="Templateweave__InputNode__A.java">
       <node id="1218738992784" at="25,43,26,202" concept="7" />
       <node id="1218738992784" at="28,154,29,123" concept="6" />
@@ -276,10 +280,6 @@
         <var name="environment" id="1218738992784" />
       </scope>
       <unit id="1218738992784" at="21,0,49,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templateweave__InputNode__A" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <node id="1218740174302" at="26,106,27,220" concept="7" />
-      <scope id="1218740165113" at="26,106,27,220" />
     </file>
   </root>
 </debug-info>

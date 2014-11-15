@@ -6,11 +6,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="ICheckedNamePolicy_BehaviorDescriptor.java">
-      <unit at="9,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,24,0" name="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ICheckedNamePolicy_BehaviorDescriptor.java">
+      <unit at="9,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
     </file>
     <file name="PropertyRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" />

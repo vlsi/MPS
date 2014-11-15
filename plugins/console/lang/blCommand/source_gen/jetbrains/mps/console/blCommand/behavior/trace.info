@@ -7,74 +7,41 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="AbstractPrintExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.AbstractPrintExpression_BehaviorDescriptor" />
+    </file>
     <file name="BLCommand_BehaviorDescriptor.java">
       <unit at="14,0,55,0" name="jetbrains.mps.console.blCommand.behavior.BLCommand_BehaviorDescriptor" />
-    </file>
-    <file name="NodesExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.NodesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="PrintSequenceExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintSequenceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="UsagesExpression_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.console.blCommand.behavior.UsagesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterScope_BehaviorDescriptor" />
-    </file>
-    <file name="PrintExpression_BehaviorDescriptor.java">
-      <unit at="8,0,31,0" name="jetbrains.mps.console.blCommand.behavior.PrintExpression_BehaviorDescriptor" />
-    </file>
-    <file name="PrintNodeReferenceExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintNodeReferenceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ShowExpression_BehaviorDescriptor.java">
-      <unit at="9,0,35,0" name="jetbrains.mps.console.blCommand.behavior.ShowExpression_BehaviorDescriptor" />
-    </file>
-    <file name="CustomScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
-    </file>
-    <file name="QueryExpression_BehaviorDescriptor.java">
-      <unit at="10,0,37,0" name="jetbrains.mps.console.blCommand.behavior.QueryExpression_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterList_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterList_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterIncludeReadOnly_BehaviorDescriptor" />
-    </file>
-    <file name="PrintNodeExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ConsoleExpression_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ProjectExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,68,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BLExpression_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.console.blCommand.behavior.BLExpression_BehaviorDescriptor" />
     </file>
-    <file name="InstancesExpression_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.console.blCommand.behavior.InstancesExpression_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,68,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="QueryParameter_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameter_BehaviorDescriptor" />
+    <file name="ConsoleExpression_BehaviorDescriptor.java">
+      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
     </file>
-    <file name="ReferencesExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ReferencesExpression_BehaviorDescriptor" />
+    <file name="ConsoleOperation_BehaviorDescriptor.java">
+      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
     </file>
-    <file name="ProjectScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.ProjectScope_BehaviorDescriptor" />
+    <file name="CustomScope_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
     </file>
     <file name="ExceptionHolder_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_BehaviorDescriptor" />
     </file>
+    <file name="GlobalScope_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.GlobalScope_BehaviorDescriptor" />
+    </file>
+    <file name="InstancesExpression_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.console.blCommand.behavior.InstancesExpression_BehaviorDescriptor" />
+    </file>
     <file name="ModelScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.ModelScope_BehaviorDescriptor" />
+    </file>
+    <file name="ModelsExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ModelsExpression_BehaviorDescriptor" />
     </file>
     <file name="ModulesExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ModulesExpression_BehaviorDescriptor" />
@@ -82,23 +49,56 @@
     <file name="ModulesScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.ModulesScope_BehaviorDescriptor" />
     </file>
-    <file name="AbstractPrintExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.AbstractPrintExpression_BehaviorDescriptor" />
+    <file name="NodesExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.NodesExpression_BehaviorDescriptor" />
+    </file>
+    <file name="PrintExpression_BehaviorDescriptor.java">
+      <unit at="8,0,31,0" name="jetbrains.mps.console.blCommand.behavior.PrintExpression_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintNodeExpression_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeReferenceExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintNodeReferenceExpression_BehaviorDescriptor" />
+    </file>
+    <file name="PrintSequenceExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintSequenceExpression_BehaviorDescriptor" />
+    </file>
+    <file name="PrintTextExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintTextExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ProjectExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectScope_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.ProjectScope_BehaviorDescriptor" />
+    </file>
+    <file name="QueryExpression_BehaviorDescriptor.java">
+      <unit at="10,0,37,0" name="jetbrains.mps.console.blCommand.behavior.QueryExpression_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterIncludeReadOnly_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterList_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterList_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameterScope_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameterScope_BehaviorDescriptor" />
+    </file>
+    <file name="QueryParameter_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.QueryParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ReferencesExpression_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ReferencesExpression_BehaviorDescriptor" />
     </file>
     <file name="ScopeParameter_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ScopeParameter_BehaviorDescriptor" />
     </file>
-    <file name="ModelsExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.blCommand.behavior.ModelsExpression_BehaviorDescriptor" />
+    <file name="ShowExpression_BehaviorDescriptor.java">
+      <unit at="9,0,35,0" name="jetbrains.mps.console.blCommand.behavior.ShowExpression_BehaviorDescriptor" />
     </file>
-    <file name="GlobalScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.GlobalScope_BehaviorDescriptor" />
-    </file>
-    <file name="ConsoleOperation_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PrintTextExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.console.blCommand.behavior.PrintTextExpression_BehaviorDescriptor" />
+    <file name="UsagesExpression_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.console.blCommand.behavior.UsagesExpression_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2699636778858778743">

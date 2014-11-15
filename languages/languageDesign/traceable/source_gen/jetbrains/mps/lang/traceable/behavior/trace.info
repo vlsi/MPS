@@ -3,17 +3,17 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+    </file>
     <file name="ScopeConcept_BehaviorDescriptor.java">
       <unit at="8,0,11,0" name="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
-    </file>
-    <file name="UnitConcept_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
     </file>
     <file name="TraceableConcept_BehaviorDescriptor.java">
       <unit at="8,0,12,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+    <file name="UnitConcept_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369893">
