@@ -494,6 +494,28 @@
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="494100551407707431" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="GenerationContextOp_GetExport" />
+      <property role="4jta.1169125787135.4628067390765907488" value="retrieve proxy object for cross-model reference target" />
+      <property role="4jta.1169125787135.5092175715804935370" value="getExported" />
+      <reference role="4jta.1071489090640.1071489389519" target="1216860049619" resolveInfo="GenerationContextOp_Base" />
+      <node concept="4jta.1071489288299" id="7717883705482693609" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="name_intern" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288298" id="1770874776445951671" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="inputNode" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1071489288298" id="494100551407707432" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="label" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpf8.494100551407614666" resolveInfo="ExportLabel" />
+      </node>
+    </node>
   </contents>
 </model>
 

@@ -38,6 +38,7 @@ public class GenerationStatus extends Status {
   private DebugInfo myDebugInfo;
   private GenerationDependencies myDependencies;
   private ModelDependencies myBLDependencies;
+  private ModelExports myExports;
 
   private SModel myOriginalInputModel;
 
@@ -102,6 +103,27 @@ public class GenerationStatus extends Status {
 
   public void setOriginalInputModel(org.jetbrains.mps.openapi.model.SModel originalInputModel) {
     myOriginalInputModel = originalInputModel;
+  }
+
+  /**
+   * PROVISIONAL CODE. DO NOT USE!
+   * GenerationStatus serves as a container for data associated with model generation step.
+   * However, some of these associates has nothing to do with generation (e.g. ModelDependencies are purely textgen aspect),
+   * and some are just exposed here to be accessed, and has nothing to do with generation status.
+   * ModelExports object keeps cross-model generation aspect and as such qualifies to be exposed from GS, however, with
+   * better structure of CacheGenerators we unlikely to need it here (this might be generic 'AuxGeneratedDataSupplier' which would
+   * tell desired location (sourcegen or caches) and accept StreamHandler to save whatever it needs to save (either exports model or 'trace.info' xml)
+   */
+  @Nullable
+  public ModelExports getModelExports() {
+    return myExports;
+  }
+
+  /**
+   * PROVISIONAL CODE. DO NOT USE!
+   */
+  public void setModelExports(ModelExports exports) {
+    myExports = exports;
   }
 
   public static class ERROR extends GenerationStatus {

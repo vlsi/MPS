@@ -49,6 +49,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" />
@@ -73,6 +74,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -96,9 +98,12 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1176718929932" name="isFinal" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165/1178608670077" name="isAbstract" />
@@ -106,6 +111,7 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1200397529627/1200397540847" name="charConstant" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129/1224848525476" name="isDeprecated" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/1240249534625" name="isVolatile" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/8606350594693632173" name="isTransient" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
@@ -144,6 +150,8 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246/1153952416686" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246/1153952429843" name="finallyBody" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373/1160998896846" name="condition" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373/1160998916832" name="message" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025/1164879758292" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164903280175/1164903359217" name="throwable" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164903280175/1164903359218" name="catchBody" />
@@ -162,6 +170,7 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494/1212687122400" name="typeParameter" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
   </debugInfo>
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
@@ -1572,6 +1581,7 @@
         </node>
         <node concept="vg0i.1068390468200" id="4328738523548225935" role="vg0i.1107461130800.5375687026011219971" info="igu">
           <property role="asn4.1169194658468.1169194664001" value="myDocument" />
+          <property role="vg0i.1068431474542.1176718929932" value="true" />
           <node concept="vg0i.1107535904670" id="7150332783308943918" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="zwkq.~Document" resolveInfo="Document" />
           </node>
@@ -1587,18 +1597,70 @@
             </node>
           </node>
           <node concept="vg0i.1068580123136" id="4328738523548226153" role="vg0i.1068580123132.1068580123135" info="sn">
-            <node concept="vg0i.1068580123155" id="4328738523548226154" role="vg0i.1068580123136.1068581517665" info="nn">
-              <node concept="vg0i.1068498886294" id="4328738523548226155" role="vg0i.1068580123155.1068580123156" info="nn">
-                <node concept="vg0i.1145552977093" id="7150332783308962363" role="vg0i.1215693861676.1068498886297" info="nn">
-                  <node concept="vg0i.1212685548494" id="7150332783309002165" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="zwkq.~Document%d&lt;init&gt;(org%djdom%dElement)" resolveInfo="Document" />
-                    <node concept="vg0i.1068498886296" id="7150332783309006827" role="vg0i.1204053956946.1068499141038" info="nn">
+            <node concept="vg0i.6329021646629104954" id="4437532826509765717" role="vg0i.1068580123136.1068581517665" info="nn">
+              <node concept="vg0i.6329021646629104957" id="4437532826509765955" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+                <property role="vg0i.6329021646629104957.6329021646629104958" value="if element is right under a document, use this document, otherwise create a new one" />
+              </node>
+            </node>
+            <node concept="vg0i.1068580123159" id="4437532826509767158" role="vg0i.1068580123136.1068581517665" info="nn">
+              <node concept="vg0i.1068580123136" id="4437532826509767161" role="vg0i.1068580123159.1068580123161" info="sn">
+                <node concept="vg0i.1160998861373" id="4437532826509774934" role="vg0i.1068580123136.1068581517665" info="nn">
+                  <node concept="vg0i.1197027756228" id="4437532826509775282" role="vg0i.1160998861373.1160998896846" info="nn">
+                    <node concept="vg0i.1068498886296" id="4437532826509774964" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225941" resolveInfo="element" />
+                    </node>
+                    <node concept="vg0i.1202948039474" id="4437532826509775812" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="zwkq.~Element%disRootElement()%cboolean" resolveInfo="isRootElement" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1070475926800" id="4437532826509778717" role="vg0i.1160998861373.1160998916832" info="nn">
+                    <property role="vg0i.1070475926800.1070475926801" value="Need a document to serialize an xml element; could not save if element is already inside a document" />
+                  </node>
+                </node>
+                <node concept="vg0i.1068580123155" id="4437532826509775913" role="vg0i.1068580123136.1068581517665" info="nn">
+                  <node concept="vg0i.1068498886294" id="4437532826509776060" role="vg0i.1068580123155.1068580123156" info="nn">
+                    <node concept="vg0i.1197027756228" id="4437532826509777317" role="vg0i.1215693861676.1068498886297" info="nn">
+                      <node concept="vg0i.1068498886296" id="4437532826509776613" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225941" resolveInfo="element" />
+                      </node>
+                      <node concept="vg0i.1202948039474" id="4437532826509777884" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="zwkq.~Content%dgetDocument()%corg%djdom%dDocument" resolveInfo="getDocument" />
+                      </node>
+                    </node>
+                    <node concept="vg0i.1068498886296" id="4437532826509775911" role="vg0i.1215693861676.1068498886295" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225935" resolveInfo="myDocument" />
                     </node>
                   </node>
                 </node>
-                <node concept="vg0i.1068498886296" id="3021153905120201470" role="vg0i.1215693861676.1068498886295" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225935" resolveInfo="myDocument" />
+              </node>
+              <node concept="vg0i.1073239437375" id="4437532826509768818" role="vg0i.1068580123159.1068580123160" info="nn">
+                <node concept="vg0i.1070534058343" id="4437532826509769102" role="vg0i.1081773326031.1081773367579" info="nn" />
+                <node concept="vg0i.1197027756228" id="4437532826509767889" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <node concept="vg0i.1068498886296" id="4437532826509767429" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225941" resolveInfo="element" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="4437532826509768588" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="zwkq.~Content%dgetDocument()%corg%djdom%dDocument" resolveInfo="getDocument" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1082485599095" id="4437532826509769173" role="vg0i.1068580123159.1082485599094" info="nn">
+                <node concept="vg0i.1068580123136" id="4437532826509769174" role="vg0i.1082485599095.1082485599096" info="sn">
+                  <node concept="vg0i.1068580123155" id="4437532826509769445" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1068498886294" id="4437532826509770017" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1145552977093" id="4437532826509770554" role="vg0i.1215693861676.1068498886297" info="nn">
+                        <node concept="vg0i.1212685548494" id="4437532826509774451" role="vg0i.1145552977093.1145553007750" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="zwkq.~Document%d&lt;init&gt;(org%djdom%dElement)" resolveInfo="Document" />
+                          <node concept="vg0i.1068498886296" id="4437532826509774527" role="vg0i.1204053956946.1068499141038" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225941" resolveInfo="element" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="vg0i.1068498886296" id="4437532826509769444" role="vg0i.1215693861676.1068498886295" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="4328738523548225935" resolveInfo="myDocument" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

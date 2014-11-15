@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:538c7dbd-f448-41a4-85e4-e792684f3f29(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" />
+    <lang id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" />
+    <concept id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408/8915420221429834077" name="jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365" name="jetbrains.mps.lang.generator.structure.ExportEntry" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546942789835" name="jetbrains.mps.lang.generator.structure.TrivialModelId" />
+    <property id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408/8915420221429834077/8915420221429834078" name="string1" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387/9032177546941580390" name="conceptId" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387/9032177546941580392" name="nodeId" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546942789835/9032177546942789839" name="modelName" />
+    <refRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941634307" name="label" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575207" name="inputNode" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575209" name="outputNode" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575212" name="dataKeeper" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546942803148" name="outputModel" />
+  </debugInfo>
+  <languages>
+    <use id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" version="0" implicit="true" index="rtma" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" implicit="true" index="7gwc" />
+  </languages>
+  <imports>
+    <import index="qz7j" ref="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" implicit="true" />
+    <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
+    <import index="xdt3" ref="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="7gwc.9032177546941420365" id="5485016006702971842" info="ng">
+      <reference role="7gwc.9032177546941420365.9032177546941634307" target="xdt3.5925726056274334828" resolveInfo="BeanToClass" />
+      <node concept="7gwc.9032177546942789835" id="5485016006702971843" role="7gwc.9032177546941420365.9032177546942803148" info="ng">
+        <property role="7gwc.9032177546942789835.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel2" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="5485016006702971844" role="7gwc.9032177546941420365.9032177546941575207" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="5176577547833280844" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="5485016006702971845" role="7gwc.9032177546941420365.9032177546941575209" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="5485016006702971823" />
+      </node>
+      <node concept="rtma.8915420221429834077" id="5485016006702971841" role="7gwc.9032177546941420365.9032177546941575212" info="ng">
+        <property role="rtma.8915420221429834077.8915420221429834078" value="Bean2Impl" />
+      </node>
+    </node>
+  </contents>
+</model>
+

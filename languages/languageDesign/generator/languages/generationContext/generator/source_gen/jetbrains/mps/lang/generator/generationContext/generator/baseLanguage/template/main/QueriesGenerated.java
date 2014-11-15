@@ -90,6 +90,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1758784108619328000(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619328022l, 1758784108619487309l, "name_intern"));
   }
+  public static Object propertyMacro_GetPropertyValue_6048126956897464754(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-2922713684555708516l, -6639802755577912107l), 494100551407707431l, 7717883705482693609l, "name_intern"));
+  }
   public static Object referenceMacro_GetReferent_1216862267882(final ReferenceMacroContext _context) {
     // method parameter 
     return "_context";
@@ -287,5 +290,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1217894200331(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2922713684555708516l, -6639802755577912107l), 1217889960776l, 1217890689512l, "userKey"));
+  }
+  public static SNode sourceNodeQuery_9109410030987994845(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+  }
+  public static SNode sourceNodeQuery_6048126956897521731(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2922713684555708516l, -6639802755577912107l), 494100551407707431l, 1770874776445951671l, "inputNode"));
   }
 }

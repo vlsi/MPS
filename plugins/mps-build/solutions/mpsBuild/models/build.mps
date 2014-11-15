@@ -7997,6 +7997,12 @@
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048536180" resolveInfo="jetbrains.mps.lang.smodel" />
             </node>
           </node>
+          <node concept="bxtc.7259033139236285166" id="9032177546943439859" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="9032177546943439860" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="1966103100308041248" resolveInfo="MPS.OpenAPI" />
+            </node>
+          </node>
         </node>
         <node concept="bxtc.3189788309731840248" id="8939513996048536034" role="bxtc.1500819558095907805.1500819558095907806" info="ng">
           <property role="bxtc.322010710375871467.8369506495128725901" value="true" />

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <root nodeRef="r:53fbbbd7-a01f-458c-a76d-a34ed2d6f25f(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)/5176577547833280844">
+    <file name="Bean2Impl.java">
+      <node id="5176577547833280845" at="8,10,9,35" concept="0" />
+      <node id="5176577547833280847" at="11,10,12,35" concept="0" />
+      <scope id="5176577547833280845" at="8,10,9,35" />
+      <scope id="5176577547833280847" at="11,10,12,35" />
+      <unit id="5176577547833280844" at="7,0,15,0" name="jetbrains.mps.generator.crossmodel.sandbox.beanmodel2.Bean2Impl" />
+    </file>
+  </root>
+</debug-info>
+

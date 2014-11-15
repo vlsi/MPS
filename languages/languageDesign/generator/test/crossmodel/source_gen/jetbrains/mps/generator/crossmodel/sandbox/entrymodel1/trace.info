@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)/4355167635272070277">
+    <file name="FirstBeanImpl.java">
+      <node id="4355167635272070277" at="11,0,12,0" concept="0" trace="valueEntryOne" />
+      <node id="4355167635272070277" at="16,0,17,0" concept="0" trace="valueEntryTwo" />
+      <node id="4355167635272070277" at="7,0,9,0" concept="1" trace="getEntryOne#()V" />
+      <node id="4355167635272070277" at="9,0,11,0" concept="1" trace="set_EntryOne#(I)V" />
+      <node id="4355167635272070277" at="12,0,14,0" concept="1" trace="getEntryTwo#()V" />
+      <node id="4355167635272070277" at="14,0,16,0" concept="1" trace="set_EntryTwo#(I)V" />
+      <scope id="4355167635272070277" at="7,29,7,29" />
+      <scope id="4355167635272070277" at="9,35,9,35" />
+      <scope id="4355167635272070277" at="12,29,12,29" />
+      <scope id="4355167635272070277" at="14,35,14,35" />
+      <scope id="4355167635272070277" at="7,0,9,0" />
+      <scope id="4355167635272070277" at="9,0,11,0">
+        <var name="v" id="4355167635272070277" />
+      </scope>
+      <scope id="4355167635272070277" at="12,0,14,0" />
+      <scope id="4355167635272070277" at="14,0,16,0">
+        <var name="v" id="4355167635272070277" />
+      </scope>
+      <unit id="4355167635272070277" at="6,0,18,0" name="jetbrains.mps.generator.crossmodel.sandbox.entrymodel1.FirstBeanImpl" />
+    </file>
+  </root>
+</debug-info>
+
