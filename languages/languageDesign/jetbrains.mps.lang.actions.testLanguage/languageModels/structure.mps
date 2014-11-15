@@ -1,324 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)">
+<model ref="r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1160488491229" name="iconPath" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="kxd5" ref="r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="2550657305103395183" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestContainer" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="2550657305103473225" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="abstractChild" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="2550657305103442374" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="conceptSubstitutePart" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="3213804652589512225" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_conceptSubstitute" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103442169" resolveInfo="ActionTestChild1" />
-      </node>
-      <node concept="4jta.1071489288298" id="3213804652591201723" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_genericQuery" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="3286607483605022921" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_parameterizedSubstitute" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="2534942168331159850" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_simpleItemSubstitute" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="5164819300892346417" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_wrapperSubstitute" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
-      </node>
-      <node concept="4jta.1071489288298" id="2870536390414919847" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="addMenu_wrapperSubstituteDefaultSelection" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
-      </node>
-      <node concept="4jta.1071489288298" id="8349639607730759178" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="removeByConditionPart" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="8349639607733071711" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="removePart" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="8349639607733418666" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="removeDefaultsPart" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
-      </node>
-      <node concept="4jta.1169127622168" id="441141899446063220" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5!K2" />
+        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1160488491229" name="iconPath" index="MwhBj" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="2550657305103395183">
+    <property role="TrG5h" value="ActionTestContainer" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2550657305103473225" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="abstractChild" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103411658" resolve="ActionTestAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="2550657305103411658" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestAbstractChild" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="2550657305103504026" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-      <node concept="4jta.1169127622168" id="2550657305103442193" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="2550657305103442374" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conceptSubstitutePart" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103411658" resolve="ActionTestAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="2550657305103442169" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChild1" />
-      <property role="4jta.1169125787135.5092175715804935370" value="child1" />
-      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/child1.png" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <reference role="4jta.1071489090640.1071489389519" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
-      <node concept="4jta.1071489288298" id="9187447745748951875" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="child1" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="9187447745748949838" resolveInfo="ActionTestChild1Child" />
-      </node>
+    <node concept="1TJgyj" id="3213804652589512225" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_conceptSubstitute" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103442169" resolve="ActionTestChild1" />
     </node>
-    <node concept="4jta.1071489090640" id="2550657305103442509" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChild2" />
-      <property role="4jta.1169125787135.5092175715804935370" value="child2" />
-      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/child2.png" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <reference role="4jta.1071489090640.1071489389519" target="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
+    <node concept="1TJgyj" id="3213804652591201723" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_genericQuery" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103411658" resolve="ActionTestAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="3213804652571075891" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChild1SubConcept" />
-      <property role="4jta.1169125787135.5092175715804935370" value="child1Sub" />
-      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/child1subConcept.png" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <reference role="4jta.1071489090640.1071489389519" target="2550657305103442169" resolveInfo="ActionTestChild1" />
+    <node concept="1TJgyj" id="3286607483605022921" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_parameterizedSubstitute" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103411658" resolve="ActionTestAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="5164819300892360561" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestAbstractChildWrapper" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute.wrappers" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="2747974755163334718" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-      <node concept="4jta.1169127622168" id="5164819300892361860" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="2534942168331159850" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_simpleItemSubstitute" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="2550657305103411658" resolve="ActionTestAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="5164819300892650829" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChildWrapper" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute.wrappers" />
-      <reference role="4jta.1071489090640.1071489389519" target="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
-      <node concept="4jta.1071489288298" id="5164819300892650847" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="childToWrap" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="5164819300894579629" resolveInfo="ActionTestChildToWrap1" />
-      </node>
+    <node concept="1TJgyj" id="5164819300892346417" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_wrapperSubstitute" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="5164819300892360561" resolve="ActionTestAbstractChildWrapper" />
     </node>
-    <node concept="4jta.1071489090640" id="5164819300894579629" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChildToWrap1" />
-      <property role="4jta.1169125787135.5092175715804935370" value="wrappedChild1" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute.wrappers" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="8749184937172363493" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-      <node concept="4jta.1169127622168" id="5164819300894588383" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="2870536390414919847" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addMenu_wrapperSubstituteDefaultSelection" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="5164819300892360561" resolve="ActionTestAbstractChildWrapper" />
     </node>
-    <node concept="4jta.1071489090640" id="2747974755163525074" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChildToWrap2" />
-      <property role="4jta.1169125787135.5092175715804935370" value="wrappedChild2" />
-      <property role="asn4.1133920641626.1193676396447" value="substitute.wrappers" />
-      <reference role="4jta.1071489090640.1071489389519" target="5164819300894579629" resolveInfo="ActionTestChildToWrap1" />
+    <node concept="1TJgyj" id="8349639607730759178" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="removeByConditionPart" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="8349639607730654093" resolve="ActionTestDefaultAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="8349639607730654093" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestDefaultAbstractChild" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="8349639607730654161" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="8349639607733071711" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="removePart" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="8349639607730654093" resolve="ActionTestDefaultAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="8349639607730661171" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestDefaultChild1" />
-      <property role="4jta.1169125787135.5092175715804935370" value="child1" />
-      <reference role="4jta.1071489090640.1071489389519" target="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
+    <node concept="1TJgyj" id="8349639607733418666" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="removeDefaultsPart" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="8349639607730654093" resolve="ActionTestDefaultAbstractChild" />
     </node>
-    <node concept="4jta.1071489090640" id="8349639607730662869" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestDefaultChild2" />
-      <property role="4jta.1169125787135.5092175715804935370" value="child2" />
-      <reference role="4jta.1071489090640.1071489389519" target="8349639607730654093" resolveInfo="ActionTestDefaultAbstractChild" />
+    <node concept="PrWs8" id="441141899446063220" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="9187447745748949838" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="substitute" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestChild1Child" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="9187447745748949928" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="2550657305103411658">
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="ActionTestAbstractChild" />
+    <property role="3GE5qa" value="substitute" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2550657305103504026" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="1702123884811354597" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformTestContainer" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="1702123884811416165" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="abstractChild" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="1702123884811416051" resolveInfo="ActionTestSidetransformAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="4942308145798610513" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="abstractChildConstrained" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="1702123884811416051" resolveInfo="ActionTestSidetransformAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="3185679905990201576" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <property role="4jta.1071489288298.1071599776563" value="anotherAbstractChild" />
-        <reference role="4jta.1071489288298.1071599976176" target="3185679905990200726" resolveInfo="ActionTestSidetransformAnotherAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="3185679905990201679" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <property role="4jta.1071489288298.1071599776563" value="anotherAbstractChildConstrained" />
-        <reference role="4jta.1071489288298.1071599976176" target="3185679905990200726" resolveInfo="ActionTestSidetransformAnotherAbstractChild" />
-      </node>
-      <node concept="4jta.1071489288298" id="4886882084760491410" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="abstractChildAddConcept" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="4886882084760489344" resolveInfo="ActionTestSidetransformAddConceptAbstractChild" />
-      </node>
+    <node concept="PrWs8" id="2550657305103442193" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="1702123884811416051" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAbstractChild" />
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="4942308145797614578" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="2550657305103442169">
+    <property role="TrG5h" value="ActionTestChild1" />
+    <property role="34LRSv" value="child1" />
+    <property role="MwhBj" value="${language_descriptor}/icons/child1.png" />
+    <property role="3GE5qa" value="substitute" />
+    <reference role="1TJDcQ" target="2550657305103411658" resolve="ActionTestAbstractChild" />
+    <node concept="1TJgyj" id="9187447745748951875" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child1" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="9187447745748949838" resolve="ActionTestChild1Child" />
     </node>
-    <node concept="4jta.1071489090640" id="4942308145797614619" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformChild1" />
-      <reference role="4jta.1071489090640.1071489389519" target="1702123884811416051" resolveInfo="ActionTestSidetransformAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="2550657305103442509">
+    <property role="TrG5h" value="ActionTestChild2" />
+    <property role="34LRSv" value="child2" />
+    <property role="MwhBj" value="${language_descriptor}/icons/child2.png" />
+    <property role="3GE5qa" value="substitute" />
+    <reference role="1TJDcQ" target="2550657305103411658" resolve="ActionTestAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="3213804652571075891">
+    <property role="TrG5h" value="ActionTestChild1SubConcept" />
+    <property role="34LRSv" value="child1Sub" />
+    <property role="MwhBj" value="${language_descriptor}/icons/child1subConcept.png" />
+    <property role="3GE5qa" value="substitute" />
+    <reference role="1TJDcQ" target="2550657305103442169" resolve="ActionTestChild1" />
+  </node>
+  <node concept="1TIwiD" id="5164819300892360561">
+    <property role="TrG5h" value="ActionTestAbstractChildWrapper" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <property role="3GE5qa" value="substitute.wrappers" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2747974755163334718" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="3185679905989655160" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformTestAncestor" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="3185679905989655255" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="container" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1702123884811354597" resolveInfo="ActionTestSidetransformTestContainer" />
-      </node>
+    <node concept="PrWs8" id="5164819300892361860" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="3185679905990200726" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAnotherAbstractChild" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5164819300892650829">
+    <property role="TrG5h" value="ActionTestChildWrapper" />
+    <property role="3GE5qa" value="substitute.wrappers" />
+    <reference role="1TJDcQ" target="5164819300892360561" resolve="ActionTestAbstractChildWrapper" />
+    <node concept="1TJgyj" id="5164819300892650847" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childToWrap" />
+      <property role="20lbJX" value="0..1" />
+      <reference role="20lvS9" target="5164819300894579629" resolve="ActionTestChildToWrap1" />
     </node>
-    <node concept="4jta.1071489090640" id="3185679905990201737" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAnotherChild1" />
-      <property role="4jta.1169125787135.5092175715804935370" value="anotherChild1" />
-      <reference role="4jta.1071489090640.1071489389519" target="3185679905990512080" resolveInfo="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+  </node>
+  <node concept="1TIwiD" id="5164819300894579629">
+    <property role="TrG5h" value="ActionTestChildToWrap1" />
+    <property role="34LRSv" value="wrappedChild1" />
+    <property role="3GE5qa" value="substitute.wrappers" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="8749184937172363493" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="3185679905990201789" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAnotherChild2" />
-      <property role="4jta.1169125787135.5092175715804935370" value="anotherChild2" />
-      <reference role="4jta.1071489090640.1071489389519" target="3185679905990512080" resolveInfo="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+    <node concept="PrWs8" id="5164819300894588383" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="3185679905990512080" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAnotherChildCommonSuperConcept" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="3185679905990200726" resolveInfo="ActionTestSidetransformAnotherAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="2747974755163525074">
+    <property role="TrG5h" value="ActionTestChildToWrap2" />
+    <property role="34LRSv" value="wrappedChild2" />
+    <property role="3GE5qa" value="substitute.wrappers" />
+    <reference role="1TJDcQ" target="5164819300894579629" resolve="ActionTestChildToWrap1" />
+  </node>
+  <node concept="1TIwiD" id="8349639607730654093">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="ActionTestDefaultAbstractChild" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="8349639607730654161" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="4886882084760489344" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAddConceptAbstractChild" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="8349639607730661171">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="ActionTestDefaultChild1" />
+    <property role="34LRSv" value="child1" />
+    <reference role="1TJDcQ" target="8349639607730654093" resolve="ActionTestDefaultAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="8349639607730662869">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="ActionTestDefaultChild2" />
+    <property role="34LRSv" value="child2" />
+    <reference role="1TJDcQ" target="8349639607730654093" resolve="ActionTestDefaultAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="9187447745748949838">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="ActionTestChild1Child" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="9187447745748949928" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="4886882084761150502" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="sidetransform" />
-      <property role="asn4.1169194658468.1169194664001" value="ActionTestSidetransformAddConceptChild" />
-      <property role="4jta.1169125787135.5092175715804935370" value="addConceptChild" />
-      <reference role="4jta.1071489090640.1071489389519" target="4886882084760489344" resolveInfo="ActionTestSidetransformAddConceptAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="1702123884811354597">
+    <property role="TrG5h" value="ActionTestSidetransformTestContainer" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1702123884811416165" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="abstractChild" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="1702123884811416051" resolve="ActionTestSidetransformAbstractChild" />
     </node>
-  </contents>
+    <node concept="1TJgyj" id="4942308145798610513" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="abstractChildConstrained" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="1702123884811416051" resolve="ActionTestSidetransformAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="3185679905990201576" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="anotherAbstractChild" />
+      <reference role="20lvS9" target="3185679905990200726" resolve="ActionTestSidetransformAnotherAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="3185679905990201679" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="anotherAbstractChildConstrained" />
+      <reference role="20lvS9" target="3185679905990200726" resolve="ActionTestSidetransformAnotherAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="4886882084760491410" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="abstractChildAddConcept" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="4886882084760489344" resolve="ActionTestSidetransformAddConceptAbstractChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1702123884811416051">
+    <property role="TrG5h" value="ActionTestSidetransformAbstractChild" />
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4942308145797614578" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4942308145797614619">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformChild1" />
+    <reference role="1TJDcQ" target="1702123884811416051" resolve="ActionTestSidetransformAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="3185679905989655160">
+    <property role="TrG5h" value="ActionTestSidetransformTestAncestor" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3185679905989655255" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="container" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="1702123884811354597" resolve="ActionTestSidetransformTestContainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3185679905990200726">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAnotherAbstractChild" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="3185679905990201737">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAnotherChild1" />
+    <property role="34LRSv" value="anotherChild1" />
+    <reference role="1TJDcQ" target="3185679905990512080" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+  </node>
+  <node concept="1TIwiD" id="3185679905990201789">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAnotherChild2" />
+    <property role="34LRSv" value="anotherChild2" />
+    <reference role="1TJDcQ" target="3185679905990512080" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+  </node>
+  <node concept="1TIwiD" id="3185679905990512080">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="3185679905990200726" resolve="ActionTestSidetransformAnotherAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="4886882084760489344">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAddConceptAbstractChild" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4886882084761150502">
+    <property role="3GE5qa" value="sidetransform" />
+    <property role="TrG5h" value="ActionTestSidetransformAddConceptChild" />
+    <property role="34LRSv" value="addConceptChild" />
+    <reference role="1TJDcQ" target="4886882084760489344" resolve="ActionTestSidetransformAddConceptAbstractChild" />
+  </node>
 </model>
 

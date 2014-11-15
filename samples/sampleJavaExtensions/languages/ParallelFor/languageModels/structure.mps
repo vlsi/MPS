@@ -1,132 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)">
+<model ref="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509/7588428831955550663" name="role" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745/6054523464627965081" name="concept" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509/7588428831947959310" name="attributed" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="cgfx" ref="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="8923957828369477802" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ParallelFor" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="parallelFor" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
-      <node concept="4jta.1071489288299" id="8374756414438970116" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="nowait" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
+        <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
+        <property id="7588428831955550663" name="role" index="Hh88m" />
+        <child id="7588428831947959310" name="attributed" index="EQaZv" />
+      </concept>
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5!K2" />
+        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="8923957828369477802">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="ParallelFor" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="parallelFor" />
+    <reference role="1TJDcQ" target="tpee.1154032098014" resolve="AbstractLoopStatement" />
+    <node concept="1TJgyi" id="8374756414438970116" role="1TKVEl">
+      <property role="TrG5h" value="nowait" />
+      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+    </node>
+    <node concept="1TJgyj" id="8923957828369518786" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="loopVariable" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="8923957828369477803" resolve="ParallelLoopVariable" />
+    </node>
+    <node concept="1TJgyj" id="8923957828369550462" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="inputSequence" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="4659204813808501246" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="threadPool" />
+      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="5337045848190935661" role="PzmwI">
+      <reference role="PrY4T" target="tpee.1239354281271" resolve="IMethodLike" />
+    </node>
+    <node concept="PrWs8" id="3988640388184810143" role="PzmwI">
+      <reference role="PrY4T" target="tpee.1199653749349" resolve="IStatementListContainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="8923957828369477803">
+    <property role="TrG5h" value="ParallelLoopVariable" />
+    <reference role="1TJDcQ" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="633195941006921788">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="ThreadPool" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="thread pool" />
+    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <node concept="1TJgyi" id="633195941006921797" role="1TKVEl">
+      <property role="TrG5h" value="numberOfThreads" />
+      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2975785153735111398">
+    <property role="TrG5h" value="ThreadSafe" />
+    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="7588821453551758737" role="lGtFl">
+      <property role="Hh88m" value="threadSafe" />
+      <node concept="trNpa" id="1262857012849338823" role="EQaZv">
+        <reference role="trN6q" target="tpee.1068431474542" resolve="VariableDeclaration" />
       </node>
-      <node concept="4jta.1071489288298" id="8923957828369518786" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="loopVariable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="8923957828369477803" resolveInfo="ParallelLoopVariable" />
+      <node concept="trNpa" id="1262857012849338824" role="EQaZv">
+        <reference role="trN6q" target="tpee.1081236700937" resolve="StaticMethodCall" />
       </node>
-      <node concept="4jta.1071489288298" id="8923957828369550462" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="inputSequence" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      <node concept="trNpa" id="1262857012849338825" role="EQaZv">
+        <reference role="trN6q" target="tpee.7812454656619025412" resolve="LocalMethodCall" />
       </node>
-      <node concept="4jta.1071489288298" id="4659204813808501246" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="threadPool" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      <node concept="trNpa" id="1262857012849338826" role="EQaZv">
+        <reference role="trN6q" target="tpee.1197027756228" resolve="DotExpression" />
       </node>
-      <node concept="4jta.1169127622168" id="5337045848190935661" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1239354281271" resolveInfo="IMethodLike" />
-      </node>
-      <node concept="4jta.1169127622168" id="3988640388184810143" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1199653749349" resolveInfo="IStatementListContainer" />
+      <node concept="trNpa" id="1262857012849338827" role="EQaZv">
+        <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
       </node>
     </node>
-    <node concept="4jta.1071489090640" id="8923957828369477803" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ParallelLoopVariable" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
-    </node>
-    <node concept="4jta.1071489090640" id="633195941006921788" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ThreadPool" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="thread pool" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288299" id="633195941006921797" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="numberOfThreads" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657062" resolveInfo="integer" />
+  </node>
+  <node concept="1TIwiD" id="2975785153735230336">
+    <property role="TrG5h" value="NonThreadSafeClass" />
+    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="7588821453551758688" role="lGtFl">
+      <property role="Hh88m" value="nonThreadSafe" />
+      <node concept="trNpa" id="1262857012849338811" role="EQaZv">
+        <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
       </node>
     </node>
-    <node concept="4jta.1071489090640" id="2975785153735111398" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ThreadSafe" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
-      <node concept="4jta.2992811758677295509" id="7588821453551758737" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <property role="4jta.2992811758677295509.7588428831955550663" value="threadSafe" />
-        <node concept="4jta.6054523464627964745" id="1262857012849338823" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1068431474542" resolveInfo="VariableDeclaration" />
-        </node>
-        <node concept="4jta.6054523464627964745" id="1262857012849338824" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1081236700937" resolveInfo="StaticMethodCall" />
-        </node>
-        <node concept="4jta.6054523464627964745" id="1262857012849338825" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
-        </node>
-        <node concept="4jta.6054523464627964745" id="1262857012849338826" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1197027756228" resolveInfo="DotExpression" />
-        </node>
-        <node concept="4jta.6054523464627964745" id="1262857012849338827" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1068390468198" resolveInfo="ClassConcept" />
-        </node>
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="2975785153735230336" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="NonThreadSafeClass" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
-      <node concept="4jta.2992811758677295509" id="7588821453551758688" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <property role="4jta.2992811758677295509.7588428831955550663" value="nonThreadSafe" />
-        <node concept="4jta.6054523464627964745" id="1262857012849338811" role="4jta.2992811758677295509.7588428831947959310" info="ng">
-          <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1068390468198" resolveInfo="ClassConcept" />
-        </node>
-      </node>
-    </node>
-  </contents>
+  </node>
 </model>
 

@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)">
+<model ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284574294/2769948622284574295" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546675/2769948622284574302" name="dependencies" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390352322" name="additionalDependencies" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506/7306485738221391508" name="parts" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506/7306485738221455030" name="imports" />
-  </debugInfo>
   <languages>
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" version="-1" index="dnci" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -29,31 +10,55 @@
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" implicit="true" />
     <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="dnci.7306485738221391506" id="398731435597190701" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="mps" />
-      <node concept="dnci.2769948622284546675" id="398731435597203639" role="dnci.7306485738221391506.7306485738221391508" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="generate" />
-        <node concept="dnci.2769948622284574294" id="398731435602700636" role="dnci.2769948622284546675.2769948622284574302" info="ng">
-          <reference role="dnci.2769948622284574294.2769948622284574295" target="398731435597652957" resolveInfo="declare-mps-tasks" />
-        </node>
-      </node>
-      <node concept="dnci.2769948622284546675" id="398731435597652957" role="dnci.7306485738221391506.7306485738221391508" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="declare-mps-tasks" />
-      </node>
-      <node concept="dnci.3961775458390032824" id="6354776497094852969" role="dnci.7306485738221391506.7306485738221391508" info="ng">
-        <reference role="dnci.3961775458390032824.3961775458390032825" target="tnlc.4701820937132277082" resolveInfo="assemble" />
-        <node concept="dnci.2769948622284574294" id="6354776497094852993" role="dnci.3961775458390032824.3961775458390352322" info="ng">
-          <reference role="dnci.2769948622284574294.2769948622284574295" target="398731435597652957" resolveInfo="declare-mps-tasks" />
-        </node>
-      </node>
-      <node concept="dnci.2769948622284546675" id="4101476690146148379" role="dnci.7306485738221391506.7306485738221391508" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="makeDependents" />
-      </node>
-      <node concept="dnci.7306485738221471031" id="6354776497041189990" role="dnci.7306485738221391506.7306485738221455030" info="ng">
-        <reference role="dnci.7306485738221471031.7306485738221471032" target="tnlc.7306485738221408315" resolveInfo="common" />
+  <registry>
+    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" flags="ng" index="2VaxJe">
+        <reference id="2769948622284574295" name="target" index="2VaxJf" />
+      </concept>
+      <concept id="2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" flags="ng" index="2VaFvF">
+        <child id="2769948622284574302" name="dependencies" index="2VaxJ6" />
+      </concept>
+      <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
+        <reference id="3961775458390032825" name="task" index="3bMsLK" />
+        <child id="3961775458390352322" name="additionalDependencies" index="3bNaKb" />
+      </concept>
+      <concept id="7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" flags="ng" index="yghi3">
+        <child id="7306485738221455030" name="imports" index="yg1MB" />
+        <child id="7306485738221391508" name="parts" index="yghi5" />
+      </concept>
+      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
+        <reference id="7306485738221471032" name="target" index="ygXWD" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="yghi3" id="398731435597190701">
+    <property role="TrG5h" value="mps" />
+    <node concept="2VaFvF" id="398731435597203639" role="yghi5">
+      <property role="TrG5h" value="generate" />
+      <node concept="2VaxJe" id="398731435602700636" role="2VaxJ6">
+        <reference role="2VaxJf" target="398731435597652957" resolve="declare-mps-tasks" />
       </node>
     </node>
-  </contents>
+    <node concept="2VaFvF" id="398731435597652957" role="yghi5">
+      <property role="TrG5h" value="declare-mps-tasks" />
+    </node>
+    <node concept="3bMsLL" id="6354776497094852969" role="yghi5">
+      <reference role="3bMsLK" target="tnlc.4701820937132277082" resolve="assemble" />
+      <node concept="2VaxJe" id="6354776497094852993" role="3bNaKb">
+        <reference role="2VaxJf" target="398731435597652957" resolve="declare-mps-tasks" />
+      </node>
+    </node>
+    <node concept="2VaFvF" id="4101476690146148379" role="yghi5">
+      <property role="TrG5h" value="makeDependents" />
+    </node>
+    <node concept="ygXWA" id="6354776497041189990" role="yg1MB">
+      <reference role="ygXWD" target="tnlc.7306485738221408315" resolve="common" />
+    </node>
+  </node>
 </model>
 

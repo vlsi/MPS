@@ -1,98 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)">
+<model ref="r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="dekf" ref="r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="6609104295326650728" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="TestConceptWithStyleAttributes" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5!K2" />
+        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="6609104295326650728">
+    <property role="TrG5h" value="TestConceptWithStyleAttributes" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="8422442021223268684">
+    <property role="TrG5h" value="NodeContainer" />
+    <property role="34LRSv" value="node container" />
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="8422442021223269806" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="node" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="8422442021223268684" resolve="NodeContainer" />
     </node>
-    <node concept="4jta.1071489090640" id="8422442021223268684" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="NodeContainer" />
-      <property role="4jta.1169125787135.5092175715804935370" value="node container" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="8422442021223269806" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="node" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="8422442021223268684" resolveInfo="NodeContainer" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="8917170296719625334">
+    <property role="TrG5h" value="PriorityStyle" />
+    <property role="34LRSv" value="priorityStyle" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+  </node>
+  <node concept="1TIwiD" id="8917170296719628637">
+    <property role="TrG5h" value="TestSimpleAttribute" />
+    <property role="34LRSv" value="test-simple-attribute" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <node concept="1TJgyi" id="8917170296719630035" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="4jta.1071489090640" id="8917170296719625334" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="PriorityStyle" />
-      <property role="4jta.1169125787135.5092175715804935370" value="priorityStyle" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
+  </node>
+  <node concept="1TIwiD" id="8917170296719630045">
+    <property role="TrG5h" value="TestInheritedAttribute" />
+    <property role="34LRSv" value="test-inherited-attribute" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <node concept="1TJgyi" id="8917170296719630046" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="8917170296719628637" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="TestSimpleAttribute" />
-      <property role="4jta.1169125787135.5092175715804935370" value="test-simple-attribute" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-      <node concept="4jta.1071489288299" id="8917170296719630035" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="value" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="8917170296719630045" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="TestInheritedAttribute" />
-      <property role="4jta.1169125787135.5092175715804935370" value="test-inherited-attribute" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-      <node concept="4jta.1071489288299" id="8917170296719630046" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="value" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="8917170296719632542" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="PriorityStyleCopy" />
-      <property role="4jta.1169125787135.5092175715804935370" value="priorityStyleCopy" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-    </node>
-    <node concept="4jta.1071489090640" id="8917170296719632906" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="HugePriorityStyle" />
-      <property role="4jta.1169125787135.5092175715804935370" value="hugePriorityStyle" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-    </node>
-    <node concept="4jta.1071489090640" id="8917170296719632911" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="UnapplyPriorityStyleCopy" />
-      <property role="4jta.1169125787135.5092175715804935370" value="unapplyPriorityStyleCopy" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-    </node>
-    <node concept="4jta.1071489090640" id="4078300376848435002" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="LeafNode" />
-      <property role="4jta.1169125787135.5092175715804935370" value="leaf" />
-      <reference role="4jta.1071489090640.1071489389519" target="8422442021223268684" resolveInfo="NodeContainer" />
-    </node>
-  </contents>
+  </node>
+  <node concept="1TIwiD" id="8917170296719632542">
+    <property role="TrG5h" value="PriorityStyleCopy" />
+    <property role="34LRSv" value="priorityStyleCopy" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+  </node>
+  <node concept="1TIwiD" id="8917170296719632906">
+    <property role="TrG5h" value="HugePriorityStyle" />
+    <property role="34LRSv" value="hugePriorityStyle" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+  </node>
+  <node concept="1TIwiD" id="8917170296719632911">
+    <property role="TrG5h" value="UnapplyPriorityStyleCopy" />
+    <property role="34LRSv" value="unapplyPriorityStyleCopy" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+  </node>
+  <node concept="1TIwiD" id="4078300376848435002">
+    <property role="TrG5h" value="LeafNode" />
+    <property role="34LRSv" value="leaf" />
+    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+  </node>
 </model>
 

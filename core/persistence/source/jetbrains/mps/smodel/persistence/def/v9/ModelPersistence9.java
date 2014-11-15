@@ -80,7 +80,8 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return isConcisePersistenceOption(header) ? new ModelWriter9bis() : getModelWriter();
+//    return isConcisePersistenceOption(header) ? new ModelWriter9bis() : getModelWriter();
+    return new ModelWriter9bis();
   }
 
   @Override

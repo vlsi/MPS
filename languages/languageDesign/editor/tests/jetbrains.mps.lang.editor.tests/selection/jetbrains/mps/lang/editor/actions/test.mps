@@ -1,47 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)">
+<model ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" />
-    <lang id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" />
-    <model ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" name="jetbrains.mps.ide.editor.actions" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" />
-    <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594" name="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" />
-    <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" />
-    <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" />
-    <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610223138" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer" />
-    <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610223687" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild" />
-    <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610223744" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1" />
-    <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610450426" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/1229194968595" name="cellId" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/1229194968596" name="caretPosition" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/1229432188737" name="isLastPosition" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856/1883175908513350760" name="description" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/1932269937152561478" name="useLabelSelection" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/6268941039745498163" name="selectionStart" />
-    <property id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594/6268941039745498165" name="selectionEnd" />
-    <refRole id="8585453e-6bfb-4d80-98de-b16074f1d86c/4239542196496927193/4239542196496929559" name="action" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856/1229187676388" name="nodeToEdit" />
-    <childRole id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856/1229187707859" name="result" />
-    <childRole id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856/1229187755283" name="code" />
-    <childRole id="8585453e-6bfb-4d80-98de-b16074f1d86c/7011073693661765739/1101347953350127927" name="actionReference" />
-    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
-    <childRole id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610223138/7803854675610223859" name="child" />
-    <childRole id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/7803854675610450426/7803854675610450486" name="container" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" version="-1" index="1dth" />
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" version="-1" index="5i2a" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="-1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -50,79 +13,125 @@
     <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="5i2a.1229187653856" id="7803854675609827855" info="lg">
-      <property role="asn4.1169194658468.1169194664001" value="DelOnChild1ReplaceItWithLinkTarget" />
-      <property role="asn4.1133920641626.1193676396447" value="delete" />
-      <property role="5i2a.1229187653856.1883175908513350760" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
-      <node concept="1dth.7803854675610450426" id="7803854675610517462" role="5i2a.1229187653856.1229187676388" info="ng">
-        <node concept="1dth.7803854675610223138" id="7803854675610517936" role="1dth.7803854675610450426.7803854675610450486" info="ng">
-          <node concept="1dth.7803854675610223744" id="7803854675610517946" role="1dth.7803854675610223138.7803854675610223859" info="ng">
-            <node concept="5i2a.1229194968594" id="7803854675610517963" role="asn4.1133920641626.5169995583184591170" info="ng">
-              <property role="5i2a.1229194968594.1229194968596" value="0" />
-              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-              <property role="5i2a.1229194968594.6268941039745498163" value="0" />
-              <property role="5i2a.1229194968594.6268941039745498165" value="0" />
-              <property role="5i2a.1229194968594.1229194968595" value="constant_0" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1dth.7803854675610450426" id="7803854675610518814" role="5i2a.1229187653856.1229187707859" info="ng">
-        <node concept="1dth.7803854675610223138" id="7803854675610518815" role="1dth.7803854675610450426.7803854675610450486" info="ng">
-          <node concept="1dth.7803854675610223687" id="7803854675610518839" role="1dth.7803854675610223138.7803854675610223859" info="ng">
-            <node concept="5i2a.1229194968594" id="7803854675610518841" role="asn4.1133920641626.5169995583184591170" info="ng">
-              <property role="5i2a.1229194968594.1229432188737" value="true" />
-              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-              <property role="5i2a.1229194968594.6268941039745498163" value="23" />
-              <property role="5i2a.1229194968594.6268941039745498165" value="23" />
-              <property role="5i2a.1229194968594.1229194968595" value="constant_0" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123136" id="7803854675610518854" role="5i2a.1229187653856.1229187755283" info="sn">
-        <node concept="5i2a.7011073693661765739" id="7803854675610518852" role="vg0i.1068580123136.1068581517665" info="nn">
-          <node concept="5i2a.4239542196496927193" id="7803854675610518858" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
-            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282213320720" resolveInfo="Delete" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="5i2a.1229187653856" id="7803854675610520166" info="lg">
-      <property role="asn4.1169194658468.1169194664001" value="DelOnChild1DeleteParent" />
-      <property role="asn4.1133920641626.1193676396447" value="delete" />
-      <property role="5i2a.1229187653856.1883175908513350760" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-      <node concept="1dth.7803854675610450426" id="7803854675610520167" role="5i2a.1229187653856.1229187676388" info="ng">
-        <node concept="1dth.7803854675610223138" id="7803854675610520168" role="1dth.7803854675610450426.7803854675610450486" info="ng">
-          <node concept="1dth.7803854675610223687" id="7803854675610520204" role="1dth.7803854675610223138.7803854675610223859" info="ng">
-            <node concept="5i2a.1229194968594" id="7803854675610520206" role="asn4.1133920641626.5169995583184591170" info="ng">
-              <property role="5i2a.1229194968594.1229194968596" value="0" />
-              <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-              <property role="5i2a.1229194968594.6268941039745498163" value="0" />
-              <property role="5i2a.1229194968594.6268941039745498165" value="0" />
-              <property role="5i2a.1229194968594.1229194968595" value="constant_0" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1dth.7803854675610450426" id="7803854675610520171" role="5i2a.1229187653856.1229187707859" info="ng">
-        <node concept="5i2a.1229194968594" id="7803854675610520208" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="5i2a.1229194968594.1229432188737" value="true" />
-          <property role="5i2a.1229194968594.1932269937152561478" value="true" />
-          <property role="5i2a.1229194968594.6268941039745498163" value="0" />
-          <property role="5i2a.1229194968594.6268941039745498165" value="0" />
-          <property role="5i2a.1229194968594.1229194968595" value="empty_container" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123136" id="7803854675610520175" role="5i2a.1229187653856.1229187755283" info="sn">
-        <node concept="5i2a.7011073693661765739" id="7803854675610520176" role="vg0i.1068580123136.1068581517665" info="nn">
-          <node concept="5i2a.4239542196496927193" id="7803854675610520177" role="5i2a.7011073693661765739.1101347953350127927" info="ng">
-            <reference role="5i2a.4239542196496927193.4239542196496929559" target="ekwn.8896169282213320720" resolveInfo="Delete" />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="7803854675610450426" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot" flags="ng" index="1QLem1">
+        <child id="7803854675610450486" name="container" index="1QLepd" />
+      </concept>
+      <concept id="7803854675610223687" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild" flags="ng" index="1QM1wW" />
+      <concept id="7803854675610223744" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1" flags="ng" index="1QM1zV" />
+      <concept id="7803854675610223138" name="jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer" flags="ng" index="1QM1Tp">
+        <child id="7803854675610223859" name="child" index="1QM1y8" />
+      </concept>
+    </language>
+    <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
+        <property id="1883175908513350760" name="description" index="3YCmrE" />
+        <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
+        <child id="1229187707859" name="result" index="LiZbd" />
+        <child id="1229187755283" name="code" index="LjaKd" />
+      </concept>
+      <concept id="1229194968594" name="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" flags="ng" index="LIFWc">
+        <property id="6268941039745498163" name="selectionStart" index="p6zMq" />
+        <property id="6268941039745498165" name="selectionEnd" index="p6zMs" />
+        <property id="1229194968596" name="caretPosition" index="LIFWa" />
+        <property id="1229194968595" name="cellId" index="LIFWd" />
+        <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
+        <property id="1229432188737" name="isLastPosition" index="ZRATv" />
+      </concept>
+      <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
+        <reference id="4239542196496929559" name="action" index="1iFR8X" />
+      </concept>
+      <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
+        <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="LiM7Y" id="7803854675609827855">
+    <property role="TrG5h" value="DelOnChild1ReplaceItWithLinkTarget" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
+    <node concept="1QLem1" id="7803854675610517462" role="LiRBU">
+      <node concept="1QM1Tp" id="7803854675610517936" role="1QLepd">
+        <node concept="1QM1zV" id="7803854675610517946" role="1QM1y8">
+          <node concept="LIFWc" id="7803854675610517963" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="constant_0" />
           </node>
         </node>
       </node>
     </node>
-  </contents>
+    <node concept="1QLem1" id="7803854675610518814" role="LiZbd">
+      <node concept="1QM1Tp" id="7803854675610518815" role="1QLepd">
+        <node concept="1QM1wW" id="7803854675610518839" role="1QM1y8">
+          <node concept="LIFWc" id="7803854675610518841" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="23" />
+            <property role="p6zMs" value="23" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="7803854675610518854" role="LjaKd">
+      <node concept="2HxZob" id="7803854675610518852" role="3cqZAp">
+        <node concept="1iFQzN" id="7803854675610518858" role="3iKnsn">
+          <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7803854675610520166">
+    <property role="TrG5h" value="DelOnChild1DeleteParent" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="1QLem1" id="7803854675610520167" role="LiRBU">
+      <node concept="1QM1Tp" id="7803854675610520168" role="1QLepd">
+        <node concept="1QM1wW" id="7803854675610520204" role="1QM1y8">
+          <node concept="LIFWc" id="7803854675610520206" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="7803854675610520171" role="LiZbd">
+      <node concept="LIFWc" id="7803854675610520208" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="7803854675610520175" role="LjaKd">
+      <node concept="2HxZob" id="7803854675610520176" role="3cqZAp">
+        <node concept="1iFQzN" id="7803854675610520177" role="3iKnsn">
+          <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

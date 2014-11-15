@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)">
+<model ref="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:91a4131e-4695-42c0-aafd-5099770207dd(jetbrains.mps.lang.resources.constraints)">
+<model ref="r:91a4131e-4695-42c0-aafd-5099770207dd(jetbrains.mps.lang.resources.constraints)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

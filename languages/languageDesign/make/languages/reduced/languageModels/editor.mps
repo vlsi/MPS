@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:aadd455c-bad7-4645-a1e1-a942f294de17(jetbrains.mps.make.reduced.editor)">
+<model ref="r:aadd455c-bad7-4645-a1e1-a942f294de17(jetbrains.mps.make.reduced.editor)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

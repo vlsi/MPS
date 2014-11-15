@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)">
+<model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767" name="jetbrains.mps.samples.mindmaps.structure.MindMap" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703884488" name="jetbrains.mps.samples.mindmaps.structure.Thought" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499" name="jetbrains.mps.samples.mindmaps.structure.Relationship" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958" name="jetbrains.mps.samples.mindmaps.structure.VisualBox" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/5058522826399262785" name="jetbrains.mps.samples.mindmaps.structure.Specializes" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/5058522826399342676" name="jetbrains.mps.samples.mindmaps.structure.CoreThrought" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953959" name="x" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953961" name="y" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/5871420002487302178" name="myIsClicked" />
-    <refRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499/79242395703887327" name="target" />
-    <refRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499/5871420002487876254" name="source" />
-    <childRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767/79242395703887318" name="thoughts" />
-    <childRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767/79242395703887323" name="relationships" />
-  </debugInfo>
   <languages>
-    <use id="33f294fd-370a-4a40-999b-43f382910018" version="-1" index="47di" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="3g6l" ref="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="47di.79242395703866767" id="5871420002487602285" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="JetBrains Products" />
-      <node concept="47di.79242395703884499" id="5058522826399262736" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.79242395703887327" target="5871420002487602288" resolveInfo="IntelliJ IDEA CE" />
-        <reference role="47di.79242395703884499.5871420002487876254" target="5058522826399435305" resolveInfo="JetBrains" />
-      </node>
-      <node concept="47di.79242395703884499" id="5058522826399342622" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.79242395703887327" target="5058522826399342615" resolveInfo="IntelliJ IDEA UE" />
-        <reference role="47di.79242395703884499.5871420002487876254" target="5058522826399435305" resolveInfo="JetBrains" />
-      </node>
-      <node concept="47di.79242395703884499" id="5058522826399262738" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.79242395703887327" target="5871420002487876142" resolveInfo="ReSharper" />
-        <reference role="47di.79242395703884499.5871420002487876254" target="5058522826399435305" resolveInfo="JetBrains" />
-      </node>
-      <node concept="47di.79242395703884499" id="5058522826399262744" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.79242395703887327" target="5871420002487709750" resolveInfo="Web Storm" />
-        <reference role="47di.79242395703884499.5871420002487876254" target="5058522826399435305" resolveInfo="JetBrains" />
-      </node>
-      <node concept="47di.79242395703884499" id="5058522826399262763" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.79242395703887327" target="5058522826399262748" resolveInfo="PHP Storm" />
-        <reference role="47di.79242395703884499.5871420002487876254" target="5058522826399435305" resolveInfo="JetBrains" />
-      </node>
-      <node concept="47di.79242395703884499" id="5058522826399262768" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.5871420002487876254" target="5871420002487709750" resolveInfo="Web Storm" />
-        <reference role="47di.79242395703884499.79242395703887327" target="5058522826399262748" resolveInfo="PHP Storm" />
-      </node>
-      <node concept="47di.5058522826399262785" id="5058522826399342607" role="47di.79242395703866767.79242395703887323" info="ng">
-        <reference role="47di.79242395703884499.5871420002487876254" target="5871420002487602288" resolveInfo="IntelliJ IDEA CE" />
-        <reference role="47di.79242395703884499.79242395703887327" target="5058522826399342615" resolveInfo="IntelliJ IDEA UE" />
-      </node>
-      <node concept="47di.5058522826399342676" id="5058522826399435305" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="JetBrains" />
-        <property role="47di.79242395703953958.79242395703953959" value="235" />
-        <property role="47di.79242395703953958.79242395703953961" value="104" />
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-      </node>
-      <node concept="47di.79242395703884488" id="5871420002487602288" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="47di.79242395703953958.79242395703953959" value="532" />
-        <property role="47di.79242395703953958.79242395703953961" value="68" />
-        <property role="asn4.1169194658468.1169194664001" value="IntelliJ IDEA CE" />
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-      </node>
-      <node concept="47di.79242395703884488" id="5058522826399342615" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="IntelliJ IDEA UE" />
-        <property role="47di.79242395703953958.79242395703953959" value="533" />
-        <property role="47di.79242395703953958.79242395703953961" value="249" />
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-      </node>
-      <node concept="47di.79242395703884488" id="5871420002487709750" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-        <property role="47di.79242395703953958.79242395703953959" value="33" />
-        <property role="47di.79242395703953958.79242395703953961" value="439" />
-        <property role="asn4.1169194658468.1169194664001" value="Web Storm" />
-      </node>
-      <node concept="47di.79242395703884488" id="5871420002487876142" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-        <property role="47di.79242395703953958.79242395703953959" value="320" />
-        <property role="47di.79242395703953958.79242395703953961" value="398" />
-        <property role="asn4.1169194658468.1169194664001" value="ReSharper" />
-      </node>
-      <node concept="47di.79242395703884488" id="5058522826399262748" role="47di.79242395703866767.79242395703887318" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="PHP Storm" />
-        <property role="47di.79242395703953958.79242395703953959" value="33" />
-        <property role="47di.79242395703953958.79242395703953961" value="86" />
-        <property role="47di.79242395703953958.5871420002487302178" value="true" />
-      </node>
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps">
+      <concept id="5058522826399262785" name="jetbrains.mps.samples.mindmaps.structure.Specializes" flags="ng" index="3tydfO" />
+      <concept id="5058522826399342676" name="jetbrains.mps.samples.mindmaps.structure.CoreThrought" flags="ng" index="3tzTJx" />
+      <concept id="79242395703953958" name="jetbrains.mps.samples.mindmaps.structure.VisualBox" flags="ng" index="3Y34MJ">
+        <property id="79242395703953961" name="y" index="3Y34Mw" />
+        <property id="79242395703953959" name="x" index="3Y34MI" />
+        <property id="5871420002487302178" name="myIsClicked" index="66S50" />
+      </concept>
+      <concept id="79242395703884488" name="jetbrains.mps.samples.mindmaps.structure.Thought" flags="ng" index="3Y3jL1" />
+      <concept id="79242395703884499" name="jetbrains.mps.samples.mindmaps.structure.Relationship" flags="ng" index="3Y3jLq">
+        <reference id="79242395703887327" name="target" index="3Y3kdm" />
+        <reference id="5871420002487876254" name="source" index="64GfW" />
+      </concept>
+      <concept id="79242395703866767" name="jetbrains.mps.samples.mindmaps.structure.MindMap" flags="ng" index="3Y3vc6">
+        <child id="79242395703887323" name="relationships" index="3Y3kdi" />
+        <child id="79242395703887318" name="thoughts" index="3Y3kdv" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3Y3vc6" id="5871420002487602285">
+    <property role="TrG5h" value="JetBrains Products" />
+    <node concept="3Y3jLq" id="5058522826399262736" role="3Y3kdi">
+      <reference role="3Y3kdm" target="5871420002487602288" resolve="IntelliJ IDEA CE" />
+      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
     </node>
-  </contents>
+    <node concept="3Y3jLq" id="5058522826399342622" role="3Y3kdi">
+      <reference role="3Y3kdm" target="5058522826399342615" resolve="IntelliJ IDEA UE" />
+      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+    </node>
+    <node concept="3Y3jLq" id="5058522826399262738" role="3Y3kdi">
+      <reference role="3Y3kdm" target="5871420002487876142" resolve="ReSharper" />
+      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+    </node>
+    <node concept="3Y3jLq" id="5058522826399262744" role="3Y3kdi">
+      <reference role="3Y3kdm" target="5871420002487709750" resolve="Web Storm" />
+      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+    </node>
+    <node concept="3Y3jLq" id="5058522826399262763" role="3Y3kdi">
+      <reference role="3Y3kdm" target="5058522826399262748" resolve="PHP Storm" />
+      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+    </node>
+    <node concept="3Y3jLq" id="5058522826399262768" role="3Y3kdi">
+      <reference role="64GfW" target="5871420002487709750" resolve="Web Storm" />
+      <reference role="3Y3kdm" target="5058522826399262748" resolve="PHP Storm" />
+    </node>
+    <node concept="3tydfO" id="5058522826399342607" role="3Y3kdi">
+      <reference role="64GfW" target="5871420002487602288" resolve="IntelliJ IDEA CE" />
+      <reference role="3Y3kdm" target="5058522826399342615" resolve="IntelliJ IDEA UE" />
+    </node>
+    <node concept="3tzTJx" id="5058522826399435305" role="3Y3kdv">
+      <property role="TrG5h" value="JetBrains" />
+      <property role="3Y34MI" value="235" />
+      <property role="3Y34Mw" value="104" />
+      <property role="66S50" value="true" />
+    </node>
+    <node concept="3Y3jL1" id="5871420002487602288" role="3Y3kdv">
+      <property role="3Y34MI" value="532" />
+      <property role="3Y34Mw" value="68" />
+      <property role="TrG5h" value="IntelliJ IDEA CE" />
+      <property role="66S50" value="true" />
+    </node>
+    <node concept="3Y3jL1" id="5058522826399342615" role="3Y3kdv">
+      <property role="TrG5h" value="IntelliJ IDEA UE" />
+      <property role="3Y34MI" value="533" />
+      <property role="3Y34Mw" value="249" />
+      <property role="66S50" value="true" />
+    </node>
+    <node concept="3Y3jL1" id="5871420002487709750" role="3Y3kdv">
+      <property role="66S50" value="true" />
+      <property role="3Y34MI" value="33" />
+      <property role="3Y34Mw" value="439" />
+      <property role="TrG5h" value="Web Storm" />
+    </node>
+    <node concept="3Y3jL1" id="5871420002487876142" role="3Y3kdv">
+      <property role="66S50" value="true" />
+      <property role="3Y34MI" value="320" />
+      <property role="3Y34Mw" value="398" />
+      <property role="TrG5h" value="ReSharper" />
+    </node>
+    <node concept="3Y3jL1" id="5058522826399262748" role="3Y3kdv">
+      <property role="TrG5h" value="PHP Storm" />
+      <property role="3Y34MI" value="33" />
+      <property role="3Y34Mw" value="86" />
+      <property role="66S50" value="true" />
+    </node>
+  </node>
 </model>
 

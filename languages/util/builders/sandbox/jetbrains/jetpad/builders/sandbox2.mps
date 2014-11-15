@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" doNotGenerate="true">
+<model ref="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" doNotGenerate="true" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" name="jetbrains.mps.baseLanguage.builders" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <model ref="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" name="jetbrains.jetpad.builders.sandbox" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/2679357232283750087" name="jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7057666463730155278" name="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7057666463730155299" name="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7288041816792292064" name="jetbrains.mps.baseLanguage.builders.structure.ResultExpression" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7288041816793071802" name="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" />
-    <concept id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7802271442981792228" name="jetbrains.mps.baseLanguage.builders.structure.BuilderContainer" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/2679357232283750087/2679357232283750088" name="setter" />
-    <refRole id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7288041816793071802/7288041816793071803" name="declaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123133" name="returnType" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123135" name="body" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
-    <childRole id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/2679357232283750087/2679357232283750106" name="value" />
-    <childRole id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7802271442981792228/4797501453849924252" name="body" />
-    <childRole id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a/7802271442981792228/4797501453850567416" name="builder" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" version="-1" index="em3k" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" name="jetbrains.mps.baseLanguage.builders" version="-1" />
   </languages>
   <imports>
     <import index="78ys" ref="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" />
@@ -48,35 +11,81 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="vg0i.1068390468198" id="4737519895010426712" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ABC" />
-      <node concept="vg0i.1146644602865" id="4737519895010426713" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="vg0i.1068580123140" id="4737519895010426714" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <node concept="vg0i.1068581517677" id="4737519895010426715" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1146644602865" id="4737519895010426716" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068580123136" id="4737519895010426717" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="4737519895010426718" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="4737519895010426719" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="em3k.7057666463730155278" id="4737519895010426721" role="vg0i.1145552977093.1145553007750" info="nn">
-                <node concept="vg0i.1068580123136" id="4737519895010426722" role="em3k.7802271442981792228.4797501453849924252" info="sn">
-                  <node concept="em3k.7057666463730155299" id="4737519895010426724" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1068580123136" id="4737519895010426725" role="em3k.7802271442981792228.4797501453849924252" info="sn" />
-                    <node concept="em3k.2679357232283750087" id="4737519895010426726" role="em3k.7802271442981792228.4797501453850567416" info="ng">
-                      <reference role="em3k.2679357232283750087.2679357232283750088" target="78ys.5613258673505573559" resolveInfo="setChild" />
-                      <node concept="em3k.7288041816792292064" id="4737519895010426728" role="em3k.2679357232283750087.2679357232283750106" info="nn" />
-                    </node>
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123135" name="body" index="3clF47" />
+      </concept>
+      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
+        <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+    </language>
+    <language id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" name="jetbrains.mps.baseLanguage.builders">
+      <concept id="7057666463730155278" name="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" flags="nn" index="g8Q5f" />
+      <concept id="7057666463730155299" name="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" flags="nn" index="g8Q5y" />
+      <concept id="7802271442981792228" name="jetbrains.mps.baseLanguage.builders.structure.BuilderContainer" flags="ng" index="1!nplI">
+        <child id="4797501453849924252" name="body" index="GGjiV" />
+        <child id="4797501453850567416" name="builder" index="GIGjv" />
+      </concept>
+      <concept id="2679357232283750087" name="jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder" flags="ng" index="3tyRfN">
+        <reference id="2679357232283750088" name="setter" index="3tyRfW" />
+        <child id="2679357232283750106" name="value" index="3tyRfI" />
+      </concept>
+      <concept id="7288041816793071802" name="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" flags="ng" index="1b09fh">
+        <reference id="7288041816793071803" name="declaration" index="1b09fg" />
+      </concept>
+      <concept id="7288041816792292064" name="jetbrains.mps.baseLanguage.builders.structure.ResultExpression" flags="nn" index="1bf8Ab" />
+    </language>
+  </registry>
+  <node concept="312cEu" id="4737519895010426712">
+    <property role="TrG5h" value="ABC" />
+    <node concept="3Tm1VV" id="4737519895010426713" role="1B3o_S" />
+    <node concept="3clFbW" id="4737519895010426714" role="jymVt">
+      <node concept="3cqZAl" id="4737519895010426715" role="3clF45" />
+      <node concept="3Tm1VV" id="4737519895010426716" role="1B3o_S" />
+      <node concept="3clFbS" id="4737519895010426717" role="3clF47">
+        <node concept="3clFbF" id="4737519895010426718" role="3cqZAp">
+          <node concept="2ShNRf" id="4737519895010426719" role="3clFbG">
+            <node concept="g8Q5f" id="4737519895010426721" role="2ShVmc">
+              <node concept="3clFbS" id="4737519895010426722" role="GGjiV">
+                <node concept="g8Q5y" id="4737519895010426724" role="3cqZAp">
+                  <node concept="3clFbS" id="4737519895010426725" role="GGjiV" />
+                  <node concept="3tyRfN" id="4737519895010426726" role="GIGjv">
+                    <reference role="3tyRfW" target="78ys.5613258673505573559" resolve="setChild" />
+                    <node concept="1bf8Ab" id="4737519895010426728" role="3tyRfI" />
                   </node>
                 </node>
-                <node concept="em3k.7288041816793071802" id="4737519895010426723" role="em3k.7802271442981792228.4797501453850567416" info="ng">
-                  <reference role="em3k.7288041816793071802.7288041816793071803" target="78ys.3816167865390945389" resolveInfo="root" />
-                </node>
+              </node>
+              <node concept="1b09fh" id="4737519895010426723" role="GIGjv">
+                <reference role="1b09fg" target="78ys.3816167865390945389" resolve="root" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-  </contents>
+  </node>
 </model>
 

@@ -1,93 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+<model ref="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
-    <model ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" name="jetbrains.mps.baseLanguage.blTypes.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140017977771" name="readOnly" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450557" name="separatorText" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766/1186403771423" name="style" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922/1088186146602" name="editorComponent" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524464360" name="cellLayout" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" name="styleItem" />
-  </debugInfo>
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
   </languages>
   <imports>
     <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="9wj7.1071666914219" id="1159268590362" info="ig">
-      <reference role="9wj7.1166049232041.1166049300910" target="tpdt.1159268590033" resolveInfo="PrimitiveTypeDescriptor" />
-      <node concept="9wj7.1073389446423" id="1159268590363" role="9wj7.1080736578640.1080736633877" info="sn">
-        <node concept="9wj7.1073389577006" id="1159268590364" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="Primitive" />
-        </node>
-        <node concept="9wj7.1073389658414" id="1159268590365" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
-          <node concept="9wj7.1186403751766" id="1214314934224" role="9wj7.1219418625346.1219418656006" info="ln">
-            <property role="9wj7.1186403751766.1186403771423" value="ITALIC" />
-          </node>
-        </node>
-        <node concept="9wj7.1073389577006" id="1159268590366" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="extends" />
-        </node>
-        <node concept="9wj7.1073390211982" id="1159268590367" role="9wj7.1073389446423.1073389446424" info="sg">
-          <property role="9wj7.1140524381322.1140524450557" value="," />
-          <reference role="9wj7.1139848536355.1140103550593" target="tpdt.1159268590032" />
-          <node concept="9wj7.1237303669825" id="1237820976212" role="9wj7.1140524381322.1140524464360" info="nn" />
-        </node>
-        <node concept="9wj7.1237303669825" id="1237724646579" role="9wj7.1073389446423.1106270802874" info="nn" />
+  <registry>
+    <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
+        <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
+      </concept>
+      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
+        <child id="1080736633877" name="cellModel" index="2wV5jI" />
+      </concept>
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
+        <child id="1106270802874" name="cellLayout" index="2iSdaV" />
+        <child id="1073389446424" name="childCellModel" index="3EZMnx" />
+      </concept>
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
+        <property id="1073389577007" name="text" index="3F0ifm" />
+      </concept>
+      <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
+        <property id="1186403771423" name="style" index="Vbekb" />
+      </concept>
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
+        <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
+      </concept>
+      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="sg" index="2czfm3">
+        <property id="1140524450557" name="separatorText" index="2czwfO" />
+        <child id="1140524464360" name="cellLayout" index="2czzBx" />
+      </concept>
+      <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3!6MrZ">
+        <property id="1215007802031" name="value" index="3!6WeP" />
+      </concept>
+      <concept id="1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" flags="ln" index="3!7jql" />
+      <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
+        <child id="1219418656006" name="styleItem" index="3F10Kt" />
+      </concept>
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" index="3F2HdR" />
+      <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
+      <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" index="1iCGBv">
+        <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
+    </language>
+  </registry>
+  <node concept="24kQdi" id="1159268590362">
+    <reference role="1XX52x" target="tpdt.1159268590033" resolve="PrimitiveTypeDescriptor" />
+    <node concept="3EZMnI" id="1159268590363" role="2wV5jI">
+      <node concept="3F0ifn" id="1159268590364" role="3EZMnx">
+        <property role="3F0ifm" value="Primitive" />
       </node>
+      <node concept="3F0A7n" id="1159268590365" role="3EZMnx">
+        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <node concept="Vb9p2" id="1214314934224" role="3F10Kt">
+          <property role="Vbekb" value="ITALIC" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1159268590366" role="3EZMnx">
+        <property role="3F0ifm" value="extends" />
+      </node>
+      <node concept="3F2HdR" id="1159268590367" role="3EZMnx">
+        <property role="2czwfO" value="," />
+        <reference role="1NtTu8" target="tpdt.1159268590032" />
+        <node concept="l2Vlx" id="1237820976212" role="2czzBx" />
+      </node>
+      <node concept="l2Vlx" id="1237724646579" role="2iSdaV" />
     </node>
-    <node concept="9wj7.1071666914219" id="1159268661793" info="ig">
-      <reference role="9wj7.1166049232041.1166049300910" target="tpdt.1159268661480" resolveInfo="PrimitiveTypeRef" />
-      <node concept="9wj7.1073389446423" id="1159268661794" role="9wj7.1080736578640.1080736633877" info="sn">
-        <node concept="9wj7.1088013125922" id="1159268661795" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="tpdt.1159268661479" />
-          <node concept="9wj7.1088185857835" id="1159268661796" role="9wj7.1088013125922.1088186146602" info="ig">
-            <node concept="9wj7.1073389658414" id="1159268661797" role="9wj7.1080736578640.1080736633877" info="sg">
-              <property role="9wj7.1139848536355.1140017977771" value="true" />
-              <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
-              <node concept="9wj7.1186403751766" id="1214314934159" role="9wj7.1219418625346.1219418656006" info="ln">
-                <property role="9wj7.1186403751766.1186403771423" value="ITALIC" />
-              </node>
-              <node concept="9wj7.1215007897487" id="1225889793355" role="9wj7.1219418625346.1219418656006" info="ln">
-                <property role="9wj7.1215007762405.1215007802031" value="0.0" />
-              </node>
+  </node>
+  <node concept="24kQdi" id="1159268661793">
+    <reference role="1XX52x" target="tpdt.1159268661480" resolve="PrimitiveTypeRef" />
+    <node concept="3EZMnI" id="1159268661794" role="2wV5jI">
+      <node concept="1iCGBv" id="1159268661795" role="3EZMnx">
+        <reference role="1NtTu8" target="tpdt.1159268661479" />
+        <node concept="1sVBvm" id="1159268661796" role="1sWHZn">
+          <node concept="3F0A7n" id="1159268661797" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <node concept="Vb9p2" id="1214314934159" role="3F10Kt">
+              <property role="Vbekb" value="ITALIC" />
+            </node>
+            <node concept="3!7jql" id="1225889793355" role="3F10Kt">
+              <property role="3!6WeP" value="0.0" />
             </node>
           </node>
         </node>
-        <node concept="9wj7.1237303669825" id="1237724651773" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
+      <node concept="l2Vlx" id="1237724651773" role="2iSdaV" />
     </node>
-  </contents>
+  </node>
 </model>
 

@@ -1,173 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)">
+<model ref="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" name="jetbrains.mps.lang.structure.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1096454100552" name="rootable" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="vgj4" ref="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="483844232470132813" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="OverloadedBinaryOperator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
-      <node concept="4jta.1071489288299" id="2673276898228709090" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="commutative" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
-      </node>
-      <node concept="4jta.1071489288298" id="6677452554237917709" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="returnType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="6677452554239170993" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="leftType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="6677452554239170994" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="rightType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="2838654975957155510" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="operator" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="2838654975957036198" resolveInfo="Operator" />
-      </node>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5!K2" />
+        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="483844232470132813">
+    <property role="TrG5h" value="OverloadedBinaryOperator" />
+    <property role="2_RsDV" value="none" />
+    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <node concept="1TJgyi" id="2673276898228709090" role="1TKVEl">
+      <property role="TrG5h" value="commutative" />
+      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="4jta.1071489090640" id="483844232470139399" info="ig">
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="asn4.1169194658468.1169194664001" value="OverloadedOperatorContainer" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="483844232470139400" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="operators" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="483844232470132813" resolveInfo="OverloadedBinaryOperator" />
-      </node>
-      <node concept="4jta.1071489288298" id="2838654975956759196" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="customOperators" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
-      </node>
-      <node concept="4jta.1169127622168" id="483844232470139409" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="6677452554237917709" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="returnType" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="4jta.1071489090640" id="483844232470668960" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="LeftOperand" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="left" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-      <node concept="4jta.1169127622168" id="483844232470668961" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+    <node concept="1TJgyj" id="6677452554239170993" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="leftType" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="4jta.1071489090640" id="7789383629180756961" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="RightOperand" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="right" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node concept="1TJgyj" id="6677452554239170994" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="rightType" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="4jta.1071489090640" id="2838654975957036198" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="Operator" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="1TJgyj" id="2838654975957155510" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="operator" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="2838654975957036198" resolve="Operator" />
     </node>
-    <node concept="4jta.1071489090640" id="2838654975957155508" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="BinaryOperationReference" />
-      <reference role="4jta.1071489090640.1071489389519" target="2838654975957036198" resolveInfo="Operator" />
-      <node concept="4jta.1071489288298" id="2838654975957155509" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="binaryOperation" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="483844232470139399">
+    <property role="19KtqR" value="true" />
+    <property role="TrG5h" value="OverloadedOperatorContainer" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="483844232470139400" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="operators" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="483844232470132813" resolve="OverloadedBinaryOperator" />
     </node>
-    <node concept="4jta.1071489090640" id="2838654975957402167" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomOperator" />
-      <reference role="4jta.1071489090640.1071489389519" target="2838654975957036198" resolveInfo="Operator" />
-      <node concept="4jta.1071489288298" id="2838654975957402169" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="declaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="2838654975956759196" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="customOperators" />
+      <property role="20lbJX" value="0..n" />
+      <reference role="20lvS9" target="1569627462442419521" resolve="CustomOperatorDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="1569627462441399919" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomOperatorUsage" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1081773326031" resolveInfo="BinaryOperation" />
-      <node concept="4jta.1071489288298" id="1569627462441399920" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="operator" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
-      </node>
+    <node concept="PrWs8" id="483844232470139409" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="1569627462442419521" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomOperatorDeclaration" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1569627462442419522" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="483844232470668960">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="LeftOperand" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="left" />
+    <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
+    <node concept="PrWs8" id="483844232470668961" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="7363434029342207049" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ContainerImport" />
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="7363434029342207301" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="container" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="483844232470139399" resolveInfo="OverloadedOperatorContainer" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="7789383629180756961">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="RightOperand" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="right" />
+    <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="2838654975957036198">
+    <property role="R5!K7" value="true" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="Operator" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2838654975957155508">
+    <property role="TrG5h" value="BinaryOperationReference" />
+    <reference role="1TJDcQ" target="2838654975957036198" resolve="Operator" />
+    <node concept="1TJgyj" id="2838654975957155509" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="binaryOperation" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpce.1071489090640" resolve="ConceptDeclaration" />
     </node>
-  </contents>
+  </node>
+  <node concept="1TIwiD" id="2838654975957402167">
+    <property role="TrG5h" value="CustomOperator" />
+    <reference role="1TJDcQ" target="2838654975957036198" resolve="Operator" />
+    <node concept="1TJgyj" id="2838654975957402169" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="1569627462442419521" resolve="CustomOperatorDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1569627462441399919">
+    <property role="TrG5h" value="CustomOperatorUsage" />
+    <property role="2_RsDV" value="none" />
+    <reference role="1TJDcQ" target="tpee.1081773326031" resolve="BinaryOperation" />
+    <node concept="1TJgyj" id="1569627462441399920" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="operator" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="1569627462442419521" resolve="CustomOperatorDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1569627462442419521">
+    <property role="TrG5h" value="CustomOperatorDeclaration" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1569627462442419522" role="PzmwI">
+      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7363434029342207049">
+    <property role="TrG5h" value="ContainerImport" />
+    <property role="19KtqR" value="true" />
+    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7363434029342207301" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="container" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="483844232470139399" resolve="OverloadedOperatorContainer" />
+    </node>
+  </node>
 </model>
 

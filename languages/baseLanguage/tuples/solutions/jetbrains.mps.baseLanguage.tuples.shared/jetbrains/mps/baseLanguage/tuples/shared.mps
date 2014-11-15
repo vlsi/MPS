@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)">
+<model ref="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
-    <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239360506533" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
-    <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1240400839614" name="final" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642/1109279881614" name="typeVariableDeclaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
-    <childRole id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1239462974287" name="type" />
-    <childRole id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239360506533/1239529553065" name="component" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="-1" index="x09z" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="x09z.1239360506533" id="1241009437488" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="GlobalSharedPair" />
-      <node concept="x09z.1239462176079" id="1241009495081" role="x09z.1239360506533.1239529553065" info="ng">
-        <property role="x09z.1239462176079.1240400839614" value="false" />
-        <property role="asn4.1169194658468.1169194664001" value="first" />
-        <node concept="vg0i.1109283449304" id="1241009496249" role="x09z.1239462176079.1239462974287" info="in">
-          <reference role="vg0i.1109283449304.1109283546497" target="1241009470756" resolveInfo="A" />
-        </node>
-      </node>
-      <node concept="x09z.1239462176079" id="1241009497930" role="x09z.1239360506533.1239529553065" info="ng">
-        <property role="x09z.1239462176079.1240400839614" value="false" />
-        <property role="asn4.1169194658468.1169194664001" value="second" />
-        <node concept="vg0i.1109283449304" id="1241009498725" role="x09z.1239462176079.1239462974287" info="in">
-          <reference role="vg0i.1109283449304.1109283546497" target="1241009486191" resolveInfo="B" />
-        </node>
-      </node>
-      <node concept="vg0i.1146644602865" id="1241009437489" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="vg0i.1109279763828" id="1241009470756" role="vg0i.1109279851642.1109279881614" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="A" />
-      </node>
-      <node concept="vg0i.1109279763828" id="1241009486191" role="vg0i.1109279851642.1109279881614" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="B" />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1239360506533" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" flags="ng" index="2fD8I5">
+        <child id="1239529553065" name="component" index="2pHZQ9" />
+      </concept>
+      <concept id="1239462176079" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" flags="ng" index="2lGYhJ">
+        <property id="1240400839614" name="final" index="3dDGau" />
+        <child id="1239462974287" name="type" index="2lK19J" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
+      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
+        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
+      </concept>
+      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq">
+        <reference id="1109283546497" name="typeVariableDeclaration" index="16sUi3" />
+      </concept>
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="2fD8I5" id="1241009437488">
+    <property role="TrG5h" value="GlobalSharedPair" />
+    <node concept="2lGYhJ" id="1241009495081" role="2pHZQ9">
+      <property role="3dDGau" value="false" />
+      <property role="TrG5h" value="first" />
+      <node concept="16syzq" id="1241009496249" role="2lK19J">
+        <reference role="16sUi3" target="1241009470756" resolve="A" />
       </node>
     </node>
-  </contents>
+    <node concept="2lGYhJ" id="1241009497930" role="2pHZQ9">
+      <property role="3dDGau" value="false" />
+      <property role="TrG5h" value="second" />
+      <node concept="16syzq" id="1241009498725" role="2lK19J">
+        <reference role="16sUi3" target="1241009486191" resolve="B" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="1241009437489" role="1B3o_S" />
+    <node concept="16euLQ" id="1241009470756" role="16eVyc">
+      <property role="TrG5h" value="A" />
+    </node>
+    <node concept="16euLQ" id="1241009486191" role="16eVyc">
+      <property role="TrG5h" value="B" />
+    </node>
+  </node>
 </model>
 

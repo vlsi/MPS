@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:87144dcf-ac46-4b20-a56e-61ca571efffc(jetbrains.mps.samples.generator_demo.demoLang5.editor)">
+<model ref="r:87144dcf-ac46-4b20-a56e-61ca571efffc(jetbrains.mps.samples.generator_demo.demoLang5.editor)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

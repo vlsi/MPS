@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:7e967a7c-8f21-4c1f-a331-9afa31a24388(jetbrains.mps.lang.smodel.util)">
+<model ref="r:7e967a7c-8f21-4c1f-a331-9afa31a24388(jetbrains.mps.lang.smodel.util)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

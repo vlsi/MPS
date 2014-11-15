@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)">
+<model ref="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

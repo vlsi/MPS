@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:64461e55-0680-4e64-905d-f5d8390b4161(jetbrains.mps.samples.generator_demo.demoLang6.editor)">
+<model ref="r:64461e55-0680-4e64-905d-f5d8390b4161(jetbrains.mps.samples.generator_demo.demoLang6.editor)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
-    <model ref="r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)" name="jetbrains.mps.samples.generator_demo.demoLang6.structure" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
-  </debugInfo>
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
   </languages>
   <imports>
     <import index="2k81" ref="r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="9wj7.1071666914219" id="3978102045101855484" info="ig">
-      <reference role="9wj7.1166049232041.1166049300910" target="2k81.3978102045101855363" resolveInfo="Button" />
-      <node concept="9wj7.1073389446423" id="3978102045101856684" role="9wj7.1080736578640.1080736633877" info="sn">
-        <node concept="9wj7.1073389577006" id="3978102045101856691" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="button (" />
-        </node>
-        <node concept="9wj7.1073389658414" id="3978102045101856697" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="2k81.3978102045101855475" resolveInfo="text" />
-        </node>
-        <node concept="9wj7.1073389577006" id="3978102045101856726" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value=")" />
-        </node>
-        <node concept="9wj7.1106270549637" id="3978102045101856687" role="9wj7.1073389446423.1106270802874" info="nn" />
+  <registry>
+    <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
+        <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
+      </concept>
+      <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
+        <child id="1080736633877" name="cellModel" index="2wV5jI" />
+      </concept>
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
+        <child id="1106270802874" name="cellLayout" index="2iSdaV" />
+        <child id="1073389446424" name="childCellModel" index="3EZMnx" />
+      </concept>
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
+        <property id="1073389577007" name="text" index="3F0ifm" />
+      </concept>
+      <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+        <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
+      </concept>
+      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
+    </language>
+  </registry>
+  <node concept="24kQdi" id="3978102045101855484">
+    <reference role="1XX52x" target="2k81.3978102045101855363" resolve="Button" />
+    <node concept="3EZMnI" id="3978102045101856684" role="2wV5jI">
+      <node concept="3F0ifn" id="3978102045101856691" role="3EZMnx">
+        <property role="3F0ifm" value="button (" />
       </node>
-    </node>
-    <node concept="9wj7.1071666914219" id="3978102045101877183" info="ig">
-      <reference role="9wj7.1166049232041.1166049300910" target="2k81.3978102045101856876" resolveInfo="Label" />
-      <node concept="9wj7.1073389446423" id="3978102045101877236" role="9wj7.1080736578640.1080736633877" info="sn">
-        <node concept="9wj7.1073389577006" id="3978102045101877243" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value="label (" />
-        </node>
-        <node concept="9wj7.1073389658414" id="3978102045101877249" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="2k81.3978102045101856886" resolveInfo="text" />
-        </node>
-        <node concept="9wj7.1073389577006" id="3978102045101877256" role="9wj7.1073389446423.1073389446424" info="sn">
-          <property role="9wj7.1073389577006.1073389577007" value=")" />
-        </node>
-        <node concept="9wj7.1106270549637" id="3978102045101877239" role="9wj7.1073389446423.1106270802874" info="nn" />
+      <node concept="3F0A7n" id="3978102045101856697" role="3EZMnx">
+        <reference role="1NtTu8" target="2k81.3978102045101855475" resolve="text" />
       </node>
+      <node concept="3F0ifn" id="3978102045101856726" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="2iRfu4" id="3978102045101856687" role="2iSdaV" />
     </node>
-  </contents>
+  </node>
+  <node concept="24kQdi" id="3978102045101877183">
+    <reference role="1XX52x" target="2k81.3978102045101856876" resolve="Label" />
+    <node concept="3EZMnI" id="3978102045101877236" role="2wV5jI">
+      <node concept="3F0ifn" id="3978102045101877243" role="3EZMnx">
+        <property role="3F0ifm" value="label (" />
+      </node>
+      <node concept="3F0A7n" id="3978102045101877249" role="3EZMnx">
+        <reference role="1NtTu8" target="2k81.3978102045101856886" resolve="text" />
+      </node>
+      <node concept="3F0ifn" id="3978102045101877256" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="2iRfu4" id="3978102045101877239" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

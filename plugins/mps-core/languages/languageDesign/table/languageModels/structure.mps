@@ -1,37 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)">
+<model ref="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" name="jetbrains.mps.lang.editor.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <model ref="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)" name="jetbrains.mps.lang.editor.table.runtime" />
-    <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" name="jetbrains.mps.lang.structure.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -40,58 +12,84 @@
     <import index="squ6" ref="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="ohyq" ref="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="4677325677876400523" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_Table" />
-      <property role="4jta.1169125787135.5092175715804935370" value="table" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288298" id="4490468428501048483" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="tableModel" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="4490468428501056077" resolveInfo="QueryFunction_TableModel" />
-      </node>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5!K2" />
+        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="4677325677876400523">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="CellModel_Table" />
+    <property role="34LRSv" value="table" />
+    <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="4490468428501048483" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="tableModel" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="4490468428501056077" resolve="QueryFunction_TableModel" />
     </node>
-    <node concept="4jta.1071489090640" id="4490468428501056077" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_TableModel" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="getTableModel" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="4490468428501056077">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="QueryFunction_TableModel" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="getTableModel" />
+    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2253133157536766818">
+    <property role="R5!K7" value="false" />
+    <property role="R5!K2" value="false" />
+    <property role="TrG5h" value="CellModel_HierarchycalTable" />
+    <property role="34LRSv" value="hierarchycal table" />
+    <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="6216065619544939793" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="headerRowLinkDeclaration" />
+      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="2253133157536766818" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_HierarchycalTable" />
-      <property role="4jta.1169125787135.5092175715804935370" value="hierarchycal table" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288298" id="6216065619544939793" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="headerRowLinkDeclaration" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      </node>
-      <node concept="4jta.1071489288298" id="6216065619544939794" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="rowsLinkDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      </node>
-      <node concept="4jta.1071489288298" id="6216065619544939795" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="cellsInRowLinkDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      </node>
-      <node concept="4jta.1071489288299" id="2253133157537011702" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="myProp" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+    <node concept="1TJgyj" id="6216065619544939794" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="rowsLinkDeclaration" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
-  </contents>
+    <node concept="1TJgyj" id="6216065619544939795" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="cellsInRowLinkDeclaration" />
+      <property role="20lbJX" value="1" />
+      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
+    </node>
+    <node concept="1TJgyi" id="2253133157537011702" role="1TKVEl">
+      <property role="TrG5h" value="myProp" />
+      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+    </node>
+  </node>
 </model>
 
