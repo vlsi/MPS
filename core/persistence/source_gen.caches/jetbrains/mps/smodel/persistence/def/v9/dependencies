@@ -68,6 +68,44 @@
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
+  <dependency className="jetbrains.mps.smodel.persistence.def.v9.ModelReader9bisHandler" file="ModelReader9bisHandler.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Stack" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.InterfaceSNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
+    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
+    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ElementHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdInfoReadHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ImportsHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ReadHelper9" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.xml.sax.Attributes" />
+    <classNode dependClassName="org.xml.sax.Locator" />
+    <classNode dependClassName="org.xml.sax.SAXException" />
+    <classNode dependClassName="org.xml.sax.SAXParseException" />
+    <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
+  </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v9.ReadHelper9" file="ReadHelper9.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Long" />

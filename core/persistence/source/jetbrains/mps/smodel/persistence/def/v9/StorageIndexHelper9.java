@@ -34,13 +34,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class StorageIndexHelper9 {
+class StorageIndexHelper9 {
   protected static Logger LOG = LogManager.getLogger(WriteHelper.class);
 
-  public static final char MODEL_SEPARATOR_CHAR = '.';
-  public static final String DYNAMIC_REFERENCE_ID = "^";
-  private static final int HASH_BASE = 10 + 26;
-  private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
+  static final char MODEL_SEPARATOR_CHAR = '.';
+  static final String DYNAMIC_REFERENCE_ID = "^";
+  static final int HASH_BASE = 10 + 26;
+  static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
 
   private SModelReference myModelRef;
 
@@ -124,11 +124,11 @@ public class StorageIndexHelper9 {
     return index + MODEL_SEPARATOR_CHAR + encode(target);
   }
 
-  public static String encode(String s) {
+  static String encode(String s) {
     return s.replace("%", "%p").replace(":", "%c").replace(".", "%d");
   }
 
-  public static String decode(String s) {
+  static String decode(String s) {
     return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
 }

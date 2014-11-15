@@ -47,7 +47,6 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String CONTENTS = "contents";
   public static final String VERSION = "version";
   // nodes
-  public static final String NODE = "node";
   public static final String CONCEPT_ID = "concept";
   public static final String ROLE_ID = "role";
   public static final String TARGET_NODE_ID = "target";
@@ -67,6 +66,8 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String DEBUG_INFO_REF_ROLE = "refRole";
   public static final String DEBUG_INFO_CHILD_ROLE = "childRole";
 
+  public static final String OPTION_CONCISE = "concise";
+
   @Override
   public int getVersion() {
     return 9;
@@ -79,7 +80,7 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return getModelWriter();
+    return isConcisePersistenceOption(header) ? new ModelWriter9bis() : getModelWriter();
   }
 
   @Override
@@ -94,6 +95,9 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    if (isConcisePersistenceOption(header)) {
+      return new ModelReader9bisHandler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+    }
     return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
   }
 
@@ -105,5 +109,9 @@ public class ModelPersistence9 implements IModelPersistence {
   @Override
   public void index(char[] data, Consumer<String> consumer) {
     new Indexer9(data, consumer).index();
+  }
+
+  private static boolean isConcisePersistenceOption(SModelHeader header) {
+    return Boolean.parseBoolean(header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE));
   }
 }

@@ -301,7 +301,9 @@ public class BinaryPersistence {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    IdInfoCollector.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
+    final IdInfoCollector ic = new IdInfoCollector();
+    ic.fill(rootNodes);
+    ic.getDebugInfoById(conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     os.writeInt(conceptIds.size());

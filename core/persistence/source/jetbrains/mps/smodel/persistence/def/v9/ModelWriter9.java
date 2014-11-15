@@ -143,7 +143,9 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    IdInfoCollector.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
+    final IdInfoCollector ic = new IdInfoCollector();
+    ic.fill(sourceModel.getRootNodes());
+    ic.getDebugInfoById(conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     ArrayList<SConceptId> cids = new ArrayList<SConceptId>(conceptIds.keySet());
@@ -298,7 +300,7 @@ public class ModelWriter9 implements IModelWriter {
 
     if (saveChildren) {
       for (SNode childNode : node.getChildren()) {
-        Element childElement = new Element(ModelPersistence9.NODE);
+        Element childElement = new Element(ModelPersistence.NODE);
         saveNode(childElement, childNode, true);
         nodeElement.addContent(childElement);
       }
@@ -329,7 +331,7 @@ public class ModelWriter9 implements IModelWriter {
       rootElement.addContent(persistenceElement);
 
       //root
-      Element childElement = new Element(ModelPersistence9.NODE);
+      Element childElement = new Element(ModelPersistence.NODE);
       CollectConsumer<SModelReference> usedImports = new CollectConsumer<SModelReference>(new LinkedHashSet<SModelReference>());
       CollectConsumer<SLanguageId> usedLangs = new CollectConsumer<SLanguageId>(new LinkedHashSet<SLanguageId>());
       ((MultiStreamStorageIndexHelper9) myHelper).setUsedImportsListener(usedImports);
