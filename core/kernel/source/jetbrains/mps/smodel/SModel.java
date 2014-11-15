@@ -844,8 +844,7 @@ public class SModel implements SModelData {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    if (!(NameUtil.getModelLongName(getReference().getModelName()).endsWith(LanguageAspect.STRUCTURE.getName())))
-      usedModels.remove(myReference);   // do not import self if not structure
+    usedModels.remove(myReference);   // do not import self
     for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
     }
