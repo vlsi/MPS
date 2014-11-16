@@ -37,6 +37,9 @@ public class SModelUtil {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
   public static Language getDeclaringLanguage(final SNode concept) {
+    if (concept == null) {
+      return null;
+    }
     return (Language) MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept).getLanguage().getSourceModule();
   }
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {
