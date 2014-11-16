@@ -156,7 +156,7 @@ class IdInfoReadHelper {
   @NotNull
   public SConcept getStubConcept(@NotNull SConcept original) {
     final ConceptInfo ci = myInfoCollector.find(original);
-    return new ReadHelper9(null).getStubConcept(ci.getConceptId()); // FIXME regenerate ReadHelper with static createStubConcept()
+    return ReadHelper9.createStubConcept(ci.getName());
   }
 
   public SLanguage getLanguage(@NotNull SLanguageId langId, @Nullable String langName) {

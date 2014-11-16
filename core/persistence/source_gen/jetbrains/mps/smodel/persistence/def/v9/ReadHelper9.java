@@ -103,8 +103,12 @@ public class ReadHelper9 {
 
   public SConcept getStubConcept(SConceptId type) {
     String cname = DebugRegistry.getInstance().getConceptName(type);
-    String ns = NameUtil.namespaceFromLongName(cname);
-    String sname = NameUtil.shortNameFromLongName(cname);
+    return createStubConcept(cname);
+  }
+  public static SConcept createStubConcept(String conceptFQN) {
+    assert conceptFQN != null : "Can't retrieve stub concept without fqn of the original one";
+    String ns = NameUtil.namespaceFromLongName(conceptFQN);
+    String sname = NameUtil.shortNameFromLongName(conceptFQN);
     return MetaAdapterFactoryByName.getConcept(ns + ((ns.equals("") ? "" : ".")) + "Stub" + sname);
   }
 
