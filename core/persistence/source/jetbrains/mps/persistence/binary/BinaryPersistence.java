@@ -30,11 +30,9 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
@@ -301,9 +299,7 @@ public class BinaryPersistence {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    final IdInfoCollector ic = new IdInfoCollector();
-    ic.fill(rootNodes);
-    ic.getDebugInfoById(conceptIds, propIds, refIds, roleIds);
+    IdInfoCollector.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     os.writeInt(conceptIds.size());
