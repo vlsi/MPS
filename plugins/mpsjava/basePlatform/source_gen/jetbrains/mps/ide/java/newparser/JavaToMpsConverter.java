@@ -17,12 +17,14 @@ import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -39,7 +41,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.IFileUtils;
-import java.util.HashSet;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -95,6 +96,10 @@ public class JavaToMpsConverter {
 
   public JavaToMpsConverter(SModule module, SRepository repository) {
     this(module, repository, false, false);
+  }
+
+  public Set<SNode> getRootsBuilt() {
+    return Collections.<SNode>unmodifiableSet(SetSequence.fromSetWithValues(new HashSet<SNode>(), myAttachedRoots));
   }
 
   public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace) {

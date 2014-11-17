@@ -488,6 +488,7 @@
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1883223317721008708/1883223317721008711" name="variable" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/2323553266850475941/2323553266850475953" name="modifiers" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/3609773094169249792/3609773094169252180" name="linkQualifier" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/4972241301747169160" name="typeArgument" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/5168775467716640652/5168775467716640653" name="linkQualifier" />
     <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
@@ -28120,6 +28121,31 @@
           <property role="asn4.1169194658468.1169194664001" value="repository" />
           <node concept="vg0i.1107535904670" id="6323600598939911841" role="vg0i.4972933694980447171.5680397130376446158" info="in">
             <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SRepository" resolveInfo="SRepository" />
+          </node>
+        </node>
+      </node>
+      <node concept="vg0i.1465982738277781862" id="2307318872912943772" role="vg0i.1107461130800.5375687026011219971" info="ngu" />
+      <node concept="vg0i.1068580123165" id="2307318872913078840" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="getRootsBuilt" />
+        <node concept="j0ph.1226511727824" id="2307318872913135677" role="vg0i.1068580123132.1068580123133" info="in">
+          <node concept="4ia1.1138055754698" id="2307318872913171201" role="j0ph.1226511727824.1226511765987" info="in" />
+        </node>
+        <node concept="vg0i.1146644602865" id="2307318872913078843" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1068580123136" id="2307318872913078844" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123155" id="2307318872913328534" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="2307318872913328586" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Collections%dunmodifiableSet(java%dutil%dSet)%cjava%dutil%dSet" resolveInfo="unmodifiableSet" />
+              <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Collections" resolveInfo="Collections" />
+              <node concept="4ia1.1138055754698" id="2307318872913376233" role="vg0i.1204053956946.4972241301747169160" info="in" />
+              <node concept="vg0i.1145552977093" id="2307318872913542224" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="j0ph.1226516258405" id="2307318872913545102" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="4ia1.1138055754698" id="2307318872913547055" role="j0ph.1237721394592.1237721435807" info="in" />
+                  <node concept="vg0i.1068498886296" id="2307318872913551096" role="j0ph.1237721394592.1237731803878" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="5519021045846288249" resolveInfo="myAttachedRoots" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

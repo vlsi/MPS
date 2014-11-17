@@ -110,7 +110,7 @@ public class ConvertPackageToModel extends AnAction {
 
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     SModule mpsModule = facet.getSolution();
-    MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
+    final MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
     List<PsiJavaFile> psiJavaFiles = JavaConverterHelper.getFilesFromSelection(JavaConverterHelper.liftToFiles(Arrays.asList(elements)));
 
@@ -162,19 +162,17 @@ public class ConvertPackageToModel extends AnAction {
         Set<PsiClass> psiClasses = getPsiClasses(parser.getSuccessfulFiles(), PsiManager.getInstance(e.getProject()));
 
         Set<SNode> stubNodes = getStubNodes(psiClasses);
-//        Map<SNode, SNode> stubToMpsNodes = null;
-
-        // this module and those which depend on it
-//        GlobalSearchScope scope = new ModuleWithDependentsScope(module, false);
-        Set<SModel> excludeSet = new HashSet<SModel>(parser.getModels());
-        SearchScope mpsScope = new SearchScopeWithoutModels(module, excludeSet);
-
+        Set<SNode> roots = parser.getRootsBuilt();
         List<SReference> referencesToFix = new ArrayList<SReference>();
 
         boolean wasUnresolved = false;
 
-        Set<SReference> references = FindUsagesFacade.getInstance().findUsages(mpsScope, stubNodes, null);
+        Set<SReference> references = FindUsagesFacade.getInstance().findUsages(mpsProject.getScope(), stubNodes, null);
         for (SReference ref : references) {
+          if (roots.contains(ref.getSourceNode().getContainingRoot())) {
+            continue;
+          }
+
           if (!(ref instanceof StaticReference)) {
             referencesToFix.add(ref);
             continue;
