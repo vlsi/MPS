@@ -32,21 +32,25 @@ public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
     return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
+  @Deprecated
   public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
-    return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+    return Sequence.fromIterable(getLanguageVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
-        if ((int) item._1() > (int) item._2()) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Module " + module + " depends on version " + (int) item._1() + " of module " + item._0() + " which is higher than available version (" + (int) item._2() + ")");
-          }
-        } else if ((int) item._1() < (int) item._2()) {
-          return true;
-        }
-        return false;
+        return isMigrationNeeded(module, item);
       }
     });
   }
-  public static Iterable<Tuples._3<SModule, Integer, Integer>> checkDependenciesVersions(AbstractModule module) {
+  public static boolean isMigrationNeeded(AbstractModule module, Tuples._3<SModule, Integer, Integer> languageVersions) {
+    if ((int) languageVersions._1() > (int) languageVersions._2()) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Module " + module + " depends on version " + (int) languageVersions._1() + " of module " + languageVersions._0() + " which is higher than available version (" + (int) languageVersions._2() + ")");
+      }
+    } else if ((int) languageVersions._1() < (int) languageVersions._2()) {
+      return true;
+    }
+    return false;
+  }
+  public static Iterable<Tuples._3<SModule, Integer, Integer>> getLanguageVersions(AbstractModule module) {
     module.validateLanguageVersions();
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
@@ -57,16 +61,16 @@ public class MigrationsUtil {
         }
       } else {
         if (ver != lang.getLanguageVersion()) {
-          ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), ver, as_7hm1hv_a0c0a0a0a0a1a2a2(lang.getSourceModule(), Language.class).getLanguageVersion()));
+          ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), ver, as_7hm1hv_a0c0a0a0a0a1a2a3(lang.getSourceModule(), Language.class).getLanguageVersion()));
         }
       }
     }
     return result;
   }
   public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
-    return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+    return !(Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
-        return eq_7hm1hv_a0a0a0a0a0a0a0d(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
+        return eq_7hm1hv_a0a0a0a0a0a0a0e(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
       }
     }));
   }
@@ -88,10 +92,10 @@ public class MigrationsUtil {
     });
   }
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
-  private static <T> T as_7hm1hv_a0c0a0a0a0a1a2a2(Object o, Class<T> type) {
+  private static <T> T as_7hm1hv_a0c0a0a0a0a1a2a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0d(Object a, Object b) {
+  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
