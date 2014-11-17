@@ -2485,7 +2485,7 @@
                   <node concept="vg0i.1146644602865" id="2400678414101179712" role="vg0i.1178549954367.1178549979242" info="nn" />
                   <node concept="vg0i.1068580123165" id="2400678414101179713" role="vg0i.1107461130800.5375687026011219971" info="igu">
                     <property role="vg0i.1068580123165.1178608670077" value="false" />
-                    <property role="asn4.1169194658468.1169194664001" value="gqetDescription" />
+                    <property role="asn4.1169194658468.1169194664001" value="getDescription" />
                     <property role="vg0i.1068580123132.1181808852946" value="false" />
                     <property role="vg0i.1068580123132.4276006055363816570" value="false" />
                     <node concept="vg0i.1146644602865" id="2400678414101179714" role="vg0i.1178549954367.1178549979242" info="nn" />

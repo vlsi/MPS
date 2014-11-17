@@ -224,7 +224,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     lastProjectMigration = current;
     final ProjectMigration cc = current;
     return new MigrationManager.Step() {
-      public String gqetDescription() {
+      public String getDescription() {
         return cc.getDescription();
       }
       public boolean execute() {
