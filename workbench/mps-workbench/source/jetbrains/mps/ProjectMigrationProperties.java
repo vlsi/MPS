@@ -24,11 +24,9 @@ import com.intellij.openapi.components.StorageScheme;
 import jetbrains.mps.migration.global.MigrationProperties;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import jetbrains.mps.project.Project;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @State(
     name = "MigrationProperties",
@@ -39,7 +37,11 @@ import java.util.Map;
     reloadable = false
 )
 public class ProjectMigrationProperties extends MigrationProperties implements ProjectComponent,
-    PersistentStateComponent<Map<String, String>> {
+    PersistentStateComponent<Element> {
+  private static final String NAME = "key";
+  private static final String VALUE = "value";
+  private static final String SINGLE_PROP = "entry";
+
   private Project myProject;
 
   public ProjectMigrationProperties(Project project) {
@@ -48,16 +50,24 @@ public class ProjectMigrationProperties extends MigrationProperties implements P
 
   @Nullable
   @Override
-  public Map<String, String> getState() {
-    HashMap<String, String> res = new HashMap<String, String>();
-    res.putAll(myProperties);
+  public Element getState() {
+    Element res = new Element("ignored");
+    for (String key : myProperties.keySet()) {
+      Element prop = new Element(SINGLE_PROP);
+      prop.setAttribute(NAME, key);
+      prop.setAttribute(VALUE, myProperties.get(key));
+      res.addContent(prop);
+    }
     return res;
   }
 
   @Override
-  public void loadState(Map<String, String> state) {
+  public void loadState(Element state) {
     myProperties.clear();
-    myProperties.putAll(state);
+
+    for (Element e : state.getChildren(SINGLE_PROP)) {
+      myProperties.put(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));
+    }
   }
 
   @Override
